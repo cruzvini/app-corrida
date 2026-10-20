@@ -59,6 +59,16 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      6. No plano específico, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
      7. Se a meta for muito fora do comum para o meu nível ou o prazo, o app explica os riscos e sugere alternativas. Posso seguir mesmo assim, e minha escolha fica registrada (ADR 0017).
      8. Antes de gerar o plano, vejo um resumo das minhas respostas e posso editar qualquer uma.
+   - **Jornada 3, geração do plano (rascunho a validar):**
+     1. Depois do setup, o app gera o plano e mostra a estrutura completa (fases e volume semanal) e as próximas 1 a 2 semanas detalhadas (ADR 0023).
+     2. Cada treino de corrida detalhado mostra o tipo (ex.: leve, intervalado, longão), a distância ou duração e a intensidade, com pace alvo quando houver meta.
+     3. Os treinos respeitam os dias de corrida e musculação que informei, e a musculação aparece com a divisão do dia (ex.: inferiores).
+     4. O plano não coloca corrida intensa logo depois de um treino de inferiores.
+     5. No plano específico, o plano termina na data da prova ou no prazo da meta.
+     6. Se a validação das regras encontrar um risco, vejo o aviso e as alternativas antes de aceitar (ADR 0017).
+     7. Antes de aceitar, posso pedir ajustes. O plano só fica ativo depois que eu aceito.
+     8. As semanas seguintes são detalhadas automaticamente, e recebo um resumo na caixa de entrada.
+     9. Se a geração falhar (ex.: IA indisponível), o app avisa e permite tentar de novo, sem perder minhas respostas do setup.
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
 ## Ideias de features (não priorizadas)
@@ -72,7 +82,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** jornada 3 (card 5): o detalhamento das próximas semanas precisa de revisão do usuário ou é aplicado direto?
+1. **Próxima pergunta:** validar os critérios de aceitação da jornada 3, geração do plano (card 5).
 2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
