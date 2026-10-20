@@ -40,7 +40,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0032 | [Nome do app: Live Run](0032-nome-do-app-live-run.md) | Aceita |
 | 0033 | [Tom de voz: parceiro de treino](0033-tom-de-voz-parceiro-de-treino.md) | Aceita |
 | 0034 | [Navegação por barra de abas inferior com Hoje no centro](0034-navegacao-por-abas-com-hoje-no-centro.md) | Aceita |
-| 0035 | [Assistente de conversa chamado Isaias](0035-assistente-de-conversa-isaias.md) | Aceita |
+| 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
 
 ## Como criar um novo ADR
 
