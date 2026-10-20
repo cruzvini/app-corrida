@@ -69,7 +69,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      7. Antes de aceitar, posso pedir ajustes. O plano só fica ativo depois que eu aceito.
      8. As semanas seguintes são detalhadas automaticamente, e recebo um resumo na caixa de entrada.
      9. Se a geração falhar (ex.: IA indisponível), o app avisa e permite tentar de novo, sem perder minhas respostas do setup.
-   - **Jornada 4, dia a dia (rascunho a validar):**
+   - **Jornada 4, dia a dia (validada):**
      1. Ao abrir o app, vejo o treino de hoje, com tipo e blocos, e os treinos da semana.
      2. O app sincroniza o Strava periodicamente, e eu também posso pedir uma atualização manual. O limite é de 1 consulta ao Strava a cada 30 minutos; dentro desse intervalo, vejo os dados já sincronizados e quando poderei atualizar de novo (ADR 0006).
      3. Quando sincroniza uma atividade compatível com o treino do dia, o treino é marcado como feito automaticamente, com o resumo da atividade (distância, duração, pace médio) (ADR 0025).
@@ -93,7 +93,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** validar os critérios de aceitação da jornada 4, dia a dia (card 5).
+1. **Próxima pergunta:** jornada 5, feedback (card 5): o que o app faz com o feedback do usuário.
 2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
