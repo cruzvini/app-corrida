@@ -61,6 +61,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0053 | [Editar uma proposta é conversar com o Piu](0053-editar-proposta-e-conversar-com-o-piu.md) | Aceita |
 | 0054 | [Mensagem lida ao abrir e propostas pendentes no topo de Notificações](0054-lidas-e-propostas-aguardando.md) | Aceita |
 | 0055 | [Feedback salvo antes da análise, e falha da IA sem mensagem de erro](0055-feedback-salvo-antes-da-analise.md) | Aceita |
+| 0056 | [Feedback pode ser apagado, mas não editado](0056-feedback-pode-ser-apagado-nao-editado.md) | Aceita |
 
 ## Como criar um novo ADR
 
