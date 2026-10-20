@@ -17,4 +17,4 @@ Depois do treino, a interação do usuário é marcar como feito ou não feito e
 
 - O app precisa de uma regra de correspondência entre atividade e treino previsto (dia e modalidade), coberta por testes unitários.
 - Marcar como feito sem atividade é só um status. Isso não é o registro manual de treinos adiado no ADR 0013: não há distância, tempo nem pace.
-- Treinos não feitos geram ajuste automático com aviso (ADR 0026). Falta definir o que acontece com atividades fora do plano.
+- Treinos não feitos geram ajuste automático com aviso (ADR 0026). Atividades fora do plano contam como carga e também podem gerar ajuste (ADR 0027).

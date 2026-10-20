@@ -32,6 +32,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0024 | [Treinos estruturados por blocos com pace alvo](0024-treinos-estruturados-por-blocos.md) | Aceita |
 | 0025 | [Strava marca o treino como feito, e o usuário corrige](0025-strava-marca-treino-feito-usuario-corrige.md) | Aceita |
 | 0026 | [Treino não feito gera ajuste automático do plano, com aviso](0026-treino-nao-feito-ajuste-automatico.md) | Aceita |
+| 0027 | [Atividade fora do plano conta como carga e gera ajuste com aviso](0027-atividade-fora-do-plano-conta-como-carga.md) | Aceita |
 
 ## Como criar um novo ADR
 
