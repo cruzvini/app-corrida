@@ -52,6 +52,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0044 | [Detalhamento da próxima semana na rotina das 22h do último dia da semana](0044-detalhamento-semanal-na-rotina-das-22h.md) | Aceita |
 | 0045 | [Atividade feita em outro dia não é ligada ao treino previsto](0045-atividade-em-outro-dia-nao-e-religada.md) | Aceita |
 | 0046 | [Atividades compatíveis do mesmo dia são somadas como um treino](0046-atividades-do-mesmo-dia-somadas.md) | Aceita |
+| 0047 | [Só o ajuste automático mais recente pode ser desfeito](0047-so-o-ajuste-mais-recente-pode-ser-desfeito.md) | Aceita |
 
 ## Como criar um novo ADR
 

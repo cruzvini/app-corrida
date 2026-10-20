@@ -79,7 +79,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      6. Posso informar a qualquer momento que um treino não foi ou não será feito, e o plano se ajusta na hora (ADR 0026).
      7. Às 22h, um treino sem atividade nem marcação conta como não feito, e o plano se ajusta automaticamente. Se a atividade chegar depois, o ajuste é revertido ou reavaliado.
      8. Uma atividade fora do plano, ou um treino muito acima do previsto, conta como carga. Se afetar os próximos treinos, o plano se ajusta (ADR 0027).
-     9. Todo ajuste automático chega à caixa de entrada com o antes e o depois e pode ser desfeito.
+     9. Todo ajuste automático chega à caixa de entrada com o antes e o depois, e o mais recente pode ser desfeito (ADR 0047).
      10. Depois de um treino, posso deixar um feedback em texto, se quiser (ex.: "senti a panturrilha").
    - **Jornada 5, feedback e caixa de entrada (validada):**
      1. A caixa de entrada reúne as mensagens do app: ajustes automáticos (com o antes e o depois e a opção de desfazer), semanas novas detalhadas e sugestões (ex.: pace alvo) (ADR 0007).
