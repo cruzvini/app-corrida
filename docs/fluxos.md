@@ -102,3 +102,70 @@ flowchart TD
 ```
 
 Depois do aceite, as semanas seguintes são detalhadas automaticamente na rotina das 22h do último dia de cada semana do plano (ADR 0044), e cada uma gera um resumo em Notificações (3.8).
+
+## Jornada 4: dia a dia
+
+Três fluxos: a sincronização com o Strava, as marcações feitas pelo usuário e a rotina das 22h. Todo ajuste automático segue o fluxo "IA propõe, regras validam" (ADR 0022), entra direto no plano e chega a Notificações com o antes e o depois. Só o ajuste mais recente pode ser desfeito (ADR 0047, 4.9).
+
+### Sincronização e treino feito
+
+```mermaid
+flowchart TD
+  A([Aba Hoje: treino do dia em blocos e semana 4.1]) --> B{Origem da sincronização}
+  B -- polling agendado --> C[Consulta o Strava]
+  B -- pull-to-refresh --> B1{Passaram 30 min desde a última consulta?}
+  B1 -- não --> B2[Mostra dados já sincronizados e quando poderá atualizar 4.2] --> A
+  B1 -- sim --> C
+  C --> D{Sincronização ok?}
+  D -- falhou: acesso revogado, token inválido ou Strava fora --> D1[Aviso no Hoje: reconectar o Strava, ADR 0049] --> A
+  D -- sim --> E{Atividades novas?}
+  E -- não --> A
+  E -- sim --> F{Mesmo dia e modalidade de um treino previsto?}
+  F -- sim --> G[Soma as atividades compatíveis do dia, ADR 0046]
+  G --> H[Treino marcado como feito, com resumo 4.3]
+  H --> H1[Musculação assume a divisão prevista 4.5]
+  H1 --> I[Card mostra campo opcional: como foi? ADR 0048, 4.10]
+  F -- não: dia sem treino, outro dia ou outra modalidade --> J[Conta como carga fora do plano, ADR 0045]
+  H --> K{Muito acima do previsto?}
+  J --> K
+  K -- não --> A
+  K -- sim, afeta os próximos treinos --> AJ[Ajuste automático com aviso 4.8]
+  AJ --> A
+  H --> REV{Treino estava como não feito com ajuste?}
+  REV -- sim: atividade chegou depois das 22h --> RV[Ajuste revertido ou reavaliado 4.7]
+```
+
+### Marcações do usuário
+
+```mermaid
+flowchart TD
+  A([Card do treino no Hoje ou detalhe do treino]) --> B{Ação}
+  B -- desmarcar feito --> C[Treino volta a pendente; atividades viram carga fora do plano 4.4]
+  B -- marcar feito sem atividade --> D[Só o status, sem distância, tempo nem pace 4.4]
+  D --> D1[Musculação: corrigir a divisão feita 4.5]
+  B -- não foi ou não será feito --> E[Ajuste automático na hora 4.6]
+  B -- trocar dia --> F[Ação pronta: liga a atividade a outro treino, ADR 0045]
+  B -- feedback --> G[Texto livre, segue a jornada 5]
+  E --> N([Notificações: antes e depois, desfazer o mais recente])
+  F --> N
+```
+
+### Rotina das 22h, no fuso do usuário
+
+```mermaid
+flowchart TD
+  A([22h]) --> B[Última consulta ao Strava, respeitando os 30 min]
+  B --> C{Sincronização ok?}
+  C -- não --> P[Treinos do dia ficam pendentes, ADR 0049]
+  P --> P1{Mais de 3 dias sem sincronizar?}
+  P1 -- sim --> P2[Pede para marcar os pendentes manualmente]
+  P1 -- não --> FIM([Aguarda a sincronização voltar])
+  C -- sim --> D[Processa dias pendentes, se houver]
+  D --> E{Treino sem atividade nem marcação?}
+  E -- sim --> F[Conta como não feito e ajusta o plano 4.7]
+  F --> N[Notificações: antes e depois]
+  E -- não --> G
+  N --> G{Último dia da semana do plano?}
+  G -- sim --> H([Detalha a próxima semana, ADR 0044])
+  G -- não --> FIM2([Fim do dia])
+```
