@@ -10,7 +10,7 @@ O nível de corrida é uma entrada do plano genérico (ADR 0008). O público é 
 ## Decisão
 
 - Quando houver histórico no Strava, o app sugere o nível a partir da atividade recente (frequência, volume, maior distância contínua), e a pessoa confirma ou ajusta.
-- Sem histórico, a pessoa escolhe o nível.
+- Sem histórico (ex.: conectou o Strava, que é obrigatório pelo ADR 0019, mas ainda não tem atividades), a pessoa escolhe o nível.
 - Em qualquer caso, cada nível aparece com uma descrição curta, para facilitar a escolha.
 
 ## Consequências
