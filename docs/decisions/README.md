@@ -58,6 +58,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0050 | [Mensagens em Notificações assinadas pelo Piu](0050-notificacoes-assinadas-pelo-piu.md) | Aceita |
 | 0051 | [Dor ou lesão no feedback não gera recomendação automática de procurar um profissional](0051-sem-recomendacao-automatica-de-profissional.md) | Aceita |
 | 0052 | [Proposta pendente vence quando o plano muda e é refeita pelo Piu](0052-proposta-desatualizada-e-refeita.md) | Aceita |
+| 0053 | [Editar uma proposta é conversar com o Piu](0053-editar-proposta-e-conversar-com-o-piu.md) | Aceita |
 
 ## Como criar um novo ADR
 
