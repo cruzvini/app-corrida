@@ -14,7 +14,7 @@ Onboarding, setup e geração formam um **fluxo linear em tela cheia, sem a barr
 1. Login por e-mail com link mágico (ADR 0020).
 2. Conexão com o Strava, obrigatória (ADR 0019).
 3. Nível de corrida, sugerido e confirmado (ADR 0015).
-4. Idade e peso.
+4. Idade, peso e, opcionalmente, lesões ou limitações (ADR 0039).
 5. Frequência de corrida e de musculação, com a divisão (ADR 0014).
 6. Tipo de plano: genérico ou específico.
 7. No plano específico: distância, data ou prazo, e pace alvo sugerido (ADRs 0016 e 0021), com aviso de risco quando necessário (ADR 0017).

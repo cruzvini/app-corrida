@@ -52,7 +52,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      7. Só eu vejo meus dados. Outro usuário não acessa nada meu (RLS, ADR 0003).
    - **Jornada 2, setup do plano (validada):**
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
-     2. Informo idade e peso.
+     2. Informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).
      3. Informo quantos dias por semana quero correr e se faço musculação. Se faço, informo quantos dias e a divisão (ex.: 2 superiores, 1 inferiores) (ADR 0014).
      4. Escolho entre plano genérico e plano específico.
      5. No plano específico, informo a distância (qualquer valor) e a data da prova ou o prazo da meta (ADR 0016).
@@ -117,6 +117,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 - Resumo do que está indo bem e do que precisa de atenção.
 - Calendário com os treinos.
 - PRs por distância.
+- Mais dados no setup: sono e rotina, zonas de frequência cardíaca, altura e sexo (ADR 0039).
 
 ## Próximos passos
 
