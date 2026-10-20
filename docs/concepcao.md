@@ -50,6 +50,15 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      5. Se eu recusar ou cancelar a autorização, o app explica por que a conexão é necessária e permite tentar de novo.
      6. Se eu não tiver histórico no Strava, sigo para o setup e escolho meu nível manualmente.
      7. Só eu vejo meus dados. Outro usuário não acessa nada meu (RLS, ADR 0003).
+   - **Jornada 2, setup do plano (rascunho a validar):**
+     1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
+     2. Informo idade e peso.
+     3. Informo quantos dias por semana quero correr e se faço musculação. Se faço, informo quantos dias e a divisão (ex.: 2 superiores, 1 inferiores) (ADR 0014).
+     4. Escolho entre plano genérico e plano específico.
+     5. No plano específico, informo a distância (qualquer valor) e a data da prova ou o prazo da meta (ADR 0016).
+     6. No plano específico, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
+     7. Se a meta for muito fora do comum para o meu nível ou o prazo, o app explica os riscos e sugere alternativas. Posso seguir mesmo assim, e minha escolha fica registrada (ADR 0017).
+     8. Antes de gerar o plano, vejo um resumo das minhas respostas e posso editar qualquer uma.
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
 ## Ideias de features (não priorizadas)
@@ -63,7 +72,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** critérios de aceitação da jornada 2, setup do plano (card 5): o pace alvo é obrigatório ou opcional no plano específico?
+1. **Próxima pergunta:** validar os critérios de aceitação da jornada 2, setup do plano (card 5).
 2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
