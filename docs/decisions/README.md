@@ -65,6 +65,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0057 | [Ação pronta "trocar dia" dentro da semana atual do plano](0057-acao-trocar-dia.md) | Aceita |
 | 0058 | ["Pular" e "não será feito" são a mesma ação](0058-pular-e-nao-sera-feito-sao-a-mesma-acao.md) | Aceita |
 | 0059 | [Ação pronta "semana mais leve" reduz só a corrida restante da semana](0059-acao-semana-mais-leve.md) | Aceita |
+| 0060 | [Ação pronta "adiar a prova" recalcula a estrutura pelas regras](0060-acao-adiar-a-prova.md) | Aceita |
 
 ## Como criar um novo ADR
 
