@@ -97,7 +97,14 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      6. Treinos passados (feitos ou não feitos) nunca são alterados por um replanejamento.
      7. Vejo o histórico de replanejamentos: o que mudou, quando e por quê.
      8. Se a IA estiver indisponível, o app avisa que a conversa livre não está disponível no momento, e as ações prontas continuam funcionando.
-6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
+6. [x] Requisitos não funcionais (validados):
+   - Idioma: português (pt-BR). Unidades: km e min/km. Fuso horário: o do usuário (usado na regra das 22h, ADR 0026).
+   - Segredos (chaves da IA, do Strava e do Supabase) só no backend, via variáveis de ambiente; nunca no app nem no git.
+   - Tokens do Strava armazenados só no backend; o app nunca os vê.
+   - Infraestrutura em planos gratuitos (Supabase Free). Projetos gratuitos são pausados depois de cerca de 1 semana sem uso.
+   - Disponibilidade sem garantia formal (best-effort) no protótipo.
+   - Desempenho: as telas principais abrem com os dados já salvos, sem esperar o Strava ou a IA; as ações com IA mostram estado de carregamento.
+   - Isolamento de dados: RLS em todas as tabelas com dados de usuário (ADR 0003).
    - Dados enviados à IA: todos, incluindo identificação; reavaliar antes de abrir para outras pessoas ([ADR 0029](decisions/0029-dados-enviados-ao-provedor-de-ia.md)).
    - Exclusão de conta e dados: fora do MVP; reavaliar antes de abrir para outras pessoas ([ADR 0030](decisions/0030-exclusao-de-conta-adiada.md)).
    - Custos da IA: teto mensal no provedor e limite diário de 20 mensagens de conversa livre por usuário ([ADR 0031](decisions/0031-controle-de-custos-da-ia.md)).
@@ -113,9 +120,11 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** validar os demais requisitos não funcionais (card 6).
-2. Seguir no card 6, uma decisão por vez.
-3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
+O épico #1 (Concepção e escopo) está com os 6 cards concluídos.
+
+1. Encerrar o épico #1 no board, depois do aceite do usuário.
+2. Iniciar o épico #2 (Design, marca e fluxos), a partir das 6 jornadas validadas.
+3. **Antes de abrir para amigos e família**, reavaliar: ADR 0013 (questionário de prontidão), ADR 0029 (dados enviados à IA), ADR 0030 (exclusão de conta) e ADR 0009 (Apple Health / Health Connect).
 4. Pendências do repositório:
    - trocar a descrição da label `epic` de "Épica" para "Épico";
    - avaliar um `.gitattributes` para padronizar as quebras de linha (os avisos LF/CRLF aparecem no Windows).
