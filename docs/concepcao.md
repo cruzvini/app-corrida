@@ -14,21 +14,30 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
 
 ## Decisões tomadas
 
-- Musculação entra no plano como carga que afeta a corrida, No setup, o app pergunta a frequência de treino, se o usuário faz musculação ou só corrida, quantos dias de cada um e o grupo muscular de cada dia. O Strava confirma o que aconteceu, e o usuário pode corrigir o grupo muscular ([ADR 0014](decisions/0014-musculacao-como-carga-no-plano.md)).
+- Musculação entra no plano como carga que afeta a corrida, O setup define o nível de corrida e a frequência de cada modalidade (ex.: musculação 3x, sendo 2 superiores e 1 inferiores). O plano distribui os treinos em dias específicos. O Strava e a interação do usuário confirmam o que aconteceu ([ADR 0014](decisions/0014-musculacao-como-carga-no-plano.md)).
 
 ## Cards do épico
 
-1. [ ] Problema e objetivo: rascunho acima; falta definir como medir se deu certo.
+1. [x] Problema e objetivo. Funcionalidade central, que é o critério de sucesso: **planejar treinos, replanejar com flexibilidade e acompanhar o plano no dia a dia.** O resto é feature.
 2. [ ] Público e personas: você no protótipo; amigos e família depois.
 3. [ ] Jornadas principais: onboarding, conexão com o Strava, criação do plano, treino sincronizado, feedback e replanejamento.
 4. [ ] Escopo do MVP: o que entra, o que fica de fora e o que já foi adiado (ADR 0013).
 5. [ ] Critérios de aceitação de cada jornada (definidos pelo usuário).
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
+## Ideias de features (não priorizadas)
+
+Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
+
+- Dashboard com o andamento do plano.
+- Resumo do que está indo bem e do que precisa de atenção.
+- Calendário com os treinos.
+- PRs por distância.
+
 ## Próximos passos
 
-1. **Próxima pergunta:** definir como medir o sucesso do app (card 1).
-2. Seguir para os cards 2 a 6, uma decisão por vez.
+1. **Próxima pergunta:** público e personas (card 2).
+2. Seguir para os cards 3 a 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
    - trocar a descrição da label `epic` de "Épica" para "Épico";

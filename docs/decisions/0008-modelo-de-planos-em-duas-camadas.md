@@ -18,4 +18,4 @@ Modelar os planos em duas camadas:
 - O plano específico estende o genérico, o que permite reaproveitar regras.
 - O modelo de dados e o motor de regras precisam suportar as duas camadas.
 - O usuário pode alterar ou replanejar qualquer camada a qualquer momento.
-- O plano genérico também inclui a divisão entre corrida e musculação e o grupo muscular de cada dia (ver ADR 0014).
+- O plano genérico também inclui a frequência semanal de corrida e de musculação e a divisão da musculação (ex.: 2 superiores, 1 inferiores). Ver ADR 0014.
