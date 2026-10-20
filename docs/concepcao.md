@@ -61,7 +61,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      8. Antes de gerar o plano, vejo um resumo das minhas respostas e posso editar qualquer uma.
    - **Jornada 3, geração do plano (rascunho a validar):**
      1. Depois do setup, o app gera o plano e mostra a estrutura completa (fases e volume semanal) e as próximas 1 a 2 semanas detalhadas (ADR 0023).
-     2. Cada treino de corrida detalhado mostra o tipo (ex.: leve, intervalado, longão), a distância ou duração e a intensidade, com pace alvo quando houver meta.
+     2. Cada treino de corrida detalhado mostra o tipo (ex.: leve, limiar, intervalado, progressivo, longão) e é dividido em blocos (ex.: aquecimento, repetições, recuperação, desaquecimento). Cada bloco tem distância ou duração e um pace alvo, ou uma faixa de intensidade quando não houver meta de pace (ADR 0024).
      3. Os treinos respeitam os dias de corrida e musculação que informei, e a musculação aparece com a divisão do dia (ex.: inferiores).
      4. O plano não coloca corrida intensa logo depois de um treino de inferiores.
      5. No plano específico, o plano termina na data da prova ou no prazo da meta.
