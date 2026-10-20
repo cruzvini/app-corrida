@@ -11,7 +11,7 @@ O setup pede nível, idade, peso, frequência e meta (jornada 2). Ao definir o P
 
 - O setup ganha um campo **opcional de texto livre "Lesões ou limitações atuais"** (ex.: "joelho sensível em descidas"), também editável em Perfil > Meu treino.
 - O texto é contexto para a IA na geração e nos ajustes do plano, como o feedback (ADR 0028).
-- Se o texto mencionar dor ou lesão, a resposta recomenda procurar orientação profissional (mesma regra do critério 5.6).
+- Se o texto mencionar dor ou lesão, ele entra como contexto do plano, sem recomendação automática de procurar um profissional (ADR 0051).
 - Sono e rotina, zonas de FC, altura e sexo ficam fora do MVP e vão para as ideias de features.
 
 ## Consequências

@@ -16,6 +16,6 @@ Depois de um treino, o usuário pode deixar um feedback opcional em texto (ADR 0
 ## Consequências
 
 - A IA precisa classificar se o feedback pede ou não uma mudança. Nos testes, o provedor fake (ADR 0005) simula os dois casos.
-- Quando o feedback mencionar dor ou lesão, a resposta recomenda procurar orientação profissional, além de qualquer ajuste proposto. O app não faz diagnóstico.
+- O app não faz diagnóstico. Dor ou lesão no feedback tem o mesmo tratamento dos outros feedbacks, sem recomendação automática de procurar um profissional (ADR 0051).
 - Só os feedbacks que pedem mudança geram chamada de ajuste à IA, o que limita o custo.
 - O feedback é dado de saúde em texto livre e deve ser tratado com o mesmo cuidado de privacidade dos demais dados (RLS, ADR 0003, e requisitos não funcionais).

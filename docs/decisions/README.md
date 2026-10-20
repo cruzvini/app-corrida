@@ -56,6 +56,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0048 | [Feedback pós-treino como campo opcional no card do Hoje](0048-feedback-opcional-no-card-do-hoje.md) | Aceita |
 | 0049 | [Falha na sincronização com o Strava suspende o "não feito" automático](0049-falha-de-sincronizacao-suspende-nao-feito.md) | Aceita |
 | 0050 | [Mensagens em Notificações assinadas pelo Piu](0050-notificacoes-assinadas-pelo-piu.md) | Aceita |
+| 0051 | [Dor ou lesão no feedback não gera recomendação automática de procurar um profissional](0051-sem-recomendacao-automatica-de-profissional.md) | Aceita |
 
 ## Como criar um novo ADR
 

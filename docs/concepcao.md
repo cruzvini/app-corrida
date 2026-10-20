@@ -87,7 +87,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      3. Posso deixar feedback em texto sobre qualquer treino, feito ou não feito.
      4. Todo feedback fica no histórico do treino e é considerado nos próximos detalhamentos e ajustes (ADR 0028).
      5. Se o feedback indicar que algo precisa mudar, recebo na caixa de entrada uma proposta de ajuste com o antes e o depois, e aceito, edito ou descarto antes de aplicar.
-     6. Se o feedback mencionar dor ou lesão, a resposta recomenda procurar orientação profissional, além de qualquer ajuste proposto.
+     6. Se o feedback mencionar dor ou lesão, ele tem o mesmo tratamento dos outros feedbacks, sem recomendação automática de procurar um profissional. Posso ajustar o nível dos treinos com o Piu (ADR 0051).
      7. Se o feedback não pedir mudança, o plano não muda e não recebo mensagem.
    - **Jornada 6, replanejamento (validada):**
      1. Em qualquer treino ou semana, tenho acesso às ações prontas: pular treino, trocar dia, semana mais leve e, no plano específico, adiar a prova (ADR 0018).

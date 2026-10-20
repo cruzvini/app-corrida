@@ -19,4 +19,4 @@ Todas as mensagens em Notificações saem assinadas pelo Piu, com o avatar dele 
 - O usuário ouve uma voz só no app, seja nas mensagens automáticas, seja na conversa.
 - As mensagens automáticas também precisam seguir o guia de tom de voz, inclusive os textos gerados por template sem IA.
 - O Piu precisa receber a mensagem de origem como contexto da conversa, junto com o plano (ADR 0035).
-- Continua valendo que o app não faz diagnóstico. A recomendação de procurar um profissional em caso de dor (ADR 0028) também sai na voz do Piu.
+- Continua valendo que o app não faz diagnóstico (ADR 0028).
