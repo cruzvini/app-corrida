@@ -69,6 +69,17 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      7. Antes de aceitar, posso pedir ajustes. O plano só fica ativo depois que eu aceito.
      8. As semanas seguintes são detalhadas automaticamente, e recebo um resumo na caixa de entrada.
      9. Se a geração falhar (ex.: IA indisponível), o app avisa e permite tentar de novo, sem perder minhas respostas do setup.
+   - **Jornada 4, dia a dia (rascunho a validar):**
+     1. Ao abrir o app, vejo o treino de hoje, com tipo e blocos, e os treinos da semana.
+     2. O app sincroniza o Strava periodicamente, e eu também posso sincronizar com pull-to-refresh (ADR 0006).
+     3. Quando sincroniza uma atividade compatível com o treino do dia, o treino é marcado como feito automaticamente, com o resumo da atividade (distância, duração, pace médio) (ADR 0025).
+     4. Posso desmarcar um treino feito, ou marcar como feito sem atividade no Strava.
+     5. Na musculação, o treino marcado assume a divisão prevista, e posso corrigir (ex.: "fiz superiores, não inferiores") (ADR 0014).
+     6. Posso informar a qualquer momento que um treino não foi ou não será feito, e o plano se ajusta na hora (ADR 0026).
+     7. Às 22h, um treino sem atividade nem marcação conta como não feito, e o plano se ajusta automaticamente. Se a atividade chegar depois, o ajuste é revertido ou reavaliado.
+     8. Uma atividade fora do plano, ou um treino muito acima do previsto, conta como carga. Se afetar os próximos treinos, o plano se ajusta (ADR 0027).
+     9. Todo ajuste automático chega à caixa de entrada com o antes e o depois e pode ser desfeito.
+     10. Depois de um treino, posso deixar um feedback em texto, se quiser (ex.: "senti a panturrilha").
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
 ## Ideias de features (não priorizadas)
@@ -82,7 +93,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** jornada 4 (card 5): o que acontece com atividades fora do plano.
+1. **Próxima pergunta:** validar os critérios de aceitação da jornada 4, dia a dia (card 5).
 2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
