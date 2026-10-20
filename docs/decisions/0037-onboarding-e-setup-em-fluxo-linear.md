@@ -18,9 +18,10 @@ Onboarding, setup e geração formam um **fluxo linear em tela cheia, sem a barr
 5. Frequência de corrida e de musculação, com a divisão (ADR 0014).
 6. Tipo de plano: genérico ou específico.
 7. No plano específico: distância, data ou prazo, e pace alvo sugerido (ADRs 0016 e 0021), com aviso de risco quando necessário (ADR 0017).
-8. Resumo editável das respostas (critério 2.8).
-9. Geração do plano, com estado de carregamento e nova tentativa em caso de falha (critério 3.9).
-10. Revisão e aceite. "Pedir ajustes" abre o Piu (ADR 0035) com o plano como contexto.
+8. Data de início do plano (ADR 0043).
+9. Resumo editável das respostas (critério 2.9).
+10. Geração do plano, com estado de carregamento e nova tentativa em caso de falha (critério 3.9).
+11. Revisão e aceite. "Pedir ajustes" abre o Piu (ADR 0035) com o plano como contexto.
 
 Depois do aceite, o app passa para a barra de abas e abre no Hoje.
 

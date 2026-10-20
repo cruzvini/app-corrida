@@ -56,18 +56,49 @@ flowchart TD
   G -- não --> DIAS
   G1 --> DIAS
   DIAS((dias salvos, ADR 0041)) --> H{Tipo de plano 2.4}
-  H -- genérico --> R
+  H -- genérico --> INI
   H -- específico --> I[Distância livre e data da prova ou prazo 2.5]
   I --> J{Histórico suficiente para pace?}
   J -- sim --> J1[Pace alvo sugerido: aceitar ou ajustar 2.6]
   J -- não --> J2[Sem meta de pace, foco em completar a distância]
-  J1 --> K{Regras detectam risco?}
-  J2 --> K
+  J1 --> INI
+  J2 --> INI
+  INI["Quando começar: hoje, próximos 5 dias ou outro dia no calendário 2.8"] --> K{Regras detectam risco?}
   K -- sim --> K1[Riscos e alternativas 2.7]
-  K1 -- ajustar meta --> I
+  K1 -- ajustar meta ou data de início --> I
   K1 -- seguir mesmo assim, escolha registrada --> R
-  K -- não --> R[Resumo das respostas 2.8]
+  K -- não --> R[Resumo das respostas 2.9]
   R -- editar um item --> EDIT[Volta à tela do item e retorna ao resumo]
   EDIT --> R
   R -- gerar plano --> GER([Jornada 3: geração])
 ```
+
+## Jornada 3: geração do plano
+
+Segue o fluxo "IA propõe, regras validam" (ADR 0022) e o detalhe progressivo (ADR 0023). Ainda dentro do fluxo linear, sem a barra de abas (ADR 0037).
+
+```mermaid
+flowchart TD
+  A([Resumo do setup: gerar plano]) --> B[Carregando: montando seu plano]
+  B --> C[IA propõe o plano em formato estruturado]
+  C --> D{Resposta da IA ok?}
+  D -- falhou ou fora do schema --> D1{Ainda há tentativas automáticas?}
+  D1 -- sim --> C
+  D1 -- não --> ERR[Avisa a falha e oferece tentar de novo, respostas do setup preservadas 3.9]
+  ERR -- tentar de novo --> B
+  D -- sim --> E{Regras: erro de coerência?}
+  E -- sim, ex.: treino em dia não marcado --> D1
+  E -- não --> F[Revisão do plano 3.1]
+  F --> F1["Estrutura completa: objetivo, fases e volume semanal"]
+  F --> F2["Próximas 1 a 2 semanas detalhadas, treinos em blocos 3.2"]
+  F --> G{Regras detectaram risco?}
+  G -- sim --> G1[Aviso e alternativas antes de aceitar 3.6]
+  G1 --> H
+  G -- não --> H{Decisão do usuário}
+  H -- pedir ajustes --> PIU[Piu com o plano como contexto 3.7]
+  PIU -- IA refaz a proposta, revisão mostra o antes e o depois --> C
+  H -- aceitar --> ATV[Plano ativo a partir da data escolhida, ADR 0043]
+  ATV --> HOJE([Barra de abas, aba Hoje])
+```
+
+Depois do aceite, as semanas seguintes são detalhadas automaticamente, e cada uma gera um resumo em Notificações (3.8).

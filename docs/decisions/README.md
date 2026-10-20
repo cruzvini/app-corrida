@@ -48,6 +48,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0040 | [Falha na importação do histórico do Strava não bloqueia o setup](0040-falha-na-importacao-do-strava.md) | Aceita |
 | 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Aceita |
 | 0042 | [Idade sem limite mínimo, só com validação de valor plausível](0042-idade-sem-limite-minimo.md) | Aceita |
+| 0043 | [Data de início do plano escolhida no setup](0043-data-de-inicio-escolhida-no-setup.md) | Aceita |
 
 ## Como criar um novo ADR
 

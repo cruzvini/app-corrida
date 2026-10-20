@@ -58,7 +58,8 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      5. No plano específico, informo a distância (qualquer valor) e a data da prova ou o prazo da meta (ADR 0016).
      6. No plano específico, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
      7. Se a meta for muito fora do comum para o meu nível ou o prazo, o app explica os riscos e sugere alternativas. Posso seguir mesmo assim, e minha escolha fica registrada (ADR 0017).
-     8. Antes de gerar o plano, vejo um resumo das minhas respostas e posso editar qualquer uma.
+     8. Escolho quando quero começar: hoje, um dos próximos 5 dias ou outra data no calendário ([ADR 0043](decisions/0043-data-de-inicio-escolhida-no-setup.md)).
+     9. Antes de gerar o plano, vejo um resumo das minhas respostas e posso editar qualquer uma.
    - **Jornada 3, geração do plano (validada):**
      1. Depois do setup, o app gera o plano e mostra a estrutura completa (fases e volume semanal) e as próximas 1 a 2 semanas detalhadas (ADR 0023).
      2. Cada treino de corrida detalhado mostra o tipo (ex.: leve, limiar, intervalado, progressivo, longão) e é dividido em blocos (ex.: aquecimento, repetições, recuperação, desaquecimento). Cada bloco tem distância ou duração e um pace alvo, ou uma faixa de intensidade quando não houver meta de pace (ADR 0024).
