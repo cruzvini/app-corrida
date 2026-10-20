@@ -1,6 +1,6 @@
 # ADR 0004: Motor de regras como pacote isolado
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada parcialmente pelo ADR 0022)
 - **Data:** 2026-10-19
 
 ## Contexto
@@ -16,4 +16,5 @@ Implementar o motor de regras como pacote TypeScript isolado em `packages/rules-
 - Facilita testes unitários, a base da pirâmide (ADR 0011).
 - O mesmo motor pode rodar no app ou no backend.
 - A IA complementa as regras, sem substituí-las.
+- **Revisão (ADR 0022):** a geração do plano passa a ser proposta pela IA. O motor de regras valida a proposta e mantém as ações prontas e as sugestões de nível e pace.
 - A interface do pacote precisa ser bem definida e estável.

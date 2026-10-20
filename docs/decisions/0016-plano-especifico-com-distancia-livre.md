@@ -13,7 +13,7 @@ No plano específico, o usuário informa qualquer distância de prova ou de meta
 
 ## Consequências
 
-- O motor de regras (ADR 0004) precisa gerar planos parametrizados pela distância, e não por modelos fixos por prova.
-- É preciso decidir como o app lida com metas incompatíveis com o nível ou com o prazo (ex.: não praticante com uma meta longa em pouco tempo).
+- O motor de regras (ADR 0004) precisa validar planos para qualquer distância, com regras parametrizadas pela distância e não por modelos fixos por prova. A geração é proposta pela IA (ADR 0022).
+- Metas incompatíveis com o nível ou com o prazo geram aviso, sem bloqueio (ADR 0017).
 - Os testes precisam cobrir distâncias variadas e casos de borda (distâncias muito curtas ou muito longas).
 - A IA (ADR 0005) pode ajudar a explicar e ajustar planos para distâncias incomuns, mas os limites de segurança ficam nas regras.

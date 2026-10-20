@@ -9,7 +9,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0001 | [Monorepo com pasta dedicada de testes](0001-monorepo-com-pasta-de-testes.md) | Aceita |
 | 0002 | [Stack do app: React Native + Expo + TypeScript, iOS primeiro](0002-stack-react-native-expo-typescript.md) | Aceita |
 | 0003 | [Backend: Supabase com Postgres, auth e RLS](0003-backend-supabase.md) | Aceita |
-| 0004 | [Motor de regras como pacote isolado](0004-motor-de-regras-isolado.md) | Aceita |
+| 0004 | [Motor de regras como pacote isolado](0004-motor-de-regras-isolado.md) | Aceita (revisada pelo ADR 0022) |
 | 0005 | [Provedor de IA agnóstico, com Claude como primeira implementação e fake para testes](0005-provedor-de-ia-agnostico.md) | Aceita |
 | 0006 | [Strava como fonte inicial, com polling agendado e pull-to-refresh](0006-strava-polling-e-pull-to-refresh.md) | Aceita |
 | 0007 | [Feedback em caixa de entrada no app, sem push](0007-feedback-em-caixa-de-entrada.md) | Aceita |
@@ -27,6 +27,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0019 | [Conexão com o Strava obrigatória](0019-conexao-strava-obrigatoria.md) | Aceita |
 | 0020 | [Autenticação por e-mail com link mágico](0020-autenticacao-email-link-magico.md) | Aceita |
 | 0021 | [Pace alvo sugerido a partir do Strava](0021-pace-alvo-sugerido-pelo-strava.md) | Aceita |
+| 0022 | [IA propõe o plano, motor de regras valida](0022-ia-propoe-regras-validam-plano.md) | Aceita |
 
 ## Como criar um novo ADR
 
