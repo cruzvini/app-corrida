@@ -35,11 +35,12 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    4. Dia a dia: ver o treino do dia; o Strava sincroniza; o usuário confirma ou ajusta.
    5. Feedback: análise do treino na caixa de entrada.
    6. Replanejamento: o usuário pede uma mudança a qualquer momento, e o app ajusta o plano.
-4. [ ] Escopo do MVP: o que entra, o que fica de fora e o que já foi adiado (ADR 0013).
+4. [x] Escopo do MVP (validado):
    - Entram no MVP os dois tipos de plano: genérico e específico (ADR 0008).
    - Plano específico com distância livre ([ADR 0016](decisions/0016-plano-especifico-com-distancia-livre.md)).
    - Meta fora do comum: o app avisa sobre os riscos e sugere alternativas, sem bloquear; as regras detectam e a IA explica; a decisão é do usuário ([ADR 0017](decisions/0017-avisar-riscos-sem-bloquear-plano.md)).
    - Replanejamento por ações prontas, aplicadas direto, e por conversa livre, com revisão antes de aplicar; é possível desfazer a última ação pronta ([ADR 0018](decisions/0018-replanejamento-acoes-prontas-e-conversa.md)).
+   - **Fora do MVP:** notificações push (ADR 0007); Apple Health / Health Connect (ADR 0009); questionário de prontidão para saúde e registro manual de treinos (ADR 0013); prescrição de exercícios de musculação (ADR 0014); dashboard, resumo, calendário e PRs por distância (ideias de features); versionamento completo do plano (ADR 0018); TestFlight / App Store (ADR 0010).
 5. [ ] Critérios de aceitação de cada jornada (definidos pelo usuário).
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
@@ -54,8 +55,8 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** validar a lista do que fica fora do MVP (card 4).
-2. Seguir para os cards 4 a 6, uma decisão por vez.
+1. **Próxima pergunta:** critérios de aceitação da jornada 1, onboarding (card 5).
+2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
    - trocar a descrição da label `epic` de "Épica" para "Épico";
