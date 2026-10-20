@@ -16,4 +16,6 @@ A musculação faz parte do plano de forma leve: o app registra quando ela acont
 - O modelo de plano (ADR 0008) passa a ter sessões de musculação, além das de corrida.
 - O motor de regras (ADR 0004) considera a musculação ao distribuir dias e intensidade de corrida.
 - A análise de treinos cobre a musculação de forma simplificada (presença, duração, esforço).
-- A fonte dos dados de musculação ainda será decidida.
+- **Fonte dos dados:** os dias de musculação são declarados no plano, e o Strava confirma o que aconteceu. No Strava, a atividade costuma chegar com o nome genérico (ex.: "Weight Training").
+- O usuário pode anotar o grupo muscular treinado (ombro, perna, peito, costas...) em uma atividade sincronizada. Isso é uma anotação, e não o registro manual de treinos adiado no ADR 0013.
+- O grupo muscular importa para a corrida: treino de perna, por exemplo, afeta a recuperação e o esforço dos treinos seguintes.
