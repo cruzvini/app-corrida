@@ -19,7 +19,9 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
 ## Cards do épico
 
 1. [x] Problema e objetivo. Funcionalidade central, que é o critério de sucesso: **planejar treinos, replanejar com flexibilidade e acompanhar o plano no dia a dia.** O resto é feature.
-2. [ ] Público e personas: você no protótipo; amigos e família depois.
+2. [ ] Público e personas: o usuário no protótipo; depois amigos e família, com **perfil misto** (alguns iniciantes, outros mais experientes).
+   - Impacto: o setup e o plano precisam funcionar para quem nunca planejou treino, com mais orientação e progressão conservadora, e também para quem já corre.
+   - Ao abrir para iniciantes, reavaliar o questionário de prontidão para saúde (ADR 0013).
 3. [ ] Jornadas principais: onboarding, conexão com o Strava, criação do plano, treino sincronizado, feedback e replanejamento.
 4. [ ] Escopo do MVP: o que entra, o que fica de fora e o que já foi adiado (ADR 0013).
 5. [ ] Critérios de aceitação de cada jornada (definidos pelo usuário).
@@ -36,7 +38,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** público e personas (card 2).
+1. **Próxima pergunta:** como determinar o nível de corrida (card 2).
 2. Seguir para os cards 3 a 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
