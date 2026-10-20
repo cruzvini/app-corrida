@@ -36,6 +36,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0028 | [Feedback do usuário vira contexto e gera proposta de ajuste quando relevante](0028-feedback-do-usuario-como-contexto.md) | Aceita |
 | 0029 | [Dados enviados ao provedor de IA](0029-dados-enviados-ao-provedor-de-ia.md) | Aceita |
 | 0030 | [Exclusão de conta e dados fora do MVP](0030-exclusao-de-conta-adiada.md) | Adiada |
+| 0031 | [Controle de custos da IA com teto mensal e limite por usuário](0031-controle-de-custos-da-ia.md) | Aceita |
 
 ## Como criar um novo ADR
 
