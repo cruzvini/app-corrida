@@ -45,6 +45,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita |
 | 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita |
 | 0039 | [Lesões e limitações como campo opcional no setup](0039-lesoes-e-limitacoes-no-setup.md) | Aceita |
+| 0040 | [Falha na importação do histórico do Strava não bloqueia o setup](0040-falha-na-importacao-do-strava.md) | Aceita |
 
 ## Como criar um novo ADR
 
