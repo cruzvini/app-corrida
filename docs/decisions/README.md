@@ -38,6 +38,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0030 | [Exclusão de conta e dados fora do MVP](0030-exclusao-de-conta-adiada.md) | Adiada |
 | 0031 | [Controle de custos da IA com teto mensal e limite por usuário](0031-controle-de-custos-da-ia.md) | Aceita |
 | 0032 | [Nome do app: Live Run](0032-nome-do-app-live-run.md) | Aceita |
+| 0033 | [Tom de voz: parceiro de treino](0033-tom-de-voz-parceiro-de-treino.md) | Aceita |
 
 ## Como criar um novo ADR
 
