@@ -15,7 +15,7 @@ O nível de corrida é uma entrada do plano genérico (ADR 0008). O público é 
 
 ## Consequências
 
-- As descrições dos níveis viram texto de produto, validado pelo usuário (rascunho em `docs/concepcao.md`).
+- As descrições dos níveis viram texto de produto, validado pelo usuário (em `docs/concepcao.md`).
 - Os critérios de inferência (limites de frequência, volume e distância) serão definidos no épico "Motor de regras" e testados como regras unitárias (ADR 0004).
 - A sugestão precisa ser explicável (ex.: "sugerimos intermediário porque você correu 2x por semana nas últimas 8 semanas").
 - O nível pode mudar com o tempo. Reavaliar o nível é uma forma de replanejamento.
