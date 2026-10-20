@@ -49,7 +49,7 @@ flowchart TD
   C1 -- trocar --> D
   C1 -- confirmar --> E
   B -- não --> D[Escolher nível vendo a descrição de cada um]
-  D --> E[Idade, peso e lesões ou limitações opcional 2.2]
+  D --> E["Idade de 10 a 100 (ADR 0042), peso e lesões ou limitações opcional 2.2"]
   E --> F[Corrida: marcar os dias da semana 2.3]
   F --> G{Faz musculação?}
   G -- sim --> G1[Musculação: marcar os dias e a divisão de cada um]

@@ -125,4 +125,4 @@ O épico #1 (Concepção e escopo) está com os 6 cards concluídos.
 
 O épico #1 foi aceito e encerrado no board em 2026-10-20. A próxima etapa é o épico #2 (Design, marca e fluxos), em `docs/design.md`.
 
-**Antes de abrir para amigos e família**, reavaliar: ADR 0013 (questionário de prontidão), ADR 0029 (dados enviados à IA), ADR 0030 (exclusão de conta) e ADR 0009 (Apple Health / Health Connect).
+**Antes de abrir para amigos e família**, reavaliar: ADR 0013 (questionário de prontidão), ADR 0029 (dados enviados à IA), ADR 0030 (exclusão de conta), ADR 0009 (Apple Health / Health Connect) e ADR 0042 (menores de idade e LGPD).
