@@ -17,4 +17,4 @@ No setup do plano específico, o app sugere um pace alvo a partir do histórico 
 - A sugestão precisa ser explicável (ex.: "seu pace médio nos 5 km das últimas 8 semanas foi 6:10/km").
 - O cálculo da sugestão (ex.: projeção de tempo por distância) será definido no épico "Motor de regras" e coberto por testes unitários.
 - Um pace ajustado muito fora do comum aciona o aviso de riscos (ADR 0017).
-- Falta decidir o comportamento sem histórico suficiente para sugerir.
+- **Sem histórico suficiente:** o plano começa sem meta de pace, com o objetivo de completar a distância. Quando houver treinos sincronizados suficientes, o app sugere um pace alvo pela caixa de entrada (ADR 0007), e o usuário aceita ou ignora.
