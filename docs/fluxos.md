@@ -169,3 +169,52 @@ flowchart TD
   G -- sim --> H([Detalha a próxima semana, ADR 0044])
   G -- não --> FIM2([Fim do dia])
 ```
+
+## Jornada 5: feedback e Notificações
+
+Todas as mensagens em Notificações saem assinadas pelo Piu (ADR 0050). Dor ou lesão segue o mesmo tratamento dos outros feedbacks (ADR 0051, 5.6).
+
+### Feedback
+
+```mermaid
+flowchart TD
+  A([Campo como foi? no Hoje ou detalhe do treino, feito ou não feito 5.3]) --> B[Usuário envia o texto]
+  B --> C[Salva no histórico do treino: feedback salvo 5.4, ADR 0055]
+  C --> D[IA analisa em segundo plano: pede mudança?]
+  D --> E{Análise ok?}
+  E -- falhou --> E1{Ainda há tentativas automáticas?}
+  E1 -- sim --> D
+  E1 -- não --> CTX([Fica só como contexto, sem mensagem de erro])
+  E -- não pede mudança --> CTX2([Plano não muda, sem mensagem 5.7])
+  E -- pede mudança --> F[IA propõe, regras validam, ADR 0022]
+  F --> G([Proposta em Notificações: aguardando você 5.5])
+  C -.-> DEL[Apagar no detalhe do treino, ADR 0056]
+  DEL --> DEL1([Deixa de ser contexto; ajustes e propostas já gerados ficam])
+```
+
+### Notificações
+
+```mermaid
+flowchart TD
+  A([Abrir o app: selo com não lidas no sino 5.2]) --> B[Aba Notificações 5.1]
+  B --> B1[Topo: propostas aguardando você, ADR 0054]
+  B --> B2[Lista: ajustes automáticos, semanas novas, sugestões]
+  B1 --> M[Abrir mensagem: marca como lida]
+  B2 --> M
+  M --> T{Tipo}
+  T -- ajuste automático --> AJ{É o mais recente?}
+  AJ -- sim --> AJ1[Desfazer, ADR 0047]
+  AJ -- não --> PIU[Conversar com o Piu sobre isso, ADR 0050]
+  T -- semana nova ou sugestão --> PIU
+  T -- proposta --> P{Ainda válida?}
+  P -- não: dias afetados mudaram --> V[Marcada como desatualizada, ADR 0052]
+  V --> V1{Piu refaz: ainda pede mudança?}
+  V1 -- sim --> NOVA([Nova proposta aguardando você])
+  V1 -- não --> V2([Mensagem explica que não precisa mudar])
+  P -- sim --> D{Decisão}
+  D -- aceitar --> AC[Aplica no plano; pode desfazer como o mais recente]
+  D -- descartar --> DS([Plano não muda])
+  D -- editar --> ED[Piu com o contexto da notificação, ADR 0053]
+  ED --> ED1[Proposta revisada; a original fica como editada]
+  ED1 --> P
+```
