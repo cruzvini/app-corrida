@@ -1,0 +1,58 @@
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+.yarn/*
+!.yarn/releases
+
+# Segredos e variáveis de ambiente (nunca commitar)
+.env
+.env*
+!.env.example
+*.pem
+*.key
+*.p8
+*.p12
+*.mobileprovision
+
+# Build / saída
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
+
+# Expo / React Native
+.expo/
+.expo-shared/
+web-build/
+expo-env.d.ts
+ios/
+android/
+*.jks
+*.orig.*
+.metro-health-check*
+
+# Supabase (local)
+supabase/.branches/
+supabase/.temp/
+supabase/.env
+
+# Testes
+.jest-cache/
+test-results/
+playwright-report/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
