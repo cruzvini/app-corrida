@@ -14,7 +14,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
 
 ## Decisões tomadas
 
-- Musculação entra no plano como carga que afeta a corrida, com dados vindos do plano e do Strava e anotação opcional do grupo muscular ([ADR 0014](decisions/0014-musculacao-como-carga-no-plano.md)).
+- Musculação entra no plano como carga que afeta a corrida, No setup, o app pergunta a frequência de treino, se o usuário faz musculação ou só corrida, quantos dias de cada um e o grupo muscular de cada dia. O Strava confirma o que aconteceu, e o usuário pode corrigir o grupo muscular ([ADR 0014](decisions/0014-musculacao-como-carga-no-plano.md)).
 
 ## Cards do épico
 
@@ -27,13 +27,9 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
 
 ## Próximos passos
 
-1. **Pergunta em aberto:** quando o grupo muscular de um treino não é informado, o app deve:
-   - assumir pela divisão fixa do plano (ex.: segunda = perna), com correção pelo usuário;
-   - tratar como carga genérica média;
-   - ou perguntar na caixa de entrada?
-2. Definir como medir o sucesso do app (card 1).
-3. Seguir para os cards 2 a 6, uma decisão por vez.
-4. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
-5. Pendências do repositório:
+1. **Próxima pergunta:** definir como medir o sucesso do app (card 1).
+2. Seguir para os cards 2 a 6, uma decisão por vez.
+3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
+4. Pendências do repositório:
    - trocar a descrição da label `epic` de "Épica" para "Épico";
    - avaliar um `.gitattributes` para padronizar as quebras de linha (os avisos LF/CRLF aparecem no Windows).
