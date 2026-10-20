@@ -19,7 +19,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
 ## Cards do épico
 
 1. [x] Problema e objetivo. Funcionalidade central, que é o critério de sucesso: **planejar treinos, replanejar com flexibilidade e acompanhar o plano no dia a dia.** O resto é feature.
-2. [ ] Público e personas: o usuário no protótipo; depois amigos e família, com **perfil misto** (alguns iniciantes, outros mais experientes).
+2. [x] Público e personas: o usuário no protótipo; depois amigos e família, com **perfil misto** (alguns iniciantes, outros mais experientes).
    - Impacto: o setup e o plano precisam funcionar para quem nunca planejou treino, com mais orientação e progressão conservadora, e também para quem já corre.
    - Ao abrir para iniciantes e não praticantes, reavaliar o questionário de prontidão para saúde (ADR 0013). O nível "Não praticante" torna isso mais importante.
    - Nível de corrida: o app sugere pelo Strava e a pessoa confirma; sem histórico, ela escolhe ([ADR 0015](decisions/0015-nivel-de-corrida-sugerido-e-confirmado.md)).
