@@ -16,12 +16,12 @@ Treinos como limiar, intervalado, longão e progressivo não têm um pace único
   - **Progressivo:** blocos com pace cada vez mais rápido.
   - **Longão:** bloco longo em pace confortável, podendo ter um trecho final mais forte.
   - **Leve / regenerativo:** um bloco único com faixa de pace confortável.
-- O usuário pode ver a evolução do pace ao longo do treino, comparando o pace de cada bloco com o alvo.
+- O plano mostra a evolução do pace ao longo do treino, ou seja, como o pace alvo muda de um bloco para o outro. Isso é prescrição: orienta a execução.
 
 ## Consequências
 
 - A proposta da IA (ADR 0022) inclui os blocos, e o motor de regras valida a coerência deles (ex.: pace alvo compatível com o nível e com o pace de referência).
 - O modelo de dados precisa representar o treino como uma lista de blocos.
 - Sem meta de pace (ADR 0021), os blocos usam faixas por intensidade (ex.: confortável, moderado, forte) em vez de valores fixos.
-- Para comparar o executado com o previsto, o app precisa dos dados detalhados da atividade no Strava (laps ou streams de pace), e não só do resumo.
-- Falta definir se a visão de evolução do pace é ao vivo, durante a corrida, ou na análise depois do treino.
+- **Sem análise bloco a bloco:** o app não compara o pace executado com o alvo, nem durante nem depois do treino. Por isso não precisa dos dados detalhados da atividade (laps ou streams), só do resumo.
+- Depois do treino, a interação é marcar o treino como feito ou não feito e, se o usuário quiser, dar um feedback.
