@@ -80,7 +80,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      8. Uma atividade fora do plano, ou um treino muito acima do previsto, conta como carga. Se afetar os próximos treinos, o plano se ajusta (ADR 0027).
      9. Todo ajuste automático chega à caixa de entrada com o antes e o depois e pode ser desfeito.
      10. Depois de um treino, posso deixar um feedback em texto, se quiser (ex.: "senti a panturrilha").
-   - **Jornada 5, feedback e caixa de entrada (rascunho a validar):**
+   - **Jornada 5, feedback e caixa de entrada (validada):**
      1. A caixa de entrada reúne as mensagens do app: ajustes automáticos (com o antes e o depois e a opção de desfazer), semanas novas detalhadas e sugestões (ex.: pace alvo) (ADR 0007).
      2. Ao abrir o app, vejo quantas mensagens não lidas tenho, já que não há notificação push.
      3. Posso deixar feedback em texto sobre qualquer treino, feito ou não feito.
@@ -88,6 +88,15 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      5. Se o feedback indicar que algo precisa mudar, recebo na caixa de entrada uma proposta de ajuste com o antes e o depois, e aceito, edito ou descarto antes de aplicar.
      6. Se o feedback mencionar dor ou lesão, a resposta recomenda procurar orientação profissional, além de qualquer ajuste proposto.
      7. Se o feedback não pedir mudança, o plano não muda e não recebo mensagem.
+   - **Jornada 6, replanejamento (rascunho a validar):**
+     1. Em qualquer treino ou semana, tenho acesso às ações prontas: pular treino, trocar dia, semana mais leve e, no plano específico, adiar a prova (ADR 0018).
+     2. Uma ação pronta é aplicada na hora, mostra o que mudou e pode ser desfeita (a última ação).
+     3. Posso descrever qualquer situação em texto livre (ex.: "vou viajar quinta e sexta") e recebo uma proposta com o antes e o depois, que aceito, edito ou descarto antes de aplicar.
+     4. Se a mudança for arriscada, vejo o aviso e as alternativas, sem bloqueio (ADR 0017).
+     5. Posso mudar os dados do setup a qualquer momento (dias de corrida e musculação, meta, prazo, nível), e o plano é reajustado a partir de hoje.
+     6. Treinos passados (feitos ou não feitos) nunca são alterados por um replanejamento.
+     7. Vejo o histórico de replanejamentos: o que mudou, quando e por quê.
+     8. Se a IA estiver indisponível, o app avisa que a conversa livre não está disponível no momento, e as ações prontas continuam funcionando.
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
 ## Ideias de features (não priorizadas)
@@ -101,7 +110,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** validar os critérios de aceitação da jornada 5, feedback e caixa de entrada (card 5).
+1. **Próxima pergunta:** validar os critérios de aceitação da jornada 6, replanejamento (card 5).
 2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
