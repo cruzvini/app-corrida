@@ -17,4 +17,5 @@ Durante a montagem do plano, quando a meta for muito fora do comum para o nível
 - O retorno sobre riscos faz parte da jornada de setup e geração do plano.
 - A escolha do usuário de seguir apesar do aviso fica registrada no plano. Isso serve de contexto para feedbacks e replanejamentos futuros.
 - O texto deve deixar claro que o app não substitui orientação médica ou profissional.
-- Ainda falta decidir como detectar que uma meta está "fora do comum": por regras, por IA ou pelos dois.
+- **Detecção por regras, explicação pela IA:** o motor de regras (ADR 0004) detecta a meta fora do comum com limites objetivos (ex.: aumento de volume semanal, prazo curto para a distância e o nível). A IA (ADR 0005) explica os riscos e as alternativas de forma personalizada.
+- A detecção é determinística e coberta por testes unitários (ADR 0011). Nos testes, o provedor fake substitui a explicação da IA.
