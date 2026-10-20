@@ -37,6 +37,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    6. Replanejamento: o usuário pede uma mudança a qualquer momento, e o app ajusta o plano.
 4. [ ] Escopo do MVP: o que entra, o que fica de fora e o que já foi adiado (ADR 0013).
    - Entram no MVP os dois tipos de plano: genérico e específico (ADR 0008).
+   - Plano específico com distância livre ([ADR 0016](decisions/0016-plano-especifico-com-distancia-livre.md)).
 5. [ ] Critérios de aceitação de cada jornada (definidos pelo usuário).
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
@@ -51,7 +52,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** distâncias de prova suportadas no plano específico (card 4).
+1. **Próxima pergunta:** o que fazer com metas incompatíveis com o nível ou o prazo (card 4).
 2. Seguir para os cards 4 a 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
