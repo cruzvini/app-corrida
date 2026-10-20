@@ -16,7 +16,7 @@ Um plano totalmente detalhado desde o início fica desatualizado à medida que o
 
 - O usuário vê o plano como um todo (fases e volume) e os treinos detalhados das próximas semanas.
 - Cada novo detalhamento segue o fluxo "IA propõe, regras validam" (ADR 0022), usando a estrutura do plano e os dados reais como entrada.
-- O detalhamento progressivo precisa de um gatilho (ex.: fim da semana ou sincronização de novos treinos), a ser definido.
+- O detalhamento progressivo precisa de um gatilho, definido no [ADR 0044](0044-detalhamento-semanal-na-rotina-das-22h.md): rotina das 22h do último dia de cada semana do plano.
 - **Sem aprovação semanal:** cada nova semana detalhada entra direto no plano, e a caixa de entrada (ADR 0007) recebe um resumo (ex.: "semana 5 pronta: 3 corridas, 24 km"). O usuário pode replanejar quando quiser (ADR 0018).
 - A estrutura (fases e volume) também pode ser ajustada por replanejamento (ADR 0018).
 - O modelo de dados precisa distinguir a estrutura do plano (fases e volume semanal) dos treinos detalhados.

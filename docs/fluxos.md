@@ -101,4 +101,4 @@ flowchart TD
   ATV --> HOJE([Barra de abas, aba Hoje])
 ```
 
-Depois do aceite, as semanas seguintes são detalhadas automaticamente, e cada uma gera um resumo em Notificações (3.8).
+Depois do aceite, as semanas seguintes são detalhadas automaticamente na rotina das 22h do último dia de cada semana do plano (ADR 0044), e cada uma gera um resumo em Notificações (3.8).
