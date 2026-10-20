@@ -4,7 +4,7 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 
 ## Cards do épico
 
-1. [ ] Nome e tom de voz: nome do app (**Live Run**, [ADR 0032](decisions/0032-nome-do-app-live-run.md)) e tom de voz (**parceiro de treino**, [ADR 0033](decisions/0033-tom-de-voz-parceiro-de-treino.md)).
+1. [x] Nome e tom de voz: nome do app (**Live Run**, [ADR 0032](decisions/0032-nome-do-app-live-run.md)) e tom de voz (**parceiro de treino**, [ADR 0033](decisions/0033-tom-de-voz-parceiro-de-treino.md)).
 2. [ ] Navegação: telas principais e como o usuário circula entre elas.
 3. [ ] Fluxos: as 6 jornadas desenhadas passo a passo, incluindo os caminhos de erro.
 4. [ ] Wireframes: telas principais em baixa fidelidade, sem cor nem marca.
@@ -13,4 +13,4 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 
 ## Próximos passos
 
-1. **Próxima pergunta:** uso de emojis nas mensagens (card 1).
+1. **Próxima pergunta:** estrutura de navegação principal (card 2).

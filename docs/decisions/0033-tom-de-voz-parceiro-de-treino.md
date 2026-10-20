@@ -15,6 +15,7 @@ O tom de voz é de **parceiro de treino**:
 - Não julga: treino não feito é tratado com naturalidade ("tudo bem"), sem culpa.
 - Reforça o controle do usuário: sempre diz o que mudou e oferece desfazer, aceitar, editar ou descartar (ADRs 0017 e 0018).
 - Avisos de risco e menções a dor ou lesão usam um tom mais sério e cuidadoso, sem perder a proximidade (ADRs 0017 e 0028).
+- Sem emojis nas mensagens: a proximidade vem do texto, e os ícones da identidade visual cumprem o papel visual. Emojis aparecem diferente no iOS e no Android e destoam dos avisos sérios.
 
 Exemplo: "Ontem não rolou o treino, tudo bem. Passei o intervalado para sexta e deixei a quinta leve. Quer desfazer?"
 
