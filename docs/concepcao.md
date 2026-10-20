@@ -42,7 +42,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - Replanejamento por ações prontas, aplicadas direto, e por conversa livre, com revisão antes de aplicar; é possível desfazer a última ação pronta ([ADR 0018](decisions/0018-replanejamento-acoes-prontas-e-conversa.md)).
    - **Fora do MVP:** notificações push (ADR 0007); Apple Health / Health Connect (ADR 0009); questionário de prontidão para saúde e registro manual de treinos (ADR 0013); prescrição de exercícios de musculação (ADR 0014); dashboard, resumo, calendário e PRs por distância (ideias de features); versionamento completo do plano (ADR 0018); TestFlight / App Store (ADR 0010).
 5. [ ] Critérios de aceitação de cada jornada (definidos pelo usuário).
-   - **Jornada 1, onboarding (rascunho a validar):**
+   - **Jornada 1, onboarding (validada):**
      1. Eu informo meu e-mail, recebo um link mágico e, ao tocar nele, entro no app sem senha ([ADR 0020](decisions/0020-autenticacao-email-link-magico.md)).
      2. Ao reabrir o app, continuo logado, sem precisar entrar de novo.
      3. Conectar o Strava (OAuth) é obrigatório: sem essa conexão, não chego ao setup do plano ([ADR 0019](decisions/0019-conexao-strava-obrigatoria.md)).
@@ -63,7 +63,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** validar os critérios de aceitação da jornada 1, onboarding (card 5).
+1. **Próxima pergunta:** critérios de aceitação da jornada 2, setup do plano (card 5): o pace alvo é obrigatório ou opcional no plano específico?
 2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
