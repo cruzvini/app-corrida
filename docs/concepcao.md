@@ -41,7 +41,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - Meta fora do comum: o app avisa sobre os riscos e sugere alternativas, sem bloquear; as regras detectam e a IA explica; a decisão é do usuário ([ADR 0017](decisions/0017-avisar-riscos-sem-bloquear-plano.md)).
    - Replanejamento por ações prontas, aplicadas direto, e por conversa livre, com revisão antes de aplicar; é possível desfazer a última ação pronta ([ADR 0018](decisions/0018-replanejamento-acoes-prontas-e-conversa.md)).
    - **Fora do MVP:** notificações push (ADR 0007); Apple Health / Health Connect (ADR 0009); questionário de prontidão para saúde e registro manual de treinos (ADR 0013); prescrição de exercícios de musculação (ADR 0014); dashboard, resumo, calendário e PRs por distância (ideias de features); versionamento completo do plano (ADR 0018); TestFlight / App Store (ADR 0010).
-5. [ ] Critérios de aceitação de cada jornada (definidos pelo usuário).
+5. [x] Critérios de aceitação de cada jornada (validados pelo usuário).
    - **Jornada 1, onboarding (validada):**
      1. Eu informo meu e-mail, recebo um link mágico e, ao tocar nele, entro no app sem senha ([ADR 0020](decisions/0020-autenticacao-email-link-magico.md)).
      2. Ao reabrir o app, continuo logado, sem precisar entrar de novo.
@@ -88,7 +88,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      5. Se o feedback indicar que algo precisa mudar, recebo na caixa de entrada uma proposta de ajuste com o antes e o depois, e aceito, edito ou descarto antes de aplicar.
      6. Se o feedback mencionar dor ou lesão, a resposta recomenda procurar orientação profissional, além de qualquer ajuste proposto.
      7. Se o feedback não pedir mudança, o plano não muda e não recebo mensagem.
-   - **Jornada 6, replanejamento (rascunho a validar):**
+   - **Jornada 6, replanejamento (validada):**
      1. Em qualquer treino ou semana, tenho acesso às ações prontas: pular treino, trocar dia, semana mais leve e, no plano específico, adiar a prova (ADR 0018).
      2. Uma ação pronta é aplicada na hora, mostra o que mudou e pode ser desfeita (a última ação).
      3. Posso descrever qualquer situação em texto livre (ex.: "vou viajar quinta e sexta") e recebo uma proposta com o antes e o depois, que aceito, edito ou descarto antes de aplicar.
@@ -110,8 +110,8 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** validar os critérios de aceitação da jornada 6, replanejamento (card 5).
-2. Seguir para os cards 5 e 6, uma decisão por vez.
+1. **Próxima pergunta:** requisitos não funcionais (card 6): quais dados são enviados ao provedor de IA.
+2. Seguir no card 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
    - trocar a descrição da label `epic` de "Épica" para "Épico";
