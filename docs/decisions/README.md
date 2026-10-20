@@ -62,6 +62,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0054 | [Mensagem lida ao abrir e propostas pendentes no topo de Notificações](0054-lidas-e-propostas-aguardando.md) | Aceita |
 | 0055 | [Feedback salvo antes da análise, e falha da IA sem mensagem de erro](0055-feedback-salvo-antes-da-analise.md) | Aceita |
 | 0056 | [Feedback pode ser apagado, mas não editado](0056-feedback-pode-ser-apagado-nao-editado.md) | Aceita |
+| 0057 | [Ação pronta "trocar dia" dentro da semana atual do plano](0057-acao-trocar-dia.md) | Aceita |
 
 ## Como criar um novo ADR
 
