@@ -122,9 +122,6 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 O épico #1 (Concepção e escopo) está com os 6 cards concluídos.
 
-1. Encerrar o épico #1 no board, depois do aceite do usuário.
-2. Iniciar o épico #2 (Design, marca e fluxos), a partir das 6 jornadas validadas.
-3. **Antes de abrir para amigos e família**, reavaliar: ADR 0013 (questionário de prontidão), ADR 0029 (dados enviados à IA), ADR 0030 (exclusão de conta) e ADR 0009 (Apple Health / Health Connect).
-4. Pendências do repositório:
-   - trocar a descrição da label `epic` de "Épica" para "Épico";
-   - avaliar um `.gitattributes` para padronizar as quebras de linha (os avisos LF/CRLF aparecem no Windows).
+O épico #1 foi aceito e encerrado no board em 2026-10-20. A próxima etapa é o épico #2 (Design, marca e fluxos), em `docs/design.md`.
+
+**Antes de abrir para amigos e família**, reavaliar: ADR 0013 (questionário de prontidão), ADR 0029 (dados enviados à IA), ADR 0030 (exclusão de conta) e ADR 0009 (Apple Health / Health Connect).
