@@ -57,6 +57,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0049 | [Falha na sincronização com o Strava suspende o "não feito" automático](0049-falha-de-sincronizacao-suspende-nao-feito.md) | Aceita |
 | 0050 | [Mensagens em Notificações assinadas pelo Piu](0050-notificacoes-assinadas-pelo-piu.md) | Aceita |
 | 0051 | [Dor ou lesão no feedback não gera recomendação automática de procurar um profissional](0051-sem-recomendacao-automatica-de-profissional.md) | Aceita |
+| 0052 | [Proposta pendente vence quando o plano muda e é refeita pelo Piu](0052-proposta-desatualizada-e-refeita.md) | Aceita |
 
 ## Como criar um novo ADR
 
