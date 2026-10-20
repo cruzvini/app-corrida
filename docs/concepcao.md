@@ -39,7 +39,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - Entram no MVP os dois tipos de plano: genérico e específico (ADR 0008).
    - Plano específico com distância livre ([ADR 0016](decisions/0016-plano-especifico-com-distancia-livre.md)).
    - Meta fora do comum: o app avisa sobre os riscos e sugere alternativas, sem bloquear; as regras detectam e a IA explica; a decisão é do usuário ([ADR 0017](decisions/0017-avisar-riscos-sem-bloquear-plano.md)).
-   - Replanejamento por ações prontas e por conversa livre ([ADR 0018](decisions/0018-replanejamento-acoes-prontas-e-conversa.md)).
+   - Replanejamento por ações prontas, aplicadas direto, e por conversa livre, com revisão antes de aplicar ([ADR 0018](decisions/0018-replanejamento-acoes-prontas-e-conversa.md)).
 5. [ ] Critérios de aceitação de cada jornada (definidos pelo usuário).
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
@@ -54,7 +54,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** a mudança de plano é aplicada direto ou o usuário revisa antes (card 4).
+1. **Próxima pergunta:** opção de desfazer as ações prontas (card 4).
 2. Seguir para os cards 4 a 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:

@@ -20,4 +20,4 @@ O app oferece dois caminhos para replanejar:
 - Na conversa livre, a IA não altera o plano diretamente. Ela gera uma proposta estruturada, que passa pelo motor de regras.
 - Mudanças que as regras considerem arriscadas seguem o ADR 0017: o app avisa e não bloqueia.
 - O histórico de replanejamentos fica registrado no app, e não espalhado em conversas.
-- Ainda falta decidir se a mudança proposta é aplicada direto ou se o usuário revisa antes.
+- **Aplicação depende do caminho:** as ações prontas aplicam a mudança direto, porque o efeito é previsível. Na conversa livre, o app mostra o antes e o depois, e o usuário aceita, edita ou descarta antes de aplicar.
