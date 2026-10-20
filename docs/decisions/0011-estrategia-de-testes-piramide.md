@@ -15,5 +15,5 @@ Seguir a pirâmide de testes: muitos testes unitários (principalmente do motor 
 
 - Os testes ficam em `tests/` (ADR 0001).
 - O provedor de IA fake (ADR 0005) viabiliza testes determinísticos.
-- As ferramentas (runner, E2E, CI) serão escolhidas na épica "Testes e CI".
+- As ferramentas (runner, E2E, CI) serão escolhidas no épico "Testes e CI".
 - Proteção de branch na `main` é recomendada.
