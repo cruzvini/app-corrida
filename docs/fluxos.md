@@ -218,3 +218,67 @@ flowchart TD
   ED --> ED1[Proposta revisada; a original fica como editada]
   ED1 --> P
 ```
+
+## Jornada 6: replanejamento
+
+Treinos passados nunca são alterados (6.6). A única exceção é "trocar dia" para um dia passado com atividade ainda não ligada, que só registra o que já aconteceu (ADR 0057). Riscos geram aviso e alternativas, sem bloqueio (ADR 0017, 6.4). Só o ajuste mais recente pode ser desfeito (ADR 0047).
+
+### Ações prontas
+
+```mermaid
+flowchart TD
+  A([Card do Hoje, detalhe do treino ou cabeçalho da semana 6.1]) --> B{Ação pronta}
+  B -- pular --> P[Treino vira não feito na hora, ADR 0058]
+  P --> P1{IA e regras ajustam os próximos dias?}
+  P1 -- ok --> N
+  P1 -- falhou --> P2[Fica pulado sem ajuste; tenta de novo às 22h] --> N
+  B -- trocar dia --> T[Escolhe dia da semana atual do plano, ADR 0057]
+  T --> T1{Destino}
+  T1 -- futuro ou hoje, sem treino da modalidade --> T2[Muda de dia]
+  T1 -- futuro ou hoje, com treino da modalidade --> T3[Os dois trocam de lugar]
+  T1 -- passado com atividade não ligada --> T4[Liga a atividade e marca feito]
+  T1 -- passado sem atividade --> T5[Indisponível]
+  T2 --> R
+  T3 --> R
+  T4 --> N
+  B -- semana mais leve --> L[Reduz a corrida de hoje em diante; intensos viram leves, ADR 0059] --> R
+  B -- adiar a prova, só plano específico --> AD[Escolhe data mais tarde; regras esticam a estrutura, ADR 0060] --> R
+  R{Regras detectam risco?}
+  R -- sim --> R1[Aviso e alternativas, sem bloqueio 6.4] --> N
+  R -- não --> N
+  N([Aplicado na hora: mostra o que mudou e permite desfazer 6.2])
+```
+
+### Conversa livre com o Piu
+
+```mermaid
+flowchart TD
+  A([Piu: usuário descreve a situação 6.3]) --> B[IA propõe, regras validam, ADR 0022]
+  B --> C{Proposta ok?}
+  C -- falhou --> C1[Piu avisa e oferece tentar de novo] --> A
+  C -- sim --> D[Card na conversa: antes e depois, avisos de risco 6.4, ADR 0062]
+  D --> E{Decisão}
+  E -- aceitar --> F([Aplica a partir de hoje; pode desfazer como o mais recente])
+  E -- editar --> G[Continua a conversa; a anterior fica como editada, ADR 0053] --> B
+  E -- descartar --> H([Plano não muda])
+  E -- sai sem decidir --> I[Notificações: aguardando você, ADR 0054]
+  I --> J{Dias afetados mudaram antes da decisão?}
+  J -- sim --> K([Desatualizada; Piu refaz, ADR 0052])
+  J -- não --> E
+```
+
+### Mudança nos dados do setup
+
+```mermaid
+flowchart TD
+  A([Perfil > Meu treino: dias, meta, prazo, nível ou lesões 6.5]) --> B[Salvar: ajustando seu plano, ADR 0061]
+  B --> C{Proposta ok?}
+  C -- falhou --> C1[Avisa e oferece tentar de novo, mudança preservada] --> B
+  C -- sim --> D[Revisão: antes e depois da estrutura e das semanas detalhadas]
+  D --> D1{Regras detectam risco?}
+  D1 -- sim --> D2[Aviso e alternativas 6.4] --> E
+  D1 -- não --> E{Decisão}
+  E -- aceitar --> F([Perfil atualizado; plano reajustado a partir de hoje])
+  E -- editar --> G[Piu com a proposta como contexto, ADR 0053] --> D
+  E -- descartar --> H([Perfil volta ao que era; plano não muda])
+```
