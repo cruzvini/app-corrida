@@ -13,6 +13,7 @@ O critério 3.3 diz que os treinos respeitam "os dias de corrida e musculação 
 - O plano usa exatamente esses dias. As regras usam a ordem dos dias para evitar corrida intensa depois de inferiores (critério 3.4).
 - Os dias ficam em **Perfil > Meu treino** (ADR 0038) e podem ser alterados a qualquer momento. A mudança é definitiva: o plano é reajustado a partir de hoje e as semanas seguintes passam a usar a nova configuração (critério 6.5).
 - Mudanças pontuais (ex.: só nesta semana) continuam sendo feitas pela ação pronta "trocar dia" ou pelo Piu, sem alterar a configuração.
+- Quando o usuário pede ao Piu uma troca de dia que parece definitiva (ex.: "inferiores agora vão ser na sexta"), o Piu aplica a mudança e pergunta se vale só para esta semana ou se deve atualizar os dias no Perfil. A configuração só muda com a confirmação do usuário.
 
 ## Consequências
 
