@@ -71,7 +71,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      9. Se a geração falhar (ex.: IA indisponível), o app avisa e permite tentar de novo, sem perder minhas respostas do setup.
    - **Jornada 4, dia a dia (rascunho a validar):**
      1. Ao abrir o app, vejo o treino de hoje, com tipo e blocos, e os treinos da semana.
-     2. O app sincroniza o Strava periodicamente, e eu também posso sincronizar com pull-to-refresh (ADR 0006).
+     2. O app sincroniza o Strava periodicamente, e eu também posso pedir uma atualização manual. O limite é de 1 consulta ao Strava a cada 30 minutos; dentro desse intervalo, vejo os dados já sincronizados e quando poderei atualizar de novo (ADR 0006).
      3. Quando sincroniza uma atividade compatível com o treino do dia, o treino é marcado como feito automaticamente, com o resumo da atividade (distância, duração, pace médio) (ADR 0025).
      4. Posso desmarcar um treino feito, ou marcar como feito sem atividade no Strava.
      5. Na musculação, o treino marcado assume a divisão prevista, e posso corrigir (ex.: "fiz superiores, não inferiores") (ADR 0014).

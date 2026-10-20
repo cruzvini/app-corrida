@@ -15,5 +15,10 @@ Usar o Strava como fonte inicial de dados. Novos treinos são detectados por pol
 
 - O polling é mais simples de começar que webhooks, mas tem atraso e consome cota da API (os limites de taxa do Strava precisam ser respeitados).
 - Os tokens OAuth do Strava são armazenados com segurança no backend.
-- Webhooks podem substituir o polling no futuro, com novo ADR.
+- **Proteção contra excesso de chamadas (definida em 2026-10-20):**
+  - O app nunca chama o Strava diretamente. A atualização manual pede ao backend, e é o backend que decide se consulta o Strava.
+  - Limite de **1 consulta ao Strava por usuário a cada 30 minutos**, contando o polling e a atualização manual. Dentro desse intervalo, o app mostra os dados já sincronizados e informa quando poderá atualizar de novo. O intervalo é compatível com a duração típica dos treinos (20 a 30 minutos ou mais).
+  - A busca é incremental: só atividades desde a última sincronização.
+  - A forma da atualização manual (gesto de puxar ou botão) será definida no épico de design.
+- Webhooks podem substituir o polling no futuro, com novo ADR, principalmente ao abrir para mais usuários.
 - Outras fontes ficam para depois (ver ADR 0009).
