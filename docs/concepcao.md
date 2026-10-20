@@ -80,6 +80,14 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      8. Uma atividade fora do plano, ou um treino muito acima do previsto, conta como carga. Se afetar os próximos treinos, o plano se ajusta (ADR 0027).
      9. Todo ajuste automático chega à caixa de entrada com o antes e o depois e pode ser desfeito.
      10. Depois de um treino, posso deixar um feedback em texto, se quiser (ex.: "senti a panturrilha").
+   - **Jornada 5, feedback e caixa de entrada (rascunho a validar):**
+     1. A caixa de entrada reúne as mensagens do app: ajustes automáticos (com o antes e o depois e a opção de desfazer), semanas novas detalhadas e sugestões (ex.: pace alvo) (ADR 0007).
+     2. Ao abrir o app, vejo quantas mensagens não lidas tenho, já que não há notificação push.
+     3. Posso deixar feedback em texto sobre qualquer treino, feito ou não feito.
+     4. Todo feedback fica no histórico do treino e é considerado nos próximos detalhamentos e ajustes (ADR 0028).
+     5. Se o feedback indicar que algo precisa mudar, recebo na caixa de entrada uma proposta de ajuste com o antes e o depois, e aceito, edito ou descarto antes de aplicar.
+     6. Se o feedback mencionar dor ou lesão, a resposta recomenda procurar orientação profissional, além de qualquer ajuste proposto.
+     7. Se o feedback não pedir mudança, o plano não muda e não recebo mensagem.
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
 
 ## Ideias de features (não priorizadas)
@@ -93,7 +101,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** jornada 5, feedback (card 5): o que o app faz com o feedback do usuário.
+1. **Próxima pergunta:** validar os critérios de aceitação da jornada 5, feedback e caixa de entrada (card 5).
 2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
