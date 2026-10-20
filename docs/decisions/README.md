@@ -28,6 +28,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0020 | [Autenticação por e-mail com link mágico](0020-autenticacao-email-link-magico.md) | Aceita |
 | 0021 | [Pace alvo sugerido a partir do Strava](0021-pace-alvo-sugerido-pelo-strava.md) | Aceita |
 | 0022 | [IA propõe o plano, motor de regras valida](0022-ia-propoe-regras-validam-plano.md) | Aceita |
+| 0023 | [Plano inteiro com detalhe progressivo](0023-plano-inteiro-com-detalhe-progressivo.md) | Aceita |
 
 ## Como criar um novo ADR
 
