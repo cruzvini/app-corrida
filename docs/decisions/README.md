@@ -41,6 +41,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0033 | [Tom de voz: parceiro de treino](0033-tom-de-voz-parceiro-de-treino.md) | Aceita |
 | 0034 | [Navegação por barra de abas inferior com Hoje no centro](0034-navegacao-por-abas-com-hoje-no-centro.md) | Aceita |
 | 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
+| 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita |
 
 ## Como criar um novo ADR
 
