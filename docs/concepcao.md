@@ -82,7 +82,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** jornada 4 (card 5): o que acontece quando um treino não é feito.
+1. **Próxima pergunta:** jornada 4 (card 5): quando um treino passa a ser considerado não feito.
 2. Seguir para os cards 5 e 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
