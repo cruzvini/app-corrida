@@ -98,6 +98,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      7. Vejo o histórico de replanejamentos: o que mudou, quando e por quê.
      8. Se a IA estiver indisponível, o app avisa que a conversa livre não está disponível no momento, e as ações prontas continuam funcionando.
 6. [ ] Requisitos não funcionais: privacidade de dados de saúde, LGPD e custos (API de IA, Supabase).
+   - Dados enviados à IA: todos, incluindo identificação; reavaliar antes de abrir para outras pessoas ([ADR 0029](decisions/0029-dados-enviados-ao-provedor-de-ia.md)).
 
 ## Ideias de features (não priorizadas)
 
@@ -110,7 +111,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 
 ## Próximos passos
 
-1. **Próxima pergunta:** requisitos não funcionais (card 6): quais dados são enviados ao provedor de IA.
+1. **Próxima pergunta:** requisitos não funcionais (card 6): exclusão de conta e dados.
 2. Seguir no card 6, uma decisão por vez.
 3. Criar os cards do épico #1 no board, quando o escopo estiver mais claro.
 4. Pendências do repositório:
