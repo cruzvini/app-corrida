@@ -53,7 +53,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 2, setup do plano (validada):**
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
      2. Informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).
-     3. Informo quantos dias por semana quero correr e se faço musculação. Se faço, informo quantos dias e a divisão (ex.: 2 superiores, 1 inferiores) (ADR 0014).
+     3. Marco em quais dias da semana quero correr e se faço musculação. Se faço, marco os dias e a divisão de cada um (ex.: terça superiores, quinta inferiores) (ADRs 0014 e [0041](decisions/0041-dias-da-semana-fixos-e-editaveis.md)).
      4. Escolho entre plano genérico e plano específico.
      5. No plano específico, informo a distância (qualquer valor) e a data da prova ou o prazo da meta (ADR 0016).
      6. No plano específico, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).

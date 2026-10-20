@@ -36,3 +36,38 @@ flowchart TD
 ```
 
 Regras de segurança da jornada: cada usuário só vê os próprios dados (RLS, 1.7), e os tokens do Strava ficam só no backend.
+
+## Jornada 2: setup do plano
+
+Fluxo linear, uma pergunta por tela, com barra de progresso e botão de voltar (ADR 0037).
+
+```mermaid
+flowchart TD
+  A([Vem da jornada 1]) --> B{Tem histórico do Strava?}
+  B -- sim --> C[Nível sugerido com o motivo 2.1]
+  C --> C1{Confirma?}
+  C1 -- trocar --> D
+  C1 -- confirmar --> E
+  B -- não --> D[Escolher nível vendo a descrição de cada um]
+  D --> E[Idade, peso e lesões ou limitações opcional 2.2]
+  E --> F[Corrida: marcar os dias da semana 2.3]
+  F --> G{Faz musculação?}
+  G -- sim --> G1[Musculação: marcar os dias e a divisão de cada um]
+  G -- não --> DIAS
+  G1 --> DIAS
+  DIAS((dias salvos, ADR 0041)) --> H{Tipo de plano 2.4}
+  H -- genérico --> R
+  H -- específico --> I[Distância livre e data da prova ou prazo 2.5]
+  I --> J{Histórico suficiente para pace?}
+  J -- sim --> J1[Pace alvo sugerido: aceitar ou ajustar 2.6]
+  J -- não --> J2[Sem meta de pace, foco em completar a distância]
+  J1 --> K{Regras detectam risco?}
+  J2 --> K
+  K -- sim --> K1[Riscos e alternativas 2.7]
+  K1 -- ajustar meta --> I
+  K1 -- seguir mesmo assim, escolha registrada --> R
+  K -- não --> R[Resumo das respostas 2.8]
+  R -- editar um item --> EDIT[Volta à tela do item e retorna ao resumo]
+  EDIT --> R
+  R -- gerar plano --> GER([Jornada 3: geração])
+```
