@@ -30,6 +30,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0022 | [IA propõe o plano, motor de regras valida](0022-ia-propoe-regras-validam-plano.md) | Aceita |
 | 0023 | [Plano inteiro com detalhe progressivo](0023-plano-inteiro-com-detalhe-progressivo.md) | Aceita |
 | 0024 | [Treinos estruturados por blocos com pace alvo](0024-treinos-estruturados-por-blocos.md) | Aceita |
+| 0025 | [Strava marca o treino como feito, e o usuário corrige](0025-strava-marca-treino-feito-usuario-corrige.md) | Aceita |
 
 ## Como criar um novo ADR
 
