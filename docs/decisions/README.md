@@ -23,6 +23,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0015 | [Nível de corrida sugerido pelo Strava e confirmado pelo usuário](0015-nivel-de-corrida-sugerido-e-confirmado.md) | Aceita |
 | 0016 | [Plano específico com distância livre](0016-plano-especifico-com-distancia-livre.md) | Aceita |
 | 0017 | [Avisar sobre riscos da meta sem bloquear a criação do plano](0017-avisar-riscos-sem-bloquear-plano.md) | Aceita |
+| 0018 | [Replanejamento por ações prontas e por conversa livre](0018-replanejamento-acoes-prontas-e-conversa.md) | Aceita |
 
 ## Como criar um novo ADR
 
