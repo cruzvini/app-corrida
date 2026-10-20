@@ -14,4 +14,4 @@ O assistente de conversa do Live Run se chama **Piu**. Ele dá nome à aba de co
 ## Consequências
 
 - Os prompts do provedor de IA (`packages/ai-provider`) apresentam o assistente como Piu. O nome não depende do provedor (ADR 0005).
-- Mensagens automáticas em Notificações (ajustes, semanas novas) continuam sendo do app. Se elas devem ser assinadas pelo Piu fica em aberto para os fluxos (card 3).
+- Mensagens automáticas em Notificações (ajustes, semanas novas) são geradas pelo app e saem assinadas pelo Piu (ADR 0050).
