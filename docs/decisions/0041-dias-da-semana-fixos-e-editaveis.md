@@ -1,6 +1,6 @@
 # ADR 0041: Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil
 
-- **Status:** Aceita
+- **Status:** Substituída pelo [ADR 0063](0063-quantidade-de-dias-com-dias-e-divisao-opcionais.md)
 - **Data:** 2026-10-20
 
 ## Contexto

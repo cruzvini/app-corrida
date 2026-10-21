@@ -50,12 +50,12 @@ flowchart TD
   C1 -- confirmar --> E
   B -- não --> D[Escolher nível vendo a descrição de cada um]
   D --> E["Idade de 10 a 100 (ADR 0042), peso e lesões ou limitações opcional 2.2"]
-  E --> F[Corrida: marcar os dias da semana 2.3]
+  E --> F[Corrida: quantos dias por semana; dias da semana opcionais 2.3]
   F --> G{Faz musculação?}
-  G -- sim --> G1[Musculação: marcar os dias e a divisão de cada um]
+  G -- sim --> G1[Musculação: quantos dias; dias e divisão opcionais]
   G -- não --> DIAS
   G1 --> DIAS
-  DIAS((dias salvos, ADR 0041)) --> H{Tipo de plano 2.4}
+  DIAS((dias salvos, ADR 0063)) --> H{Tipo de plano 2.4}
   H -- genérico --> INI
   H -- específico --> I[Distância livre e data da prova ou prazo 2.5]
   I --> J{Histórico suficiente para pace?}

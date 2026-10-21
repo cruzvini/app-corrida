@@ -53,7 +53,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 2, setup do plano (validada):**
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
      2. Informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).
-     3. Marco em quais dias da semana quero correr e se faço musculação. Se faço, marco os dias e a divisão de cada um (ex.: terça superiores, quinta inferiores) (ADRs 0014 e [0041](decisions/0041-dias-da-semana-fixos-e-editaveis.md)).
+     3. Informo quantos dias por semana quero correr e fazer musculação. Se quiser, escolho os dias da semana de cada modalidade e a divisão da musculação (ex.: terça superiores, quinta inferiores); se não, o plano distribui (ADRs 0014 e [0063](decisions/0063-quantidade-de-dias-com-dias-e-divisao-opcionais.md)).
      4. Escolho entre plano genérico e plano específico.
      5. No plano específico, informo a distância (qualquer valor) e a data da prova ou o prazo da meta (ADR 0016).
      6. No plano específico, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
@@ -63,7 +63,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 3, geração do plano (validada):**
      1. Depois do setup, o app gera o plano e mostra a estrutura completa (fases e volume semanal) e as próximas 1 a 2 semanas detalhadas (ADR 0023).
      2. Cada treino de corrida detalhado mostra o tipo (ex.: leve, limiar, intervalado, progressivo, longão) e é dividido em blocos (ex.: aquecimento, repetições, recuperação, desaquecimento). Cada bloco tem distância ou duração e um pace alvo, ou uma faixa de intensidade quando não houver meta de pace (ADR 0024).
-     3. Os treinos respeitam os dias de corrida e musculação que informei, e a musculação aparece com a divisão do dia (ex.: inferiores).
+     3. Os treinos respeitam a quantidade de dias de corrida e musculação que informei e, quando escolhi, os dias da semana. A musculação aparece com a divisão do dia (ex.: inferiores).
      4. O plano não coloca corrida intensa logo depois de um treino de inferiores.
      5. No plano específico, o plano termina na data da prova ou no prazo da meta.
      6. Se a validação das regras encontrar um risco, vejo o aviso e as alternativas antes de aceitar (ADR 0017).
@@ -118,6 +118,7 @@ Ficam fora do núcleo por enquanto. Serão avaliadas depois do MVP.
 - Resumo do que está indo bem e do que precisa de atenção.
 - Calendário com os treinos.
 - PRs por distância.
+- Tour pelo app logo depois do cadastro, apresentando as abas e o Piu (decidido na revisão dos wireframes, 2026-10-21).
 - Mais dados no setup: sono e rotina, zonas de frequência cardíaca, altura e sexo (ADR 0039).
 
 ## Próximos passos

@@ -46,7 +46,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita |
 | 0039 | [Lesões e limitações como campo opcional no setup](0039-lesoes-e-limitacoes-no-setup.md) | Aceita |
 | 0040 | [Falha na importação do histórico do Strava não bloqueia o setup](0040-falha-na-importacao-do-strava.md) | Aceita |
-| 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Aceita |
+| 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Substituída (ADR 0063) |
 | 0042 | [Idade sem limite mínimo, só com validação de valor plausível](0042-idade-sem-limite-minimo.md) | Aceita |
 | 0043 | [Data de início do plano escolhida no setup](0043-data-de-inicio-escolhida-no-setup.md) | Aceita |
 | 0044 | [Detalhamento da próxima semana na rotina das 22h do último dia da semana](0044-detalhamento-semanal-na-rotina-das-22h.md) | Aceita |
@@ -68,6 +68,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0060 | [Ação pronta "adiar a prova" recalcula a estrutura pelas regras](0060-acao-adiar-a-prova.md) | Aceita |
 | 0061 | [Mudança nos dados do setup passa por revisão antes de valer](0061-mudanca-no-perfil-passa-por-revisao.md) | Aceita |
 | 0062 | [Proposta da conversa com o Piu aparece na conversa e vai para Notificações se ficar pendente](0062-proposta-do-piu-na-conversa.md) | Aceita |
+| 0063 | [Quantidade de dias por modalidade, com dias da semana e divisão opcionais](0063-quantidade-de-dias-com-dias-e-divisao-opcionais.md) | Aceita |
+| 0064 | [Ações do treino no card do Hoje e na tela de detalhe](0064-acoes-do-treino-no-card-do-hoje-e-no-detalhe.md) | Aceita |
 
 ## Como criar um novo ADR
 
