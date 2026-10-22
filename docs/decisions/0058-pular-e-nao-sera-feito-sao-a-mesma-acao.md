@@ -1,6 +1,6 @@
 # ADR 0058: "Pular" e "não será feito" são a mesma ação
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelo [ADR 0067](0067-ajustes-do-strava-so-pelo-motor-de-regras.md): o ajuste depois do pulo é feito só pelas regras, sem IA)
 - **Data:** 2026-10-20
 
 ## Contexto
