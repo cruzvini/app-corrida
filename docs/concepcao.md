@@ -50,6 +50,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      5. Se eu recusar ou cancelar a autorização, o app explica por que a conexão é necessária e permite tentar de novo.
      6. Se eu não tiver histórico no Strava, sigo para o setup e escolho meu nível manualmente.
      7. Só eu vejo meus dados. Outro usuário não acessa nada meu (RLS, ADR 0003).
+     8. Posso desconectar o Strava no Perfil, com confirmação. O app revoga o acesso e apaga os tokens, mas mantém o plano e as atividades já importadas. Até eu reconectar, o app funciona como numa falha de sincronização: treinos pendentes, marcação manual e aviso para conectar de novo ([ADR 0079](decisions/0079-desconectar-o-strava.md)).
    - **Jornada 2, setup do plano (validada):**
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
      2. Informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).

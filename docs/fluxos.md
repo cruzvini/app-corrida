@@ -117,7 +117,7 @@ flowchart TD
   B1 -- não --> B2[Mostra dados já sincronizados e quando poderá atualizar 4.2] --> A
   B1 -- sim --> C[Lista as atividades dos últimos 7 dias, ADR 0073]
   C --> D{Sincronização ok?}
-  D -- falhou: acesso revogado, token inválido ou Strava fora --> D1[Aviso no Hoje: reconectar o Strava, ADR 0049] --> A
+  D -- falhou ou sem conexão: revogado, desconectado no Perfil, token inválido ou Strava fora --> D1[Aviso no Hoje: conectar o Strava de novo, ADRs 0049 e 0079] --> A
   D -- sim --> E{Compara com o que está salvo}
   E -- nada mudou --> A
   E -- editada --> ED[Atualiza o resumo; se o tipo ou a carga mudou, vai para as regras] --> K

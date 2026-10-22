@@ -43,7 +43,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
 | 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita |
 | 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita |
-| 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita |
+| 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita (revisada pelos ADRs 0069, 0079) |
 | 0039 | [Lesões e limitações como campo opcional no setup](0039-lesoes-e-limitacoes-no-setup.md) | Aceita |
 | 0040 | [Falha na importação do histórico do Strava não bloqueia o setup](0040-falha-na-importacao-do-strava.md) | Aceita |
 | 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Substituída (ADR 0063) |
@@ -84,6 +84,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0076 | [Testes da integração com o Strava sem depender do Strava real](0076-testes-da-integracao-com-o-strava.md) | Aceita |
 | 0077 | [Identidade visual do Live Run](0077-identidade-visual.md) | Aceita |
 | 0078 | [Marca do Strava no app](0078-marca-do-strava-no-app.md) | Aceita |
+| 0079 | [Desconectar o Strava deixa o app no estado de falha de sincronização](0079-desconectar-o-strava.md) | Aceita |
 
 ## Como criar um novo ADR
 
