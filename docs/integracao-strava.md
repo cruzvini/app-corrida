@@ -22,7 +22,7 @@ Custo zero na primeira validação. Etapas com custo são avaliadas uma a uma, c
 
 ## Pendências em outros documentos
 
-Entram na validação do épico #2 (card 6):
+Resolvidas na validação do épico #2 (card 6), em 2026-10-22:
 
 1. `fluxos.md`, jornada 2: trocar "musculação" pela lista de outras atividades (ADR 0069).
 2. `fluxos.md`, jornada 4: ajustes por regras (ADR 0067), conciliação de 7 dias (ADR 0073) e nota de esforço (ADR 0070).
