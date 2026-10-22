@@ -82,6 +82,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0074 | [Tokens do Strava cifrados com o Supabase Vault](0074-tokens-do-strava-no-vault.md) | Aceita |
 | 0075 | [Limite de atletas do app no Strava](0075-limite-de-atletas-no-strava.md) | Aceita |
 | 0076 | [Testes da integração com o Strava sem depender do Strava real](0076-testes-da-integracao-com-o-strava.md) | Aceita |
+| 0077 | [Identidade visual do Live Run](0077-identidade-visual.md) | Aceita |
+| 0078 | [Marca do Strava no app](0078-marca-do-strava-no-app.md) | Aceita |
 
 ## Como criar um novo ADR
 
