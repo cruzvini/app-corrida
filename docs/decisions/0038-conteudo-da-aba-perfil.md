@@ -1,6 +1,6 @@
 # ADR 0038: Conteúdo da aba Perfil, com o histórico de replanejamentos
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelos ADRs [0069](0069-outras-atividades-declaradas-como-carga.md), que troca a musculação pela lista de outras atividades, e [0079](0079-desconectar-o-strava.md), que adiciona desconectar o Strava)
 - **Data:** 2026-10-20
 
 ## Contexto
