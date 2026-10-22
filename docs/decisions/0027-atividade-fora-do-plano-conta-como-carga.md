@@ -1,6 +1,6 @@
 # ADR 0027: Atividade fora do plano conta como carga e gera ajuste com aviso
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelos ADRs [0067](0067-ajustes-do-strava-so-pelo-motor-de-regras.md) e [0069](0069-outras-atividades-declaradas-como-carga.md))
 - **Data:** 2026-10-20
 
 ## Contexto

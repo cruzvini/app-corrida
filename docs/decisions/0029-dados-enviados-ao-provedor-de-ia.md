@@ -1,6 +1,6 @@
 # ADR 0029: Dados enviados ao provedor de IA
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelo [ADR 0066](0066-dados-do-strava-nunca-vao-para-a-ia.md))
 - **Data:** 2026-10-20
 
 ## Contexto

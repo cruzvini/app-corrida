@@ -1,6 +1,6 @@
 # ADR 0022: IA propõe o plano, motor de regras valida
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelos ADRs [0066](0066-dados-do-strava-nunca-vao-para-a-ia.md) e [0067](0067-ajustes-do-strava-so-pelo-motor-de-regras.md))
 - **Data:** 2026-10-20
 
 ## Contexto

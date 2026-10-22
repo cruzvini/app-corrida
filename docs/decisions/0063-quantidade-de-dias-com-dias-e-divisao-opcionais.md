@@ -1,6 +1,6 @@
 # ADR 0063: Quantidade de dias por modalidade, com dias da semana e divisão opcionais
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelo [ADR 0069](0069-outras-atividades-declaradas-como-carga.md))
 - **Data:** 2026-10-21
 - **Substitui:** [ADR 0041](0041-dias-da-semana-fixos-e-editaveis.md)
 

@@ -1,6 +1,6 @@
 # ADR 0014: Musculação entra no plano como carga que afeta a corrida
 
-- **Status:** Aceita
+- **Status:** Substituída pelo [ADR 0069](0069-outras-atividades-declaradas-como-carga.md)
 - **Data:** 2026-10-19
 
 ## Contexto

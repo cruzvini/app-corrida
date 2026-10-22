@@ -1,6 +1,6 @@
 # ADR 0026: Treino não feito gera ajuste automático do plano, com aviso
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelo [ADR 0067](0067-ajustes-do-strava-so-pelo-motor-de-regras.md))
 - **Data:** 2026-10-20
 
 ## Contexto

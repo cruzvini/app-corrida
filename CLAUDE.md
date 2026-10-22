@@ -28,7 +28,7 @@ App Corrida: app para reunir dados de treinos de corrida e interagir com eles pa
 - **Backend:** Supabase (Postgres, auth, RLS).
 - **Motor de regras:** pacote TypeScript isolado (`packages/rules-engine`).
 - **IA:** interface agnóstica de provedor (`packages/ai-provider`). Claude como primeira implementação, provedor fake para testes.
-- **Dados de treino:** Strava (polling agendado + pull-to-refresh).
+- **Dados de treino:** API do Strava (polling a cada 2h + atualização manual, conciliação dos últimos 7 dias). **Dados do Strava nunca vão para a IA**, nem derivados (ADR 0066): só o motor de regras os usa.
 - **Feedback:** caixa de entrada dentro do app, sem push.
 - **Design:** Claude (design mode), sem Figma.
 

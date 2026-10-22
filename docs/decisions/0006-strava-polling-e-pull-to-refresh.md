@@ -1,6 +1,6 @@
 # ADR 0006: Strava como fonte inicial, com polling agendado e pull-to-refresh
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelos ADRs [0071](0071-polling-a-cada-2h.md) e [0073](0073-conciliacao-dos-ultimos-7-dias.md))
 - **Data:** 2026-10-19
 
 ## Contexto
