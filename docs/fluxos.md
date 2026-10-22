@@ -181,7 +181,7 @@ flowchart TD
 
 ## Jornada 5: feedback e Notificações
 
-Todas as mensagens em Notificações saem assinadas pelo Piu (ADR 0050). Dor ou lesão segue o mesmo tratamento dos outros feedbacks (ADR 0051, 5.6).
+Todas as mensagens em Notificações saem assinadas pelo Piu (ADR 0050). Nos ajustes disparados pelo Strava, o texto é de template e o Piu recebe só o antes e o depois do plano, nunca o motivo (ADRs 0066 e 0080). Dor ou lesão segue o mesmo tratamento dos outros feedbacks (ADR 0051, 5.6).
 
 ### Feedback
 
@@ -213,7 +213,7 @@ flowchart TD
   M --> T{Tipo}
   T -- ajuste automático --> AJ{É o mais recente?}
   AJ -- sim --> AJ1[Desfazer, ADR 0047]
-  AJ -- não --> PIU[Conversar com o Piu sobre isso, ADR 0050]
+  AJ -- não --> PIU[Conversar com o Piu sobre isso, ADR 0050; se veio do Strava, só o antes e o depois, ADR 0080]
   T -- semana nova ou sugestão --> PIU
   T -- proposta --> P{Ainda válida?}
   P -- não: dias afetados mudaram --> V[Marcada como desatualizada, ADR 0052]
