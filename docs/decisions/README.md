@@ -55,7 +55,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0047 | [Só o ajuste automático mais recente pode ser desfeito](0047-so-o-ajuste-mais-recente-pode-ser-desfeito.md) | Aceita |
 | 0048 | [Feedback pós-treino como campo opcional no card do Hoje](0048-feedback-opcional-no-card-do-hoje.md) | Aceita |
 | 0049 | [Falha na sincronização com o Strava suspende o "não feito" automático](0049-falha-de-sincronizacao-suspende-nao-feito.md) | Aceita |
-| 0050 | [Mensagens em Notificações assinadas pelo Piu](0050-notificacoes-assinadas-pelo-piu.md) | Aceita |
+| 0050 | [Mensagens em Notificações assinadas pelo Piu](0050-notificacoes-assinadas-pelo-piu.md) | Aceita (revisada pelo ADR 0080) |
 | 0051 | [Dor ou lesão no feedback não gera recomendação automática de procurar um profissional](0051-sem-recomendacao-automatica-de-profissional.md) | Aceita |
 | 0052 | [Proposta pendente vence quando o plano muda e é refeita pelo Piu](0052-proposta-desatualizada-e-refeita.md) | Aceita |
 | 0053 | [Editar uma proposta é conversar com o Piu](0053-editar-proposta-e-conversar-com-o-piu.md) | Aceita |
@@ -85,6 +85,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0077 | [Identidade visual do Live Run](0077-identidade-visual.md) | Aceita |
 | 0078 | [Marca do Strava no app](0078-marca-do-strava-no-app.md) | Aceita |
 | 0079 | [Desconectar o Strava deixa o app no estado de falha de sincronização](0079-desconectar-o-strava.md) | Aceita |
+| 0080 | [Conversa sobre um ajuste disparado pelo Strava leva só o antes e o depois do plano](0080-piu-sem-o-motivo-dos-ajustes-do-strava.md) | Aceita |
 
 ## Como criar um novo ADR
 

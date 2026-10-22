@@ -1,6 +1,6 @@
 # ADR 0050: Mensagens em Notificações assinadas pelo Piu
 
-- **Status:** Aceita
+- **Status:** Aceita (Revisada pelo [ADR 0080](0080-piu-sem-o-motivo-dos-ajustes-do-strava.md): nos ajustes disparados pelo Strava, o Piu recebe só o antes e o depois do plano)
 - **Data:** 2026-10-20
 
 ## Contexto
