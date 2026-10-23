@@ -30,7 +30,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      - **Avançado:** corre 3 ou mais vezes por semana há meses. Completa 10 km ou mais com conforto e já faz treinos variados (intervalado, longão), conhecendo seus paces.
 3. [x] Jornadas principais (validadas):
    1. Onboarding: criar a conta e conectar o Strava.
-   2. Setup do plano: confirmar o nível, informar a frequência de corrida e musculação, escolher plano genérico ou específico.
+   2. Setup do plano: confirmar o nível, informar a frequência de corrida e das outras atividades, escolher plano genérico ou específico.
    3. Geração do plano: o app monta as semanas, e o usuário revisa e aceita.
    4. Dia a dia: ver o treino do dia; o Strava sincroniza; o usuário confirma ou ajusta.
    5. Feedback: o usuário comenta o treino, e as propostas de ajuste chegam na caixa de entrada. A IA analisa só o texto do usuário, nunca os dados do Strava (ADR 0066).

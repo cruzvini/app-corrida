@@ -2,7 +2,7 @@
 
 - **Status:** Aceita
 - **Data:** 2026-10-22
-- **Revisa:** [ADR 0022](0022-ia-propoe-regras-validam-plano.md), [ADR 0026](0026-treino-nao-feito-ajuste-automatico.md) e [ADR 0027](0027-atividade-fora-do-plano-conta-como-carga.md)
+- **Revisa:** [ADR 0022](0022-ia-propoe-regras-validam-plano.md), [ADR 0026](0026-treino-nao-feito-ajuste-automatico.md), [ADR 0027](0027-atividade-fora-do-plano-conta-como-carga.md) e [ADR 0058](0058-pular-e-nao-sera-feito-sao-a-mesma-acao.md)
 
 ## Contexto
 
