@@ -10,12 +10,12 @@ Também é um projeto de aprendizado do ciclo completo de desenvolvimento de sof
 
 1. Concepção e escopo
 2. Design, marca e fluxos
-3. Setup do monorepo
-4. Backend Supabase (banco de dados, auth, RLS e segurança)
-5. Motor de regras
-6. Integração Strava
-7. Caixa de entrada de feedback
-8. Testes e CI
+3. Testes e CI (planejamento; ADR 0081)
+4. Setup do monorepo (inclui o pipeline de CI e os quality gates)
+5. Backend Supabase (banco de dados, auth, RLS e segurança)
+6. Motor de regras
+7. Integração Strava
+8. Caixa de entrada de feedback
 
 ## Documentação
 
