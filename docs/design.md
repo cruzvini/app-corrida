@@ -18,7 +18,7 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 
 ## Próximos passos
 
-O épico #2 (Design, marca e fluxos) está com os 6 cards concluídos. Falta aceitar e encerrar o épico no board.
+O épico #2 (Design, marca e fluxos) foi aceito e encerrado no board em 2026-10-23. A próxima etapa é o épico #3 (Setup do monorepo).
 
 Pendências que seguem para outros épicos:
 
