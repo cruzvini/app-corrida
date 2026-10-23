@@ -3,6 +3,7 @@
 - **Status:** Aceita
 - **Data:** 2026-10-22
 - **Complementa:** [ADR 0049](0049-falha-de-sincronizacao-suspende-nao-feito.md) e [ADR 0074](0074-tokens-do-strava-no-vault.md)
+- **Revisa:** [ADR 0038](0038-conteudo-da-aba-perfil.md)
 
 ## Contexto
 

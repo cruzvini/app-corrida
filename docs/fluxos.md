@@ -189,7 +189,7 @@ Todas as mensagens em Notificações saem assinadas pelo Piu (ADR 0050). Nos aju
 flowchart TD
   A([Campo como foi? no Hoje ou detalhe do treino, feito ou não feito 5.3]) --> B[Usuário envia o texto]
   B --> C[Salva no histórico do treino: feedback salvo 5.4, ADR 0055]
-  C --> D[IA analisa em segundo plano: pede mudança?]
+  C --> D[IA analisa só o texto, em segundo plano: pede mudança? ADR 0066]
   D --> E{Análise ok?}
   E -- falhou --> E1{Ainda há tentativas automáticas?}
   E1 -- sim --> D

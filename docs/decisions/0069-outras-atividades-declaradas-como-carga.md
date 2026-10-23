@@ -3,7 +3,7 @@
 - **Status:** Aceita
 - **Data:** 2026-10-22
 - **Substitui:** [ADR 0014](0014-musculacao-como-carga-no-plano.md)
-- **Revisa:** [ADR 0027](0027-atividade-fora-do-plano-conta-como-carga.md) e [ADR 0063](0063-quantidade-de-dias-com-dias-e-divisao-opcionais.md)
+- **Revisa:** [ADR 0027](0027-atividade-fora-do-plano-conta-como-carga.md), [ADR 0038](0038-conteudo-da-aba-perfil.md) e [ADR 0063](0063-quantidade-de-dias-com-dias-e-divisao-opcionais.md)
 
 ## Contexto
 
