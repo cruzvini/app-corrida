@@ -16,7 +16,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0008 | [Modelo de planos em duas camadas (genérico e específico)](0008-modelo-de-planos-em-duas-camadas.md) | Aceita |
 | 0009 | [Protótipo pessoal primeiro, depois Health Connect / Apple Health ao abrir para amigos e família](0009-prototipo-pessoal-depois-health.md) | Aceita |
 | 0010 | [Execução via Expo Go no iPhone, sem assinatura Apple Developer por enquanto](0010-expo-go-sem-apple-developer.md) | Aceita |
-| 0011 | [Estratégia de testes: pirâmide com quality gates de CI](0011-estrategia-de-testes-piramide.md) | Aceita |
+| 0011 | [Estratégia de testes: pirâmide com quality gates de CI](0011-estrategia-de-testes-piramide.md) | Aceita (revisada pelo ADR 0081) |
 | 0012 | [Design e wireframes feitos no Claude (design mode), sem Figma](0012-design-no-claude-sem-figma.md) | Aceita |
 | 0013 | [Adiados: questionário de prontidão para saúde e registro manual de treinos](0013-adiados-prontidao-e-registro-manual.md) | Adiada |
 | 0014 | [Musculação entra no plano como carga que afeta a corrida](0014-musculacao-como-carga-no-plano.md) | Substituída (ADR 0069) |
@@ -86,6 +86,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0078 | [Marca do Strava no app](0078-marca-do-strava-no-app.md) | Aceita |
 | 0079 | [Desconectar o Strava deixa o app no estado de falha de sincronização](0079-desconectar-o-strava.md) | Aceita |
 | 0080 | [Conversa sobre um ajuste disparado pelo Strava leva só o antes e o depois do plano](0080-piu-sem-o-motivo-dos-ajustes-do-strava.md) | Aceita |
+| 0081 | [Planejamento de testes e CI antes do setup do monorepo](0081-planejamento-de-testes-e-ci-antes-do-setup.md) | Aceita |
 
 ## Como criar um novo ADR
 
