@@ -96,6 +96,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0088 | [Fluxos cobertos pelo E2E do MVP](0088-fluxos-cobertos-pelo-e2e.md) | Aceita |
 | 0089 | [Gitleaks na CI e push protection do GitHub](0089-scanner-de-segredos.md) | Aceita |
 | 0090 | [App mobile entregue em fatias verticais](0090-app-mobile-em-fatias-verticais.md) | Aceita |
+| 0091 | [Provedor de IA construído no épico do motor de regras](0091-ai-provider-no-epico-do-motor-de-regras.md) | Aceita |
 
 ## Como criar um novo ADR
 
