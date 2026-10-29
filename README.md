@@ -11,11 +11,13 @@ Também é um projeto de aprendizado do ciclo completo de desenvolvimento de sof
 1. Concepção e escopo
 2. Design, marca e fluxos
 3. Testes e CI (planejamento; ADR 0081)
-4. Setup do monorepo (inclui o pipeline de CI e os quality gates)
+4. Setup do monorepo (inclui o pipeline de CI, os quality gates e a casca do app)
 5. Backend Supabase (banco de dados, auth, RLS e segurança)
 6. Motor de regras
 7. Integração Strava
 8. Caixa de entrada de feedback
+
+A partir da etapa 5, cada épico entrega também as próprias telas do app e o fluxo E2E correspondente (ADR 0090).
 
 ## Documentação
 
