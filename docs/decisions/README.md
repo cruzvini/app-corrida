@@ -101,6 +101,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0093 | [Node 24 LTS fixado no projeto](0093-node-24-lts.md) | Aceita |
 | 0094 | [ESLint e Prettier para lint e formatação](0094-eslint-e-prettier.md) | Aceita |
 | 0095 | [Expo Router para a navegação do app](0095-expo-router.md) | Aceita |
+| 0096 | [StyleSheet com módulo de tokens para os estilos do app](0096-stylesheet-com-tokens.md) | Aceita |
 
 ## Como criar um novo ADR
 
