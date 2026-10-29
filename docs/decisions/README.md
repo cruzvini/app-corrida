@@ -99,6 +99,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0091 | [Provedor de IA construído no épico do motor de regras](0091-ai-provider-no-epico-do-motor-de-regras.md) | Aceita |
 | 0092 | [npm workspaces como gerenciador do monorepo](0092-npm-workspaces.md) | Aceita |
 | 0093 | [Node 24 LTS fixado no projeto](0093-node-24-lts.md) | Aceita |
+| 0094 | [ESLint e Prettier para lint e formatação](0094-eslint-e-prettier.md) | Aceita |
 
 ## Como criar um novo ADR
 
