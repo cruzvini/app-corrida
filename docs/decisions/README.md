@@ -104,6 +104,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0096 | [StyleSheet com módulo de tokens para os estilos do app](0096-stylesheet-com-tokens.md) | Aceita |
 | 0097 | [Pacotes internos consumidos como TypeScript fonte, sem build](0097-pacotes-internos-sem-build.md) | Aceita |
 | 0098 | [Pasta `tests/` organizada por camada da pirâmide](0098-pasta-tests-por-camada.md) | Aceita |
+| 0099 | [Todos os quality gates ativos desde o setup, com testes de fumaça](0099-gates-ativos-desde-o-setup.md) | Aceita |
 
 ## Como criar um novo ADR
 
