@@ -87,6 +87,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0079 | [Desconectar o Strava deixa o app no estado de falha de sincronização](0079-desconectar-o-strava.md) | Aceita |
 | 0080 | [Conversa sobre um ajuste disparado pelo Strava leva só o antes e o depois do plano](0080-piu-sem-o-motivo-dos-ajustes-do-strava.md) | Aceita |
 | 0081 | [Planejamento de testes e CI antes do setup do monorepo](0081-planejamento-de-testes-e-ci-antes-do-setup.md) | Aceita |
+| 0082 | [Jest como runner de testes unitários e de integração](0082-runner-jest.md) | Aceita |
 
 ## Como criar um novo ADR
 
