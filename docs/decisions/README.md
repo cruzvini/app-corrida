@@ -93,6 +93,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0085 | [Repositório público para os quality gates bloquearem o merge](0085-repositorio-publico.md) | Aceita |
 | 0086 | [Todos os quality gates rodam e bloqueiam o merge em todo PR](0086-gates-obrigatorios-em-todo-pr.md) | Aceita |
 | 0087 | [Cobertura mínima de testes por pacote](0087-cobertura-minima-por-pacote.md) | Aceita |
+| 0088 | [Fluxos cobertos pelo E2E do MVP](0088-fluxos-cobertos-pelo-e2e.md) | Aceita |
 
 ## Como criar um novo ADR
 
