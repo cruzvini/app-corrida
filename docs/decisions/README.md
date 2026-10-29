@@ -91,6 +91,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0083 | [E2E com Maestro no Android](0083-e2e-com-maestro.md) | Aceita |
 | 0084 | [CI no GitHub Actions](0084-ci-no-github-actions.md) | Aceita |
 | 0085 | [Repositório público para os quality gates bloquearem o merge](0085-repositorio-publico.md) | Aceita |
+| 0086 | [Todos os quality gates rodam e bloqueiam o merge em todo PR](0086-gates-obrigatorios-em-todo-pr.md) | Aceita |
 
 ## Como criar um novo ADR
 
