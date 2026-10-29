@@ -90,6 +90,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0082 | [Jest como runner de testes unitários e de integração](0082-runner-jest.md) | Aceita |
 | 0083 | [E2E com Maestro no Android](0083-e2e-com-maestro.md) | Aceita |
 | 0084 | [CI no GitHub Actions](0084-ci-no-github-actions.md) | Aceita |
+| 0085 | [Repositório público para os quality gates bloquearem o merge](0085-repositorio-publico.md) | Aceita |
 
 ## Como criar um novo ADR
 
