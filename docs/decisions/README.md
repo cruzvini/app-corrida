@@ -28,7 +28,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0020 | [Autenticação por e-mail com link mágico](0020-autenticacao-email-link-magico.md) | Aceita |
 | 0021 | [Pace alvo sugerido a partir do Strava](0021-pace-alvo-sugerido-pelo-strava.md) | Aceita (revisada pelo ADR 0103) |
 | 0022 | [IA propõe o plano, motor de regras valida](0022-ia-propoe-regras-validam-plano.md) | Aceita (revisada pelos ADRs 0106 e 0107) |
-| 0023 | [Plano inteiro com detalhe progressivo](0023-plano-inteiro-com-detalhe-progressivo.md) | Aceita |
+| 0023 | [Plano inteiro com detalhe progressivo](0023-plano-inteiro-com-detalhe-progressivo.md) | Aceita (revisada pelo ADR 0139) |
 | 0024 | [Treinos estruturados por blocos com pace alvo](0024-treinos-estruturados-por-blocos.md) | Aceita |
 | 0025 | [Strava marca o treino como feito, e o usuário corrige](0025-strava-marca-treino-feito-usuario-corrige.md) | Aceita |
 | 0026 | [Treino não feito gera ajuste automático do plano, com aviso](0026-treino-nao-feito-ajuste-automatico.md) | Aceita (revisada pelos ADRs 0078 e 0107) |
@@ -49,7 +49,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Substituída pelo ADR 0097 |
 | 0042 | [Idade sem limite mínimo, só com validação de valor plausível](0042-idade-sem-limite-minimo.md) | Aceita |
 | 0043 | [Data de início do plano escolhida no setup](0043-data-de-inicio-escolhida-no-setup.md) | Aceita (revisada pelo ADR 0102) |
-| 0044 | [Detalhamento da próxima semana na rotina das 22h do último dia da semana](0044-detalhamento-semanal-na-rotina-das-22h.md) | Aceita |
+| 0044 | [Detalhamento da próxima semana na rotina das 22h do último dia da semana](0044-detalhamento-semanal-na-rotina-das-22h.md) | Aceita (revisada pelo ADR 0139) |
 | 0045 | [Atividade feita em outro dia não é ligada ao treino previsto](0045-atividade-em-outro-dia-nao-e-religada.md) | Aceita (revisada pelo ADR 0078) |
 | 0046 | [Atividades compatíveis do mesmo dia são somadas como um treino](0046-atividades-do-mesmo-dia-somadas.md) | Aceita |
 | 0047 | [Só o ajuste automático mais recente pode ser desfeito](0047-so-o-ajuste-mais-recente-pode-ser-desfeito.md) | Aceita |
@@ -144,6 +144,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0136 | [Todos os quality gates ativos desde o setup, com testes de fumaça](0136-gates-ativos-desde-o-setup.md) | Aceita |
 | 0137 | [Outras atividades declaradas no setup, só como registro de carga](0137-outras-atividades-como-registro-de-carga.md) | Aceita |
 | 0138 | [Identidade visual do Live Run](0138-identidade-visual.md) | Aceita |
+| 0139 | [Detalhamento semanal pela IA, sem dados do Strava](0139-detalhamento-semanal-sem-dados-do-strava.md) | Aceita |
 
 ## Como criar um novo ADR
 

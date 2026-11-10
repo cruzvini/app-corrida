@@ -100,7 +100,7 @@ flowchart TD
   G -- não --> HOJE([Barra de abas, aba Hoje; o plano completo fica na aba Plano 3.1])
 ```
 
-Depois de gerado, as semanas seguintes são detalhadas automaticamente na rotina das 22h do último dia de cada semana do plano (ADR 0044), e cada uma gera um resumo em Notificações (3.8).
+Depois de gerado, as semanas seguintes são detalhadas automaticamente na rotina das 22h do último dia de cada semana do plano (ADR 0044), e cada uma gera um resumo em Notificações (3.8). A IA detalha sem dados do Strava, e o motor de regras valida a semana contra a carga real (ADR 0139).
 
 ## Jornada 4: dia a dia
 

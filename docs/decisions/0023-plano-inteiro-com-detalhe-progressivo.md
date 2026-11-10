@@ -1,6 +1,6 @@
 # ADR 0023: Plano inteiro com detalhe progressivo
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0139)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 Um plano totalmente detalhado desde o início fica desatualizado à medida que os treinos reais divergem do previsto. Um plano só de curto prazo não mostra para onde o treino vai. O app tem dados reais do Strava para adaptar o plano continuamente.
 
 ## Decisão
+
+*Revisado pelo ADR 0139: o detalhamento progressivo pela IA não usa dados do Strava; usa o plano (com os ajustes das regras), as marcações manuais e o texto do usuário, e as regras validam contra a carga real.*
 
 - **Plano específico:** o app gera a estrutura completa até a data da prova ou o prazo da meta (fases e volume semanal previsto), mas detalha treino a treino apenas as próximas 1 a 2 semanas. As semanas seguintes são detalhadas progressivamente, com base nos treinos reais sincronizados do Strava.
 - **Plano genérico:** sem data final, o horizonte é contínuo. O app sempre mantém as próximas 1 a 2 semanas detalhadas.

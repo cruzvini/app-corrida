@@ -16,5 +16,5 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 1. **Reconciliação com o histórico remoto (2026-11-10):** o design desta sessão é o oficial. Do main remoto foram trazidos, como ADRs 0105 a 0136, o épico do Strava, a fronteira da IA (dados do Strava nunca vão para a IA), a marca do Strava e o planejamento de testes, CI e setup. Decisões em aberto, uma por vez:
    1. ~~Modelo de carga~~ decidido no [ADR 0137](decisions/0137-outras-atividades-como-registro-de-carga.md): outras atividades declaradas no setup, só como registro de carga, sem nota de esforço.
    2. ~~Identidade visual~~ decidido no [ADR 0138](decisions/0138-identidade-visual.md): a do histórico paralelo é a base, com as cores de status desta sessão e sem nota de esforço.
-   3. **Detalhamento semanal pela IA (ADRs 0023 e 0044):** hoje usa os treinos reais da semana, que vêm do Strava; com o ADR 0106, a IA só pode usar o plano, as marcações manuais e o texto do usuário, ou o detalhamento passa a ser feito pelas regras.
+   3. ~~Detalhamento semanal~~ decidido no [ADR 0139](decisions/0139-detalhamento-semanal-sem-dados-do-strava.md): a IA continua detalhando, sem dados do Strava, e as regras validam contra a carga real.
 2. **Card 5:** terminar a identidade visual sobre a base do ADR 0138 (ver a lista do card acima).

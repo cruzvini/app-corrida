@@ -1,6 +1,6 @@
 # ADR 0044: Detalhamento da próxima semana na rotina das 22h do último dia da semana
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0139)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O ADR 0023 define que as semanas são detalhadas progressivamente, mas deixou o gatilho em aberto. O ADR 0026 já prevê uma rotina diária às 22h, no fuso do usuário, que fecha o dia e marca como não feitos os treinos sem atividade nem marcação.
 
 ## Decisão
+
+*Revisado pelo ADR 0139: a entrada da IA são o plano, as marcações manuais e o feedback do usuário, nunca os treinos vindos do Strava; o motor de regras valida a semana proposta contra a carga real.*
 
 No **último dia de cada semana do plano**, logo depois da rotina das 22h, o app detalha a semana seguinte com o fluxo "IA propõe, regras validam" (ADR 0022). A entrada são a estrutura do plano, os treinos reais da semana que terminou (feitos e não feitos) e o feedback do usuário (ADR 0028). O app mantém sempre de 1 a 2 semanas detalhadas, e cada semana nova gera um resumo em Notificações (critério 3.8).
 
