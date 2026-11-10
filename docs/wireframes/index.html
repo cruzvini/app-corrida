@@ -57,7 +57,8 @@ figcaption span { font-size: 13px; color: var(--note); }
 .top h3 { margin: 0; font-size: 20px; }
 .top .sub { font-size: 12px; color: var(--muted); }
 .sync { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
-.sync .ico { width: 16px; height: 16px; border: 1.5px solid var(--muted); border-radius: 50%; }
+.sync .refresh { width: 24px; height: 24px; border: 1.5px solid var(--ink); border-radius: 50%; display: grid; place-items: center; font-size: 13px; color: var(--ink); }
+.toast { background: var(--ink); color: var(--screen); border-radius: 10px; padding: 8px 12px; font-size: 12px; }
 
 .prev { font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 8px; display: flex; gap: 6px; }
 .prev b { color: var(--ink); font-weight: 500; }
@@ -139,8 +140,9 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="content">
             <div class="top">
               <div><h3>Segunda, 9 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
-              <div class="sync"><i class="ico"></i>há 12 min <i class="open">1</i></div>
+              <div class="sync">há 12 min <span class="refresh" aria-label="Atualizar">↻</span></div>
             </div>
+            <div class="toast">Já está atualizado. Você pode atualizar de novo às 8:00.</div>
             <div class="prev">Ontem: <b>Longão 11 km</b> · feito · 6:12/km</div>
             <div class="card">
               <div class="kind"><b>Intervalado</b><span>8,6 km · ~50 min</span></div>
@@ -177,7 +179,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         <figcaption>
           <strong>Antes do treino</strong>
           <span>O card mostra tipo, distância total e os blocos com pace alvo. Tocar no card abre o detalhe do treino.</span>
-          <span class="refs">ADR 0024 · 0034 · 0036 · crit. 4.1, 4.2</span>
+          <span>Atualizar: puxar a tela ou tocar no botão ao lado do horário. Antes dos 30 minutos, aparece a mensagem com o próximo horário possível.</span>
+          <span class="refs">ADR 0024 · 0034 · 0036 · 0064 · crit. 4.1, 4.2</span>
         </figcaption>
       </figure>
 
@@ -188,7 +191,7 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="content">
             <div class="top">
               <div><h3>Segunda, 9 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
-              <div class="sync"><i class="ico"></i>agora</div>
+              <div class="sync">agora <span class="refresh" aria-label="Atualizar">↻</span></div>
             </div>
             <div class="prev">Ontem: <b>Longão 11 km</b> · feito · 6:12/km</div>
             <div class="card">
@@ -237,7 +240,7 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="content">
             <div class="top">
               <div><h3>Segunda, 9 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
-              <div class="sync"><i class="ico"></i>falhou</div>
+              <div class="sync">falhou <span class="refresh" aria-label="Atualizar">↻</span></div>
             </div>
             <div class="alert">
               <b>Não conseguimos falar com o Strava</b>
@@ -289,17 +292,18 @@ figcaption span { font-size: 13px; color: var(--note); }
     <div class="eyebrow">Para decidir, uma por vez</div>
     <h2>Pontos em aberto do Hoje</h2>
     <div class="questions">
-      <div class="q next">
+      <div class="q">
         <i class="open">1</i>
         <div>
-          <p class="tag">Próxima pergunta</p>
-          <p><b>Atualização manual do Strava:</b> gesto de puxar a tela, botão visível, ou os dois?</p>
-          <p class="why">O ADR 0006 deixou a forma para o design. O limite de 1 consulta a cada 30 minutos precisa aparecer quando o usuário tenta antes da hora (critério 4.2).</p>
+          <p class="tag">Decidido · ADR 0064</p>
+          <p><b>Atualização manual do Strava:</b> gesto de puxar e botão ao lado do horário da última sincronização.</p>
+          <p class="why">Antes dos 30 minutos, o app mostra quando poderá atualizar de novo, sem tratar como erro.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q next">
         <i class="open">2</i>
         <div>
+          <p class="tag">Próxima pergunta</p>
           <p><b>Ações rápidas no card:</b> o card do Hoje traz atalhos (marcar feito, pular) ou todas as ações ficam só no detalhe do treino?</p>
           <p class="why">O ADR 0036 põe as ações no detalhe. Atalhos no card economizam um toque, mas competem com o resumo.</p>
         </div>

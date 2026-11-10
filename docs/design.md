@@ -13,4 +13,4 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 
 ## Próximos passos
 
-1. **Próxima pergunta:** atualização manual do Strava no Hoje: gesto de puxar, botão ou os dois (ponto 1 do wireframe do Hoje; forma deixada para o design pelo ADR 0006).
+1. **Próxima pergunta:** ações rápidas no card do Hoje: atalhos (marcar feito, pular) no card ou todas as ações só no detalhe do treino (ponto 2 do wireframe do Hoje). O ponto 1 foi decidido no [ADR 0064](decisions/0064-atualizacao-manual-puxar-e-botao.md).
