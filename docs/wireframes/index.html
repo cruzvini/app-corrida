@@ -2105,7 +2105,7 @@ figcaption span { font-size: 13px; color: var(--note); }
                 <span class="field"><b>Data (opcional)</b>Sugerir prazo</span>
               </span>
             </div>
-            <div class="note">Sugestão: 6 semanas, até 7 dez, pelo seu nível e pelas corridas recentes. <u>Ajustar</u> <i class="open">5</i></div>
+            <div class="note">Sugestão: 6 semanas, até 7 dez, pelo seu nível e pelas corridas recentes. <u>Ajustar</u></div>
             <div class="opt"><b>Melhorar o tempo numa distância</b>Prova ou recorde, com data e pace alvo.</div>
             <div class="opt"><b>Sem objetivo definido</b>Só correr com regularidade.</div>
             <div class="spacer"></div>
@@ -2114,8 +2114,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Qual é o objetivo</strong>
-          <span>Três opções. Em "Completar uma distância", a data é opcional e, sem ela, o app sugere um prazo; não há pace alvo, e os treinos podem alternar corrida e caminhada. "Melhorar o tempo" pede distância e data e sugere o pace na tela seguinte. "Sem objetivo definido" é o plano genérico.</span>
-          <span class="refs">ADR 0008 · 0016 · 0021 · 0024 · 0103 · crit. 2.4 a 2.6</span>
+          <span>Três opções. Em "Completar uma distância", a data é opcional e, sem ela, as regras sugerem um prazo; não há pace alvo, e os treinos podem alternar corrida e caminhada. "Melhorar o tempo" pede distância e data e sugere o pace na tela seguinte. "Sem objetivo definido" é o plano genérico.</span>
+          <span class="refs">ADR 0008 · 0016 · 0021 · 0024 · 0103 · 0104 · crit. 2.4 a 2.6</span>
         </figcaption>
       </figure>
 
@@ -2194,15 +2194,14 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-onboarding">
-    <div class="eyebrow">Para decidir, um por vez</div>
+    <div class="eyebrow">Todos decididos · ADRs 0100 a 0104</div>
     <h2>Pontos do onboarding</h2>
     <div class="questions">
-      <div class="q next">
+      <div class="q done">
         <i class="open">5</i>
         <div>
-          <p class="tag">Próxima pergunta · novo</p>
-          <p><b>Prazo sugerido em "Completar uma distância":</b> calculado pelas regras, de forma previsível, ou proposto pela IA, que pode considerar mais contexto?</p>
-          <p class="why">Pelas regras, o prazo sai do nível, do histórico do Strava e de um limite de progressão semanal, funciona sem IA e é coberto por testes. É o mesmo padrão do aviso de risco (ADR 0017): regras decidem, IA explica.</p>
+          <p class="tag">Decidido · ADR 0104</p>
+          <p><b>Prazo sugerido em "Completar uma distância":</b> calculado pelas regras, pela distância, nível, frequência e histórico do Strava, com um limite de progressão semanal. Prazo mais curto que o calculado gera aviso de risco.</p>
         </div>
       </div>
       <div class="q done">
