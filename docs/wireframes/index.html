@@ -1767,7 +1767,7 @@ figcaption span { font-size: 13px; color: var(--note); }
     <div class="phones">
       <!-- R1: Perfil -->
       <figure class="state">
-        <div class="phone" aria-label="Perfil">
+        <div class="phone tall" aria-label="Perfil">
           <div class="status"><span>13:00</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="top"><div><h3>Perfil</h3></div></div>
@@ -1777,7 +1777,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="pgroup">
                 <div class="prow"><span>Nível</span><b>Intermediário</b><span></span></div>
                 <div class="prow"><span>Idade e peso</span><b>34 anos · 72 kg</b><span></span></div>
-                <div class="prow"><span>Frequência</span><b>4 corridas · 2 musculações</b><span></span></div>
+                <div class="prow"><span>Frequência</span><b>4 corridas · musculação 2x · natação 1x</b><span></span></div>
                 <div class="prow"><span>Lesões ou limitações</span><b>Nenhuma informada</b><span></span></div>
               </div>
               <span class="btn">Editar perfil</span>
@@ -1830,6 +1830,8 @@ figcaption span { font-size: 13px; color: var(--note); }
               <h5>Frequência por semana</h5>
               <div class="field"><span class="stp-row"><b>Corrida</b><span class="stp">− 4 +</span></span></div>
               <div class="field"><span class="stp-row"><b>Musculação</b><span class="stp">− 2 +</span></span><span class="stp-row">Superiores<span class="stp">− 1 +</span></span><span class="stp-row">Inferiores<span class="stp">− 1 +</span></span></div>
+              <div class="field"><span class="stp-row"><b>Natação</b><span class="stp">− 1 +</span></span></div>
+              <p class="linkb">+ Adicionar outra atividade</p>
               <span class="src">O plano escolhe os dias.</span>
             </div>
             <div class="field tg chg"><b>Lesões ou limitações</b>Joelho sensível em descidas</div>
@@ -1845,7 +1847,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Editar perfil</strong>
-          <span>Nome, nível, idade, peso, frequência semanal e lesões ou limitações. A frequência é só quantidade, com a divisão da musculação. No exemplo, mudam o peso e as lesões (tracejado = mudou). Salvar grava na hora e abre o Piu; mudar só o nome não abre.</span>
+          <span>Nome, nível, idade, peso, frequência semanal e lesões ou limitações. A frequência é só quantidade: corrida e outras atividades, com a divisão da musculação. No exemplo, mudam o peso e as lesões (tracejado = mudou). Salvar grava na hora e abre o Piu; mudar só o nome não abre.</span>
           <span class="refs">ADR 0015 · 0039 · 0042 · 0095 · 0097 · 0098 · 0099 · crit. 6.5</span>
         </figcaption>
       </figure>
@@ -2081,6 +2083,8 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="dhead"><h3>Quantas vezes por semana?</h3></div>
             <div class="field"><span class="stp-row"><b>Corrida</b><span class="stp">− 4 +</span></span></div>
             <div class="field"><span class="stp-row"><b>Musculação</b><span class="stp">− 2 +</span></span><span class="stp-row">Superiores<span class="stp">− 1 +</span></span><span class="stp-row">Inferiores<span class="stp">− 1 +</span></span></div>
+              <div class="field"><span class="stp-row"><b>Natação</b><span class="stp">− 1 +</span></span></div>
+              <p class="linkb">+ Adicionar outra atividade</p>
             <p class="src">O plano escolhe os dias. Você muda a frequência depois, no Perfil.</p>
             <div class="spacer"></div>
             <div class="cta-main">Continuar</div>
@@ -2088,8 +2092,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Frequência semanal</strong>
-          <span>Só quantidades: dias de corrida, dias de musculação e a divisão em quantidade. Musculação pode ficar em zero.</span>
-          <span class="refs">ADR 0014 · 0097 · 0098 · crit. 2.3</span>
+          <span>Só quantidades: dias de corrida e as outras atividades, com o tipo e as vezes por semana. A musculação tem a divisão em quantidade; as demais são só registro de carga, sem prescrição. A lista pode ficar vazia.</span>
+          <span class="refs">ADR 0014 · 0097 · 0098 · 0137 · crit. 2.3</span>
         </figcaption>
       </figure>
 
@@ -2157,7 +2161,7 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="pgroup">
               <div class="srow"><span>Nível<small>Intermediário</small></span><u>Editar</u></div>
               <div class="srow"><span>Sobre você<small>Vini · 34 anos · 72 kg · sem lesões</small></span><u>Editar</u></div>
-              <div class="srow"><span>Frequência<small>4 corridas · 2 musculações</small></span><u>Editar</u></div>
+              <div class="srow"><span>Frequência<small>4 corridas · musculação 2x · natação 1x</small></span><u>Editar</u></div>
               <div class="srow"><span>Objetivo<small>Melhorar o tempo · 10 km em 3 jan · 5:20/km</small></span><u>Editar</u></div>
               <div class="srow"><span>Início<small>Hoje, seg 26 out</small></span><u>Editar</u></div>
             </div>
