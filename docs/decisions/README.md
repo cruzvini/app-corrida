@@ -41,7 +41,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0033 | [Tom de voz: parceiro de treino](0033-tom-de-voz-parceiro-de-treino.md) | Aceita |
 | 0034 | [Navegação por barra de abas inferior com Hoje no centro](0034-navegacao-por-abas-com-hoje-no-centro.md) | Aceita (revisada pelo ADR 0065) |
 | 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
-| 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita (revisada pelo ADR 0078) |
+| 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita (revisada pelos ADRs 0078 e 0084) |
 | 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita |
 | 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita |
 | 0039 | [Lesões e limitações como campo opcional no setup](0039-lesoes-e-limitacoes-no-setup.md) | Aceita |
@@ -65,7 +65,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0057 | [Ação pronta "trocar dia" dentro da semana atual do plano](0057-acao-trocar-dia.md) | Substituída pelo ADR 0078 |
 | 0058 | ["Pular" e "não será feito" são a mesma ação](0058-pular-e-nao-sera-feito-sao-a-mesma-acao.md) | Substituída pelo ADR 0078 |
 | 0059 | [Ação pronta "semana mais leve" reduz só a corrida restante da semana](0059-acao-semana-mais-leve.md) | Aceita |
-| 0060 | [Ação pronta "adiar a prova" recalcula a estrutura pelas regras](0060-acao-adiar-a-prova.md) | Aceita |
+| 0060 | [Ação pronta "adiar a prova" recalcula a estrutura pelas regras](0060-acao-adiar-a-prova.md) | Aceita (revisada pelo ADR 0084) |
 | 0061 | [Mudança nos dados do setup passa por revisão antes de valer](0061-mudanca-no-perfil-passa-por-revisao.md) | Aceita |
 | 0062 | [Proposta da conversa com o Piu aparece na conversa e vai para Notificações se ficar pendente](0062-proposta-do-piu-na-conversa.md) | Aceita |
 | 0063 | [Wireframes em artifact HTML de baixa fidelidade](0063-wireframes-em-artifact-html.md) | Aceita |
@@ -83,9 +83,13 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0075 | [Detalhe do treino mostra os paces em lista e compara previsto e feito só no geral](0075-paces-sem-barras-e-comparacao-geral.md) | Aceita (revisada pelo ADR 0080) |
 | 0076 | [Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino](0076-acoes-e-feedback-no-rodape-do-detalhe.md) | Aceita |
 | 0077 | [Apagar um feedback pede confirmação](0077-apagar-feedback-pede-confirmacao.md) | Aceita |
-| 0078 | [Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"](0078-replanejar-treino-com-o-piu.md) | Aceita |
+| 0078 | [Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"](0078-replanejar-treino-com-o-piu.md) | Aceita (revisada pelo ADR 0084) |
 | 0079 | [O executado no detalhe do treino usa só o resumo do Strava](0079-executado-so-com-o-resumo-do-strava.md) | Aceita |
 | 0080 | [Treino feito mostra só o previsto × feito](0080-treino-feito-mostra-so-previsto-x-feito.md) | Aceita |
+| 0081 | [Tela inicial do Plano com objetivo, fases e semanas](0081-tela-inicial-do-plano.md) | Aceita |
+| 0082 | [Fases do plano em retângulos de mesma largura, com rolagem horizontal](0082-fases-em-faixa-com-rolagem.md) | Aceita |
+| 0083 | [Detalhe do plano com o volume semanal previsto × feito](0083-detalhe-do-plano.md) | Aceita |
+| 0084 | ["Semana mais leve" e "Adiar objetivo" viram sugestões de pedido ao Piu](0084-acoes-da-semana-viram-sugestoes-do-piu.md) | Aceita |
 
 ## Como criar um novo ADR
 

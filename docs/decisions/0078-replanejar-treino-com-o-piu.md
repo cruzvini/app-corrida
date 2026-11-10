@@ -1,6 +1,6 @@
 # ADR 0078: Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0084)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -27,5 +27,5 @@ Quando a mudança vem do Strava, o plano já é reavaliado automaticamente: trei
 - Toda mudança feita pelo usuário num treino reavalia o plano, e não só o dia escolhido.
 - Mudar um treino passa a depender da IA: cada uso é uma chamada sujeita ao controle de custos (ADR 0031). Sem a IA, "Replanejar" mostra que não está disponível no momento; "Marcar como feito", as ações da semana e o ajuste das 22h continuam valendo.
 - Mudar um treino deixa de ser imediato: há o passo de aceitar a proposta.
-- As ações prontas ficam só no nível da semana: semana mais leve (ADR 0059) e adiar a prova (ADR 0060). No treino, ficam marcar ou desmarcar como feito e corrigir a divisão.
+- As ações prontas ficam só no nível da semana: semana mais leve (ADR 0059) e adiar a prova (ADR 0060). No treino, ficam marcar ou desmarcar como feito e corrigir a divisão. *Revisado pelo ADR 0084: as duas viram sugestões de pedido ao Piu, e "Adiar objetivo" também fica no detalhe do plano.*
 - Revisa os ADRs 0018, 0026, 0036, 0041 e 0045 e os critérios 4.6 e 6.1. Substitui os ADRs 0057 e 0058.

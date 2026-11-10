@@ -1,6 +1,6 @@
 # ADR 0036: Tela de detalhe do treino como ponto central das ações
 
-- **Status:** Aceita (revisada pelo ADR 0078)
+- **Status:** Aceita (revisada pelos ADRs 0078 e 0084)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -17,7 +17,7 @@ Tocar em um treino, seja no Hoje, no Plano ou em uma notificação, abre uma **t
 - Feedback em texto sobre o treino.
 - Botão "Falar com o Piu sobre este treino", que abre a conversa (ADR 0035) com o treino como contexto.
 
-As ações prontas da semana (semana mais leve e, no plano específico, adiar a prova) ficam no cabeçalho da semana, na aba Plano.
+As ações prontas da semana (semana mais leve e, no plano específico, adiar a prova) ficam no cabeçalho da semana, na aba Plano. *Revisado pelo ADR 0084: elas saem da aba Plano e viram sugestões de pedido ao Piu; "Adiar objetivo" também fica no detalhe do plano.*
 
 ## Consequências
 

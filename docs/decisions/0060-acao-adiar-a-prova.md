@@ -1,6 +1,6 @@
 # ADR 0060: Ação pronta "adiar a prova" recalcula a estrutura pelas regras
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0084)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 No plano específico, "adiar a prova" é uma ação pronta da semana (ADRs 0018 e 0036) e precisa ser determinística. O plano tem uma estrutura até a data da prova (fases e volume semanal), separada das 1 a 2 semanas detalhadas (ADR 0023).
 
 ## Decisão
+
+*Revisado pelo ADR 0084: na interface, a ação se chama "Adiar objetivo", fica no detalhe do plano e como sugestão de pedido ao Piu.*
 
 O usuário escolhe no calendário uma data **mais tarde** que a atual.
 

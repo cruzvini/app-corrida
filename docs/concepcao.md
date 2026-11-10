@@ -90,7 +90,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      6. Se o feedback mencionar dor ou lesão, ele tem o mesmo tratamento dos outros feedbacks, sem recomendação automática de procurar um profissional. Posso ajustar o nível dos treinos com o Piu (ADR 0051).
      7. Se o feedback não pedir mudança, o plano não muda e não recebo mensagem.
    - **Jornada 6, replanejamento (validada):**
-     1. Em qualquer semana, tenho acesso às ações prontas: semana mais leve e, no plano específico, adiar a prova (ADR 0018). Para mudar um treino, uso o "Replanejar" com o Piu, que reavalia também os próximos dias (ADR 0078).
+     1. Tenho acesso às ações prontas "Semana mais leve" e, no plano específico, "Adiar objetivo", como sugestões de pedido ao Piu; "Adiar objetivo" também fica no detalhe do plano (ADRs 0018 e 0084). Para mudar um treino, uso o "Replanejar" com o Piu, que reavalia também os próximos dias (ADR 0078).
      2. Uma ação pronta é aplicada na hora, mostra o que mudou e pode ser desfeita (a última ação).
      3. Posso descrever qualquer situação em texto livre (ex.: "vou viajar quinta e sexta") e recebo uma proposta com o antes e o depois, que aceito, edito ou descarto antes de aplicar.
      4. Se a mudança for arriscada, vejo o aviso e as alternativas, sem bloqueio (ADR 0017).
