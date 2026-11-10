@@ -75,7 +75,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0067 | [Corrida e musculação no mesmo dia: card principal da corrida e card resumido da musculação](0067-corrida-e-musculacao-no-mesmo-dia.md) | Aceita |
 | 0068 | [Dia de descanso no Hoje mostra só "Dia de descanso"](0068-dia-de-descanso-no-hoje.md) | Aceita |
 | 0069 | [Tocar em um dia com dois treinos na faixa abre a escolha do treino](0069-dia-com-dois-treinos-abre-escolha.md) | Aceita |
-| 0070 | [Ícone da modalidade com cor de status na faixa de 7 dias](0070-icones-e-cores-de-status-na-faixa.md) | Aceita |
+| 0070 | [Ícone da modalidade e cor de status no contorno do dia na faixa de 7 dias](0070-icones-e-cores-de-status-na-faixa.md) | Aceita |
 
 ## Como criar um novo ADR
 
