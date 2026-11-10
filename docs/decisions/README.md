@@ -110,6 +110,38 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0102 | [Plano fica ativo direto depois de gerar, sem tela de revisão e aceite](0102-plano-ativo-direto-apos-gerar.md) | Aceita |
 | 0103 | [Objetivo em três opções: completar uma distância, melhorar o tempo ou sem objetivo definido](0103-objetivo-em-tres-opcoes.md) | Aceita |
 | 0104 | [Prazo sugerido em "Completar uma distância" é calculado pelas regras](0104-prazo-sugerido-pelas-regras.md) | Aceita |
+| 0105 | [Integração com a API do Strava no backend, sem o Strava MCP](0105-api-do-strava-no-backend.md) | Aceita |
+| 0106 | [Dados do Strava nunca vão para a IA](0106-dados-do-strava-nunca-vao-para-a-ia.md) | Aceita |
+| 0107 | [Ajustes disparados pelo Strava são feitos só pelo motor de regras](0107-ajustes-do-strava-so-pelo-motor-de-regras.md) | Aceita |
+| 0108 | [Histórico do Strava: 12 semanas, só o resumo de cada atividade](0108-historico-de-12-semanas-com-resumo.md) | Aceita |
+| 0109 | [Polling no Supabase a cada 2h, das 5h às 23h](0109-polling-a-cada-2h.md) | Aceita |
+| 0110 | [Permissão activity:read_all no Strava, sem guardar mapa ou GPS](0110-permissao-activity-read-all.md) | Aceita |
+| 0111 | [Cada consulta concilia as atividades dos últimos 7 dias](0111-conciliacao-dos-ultimos-7-dias.md) | Aceita |
+| 0112 | [Tokens do Strava cifrados com o Supabase Vault](0112-tokens-do-strava-no-vault.md) | Aceita |
+| 0113 | [Limite de atletas do app no Strava](0113-limite-de-atletas-no-strava.md) | Aceita |
+| 0114 | [Testes da integração com o Strava sem depender do Strava real](0114-testes-da-integracao-com-o-strava.md) | Aceita |
+| 0115 | [Marca do Strava no app](0115-marca-do-strava-no-app.md) | Aceita |
+| 0116 | [Desconectar o Strava deixa o app no estado de falha de sincronização](0116-desconectar-o-strava.md) | Aceita |
+| 0117 | [Conversa sobre um ajuste disparado pelo Strava leva só o antes e o depois do plano](0117-piu-sem-o-motivo-dos-ajustes-do-strava.md) | Aceita |
+| 0118 | [Planejamento de testes e CI antes do setup do monorepo](0118-planejamento-de-testes-e-ci-antes-do-setup.md) | Aceita |
+| 0119 | [Jest como runner de testes unitários e de integração](0119-runner-jest.md) | Aceita |
+| 0120 | [E2E com Maestro no Android](0120-e2e-com-maestro.md) | Aceita |
+| 0121 | [CI no GitHub Actions](0121-ci-no-github-actions.md) | Aceita |
+| 0122 | [Repositório público para os quality gates bloquearem o merge](0122-repositorio-publico.md) | Aceita |
+| 0123 | [Todos os quality gates rodam e bloqueiam o merge em todo PR](0123-gates-obrigatorios-em-todo-pr.md) | Aceita |
+| 0124 | [Cobertura mínima de testes por pacote](0124-cobertura-minima-por-pacote.md) | Aceita |
+| 0125 | [Fluxos cobertos pelo E2E do MVP](0125-fluxos-cobertos-pelo-e2e.md) | Aceita |
+| 0126 | [Gitleaks na CI e push protection do GitHub](0126-scanner-de-segredos.md) | Aceita |
+| 0127 | [App mobile entregue em fatias verticais](0127-app-mobile-em-fatias-verticais.md) | Aceita |
+| 0128 | [Provedor de IA construído no épico do motor de regras](0128-ai-provider-no-epico-do-motor-de-regras.md) | Aceita |
+| 0129 | [npm workspaces como gerenciador do monorepo](0129-npm-workspaces.md) | Aceita |
+| 0130 | [Node 24 LTS fixado no projeto](0130-node-24-lts.md) | Aceita |
+| 0131 | [ESLint e Prettier para lint e formatação](0131-eslint-e-prettier.md) | Aceita |
+| 0132 | [Expo Router para a navegação do app](0132-expo-router.md) | Aceita |
+| 0133 | [StyleSheet com módulo de tokens para os estilos do app](0133-stylesheet-com-tokens.md) | Aceita |
+| 0134 | [Pacotes internos consumidos como TypeScript fonte, sem build](0134-pacotes-internos-sem-build.md) | Aceita |
+| 0135 | [Pasta `tests/` organizada por camada da pirâmide](0135-pasta-tests-por-camada.md) | Aceita |
+| 0136 | [Todos os quality gates ativos desde o setup, com testes de fumaça](0136-gates-ativos-desde-o-setup.md) | Aceita |
 
 ## Como criar um novo ADR
 
