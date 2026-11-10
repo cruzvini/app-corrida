@@ -59,7 +59,7 @@ flowchart TD
   H -- sem objetivo definido: plano genérico --> INI
   H -- completar uma distância --> CD[Distância livre; data opcional 2.5]
   CD --> CD1{Informou a data?}
-  CD1 -- não --> CD2[App sugere um prazo realista: aceitar ou ajustar]
+  CD1 -- não --> CD2[Regras sugerem um prazo realista: aceitar ou ajustar, ADR 0104]
   CD1 -- sim --> INI
   CD2 --> INI
   H -- melhorar o tempo --> I[Distância livre e data 2.5]

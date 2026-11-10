@@ -109,6 +109,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0101 | [Progresso do setup com barra e contagem de passos](0101-progresso-do-setup-com-passos.md) | Aceita |
 | 0102 | [Plano fica ativo direto depois de gerar, sem tela de revisão e aceite](0102-plano-ativo-direto-apos-gerar.md) | Aceita |
 | 0103 | [Objetivo em três opções: completar uma distância, melhorar o tempo ou sem objetivo definido](0103-objetivo-em-tres-opcoes.md) | Aceita |
+| 0104 | [Prazo sugerido em "Completar uma distância" é calculado pelas regras](0104-prazo-sugerido-pelas-regras.md) | Aceita |
 
 ## Como criar um novo ADR
 

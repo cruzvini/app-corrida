@@ -26,7 +26,7 @@ As opções 1 e 2 são planos específicos: sempre terminam numa data, informada
 ## Consequências
 
 - O usuário escolhe pelo que quer, e não por um termo técnico como "plano específico".
-- Como o prazo sugerido é calculado (pelas regras ou pela IA) fica para o próximo ADR.
+- Como o prazo sugerido é calculado (pelas regras ou pela IA) fica para o próximo ADR. *Decidido no ADR 0104: pelas regras.*
 - "Adiar objetivo" (ADR 0060) vale para as opções 1 e 2, que têm data.
 - Um objetivo em texto livre, interpretado pela IA, fica para depois do MVP, nas ideias de features.
 - Revisa os ADRs 0008, 0016 e 0021 e os critérios 2.4 a 2.6.
