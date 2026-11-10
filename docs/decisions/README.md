@@ -92,6 +92,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0084 | ["Semana mais leve" e "Adiar objetivo" viram sugestões de pedido ao Piu](0084-acoes-da-semana-viram-sugestoes-do-piu.md) | Aceita (revisada pelo ADR 0085) |
 | 0085 | [Sugestões de pedido no Piu geram uma proposta do Piu](0085-sugestoes-do-piu-geram-proposta.md) | Aceita |
 | 0086 | [Mensagem de Notificações abre em tela própria](0086-mensagem-abre-em-tela-propria.md) | Aceita |
+| 0087 | [Lista de Notificações em ordem cronológica, com dia e hora em cada mensagem](0087-lista-de-notificacoes-cronologica.md) | Aceita |
 
 ## Como criar um novo ADR
 
