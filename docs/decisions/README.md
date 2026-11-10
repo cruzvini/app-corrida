@@ -148,6 +148,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0140 | [Direção visual esportiva sobre a base da identidade](0140-direcao-visual-esportiva.md) | Aceita |
 | 0141 | [Skills de design copiadas para o repositório](0141-skills-de-design.md) | Aceita |
 | 0142 | [Tons de status, fundo com transparência e selos](0142-tons-de-status-e-selos.md) | Aceita |
+| 0143 | [Definições de alta fidelidade registradas no design system Live Run](0143-alta-fidelidade-no-design-system.md) | Aceita |
 
 ## Como criar um novo ADR
 
