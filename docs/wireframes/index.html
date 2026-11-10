@@ -54,12 +54,12 @@ figcaption strong { font-size: 15px; }
 figcaption span { font-size: 13px; color: var(--note); }
 .refs { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
 
-/* Ícones de modalidade e cores de status (ADR 0070) */
+/* Ícones de modalidade na cor do app; status no contorno (ADR 0070) */
 .sx { width: 14px; height: 14px; display: inline-block; vertical-align: -2px; color: var(--ink); flex: none; }
-.sx.done { color: var(--done); }
-.sx.missed { color: var(--missed); }
-.sx.planned { color: var(--planned); }
 .sx.lg { width: 18px; height: 18px; vertical-align: -3px; }
+.swatch { width: 22px; height: 16px; border-radius: 5px; border: 2px solid var(--line); display: inline-block; }
+.swatch.done { border-color: var(--done); }
+.swatch.missed { border-color: var(--missed); }
 
 /* Telefone */
 .phone { position: relative; border: 9px solid var(--frame); border-radius: 38px; background: var(--screen); overflow: hidden; display: flex; flex-direction: column; aspect-ratio: 375 / 780; max-width: 100%; }
@@ -111,6 +111,10 @@ figcaption span { font-size: 13px; color: var(--note); }
 .day.today { border: 2px solid var(--ink); background: var(--fill); }
 .day.rest { border-style: dashed; }
 .day.tapped { outline: 2px solid var(--ink); outline-offset: 1px; }
+.day { position: relative; }
+.day.done { border: 2px solid var(--done); }
+.day.missed { border: 2px solid var(--missed); }
+.day .flag { position: absolute; top: -8px; right: -6px; width: 16px; height: 16px; font-size: 9.5px; background: var(--screen); }
 
 /* Folha de escolha do treino (ADR 0069) */
 .scrim { position: absolute; inset: 0; background: var(--scrim); }
@@ -121,6 +125,8 @@ figcaption span { font-size: 13px; color: var(--note); }
 .sheet .row div { flex: 1; display: grid; }
 .sheet .row small { color: var(--muted); font-size: 11.5px; }
 .sheet .row .go { color: var(--muted); }
+.sheet .row.done { border: 2px solid var(--done); }
+.sheet .row.missed { border: 2px solid var(--missed); }
 
 .tabbar { display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; border-top: 1px solid var(--line); padding: 6px 4px 14px; font-size: 10.5px; text-align: center; color: var(--muted); margin-top: auto; }
 .tab { display: grid; justify-items: center; gap: 3px; position: relative; }
@@ -164,13 +170,13 @@ figcaption span { font-size: 13px; color: var(--note); }
   <header class="sheet">
     <div class="eyebrow">Épico #2 · Card 4 · Baixa fidelidade</div>
     <h1>Wireframes do Live Run</h1>
-    <p class="lead">Telas principais em cinza, sem cor nem marca (a identidade visual é o card 5). A exceção são as cores de status da faixa de dias, em tons provisórios (ADR 0070). Cada tela cita os ADRs e critérios que atende. Os círculos tracejados marcam decisões ainda em aberto, listadas no fim da página.</p>
+    <p class="lead">Telas principais em cinza, sem cor nem marca (a identidade visual é o card 5). A exceção são as cores de status no contorno dos dias da faixa, em tons provisórios (ADR 0070). Cada tela cita os ADRs e critérios que atende. Os círculos tracejados marcam decisões ainda em aberto, listadas no fim da página.</p>
     <div class="legend">
       <span><svg class="sx lg"><use href="#i-run"/></svg> corrida</span>
       <span><svg class="sx lg"><use href="#i-gym"/></svg> musculação</span>
-      <span><svg class="sx lg done"><use href="#i-run"/></svg> feito</span>
-      <span><svg class="sx lg missed"><use href="#i-run"/></svg> não feito</span>
-      <span><svg class="sx lg planned"><use href="#i-run"/></svg> planejado ou pendente (cor da paleta, card 5)</span>
+      <span><i class="swatch done"></i> contorno verde: feito</span>
+      <span><i class="swatch missed"></i> contorno vermelho: não feito</span>
+      <span><i class="swatch"></i> contorno padrão: planejado ou pendente</span>
       <span>tracejado = descanso</span>
     </div>
   </header>
@@ -178,7 +184,7 @@ figcaption span { font-size: 13px; color: var(--note); }
   <section class="screen-group" id="hoje">
     <div class="eyebrow">Aba central · abre ao entrar no app</div>
     <h2>Hoje</h2>
-    <p class="lead">Treino do dia em blocos e, abaixo dele, a faixa de 7 dias com o dia atual no centro: 3 dias anteriores à esquerda e 3 próximos à direita (ADR 0065). Cada dia mostra o ícone de cada treino, colorido pelo status (ADR 0070). Tocar em um dia abre o detalhe do treino, ou a escolha quando o dia tem dois treinos (ADR 0069). Seis estados, de segunda a quarta, 9 a 11 de novembro.</p>
+    <p class="lead">Treino do dia em blocos e, abaixo dele, a faixa de 7 dias com o dia atual no centro: 3 dias anteriores à esquerda e 3 próximos à direita (ADR 0065). Cada dia mostra o ícone de cada treino, e o contorno do dia indica o status (ADR 0070). Tocar em um dia abre o detalhe do treino, ou a escolha quando o dia tem dois treinos (ADR 0069). Seis estados, de segunda a quarta, 9 a 11 de novembro.</p>
 
     <div class="phones">
       <!-- Estado 1: antes do treino -->
@@ -203,13 +209,13 @@ figcaption span { font-size: 13px; color: var(--note); }
               <span class="more">Ver treino</span>
             </div>
             <div class="strip">
-              <div class="day">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx missed"><use href="#i-run"/></svg></span></div>
+              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day rest">Sáb<b>7</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg></span></div>
-              <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
+              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
             </div>
           </div>
           <nav class="tabbar">
@@ -249,13 +255,13 @@ figcaption span { font-size: 13px; color: var(--note); }
               <span class="more">Ver treino</span>
             </div>
             <div class="strip">
-              <div class="day">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx missed"><use href="#i-run"/></svg></span></div>
+              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day rest">Sáb<b>7</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
+              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
             </div>
           </div>
           <nav class="tabbar">
@@ -268,7 +274,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Treino feito</strong>
-          <span>O Strava sincronizou uma corrida do mesmo dia. O card troca os blocos pelo resumo da atividade e mostra o campo opcional "Como foi?", que some no dia seguinte. O ícone de corrida de hoje fica verde na faixa.</span>
+          <span>O Strava sincronizou uma corrida do mesmo dia. O card troca os blocos pelo resumo da atividade e mostra o campo opcional "Como foi?", que some no dia seguinte. O dia de hoje fica com o contorno verde na faixa.</span>
           <span class="refs">ADR 0025 · 0046 · 0048 · 0070 · crit. 4.3, 4.10</span>
         </figcaption>
       </figure>
@@ -299,13 +305,13 @@ figcaption span { font-size: 13px; color: var(--note); }
               <span class="more">Ver treino</span>
             </div>
             <div class="strip">
-              <div class="day">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx missed"><use href="#i-run"/></svg></span></div>
+              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day rest">Sáb<b>7</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg></span></div>
-              <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
+              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
             </div>
           </div>
           <nav class="tabbar">
@@ -318,7 +324,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Falha no Strava</strong>
-          <span>O aviso fica no topo do Hoje com o botão para reconectar. O treino do dia aparece como pendente, com o ícone na cor de planejado, e ainda pode ser marcado manualmente pelo detalhe.</span>
+          <span>O aviso fica no topo do Hoje com o botão para reconectar. O treino do dia aparece como pendente, com o contorno padrão na faixa, e ainda pode ser marcado manualmente pelo detalhe.</span>
           <span class="refs">ADR 0049 · 0070 · crit. 4.4</span>
         </figcaption>
       </figure>
@@ -347,12 +353,12 @@ figcaption span { font-size: 13px; color: var(--note); }
             </div>
             <div class="strip">
               <div class="day rest">Sáb<b>7</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day today">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day today">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
-              <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg></span></div>
+              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
+              <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
             </div>
           </div>
           <nav class="tabbar">
@@ -383,12 +389,12 @@ figcaption span { font-size: 13px; color: var(--note); }
               <b>Dia de descanso</b>
             </div>
             <div class="strip">
-              <div class="day">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg><svg class="sx missed"><use href="#i-gym"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day mixed">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="open flag">7</i></div>
               <div class="day today rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
-              <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg></span></div>
+              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
+              <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day rest">Sáb<b>14</b><i>—</i><span class="ics"></span></div>
             </div>
           </div>
@@ -402,7 +408,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Dia de descanso</strong>
-          <span>O lugar do card principal mostra só "Dia de descanso", sem ações e sem abrir detalhe. Na faixa, a terça mostra a corrida feita (verde) e a musculação não feita (vermelho).</span>
+          <span>O lugar do card principal mostra só "Dia de descanso", sem ações e sem abrir detalhe. Na faixa, a terça teve a corrida feita e a musculação não feita. A cor desse dia misto ainda está em aberto (ponto 7), então o contorno fica padrão por enquanto.</span>
           <span class="refs">ADR 0065 · 0068 · 0070</span>
         </figcaption>
       </figure>
@@ -420,12 +426,12 @@ figcaption span { font-size: 13px; color: var(--note); }
               <b>Dia de descanso</b>
             </div>
             <div class="strip">
-              <div class="day">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg></span></div>
-              <div class="day tapped">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx done"><use href="#i-run"/></svg><svg class="sx missed"><use href="#i-gym"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day mixed tapped">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="open flag">7</i></div>
               <div class="day today rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
-              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx planned"><use href="#i-gym"/></svg></span></div>
-              <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx planned"><use href="#i-run"/></svg></span></div>
+              <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
+              <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day rest">Sáb<b>14</b><i>—</i><span class="ics"></span></div>
             </div>
           </div>
@@ -440,13 +446,13 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="sheet">
             <span class="grab"></span>
             <h4>Terça, 10 nov</h4>
-            <div class="row">
-              <svg class="sx lg done"><use href="#i-run"/></svg>
+            <div class="row done">
+              <svg class="sx lg"><use href="#i-run"/></svg>
               <div><b>Corrida · Leve</b><small>Feito · 5,1 km · 6:28/km</small></div>
               <span class="go">›</span>
             </div>
-            <div class="row">
-              <svg class="sx lg missed"><use href="#i-gym"/></svg>
+            <div class="row missed">
+              <svg class="sx lg"><use href="#i-gym"/></svg>
               <div><b>Musculação · Superiores</b><small>Não feito</small></div>
               <span class="go">›</span>
             </div>
@@ -454,7 +460,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Escolha do treino</strong>
-          <span>Tocar na terça, que teve dois treinos, abre uma folha com os dois. Cada linha leva ao detalhe do treino. Um dia com um só treino abre o detalhe direto.</span>
+          <span>Tocar na terça, que teve dois treinos, abre uma folha com os dois. Cada linha leva ao detalhe do treino, e o contorno da linha mostra o status daquele treino. Um dia com um só treino abre o detalhe direto.</span>
           <span class="refs">ADR 0036 · 0069 · 0070</span>
         </figcaption>
       </figure>
@@ -483,7 +489,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         <i class="open">3</i>
         <div>
           <p class="tag">Decidido · ADRs 0065 e 0070</p>
-          <p><b>Faixa de dias:</b> dia atual no centro, 3 anteriores e 3 próximos, com o ícone de cada treino colorido pelo status. Substitui o lembrete do treino de ontem.</p>
+          <p><b>Faixa de dias:</b> dia atual no centro, 3 anteriores e 3 próximos, com o ícone de cada treino e o status na cor do contorno do dia. Substitui o lembrete do treino de ontem.</p>
         </div>
       </div>
       <div class="q done">
@@ -504,15 +510,23 @@ figcaption span { font-size: 13px; color: var(--note); }
         <i class="open">6</i>
         <div>
           <p class="tag">Decidido · ADRs 0069 e 0070</p>
-          <p><b>Dia com dois treinos na faixa:</b> o toque abre a escolha do treino, e cada ícone mostra o próprio status.</p>
+          <p><b>Dia com dois treinos na faixa:</b> o toque abre a escolha do treino, e o contorno de cada linha mostra o status daquele treino.</p>
         </div>
       </div>
       <div class="q next">
         <i class="open">7</i>
         <div>
           <p class="tag">Próxima pergunta</p>
-          <p><b>Status só por cor:</b> reforçar feito e não feito também pela forma do ícone, para quem não distingue verde de vermelho?</p>
-          <p class="why">Cerca de 8% dos homens têm alguma deficiência de visão de cores, e verde e vermelho são o par mais afetado. Um reforço possível: ícone cheio para feito, ícone riscado para não feito e só o contorno para planejado, mantendo as cores.</p>
+          <p><b>Dia misto na faixa:</b> qual contorno usar quando um treino do dia foi feito e o outro não?</p>
+          <p class="why">Opções: amarelo, ou verde com um pequeno selo "!" no canto. O selo mantém três cores e é uma forma, não só uma cor. Junto disso: no dia atual, com um treino feito e outro ainda por fazer, o contorno fica padrão até o fim do dia?</p>
+        </div>
+      </div>
+      <div class="q">
+        <i class="open">8</i>
+        <div>
+          <p class="tag">Em aberto</p>
+          <p><b>Status só por cor:</b> reforçar feito e não feito também por uma forma, para quem não distingue verde de vermelho?</p>
+          <p class="why">Cerca de 8% dos homens têm alguma deficiência de visão de cores, e verde e vermelho são o par mais afetado.</p>
         </div>
       </div>
     </div>
