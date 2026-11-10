@@ -39,7 +39,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0031 | [Controle de custos da IA com teto mensal e limite por usuário](0031-controle-de-custos-da-ia.md) | Aceita |
 | 0032 | [Nome do app: Live Run](0032-nome-do-app-live-run.md) | Aceita |
 | 0033 | [Tom de voz: parceiro de treino](0033-tom-de-voz-parceiro-de-treino.md) | Aceita |
-| 0034 | [Navegação por barra de abas inferior com Hoje no centro](0034-navegacao-por-abas-com-hoje-no-centro.md) | Aceita (revisada pelo ADR 0065) |
+| 0034 | [Navegação por barra de abas inferior com Hoje no centro](0034-navegacao-por-abas-com-hoje-no-centro.md) | Aceita (revisada pelos ADRs 0065 e 0138) |
 | 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
 | 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita (revisada pelos ADRs 0078 e 0084) |
 | 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita (revisada pelos ADRs 0095, 0097, 0099 e 0102) |
@@ -143,6 +143,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0135 | [Pasta `tests/` organizada por camada da pirâmide](0135-pasta-tests-por-camada.md) | Aceita |
 | 0136 | [Todos os quality gates ativos desde o setup, com testes de fumaça](0136-gates-ativos-desde-o-setup.md) | Aceita |
 | 0137 | [Outras atividades declaradas no setup, só como registro de carga](0137-outras-atividades-como-registro-de-carga.md) | Aceita |
+| 0138 | [Identidade visual do Live Run](0138-identidade-visual.md) | Aceita |
 
 ## Como criar um novo ADR
 

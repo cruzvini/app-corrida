@@ -5,7 +5,7 @@
 
 ## Contexto
 
-As [diretrizes de marca da API do Strava](https://developers.strava.com/guidelines/) exigem o botão oficial "Connect with Strava" no OAuth, o texto "View on Strava" nos links para os dados originais (em negrito, sublinhado ou laranja `#FC5200`) e o logo "Powered by Strava" separado da marca do app, nunca mais destacado que ela. A identidade visual do Live Run (card 5 do épico de design) precisa conviver com o laranja do Strava, que é uma cor forte.
+As [diretrizes de marca da API do Strava](https://developers.strava.com/guidelines/) exigem o botão oficial "Connect with Strava" no OAuth, o texto "View on Strava" nos links para os dados originais (em negrito, sublinhado ou laranja `#FC5200`) e o logo "Powered by Strava" separado da marca do app, nunca mais destacado que ela. O Live Run tem uma única cor de marca, o azul-ardósia (ADR 0138), e o laranja do Strava é uma segunda cor forte.
 
 ## Decisão
 

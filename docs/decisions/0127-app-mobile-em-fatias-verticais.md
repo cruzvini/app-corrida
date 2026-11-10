@@ -12,7 +12,7 @@ O ADR 0118 deixou em aberto a posição do trabalho do app mobile (telas em alta
 
 Não criar um épico separado para o app. Ele é entregue em **fatias verticais**:
 
-- **Setup do monorepo:** cria a casca do app, com a navegação por abas (ADR 0034), o tema e os tokens do Live Run (identidade visual, card 5 do épico de design).
+- **Setup do monorepo:** cria a casca do app, com a navegação por abas (ADR 0034), o tema e os tokens do Live Run (ADR 0138).
 - **Cada épico seguinte** entrega as telas em alta fidelidade e a implementação das funcionalidades dele, junto com o backend e o fluxo E2E correspondente (ADR 0125):
 
 | Épico | Telas | Fluxo E2E |

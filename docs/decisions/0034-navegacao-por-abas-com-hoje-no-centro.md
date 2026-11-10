@@ -1,6 +1,6 @@
 # ADR 0034: Navegação por barra de abas inferior com Hoje no centro
 
-- **Status:** Aceita (revisada pelo ADR 0065)
+- **Status:** Aceita (revisada pelos ADRs 0065 e 0138)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O app precisa dar acesso rápido às 6 jornadas validadas na concepção. O centro do produto é acompanhar o plano no dia a dia e replanejar com flexibilidade. Foram avaliadas barras com 3, 4 e 5 abas. A aba Hoje deveria ficar no centro, o que exige um número ímpar de abas.
 
 ## Decisão
+
+*Revisado pelo ADR 0138: o ícone da aba Piu é um balão de conversa (Phosphor).*
 
 Barra de abas fixa na parte inferior da tela, com 5 abas nesta ordem:
 
