@@ -77,6 +77,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0069 | [Tocar em um dia com dois treinos na faixa abre a escolha do treino](0069-dia-com-dois-treinos-abre-escolha.md) | Aceita |
 | 0070 | [Ícone da modalidade e cor de status no contorno do dia na faixa de 7 dias](0070-icones-e-cores-de-status-na-faixa.md) | Aceita |
 | 0071 | [Dia com um treino feito e outro não fica verde com selo "!" na faixa](0071-dia-misto-verde-com-selo.md) | Aceita |
+| 0072 | [Dia atual com treino ainda por fazer fica com o contorno padrão](0072-dia-atual-parcial-fica-no-padrao.md) | Aceita |
 
 ## Como criar um novo ADR
 
