@@ -68,6 +68,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0060 | [Ação pronta "adiar a prova" recalcula a estrutura pelas regras](0060-acao-adiar-a-prova.md) | Aceita |
 | 0061 | [Mudança nos dados do setup passa por revisão antes de valer](0061-mudanca-no-perfil-passa-por-revisao.md) | Aceita |
 | 0062 | [Proposta da conversa com o Piu aparece na conversa e vai para Notificações se ficar pendente](0062-proposta-do-piu-na-conversa.md) | Aceita |
+| 0063 | [Wireframes em artifact HTML de baixa fidelidade](0063-wireframes-em-artifact-html.md) | Aceita |
 
 ## Como criar um novo ADR
 
