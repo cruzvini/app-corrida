@@ -49,7 +49,7 @@ flowchart TD
   C1 -- trocar --> D
   C1 -- confirmar --> E
   B -- não --> D[Escolher nível vendo a descrição de cada um]
-  D --> E["Idade de 10 a 100 (ADR 0042), peso e lesões ou limitações opcional 2.2"]
+  D --> E["Nome sugerido pelo Strava (ADR 0099), idade de 10 a 100 (ADR 0042), peso e lesões ou limitações opcional 2.2"]
   E --> F[Corrida: quantos dias por semana 2.3]
   F --> G{Faz musculação?}
   G -- sim --> G1[Musculação: quantos dias e a divisão em quantidade]
@@ -257,7 +257,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-  A([Perfil > Editar perfil: nível, idade, peso ou lesões 6.5]) --> B[Salvar: dados gravados na hora, ADR 0095]
+  A([Perfil > Editar perfil: nível, idade, peso, lesões ou frequência 6.5, ADR 0098]) --> B[Salvar: dados gravados na hora, ADR 0095]
   B --> C[Piu abre com a mensagem do que mudou no campo]
   C --> D{Usuário envia?}
   D -- sai sem enviar --> E([Plano considera a mudança nos próximos detalhamentos e ajustes])

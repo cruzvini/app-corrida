@@ -1,6 +1,6 @@
 # ADR 0094: Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelos ADRs 0098 e 0099)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -11,13 +11,13 @@ O ADR 0038 punha no Perfil os dados do setup (incluindo dias de treino, meta e p
 
 O Perfil tem três seções:
 
-- **Meus dados:** nível, idade, peso e lesões ou limitações, com o botão "Editar perfil" (ADR 0095).
+- **Meus dados:** nível, idade, peso e lesões ou limitações, com o botão "Editar perfil" (ADR 0095). *Revisado pelos ADRs 0098 e 0099: Meus dados também tem o nome e a frequência semanal.*
 - **Strava:** status da conexão, última sincronização e reconectar.
 - **Conta:** e-mail e sair (ADR 0096).
 
 Saem do Perfil:
 
-- **Objetivo e frequência semanal**, que ficam no detalhe do plano (ADRs 0083 e 0097).
+- **Objetivo e frequência semanal**, que ficam no detalhe do plano (ADRs 0083 e 0097). *Revisado pelo ADR 0098: a frequência volta ao Perfil; só o objetivo fica no detalhe do plano.*
 - **Histórico de replanejamentos.** O que mudou fica na conversa com o Piu, mantida (ADR 0092), e em Notificações.
 
 Para o ajuste mais recente continuar podendo ser desfeito (ADR 0047), a mensagem dele em Notificações não é excluída enquanto ele puder ser desfeito (ADR 0089).

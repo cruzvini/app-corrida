@@ -88,7 +88,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0080 | [Treino feito mostra só o previsto × feito](0080-treino-feito-mostra-so-previsto-x-feito.md) | Aceita |
 | 0081 | [Tela inicial do Plano com objetivo, fases e semanas](0081-tela-inicial-do-plano.md) | Aceita (revisada pelo ADR 0094) |
 | 0082 | [Fases do plano em retângulos de mesma largura, com rolagem horizontal](0082-fases-em-faixa-com-rolagem.md) | Aceita |
-| 0083 | [Detalhe do plano com o volume semanal previsto × feito](0083-detalhe-do-plano.md) | Aceita (revisada pelo ADR 0094) |
+| 0083 | [Detalhe do plano com o volume semanal previsto × feito](0083-detalhe-do-plano.md) | Aceita (revisada pelos ADRs 0094 e 0098) |
 | 0084 | ["Semana mais leve" e "Adiar objetivo" viram sugestões de pedido ao Piu](0084-acoes-da-semana-viram-sugestoes-do-piu.md) | Aceita (revisada pelo ADR 0085) |
 | 0085 | [Sugestões de pedido no Piu geram uma proposta do Piu](0085-sugestoes-do-piu-geram-proposta.md) | Aceita |
 | 0086 | [Mensagem de Notificações abre em tela própria](0086-mensagem-abre-em-tela-propria.md) | Aceita |
@@ -99,10 +99,12 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0091 | [Sugestões de pedido aparecem só no início de um assunto](0091-sugestoes-de-pedido-so-no-inicio.md) | Aceita |
 | 0092 | [O histórico da conversa com o Piu é mantido](0092-historico-da-conversa-mantido.md) | Aceita (revisada pelo ADR 0094) |
 | 0093 | [Limite diário de mensagens mantido, com aviso só perto do fim](0093-limite-diario-com-aviso-no-fim.md) | Aceita |
-| 0094 | [Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos](0094-perfil-so-com-dados-pessoais.md) | Aceita |
-| 0095 | [Editar o perfil salva os dados e leva ao Piu com o que mudou](0095-editar-perfil-leva-ao-piu.md) | Aceita |
+| 0094 | [Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos](0094-perfil-so-com-dados-pessoais.md) | Aceita (revisada pelos ADRs 0098 e 0099) |
+| 0095 | [Editar o perfil salva os dados e leva ao Piu com o que mudou](0095-editar-perfil-leva-ao-piu.md) | Aceita (revisada pelos ADRs 0098 e 0099) |
 | 0096 | [Sair da conta pede confirmação](0096-sair-pede-confirmacao.md) | Aceita |
-| 0097 | [Frequência semanal no lugar de dias fixos](0097-frequencia-semanal-sem-dias-fixos.md) | Aceita |
+| 0097 | [Frequência semanal no lugar de dias fixos](0097-frequencia-semanal-sem-dias-fixos.md) | Aceita (revisada pelo ADR 0098) |
+| 0098 | [Frequência semanal fica no Perfil, em Meus dados](0098-frequencia-semanal-no-perfil.md) | Aceita |
+| 0099 | [Nome no Perfil, sugerido pelo Strava](0099-nome-no-perfil.md) | Aceita |
 
 ## Como criar um novo ADR
 

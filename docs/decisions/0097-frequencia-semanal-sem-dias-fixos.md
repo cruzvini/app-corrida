@@ -1,6 +1,6 @@
 # ADR 0097: Frequência semanal no lugar de dias fixos
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0098)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -11,7 +11,7 @@ O ADR 0041 fazia o usuário marcar, no setup, os dias da semana de corrida e de 
 
 - No setup, o usuário informa **quantos dias por semana** quer correr e **quantos** quer fazer musculação, com a divisão em quantidade (ex.: 2 musculações: 1 de superiores e 1 de inferiores, como no ADR 0008).
 - **O plano escolhe os dias**, pelo fluxo "IA propõe, regras validam" (ADR 0022). As regras continuam evitando corrida intensa depois de inferiores (critério 3.4).
-- A frequência aparece no **detalhe do plano** (ADR 0083). Para mudar a frequência ou o dia de um treino, o usuário conversa com o Piu.
+- A frequência aparece no **detalhe do plano** (ADR 0083). Para mudar a frequência ou o dia de um treino, o usuário conversa com o Piu. *Revisado pelo ADR 0098: a frequência fica no Perfil e muda pelo "Editar perfil" ou pelo Piu.*
 
 ## Consequências
 
