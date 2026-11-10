@@ -1,6 +1,6 @@
 # ADR 0018: Replanejamento por ações prontas e por conversa livre
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0078)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -12,6 +12,7 @@ Replanejar a qualquer momento, por qualquer motivo, é o valor central do app. H
 O app oferece dois caminhos para replanejar:
 
 - **Ações prontas** para os casos comuns, por exemplo: pular treino, trocar dia, semana mais leve, adiar prova.
+  *Revisado pelo ADR 0078: pular e trocar dia deixam de ser ações prontas; mudar um treino é replanejar com o Piu.*
 - **Conversa livre** para o resto: o usuário descreve a situação em texto, a IA (ADR 0005) interpreta e propõe a mudança, e o motor de regras (ADR 0004) valida.
 
 ## Consequências

@@ -1,6 +1,6 @@
 # ADR 0045: Atividade feita em outro dia não é ligada ao treino previsto
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0078)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -13,7 +13,7 @@ O app não tenta adivinhar a qual treino a atividade corresponde. A regra de cor
 
 - Uma atividade feita em outro dia conta como carga fora do plano, no dia em que aconteceu (ADR 0027).
 - O treino previsto continua pendente. Se não houver atividade nem marcação até as 22h do dia previsto, ele conta como não feito, e o plano se ajusta (ADR 0026).
-- Para ligar a atividade a outro treino, o usuário usa a ação pronta "trocar dia" (ADR 0018).
+- Para ligar a atividade a outro treino, o usuário usa a ação pronta "trocar dia" (ADR 0018). *Revisado pelo ADR 0078: o usuário pede a ligação ao Piu.*
 
 ## Consequências
 

@@ -23,7 +23,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0015 | [Nível de corrida sugerido pelo Strava e confirmado pelo usuário](0015-nivel-de-corrida-sugerido-e-confirmado.md) | Aceita |
 | 0016 | [Plano específico com distância livre](0016-plano-especifico-com-distancia-livre.md) | Aceita |
 | 0017 | [Avisar sobre riscos da meta sem bloquear a criação do plano](0017-avisar-riscos-sem-bloquear-plano.md) | Aceita |
-| 0018 | [Replanejamento por ações prontas e por conversa livre](0018-replanejamento-acoes-prontas-e-conversa.md) | Aceita |
+| 0018 | [Replanejamento por ações prontas e por conversa livre](0018-replanejamento-acoes-prontas-e-conversa.md) | Aceita (revisada pelo ADR 0078) |
 | 0019 | [Conexão com o Strava obrigatória](0019-conexao-strava-obrigatoria.md) | Aceita |
 | 0020 | [Autenticação por e-mail com link mágico](0020-autenticacao-email-link-magico.md) | Aceita |
 | 0021 | [Pace alvo sugerido a partir do Strava](0021-pace-alvo-sugerido-pelo-strava.md) | Aceita |
@@ -31,7 +31,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0023 | [Plano inteiro com detalhe progressivo](0023-plano-inteiro-com-detalhe-progressivo.md) | Aceita |
 | 0024 | [Treinos estruturados por blocos com pace alvo](0024-treinos-estruturados-por-blocos.md) | Aceita |
 | 0025 | [Strava marca o treino como feito, e o usuário corrige](0025-strava-marca-treino-feito-usuario-corrige.md) | Aceita |
-| 0026 | [Treino não feito gera ajuste automático do plano, com aviso](0026-treino-nao-feito-ajuste-automatico.md) | Aceita |
+| 0026 | [Treino não feito gera ajuste automático do plano, com aviso](0026-treino-nao-feito-ajuste-automatico.md) | Aceita (revisada pelo ADR 0078) |
 | 0027 | [Atividade fora do plano conta como carga e gera ajuste com aviso](0027-atividade-fora-do-plano-conta-como-carga.md) | Aceita |
 | 0028 | [Feedback do usuário vira contexto e gera proposta de ajuste quando relevante](0028-feedback-do-usuario-como-contexto.md) | Aceita |
 | 0029 | [Dados enviados ao provedor de IA](0029-dados-enviados-ao-provedor-de-ia.md) | Aceita |
@@ -41,16 +41,16 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0033 | [Tom de voz: parceiro de treino](0033-tom-de-voz-parceiro-de-treino.md) | Aceita |
 | 0034 | [Navegação por barra de abas inferior com Hoje no centro](0034-navegacao-por-abas-com-hoje-no-centro.md) | Aceita (revisada pelo ADR 0065) |
 | 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
-| 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita |
+| 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita (revisada pelo ADR 0078) |
 | 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita |
 | 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita |
 | 0039 | [Lesões e limitações como campo opcional no setup](0039-lesoes-e-limitacoes-no-setup.md) | Aceita |
 | 0040 | [Falha na importação do histórico do Strava não bloqueia o setup](0040-falha-na-importacao-do-strava.md) | Aceita |
-| 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Aceita |
+| 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Aceita (revisada pelo ADR 0078) |
 | 0042 | [Idade sem limite mínimo, só com validação de valor plausível](0042-idade-sem-limite-minimo.md) | Aceita |
 | 0043 | [Data de início do plano escolhida no setup](0043-data-de-inicio-escolhida-no-setup.md) | Aceita |
 | 0044 | [Detalhamento da próxima semana na rotina das 22h do último dia da semana](0044-detalhamento-semanal-na-rotina-das-22h.md) | Aceita |
-| 0045 | [Atividade feita em outro dia não é ligada ao treino previsto](0045-atividade-em-outro-dia-nao-e-religada.md) | Aceita |
+| 0045 | [Atividade feita em outro dia não é ligada ao treino previsto](0045-atividade-em-outro-dia-nao-e-religada.md) | Aceita (revisada pelo ADR 0078) |
 | 0046 | [Atividades compatíveis do mesmo dia são somadas como um treino](0046-atividades-do-mesmo-dia-somadas.md) | Aceita |
 | 0047 | [Só o ajuste automático mais recente pode ser desfeito](0047-so-o-ajuste-mais-recente-pode-ser-desfeito.md) | Aceita |
 | 0048 | [Feedback pós-treino como campo opcional no card do Hoje](0048-feedback-opcional-no-card-do-hoje.md) | Aceita |
@@ -62,8 +62,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0054 | [Mensagem lida ao abrir e propostas pendentes no topo de Notificações](0054-lidas-e-propostas-aguardando.md) | Aceita |
 | 0055 | [Feedback salvo antes da análise, e falha da IA sem mensagem de erro](0055-feedback-salvo-antes-da-analise.md) | Aceita |
 | 0056 | [Feedback pode ser apagado, mas não editado](0056-feedback-pode-ser-apagado-nao-editado.md) | Aceita |
-| 0057 | [Ação pronta "trocar dia" dentro da semana atual do plano](0057-acao-trocar-dia.md) | Aceita |
-| 0058 | ["Pular" e "não será feito" são a mesma ação](0058-pular-e-nao-sera-feito-sao-a-mesma-acao.md) | Aceita (revisada pelo ADR 0066) |
+| 0057 | [Ação pronta "trocar dia" dentro da semana atual do plano](0057-acao-trocar-dia.md) | Substituída pelo ADR 0078 |
+| 0058 | ["Pular" e "não será feito" são a mesma ação](0058-pular-e-nao-sera-feito-sao-a-mesma-acao.md) | Substituída pelo ADR 0078 |
 | 0059 | [Ação pronta "semana mais leve" reduz só a corrida restante da semana](0059-acao-semana-mais-leve.md) | Aceita |
 | 0060 | [Ação pronta "adiar a prova" recalcula a estrutura pelas regras](0060-acao-adiar-a-prova.md) | Aceita |
 | 0061 | [Mudança nos dados do setup passa por revisão antes de valer](0061-mudanca-no-perfil-passa-por-revisao.md) | Aceita |
@@ -83,6 +83,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0075 | [Detalhe do treino mostra os paces em lista e compara previsto e feito só no geral](0075-paces-sem-barras-e-comparacao-geral.md) | Aceita |
 | 0076 | [Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino](0076-acoes-e-feedback-no-rodape-do-detalhe.md) | Aceita |
 | 0077 | [Apagar um feedback pede confirmação](0077-apagar-feedback-pede-confirmacao.md) | Aceita |
+| 0078 | [Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"](0078-replanejar-treino-com-o-piu.md) | Aceita |
 
 ## Como criar um novo ADR
 

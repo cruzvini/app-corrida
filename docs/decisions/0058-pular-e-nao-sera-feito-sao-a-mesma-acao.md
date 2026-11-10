@@ -1,6 +1,6 @@
 # ADR 0058: "Pular" e "não será feito" são a mesma ação
 
-- **Status:** Aceita (revisada pelo ADR 0066)
+- **Status:** Substituída pelo ADR 0078
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O critério 6.1 lista "pular treino" como ação pronta, que é determinística e não depende da IA (ADR 0018). O critério 4.6 diz que o usuário pode informar que um treino não foi ou não será feito, e então o plano se ajusta na hora pela IA (ADR 0026). As duas coisas parecem iguais para o usuário, mas seguiam regras diferentes.
 
 ## Decisão
+
+*Substituída pelo ADR 0078: "Pular" e "Trocar dia" deixam de ser ações prontas, e mudar um treino é replanejar com o Piu.*
 
 Existe um botão só, **"Pular"**, no card do Hoje e no detalhe do treino (ADR 0036). *Revisado pelo ADR 0066: o card do Hoje não tem ações, e o "Pular" fica só no detalhe do treino.*
 

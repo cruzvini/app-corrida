@@ -1,6 +1,6 @@
 # ADR 0057: Ação pronta "trocar dia" dentro da semana atual do plano
 
-- **Status:** Aceita
+- **Status:** Substituída pelo ADR 0078
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 "Trocar dia" é uma ação pronta (ADR 0018) citada nos ADRs 0036, 0041 e 0045, mas o comportamento dela não estava definido. O ADR 0045 também a usa para ligar uma atividade feita em outro dia, o que pode envolver um dia passado. O critério 6.6 diz que treinos passados nunca são alterados por um replanejamento.
 
 ## Decisão
+
+*Substituída pelo ADR 0078: "Pular" e "Trocar dia" deixam de ser ações prontas, e mudar um treino é replanejar com o Piu.*
 
 O usuário escolhe um dia da **semana atual do plano** (ADR 0043) para onde levar o treino.
 

@@ -76,7 +76,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      3. Quando sincroniza uma atividade compatível com o treino do dia, o treino é marcado como feito automaticamente, com o resumo da atividade (distância, duração, pace médio) (ADR 0025).
      4. Posso desmarcar um treino feito, ou marcar como feito sem atividade no Strava.
      5. Na musculação, o treino marcado assume a divisão prevista, e posso corrigir (ex.: "fiz superiores, não inferiores") (ADR 0014).
-     6. Posso informar a qualquer momento que um treino não foi ou não será feito, e o plano se ajusta na hora (ADR 0026).
+     6. Posso informar a qualquer momento que um treino não foi ou não será feito, pelo "Replanejar" com o Piu, e recebo na hora uma proposta para os próximos dias, que aceito, edito ou descarto (ADRs 0026 e 0078).
      7. Às 22h, um treino sem atividade nem marcação conta como não feito, e o plano se ajusta automaticamente. Se a atividade chegar depois, o ajuste é revertido ou reavaliado.
      8. Uma atividade fora do plano, ou um treino muito acima do previsto, conta como carga. Se afetar os próximos treinos, o plano se ajusta (ADR 0027).
      9. Todo ajuste automático chega à caixa de entrada com o antes e o depois, e o mais recente pode ser desfeito (ADR 0047).
@@ -90,14 +90,14 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      6. Se o feedback mencionar dor ou lesão, ele tem o mesmo tratamento dos outros feedbacks, sem recomendação automática de procurar um profissional. Posso ajustar o nível dos treinos com o Piu (ADR 0051).
      7. Se o feedback não pedir mudança, o plano não muda e não recebo mensagem.
    - **Jornada 6, replanejamento (validada):**
-     1. Em qualquer treino ou semana, tenho acesso às ações prontas: pular treino, trocar dia, semana mais leve e, no plano específico, adiar a prova (ADR 0018).
+     1. Em qualquer semana, tenho acesso às ações prontas: semana mais leve e, no plano específico, adiar a prova (ADR 0018). Para mudar um treino, uso o "Replanejar" com o Piu, que reavalia também os próximos dias (ADR 0078).
      2. Uma ação pronta é aplicada na hora, mostra o que mudou e pode ser desfeita (a última ação).
      3. Posso descrever qualquer situação em texto livre (ex.: "vou viajar quinta e sexta") e recebo uma proposta com o antes e o depois, que aceito, edito ou descarto antes de aplicar.
      4. Se a mudança for arriscada, vejo o aviso e as alternativas, sem bloqueio (ADR 0017).
      5. Posso mudar os dados do setup a qualquer momento (dias de corrida e musculação, meta, prazo, nível), e o plano é reajustado a partir de hoje.
      6. Treinos passados (feitos ou não feitos) nunca são alterados por um replanejamento.
      7. Vejo o histórico de replanejamentos: o que mudou, quando e por quê.
-     8. Se a IA estiver indisponível, o app avisa que a conversa livre não está disponível no momento, e as ações prontas continuam funcionando.
+     8. Se a IA estiver indisponível, o app avisa que a conversa livre e o "Replanejar" não estão disponíveis no momento, e as ações prontas da semana continuam funcionando (ADR 0078).
 6. [x] Requisitos não funcionais (validados):
    - Idioma: português (pt-BR). Unidades: km e min/km. Fuso horário: o do usuário (usado na regra das 22h, ADR 0026).
    - Segredos (chaves da IA, do Strava e do Supabase) só no backend, via variáveis de ambiente; nunca no app nem no git.

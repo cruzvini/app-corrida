@@ -1,6 +1,6 @@
 # ADR 0036: Tela de detalhe do treino como ponto central das ações
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0078)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -13,7 +13,7 @@ Tocar em um treino, seja no Hoje, no Plano ou em uma notificação, abre uma **t
 
 - Tipo do treino e blocos (distância ou duração, pace alvo ou faixa de intensidade).
 - Resultado do Strava, quando houver (distância, duração, pace médio).
-- Ações prontas do treino: pular, trocar dia, marcar ou desmarcar como feito e, na musculação, corrigir a divisão.
+- Ações prontas do treino: pular, trocar dia, marcar ou desmarcar como feito e, na musculação, corrigir a divisão. *Revisado pelo ADR 0078: pular e trocar dia saem; no treino previsto, "Replanejar" abre o Piu.*
 - Feedback em texto sobre o treino.
 - Botão "Falar com o Piu sobre este treino", que abre a conversa (ADR 0035) com o treino como contexto.
 

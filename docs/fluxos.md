@@ -143,10 +143,10 @@ flowchart TD
   B -- desmarcar feito --> C[Treino volta a pendente; atividades viram carga fora do plano 4.4]
   B -- marcar feito sem atividade --> D[Só o status, sem distância, tempo nem pace 4.4]
   D --> D1[Musculação: corrigir a divisão feita 4.5]
-  B -- não foi ou não será feito --> E[Ajuste automático na hora 4.6]
-  B -- trocar dia --> F[Ação pronta: liga a atividade a outro treino, ADR 0045]
+  B -- não foi ou não será feito --> E[Replanejar com o Piu, atalho Não vou fazer 4.6, ADR 0078]
+  B -- ligar atividade de outro dia --> F[Pede ao Piu, ADRs 0045 e 0078]
   B -- feedback --> G[Texto livre, segue a jornada 5]
-  E --> N([Notificações: antes e depois, desfazer o mais recente])
+  E --> N([Proposta com antes e depois; segue a conversa livre da jornada 6])
   F --> N
 ```
 
@@ -221,26 +221,13 @@ flowchart TD
 
 ## Jornada 6: replanejamento
 
-Treinos passados nunca são alterados (6.6). A única exceção é "trocar dia" para um dia passado com atividade ainda não ligada, que só registra o que já aconteceu (ADR 0057). Riscos geram aviso e alternativas, sem bloqueio (ADR 0017, 6.4). Só o ajuste mais recente pode ser desfeito (ADR 0047).
+Treinos passados nunca são alterados (6.6). A única exceção é ligar, pelo Piu, uma atividade de um dia passado que ainda não está ligada a um treino, o que só registra o que já aconteceu (ADRs 0045 e 0078). Mudar um treino é sempre replanejar com o Piu, que reavalia os próximos dias (ADR 0078). Riscos geram aviso e alternativas, sem bloqueio (ADR 0017, 6.4). Só o ajuste mais recente pode ser desfeito (ADR 0047).
 
 ### Ações prontas
 
 ```mermaid
 flowchart TD
-  A([Detalhe do treino ou cabeçalho da semana 6.1, ADR 0066]) --> B{Ação pronta}
-  B -- pular --> P[Treino vira não feito na hora, ADR 0058]
-  P --> P1{IA e regras ajustam os próximos dias?}
-  P1 -- ok --> N
-  P1 -- falhou --> P2[Fica pulado sem ajuste; tenta de novo às 22h] --> N
-  B -- trocar dia --> T[Escolhe dia da semana atual do plano, ADR 0057]
-  T --> T1{Destino}
-  T1 -- futuro ou hoje, sem treino da modalidade --> T2[Muda de dia]
-  T1 -- futuro ou hoje, com treino da modalidade --> T3[Os dois trocam de lugar]
-  T1 -- passado com atividade não ligada --> T4[Liga a atividade e marca feito]
-  T1 -- passado sem atividade --> T5[Indisponível]
-  T2 --> R
-  T3 --> R
-  T4 --> N
+  A([Cabeçalho da semana 6.1, ADR 0078]) --> B{Ação pronta}
   B -- semana mais leve --> L[Reduz a corrida de hoje em diante; intensos viram leves, ADR 0059] --> R
   B -- adiar a prova, só plano específico --> AD[Escolhe data mais tarde; regras esticam a estrutura, ADR 0060] --> R
   R{Regras detectam risco?}
@@ -253,7 +240,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-  A([Piu: usuário descreve a situação 6.3]) --> B[IA propõe, regras validam, ADR 0022]
+  A([Piu: usuário descreve a situação 6.3, ou Replanejar no detalhe do treino com atalhos, ADR 0078]) --> B[IA propõe, regras validam, ADR 0022]
   B --> C{Proposta ok?}
   C -- falhou --> C1[Piu avisa e oferece tentar de novo] --> A
   C -- sim --> D[Card na conversa: antes e depois, avisos de risco 6.4, ADR 0062]
