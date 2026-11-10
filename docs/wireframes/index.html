@@ -286,6 +286,23 @@ figcaption span { font-size: 13px; color: var(--note); }
 .stp-row b { color: var(--ink); }
 .stp { font-family: var(--mono); color: var(--ink); letter-spacing: .12em; border: 1.5px solid var(--line); border-radius: 8px; padding: 1px 6px; }
 .field.tg { display: grid; gap: 2px; align-items: start; }
+.prog { display: grid; gap: 4px; }
+.prog .bar { height: 4px; border-radius: 99px; background: var(--fill); overflow: hidden; }
+.prog .bar i { display: block; height: 100%; width: var(--p); background: var(--ink); }
+.prog small { font-family: var(--mono); font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; }
+.opt { border: 1.5px solid var(--line); border-radius: 12px; padding: 9px 12px; display: grid; gap: 2px; font-size: 12px; color: var(--muted); }
+.opt b { font-size: 13.5px; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.opt.sel { border: 2px solid var(--ink); background: var(--fill); }
+.brand { font-size: 30px; font-weight: 700; letter-spacing: -.02em; margin: 0; }
+.spacer { flex: 1; }
+.linkb { text-align: center; font-size: 12.5px; text-decoration: underline; color: var(--ink); }
+.hintc { text-align: center; font-size: 11.5px; color: var(--muted); }
+.srow { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; padding: 8px 12px; border-top: 1px solid var(--line); font-size: 12.5px; }
+.srow:first-child { border-top: 0; }
+.srow span { display: grid; }
+.srow small { color: var(--muted); font-size: 11px; }
+.srow u { font-size: 11.5px; }
+.cta-sec { border: 1.5px solid var(--ink); border-radius: 12px; padding: 9px; text-align: center; font-weight: 600; font-size: 13px; }
 .send { display: flex; gap: 6px; align-items: stretch; }
 .send .field { flex: 1; }
 .send .go { border: 1.5px solid var(--ink); border-radius: 10px; padding: 0 12px; display: grid; place-items: center; font-size: 12.5px; font-weight: 600; }
@@ -1956,6 +1973,248 @@ figcaption span { font-size: 13px; color: var(--note); }
         <div>
           <p class="tag">Decidido · ADRs 0097 e 0099 · pedidos fora da lista</p>
           <p><b>Frequência semanal no lugar de dias fixos:</b> o usuário informa quantos dias de corrida e de musculação, e o plano escolhe os dias. <b>Nome:</b> "Como você quer ser chamado", sugerido pelo primeiro nome do Strava.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen-group" id="onboarding">
+    <div class="eyebrow">Fluxo linear em tela cheia, sem a barra de abas</div>
+    <h2>Onboarding e setup</h2>
+    <p class="lead">Login, Strava, setup, geração e aceite, uma pergunta por tela, com barra de progresso e voltar (ADR 0037). Se o app for fechado no meio, volta ao passo em que parou. Depois do aceite, abre o Hoje. Exemplo: Vini, plano específico criado na segunda, 26 out. Passos do setup não desenhados aqui: sobre você (nome, idade, peso e lesões), tipo de plano, pace alvo e data de início.</p>
+
+    <div class="phones">
+      <!-- O1: e-mail -->
+      <figure class="state">
+        <div class="phone" aria-label="Onboarding, e-mail">
+          <div class="status"><span>9:00</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="spacer"></div>
+            <p class="brand">Live Run <i class="open">1</i></p>
+            <p class="mtext">Seu plano de corrida, do seu jeito. O Piu ajusta o plano sempre que a vida mudar.</p>
+            <div class="spacer"></div>
+            <div class="field"><b>Seu e-mail</b>vini@exemplo.com</div>
+            <div class="cta-main">Receber link de acesso</div>
+            <p class="hintc">Sem senha: você entra pelo link que chega no e-mail.</p>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Boas-vindas e e-mail</strong>
+          <span>Uma frase sobre o app e o campo de e-mail. E-mail inválido mostra erro no campo.</span>
+          <span class="refs">ADR 0020 · 0032 · 0033 · crit. 1.1</span>
+        </figcaption>
+      </figure>
+
+      <!-- O2: verifique o e-mail -->
+      <figure class="state">
+        <div class="phone" aria-label="Onboarding, verifique o e-mail">
+          <div class="status"><span>9:01</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Voltar</span></div>
+            <div class="spacer"></div>
+            <div class="dhead"><h3>Verifique seu e-mail</h3></div>
+            <p class="mtext">Mandamos um link para <b>vini@exemplo.com</b>. Toque nele neste celular para entrar.</p>
+            <div class="spacer"></div>
+            <div class="cta-sec">Reenviar link</div>
+            <p class="linkb">Trocar e-mail</p>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Verifique o e-mail</strong>
+          <span>Reenviar ou trocar o e-mail. Link expirado ou já usado explica o motivo e oferece um novo. Depois de entrar, a sessão fica salva.</span>
+          <span class="refs">ADR 0020 · crit. 1.1, 1.2</span>
+        </figcaption>
+      </figure>
+
+      <!-- O3: Strava -->
+      <figure class="state">
+        <div class="phone" aria-label="Onboarding, conectar o Strava">
+          <div class="status"><span>9:03</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="spacer"></div>
+            <div class="dhead"><h3>Conecte o Strava</h3></div>
+            <p class="mtext">O Live Run usa as suas atividades do Strava para marcar os treinos como feitos e ajustar o plano. Sem a conexão, não dá para acompanhar o plano.</p>
+            <div class="note">O app só lê as suas atividades. Nada é publicado no Strava.</div>
+            <div class="spacer"></div>
+            <div class="cta-main">Conectar o Strava</div>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Conectar o Strava</strong>
+          <span>Obrigatório. Explica por que antes de abrir a autorização. Se o usuário recusar ou cancelar, volta aqui com a explicação. Falha na importação do histórico oferece tentar de novo ou seguir sem histórico.</span>
+          <span class="refs">ADR 0019 · 0040 · crit. 1.3 a 1.6</span>
+        </figcaption>
+      </figure>
+
+      <!-- O4: nível -->
+      <figure class="state">
+        <div class="phone" aria-label="Setup, nível de corrida">
+          <div class="status"><span>9:05</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Voltar</span></div>
+            <div class="prog"><span class="bar"><i style="--p:14%"></i></span><small><span>Setup</span><span>1 de 7 <i class="open">3</i></span></small></div>
+            <div class="dhead"><h3>Seu nível de corrida</h3></div>
+            <p class="mtext">Sugerimos <b>Intermediário</b>: você correu 3 vezes por semana nas últimas 8 semanas, com treinos de até 12 km.</p>
+            <div class="opt"><b>Iniciante</b>Corre pouco ou está começando agora.</div>
+            <div class="opt sel"><b>Intermediário <span class="tagp">Sugerido</span></b>Corre toda semana e já fez 10 km.</div>
+            <div class="opt"><b>Avançado</b>Treina com volume e intensidade há anos.</div>
+            <div class="spacer"></div>
+            <div class="cta-main">Continuar</div>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Nível de corrida</strong>
+          <span>Com histórico, o app sugere e explica; sem histórico, o usuário escolhe. Cada nível tem uma descrição curta (textos provisórios).</span>
+          <span class="refs">ADR 0015 · crit. 2.1</span>
+        </figcaption>
+      </figure>
+
+      <!-- O5: frequência -->
+      <figure class="state">
+        <div class="phone" aria-label="Setup, frequência semanal">
+          <div class="status"><span>9:07</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Voltar</span></div>
+            <div class="prog"><span class="bar"><i style="--p:43%"></i></span><small><span>Setup</span><span>3 de 7</span></small></div>
+            <div class="dhead"><h3>Quantas vezes por semana?</h3></div>
+            <div class="field"><span class="stp-row"><b>Corrida</b><span class="stp">− 4 +</span></span></div>
+            <div class="field"><span class="stp-row"><b>Musculação</b><span class="stp">− 2 +</span></span><span class="stp-row">Superiores<span class="stp">− 1 +</span></span><span class="stp-row">Inferiores<span class="stp">− 1 +</span></span></div>
+            <p class="src">O plano escolhe os dias. Você muda a frequência depois, no Perfil.</p>
+            <div class="spacer"></div>
+            <div class="cta-main">Continuar</div>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Frequência semanal</strong>
+          <span>Só quantidades: dias de corrida, dias de musculação e a divisão em quantidade. Musculação pode ficar em zero.</span>
+          <span class="refs">ADR 0014 · 0097 · 0098 · crit. 2.3</span>
+        </figcaption>
+      </figure>
+
+      <!-- O6: objetivo -->
+      <figure class="state">
+        <div class="phone" aria-label="Setup, objetivo com aviso de risco">
+          <div class="status"><span>9:09</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Voltar</span></div>
+            <div class="prog"><span class="bar"><i style="--p:71%"></i></span><small><span>Setup</span><span>5 de 7</span></small></div>
+            <div class="dhead"><h3>Qual é o objetivo?</h3></div>
+            <div class="wgrid" style="grid-template-columns:1fr 1fr">
+              <span class="field"><b>Distância</b>21 km</span>
+              <span class="field"><b>Data</b>29 nov</span>
+            </div>
+            <div class="alert"><b>Prazo curto para 21 km</b><span>Em 5 semanas, o volume teria que subir rápido para o seu nível. Que tal 10 km em 29 nov, ou 21 km a partir de fevereiro?</span><span class="btn">Ajustar o objetivo</span></div>
+            <p class="linkb">Seguir mesmo assim</p>
+            <div class="spacer"></div>
+            <div class="cta-main">Continuar</div>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Objetivo e aviso de risco</strong>
+          <span>Distância livre e data. Se as regras acharem o objetivo arriscado, o app explica e sugere alternativas, sem bloquear; seguir fica registrado. O pace alvo sugerido vem na tela seguinte.</span>
+          <span class="refs">ADR 0016 · 0017 · 0021 · crit. 2.5 a 2.7</span>
+        </figcaption>
+      </figure>
+
+      <!-- O7: resumo -->
+      <figure class="state">
+        <div class="phone" aria-label="Setup, resumo">
+          <div class="status"><span>9:12</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Voltar</span></div>
+            <div class="prog"><span class="bar"><i style="--p:100%"></i></span><small><span>Setup</span><span>7 de 7</span></small></div>
+            <div class="dhead"><h3>Confira antes de gerar</h3></div>
+            <div class="pgroup">
+              <div class="srow"><span>Nível<small>Intermediário</small></span><u>Editar</u></div>
+              <div class="srow"><span>Sobre você<small>Vini · 34 anos · 72 kg · sem lesões</small></span><u>Editar</u></div>
+              <div class="srow"><span>Frequência<small>4 corridas · 2 musculações</small></span><u>Editar</u></div>
+              <div class="srow"><span>Objetivo<small>10 km em 3 jan · pace 5:20/km</small></span><u>Editar</u></div>
+              <div class="srow"><span>Início<small>Hoje, seg 26 out</small></span><u>Editar</u></div>
+            </div>
+            <div class="spacer"></div>
+            <div class="cta-main">Gerar meu plano</div>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Resumo</strong>
+          <span>Todas as respostas, cada uma com "Editar", que volta à tela do item e retorna ao resumo. Gerar mostra "Montando seu plano"; se falhar, avisa e oferece tentar de novo sem perder as respostas.</span>
+          <span class="refs">ADR 0037 · 0043 · crit. 2.8, 2.9, 3.9</span>
+        </figcaption>
+      </figure>
+
+      <!-- O8: revisão do plano -->
+      <figure class="state">
+        <div class="phone tall" aria-label="Revisão e aceite do plano">
+          <div class="status"><span>9:13</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="dhead"><h3>Seu plano está pronto <i class="open">2</i></h3><div class="sub">Confira e aceite para começar</div></div>
+            <div class="goal">
+              <span class="k">Objetivo</span>
+              <b>10 km em 3 jan</b>
+              <span class="sub">Pace alvo 5:20/km · 10 semanas</span>
+            </div>
+            <div class="sec">
+              <h5>Fases</h5>
+              <div class="phases"><span class="cur">Base<small>sem 1–4</small></span><span>Construção<small>sem 5–7</small></span><span>Específica<small>sem 8–9</small></span><span>Polimento<small>sem 10</small></span></div>
+            </div>
+            <div class="sec">
+              <h5>Semana 1 · 26 out a 1 nov</h5>
+              <div class="drows">
+                <div class="drow today"><span class="d">Seg<b>26</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Leve 6 km</span><small>hoje</small></span><span class="go">›</span></div>
+                <div class="drow"><span class="d">Ter<b>27</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg>Leve 5 km + Superiores</span></span><span class="go">›</span></div>
+                <div class="drow rest"><span class="d">Qua<b>28</b></span><span class="t"><span>Descanso</span></span><span></span></div>
+                <div class="drow"><span class="d">Qui<b>29</b></span><span class="t"><span><svg class="sx"><use href="#i-gym"/></svg>Inferiores</span></span><span class="go">›</span></div>
+                <div class="drow"><span class="d">Sex<b>30</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Leve 5 km</span></span><span class="go">›</span></div>
+                <div class="drow rest"><span class="d">Sáb<b>31</b></span><span class="t"><span>Descanso</span></span><span></span></div>
+                <div class="drow"><span class="d">Dom<b>1</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Longão 10 km</span></span><span class="go">›</span></div>
+              </div>
+            </div>
+            <div class="wrow"><span><b>Semana 2 · 2 a 8 nov</b><small>Base · 29 km · já detalhada</small></span><span class="go">›</span></div>
+            <div class="cta-main">Aceitar e começar</div>
+            <div class="cta-sec">Pedir ajustes ao Piu <i class="open">4</i></div>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Revisão e aceite</strong>
+          <span>Estrutura completa (objetivo, fases) e as semanas detalhadas, com os blocos de cada corrida no toque. Avisos de risco aparecem antes de aceitar. O plano só fica ativo depois do aceite; então o app passa para as abas e abre o Hoje.</span>
+          <span class="refs">ADR 0022 · 0023 · 0024 · 0037 · 0082 · crit. 3.1 a 3.8</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="screen-group" id="pontos-onboarding">
+    <div class="eyebrow">Para decidir, um por vez</div>
+    <h2>Pontos do onboarding</h2>
+    <div class="questions">
+      <div class="q next">
+        <i class="open">1</i>
+        <div>
+          <p class="tag">Próxima pergunta</p>
+          <p><b>Boas-vindas:</b> só uma frase e o campo de e-mail, como no rascunho, ou 2 a 3 telas de apresentação do app antes do e-mail?</p>
+          <p class="why">As telas de apresentação explicam o Piu e o replanejamento, mas atrasam a entrada. O app é para amigos e família, que vão ouvir falar dele antes.</p>
+        </div>
+      </div>
+      <div class="q">
+        <i class="open">2</i>
+        <div>
+          <p class="tag">Em aberto</p>
+          <p><b>Revisão do plano:</b> mostrar a primeira semana aberta e a segunda recolhida, como no rascunho, ou as duas abertas?</p>
+        </div>
+      </div>
+      <div class="q">
+        <i class="open">3</i>
+        <div>
+          <p class="tag">Em aberto</p>
+          <p><b>Progresso do setup:</b> barra com "1 de 7", como no rascunho, ou só a barra?</p>
+        </div>
+      </div>
+      <div class="q">
+        <i class="open">4</i>
+        <div>
+          <p class="tag">Em aberto</p>
+          <p><b>Pedir ajustes antes do aceite:</b> o Piu abre em tela cheia dentro do fluxo e volta à revisão com o plano revisado, ou o plano é aceito primeiro e os ajustes vêm depois, já nas abas?</p>
+          <p class="why">O ADR 0037 diz que "Pedir ajustes" abre o Piu, mas antes do aceite ainda não existe a barra de abas.</p>
         </div>
       </div>
     </div>

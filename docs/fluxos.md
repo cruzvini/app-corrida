@@ -87,7 +87,7 @@ flowchart TD
   D1 -- não --> ERR[Avisa a falha e oferece tentar de novo, respostas do setup preservadas 3.9]
   ERR -- tentar de novo --> B
   D -- sim --> E{Regras: erro de coerência?}
-  E -- sim, ex.: treino em dia não marcado --> D1
+  E -- sim, ex.: frequência diferente da informada --> D1
   E -- não --> F[Revisão do plano 3.1]
   F --> F1["Estrutura completa: objetivo, fases e volume semanal"]
   F --> F2["Próximas 1 a 2 semanas detalhadas, treinos em blocos 3.2"]

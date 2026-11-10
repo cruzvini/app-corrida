@@ -1,6 +1,6 @@
 # ADR 0037: Onboarding e setup em fluxo linear, sem a barra de abas
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelos ADRs 0095, 0097 e 0099)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -14,8 +14,8 @@ Onboarding, setup e geração formam um **fluxo linear em tela cheia, sem a barr
 1. Login por e-mail com link mágico (ADR 0020).
 2. Conexão com o Strava, obrigatória (ADR 0019).
 3. Nível de corrida, sugerido e confirmado (ADR 0015).
-4. Idade, peso e, opcionalmente, lesões ou limitações (ADR 0039).
-5. Frequência de corrida e de musculação, com a divisão (ADR 0014).
+4. Idade, peso e, opcionalmente, lesões ou limitações (ADR 0039). *Revisado pelo ADR 0099: o passo também pede como a pessoa quer ser chamada, sugerido pelo Strava.*
+5. Frequência de corrida e de musculação, com a divisão (ADR 0014). *Revisado pelo ADR 0097: só quantidades, sem escolher os dias.*
 6. Tipo de plano: genérico ou específico.
 7. No plano específico: distância, data ou prazo, e pace alvo sugerido (ADRs 0016 e 0021), com aviso de risco quando necessário (ADR 0017).
 8. Data de início do plano (ADR 0043).
@@ -30,4 +30,4 @@ Depois do aceite, o app passa para a barra de abas e abre no Hoje.
 - Não há telas vazias nas abas antes de existir um plano.
 - O fluxo funciona sem IA até a etapa de geração.
 - Se o usuário fechar o app no meio do fluxo, ele volta ao passo em que parou, com as respostas salvas.
-- Editar o setup depois (critério 6.5) é feito pelo Perfil, reaproveitando as mesmas telas fora do fluxo linear.
+- Editar o setup depois (critério 6.5) é feito pelo Perfil, reaproveitando as mesmas telas fora do fluxo linear. *Revisado pelo ADR 0095: os dados pessoais mudam pelo "Editar perfil", e o objetivo pelo Piu.*
