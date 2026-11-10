@@ -177,12 +177,15 @@ figcaption span { font-size: 13px; color: var(--note); }
 .tab.on .ic { border-color: var(--ink); background: var(--fill); }
 .goal { border: 2px solid var(--ink); border-radius: 14px; padding: 12px; display: grid; gap: 3px; }
 .goal .k { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.goal .k { display: flex; justify-content: space-between; }
+.goal .k .go { font-size: 14px; color: var(--muted); letter-spacing: 0; }
+.wrow.cur-ph { border: 1.5px solid var(--ink); }
 .goal b { font-size: 20px; }
 .goal .sub { font-size: 12px; color: var(--muted); }
 .goal .btn { margin-top: 6px; display: inline-flex; align-items: center; gap: 6px; }
-.phases { display: grid; grid-template-columns: 4fr 3fr 2.2fr 1.6fr; gap: 3px; font-size: 10px; }
-.phases small { display: block; font-size: 9px; font-weight: 400; }
-.phases span { background: var(--fill); border-radius: 6px; padding: 4px 4px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1.5px solid transparent; }
+.phases { display: flex; gap: 6px; overflow: hidden; font-size: 11px; margin-right: -16px; }
+.phases small { display: block; font-size: 10px; font-weight: 400; }
+.phases span { box-sizing: border-box; flex: 0 0 84px; background: var(--fill); border-radius: 8px; padding: 6px 8px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1.5px solid transparent; }
 .phases span.cur { border-color: var(--ink); color: var(--ink); font-weight: 600; }
 .vol { display: grid; grid-template-columns: repeat(var(--n, 10), 1fr); gap: 4px; align-items: end; height: 64px; }
 .vol i { position: relative; display: block; border: 1.5px solid var(--line); border-radius: 4px 4px 2px 2px; height: var(--h); overflow: hidden; }
@@ -211,13 +214,11 @@ figcaption span { font-size: 13px; color: var(--note); }
 .drow.rest { border-style: dashed; color: var(--muted); }
 .drow.rest .t > span { font-weight: 400; }
 .drow.today { background: var(--fill); border-width: 2px; border-color: var(--ink); }
-.drow.changed { border-color: var(--ink); border-width: 1.5px; }
 .wrow { display: flex; justify-content: space-between; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 10px; padding: 7px 10px; font-size: 12.5px; }
 .wrow > span { display: grid; }
 .wrow small { font-size: 11px; color: var(--muted); }
 .wrow .go { color: var(--muted); }
 .wrow.ghost { border-style: dashed; color: var(--muted); justify-content: center; }
-.dact.off { border-color: var(--line); color: var(--muted); font-weight: 500; }
 .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; text-align: center; font-size: 11.5px; font-variant-numeric: tabular-nums; }
 .cal span { padding: 4px 0; border-radius: 6px; border: 1.5px solid transparent; }
 .cal .h { color: var(--muted); font-size: 9.5px; font-family: var(--mono); }
@@ -954,49 +955,31 @@ figcaption span { font-size: 13px; color: var(--note); }
   <section class="screen-group" id="plano">
     <div class="eyebrow">Aba Plano · ícone de calendário</div>
     <h2>Plano</h2>
-    <p class="lead">Destaca o objetivo e mostra o plano inteiro: fases, volume semanal e os treinos das semanas já detalhadas (ADRs 0023 e 0034). As ações prontas da semana ficam no cabeçalho da semana (ADRs 0036 e 0078). Tocar num dia abre o detalhe do treino. Data de exemplo: quarta, 11 nov.</p>
+    <p class="lead">A tela inicial é de consulta: objetivo, fases e semanas, sem ações prontas (ADRs 0081 e 0084). Tocar no objetivo abre o detalhe do plano, com o volume semanal e o atalho "Adiar objetivo" (ADR 0083). Tocar num dia abre o detalhe do treino. Data de exemplo: quarta, 11 nov.</p>
 
     <div class="phones">
-      <!-- P1: plano específico -->
+      <!-- P1: tela inicial -->
       <figure class="state">
-        <div class="phone tall" aria-label="Plano específico, visão geral">
+        <div class="phone tall" aria-label="Plano, tela inicial do plano específico">
           <div class="status"><span>12:10</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="top">
-              <div><h3>Plano</h3><div class="sub">Plano específico · ativo desde 26 out</div></div>
+              <div><h3>Plano</h3><div class="sub">Plano específico · semana 3 de 10</div></div>
             </div>
             <div class="goal">
-              <span class="k">Objetivo</span>
+              <span class="k">Objetivo <span class="go">›</span></span>
               <b>10 km em 3 jan</b>
-              <span class="sub">Pace alvo 5:20/km · prova em 53 dias</span>
-              <span class="btn">Editar plano com o Piu <i class="open">4</i></span>
+              <span class="sub">Pace alvo 5:20/km · faltam 53 dias</span>
+              <span class="btn">Editar plano com o Piu</span>
             </div>
             <div class="sec">
-              <h5>Fases · semana 3 de 10</h5>
-              <div class="phases"><span class="cur">Base<small>sem 1–4</small></span><span>Construção<small>sem 5–7</small></span><span>Específica<small>sem 8–9</small></span><span>Polim.<small>sem 10</small></span></div>
+              <h5>Fases</h5>
+              <div class="phases"><span class="cur">Base<small>sem 1–4</small></span><span>Construção<small>sem 5–7</small></span><span>Específica<small>sem 8–9</small></span><span>Polimento<small>sem 10</small></span></div>
             </div>
+            <div class="wrow"><span><b>Semanas anteriores</b><small>Semanas 1 e 2 · 49,3 de 55 km</small></span><span class="go">⌄</span></div>
             <div class="sec">
-              <h5>Volume semanal de corrida <i class="open">2</i></h5>
-              <div class="vol">
-                <i style="--h:68%;--f:96%"><b></b></i>
-                <i style="--h:76%;--f:100%"><b></b></i>
-                <i class="cur" style="--h:84%;--f:43%"><b></b></i>
-                <i style="--h:63%"></i>
-                <i style="--h:89%"></i>
-                <i style="--h:95%"></i>
-                <i style="--h:100%"></i>
-                <i style="--h:95%"></i>
-                <i style="--h:79%"></i>
-                <i style="--h:47%"></i>
-              </div>
-              <div class="vol-x"><span>1</span><span>2</span><span class="cur">3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
-              <div class="vol-k"><span><i></i>previsto</span><span><i class="f"></i>feito</span></div>
-            </div>
-            <div class="wrow ghost">Semanas anteriores · 2 <i class="open">3</i></div>
-            <div class="sec">
-              <h5>Esta semana <i class="open">1</i></h5>
+              <h5>Esta semana</h5>
               <div class="wk-head"><b>Semana 3 · 9 a 15 nov · Base</b><small>13,7 de 31,6 km</small></div>
-              <div class="dacts"><span class="dact">Semana mais leve</span><span class="dact">Adiar a prova</span></div>
               <div class="drows">
                 <div class="drow done"><span class="d">Seg<b>9</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Intervalado</span><small>8,7 km de 8,6</small></span><span class="go">›</span><i class="warn seal" aria-label="Feito">✓</i></div>
                 <div class="drow mixed"><span class="d">Ter<b>10</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg>Leve 5 km + Superiores</span><small>corrida feita · superiores não feito</small></span><span class="go">›</span><i class="warn seal" aria-label="Um feito e outro não">!</i></div>
@@ -1012,7 +995,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="wrow"><span><b>Semana 4 · 16 a 22 nov</b><small>Base · 24 km · detalhada dom 15 nov, 22h</small></span><span class="go">›</span></div>
               <div class="wrow"><span><b>Semana 5 · 23 a 29 nov</b><small>Construção · 34 km</small></span><span class="go">›</span></div>
               <div class="wrow"><span><b>Semana 6 · 30 nov a 6 dez</b><small>Construção · 36 km</small></span><span class="go">›</span></div>
-              <div class="wrow ghost">Mais 4 semanas, até a prova</div>
+              <div class="wrow ghost">Mais 4 semanas, até o objetivo</div>
             </div>
           </div>
           <nav class="tabbar">
@@ -1024,29 +1007,28 @@ figcaption span { font-size: 13px; color: var(--note); }
           </nav>
         </div>
         <figcaption>
-          <strong>Plano específico</strong>
-          <span>Objetivo em destaque, com o acesso ao Piu para editar o plano. Depois, as fases, o volume semanal (previsto e feito) e a semana atual, com as ações prontas e os dias com o mesmo contorno e selos da faixa do Hoje. As semanas seguintes mostram só fase e volume até serem detalhadas.</span>
-          <span class="refs">ADR 0008 · 0023 · 0034 · 0044 · 0059 · 0060 · 0070 a 0073 · crit. 3.1, 6.1</span>
+          <strong>Tela inicial</strong>
+          <span>Objetivo com "Editar plano com o Piu"; tocar no card abre o detalhe do plano. Fases em retângulos iguais, com rolagem para o lado: a última aparece cortada. Semanas anteriores recolhidas, a semana atual com um card por dia e as próximas só com fase e volume.</span>
+          <span class="refs">ADR 0023 · 0034 · 0044 · 0070 a 0073 · 0081 · 0082 · crit. 3.1</span>
         </figcaption>
       </figure>
 
-      <!-- P2: semana mais leve aplicada -->
+      <!-- P2: semanas anteriores abertas -->
       <figure class="state">
-        <div class="phone" aria-label="Plano, semana mais leve aplicada">
-          <div class="status"><span>12:12</span><span>●●● ▮</span></div>
+        <div class="phone" aria-label="Plano, semanas anteriores abertas">
+          <div class="status"><span>12:11</span><span>●●● ▮</span></div>
           <div class="content">
-            <div class="top">
-              <div><h3>Plano</h3><div class="sub">10 km em 3 jan · semana 3 de 10</div></div>
-            </div>
-            <div class="toast">Semana mais leve aplicada: Sex 6 → 5 km e Dom 12 → 10 km. <u>Desfazer</u></div>
-            <div class="wk-head"><b>Semana 3 · 9 a 15 nov · Base</b><small>13,7 de 28,6 km</small></div>
-            <div class="dacts"><span class="dact off">Semana mais leve · aplicada</span><span class="dact">Adiar a prova</span></div>
+            <div class="wrow"><span><b>Semanas anteriores</b><small>Semanas 1 e 2 · 49,3 de 55 km</small></span><span class="go">⌃</span></div>
+            <div class="wrow"><span><b>Semana 1 · 26 out a 1 nov</b><small>Base · 25 de 26 km</small></span><span class="go">›</span></div>
+            <div class="wk-head"><b>Semana 2 · 2 a 8 nov · Base</b><small>24,3 de 29 km</small></div>
             <div class="drows">
-              <div class="drow rest today"><span class="d">Qua<b>11</b></span><span class="t"><span>Descanso</span><small>hoje</small></span><span></span></div>
-              <div class="drow"><span class="d">Qui<b>12</b></span><span class="t"><span><svg class="sx"><use href="#i-gym"/></svg>Inferiores</span><small>sem mudança</small></span><span class="go">›</span></div>
-              <div class="drow changed"><span class="d">Sex<b>13</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Leve <s>6 km</s> 5 km</span></span><span class="go">›</span></div>
-              <div class="drow rest"><span class="d">Sáb<b>14</b></span><span class="t"><span>Descanso</span></span><span></span></div>
-              <div class="drow changed"><span class="d">Dom<b>15</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Longão <s>12 km</s> 10 km</span></span><span class="go">›</span></div>
+              <div class="drow done"><span class="d">Seg<b>2</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Intervalado</span><small>8,1 km de 8</small></span><span class="go">›</span><i class="warn seal" aria-label="Feito">✓</i></div>
+              <div class="drow done"><span class="d">Ter<b>3</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg>Leve 5 km + Superiores</span></span><span class="go">›</span><i class="warn seal" aria-label="Feito">✓</i></div>
+              <div class="drow rest"><span class="d">Qua<b>4</b></span><span class="t"><span>Descanso</span></span><span></span></div>
+              <div class="drow done"><span class="d">Qui<b>5</b></span><span class="t"><span><svg class="sx"><use href="#i-gym"/></svg>Inferiores</span></span><span class="go">›</span><i class="warn seal" aria-label="Feito">✓</i></div>
+              <div class="drow missed"><span class="d">Sex<b>6</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Leve 5 km</span><small>não feito · plano ajustado</small></span><span class="go">›</span><i class="warn seal no" aria-label="Não feito">✕</i></div>
+              <div class="drow rest"><span class="d">Sáb<b>7</b></span><span class="t"><span>Descanso</span></span><span></span></div>
+              <div class="drow done"><span class="d">Dom<b>8</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Longão 11 km</span><small>11,2 km de 11</small></span><span class="go">›</span><i class="warn seal" aria-label="Feito">✓</i></div>
             </div>
           </div>
           <nav class="tabbar">
@@ -1058,26 +1040,84 @@ figcaption span { font-size: 13px; color: var(--note); }
           </nav>
         </div>
         <figcaption>
-          <strong>Semana mais leve</strong>
-          <span>Aplicada na hora, de hoje em diante: reduz a corrida e transforma intensos em leves; musculação e dias não mudam. Mostra o que mudou, permite desfazer e fica indisponível até ser desfeita.</span>
-          <span class="refs">ADR 0047 · 0059 · crit. 6.2, 6.6</span>
+          <strong>Semanas anteriores abertas</strong>
+          <span>Ao tocar na linha recolhida, as semanas passadas aparecem no mesmo estilo da semana atual, com um card por dia, contorno e selo de status. A última semana passada já vem aberta; as outras ficam em linha e abrem ao toque.</span>
+          <span class="refs">ADR 0070 a 0073 · 0081 · crit. 6.6</span>
         </figcaption>
       </figure>
 
-      <!-- P3: adiar a prova -->
+      <!-- P3: detalhe do plano -->
       <figure class="state">
-        <div class="phone" aria-label="Plano, adiar a prova">
+        <div class="phone tall" aria-label="Detalhe do plano">
+          <div class="status"><span>12:13</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Plano</span></div>
+            <div class="dhead">
+              <h3>10 km em 3 jan</h3>
+              <div class="sub">Plano específico · desde 26 out · 10 semanas</div>
+            </div>
+            <div class="result">
+              <div><b>10 km</b><small>distância</small></div>
+              <div><b>3 jan</b><small>data</small></div>
+              <div><b>5:20</b><small>pace alvo</small></div>
+            </div>
+            <div class="dacts"><span class="dact">Adiar objetivo</span></div>
+            <div class="sec">
+              <h5>Volume semanal de corrida</h5>
+              <div class="vol">
+                <i style="--h:68%;--f:96%"><b></b></i>
+                <i style="--h:76%;--f:84%"><b></b></i>
+                <i class="cur" style="--h:84%;--f:43%"><b></b></i>
+                <i style="--h:63%"></i>
+                <i style="--h:89%"></i>
+                <i style="--h:95%"></i>
+                <i style="--h:100%"></i>
+                <i style="--h:95%"></i>
+                <i style="--h:79%"></i>
+                <i style="--h:47%"></i>
+              </div>
+              <div class="vol-x"><span>1</span><span>2</span><span class="cur">3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+              <div class="vol-k"><span><i></i>previsto</span><span><i class="f"></i>feito</span></div>
+            </div>
+            <div class="sec">
+              <h5>Fases</h5>
+              <div class="wrow cur-ph"><span><b>Base · semanas 1 a 4</b><small>24 a 32 km por semana · fase atual</small></span></div>
+              <div class="wrow"><span><b>Construção · semanas 5 a 7</b><small>34 a 38 km por semana</small></span></div>
+              <div class="wrow"><span><b>Específica · semanas 8 e 9</b><small>30 a 36 km por semana</small></span></div>
+              <div class="wrow"><span><b>Polimento · semana 10</b><small>18 km, com o objetivo no domingo</small></span></div>
+            </div>
+          </div>
+          <nav class="tabbar">
+            <div class="tab on"><i class="ic"></i>Plano</div>
+            <div class="tab"><i class="ic"></i>Piu</div>
+            <div class="tab center"><i class="ic">11</i>Hoje</div>
+            <div class="tab"><i class="ic"></i>Notificações<span class="badge">2</span></div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
+          </nav>
+        </div>
+        <figcaption>
+          <strong>Detalhe do plano</strong>
+          <span>Abre pelo card do objetivo. Reúne o objetivo completo, o atalho "Adiar objetivo" (só no plano específico), o volume semanal previsto e feito, com a semana atual em destaque, e as fases com as semanas e o volume de cada uma.</span>
+          <span class="refs">ADR 0023 · 0060 · 0083 · 0084</span>
+        </figcaption>
+      </figure>
+
+      <!-- P4: adiar objetivo -->
+      <figure class="state">
+        <div class="phone" aria-label="Detalhe do plano, adiar objetivo">
           <div class="status"><span>12:14</span><span>●●● ▮</span></div>
           <div class="content">
-            <div class="top">
-              <div><h3>Plano</h3><div class="sub">10 km em 3 jan · semana 3 de 10</div></div>
+            <div class="navbar"><span>‹ Plano</span></div>
+            <div class="dhead">
+              <h3>10 km em 3 jan</h3>
+              <div class="sub">Plano específico · desde 26 out · 10 semanas</div>
             </div>
           </div>
           <div class="scrim"></div>
           <div class="sheet">
             <span class="grab"></span>
-            <h4>Adiar a prova</h4>
-            <p class="hint">Escolha uma data mais tarde que 3 jan. Para antecipar ou trocar a meta, fale com o Piu.</p>
+            <h4>Adiar objetivo</h4>
+            <p class="hint">Escolha uma data mais tarde que 3 jan. Para antecipar ou trocar o objetivo, fale com o Piu.</p>
             <div class="cal">
               <span class="h">S</span><span class="h">T</span><span class="h">Q</span><span class="h">Q</span><span class="h">S</span><span class="h">S</span><span class="h">D</span>
               <span></span><span></span><span></span><span></span><span class="off">1</span><span class="off">2</span><span class="old">3</span>
@@ -1095,41 +1135,58 @@ figcaption span { font-size: 13px; color: var(--note); }
           </div>
         </div>
         <figcaption>
-          <strong>Adiar a prova</strong>
-          <span>Só no plano específico. As regras esticam as fases e redistribuem o volume, sem IA. Ao confirmar, aplica na hora e pode ser desfeito. Prazo arriscado gera aviso, sem bloquear.</span>
-          <span class="refs">ADR 0017 · 0047 · 0060 · crit. 6.1, 6.4</span>
+          <strong>Adiar objetivo</strong>
+          <span>Atalho do detalhe do plano. As regras esticam as fases e redistribuem o volume, sem IA. Ao confirmar, aplica na hora e pode ser desfeito. Prazo arriscado gera aviso, sem bloquear.</span>
+          <span class="refs">ADR 0017 · 0047 · 0060 · 0084 · crit. 6.1, 6.4</span>
         </figcaption>
       </figure>
 
-      <!-- P4: plano genérico -->
+      <!-- P5: Piu com sugestões -->
       <figure class="state">
-        <div class="phone tall" aria-label="Plano genérico">
+        <div class="phone" aria-label="Piu aberto pelo Editar plano, com sugestões">
+          <div class="status"><span>12:15</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Plano</span><b>Piu</b><span></span></div>
+            <div class="ctx"><svg class="sx"><use href="#i-run"/></svg><span><b>Plano · 10 km em 3 jan</b>semana 3 de 10 · Base</span></div>
+            <div class="msg">O que você quer mudar no plano? Escolha uma sugestão ou me conte com as suas palavras.</div>
+            <div class="dacts"><span class="dact">Semana mais leve <i class="open">5</i></span><span class="dact">Adiar objetivo</span></div>
+          </div>
+          <div class="dock">
+            <div class="send"><div class="field"><b>Mensagem para o Piu</b>Ex.: vou viajar no fim de semana</div><span class="go">Enviar</span></div>
+          </div>
+          <nav class="tabbar">
+            <div class="tab"><i class="ic"></i>Plano</div>
+            <div class="tab on"><i class="ic"></i>Piu</div>
+            <div class="tab center"><i class="ic">11</i>Hoje</div>
+            <div class="tab"><i class="ic"></i>Notificações<span class="badge">2</span></div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
+          </nav>
+        </div>
+        <figcaption>
+          <strong>Editar plano com o Piu</strong>
+          <span>Abre o Piu com o plano como contexto e as sugestões de pedido "Semana mais leve" e "Adiar objetivo" (esta só no plano específico). O usuário também pode escrever qualquer outra coisa.</span>
+          <span class="refs">ADR 0035 · 0053 · 0062 · 0081 · 0084 · crit. 6.3</span>
+        </figcaption>
+      </figure>
+
+      <!-- P6: plano genérico -->
+      <figure class="state">
+        <div class="phone tall" aria-label="Plano genérico, tela inicial">
           <div class="status"><span>12:10</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="top">
-              <div><h3>Plano</h3><div class="sub">Plano genérico · ativo desde 26 out</div></div>
+              <div><h3>Plano</h3><div class="sub">Plano genérico · semana 3</div></div>
             </div>
             <div class="goal">
-              <span class="k">Objetivo</span>
+              <span class="k">Objetivo <span class="go">›</span></span>
               <b>Correr com constância</b>
               <span class="sub">4 corridas e 2 musculações por semana · sem data final</span>
               <span class="btn">Editar plano com o Piu</span>
             </div>
-            <div class="sec">
-              <h5>Volume semanal de corrida</h5>
-              <div class="vol" style="--n:4">
-                <i style="--h:80%;--f:96%"><b></b></i>
-                <i style="--h:88%;--f:100%"><b></b></i>
-                <i class="cur" style="--h:96%;--f:43%"><b></b></i>
-                <i style="--h:74%"></i>
-              </div>
-              <div class="vol-x" style="--n:4"><span>1</span><span>2</span><span class="cur">3</span><span>4</span></div>
-              <div class="vol-k"><span><i></i>previsto</span><span><i class="f"></i>feito</span></div>
-            </div>
+            <div class="wrow"><span><b>Semanas anteriores</b><small>Semanas 1 e 2 · 49,3 de 55 km</small></span><span class="go">⌄</span></div>
             <div class="sec">
               <h5>Esta semana</h5>
               <div class="wk-head"><b>Semana 3 · 9 a 15 nov</b><small>13,7 de 31,6 km</small></div>
-              <div class="dacts"><span class="dact">Semana mais leve</span></div>
               <div class="drows">
                 <div class="drow done"><span class="d">Seg<b>9</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Intervalado</span><small>8,7 km de 8,6</small></span><span class="go">›</span><i class="warn seal" aria-label="Feito">✓</i></div>
                 <div class="drow mixed"><span class="d">Ter<b>10</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg>Leve 5 km + Superiores</span><small>corrida feita · superiores não feito</small></span><span class="go">›</span><i class="warn seal" aria-label="Um feito e outro não">!</i></div>
@@ -1155,8 +1212,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Plano genérico</strong>
-          <span>Sem data final: sem fases até uma prova nem "Adiar a prova". O horizonte é contínuo, com a semana atual e a próxima. O volume mostra as semanas já vividas e a próxima.</span>
-          <span class="refs">ADR 0008 · 0023 · 0060</span>
+          <span>Sem data final: sem fases e sem "Adiar objetivo". O horizonte é contínuo, com as semanas anteriores, a atual e a próxima. O detalhe do plano mostra o objetivo e o volume semanal.</span>
+          <span class="refs">ADR 0008 · 0023 · 0081 · 0082 · 0083</span>
         </figcaption>
       </figure>
     </div>
@@ -1167,34 +1224,46 @@ figcaption span { font-size: 13px; color: var(--note); }
     <h2>Pontos do Plano</h2>
     <div class="questions">
       <div class="q next">
-        <i class="open">1</i>
+        <i class="open">5</i>
         <div>
           <p class="tag">Próxima pergunta</p>
-          <p><b>Ordem da tela:</b> objetivo e estrutura (fases e volume) no topo e a semana atual abaixo, como no rascunho, ou a semana atual primeiro e a estrutura depois?</p>
-          <p class="why">O ADR 0034 pede que o Plano destaque o objetivo. A semana atual é o que muda no dia a dia, mas já aparece resumida na faixa do Hoje.</p>
+          <p><b>Sugestões no Piu:</b> tocar em "Semana mais leve" aplica a ação pronta na hora, com desfazer, ou o Piu faz uma proposta com o antes e o depois para aceitar?</p>
+          <p class="why">A ação pronta é previsível e funciona sem IA (ADRs 0018 e 0059), mas só reduz a corrida da semana atual. A proposta do Piu pode olhar o resto do plano, como no replanejar de um treino (ADR 0078), mas depende da IA. "Adiar objetivo" no detalhe do plano continua como ação pronta, só com as regras (ADR 0060).</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
+        <i class="open">1</i>
+        <div>
+          <p class="tag">Decidido · ADR 0081</p>
+          <p><b>Ordem da tela:</b> objetivo e estrutura no topo, semana atual abaixo.</p>
+        </div>
+      </div>
+      <div class="q done">
         <i class="open">2</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Volume semanal:</b> gráfico de barras com o previsto e o feito de cada semana, ou só os números na lista de semanas?</p>
-          <p class="why">Dashboard e resumo ficaram fora do MVP. O gráfico mostra só o que o plano já tem, sem métrica nova.</p>
+          <p class="tag">Decidido · ADR 0083</p>
+          <p><b>Volume semanal:</b> gráfico com o previsto e o feito, no detalhe do plano, que abre pelo card do objetivo.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">3</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Semanas anteriores:</b> ficam no Plano, recolhidas acima da semana atual, ou o Plano mostra só a semana atual e as futuras?</p>
-          <p class="why">O histórico de replanejamentos fica no Perfil (ADR 0038). As semanas passadas mostrariam o que foi feito em cada treino.</p>
+          <p class="tag">Decidido · ADR 0081</p>
+          <p><b>Semanas anteriores:</b> recolhidas; ao tocar, abrem no mesmo estilo da semana atual, com um card por dia.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">4</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Editar plano com o Piu:</b> botão no card do objetivo, como no rascunho, ou numa área fixa no rodapé, como no detalhe do treino (ADR 0076)?</p>
+          <p class="tag">Decidido · ADR 0081</p>
+          <p><b>Editar plano com o Piu:</b> botão no card do objetivo.</p>
+        </div>
+      </div>
+      <div class="q done">
+        <i class="open">·</i>
+        <div>
+          <p class="tag">Decidido · ADRs 0082 e 0084 · pedidos fora da lista</p>
+          <p><b>Fases</b> em retângulos de mesma largura, com rolagem para o lado. <b>"Semana mais leve" e "Adiar objetivo"</b> saem da tela inicial e viram sugestões no Piu; "objetivo" substitui "prova" na interface.</p>
         </div>
       </div>
     </div>
