@@ -1534,7 +1534,6 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="dock">
             <div class="dacts"><span class="dact">Semana mais leve</span><span class="dact">Adiar objetivo</span></div>
             <div class="send"><div class="field"><b>Mensagem para o Piu</b>Conte o que mudou ou o que quer mudar</div><span class="go">Enviar</span></div>
-            <div class="quota">17 de 20 mensagens hoje <i class="open">3</i></div>
           </div>
           <nav class="tabbar">
             <div class="tab"><i class="ic"></i>Plano</div>
@@ -1546,7 +1545,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Aba aberta direto</strong>
-          <span>A conversa é única e contínua, separada por dia, com as propostas no status final e todo o histórico mantido. Sem assunto em andamento, as sugestões de pedido aparecem acima do campo e somem no primeiro envio. O limite diário aparece discreto.</span>
+          <span>A conversa é única e contínua, separada por dia, com as propostas no status final e todo o histórico mantido. Sem assunto em andamento, as sugestões de pedido aparecem acima do campo e somem no primeiro envio.</span>
           <span class="refs">ADR 0031 · 0034 · 0035 · 0062 · 0084 · 0085 · 0090 · 0091 · 0092 · crit. 6.3</span>
         </figcaption>
       </figure>
@@ -1644,8 +1643,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Limite diário atingido</strong>
-          <span>Depois de 20 mensagens no dia, o campo fica desativado até a meia-noite, com o motivo e o que continua funcionando. Chamadas automáticas não contam no limite.</span>
-          <span class="refs">ADR 0031 · 0085 · crit. 6.8</span>
+          <span>Não há contador no dia a dia. Com 5 mensagens ou menos, aparece "Restam N mensagens hoje" acima do campo. Depois de 20, o campo fica desativado até a meia-noite, com o motivo e o que continua funcionando. Chamadas automáticas não contam no limite.</span>
+          <span class="refs">ADR 0031 · 0085 · 0093 · crit. 6.8</span>
         </figcaption>
       </figure>
 
@@ -1679,17 +1678,9 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-piu">
-    <div class="eyebrow">Para decidir, um por vez</div>
+    <div class="eyebrow">Todos decididos · ADRs 0090 a 0093</div>
     <h2>Pontos do Piu</h2>
     <div class="questions">
-      <div class="q next">
-        <i class="open">3</i>
-        <div>
-          <p class="tag">Próxima pergunta · reaberto</p>
-          <p><b>Limite diário de mensagens:</b> manter o limite como trava, mostrando o aviso só quando faltarem poucas mensagens; manter e aumentar o valor; ou tirar o limite por usuário e ficar só com o teto mensal?</p>
-          <p class="why">O limite (ADR 0031) protege o teto mensal de gasto, que quando estoura desliga toda a IA do app, inclusive os ajustes automáticos, para todos os usuários. Sem ele, um uso muito alto de uma pessoa ou um erro que repete chamadas pode consumir o teto do mês.</p>
-        </div>
-      </div>
       <div class="q done">
         <i class="open">1</i>
         <div>
@@ -1702,6 +1693,13 @@ figcaption span { font-size: 13px; color: var(--note); }
         <div>
           <p class="tag">Decidido · ADR 0091</p>
           <p><b>Sugestões de pedido:</b> acima do campo, só sem assunto em andamento; somem no primeiro envio e voltam na próxima abertura.</p>
+        </div>
+      </div>
+      <div class="q done">
+        <i class="open">3</i>
+        <div>
+          <p class="tag">Decidido · ADR 0093</p>
+          <p><b>Limite diário:</b> mantido como trava, sem contador. Com 5 mensagens ou menos, aparece "Restam N mensagens hoje"; no limite, o campo fica desativado até a meia-noite.</p>
         </div>
       </div>
       <div class="q done">
