@@ -13,8 +13,13 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 
 ## Próximos passos
 
-1. **Reconciliação com o histórico remoto (2026-11-10):** o design desta sessão é o oficial. Do main remoto foram trazidos, como ADRs 0105 a 0136, o épico do Strava, a fronteira da IA (dados do Strava nunca vão para a IA), a marca do Strava e o planejamento de testes, CI e setup. Decisões em aberto, uma por vez:
-   1. ~~Modelo de carga~~ decidido no [ADR 0137](decisions/0137-outras-atividades-como-registro-de-carga.md): outras atividades declaradas no setup, só como registro de carga, sem nota de esforço.
-   2. ~~Identidade visual~~ decidido no [ADR 0138](decisions/0138-identidade-visual.md): a do histórico paralelo é a base, com as cores de status desta sessão e sem nota de esforço.
-   3. ~~Detalhamento semanal~~ decidido no [ADR 0139](decisions/0139-detalhamento-semanal-sem-dados-do-strava.md): a IA continua detalhando, sem dados do Strava, e as regras validam contra a carga real.
-2. **Card 5:** terminar a identidade visual sobre a base do ADR 0138 (ver a lista do card acima).
+1. **Reconciliação com o histórico remoto: concluída em 2026-11-10.** O design desta sessão é o oficial. Do histórico paralelo vieram, como ADRs 0105 a 0136, o épico do Strava, a fronteira da IA (dados do Strava nunca vão para a IA), a marca do Strava e o planejamento de testes, CI e setup. As três decisões abertas foram fechadas nos ADRs 0137 (outras atividades só como registro de carga), 0138 (identidade visual de lá como base) e 0139 (detalhamento semanal pela IA, sem dados do Strava).
+2. **Retomar aqui: card 5, identidade visual**, sobre a base do [ADR 0138](decisions/0138-identidade-visual.md). Um ponto por vez:
+   1. Tons finais de feito, não feito e misto e dos selos ✓, ✕ e "!", com contraste nos dois temas (ADRs 0070 e 0073).
+   2. Contraste do fundo do dia atual na faixa com a cor do status (ADR 0074).
+   3. Riscado do antes e depois, com pista que não dependa só do riscado (ADR 0088).
+   4. Ícones por tipo de atividade e ícone do Hoje com o número do dia (ADRs 0034, 0137 e 0138).
+   5. Atualizar o design system [Live Run](https://claude.ai/artifact/ScbFpKZfPXDDM42Y7Aawmy) com as cores de status desta sessão.
+   6. Aplicar a identidade sobre os wireframes ([`wireframes/index.html`](wireframes/index.html), publicado em https://claude.ai/artifact/ENJW2vupBk27ZNjB8q7Ltf).
+3. **Card 6, validação:** conferir os wireframes e os fluxos contra os critérios de aceitação. A validação do histórico paralelo foi feita sobre outros wireframes e precisa ser refeita.
+4. **Depois do épico de design:** etapa 3 do README, Testes e CI, com o planejamento já registrado nos ADRs 0118 a 0136, seguida do setup do monorepo.
