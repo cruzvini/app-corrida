@@ -134,10 +134,7 @@ figcaption span { font-size: 13px; color: var(--note); }
 .pace { display: grid; gap: 6px; font-size: 12.5px; font-variant-numeric: tabular-nums; }
 .pace .b { display: grid; grid-template-columns: 1fr auto; gap: 3px 8px; }
 .pace .b em { font-style: normal; color: var(--muted); }
-.pace .bar { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: var(--fill); position: relative; overflow: hidden; }
-.pace .bar i { position: absolute; inset: 0 auto 0 0; background: var(--muted); border-radius: 99px; }
 .src { font-size: 12px; color: var(--muted); }
-.acts { display: grid; gap: 6px; }
 .act { display: flex; justify-content: space-between; align-items: center; border: 1.5px solid var(--ink); border-radius: 10px; padding: 9px 12px; font-size: 13.5px; font-weight: 500; }
 .act small { font-weight: 400; color: var(--muted); font-size: 11.5px; }
 .act.quiet { border-color: var(--line); }
@@ -145,10 +142,26 @@ figcaption span { font-size: 13px; color: var(--note); }
 .fb { display: grid; gap: 4px; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font-size: 12.5px; }
 .fb .meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; }
 .fb .meta u { color: var(--ink); }
+.cmp { display: grid; grid-template-columns: 1fr auto auto; gap: 4px 14px; font-size: 12.5px; font-variant-numeric: tabular-nums; align-items: baseline; }
+.cmp em { font-style: normal; text-align: right; color: var(--muted); font-size: 10.5px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.cmp span:nth-child(3n+2) { color: var(--muted); text-align: right; }
+.cmp b { text-align: right; }
+.dock { border-top: 1px solid var(--line); background: var(--screen); padding: 10px 14px 20px; display: grid; gap: 8px; }
+.dacts { display: flex; gap: 5px; flex-wrap: wrap; }
+.dact { border: 1.5px solid var(--ink); border-radius: 99px; padding: 4px 9px; font-size: 11.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
+.dact.quiet { border-color: var(--line); font-weight: 500; }
+.dact.tbd { border-style: dashed; border-color: var(--muted); color: var(--muted); font-weight: 500; }
+.piu-link { font-size: 12.5px; font-weight: 600; display: flex; justify-content: space-between; color: var(--ink); }
+.piu-link span { color: var(--muted); }
+.dialog { position: absolute; left: 30px; right: 30px; top: 36%; background: var(--screen); border-radius: 14px; padding: 16px 14px 12px; display: grid; gap: 8px; text-align: center; }
+.dialog h4 { margin: 0; font-size: 15px; }
+.dialog p { margin: 0; font-size: 12.5px; color: var(--muted); }
+.dialog .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
+.dialog .btns span { border: 1.5px solid var(--line); border-radius: 10px; padding: 7px; font-size: 13px; font-weight: 600; }
+.dialog .btns .strong { border-color: var(--ink); }
 .send { display: flex; gap: 6px; align-items: stretch; }
 .send .field { flex: 1; }
 .send .go { border: 1.5px solid var(--ink); border-radius: 10px; padding: 0 12px; display: grid; place-items: center; font-size: 12.5px; font-weight: 600; }
-.piu { border: 2px solid var(--ink); border-radius: 12px; padding: 10px 12px; text-align: center; font-weight: 600; font-size: 13.5px; }
 .sheet .day-opt { display: grid; grid-template-columns: 52px 1fr; gap: 8px; align-items: center; border: 1px solid var(--line); border-radius: 10px; padding: 7px 10px; font-size: 12.5px; }
 .sheet .day-opt b { font-size: 12.5px; }
 .sheet .day-opt small { color: var(--muted); font-size: 11.5px; display: block; }
@@ -590,7 +603,7 @@ figcaption span { font-size: 13px; color: var(--note); }
   <section class="screen-group" id="detalhe">
     <div class="eyebrow">Abre por cima da aba de origem · Hoje, Plano ou Notificações</div>
     <h2>Detalhe do treino</h2>
-    <p class="lead">Destino de todo toque em um treino: card do Hoje, dia da faixa, escolha do treino, Plano e notificações de ajuste. Reúne o treino previsto, o resultado do Strava, as ações do treino, o feedback e a conversa com o Piu (ADR 0036). As telas aparecem inteiras, como se já tivessem sido roladas até o fim.</p>
+    <p class="lead">Destino de todo toque em um treino: card do Hoje, dia da faixa, escolha do treino, Plano e notificações de ajuste (ADR 0036). O conteúdo do treino rola, e a área de baixo, com as ações, o campo de feedback e o Piu, fica fixa acima da barra de abas (ADR 0076). As telas aparecem inteiras, como se já tivessem sido roladas até o fim.</p>
 
     <div class="phones">
       <!-- D1: corrida prevista -->
@@ -602,30 +615,22 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="dhead">
               <h3><svg class="sx lg"><use href="#i-run"/></svg>Intervalado</h3>
               <div class="sub">Segunda, 9 nov · Semana 3 de 10 · Base</div>
-              <div class="row"><span class="chip ghost">Previsto</span><span class="src">8,6 km · ~50 min</span></div>
+              <div class="row"><span class="chip ghost">Previsto</span><span class="src">8,6 km · ~50 min · 5:47/km médio</span></div>
             </div>
             <div class="sec">
-              <h5>Blocos e pace alvo <i class="open">2</i></h5>
+              <h5>Blocos e pace previsto</h5>
               <div class="pace">
-                <div class="b"><span>Aquecimento · 2 km</span><em>6:20/km</em><span class="bar"><i style="width:76%"></i></span></div>
-                <div class="b"><span>5 × 800 m</span><em>4:50/km</em><span class="bar"><i style="width:100%"></i></span></div>
-                <div class="b"><span>Recuperação · 400 m entre as séries</span><em>7:00/km</em><span class="bar"><i style="width:69%"></i></span></div>
-                <div class="b"><span>Desaquecimento · 1 km</span><em>6:30/km</em><span class="bar"><i style="width:74%"></i></span></div>
+                <div class="b"><span>Aquecimento · 2 km</span><em>6:20/km</em></div>
+                <div class="b"><span>5 × 800 m</span><em>4:50/km</em></div>
+                <div class="b"><span>Recuperação · 400 m entre as séries</span><em>7:00/km</em></div>
+                <div class="b"><span>Desaquecimento · 1 km</span><em>6:30/km</em></div>
               </div>
             </div>
-            <div class="sec">
-              <h5>Ações <i class="open">3</i></h5>
-              <div class="acts">
-                <div class="act">Marcar como feito <small>sem atividade no Strava</small></div>
-                <div class="act">Trocar dia <small>nesta semana do plano</small></div>
-                <div class="act">Pular <small>o plano se ajusta <i class="open">1</i></small></div>
-              </div>
-            </div>
-            <div class="sec">
-              <h5>Feedback</h5>
-              <div class="send"><div class="field"><b>Como foi?</b>Escreva quando quiser, antes ou depois</div><span class="go">Enviar</span></div>
-            </div>
-            <div class="piu">Falar com o Piu sobre este treino</div>
+          </div>
+          <div class="dock">
+            <div class="dacts"><span class="dact">Marcar como feito</span><span class="dact tbd">Trocar dia</span><span class="dact tbd">Pular <i class="open">1</i></span></div>
+            <div class="send"><div class="field"><b>Como foi?</b>Escreva quando quiser, antes ou depois</div><span class="go">Enviar</span></div>
+            <div class="piu-link">Falar com o Piu sobre este treino<span>›</span></div>
           </div>
           <nav class="tabbar">
             <div class="tab"><i class="ic"></i>Plano</div>
@@ -637,8 +642,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Corrida prevista</strong>
-          <span>Cabeçalho com tipo, data e status; blocos com o pace alvo e uma barra que mostra a evolução do ritmo (mais longa = mais rápido). As ações dependem do status: aqui, marcar como feito, trocar dia e pular.</span>
-          <span class="refs">ADR 0024 · 0025 · 0036 · 0057 · 0058 · 0066</span>
+          <span>Cabeçalho com tipo, data, status e o total previsto; blocos em lista com o pace previsto de cada um. Embaixo, fixos: as ações do status, o campo de feedback e o Piu. "Trocar dia" e "Pular" estão tracejados porque estão em revisão (ponto 1).</span>
+          <span class="refs">ADR 0024 · 0025 · 0036 · 0066 · 0075 · 0076</span>
         </figcaption>
       </figure>
 
@@ -654,7 +659,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="row"><span class="chip">Feito · Strava</span></div>
             </div>
             <div class="sec">
-              <h5>Resultado</h5>
+              <h5>Executado <i class="open">5</i></h5>
               <div class="result">
                 <div><b>8,7 km</b><small>distância</small></div>
                 <div><b>50:31</b><small>duração</small></div>
@@ -663,7 +668,16 @@ figcaption span { font-size: 13px; color: var(--note); }
               <span class="src">Atividade do Strava "Intervalado na pista", 18:20</span>
             </div>
             <div class="sec">
-              <h5>Previsto</h5>
+              <h5>Previsto × feito</h5>
+              <div class="cmp">
+                <span></span><em>Previsto</em><em>Feito</em>
+                <span>Distância</span><span>8,6 km</span><b>8,7 km</b>
+                <span>Duração</span><span>~50 min</span><b>50:31</b>
+                <span>Pace médio</span><span>5:47/km</span><b>5:48/km</b>
+              </div>
+            </div>
+            <div class="sec">
+              <h5>Previsto por bloco</h5>
               <div class="pace">
                 <div class="b"><span>Aquecimento · 2 km</span><em>6:20/km</em></div>
                 <div class="b"><span>5 × 800 m</span><em>4:50/km</em></div>
@@ -672,18 +686,15 @@ figcaption span { font-size: 13px; color: var(--note); }
               </div>
             </div>
             <div class="sec">
-              <h5>Ações</h5>
-              <div class="acts">
-                <div class="act quiet">Desmarcar como feito <small>a atividade vira carga fora do plano</small></div>
-              </div>
-            </div>
-            <div class="sec">
               <h5>Feedback</h5>
+              <div class="fb">Senti a panturrilha esquerda nas últimas duas séries.<div class="meta"><span>Hoje, 19:41</span><u>Apagar</u></div></div>
               <div class="toast">Feedback salvo.</div>
-              <div class="fb">Senti a panturrilha esquerda nas últimas duas séries.<div class="meta"><span>Hoje, 19:41</span><u>Apagar <i class="open">4</i></u></div></div>
-              <div class="send"><div class="field"><b>Mais alguma coisa?</b>Escreva outro feedback</div><span class="go">Enviar</span></div>
             </div>
-            <div class="piu">Falar com o Piu sobre este treino</div>
+          </div>
+          <div class="dock">
+            <div class="dacts"><span class="dact quiet">Desmarcar como feito</span></div>
+            <div class="send"><div class="field"><b>Mais alguma coisa?</b>Escreva outro feedback</div><span class="go">Enviar</span></div>
+            <div class="piu-link">Falar com o Piu sobre este treino<span>›</span></div>
           </div>
           <nav class="tabbar">
             <div class="tab"><i class="ic"></i>Plano</div>
@@ -695,8 +706,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Corrida feita</strong>
-          <span>O resultado do Strava vem primeiro, e o previsto fica abaixo, sem comparação bloco a bloco. O feedback é salvo antes da análise, pode haver mais de um, e cada um pode ser apagado, mas não editado.</span>
-          <span class="refs">ADR 0024 · 0025 · 0046 · 0055 · 0056 · crit. 4.4, 5.3, 5.4</span>
+          <span>Primeiro o executado, do resumo do Strava. Depois a comparação geral entre o previsto e o feito do dia, sem comparação bloco a bloco, e o previsto por bloco. Os feedbacks enviados ficam no fim do conteúdo, logo acima do campo, como numa conversa.</span>
+          <span class="refs">ADR 0024 · 0025 · 0046 · 0055 · 0056 · 0075 · 0076</span>
         </figcaption>
       </figure>
 
@@ -716,21 +727,14 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="act quiet">Inferiores <small>prevista no plano</small></div>
             </div>
             <div class="sec">
-              <h5>Resultado</h5>
+              <h5>Executado</h5>
               <span class="src">Atividade do Strava "Treino de força", 18:30 · 52 min</span>
             </div>
-            <div class="sec">
-              <h5>Ações</h5>
-              <div class="acts">
-                <div class="act">Corrigir divisão <small>ex.: fiz superiores</small></div>
-                <div class="act quiet">Desmarcar como feito</div>
-              </div>
-            </div>
-            <div class="sec">
-              <h5>Feedback</h5>
-              <div class="send"><div class="field"><b>Como foi?</b>Ex.: agachamento pesado hoje</div><span class="go">Enviar</span></div>
-            </div>
-            <div class="piu">Falar com o Piu sobre este treino</div>
+          </div>
+          <div class="dock">
+            <div class="dacts"><span class="dact">Corrigir divisão</span><span class="dact quiet">Desmarcar como feito</span></div>
+            <div class="send"><div class="field"><b>Como foi?</b>Ex.: agachamento pesado hoje</div><span class="go">Enviar</span></div>
+            <div class="piu-link">Falar com o Piu sobre este treino<span>›</span></div>
           </div>
           <nav class="tabbar">
             <div class="tab"><i class="ic"></i>Plano</div>
@@ -742,8 +746,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Musculação feita</strong>
-          <span>Mostra a divisão prevista, que o treino feito assume, e a ação de corrigir. Sem exercícios, porque a prescrição de musculação está fora do MVP.</span>
-          <span class="refs">ADR 0014 · 0025 · crit. 4.5</span>
+          <span>Mostra a divisão prevista, que o treino feito assume, e a ação de corrigir. Sem exercícios e sem comparação, porque a prescrição de musculação está fora do MVP.</span>
+          <span class="refs">ADR 0014 · 0025 · 0075 · 0076 · crit. 4.5</span>
         </figcaption>
       </figure>
 
@@ -763,30 +767,24 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="act quiet">Superiores <small>prevista no plano</small></div>
             </div>
             <div class="note">Às 22h não havia atividade nem marcação, então o treino contou como não feito e o plano foi ajustado. <u>Ver o ajuste em Notificações</u></div>
-            <div class="sec">
-              <h5>Ações</h5>
-              <div class="acts">
-                <div class="act">Marcar como feito <small>o ajuste é revisto</small></div>
-              </div>
-            </div>
-            <div class="sec">
-              <h5>Feedback</h5>
-              <div class="send"><div class="field"><b>O que aconteceu?</b>Ex.: reunião até tarde</div><span class="go">Enviar</span></div>
-            </div>
-            <div class="piu">Falar com o Piu sobre este treino</div>
+          </div>
+          <div class="dock">
+            <div class="dacts"><span class="dact">Marcar como feito · o ajuste é revisto</span></div>
+            <div class="send"><div class="field"><b>O que aconteceu?</b>Ex.: reunião até tarde</div><span class="go">Enviar</span></div>
+            <div class="piu-link">Falar com o Piu sobre este treino<span>›</span></div>
           </div>
           <nav class="tabbar">
             <div class="tab"><i class="ic"></i>Plano</div>
             <div class="tab"><i class="ic"></i>Piu</div>
             <div class="tab center"><i class="ic">11</i>Hoje</div>
-            <div class="tab"><i class="ic"></i>Notificações</div>
+            <div class="tab"><i class="ic"></i>Notificações<span class="badge">2</span></div>
             <div class="tab"><i class="ic"></i>Perfil</div>
           </nav>
         </div>
         <figcaption>
           <strong>Treino não feito</strong>
           <span>Aberto pela escolha do treino na faixa. Explica por que o treino contou como não feito e leva ao ajuste. Marcar como feito depois faz o ajuste ser revertido ou reavaliado. O feedback continua disponível.</span>
-          <span class="refs">ADR 0026 · 0047 · 0069 · crit. 4.7, 5.3</span>
+          <span class="refs">ADR 0026 · 0047 · 0069 · 0076 · crit. 4.7, 5.3</span>
         </figcaption>
       </figure>
 
@@ -804,7 +802,7 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="scrim"></div>
           <div class="sheet">
             <span class="grab"></span>
-            <h4>Trocar dia</h4>
+            <h4>Trocar dia <i class="open">1</i></h4>
             <p class="hint">Semana 3 do plano, 9 a 15 nov. Aplica na hora e pode ser desfeito.</p>
             <div class="day-opt cur"><b>Seg 9</b><span>Dia atual do treino</span></div>
             <div class="day-opt"><b>Ter 10</b><span>Troca com Leve 5 km<small>a musculação de terça fica onde está</small></span></div>
@@ -816,9 +814,39 @@ figcaption span { font-size: 13px; color: var(--note); }
           </div>
         </div>
         <figcaption>
-          <strong>Trocar dia</strong>
-          <span>A folha lista os dias da semana atual do plano e diz o que acontece em cada um: muda de dia ou troca de lugar com o treino da mesma modalidade. Risco aparece como aviso, sem bloquear. Dia passado só aparece se tiver atividade compatível ainda não ligada.</span>
+          <strong>Trocar dia (em revisão)</strong>
+          <span>Rascunho da ação pronta do ADR 0057. Mexe só no dia escolhido e não reavalia o resto do plano, por isso está em revisão junto com o "Pular" (ponto 1).</span>
           <span class="refs">ADR 0017 · 0045 · 0057 · crit. 6.1, 6.2, 6.4</span>
+        </figcaption>
+      </figure>
+
+      <!-- D6: apagar feedback -->
+      <figure class="state">
+        <div class="phone" aria-label="Detalhe, confirmação para apagar feedback">
+          <div class="status"><span>19:43</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Hoje</span></div>
+            <div class="dhead">
+              <h3><svg class="sx lg"><use href="#i-run"/></svg>Intervalado</h3>
+              <div class="sub">Segunda, 9 nov · Semana 3 de 10 · Base</div>
+              <div class="row"><span class="chip">Feito · Strava</span></div>
+            </div>
+            <div class="sec">
+              <h5>Feedback</h5>
+              <div class="fb">Senti a panturrilha esquerda nas últimas duas séries.<div class="meta"><span>Hoje, 19:41</span><u>Apagar</u></div></div>
+            </div>
+          </div>
+          <div class="scrim"></div>
+          <div class="dialog">
+            <h4>Apagar este feedback?</h4>
+            <p>O texto é removido de vez e deixa de ser usado nos próximos ajustes.</p>
+            <div class="btns"><span>Cancelar</span><span class="strong">Apagar</span></div>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Apagar feedback</strong>
+          <span>Única confirmação do detalhe do treino, porque apagar não tem desfazer. Ajustes que o feedback já gerou continuam como estão.</span>
+          <span class="refs">ADR 0056 · 0077</span>
         </figcaption>
       </figure>
     </div>
@@ -831,32 +859,38 @@ figcaption span { font-size: 13px; color: var(--note); }
       <div class="q next">
         <i class="open">1</i>
         <div>
-          <p class="tag">Próxima pergunta</p>
-          <p><b>Pular:</b> aplica na hora, com a opção de desfazer na própria tela, ou pede uma confirmação antes?</p>
-          <p class="why">O ADR 0058 diz que o pulo é imediato e pode ser desfeito enquanto for a ação mais recente. Uma confirmação evita toques acidentais, mas acrescenta um passo a uma ação que já tem desfazer.</p>
+          <p class="tag">Próxima pergunta · reaberto</p>
+          <p><b>O que entra no lugar de "Pular" e "Trocar dia"?</b> As duas ações mexem só no treino escolhido. Um treino não feito, feito de outro jeito ou mudado de dia deve fazer o app reavaliar os próximos dias.</p>
+          <p class="why">Pelo Strava isso já é automático: treino não feito ajusta o plano (ADR 0026), e treino bem acima do previsto também (ADR 0027). Falta decidir o que o usuário toca no detalhe quando quer mudar o treino antes de ele acontecer.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">2</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Evolução do pace:</b> barras de ritmo por bloco, como no rascunho, ou só a lista com os paces?</p>
-          <p class="why">O ADR 0024 pede que o plano mostre como o pace alvo muda de um bloco para o outro.</p>
+          <p class="tag">Decidido · ADR 0075</p>
+          <p><b>Evolução do pace:</b> sem barras. O previsto mostra os paces por bloco, o feito mostra o executado, e a comparação é só no geral do dia.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">3</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Lugar das ações:</b> seção no meio da tela, como no rascunho, ou barra fixa no rodapé?</p>
+          <p class="tag">Decidido · ADR 0076</p>
+          <p><b>Lugar das ações:</b> área fixa no rodapé, junto com o feedback e o Piu, no formato de conversa.</p>
+        </div>
+      </div>
+      <div class="q done">
+        <i class="open">4</i>
+        <div>
+          <p class="tag">Decidido · ADR 0077</p>
+          <p><b>Apagar feedback:</b> pede confirmação.</p>
         </div>
       </div>
       <div class="q">
-        <i class="open">4</i>
+        <i class="open">5</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Apagar feedback:</b> pede confirmação, já que o texto é removido de vez?</p>
-          <p class="why">O ADR 0056 diz que apagar remove o texto do banco de dados, sem como recuperar.</p>
+          <p class="tag">Em aberto · novo</p>
+          <p><b>Executado:</b> só o resumo do Strava (distância, duração e pace médio) ou também o pace de cada km ou volta?</p>
+          <p class="why">O pace por km ou volta precisa dos dados detalhados da atividade no Strava, que o ADR 0024 deixou de fora. Por enquanto o wireframe mostra só o resumo.</p>
         </div>
       </div>
     </div>
