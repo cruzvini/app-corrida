@@ -70,11 +70,12 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0062 | [Proposta da conversa com o Piu aparece na conversa e vai para Notificações se ficar pendente](0062-proposta-do-piu-na-conversa.md) | Aceita |
 | 0063 | [Wireframes em artifact HTML de baixa fidelidade](0063-wireframes-em-artifact-html.md) | Aceita |
 | 0064 | [Atualização manual do Strava por gesto de puxar e por botão](0064-atualizacao-manual-puxar-e-botao.md) | Aceita |
-| 0065 | [Faixa de 7 dias no Hoje, centrada no dia atual, no lugar do lembrete do treino anterior](0065-faixa-de-7-dias-centrada-no-hoje.md) | Aceita |
+| 0065 | [Faixa de 7 dias no Hoje, centrada no dia atual, no lugar do lembrete do treino anterior](0065-faixa-de-7-dias-centrada-no-hoje.md) | Aceita (revisada pelo ADR 0070) |
 | 0066 | [Card do Hoje sem ações rápidas, com as ações só no detalhe do treino](0066-card-do-hoje-sem-acoes-rapidas.md) | Aceita |
 | 0067 | [Corrida e musculação no mesmo dia: card principal da corrida e card resumido da musculação](0067-corrida-e-musculacao-no-mesmo-dia.md) | Aceita |
 | 0068 | [Dia de descanso no Hoje mostra só "Dia de descanso"](0068-dia-de-descanso-no-hoje.md) | Aceita |
 | 0069 | [Tocar em um dia com dois treinos na faixa abre a escolha do treino](0069-dia-com-dois-treinos-abre-escolha.md) | Aceita |
+| 0070 | [Ícone da modalidade com cor de status na faixa de 7 dias](0070-icones-e-cores-de-status-na-faixa.md) | Aceita |
 
 ## Como criar um novo ADR
 
