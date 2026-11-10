@@ -51,8 +51,8 @@ flowchart TD
   B -- não --> D[Escolher nível vendo a descrição de cada um]
   D --> E["Nome sugerido pelo Strava (ADR 0099), idade de 10 a 100 (ADR 0042), peso e lesões ou limitações opcional 2.2"]
   E --> F[Corrida: quantos dias por semana 2.3]
-  F --> G{Faz musculação?}
-  G -- sim --> G1[Musculação: quantos dias e a divisão em quantidade]
+  F --> G{Faz outras atividades?}
+  G -- sim --> G1["Lista de outras atividades: tipo e vezes por semana; musculação com a divisão em quantidade (ADR 0137)"]
   G -- não --> DIAS
   G1 --> DIAS
   DIAS((frequência salva; o plano escolhe os dias, ADR 0097)) --> H{Qual é o objetivo? 2.4, ADR 0103}

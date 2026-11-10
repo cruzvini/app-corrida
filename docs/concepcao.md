@@ -40,7 +40,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - Plano específico com distância livre ([ADR 0016](decisions/0016-plano-especifico-com-distancia-livre.md)).
    - Meta fora do comum: o app avisa sobre os riscos e sugere alternativas, sem bloquear; as regras detectam e a IA explica; a decisão é do usuário ([ADR 0017](decisions/0017-avisar-riscos-sem-bloquear-plano.md)).
    - Replanejamento por ações prontas, aplicadas direto, e por conversa livre, com revisão antes de aplicar; é possível desfazer a última ação pronta ([ADR 0018](decisions/0018-replanejamento-acoes-prontas-e-conversa.md)).
-   - **Fora do MVP:** notificações push (ADR 0007); Apple Health / Health Connect (ADR 0009); questionário de prontidão para saúde e registro manual de treinos (ADR 0013); prescrição de exercícios de musculação (ADR 0014); dashboard, resumo, calendário e PRs por distância (ideias de features); versionamento completo do plano (ADR 0018); TestFlight / App Store (ADR 0010).
+   - **Fora do MVP:** notificações push (ADR 0007); Apple Health / Health Connect (ADR 0009); questionário de prontidão para saúde e registro manual de treinos (ADR 0013); prescrição de exercícios de musculação ou de outras atividades e nota de esforço por treino (ADRs 0014 e 0137); dashboard, resumo, calendário e PRs por distância (ideias de features); versionamento completo do plano (ADR 0018); TestFlight / App Store (ADR 0010).
 5. [x] Critérios de aceitação de cada jornada (validados pelo usuário).
    - **Jornada 1, onboarding (validada):**
      1. Eu informo meu e-mail, recebo um link mágico e, ao tocar nele, entro no app sem senha ([ADR 0020](decisions/0020-autenticacao-email-link-magico.md)).
@@ -54,7 +54,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 2, setup do plano (validada):**
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
      2. Confirmo como quero ser chamado (sugerido pelo primeiro nome do Strava, ADR 0099), informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).
-     3. Informo quantos dias por semana quero correr e se faço musculação. Se faço, informo quantos dias e a divisão em quantidade (ex.: 1 de superiores e 1 de inferiores), sem escolher os dias da semana; o plano escolhe os dias (ADRs 0014 e [0097](decisions/0097-frequencia-semanal-sem-dias-fixos.md)).
+     3. Informo quantos dias por semana quero correr e declaro as outras atividades que faço (ex.: musculação, natação, bike), com o tipo e quantas vezes por semana. Na musculação, informo também a divisão em quantidade (ex.: 1 de superiores e 1 de inferiores). Não escolho os dias da semana: o plano escolhe (ADRs 0097 e [0137](decisions/0137-outras-atividades-como-registro-de-carga.md)).
      4. Escolho o objetivo: completar uma distância, melhorar o tempo numa distância ou sem objetivo definido (só correr com regularidade) (ADR 0103).
      5. Para completar uma distância, informo a distância (qualquer valor) e, se quiser, a data; sem data, o app sugere um prazo, que aceito ou ajusto. Para melhorar o tempo, informo a distância e a data (ADRs 0016 e 0103).
      6. Para melhorar o tempo, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
@@ -64,8 +64,8 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 3, geração do plano (validada):**
      1. Depois do setup, o app gera o plano com a estrutura completa (fases e volume semanal) e as próximas 1 a 2 semanas detalhadas, que vejo na aba Plano (ADRs 0023 e 0102).
      2. Cada treino de corrida detalhado mostra o tipo (ex.: leve, limiar, intervalado, progressivo, longão) e é dividido em blocos (ex.: aquecimento, repetições, recuperação, desaquecimento). Cada bloco tem distância ou duração e um pace alvo, ou uma faixa de intensidade quando não houver meta de pace (ADR 0024).
-     3. Os treinos respeitam a frequência de corrida e de musculação que informei, e a musculação aparece com a divisão do dia (ex.: inferiores) (ADR 0097).
-     4. O plano não coloca corrida intensa logo depois de um treino de inferiores.
+     3. Os treinos respeitam a frequência de corrida e de cada outra atividade que informei. As outras atividades aparecem só com o tipo, e a musculação com a divisão do dia (ex.: inferiores) (ADRs 0097 e 0137).
+     4. O plano considera a carga das outras atividades ao posicionar as corridas mais puxadas e não coloca corrida intensa logo depois de um treino de inferiores (ADR 0137).
      5. No plano específico, o plano termina na data da prova ou no prazo da meta.
      6. Se a validação das regras encontrar um risco no plano gerado, recebo o aviso e as alternativas em Notificações (ADRs 0017 e 0102).
      7. Depois de gerar, o plano fica ativo na hora e o app abre o Hoje. Para mudar o plano, converso com o Piu (ADR 0102).

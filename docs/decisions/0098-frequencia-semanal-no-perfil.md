@@ -1,6 +1,6 @@
 # ADR 0098: Frequência semanal fica no Perfil, em Meus dados
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0137)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -8,6 +8,8 @@
 O ADR 0097 trocou os dias fixos pela frequência semanal (quantos dias de corrida e de musculação, com a divisão em quantidade). O ADR 0094 pôs a frequência no detalhe do plano e deixou a mudança só pela conversa com o Piu. A frequência, porém, é uma informação da pessoa, como nível e peso.
 
 ## Decisão
+
+*Revisado pelo ADR 0137: a frequência no Perfil inclui as outras atividades.*
 
 - A frequência semanal fica no **Perfil, em Meus dados**, junto com nível, idade, peso e lesões ou limitações.
 - Ela é mudada pelo **"Editar perfil"**: Salvar grava na hora e abre o Piu com a mensagem do que mudou (ADR 0095).

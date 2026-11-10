@@ -1,6 +1,6 @@
 # ADR 0097: Frequência semanal no lugar de dias fixos
 
-- **Status:** Aceita (revisada pelo ADR 0098)
+- **Status:** Aceita (revisada pelos ADRs 0098 e 0137)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -8,6 +8,8 @@
 O ADR 0041 fazia o usuário marcar, no setup, os dias da semana de corrida e de musculação, e o plano usava exatamente esses dias. A ideia do app é ser totalmente ajustável, sem prender cada treino a um dia da semana.
 
 ## Decisão
+
+*Revisado pelo ADR 0137: além da corrida, o usuário declara as outras atividades (tipo e vezes por semana), e a musculação é uma delas.*
 
 - No setup, o usuário informa **quantos dias por semana** quer correr e **quantos** quer fazer musculação, com a divisão em quantidade (ex.: 2 musculações: 1 de superiores e 1 de inferiores, como no ADR 0008).
 - **O plano escolhe os dias**, pelo fluxo "IA propõe, regras validam" (ADR 0022). As regras continuam evitando corrida intensa depois de inferiores (critério 3.4).

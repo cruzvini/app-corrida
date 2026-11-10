@@ -1,6 +1,6 @@
 # ADR 0014: Musculação entra no plano como carga que afeta a corrida
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0137)
 - **Data:** 2026-10-19
 
 ## Contexto
@@ -8,6 +8,8 @@
 O usuário combina corrida e musculação. A musculação muda quais dias e qual esforço fazem sentido para os treinos de corrida. Montar treinos de musculação em detalhe não é o objetivo do app.
 
 ## Decisão
+
+*Revisado pelo ADR 0137: a musculação vira um item da lista de outras atividades, a única com divisão; todas contam como carga.*
 
 A musculação faz parte do plano de forma leve: o app registra quando ela acontece e analisa sua carga e esforço para ajustar os treinos de corrida. O app não prescreve exercícios, séries ou cargas de musculação.
 

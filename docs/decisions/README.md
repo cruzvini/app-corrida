@@ -19,7 +19,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0011 | [Estratégia de testes: pirâmide com quality gates de CI](0011-estrategia-de-testes-piramide.md) | Aceita |
 | 0012 | [Design e wireframes feitos no Claude (design mode), sem Figma](0012-design-no-claude-sem-figma.md) | Aceita |
 | 0013 | [Adiados: questionário de prontidão para saúde e registro manual de treinos](0013-adiados-prontidao-e-registro-manual.md) | Adiada |
-| 0014 | [Musculação entra no plano como carga que afeta a corrida](0014-musculacao-como-carga-no-plano.md) | Aceita |
+| 0014 | [Musculação entra no plano como carga que afeta a corrida](0014-musculacao-como-carga-no-plano.md) | Aceita (revisada pelo ADR 0137) |
 | 0015 | [Nível de corrida sugerido pelo Strava e confirmado pelo usuário](0015-nivel-de-corrida-sugerido-e-confirmado.md) | Aceita |
 | 0016 | [Plano específico com distância livre](0016-plano-especifico-com-distancia-livre.md) | Aceita (revisada pelo ADR 0103) |
 | 0017 | [Avisar sobre riscos da meta sem bloquear a criação do plano](0017-avisar-riscos-sem-bloquear-plano.md) | Aceita |
@@ -102,8 +102,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0094 | [Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos](0094-perfil-so-com-dados-pessoais.md) | Aceita (revisada pelos ADRs 0098 e 0099) |
 | 0095 | [Editar o perfil salva os dados e leva ao Piu com o que mudou](0095-editar-perfil-leva-ao-piu.md) | Aceita (revisada pelos ADRs 0098 e 0099) |
 | 0096 | [Sair da conta pede confirmação](0096-sair-pede-confirmacao.md) | Aceita |
-| 0097 | [Frequência semanal no lugar de dias fixos](0097-frequencia-semanal-sem-dias-fixos.md) | Aceita (revisada pelo ADR 0098) |
-| 0098 | [Frequência semanal fica no Perfil, em Meus dados](0098-frequencia-semanal-no-perfil.md) | Aceita |
+| 0097 | [Frequência semanal no lugar de dias fixos](0097-frequencia-semanal-sem-dias-fixos.md) | Aceita (revisada pelos ADRs 0098 e 0137) |
+| 0098 | [Frequência semanal fica no Perfil, em Meus dados](0098-frequencia-semanal-no-perfil.md) | Aceita (revisada pelo ADR 0137) |
 | 0099 | [Nome no Perfil, sugerido pelo Strava](0099-nome-no-perfil.md) | Aceita |
 | 0100 | [Boas-vindas só com uma frase e o campo de e-mail](0100-boas-vindas-so-com-frase-e-email.md) | Aceita |
 | 0101 | [Progresso do setup com barra e contagem de passos](0101-progresso-do-setup-com-passos.md) | Aceita |
@@ -142,6 +142,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0134 | [Pacotes internos consumidos como TypeScript fonte, sem build](0134-pacotes-internos-sem-build.md) | Aceita |
 | 0135 | [Pasta `tests/` organizada por camada da pirâmide](0135-pasta-tests-por-camada.md) | Aceita |
 | 0136 | [Todos os quality gates ativos desde o setup, com testes de fumaça](0136-gates-ativos-desde-o-setup.md) | Aceita |
+| 0137 | [Outras atividades declaradas no setup, só como registro de carga](0137-outras-atividades-como-registro-de-carga.md) | Aceita |
 
 ## Como criar um novo ADR
 
