@@ -1,6 +1,6 @@
 # ADR 0070: Ícone da modalidade e cor de status no contorno do dia na faixa de 7 dias
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0142: não feito em amarelo, com fundo na cor do status)
 - **Data:** 2026-11-09 (corrigido em 2026-11-10)
 
 ## Contexto

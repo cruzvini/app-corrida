@@ -1,6 +1,6 @@
 # ADR 0138: Identidade visual do Live Run
 
-- **Status:** Aceita
+- **Status:** Aceita (cores de status revisadas pelo ADR 0142)
 - **Data:** 2026-10-22 (trazida para o histórico oficial em 2026-11-10)
 
 ## Contexto

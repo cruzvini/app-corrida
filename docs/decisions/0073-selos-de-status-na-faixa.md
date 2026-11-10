@@ -1,6 +1,6 @@
 # ADR 0073: Selos ✓ e ✕ reforçam a cor do contorno na faixa de 7 dias
 
-- **Status:** Aceita
+- **Status:** Aceita (cor e forma finais no ADR 0142)
 - **Data:** 2026-11-10
 
 ## Contexto

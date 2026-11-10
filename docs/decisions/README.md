@@ -147,6 +147,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0139 | [Detalhamento semanal pela IA, sem dados do Strava](0139-detalhamento-semanal-sem-dados-do-strava.md) | Aceita |
 | 0140 | [Direção visual esportiva sobre a base da identidade](0140-direcao-visual-esportiva.md) | Aceita |
 | 0141 | [Skills de design copiadas para o repositório](0141-skills-de-design.md) | Aceita |
+| 0142 | [Tons de status, fundo com transparência e selos](0142-tons-de-status-e-selos.md) | Aceita |
 
 ## Como criar um novo ADR
 
