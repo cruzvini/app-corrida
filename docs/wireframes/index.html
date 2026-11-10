@@ -282,6 +282,10 @@ figcaption span { font-size: 13px; color: var(--note); }
 .tg.chg { border-width: 2px; border-style: dashed; border-color: var(--ink); }
 .cta-row { display: grid; gap: 6px; }
 .cta-main { background: var(--ink); color: var(--screen); border-radius: 12px; padding: 10px; text-align: center; font-weight: 600; font-size: 13.5px; }
+.stp-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; color: var(--muted); }
+.stp-row b { color: var(--ink); }
+.stp { font-family: var(--mono); color: var(--ink); letter-spacing: .12em; border: 1.5px solid var(--line); border-radius: 8px; padding: 1px 6px; }
+.field.tg { display: grid; gap: 2px; align-items: start; }
 .send { display: flex; gap: 6px; align-items: stretch; }
 .send .field { flex: 1; }
 .send .go { border: 1.5px solid var(--ink); border-radius: 10px; padding: 0 12px; display: grid; place-items: center; font-size: 12.5px; font-weight: 600; }
@@ -1115,7 +1119,6 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div><b>3 jan</b><small>data</small></div>
               <div><b>5:20</b><small>pace alvo</small></div>
             </div>
-            <div class="src">4 corridas e 2 musculações por semana (1 superiores, 1 inferiores). O plano escolhe os dias.</div>
             <div class="dacts"><span class="dact">Adiar objetivo</span></div>
             <div class="sec">
               <h5>Volume semanal de corrida</h5>
@@ -1152,8 +1155,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Detalhe do plano</strong>
-          <span>Abre pelo card do objetivo. Reúne o objetivo completo e a frequência semanal (mudar qualquer um é pelo Piu), o atalho "Adiar objetivo" (só no plano específico), o volume semanal previsto e feito, com a semana atual em destaque, e as fases com as semanas e o volume de cada uma.</span>
-          <span class="refs">ADR 0023 · 0060 · 0083 · 0084 · 0094 · 0097</span>
+          <span>Abre pelo card do objetivo. Reúne o objetivo completo (mudar é pelo Piu), o atalho "Adiar objetivo" (só no plano específico), o volume semanal previsto e feito, com a semana atual em destaque, e as fases com as semanas e o volume de cada uma.</span>
+          <span class="refs">ADR 0023 · 0060 · 0083 · 0084 · 0094 · 0098</span>
         </figcaption>
       </figure>
 
@@ -1641,8 +1644,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Mudar a frequência</strong>
-          <span>Sem dias fixos, a frequência muda pela conversa: o Piu ajusta a semana atual e as seguintes, e o detalhe do plano passa a mostrar a nova frequência. Um pedido como "longão sempre no sábado" vira contexto para os próximos detalhamentos.</span>
-          <span class="refs">ADR 0062 · 0083 · 0088 · 0097 · crit. 3.3, 6.5</span>
+          <span>Sem dias fixos, a frequência muda pela conversa: o Piu ajusta a semana atual e as seguintes, e aceitar atualiza a frequência no Perfil. Um pedido como "longão sempre no sábado" vira contexto para os próximos detalhamentos.</span>
+          <span class="refs">ADR 0062 · 0088 · 0097 · 0098 · crit. 3.3, 6.5</span>
         </figcaption>
       </figure>
 
@@ -1742,7 +1745,7 @@ figcaption span { font-size: 13px; color: var(--note); }
   <section class="screen-group" id="perfil">
     <div class="eyebrow">Aba Perfil · ícone de pessoa</div>
     <h2>Perfil</h2>
-    <p class="lead">Só dados pessoais: Meus dados, Strava e Conta (ADR 0094). Objetivo e frequência ficam no detalhe do plano, e o que mudou no plano fica na conversa com o Piu e em Notificações. Editar o perfil salva na hora e leva ao Piu com o que mudou (ADR 0095). Data de exemplo: quarta, 11 nov.</p>
+    <p class="lead">Só dados pessoais: Meus dados (com o nome e a frequência semanal), Strava e Conta (ADRs 0094, 0098 e 0099). O objetivo fica no detalhe do plano, e o que mudou no plano fica na conversa com o Piu e em Notificações. Editar o perfil salva na hora e leva ao Piu com o que mudou (ADR 0095). Data de exemplo: quarta, 11 nov.</p>
 
     <div class="phones">
       <!-- R1: Perfil -->
@@ -1751,12 +1754,13 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="status"><span>13:00</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="top"><div><h3>Perfil</h3></div></div>
-            <div class="who"><span class="av">A</span><span><b>ana@exemplo.com</b>No Live Run desde 26 out</span></div>
+            <div class="who"><span class="av">V</span><span><b>Vini</b>vini@exemplo.com · desde 26 out</span></div>
             <div class="sec">
               <h5>Meus dados</h5>
               <div class="pgroup">
                 <div class="prow"><span>Nível</span><b>Intermediário</b><span></span></div>
                 <div class="prow"><span>Idade e peso</span><b>34 anos · 72 kg</b><span></span></div>
+                <div class="prow"><span>Frequência</span><b>4 corridas · 2 musculações</b><span></span></div>
                 <div class="prow"><span>Lesões ou limitações</span><b>Nenhuma informada</b><span></span></div>
               </div>
               <span class="btn">Editar perfil</span>
@@ -1771,7 +1775,7 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="sec">
               <h5>Conta</h5>
               <div class="pgroup">
-                <div class="prow"><span>E-mail</span><b>ana@exemplo.com</b><span></span></div>
+                <div class="prow"><span>E-mail</span><b>vini@exemplo.com</b><span></span></div>
                 <div class="prow danger"><span>Sair</span><b></b><span class="go">›</span></div>
               </div>
             </div>
@@ -1786,22 +1790,29 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Perfil</strong>
-          <span>Três seções curtas. Meus dados só mostra; para mudar, "Editar perfil". Strava mostra a conexão e a última sincronização, com atualização manual. Sem nome no app: o login é por e-mail.</span>
-          <span class="refs">ADR 0019 · 0020 · 0064 · 0094 · 0095</span>
+          <span>Três seções curtas. Meus dados só mostra; para mudar, "Editar perfil". Strava mostra a conexão e a última sincronização, com atualização manual. O nome vem do primeiro nome do Strava no setup e pode ser trocado.</span>
+          <span class="refs">ADR 0019 · 0020 · 0064 · 0094 · 0095 · 0098 · 0099</span>
         </figcaption>
       </figure>
 
       <!-- R2: editar perfil -->
       <figure class="state">
-        <div class="phone" aria-label="Perfil, editar perfil">
+        <div class="phone tall" aria-label="Perfil, editar perfil">
           <div class="status"><span>13:02</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="navbar"><span>‹ Perfil</span></div>
             <div class="dhead"><h3>Editar perfil</h3><div class="sub">Ao salvar, o Piu avalia se o plano precisa mudar.</div></div>
+            <div class="field"><b>Como você quer ser chamado</b>Vini</div>
             <div class="field"><b>Nível</b>Intermediário ›</div>
             <div class="wgrid" style="grid-template-columns:1fr 1fr">
               <span class="field"><b>Idade</b>34 anos</span>
               <span class="field tg chg"><b>Peso</b>70 kg</span>
+            </div>
+            <div class="sec">
+              <h5>Frequência por semana</h5>
+              <div class="field"><span class="stp-row"><b>Corrida</b><span class="stp">− 4 +</span></span></div>
+              <div class="field"><span class="stp-row"><b>Musculação</b><span class="stp">− 2 +</span></span><span class="stp-row">Superiores<span class="stp">− 1 +</span></span><span class="stp-row">Inferiores<span class="stp">− 1 +</span></span></div>
+              <span class="src">O plano escolhe os dias.</span>
             </div>
             <div class="field tg chg"><b>Lesões ou limitações</b>Joelho sensível em descidas</div>
             <div class="cta-row"><div class="cta-main">Salvar</div></div>
@@ -1816,8 +1827,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Editar perfil</strong>
-          <span>Nível, idade, peso e lesões ou limitações. No exemplo, mudam o peso e as lesões (tracejado = mudou). Salvar grava os dados na hora e abre o Piu.</span>
-          <span class="refs">ADR 0015 · 0039 · 0042 · 0095 · crit. 6.5</span>
+          <span>Nome, nível, idade, peso, frequência semanal e lesões ou limitações. A frequência é só quantidade, com a divisão da musculação. No exemplo, mudam o peso e as lesões (tracejado = mudou). Salvar grava na hora e abre o Piu; mudar só o nome não abre.</span>
+          <span class="refs">ADR 0015 · 0039 · 0042 · 0095 · 0097 · 0098 · 0099 · crit. 6.5</span>
         </figcaption>
       </figure>
 
@@ -1827,7 +1838,7 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="status"><span>13:03</span><span>●●● ▮</span></div>
           <div class="content chat">
             <div class="daysep">Hoje</div>
-            <div class="ctx"><span class="av">A</span><span><b>Perfil atualizado</b>peso e lesões</span></div>
+            <div class="ctx"><span class="av">V</span><span><b>Perfil atualizado</b>peso e lesões</span></div>
           </div>
           <div class="dock">
             <div class="send"><div class="field"><b>Atualizei meu perfil:</b><span style="color:var(--ink)">peso de 72 para 70 kg; lesões: joelho sensível em descidas.</span></div><span class="go">Enviar</span></div>
@@ -1853,7 +1864,7 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="status"><span>13:05</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="top"><div><h3>Perfil</h3></div></div>
-            <div class="who"><span class="av">A</span><span><b>ana@exemplo.com</b>No Live Run desde 26 out</span></div>
+            <div class="who"><span class="av">V</span><span><b>Vini</b>vini@exemplo.com · desde 26 out</span></div>
           </div>
           <div class="scrim"></div>
           <div class="dialog">
@@ -1909,14 +1920,14 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-perfil">
-    <div class="eyebrow">Todos decididos · ADRs 0094 a 0097</div>
+    <div class="eyebrow">Todos decididos · ADRs 0094 a 0099</div>
     <h2>Pontos do Perfil</h2>
     <div class="questions">
       <div class="q done">
         <i class="open">1</i>
         <div>
-          <p class="tag">Decidido · ADR 0094</p>
-          <p><b>Perfil só com dados pessoais:</b> objetivo e frequência ficam no detalhe do plano.</p>
+          <p class="tag">Decidido · ADRs 0094 e 0098</p>
+          <p><b>Perfil só com dados pessoais:</b> nome, nível, idade, peso, frequência semanal e lesões. O objetivo fica no detalhe do plano.</p>
         </div>
       </div>
       <div class="q done">
@@ -1943,8 +1954,8 @@ figcaption span { font-size: 13px; color: var(--note); }
       <div class="q done">
         <i class="open">·</i>
         <div>
-          <p class="tag">Decidido · ADR 0097 · pedido fora da lista</p>
-          <p><b>Frequência semanal no lugar de dias fixos:</b> o usuário informa quantos dias de corrida e de musculação, e o plano escolhe os dias. Mudar a frequência é pelo Piu.</p>
+          <p class="tag">Decidido · ADRs 0097 e 0099 · pedidos fora da lista</p>
+          <p><b>Frequência semanal no lugar de dias fixos:</b> o usuário informa quantos dias de corrida e de musculação, e o plano escolhe os dias. <b>Nome:</b> "Como você quer ser chamado", sugerido pelo primeiro nome do Strava.</p>
         </div>
       </div>
     </div>
