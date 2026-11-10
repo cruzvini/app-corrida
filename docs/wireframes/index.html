@@ -870,7 +870,6 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="navbar"><span>‹ Intervalado</span><b>Piu</b><span></span></div>
             <div class="ctx"><svg class="sx"><use href="#i-run"/></svg><span><b>Intervalado · Seg 9 nov</b>8,6 km · previsto</span></div>
             <div class="msg">O que muda neste treino? Escolha um atalho ou me conte com as suas palavras.</div>
-            <div class="dacts"><span class="dact">Não vou fazer</span><span class="dact">Quero fazer em outro dia</span><span class="dact">Quero mudar o treino</span></div>
             <div class="msg me">Quero fazer em outro dia. Hoje não consigo, amanhã sim.</div>
             <div class="msg">Dá para fazer o intervalado amanhã no lugar do leve. Tiro o leve desta semana para manter o descanso de quarta antes das inferiores.</div>
             <div class="prop">
@@ -895,7 +894,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Replanejar com o Piu</strong>
-          <span>Aberto pelo "Replanejar" no treino previsto. O Piu já sabe de qual treino se trata e oferece atalhos, mas aceita qualquer texto. A proposta mostra o antes e o depois dos dias afetados, não só do treino, e só vale depois de aceita. Se ficar pendente, vai para Notificações.</span>
+          <span>Aberto pelo "Replanejar" no treino previsto. O Piu já sabe de qual treino se trata. Os atalhos ficam acima do campo até o primeiro envio e depois somem; o Piu aceita qualquer texto. A proposta mostra o antes e o depois dos dias afetados, não só do treino, e só vale depois de aceita. Se ficar pendente, vai para Notificações.</span>
           <span class="refs">ADR 0017 · 0022 · 0053 · 0062 · 0078 · crit. 4.6, 6.3, 6.4</span>
         </figcaption>
       </figure>
@@ -1178,7 +1177,6 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="navbar"><span>‹ Plano</span><b>Piu</b><span></span></div>
             <div class="ctx"><svg class="sx"><use href="#i-run"/></svg><span><b>Plano · 10 km em 3 jan</b>semana 3 de 10 · Base</span></div>
             <div class="msg">O que você quer mudar no plano? Escolha uma sugestão ou me conte com as suas palavras.</div>
-            <div class="dacts"><span class="dact">Semana mais leve</span><span class="dact">Adiar objetivo</span></div>
             <div class="msg me">Semana mais leve</div>
             <div class="msg">Reduzi a corrida que falta nesta semana e comecei a próxima um pouco mais leve, para a volta ao volume ser gradual. A musculação e os dias não mudam.</div>
             <div class="prop">
@@ -1203,7 +1201,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Editar plano com o Piu</strong>
-          <span>Abre o Piu com o plano como contexto e as sugestões de pedido "Semana mais leve" e "Adiar objetivo" (esta só no plano específico). Tocar numa sugestão envia o pedido, e o Piu responde com uma proposta que pode ir além da semana atual. Só vale depois de aceita.</span>
+          <span>Abre o Piu com o plano como contexto e as sugestões de pedido "Semana mais leve" e "Adiar objetivo" (esta só no plano específico). As sugestões ficam acima do campo até o primeiro envio. Tocar numa delas envia o pedido, e o Piu responde com uma proposta que pode ir além da semana atual. Só vale depois de aceita.</span>
           <span class="refs">ADR 0022 · 0035 · 0047 · 0053 · 0062 · 0081 · 0084 · 0085 · crit. 6.1, 6.3</span>
         </figcaption>
       </figure>
@@ -1522,7 +1520,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         <div class="phone" aria-label="Piu, aba aberta direto">
           <div class="status"><span>12:30</span><span>●●● ▮</span></div>
           <div class="content chat">
-            <div class="daysep">Ontem <i class="open">1</i></div>
+            <div class="daysep">Ontem</div>
             <div class="msg me">Posso trocar o longão de domingo para sábado nesta semana?</div>
             <div class="msg">Pode. Sábado está livre, e domingo vira descanso. O resto da semana não muda.</div>
             <div class="prop">
@@ -1534,7 +1532,7 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="daysep">Hoje</div>
           </div>
           <div class="dock">
-            <div class="dacts"><span class="dact">Semana mais leve</span><span class="dact">Adiar objetivo</span><i class="open">2</i></div>
+            <div class="dacts"><span class="dact">Semana mais leve</span><span class="dact">Adiar objetivo</span></div>
             <div class="send"><div class="field"><b>Mensagem para o Piu</b>Conte o que mudou ou o que quer mudar</div><span class="go">Enviar</span></div>
             <div class="quota">17 de 20 mensagens hoje <i class="open">3</i></div>
           </div>
@@ -1548,8 +1546,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Aba aberta direto</strong>
-          <span>Mostra a conversa até aqui, com separação por dia, e as propostas com o status final. Acima do campo, as sugestões de pedido. O limite diário de mensagens aparece discreto.</span>
-          <span class="refs">ADR 0031 · 0034 · 0035 · 0062 · 0084 · 0085 · crit. 6.3</span>
+          <span>A conversa é única e contínua, separada por dia, com as propostas no status final e todo o histórico mantido. Sem assunto em andamento, as sugestões de pedido aparecem acima do campo e somem no primeiro envio. O limite diário aparece discreto.</span>
+          <span class="refs">ADR 0031 · 0034 · 0035 · 0062 · 0084 · 0085 · 0090 · 0091 · 0092 · crit. 6.3</span>
         </figcaption>
       </figure>
 
@@ -1661,7 +1659,6 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="msg err">Não consegui responder agora. A sua mensagem ficou salva.<br><span class="btn">Tentar de novo</span></div>
           </div>
           <div class="dock">
-            <div class="dacts"><span class="dact">Semana mais leve</span><span class="dact">Adiar objetivo</span></div>
             <div class="send"><div class="field"><b>Mensagem para o Piu</b>Conte o que mudou ou o que quer mudar</div><span class="go">Enviar</span></div>
           </div>
           <nav class="tabbar">
@@ -1686,33 +1683,32 @@ figcaption span { font-size: 13px; color: var(--note); }
     <h2>Pontos do Piu</h2>
     <div class="questions">
       <div class="q next">
-        <i class="open">1</i>
-        <div>
-          <p class="tag">Próxima pergunta</p>
-          <p><b>Conversa:</b> uma conversa única e contínua, como no rascunho, ou conversas separadas por assunto, com uma lista de conversas?</p>
-          <p class="why">A conversa única é o modelo de apps de mensagem do ADR 0034, e o contexto de cada abertura (treino, plano, notificação) aparece como um card no meio dela. Conversas separadas organizam por assunto, mas pedem uma tela a mais.</p>
-        </div>
-      </div>
-      <div class="q">
-        <i class="open">2</i>
-        <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Sugestões de pedido:</b> sempre acima do campo, como no rascunho, ou só quando a conversa está parada (sem proposta pendente nem pergunta do Piu)?</p>
-        </div>
-      </div>
-      <div class="q">
         <i class="open">3</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Limite diário:</b> contador sempre visível, só quando faltarem poucas mensagens (ex.: 5) ou só ao atingir o limite?</p>
+          <p class="tag">Próxima pergunta · reaberto</p>
+          <p><b>Limite diário de mensagens:</b> manter o limite como trava, mostrando o aviso só quando faltarem poucas mensagens; manter e aumentar o valor; ou tirar o limite por usuário e ficar só com o teto mensal?</p>
+          <p class="why">O limite (ADR 0031) protege o teto mensal de gasto, que quando estoura desliga toda a IA do app, inclusive os ajustes automáticos, para todos os usuários. Sem ele, um uso muito alto de uma pessoa ou um erro que repete chamadas pode consumir o teto do mês.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
+        <i class="open">1</i>
+        <div>
+          <p class="tag">Decidido · ADR 0090</p>
+          <p><b>Conversa:</b> única e contínua. Aberturas a partir de um treino, do plano ou de uma notificação entram como card de contexto.</p>
+        </div>
+      </div>
+      <div class="q done">
+        <i class="open">2</i>
+        <div>
+          <p class="tag">Decidido · ADR 0091</p>
+          <p><b>Sugestões de pedido:</b> acima do campo, só sem assunto em andamento; somem no primeiro envio e voltam na próxima abertura.</p>
+        </div>
+      </div>
+      <div class="q done">
         <i class="open">4</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Histórico da conversa:</b> fica para sempre ou é excluído depois de um tempo, como as notificações lidas (ADR 0089)?</p>
-          <p class="why">A conversa pode ter dados de saúde e vai para o provedor de IA (ADR 0029). O Piu usa o plano, os treinos e os feedbacks como contexto, não depende da conversa antiga.</p>
+          <p class="tag">Decidido · ADR 0092</p>
+          <p><b>Histórico da conversa:</b> mantido, sem exclusão automática.</p>
         </div>
       </div>
     </div>
