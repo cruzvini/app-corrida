@@ -1,6 +1,6 @@
 # ADR 0034: Navegação por barra de abas inferior com Hoje no centro
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0065)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -13,7 +13,7 @@ Barra de abas fixa na parte inferior da tela, com 5 abas nesta ordem:
 
 `Plano · Piu · [Hoje] · Notificações · Perfil`
 
-- **Hoje** (centro, em destaque e um pouco elevada; ícone ligado ao dia atual, ex.: calendário com o número do dia): é a aba aberta ao entrar no app. O ponto principal é o treino planejado do dia. Mostra também um pequeno lembrete do treino anterior e o calendário da semana (jornada 4).
+- **Hoje** (centro, em destaque e um pouco elevada; ícone ligado ao dia atual, ex.: calendário com o número do dia): é a aba aberta ao entrar no app. O ponto principal é o treino planejado do dia. Mostra também um pequeno lembrete do treino anterior e o calendário da semana (jornada 4). *Revisado pelo ADR 0065: o lembrete sai, e a semana vira uma faixa de 7 dias centrada no dia atual.*
 - **Plano** (ícone de calendário): destaca o objetivo do plano e mostra as informações completas (fases, semanas e treinos). Tem um botão "Editar plano" que abre o Piu com o contexto do plano (jornadas 3 e 6).
 - **Piu** (ícone de bot): conversa livre com o assistente (ADR 0035), no estilo de apps de mensagem (WhatsApp, Messages), com as mensagens do usuário de um lado e as do Piu do outro (jornada 6).
 - **Notificações** (ícone de sino): a caixa de entrada do app (ADR 0007), com o selo de não lidas. São só notificações dentro do app, sem push (jornada 5).

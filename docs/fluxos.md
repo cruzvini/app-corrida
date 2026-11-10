@@ -111,7 +111,7 @@ Três fluxos: a sincronização com o Strava, as marcações feitas pelo usuári
 
 ```mermaid
 flowchart TD
-  A([Aba Hoje: treino do dia em blocos e semana 4.1]) --> B{Origem da sincronização}
+  A([Aba Hoje: treino do dia em blocos e faixa de 7 dias 4.1, ADR 0065]) --> B{Origem da sincronização}
   B -- polling agendado --> C[Consulta o Strava]
   B -- pull-to-refresh --> B1{Passaram 30 min desde a última consulta?}
   B1 -- não --> B2[Mostra dados já sincronizados e quando poderá atualizar 4.2] --> A
