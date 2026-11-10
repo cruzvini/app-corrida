@@ -95,6 +95,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0087 | [Lista de Notificações em ordem cronológica, com dia e hora em cada mensagem](0087-lista-de-notificacoes-cronologica.md) | Aceita |
 | 0088 | [Antes e depois em uma linha por dia, com o antes riscado](0088-antes-e-depois-em-linhas.md) | Aceita |
 | 0089 | [Mensagens lidas são excluídas 30 dias depois da leitura](0089-notificacoes-lidas-excluidas-apos-30-dias.md) | Aceita |
+| 0090 | [Conversa única e contínua com o Piu](0090-conversa-unica-com-o-piu.md) | Aceita |
 
 ## Como criar um novo ADR
 
