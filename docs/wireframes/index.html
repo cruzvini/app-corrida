@@ -1981,7 +1981,7 @@ figcaption span { font-size: 13px; color: var(--note); }
   <section class="screen-group" id="onboarding">
     <div class="eyebrow">Fluxo linear em tela cheia, sem a barra de abas</div>
     <h2>Onboarding e setup</h2>
-    <p class="lead">Login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app for fechado no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano específico criado na segunda, 26 out. Passos do setup não desenhados aqui: sobre você (nome, idade, peso e lesões), tipo de plano, pace alvo e data de início.</p>
+    <p class="lead">Login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app for fechado no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano específico criado na segunda, 26 out. Passos do setup não desenhados aqui: sobre você (nome, idade, peso e lesões), pace alvo e data de início.</p>
 
     <div class="phones">
       <!-- O1: e-mail -->
@@ -2091,6 +2091,34 @@ figcaption span { font-size: 13px; color: var(--note); }
         </figcaption>
       </figure>
 
+      <!-- O5b: qual é o objetivo -->
+      <figure class="state">
+        <div class="phone" aria-label="Setup, qual é o objetivo">
+          <div class="status"><span>9:08</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Voltar</span></div>
+            <div class="prog"><span class="bar"><i style="--p:57%"></i></span><small><span>Setup</span><span>4 de 7</span></small></div>
+            <div class="dhead"><h3>Qual é o seu objetivo?</h3></div>
+            <div class="opt sel"><b>Completar uma distância</b>Ex.: 3 km sem parar, meus primeiros 10 km.
+              <span class="wgrid" style="grid-template-columns:1fr 1fr;margin-top:6px">
+                <span class="field"><b>Distância</b>3 km</span>
+                <span class="field"><b>Data (opcional)</b>Sugerir prazo</span>
+              </span>
+            </div>
+            <div class="note">Sugestão: 6 semanas, até 7 dez, pelo seu nível e pelas corridas recentes. <u>Ajustar</u> <i class="open">5</i></div>
+            <div class="opt"><b>Melhorar o tempo numa distância</b>Prova ou recorde, com data e pace alvo.</div>
+            <div class="opt"><b>Sem objetivo definido</b>Só correr com regularidade.</div>
+            <div class="spacer"></div>
+            <div class="cta-main">Continuar</div>
+          </div>
+        </div>
+        <figcaption>
+          <strong>Qual é o objetivo</strong>
+          <span>Três opções. Em "Completar uma distância", a data é opcional e, sem ela, o app sugere um prazo; não há pace alvo, e os treinos podem alternar corrida e caminhada. "Melhorar o tempo" pede distância e data e sugere o pace na tela seguinte. "Sem objetivo definido" é o plano genérico.</span>
+          <span class="refs">ADR 0008 · 0016 · 0021 · 0024 · 0103 · crit. 2.4 a 2.6</span>
+        </figcaption>
+      </figure>
+
       <!-- O6: objetivo -->
       <figure class="state">
         <div class="phone" aria-label="Setup, objetivo com aviso de risco">
@@ -2098,7 +2126,7 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="content">
             <div class="navbar"><span>‹ Voltar</span></div>
             <div class="prog"><span class="bar"><i style="--p:71%"></i></span><small><span>Setup</span><span>5 de 7</span></small></div>
-            <div class="dhead"><h3>Qual é o objetivo?</h3></div>
+            <div class="dhead"><h3>Distância e data</h3><div class="sub">Melhorar o tempo numa distância</div></div>
             <div class="wgrid" style="grid-template-columns:1fr 1fr">
               <span class="field"><b>Distância</b>21 km</span>
               <span class="field"><b>Data</b>29 nov</span>
@@ -2110,9 +2138,9 @@ figcaption span { font-size: 13px; color: var(--note); }
           </div>
         </div>
         <figcaption>
-          <strong>Objetivo e aviso de risco</strong>
-          <span>Distância livre e data. Se as regras acharem o objetivo arriscado, o app explica e sugere alternativas, sem bloquear; seguir fica registrado. O pace alvo sugerido vem na tela seguinte.</span>
-          <span class="refs">ADR 0016 · 0017 · 0021 · crit. 2.5 a 2.7</span>
+          <strong>Distância, data e aviso de risco</strong>
+          <span>No "Melhorar o tempo": distância livre e data. Se as regras acharem o objetivo arriscado, o app explica e sugere alternativas, sem bloquear; seguir fica registrado. O pace alvo sugerido vem na tela seguinte.</span>
+          <span class="refs">ADR 0016 · 0017 · 0021 · 0103 · crit. 2.5 a 2.7</span>
         </figcaption>
       </figure>
 
@@ -2128,7 +2156,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="srow"><span>Nível<small>Intermediário</small></span><u>Editar</u></div>
               <div class="srow"><span>Sobre você<small>Vini · 34 anos · 72 kg · sem lesões</small></span><u>Editar</u></div>
               <div class="srow"><span>Frequência<small>4 corridas · 2 musculações</small></span><u>Editar</u></div>
-              <div class="srow"><span>Objetivo<small>10 km em 3 jan · pace 5:20/km</small></span><u>Editar</u></div>
+              <div class="srow"><span>Objetivo<small>Melhorar o tempo · 10 km em 3 jan · 5:20/km</small></span><u>Editar</u></div>
               <div class="srow"><span>Início<small>Hoje, seg 26 out</small></span><u>Editar</u></div>
             </div>
             <div class="spacer"></div>
@@ -2166,9 +2194,17 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-onboarding">
-    <div class="eyebrow">Todos decididos · ADRs 0100 a 0102</div>
+    <div class="eyebrow">Para decidir, um por vez</div>
     <h2>Pontos do onboarding</h2>
     <div class="questions">
+      <div class="q next">
+        <i class="open">5</i>
+        <div>
+          <p class="tag">Próxima pergunta · novo</p>
+          <p><b>Prazo sugerido em "Completar uma distância":</b> calculado pelas regras, de forma previsível, ou proposto pela IA, que pode considerar mais contexto?</p>
+          <p class="why">Pelas regras, o prazo sai do nível, do histórico do Strava e de um limite de progressão semanal, funciona sem IA e é coberto por testes. É o mesmo padrão do aviso de risco (ADR 0017): regras decidem, IA explica.</p>
+        </div>
+      </div>
       <div class="q done">
         <i class="open">1</i>
         <div>
