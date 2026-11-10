@@ -1,6 +1,6 @@
 # ADR 0058: "Pular" e "não será feito" são a mesma ação
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0066)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -9,7 +9,7 @@ O critério 6.1 lista "pular treino" como ação pronta, que é determinística 
 
 ## Decisão
 
-Existe um botão só, **"Pular"**, no card do Hoje e no detalhe do treino (ADR 0036).
+Existe um botão só, **"Pular"**, no card do Hoje e no detalhe do treino (ADR 0036). *Revisado pelo ADR 0066: o card do Hoje não tem ações, e o "Pular" fica só no detalhe do treino.*
 
 - O pulo é determinístico: o treino passa a não feito na hora.
 - Em seguida, vem o ajuste automático do ADR 0026, pela IA e pelas regras (ADR 0022), com o antes e o depois em Notificações.

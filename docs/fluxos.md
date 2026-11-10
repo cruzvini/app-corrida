@@ -139,7 +139,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-  A([Card do treino no Hoje ou detalhe do treino]) --> B{Ação}
+  A([Detalhe do treino; o feedback também fica no card do Hoje, ADR 0066]) --> B{Ação}
   B -- desmarcar feito --> C[Treino volta a pendente; atividades viram carga fora do plano 4.4]
   B -- marcar feito sem atividade --> D[Só o status, sem distância, tempo nem pace 4.4]
   D --> D1[Musculação: corrigir a divisão feita 4.5]
@@ -227,7 +227,7 @@ Treinos passados nunca são alterados (6.6). A única exceção é "trocar dia" 
 
 ```mermaid
 flowchart TD
-  A([Card do Hoje, detalhe do treino ou cabeçalho da semana 6.1]) --> B{Ação pronta}
+  A([Detalhe do treino ou cabeçalho da semana 6.1, ADR 0066]) --> B{Ação pronta}
   B -- pular --> P[Treino vira não feito na hora, ADR 0058]
   P --> P1{IA e regras ajustam os próximos dias?}
   P1 -- ok --> N
