@@ -1,6 +1,6 @@
 # ADR 0016: Plano específico com distância livre
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0103)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O plano específico (ADR 0008) tem como alvo uma prova ou uma meta de PR. Limitar a algumas distâncias fixas (5, 10, 21, 42 km) simplifica o motor de regras, mas tira flexibilidade, que é o valor central do app.
 
 ## Decisão
+
+*Revisado pelo ADR 0103: o setup pergunta o objetivo em três opções. "Completar uma distância" e "Melhorar o tempo numa distância" são planos específicos (a primeira com data opcional e sem pace); "Sem objetivo definido" é o plano genérico.*
 
 No plano específico, o usuário informa qualquer distância de prova ou de meta. O MVP não restringe a distâncias pré-definidas.
 

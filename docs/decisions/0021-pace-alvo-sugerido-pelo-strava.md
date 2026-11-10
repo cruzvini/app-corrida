@@ -1,6 +1,6 @@
 # ADR 0021: Pace alvo sugerido a partir do Strava
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0103)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O plano específico tem um pace alvo (ADR 0008). Muitos usuários, principalmente iniciantes, não sabem que pace esperar para uma distância. O app já tem o histórico do Strava, que é obrigatório (ADR 0019).
 
 ## Decisão
+
+*Revisado pelo ADR 0103: o setup pergunta o objetivo em três opções. "Completar uma distância" e "Melhorar o tempo numa distância" são planos específicos (a primeira com data opcional e sem pace); "Sem objetivo definido" é o plano genérico.*
 
 No setup do plano específico, o app sugere um pace alvo a partir do histórico do Strava, considerando a distância e o prazo. O usuário aceita ou ajusta a sugestão.
 

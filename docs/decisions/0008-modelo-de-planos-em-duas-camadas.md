@@ -1,6 +1,6 @@
 # ADR 0008: Modelo de planos em duas camadas (genérico e específico)
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0103)
 - **Data:** 2026-10-19
 
 ## Contexto
@@ -8,6 +8,8 @@
 Os usuários têm objetivos diferentes: alguns querem só correr com regularidade, outros treinam para uma prova ou um recorde pessoal.
 
 ## Decisão
+
+*Revisado pelo ADR 0103: o setup pergunta o objetivo em três opções. "Completar uma distância" e "Melhorar o tempo numa distância" são planos específicos (a primeira com data opcional e sem pace); "Sem objetivo definido" é o plano genérico.*
 
 Modelar os planos em duas camadas:
 - **Plano genérico:** idade, peso, nível de corrida e dias de treino por semana.

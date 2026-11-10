@@ -54,9 +54,9 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
      2. Confirmo como quero ser chamado (sugerido pelo primeiro nome do Strava, ADR 0099), informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).
      3. Informo quantos dias por semana quero correr e se faço musculação. Se faço, informo quantos dias e a divisão em quantidade (ex.: 1 de superiores e 1 de inferiores), sem escolher os dias da semana; o plano escolhe os dias (ADRs 0014 e [0097](decisions/0097-frequencia-semanal-sem-dias-fixos.md)).
-     4. Escolho entre plano genérico e plano específico.
-     5. No plano específico, informo a distância (qualquer valor) e a data da prova ou o prazo da meta (ADR 0016).
-     6. No plano específico, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
+     4. Escolho o objetivo: completar uma distância, melhorar o tempo numa distância ou sem objetivo definido (só correr com regularidade) (ADR 0103).
+     5. Para completar uma distância, informo a distância (qualquer valor) e, se quiser, a data; sem data, o app sugere um prazo, que aceito ou ajusto. Para melhorar o tempo, informo a distância e a data (ADRs 0016 e 0103).
+     6. Para melhorar o tempo, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
      7. Se a meta for muito fora do comum para o meu nível ou o prazo, o app explica os riscos e sugere alternativas. Posso seguir mesmo assim, e minha escolha fica registrada (ADR 0017).
      8. Escolho quando quero começar: hoje, um dos próximos 5 dias ou outra data no calendário ([ADR 0043](decisions/0043-data-de-inicio-escolhida-no-setup.md)).
      9. Antes de gerar o plano, vejo um resumo das minhas respostas e posso editar qualquer uma.

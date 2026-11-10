@@ -55,9 +55,14 @@ flowchart TD
   G -- sim --> G1[Musculação: quantos dias e a divisão em quantidade]
   G -- não --> DIAS
   G1 --> DIAS
-  DIAS((frequência salva; o plano escolhe os dias, ADR 0097)) --> H{Tipo de plano 2.4}
-  H -- genérico --> INI
-  H -- específico --> I[Distância livre e data da prova ou prazo 2.5]
+  DIAS((frequência salva; o plano escolhe os dias, ADR 0097)) --> H{Qual é o objetivo? 2.4, ADR 0103}
+  H -- sem objetivo definido: plano genérico --> INI
+  H -- completar uma distância --> CD[Distância livre; data opcional 2.5]
+  CD --> CD1{Informou a data?}
+  CD1 -- não --> CD2[App sugere um prazo realista: aceitar ou ajustar]
+  CD1 -- sim --> INI
+  CD2 --> INI
+  H -- melhorar o tempo --> I[Distância livre e data 2.5]
   I --> J{Histórico suficiente para pace?}
   J -- sim --> J1[Pace alvo sugerido: aceitar ou ajustar 2.6]
   J -- não --> J2[Sem meta de pace, foco em completar a distância]
@@ -65,7 +70,7 @@ flowchart TD
   J2 --> INI
   INI["Quando começar: hoje, próximos 5 dias ou outro dia no calendário 2.8"] --> K{Regras detectam risco?}
   K -- sim --> K1[Riscos e alternativas 2.7]
-  K1 -- ajustar meta ou data de início --> I
+  K1 -- ajustar objetivo ou data de início --> H
   K1 -- seguir mesmo assim, escolha registrada --> R
   K -- não --> R[Resumo das respostas 2.9]
   R -- editar um item --> EDIT[Volta à tela do item e retorna ao resumo]
