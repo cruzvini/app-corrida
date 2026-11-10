@@ -79,6 +79,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0071 | [Dia com um treino feito e outro não fica verde com selo "!" na faixa](0071-dia-misto-verde-com-selo.md) | Aceita |
 | 0072 | [Dia atual com treino ainda por fazer fica com o contorno padrão](0072-dia-atual-parcial-fica-no-padrao.md) | Aceita |
 | 0073 | [Selos ✓ e ✕ reforçam a cor do contorno na faixa de 7 dias](0073-selos-de-status-na-faixa.md) | Aceita |
+| 0074 | [Dia atual na faixa se destaca pelo fundo preenchido](0074-destaque-do-dia-atual-na-faixa.md) | Aceita |
 
 ## Como criar um novo ADR
 
