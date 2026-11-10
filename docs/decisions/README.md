@@ -74,6 +74,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0066 | [Card do Hoje sem ações rápidas, com as ações só no detalhe do treino](0066-card-do-hoje-sem-acoes-rapidas.md) | Aceita |
 | 0067 | [Corrida e musculação no mesmo dia: card principal da corrida e card resumido da musculação](0067-corrida-e-musculacao-no-mesmo-dia.md) | Aceita |
 | 0068 | [Dia de descanso no Hoje mostra só "Dia de descanso"](0068-dia-de-descanso-no-hoje.md) | Aceita |
+| 0069 | [Tocar em um dia com dois treinos na faixa abre a escolha do treino](0069-dia-com-dois-treinos-abre-escolha.md) | Aceita |
 
 ## Como criar um novo ADR
 
