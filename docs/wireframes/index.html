@@ -1319,7 +1319,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               </div>
             </div>
             <div class="sec">
-              <h5>Recentes <i class="open">2</i></h5>
+              <h5>Recentes</h5>
               <div class="nlist">
                 <div class="ni unread"><span class="av">P</span><span class="tx"><b>Superiores de terça foi para sexta</b><small>Ajuste automático · pode desfazer</small></span><span class="tm">ter 22:00<i class="dot"></i></span></div>
                 <div class="ni"><span class="av">P</span><span class="tx"><span class="tagp old">Desatualizada</span><b>Aliviar a corrida (versão de segunda)</b></span><span class="tm">seg 19:45</span></div>
@@ -1338,8 +1338,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Lista</strong>
-          <span>No topo, as propostas aguardando decisão, mesmo depois de lidas. Abaixo, o resto em ordem cronológica. Não lida tem título em negrito e ponto; o selo do sino conta só as não lidas, e abrir a aba não marca nada como lido.</span>
-          <span class="refs">ADR 0007 · 0050 · 0054 · crit. 5.1, 5.2</span>
+          <span>No topo, as propostas aguardando decisão, mesmo depois de lidas. Abaixo, "Recentes" em ordem cronológica, com dia e hora. Não lida tem título em negrito e ponto; o selo do sino conta só as não lidas. Tocar abre a mensagem em tela própria. Lidas somem 30 dias depois da leitura.</span>
+          <span class="refs">ADR 0007 · 0050 · 0054 · 0086 · 0087 · 0089 · crit. 5.1, 5.2</span>
         </figcaption>
       </figure>
 
@@ -1468,37 +1468,35 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-notificacoes">
-    <div class="eyebrow">Para decidir, um por vez</div>
+    <div class="eyebrow">Todos decididos · ADRs 0086 a 0089</div>
     <h2>Pontos de Notificações</h2>
     <div class="questions">
-      <div class="q next">
+      <div class="q done">
         <i class="open">1</i>
         <div>
-          <p class="tag">Próxima pergunta</p>
-          <p><b>Abrir uma mensagem:</b> em tela própria, por cima da aba, como no rascunho e no detalhe do treino, ou expandindo no lugar, dentro da lista?</p>
-          <p class="why">A tela própria dá espaço para o antes e o depois. Expandir no lugar evita ir e voltar, mas deixa a lista longa.</p>
+          <p class="tag">Decidido · ADR 0086</p>
+          <p><b>Abrir uma mensagem:</b> em tela própria, por cima da aba, como o detalhe do treino e o detalhe do plano.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">2</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Lista:</b> só em ordem cronológica, com dia e hora em cada mensagem, como no rascunho, ou agrupada por período ("Hoje", "Ontem", "Esta semana")?</p>
+          <p class="tag">Decidido · ADR 0087</p>
+          <p><b>Lista:</b> "Aguardando você" no topo e, abaixo, "Recentes" em ordem cronológica, com dia e hora, sem grupos por período.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">3</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Antes e depois:</b> uma linha por dia com o antes riscado, como no rascunho e no Piu, ou duas colunas lado a lado?</p>
+          <p class="tag">Decidido · ADR 0088</p>
+          <p><b>Antes e depois:</b> uma linha por dia, com o antes riscado e o depois embaixo. O mesmo componente do Piu e do "Adiar objetivo".</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">4</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Mensagens antigas:</b> ficam para sempre ou somem depois de um tempo?</p>
-          <p class="why">O histórico de replanejamentos fica no Perfil (ADR 0038). Guardar tudo em Notificações deixa a lista cada vez maior.</p>
+          <p class="tag">Decidido · ADR 0089</p>
+          <p><b>Mensagens antigas:</b> não lida fica até ser lida; lida é excluída 30 dias depois da leitura. Proposta aguardando decisão não é excluída, e o prazo começa quando ela é decidida ou fica desatualizada. O histórico de replanejamentos do Perfil não muda.</p>
         </div>
       </div>
     </div>

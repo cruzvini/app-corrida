@@ -199,8 +199,9 @@ flowchart TD
   A([Abrir o app: selo com não lidas no sino 5.2]) --> B[Aba Notificações 5.1]
   B --> B1[Topo: propostas aguardando você, ADR 0054]
   B --> B2[Lista: ajustes automáticos, semanas novas, sugestões]
-  B1 --> M[Abrir mensagem: marca como lida]
+  B1 --> M[Abrir mensagem em tela própria: marca como lida, ADR 0086]
   B2 --> M
+  M -.-> X([Lida há 30 dias e sem decisão pendente: excluída, ADR 0089])
   M --> T{Tipo}
   T -- ajuste automático --> AJ{É o mais recente?}
   AJ -- sim --> AJ1[Desfazer, ADR 0047]
