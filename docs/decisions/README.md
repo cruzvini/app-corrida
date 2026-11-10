@@ -84,6 +84,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0076 | [Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino](0076-acoes-e-feedback-no-rodape-do-detalhe.md) | Aceita |
 | 0077 | [Apagar um feedback pede confirmação](0077-apagar-feedback-pede-confirmacao.md) | Aceita |
 | 0078 | [Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"](0078-replanejar-treino-com-o-piu.md) | Aceita |
+| 0079 | [O executado no detalhe do treino usa só o resumo do Strava](0079-executado-so-com-o-resumo-do-strava.md) | Aceita |
 
 ## Como criar um novo ADR
 
