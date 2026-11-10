@@ -98,6 +98,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0090 | [Conversa única e contínua com o Piu](0090-conversa-unica-com-o-piu.md) | Aceita |
 | 0091 | [Sugestões de pedido aparecem só no início de um assunto](0091-sugestoes-de-pedido-so-no-inicio.md) | Aceita |
 | 0092 | [O histórico da conversa com o Piu é mantido](0092-historico-da-conversa-mantido.md) | Aceita |
+| 0093 | [Limite diário de mensagens mantido, com aviso só perto do fim](0093-limite-diario-com-aviso-no-fim.md) | Aceita |
 
 ## Como criar um novo ADR
 
