@@ -376,7 +376,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         <figcaption>
           <strong>Corrida e musculação no mesmo dia</strong>
           <span>A corrida ocupa o card principal, com os blocos. A musculação aparece resumida em uma linha, com a divisão e o status. Os dois abrem o próprio detalhe. Na faixa, o dia mostra os dois ícones.</span>
-          <span class="refs">ADR 0014 · 0041 · 0067 · 0070</span>
+          <span>Se a corrida for feita de manhã, o dia continua com o contorno padrão até a musculação ser resolvida ou até a rotina das 22h.</span>
+          <span class="refs">ADR 0014 · 0041 · 0067 · 0070 · 0072</span>
         </figcaption>
       </figure>
 
@@ -524,20 +525,26 @@ figcaption span { font-size: 13px; color: var(--note); }
           <p><b>Dia misto na faixa:</b> contorno verde com selo "!" no canto quando um treino do dia foi feito e o outro não.</p>
         </div>
       </div>
-      <div class="q next">
+      <div class="q done">
         <i class="open">8</i>
         <div>
+          <p class="tag">Decidido · ADR 0072</p>
+          <p><b>Dia atual com um treino feito e outro por fazer:</b> contorno padrão até todos os treinos do dia estarem resolvidos ou até a rotina das 22h.</p>
+        </div>
+      </div>
+      <div class="q next">
+        <i class="open">9</i>
+        <div>
           <p class="tag">Próxima pergunta</p>
-          <p><b>Dia atual com um treino feito e outro ainda por fazer:</b> o contorno fica padrão até o fim do dia, ou já fica verde?</p>
-          <p class="why">Ex.: corrida de manhã feita e musculação marcada para a noite. Ficar verde cedo pode passar a ideia de dia completo; o selo "!" ainda não se aplica, porque nada deixou de ser feito.</p>
+          <p><b>Status só por cor:</b> reforçar feito e não feito também por uma forma, para quem não distingue verde de vermelho?</p>
+          <p class="why">Cerca de 8% dos homens têm alguma deficiência de visão de cores, e verde e vermelho são o par mais afetado. O selo "!" do dia misto já é uma forma; feito e não feito ainda dependem só da cor.</p>
         </div>
       </div>
       <div class="q">
-        <i class="open">9</i>
+        <i class="open">10</i>
         <div>
           <p class="tag">Em aberto</p>
-          <p><b>Status só por cor:</b> reforçar feito e não feito também por uma forma, para quem não distingue verde de vermelho?</p>
-          <p class="why">Cerca de 8% dos homens têm alguma deficiência de visão de cores, e verde e vermelho são o par mais afetado.</p>
+          <p><b>Destaque do dia atual:</b> manter o fundo preenchido e o contorno mais grosso, com o contorno na cor do status quando o dia estiver resolvido?</p>
         </div>
       </div>
     </div>
