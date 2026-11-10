@@ -227,6 +227,26 @@ figcaption span { font-size: 13px; color: var(--note); }
 .cal .sel { background: var(--ink); color: var(--screen); font-weight: 700; }
 .sheet .cta { background: var(--ink); color: var(--screen); border-radius: 12px; padding: 10px; text-align: center; font-weight: 600; font-size: 13.5px; }
 .sheet .prop { gap: 4px; }
+.nlist { display: grid; gap: 7px; }
+.ni { position: relative; display: grid; grid-template-columns: 26px 1fr auto; gap: 8px; align-items: start; padding: 9px 10px; border: 1px solid var(--line); border-radius: 12px; font-size: 12.5px; }
+.ni.wait { border: 1.5px solid var(--ink); }
+.av { width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center; font-size: 11px; font-weight: 700; font-family: var(--mono); background: var(--fill); flex: none; }
+.ni .tx { display: grid; gap: 2px; }
+.ni .tx b { font-size: 13px; font-weight: 500; }
+.ni.unread .tx b { font-weight: 700; }
+.ni .tx small { color: var(--muted); font-size: 11.5px; }
+.ni .tm { display: grid; justify-items: end; gap: 6px; font-family: var(--mono); font-size: 10px; color: var(--muted); white-space: nowrap; }
+.ni .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+.tagp { justify-self: start; font-family: var(--mono); font-size: 9.5px; letter-spacing: .05em; text-transform: uppercase; border: 1.5px solid var(--ink); border-radius: 99px; padding: 1px 6px; margin-bottom: 2px; }
+.tagp.old { border-style: dashed; border-color: var(--muted); color: var(--muted); }
+.mhead { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--muted); }
+.mhead b { color: var(--ink); font-size: 13px; }
+.mhead span { display: grid; }
+.mtext { font-size: 13px; line-height: 1.45; margin: 0; }
+.prop .btns.two { grid-template-columns: 1fr; }
+.prop .btns.one { grid-template-columns: 1fr; }
+.prop.stale { border-style: dashed; border-color: var(--muted); }
+.prop.stale .ba { color: var(--muted); }
 .send { display: flex; gap: 6px; align-items: stretch; }
 .send .field { flex: 1; }
 .send .go { border: 1.5px solid var(--ink); border-radius: 10px; padding: 0 12px; display: grid; place-items: center; font-size: 12.5px; font-weight: 600; }
@@ -513,7 +533,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="day mixed">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="warn" aria-label="Um treino do dia não foi feito">!</i></div>
               <div class="day today rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
               <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
-              <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day">Sex<b>13</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Sáb<b>14</b><i>—</i><span class="ics"></span></div>
             </div>
           </div>
@@ -550,7 +570,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="day mixed tapped">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="warn" aria-label="Um treino do dia não foi feito">!</i></div>
               <div class="day today rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
               <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
-              <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day">Sex<b>13</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Sáb<b>14</b><i>—</i><span class="ics"></span></div>
             </div>
           </div>
@@ -985,7 +1005,7 @@ figcaption span { font-size: 13px; color: var(--note); }
                 <div class="drow mixed"><span class="d">Ter<b>10</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg>Leve 5 km + Superiores</span><small>corrida feita · superiores não feito</small></span><span class="go">›</span><i class="warn seal" aria-label="Um feito e outro não">!</i></div>
                 <div class="drow rest today"><span class="d">Qua<b>11</b></span><span class="t"><span>Descanso</span><small>hoje</small></span><span></span></div>
                 <div class="drow"><span class="d">Qui<b>12</b></span><span class="t"><span><svg class="sx"><use href="#i-gym"/></svg>Inferiores</span></span><span class="go">›</span></div>
-                <div class="drow"><span class="d">Sex<b>13</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Leve 6 km</span></span><span class="go">›</span></div>
+                <div class="drow"><span class="d">Sex<b>13</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg>Leve 6 km + Superiores</span><small>superiores veio de terça</small></span><span class="go">›</span></div>
                 <div class="drow rest"><span class="d">Sáb<b>14</b></span><span class="t"><span>Descanso</span></span><span></span></div>
                 <div class="drow"><span class="d">Dom<b>15</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Longão 12 km</span></span><span class="go">›</span></div>
               </div>
@@ -1202,7 +1222,7 @@ figcaption span { font-size: 13px; color: var(--note); }
                 <div class="drow mixed"><span class="d">Ter<b>10</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg>Leve 5 km + Superiores</span><small>corrida feita · superiores não feito</small></span><span class="go">›</span><i class="warn seal" aria-label="Um feito e outro não">!</i></div>
                 <div class="drow rest today"><span class="d">Qua<b>11</b></span><span class="t"><span>Descanso</span><small>hoje</small></span><span></span></div>
                 <div class="drow"><span class="d">Qui<b>12</b></span><span class="t"><span><svg class="sx"><use href="#i-gym"/></svg>Inferiores</span></span><span class="go">›</span></div>
-                <div class="drow"><span class="d">Sex<b>13</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Leve 6 km</span></span><span class="go">›</span></div>
+                <div class="drow"><span class="d">Sex<b>13</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg>Leve 6 km + Superiores</span><small>superiores veio de terça</small></span><span class="go">›</span></div>
                 <div class="drow rest"><span class="d">Sáb<b>14</b></span><span class="t"><span>Descanso</span></span><span></span></div>
                 <div class="drow"><span class="d">Dom<b>15</b></span><span class="t"><span><svg class="sx"><use href="#i-run"/></svg>Longão 12 km</span></span><span class="go">›</span></div>
               </div>
@@ -1273,6 +1293,212 @@ figcaption span { font-size: 13px; color: var(--note); }
         <div>
           <p class="tag">Decidido · ADRs 0082 e 0084 · pedidos fora da lista</p>
           <p><b>Fases</b> em retângulos de mesma largura, com rolagem para o lado. <b>"Semana mais leve" e "Adiar objetivo"</b> saem da tela inicial e viram sugestões no Piu; "objetivo" substitui "prova" na interface.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen-group" id="notificacoes">
+    <div class="eyebrow">Aba Notificações · ícone de sino, sem push</div>
+    <h2>Notificações</h2>
+    <p class="lead">A caixa de entrada do app: ajustes automáticos, semanas novas, sugestões e propostas, todas assinadas pelo Piu (ADRs 0007 e 0050). Propostas que esperam decisão ficam no topo; o resto segue em ordem cronológica (ADR 0054). Data de exemplo: quarta, 11 nov, 12:20.</p>
+
+    <div class="phones">
+      <!-- N1: lista -->
+      <figure class="state">
+        <div class="phone tall" aria-label="Notificações, lista">
+          <div class="status"><span>12:20</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="top">
+              <div><h3>Notificações</h3><div class="sub">2 não lidas</div></div>
+            </div>
+            <div class="sec">
+              <h5>Aguardando você</h5>
+              <div class="nlist">
+                <div class="ni wait unread"><span class="av">P</span><span class="tx"><span class="tagp">Proposta</span><b>Aliviar a corrida por causa da panturrilha</b><small>Sex e Dom mais curtos</small></span><span class="tm">ter 22:01<i class="dot"></i></span></div>
+              </div>
+            </div>
+            <div class="sec">
+              <h5>Recentes <i class="open">2</i></h5>
+              <div class="nlist">
+                <div class="ni unread"><span class="av">P</span><span class="tx"><b>Superiores de terça foi para sexta</b><small>Ajuste automático · pode desfazer</small></span><span class="tm">ter 22:00<i class="dot"></i></span></div>
+                <div class="ni"><span class="av">P</span><span class="tx"><span class="tagp old">Desatualizada</span><b>Aliviar a corrida (versão de segunda)</b></span><span class="tm">seg 19:45</span></div>
+                <div class="ni"><span class="av">P</span><span class="tx"><b>Semana 3 pronta</b><small>4 corridas, 2 musculações, 31,6 km</small></span><span class="tm">dom 22:00</span></div>
+                <div class="ni"><span class="av">P</span><span class="tx"><b>Leve de sexta não feito</b><small>Ajuste automático</small></span><span class="tm">sex 6 nov</span></div>
+              </div>
+            </div>
+          </div>
+          <nav class="tabbar">
+            <div class="tab"><i class="ic"></i>Plano</div>
+            <div class="tab"><i class="ic"></i>Piu</div>
+            <div class="tab center"><i class="ic">11</i>Hoje</div>
+            <div class="tab on"><i class="ic"></i>Notificações<span class="badge">2</span></div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
+          </nav>
+        </div>
+        <figcaption>
+          <strong>Lista</strong>
+          <span>No topo, as propostas aguardando decisão, mesmo depois de lidas. Abaixo, o resto em ordem cronológica. Não lida tem título em negrito e ponto; o selo do sino conta só as não lidas, e abrir a aba não marca nada como lido.</span>
+          <span class="refs">ADR 0007 · 0050 · 0054 · crit. 5.1, 5.2</span>
+        </figcaption>
+      </figure>
+
+      <!-- N2: ajuste automático mais recente -->
+      <figure class="state">
+        <div class="phone" aria-label="Notificações, ajuste automático mais recente">
+          <div class="status"><span>12:21</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Notificações</span></div>
+            <div class="mhead"><span class="av">P</span><span><b>Piu</b>Ajuste automático · ter 10 nov, 22:00</span></div>
+            <p class="mtext">Às 22h não havia treino de superiores. Para a semana continuar com superiores e inferiores, levei superiores para sexta, junto com o leve. O descanso de quarta continua antes das inferiores.</p>
+            <div class="prop">
+              <h5>Antes e depois</h5>
+              <div class="ba"><b>Ter 10</b><span><s>Superiores</s>Não feito</span></div>
+              <div class="ba"><b>Sex 13</b><span><s>Leve 6 km</s>Leve 6 km + Superiores</span></div>
+              <div class="btns two"><span>Desfazer</span><span>Conversar com o Piu sobre isso</span></div>
+            </div>
+          </div>
+          <nav class="tabbar">
+            <div class="tab"><i class="ic"></i>Plano</div>
+            <div class="tab"><i class="ic"></i>Piu</div>
+            <div class="tab center"><i class="ic">11</i>Hoje</div>
+            <div class="tab on"><i class="ic"></i>Notificações<span class="badge">1</span></div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
+          </nav>
+        </div>
+        <figcaption>
+          <strong>Ajuste automático, o mais recente</strong>
+          <span>Explica o que mudou e por quê, com o antes e o depois dos dias afetados. Como é o ajuste mais recente, pode ser desfeito. Abrir a mensagem marca como lida, e o selo cai para 1.</span>
+          <span class="refs">ADR 0026 · 0047 · 0050 · 0054 · crit. 4.7, 4.9</span>
+        </figcaption>
+      </figure>
+
+      <!-- N3: proposta aguardando -->
+      <figure class="state">
+        <div class="phone" aria-label="Notificações, proposta aguardando decisão">
+          <div class="status"><span>12:22</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Notificações</span></div>
+            <div class="mhead"><span class="av">P</span><span><b>Piu</b>Proposta · ter 10 nov, 22:01</span></div>
+            <span class="tagp">Aguardando você</span>
+            <p class="mtext">Você contou que sentiu a panturrilha esquerda nas últimas séries de segunda. Para dar tempo de recuperar, sugiro encurtar as corridas até domingo. Refiz esta proposta porque sexta mudou depois do ajuste de terça.</p>
+            <div class="prop">
+              <h5>Antes e depois</h5>
+              <div class="ba"><b>Sex 13</b><span><s>Leve 6 km</s>Leve 4 km<small>superiores continua</small></span></div>
+              <div class="ba"><b>Dom 15</b><span><s>Longão 12 km</s>Longão 9 km</span></div>
+              <div class="btns"><span class="strong">Aceitar</span><span>Editar</span><span>Descartar</span></div>
+            </div>
+          </div>
+          <nav class="tabbar">
+            <div class="tab"><i class="ic"></i>Plano</div>
+            <div class="tab"><i class="ic"></i>Piu</div>
+            <div class="tab center"><i class="ic">11</i>Hoje</div>
+            <div class="tab on"><i class="ic"></i>Notificações<span class="badge">1</span></div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
+          </nav>
+        </div>
+        <figcaption>
+          <strong>Proposta aguardando você</strong>
+          <span>Nasce de um feedback (ou de uma conversa com o Piu que ficou sem decisão). Aceitar aplica e pode ser desfeito; Editar abre o Piu com a proposta como contexto e ocupa o lugar de "Conversar com o Piu"; Descartar não muda nada.</span>
+          <span class="refs">ADR 0028 · 0051 · 0052 · 0053 · 0054 · 0062 · crit. 5.5</span>
+        </figcaption>
+      </figure>
+
+      <!-- N4: ajuste antigo -->
+      <figure class="state">
+        <div class="phone" aria-label="Notificações, ajuste antigo">
+          <div class="status"><span>12:23</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Notificações</span></div>
+            <div class="mhead"><span class="av">P</span><span><b>Piu</b>Ajuste automático · sex 6 nov, 22:00</span></div>
+            <p class="mtext">Às 22h não havia corrida. Como o longão de domingo é o treino mais importante da semana, mantive ele igual e não somei os 5 km que faltaram.</p>
+            <div class="prop">
+              <h5>Antes e depois</h5>
+              <div class="ba"><b>Sex 6</b><span><s>Leve 5 km</s>Não feito</span></div>
+              <div class="ba"><b>Dom 8</b><span>Longão 11 km, sem mudança</span></div>
+              <p class="risk">Não pode mais ser desfeito: só o ajuste mais recente pode.</p>
+              <div class="btns one"><span>Conversar com o Piu sobre isso</span></div>
+            </div>
+          </div>
+          <nav class="tabbar">
+            <div class="tab"><i class="ic"></i>Plano</div>
+            <div class="tab"><i class="ic"></i>Piu</div>
+            <div class="tab center"><i class="ic">11</i>Hoje</div>
+            <div class="tab on"><i class="ic"></i>Notificações<span class="badge">1</span></div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
+          </nav>
+        </div>
+        <figcaption>
+          <strong>Ajuste antigo</strong>
+          <span>Continua com o antes e o depois, mas sem "Desfazer". Para mudar, o caminho é conversar com o Piu, que faz uma proposta nova.</span>
+          <span class="refs">ADR 0047 · 0050</span>
+        </figcaption>
+      </figure>
+
+      <!-- N5: proposta desatualizada -->
+      <figure class="state">
+        <div class="phone" aria-label="Notificações, proposta desatualizada">
+          <div class="status"><span>12:24</span><span>●●● ▮</span></div>
+          <div class="content">
+            <div class="navbar"><span>‹ Notificações</span></div>
+            <div class="mhead"><span class="av">P</span><span><b>Piu</b>Proposta · seg 9 nov, 19:45</span></div>
+            <span class="tagp old">Desatualizada</span>
+            <p class="mtext">Sexta mudou depois que esta proposta foi feita, então ela não vale mais. Fiz uma nova sobre o plano atual. <u>Ver a proposta nova</u></p>
+            <div class="prop stale">
+              <h5>Antes e depois, quando foi feita</h5>
+              <div class="ba"><b>Sex 13</b><span><s>Leve 6 km</s>Leve 4 km</span></div>
+              <div class="ba"><b>Dom 15</b><span><s>Longão 12 km</s>Longão 9 km</span></div>
+            </div>
+          </div>
+          <nav class="tabbar">
+            <div class="tab"><i class="ic"></i>Plano</div>
+            <div class="tab"><i class="ic"></i>Piu</div>
+            <div class="tab center"><i class="ic">11</i>Hoje</div>
+            <div class="tab on"><i class="ic"></i>Notificações<span class="badge">1</span></div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
+          </nav>
+        </div>
+        <figcaption>
+          <strong>Proposta desatualizada</strong>
+          <span>Quando um dia afetado muda, a proposta perde o botão de aceitar, sai do topo e leva à proposta nova. Se a nova análise concluir que não precisa mudar nada, a mensagem explica isso.</span>
+          <span class="refs">ADR 0052 · 0054</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="screen-group" id="pontos-notificacoes">
+    <div class="eyebrow">Para decidir, um por vez</div>
+    <h2>Pontos de Notificações</h2>
+    <div class="questions">
+      <div class="q next">
+        <i class="open">1</i>
+        <div>
+          <p class="tag">Próxima pergunta</p>
+          <p><b>Abrir uma mensagem:</b> em tela própria, por cima da aba, como no rascunho e no detalhe do treino, ou expandindo no lugar, dentro da lista?</p>
+          <p class="why">A tela própria dá espaço para o antes e o depois. Expandir no lugar evita ir e voltar, mas deixa a lista longa.</p>
+        </div>
+      </div>
+      <div class="q">
+        <i class="open">2</i>
+        <div>
+          <p class="tag">Em aberto</p>
+          <p><b>Lista:</b> só em ordem cronológica, com dia e hora em cada mensagem, como no rascunho, ou agrupada por período ("Hoje", "Ontem", "Esta semana")?</p>
+        </div>
+      </div>
+      <div class="q">
+        <i class="open">3</i>
+        <div>
+          <p class="tag">Em aberto</p>
+          <p><b>Antes e depois:</b> uma linha por dia com o antes riscado, como no rascunho e no Piu, ou duas colunas lado a lado?</p>
+        </div>
+      </div>
+      <div class="q">
+        <i class="open">4</i>
+        <div>
+          <p class="tag">Em aberto</p>
+          <p><b>Mensagens antigas:</b> ficam para sempre ou somem depois de um tempo?</p>
+          <p class="why">O histórico de replanejamentos fica no Perfil (ADR 0038). Guardar tudo em Notificações deixa a lista cada vez maior.</p>
         </div>
       </div>
     </div>
