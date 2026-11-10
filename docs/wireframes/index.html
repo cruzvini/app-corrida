@@ -1143,13 +1143,23 @@ figcaption span { font-size: 13px; color: var(--note); }
 
       <!-- P5: Piu com sugestões -->
       <figure class="state">
-        <div class="phone" aria-label="Piu aberto pelo Editar plano, com sugestões">
+        <div class="phone tall" aria-label="Piu aberto pelo Editar plano, com sugestões e proposta">
           <div class="status"><span>12:15</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="navbar"><span>‹ Plano</span><b>Piu</b><span></span></div>
             <div class="ctx"><svg class="sx"><use href="#i-run"/></svg><span><b>Plano · 10 km em 3 jan</b>semana 3 de 10 · Base</span></div>
             <div class="msg">O que você quer mudar no plano? Escolha uma sugestão ou me conte com as suas palavras.</div>
-            <div class="dacts"><span class="dact">Semana mais leve <i class="open">5</i></span><span class="dact">Adiar objetivo</span></div>
+            <div class="dacts"><span class="dact">Semana mais leve</span><span class="dact">Adiar objetivo</span></div>
+            <div class="msg me">Semana mais leve</div>
+            <div class="msg">Reduzi a corrida que falta nesta semana e comecei a próxima um pouco mais leve, para a volta ao volume ser gradual. A musculação e os dias não mudam.</div>
+            <div class="prop">
+              <h5>Proposta</h5>
+              <div class="ba"><b>Sex 13</b><span><s>Leve 6 km</s>Leve 5 km</span></div>
+              <div class="ba"><b>Dom 15</b><span><s>Longão 12 km</s>Longão 10 km</span></div>
+              <div class="ba"><b>Sem 4</b><span><s>24 km previstos</s>22 km previstos<small>detalhada dom 15 nov, 22h</small></span></div>
+              <p class="risk">Semana 3 com 3 km a menos de corrida.</p>
+              <div class="btns"><span class="strong">Aceitar</span><span>Editar</span><span>Descartar</span></div>
+            </div>
           </div>
           <div class="dock">
             <div class="send"><div class="field"><b>Mensagem para o Piu</b>Ex.: vou viajar no fim de semana</div><span class="go">Enviar</span></div>
@@ -1164,8 +1174,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Editar plano com o Piu</strong>
-          <span>Abre o Piu com o plano como contexto e as sugestões de pedido "Semana mais leve" e "Adiar objetivo" (esta só no plano específico). O usuário também pode escrever qualquer outra coisa.</span>
-          <span class="refs">ADR 0035 · 0053 · 0062 · 0081 · 0084 · crit. 6.3</span>
+          <span>Abre o Piu com o plano como contexto e as sugestões de pedido "Semana mais leve" e "Adiar objetivo" (esta só no plano específico). Tocar numa sugestão envia o pedido, e o Piu responde com uma proposta que pode ir além da semana atual. Só vale depois de aceita.</span>
+          <span class="refs">ADR 0022 · 0035 · 0047 · 0053 · 0062 · 0081 · 0084 · 0085 · crit. 6.1, 6.3</span>
         </figcaption>
       </figure>
 
@@ -1220,15 +1230,14 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-plano">
-    <div class="eyebrow">Para decidir, um por vez</div>
+    <div class="eyebrow">Todos decididos · ADRs 0081 a 0085</div>
     <h2>Pontos do Plano</h2>
     <div class="questions">
-      <div class="q next">
+      <div class="q done">
         <i class="open">5</i>
         <div>
-          <p class="tag">Próxima pergunta</p>
-          <p><b>Sugestões no Piu:</b> tocar em "Semana mais leve" aplica a ação pronta na hora, com desfazer, ou o Piu faz uma proposta com o antes e o depois para aceitar?</p>
-          <p class="why">A ação pronta é previsível e funciona sem IA (ADRs 0018 e 0059), mas só reduz a corrida da semana atual. A proposta do Piu pode olhar o resto do plano, como no replanejar de um treino (ADR 0078), mas depende da IA. "Adiar objetivo" no detalhe do plano continua como ação pronta, só com as regras (ADR 0060).</p>
+          <p class="tag">Decidido · ADR 0085</p>
+          <p><b>Sugestões no Piu:</b> geram uma proposta do Piu, com o antes e o depois, para aceitar. "Semana mais leve" deixa de ser ação pronta. "Adiar objetivo" no detalhe do plano continua como ação pronta, só com as regras.</p>
         </div>
       </div>
       <div class="q done">
