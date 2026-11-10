@@ -114,7 +114,10 @@ figcaption span { font-size: 13px; color: var(--note); }
 .day { position: relative; }
 .day.done { border: 2px solid var(--done); }
 .day.missed { border: 2px solid var(--missed); }
-.day .flag { position: absolute; top: -8px; right: -6px; width: 16px; height: 16px; font-size: 9.5px; background: var(--screen); }
+.day.mixed { border: 2px solid var(--done); }
+.warn { position: absolute; top: -7px; right: -6px; width: 15px; height: 15px; border-radius: 50%; background: var(--done); color: var(--screen); font-style: normal; font-weight: 700; font-size: 10.5px; line-height: 15px; text-align: center; }
+.legend .warn-demo { position: relative; }
+.legend .warn-demo .warn { top: -6px; right: -7px; }
 
 /* Folha de escolha do treino (ADR 0069) */
 .scrim { position: absolute; inset: 0; background: var(--scrim); }
@@ -176,6 +179,7 @@ figcaption span { font-size: 13px; color: var(--note); }
       <span><svg class="sx lg"><use href="#i-gym"/></svg> musculação</span>
       <span><i class="swatch done"></i> contorno verde: feito</span>
       <span><i class="swatch missed"></i> contorno vermelho: não feito</span>
+      <span><i class="swatch done warn-demo"><i class="warn">!</i></i> verde com selo: um treino feito e outro não</span>
       <span><i class="swatch"></i> contorno padrão: planejado ou pendente</span>
       <span>tracejado = descanso</span>
     </div>
@@ -391,7 +395,7 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="strip">
               <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
-              <div class="day mixed">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="open flag">7</i></div>
+              <div class="day mixed">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="warn" aria-label="Um treino do dia não foi feito">!</i></div>
               <div class="day today rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
               <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
@@ -408,8 +412,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Dia de descanso</strong>
-          <span>O lugar do card principal mostra só "Dia de descanso", sem ações e sem abrir detalhe. Na faixa, a terça teve a corrida feita e a musculação não feita. A cor desse dia misto ainda está em aberto (ponto 7), então o contorno fica padrão por enquanto.</span>
-          <span class="refs">ADR 0065 · 0068 · 0070</span>
+          <span>O lugar do card principal mostra só "Dia de descanso", sem ações e sem abrir detalhe. Na faixa, a terça teve a corrida feita e a musculação não feita. Esse dia misto fica com contorno verde e o selo "!" no canto.</span>
+          <span class="refs">ADR 0065 · 0068 · 0070 · 0071</span>
         </figcaption>
       </figure>
 
@@ -428,7 +432,7 @@ figcaption span { font-size: 13px; color: var(--note); }
             <div class="strip">
               <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
-              <div class="day mixed tapped">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="open flag">7</i></div>
+              <div class="day mixed tapped">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="warn" aria-label="Um treino do dia não foi feito">!</i></div>
               <div class="day today rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
               <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day">Sex<b>13</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
@@ -513,16 +517,23 @@ figcaption span { font-size: 13px; color: var(--note); }
           <p><b>Dia com dois treinos na faixa:</b> o toque abre a escolha do treino, e o contorno de cada linha mostra o status daquele treino.</p>
         </div>
       </div>
-      <div class="q next">
+      <div class="q done">
         <i class="open">7</i>
         <div>
+          <p class="tag">Decidido · ADR 0071</p>
+          <p><b>Dia misto na faixa:</b> contorno verde com selo "!" no canto quando um treino do dia foi feito e o outro não.</p>
+        </div>
+      </div>
+      <div class="q next">
+        <i class="open">8</i>
+        <div>
           <p class="tag">Próxima pergunta</p>
-          <p><b>Dia misto na faixa:</b> qual contorno usar quando um treino do dia foi feito e o outro não?</p>
-          <p class="why">Opções: amarelo, ou verde com um pequeno selo "!" no canto. O selo mantém três cores e é uma forma, não só uma cor. Junto disso: no dia atual, com um treino feito e outro ainda por fazer, o contorno fica padrão até o fim do dia?</p>
+          <p><b>Dia atual com um treino feito e outro ainda por fazer:</b> o contorno fica padrão até o fim do dia, ou já fica verde?</p>
+          <p class="why">Ex.: corrida de manhã feita e musculação marcada para a noite. Ficar verde cedo pode passar a ideia de dia completo; o selo "!" ainda não se aplica, porque nada deixou de ser feito.</p>
         </div>
       </div>
       <div class="q">
-        <i class="open">8</i>
+        <i class="open">9</i>
         <div>
           <p class="tag">Em aberto</p>
           <p><b>Status só por cor:</b> reforçar feito e não feito também por uma forma, para quem não distingue verde de vermelho?</p>

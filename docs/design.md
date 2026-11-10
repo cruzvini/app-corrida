@@ -13,4 +13,4 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 
 ## Próximos passos
 
-1. **Próxima pergunta:** contorno do dia misto na faixa de 7 dias (um treino feito e outro não): amarelo ou verde com selo "!" (ponto 7 do wireframe do Hoje). Depois, o reforço do status por forma, por acessibilidade (ponto 8). Os pontos 1 a 6 foram decididos nos ADRs 0064 a 0070.
+1. **Próxima pergunta:** contorno do dia atual com um treino feito e outro ainda por fazer: padrão até o fim do dia ou já verde (ponto 8 do wireframe do Hoje). Depois, o reforço do status por forma, por acessibilidade (ponto 9). Os pontos 1 a 7 foram decididos nos ADRs 0064 a 0071.
