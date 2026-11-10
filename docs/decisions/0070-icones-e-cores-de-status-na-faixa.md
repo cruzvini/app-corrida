@@ -21,7 +21,7 @@ A mesma regra vale para as linhas da escolha do treino (ADR 0069): o contorno de
 
 O tipo abreviado do treino (ex.: Int, Leve, Sup) continua abaixo do número do dia.
 
-**Em aberto:** a cor do dia com dois treinos em que um foi feito e o outro não (ex.: amarelo, ou verde com um pequeno selo de aviso).
+O dia com dois treinos em que um foi feito e o outro não tem contorno verde com selo "!" ([ADR 0071](0071-dia-misto-verde-com-selo.md)).
 
 ## Consequências
 
