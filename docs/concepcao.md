@@ -90,14 +90,14 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      6. Se o feedback mencionar dor ou lesão, ele tem o mesmo tratamento dos outros feedbacks, sem recomendação automática de procurar um profissional. Posso ajustar o nível dos treinos com o Piu (ADR 0051).
      7. Se o feedback não pedir mudança, o plano não muda e não recebo mensagem.
    - **Jornada 6, replanejamento (validada):**
-     1. Tenho acesso às ações prontas "Semana mais leve" e, no plano específico, "Adiar objetivo", como sugestões de pedido ao Piu; "Adiar objetivo" também fica no detalhe do plano (ADRs 0018 e 0084). Para mudar um treino, uso o "Replanejar" com o Piu, que reavalia também os próximos dias (ADR 0078).
+     1. No chat do Piu, tenho as sugestões de pedido "Semana mais leve" e, no plano específico, "Adiar objetivo", que geram uma proposta do Piu (ADRs 0084 e 0085). No detalhe do plano, "Adiar objetivo" também é uma ação pronta (ADR 0060). Para mudar um treino, uso o "Replanejar" com o Piu, que reavalia também os próximos dias (ADR 0078).
      2. Uma ação pronta é aplicada na hora, mostra o que mudou e pode ser desfeita (a última ação).
      3. Posso descrever qualquer situação em texto livre (ex.: "vou viajar quinta e sexta") e recebo uma proposta com o antes e o depois, que aceito, edito ou descarto antes de aplicar.
      4. Se a mudança for arriscada, vejo o aviso e as alternativas, sem bloqueio (ADR 0017).
      5. Posso mudar os dados do setup a qualquer momento (dias de corrida e musculação, meta, prazo, nível), e o plano é reajustado a partir de hoje.
      6. Treinos passados (feitos ou não feitos) nunca são alterados por um replanejamento.
      7. Vejo o histórico de replanejamentos: o que mudou, quando e por quê.
-     8. Se a IA estiver indisponível, o app avisa que a conversa livre e o "Replanejar" não estão disponíveis no momento, e as ações prontas da semana continuam funcionando (ADR 0078).
+     8. Se a IA estiver indisponível, o app avisa que a conversa livre e o "Replanejar" não estão disponíveis no momento, e o "Adiar objetivo" do detalhe do plano continua funcionando (ADRs 0078 e 0085).
 6. [x] Requisitos não funcionais (validados):
    - Idioma: português (pt-BR). Unidades: km e min/km. Fuso horário: o do usuário (usado na regra das 22h, ADR 0026).
    - Segredos (chaves da IA, do Strava e do Supabase) só no backend, via variáveis de ambiente; nunca no app nem no git.

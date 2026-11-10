@@ -1,6 +1,6 @@
 # ADR 0084: "Semana mais leve" e "Adiar objetivo" viram sugestões de pedido ao Piu
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0085)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -13,7 +13,7 @@ O ADR 0036 punha as ações prontas da semana, "semana mais leve" (ADR 0059) e "
 - As duas aparecem como **sugestões de pedido no chat do Piu**, por exemplo quando ele é aberto pelo "Editar plano com o Piu" (ADR 0081).
 - **"Adiar objetivo"** também é um atalho no detalhe do plano (ADR 0083), só no plano específico.
 - Na interface, o termo é **"objetivo"**, e não "prova". "Adiar a prova" passa a ser "Adiar objetivo".
-- O que acontece ao tocar numa sugestão no Piu (ação pronta aplicada na hora ou proposta do Piu para aceitar) fica para o próximo ADR.
+- O que acontece ao tocar numa sugestão no Piu (ação pronta aplicada na hora ou proposta do Piu para aceitar) fica para o próximo ADR. *Decidido no ADR 0085: gera uma proposta do Piu.*
 
 ## Consequências
 

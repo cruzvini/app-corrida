@@ -1,6 +1,6 @@
 # ADR 0059: Ação pronta "semana mais leve" reduz só a corrida restante da semana
 
-- **Status:** Aceita
+- **Status:** Substituída pelo ADR 0085
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 "Semana mais leve" é uma ação pronta da semana (ADRs 0018 e 0036) e precisa ser determinística, sem depender da IA. O comportamento dela não estava definido.
 
 ## Decisão
+
+*Substituída pelo ADR 0085: "Semana mais leve" virou sugestão de pedido ao Piu, que faz uma proposta. As regras abaixo passam a ser o ponto de partida do Piu.*
 
 A ação vale para os treinos de hoje em diante na semana atual do plano (ADR 0043).
 

@@ -227,9 +227,7 @@ Treinos passados nunca são alterados (6.6). A única exceção é ligar, pelo P
 
 ```mermaid
 flowchart TD
-  A([Sugestão de pedido no Piu, ou detalhe do plano para Adiar objetivo 6.1, ADR 0084]) --> B{Ação pronta}
-  B -- semana mais leve --> L[Reduz a corrida de hoje em diante; intensos viram leves, ADR 0059] --> R
-  B -- adiar objetivo, só plano específico --> AD[Escolhe data mais tarde; regras esticam a estrutura, ADR 0060] --> R
+  A([Detalhe do plano: Adiar objetivo, só plano específico 6.1, ADRs 0060 e 0085]) --> AD[Escolhe data mais tarde; regras esticam a estrutura] --> R
   R{Regras detectam risco?}
   R -- sim --> R1[Aviso e alternativas, sem bloqueio 6.4] --> N
   R -- não --> N
@@ -240,7 +238,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-  A([Piu: usuário descreve a situação 6.3, ou Replanejar no detalhe do treino com atalhos, ADR 0078]) --> B[IA propõe, regras validam, ADR 0022]
+  A([Piu: usuário descreve a situação 6.3, toca numa sugestão de pedido ADR 0085, ou Replanejar no detalhe do treino ADR 0078]) --> B[IA propõe, regras validam, ADR 0022]
   B --> C{Proposta ok?}
   C -- falhou --> C1[Piu avisa e oferece tentar de novo] --> A
   C -- sim --> D[Card na conversa: antes e depois, avisos de risco 6.4, ADR 0062]
