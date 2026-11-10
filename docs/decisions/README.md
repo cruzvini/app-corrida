@@ -97,6 +97,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0089 | [Mensagens lidas são excluídas 30 dias depois da leitura](0089-notificacoes-lidas-excluidas-apos-30-dias.md) | Aceita |
 | 0090 | [Conversa única e contínua com o Piu](0090-conversa-unica-com-o-piu.md) | Aceita |
 | 0091 | [Sugestões de pedido aparecem só no início de um assunto](0091-sugestoes-de-pedido-so-no-inicio.md) | Aceita |
+| 0092 | [O histórico da conversa com o Piu é mantido](0092-historico-da-conversa-mantido.md) | Aceita |
 
 ## Como criar um novo ADR
 
