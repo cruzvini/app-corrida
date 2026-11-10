@@ -1,6 +1,6 @@
 # ADR 0078: Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"
 
-- **Status:** Aceita (revisada pelo ADR 0084)
+- **Status:** Aceita (revisada pelos ADRs 0084 e 0106)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -10,6 +10,8 @@ Replanejar sempre que for preciso é a ideia central do app (ADR 0018). No detal
 Quando a mudança vem do Strava, o plano já é reavaliado automaticamente: treino não feito (ADR 0026) e treino muito acima do previsto, como 8 km no lugar de 4 (ADR 0027). Faltava o caminho para quando o usuário quer mudar um treino antes de ele acontecer.
 
 ## Decisão
+
+*Revisado pelo ADR 0106: o contexto que o Piu recebe é o treino previsto no plano e o que o usuário escreve, sem o resultado nem o status vindos do Strava.*
 
 - **"Pular" e "Trocar dia" deixam de existir como ações prontas.**
 - No detalhe de um treino **previsto**, a ação **"Replanejar"** abre o Piu (ADR 0035) com o treino como contexto e com atalhos para os casos comuns:

@@ -1,6 +1,6 @@
 # ADR 0027: Atividade fora do plano conta como carga e gera ajuste com aviso
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0107)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O usuário pode fazer atividades que o plano não previa: uma corrida extra num dia de descanso, uma musculação a mais, ou um treino bem mais longo ou intenso que o previsto. Essas atividades mudam o esforço da semana e podem afetar os treinos seguintes.
 
 ## Decisão
+
+*Revisado pelo ADR 0107: o ajuste por atividade fora do plano ou muito acima do previsto é feito só pelo motor de regras, sem IA.*
 
 Toda atividade sincronizada do Strava conta como carga, mesmo fora do plano. Quando uma atividade extra, ou um treino muito acima do previsto, afetar os próximos treinos, o app ajusta o plano automaticamente e avisa pela caixa de entrada, explicando o que mudou e por quê. É a mesma lógica do treino não feito (ADR 0026).
 

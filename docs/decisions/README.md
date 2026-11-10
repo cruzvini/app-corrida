@@ -11,7 +11,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0003 | [Backend: Supabase com Postgres, auth e RLS](0003-backend-supabase.md) | Aceita |
 | 0004 | [Motor de regras como pacote isolado](0004-motor-de-regras-isolado.md) | Aceita (revisada pelo ADR 0022) |
 | 0005 | [Provedor de IA agnóstico, com Claude como primeira implementação e fake para testes](0005-provedor-de-ia-agnostico.md) | Aceita |
-| 0006 | [Strava como fonte inicial, com polling agendado e pull-to-refresh](0006-strava-polling-e-pull-to-refresh.md) | Aceita |
+| 0006 | [Strava como fonte inicial, com polling agendado e pull-to-refresh](0006-strava-polling-e-pull-to-refresh.md) | Aceita (revisada pelos ADRs 0109 e 0111) |
 | 0007 | [Feedback em caixa de entrada no app, sem push](0007-feedback-em-caixa-de-entrada.md) | Aceita |
 | 0008 | [Modelo de planos em duas camadas (genérico e específico)](0008-modelo-de-planos-em-duas-camadas.md) | Aceita (revisada pelo ADR 0103) |
 | 0009 | [Protótipo pessoal primeiro, depois Health Connect / Apple Health ao abrir para amigos e família](0009-prototipo-pessoal-depois-health.md) | Aceita |
@@ -27,14 +27,14 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0019 | [Conexão com o Strava obrigatória](0019-conexao-strava-obrigatoria.md) | Aceita |
 | 0020 | [Autenticação por e-mail com link mágico](0020-autenticacao-email-link-magico.md) | Aceita |
 | 0021 | [Pace alvo sugerido a partir do Strava](0021-pace-alvo-sugerido-pelo-strava.md) | Aceita (revisada pelo ADR 0103) |
-| 0022 | [IA propõe o plano, motor de regras valida](0022-ia-propoe-regras-validam-plano.md) | Aceita |
+| 0022 | [IA propõe o plano, motor de regras valida](0022-ia-propoe-regras-validam-plano.md) | Aceita (revisada pelos ADRs 0106 e 0107) |
 | 0023 | [Plano inteiro com detalhe progressivo](0023-plano-inteiro-com-detalhe-progressivo.md) | Aceita |
 | 0024 | [Treinos estruturados por blocos com pace alvo](0024-treinos-estruturados-por-blocos.md) | Aceita |
 | 0025 | [Strava marca o treino como feito, e o usuário corrige](0025-strava-marca-treino-feito-usuario-corrige.md) | Aceita |
-| 0026 | [Treino não feito gera ajuste automático do plano, com aviso](0026-treino-nao-feito-ajuste-automatico.md) | Aceita (revisada pelo ADR 0078) |
-| 0027 | [Atividade fora do plano conta como carga e gera ajuste com aviso](0027-atividade-fora-do-plano-conta-como-carga.md) | Aceita |
+| 0026 | [Treino não feito gera ajuste automático do plano, com aviso](0026-treino-nao-feito-ajuste-automatico.md) | Aceita (revisada pelos ADRs 0078 e 0107) |
+| 0027 | [Atividade fora do plano conta como carga e gera ajuste com aviso](0027-atividade-fora-do-plano-conta-como-carga.md) | Aceita (revisada pelo ADR 0107) |
 | 0028 | [Feedback do usuário vira contexto e gera proposta de ajuste quando relevante](0028-feedback-do-usuario-como-contexto.md) | Aceita |
-| 0029 | [Dados enviados ao provedor de IA](0029-dados-enviados-ao-provedor-de-ia.md) | Aceita |
+| 0029 | [Dados enviados ao provedor de IA](0029-dados-enviados-ao-provedor-de-ia.md) | Aceita (revisada pelo ADR 0106) |
 | 0030 | [Exclusão de conta e dados fora do MVP](0030-exclusao-de-conta-adiada.md) | Adiada |
 | 0031 | [Controle de custos da IA com teto mensal e limite por usuário](0031-controle-de-custos-da-ia.md) | Aceita |
 | 0032 | [Nome do app: Live Run](0032-nome-do-app-live-run.md) | Aceita |
@@ -43,7 +43,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
 | 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita (revisada pelos ADRs 0078 e 0084) |
 | 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita (revisada pelos ADRs 0095, 0097, 0099 e 0102) |
-| 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita (revisada pelo ADR 0094) |
+| 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita (revisada pelos ADRs 0094 e 0116) |
 | 0039 | [Lesões e limitações como campo opcional no setup](0039-lesoes-e-limitacoes-no-setup.md) | Aceita |
 | 0040 | [Falha na importação do histórico do Strava não bloqueia o setup](0040-falha-na-importacao-do-strava.md) | Aceita |
 | 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Substituída pelo ADR 0097 |
@@ -55,7 +55,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0047 | [Só o ajuste automático mais recente pode ser desfeito](0047-so-o-ajuste-mais-recente-pode-ser-desfeito.md) | Aceita |
 | 0048 | [Feedback pós-treino como campo opcional no card do Hoje](0048-feedback-opcional-no-card-do-hoje.md) | Aceita |
 | 0049 | [Falha na sincronização com o Strava suspende o "não feito" automático](0049-falha-de-sincronizacao-suspende-nao-feito.md) | Aceita |
-| 0050 | [Mensagens em Notificações assinadas pelo Piu](0050-notificacoes-assinadas-pelo-piu.md) | Aceita |
+| 0050 | [Mensagens em Notificações assinadas pelo Piu](0050-notificacoes-assinadas-pelo-piu.md) | Aceita (revisada pelo ADR 0117) |
 | 0051 | [Dor ou lesão no feedback não gera recomendação automática de procurar um profissional](0051-sem-recomendacao-automatica-de-profissional.md) | Aceita |
 | 0052 | [Proposta pendente vence quando o plano muda e é refeita pelo Piu](0052-proposta-desatualizada-e-refeita.md) | Aceita |
 | 0053 | [Editar uma proposta é conversar com o Piu](0053-editar-proposta-e-conversar-com-o-piu.md) | Aceita |
@@ -83,7 +83,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0075 | [Detalhe do treino mostra os paces em lista e compara previsto e feito só no geral](0075-paces-sem-barras-e-comparacao-geral.md) | Aceita (revisada pelo ADR 0080) |
 | 0076 | [Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino](0076-acoes-e-feedback-no-rodape-do-detalhe.md) | Aceita |
 | 0077 | [Apagar um feedback pede confirmação](0077-apagar-feedback-pede-confirmacao.md) | Aceita |
-| 0078 | [Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"](0078-replanejar-treino-com-o-piu.md) | Aceita (revisada pelo ADR 0084) |
+| 0078 | [Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"](0078-replanejar-treino-com-o-piu.md) | Aceita (revisada pelos ADRs 0084 e 0106) |
 | 0079 | [O executado no detalhe do treino usa só o resumo do Strava](0079-executado-so-com-o-resumo-do-strava.md) | Aceita |
 | 0080 | [Treino feito mostra só o previsto × feito](0080-treino-feito-mostra-so-previsto-x-feito.md) | Aceita |
 | 0081 | [Tela inicial do Plano com objetivo, fases e semanas](0081-tela-inicial-do-plano.md) | Aceita (revisada pelo ADR 0094) |
@@ -95,7 +95,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0087 | [Lista de Notificações em ordem cronológica, com dia e hora em cada mensagem](0087-lista-de-notificacoes-cronologica.md) | Aceita |
 | 0088 | [Antes e depois em uma linha por dia, com o antes riscado](0088-antes-e-depois-em-linhas.md) | Aceita |
 | 0089 | [Mensagens lidas são excluídas 30 dias depois da leitura](0089-notificacoes-lidas-excluidas-apos-30-dias.md) | Aceita (revisada pelo ADR 0094) |
-| 0090 | [Conversa única e contínua com o Piu](0090-conversa-unica-com-o-piu.md) | Aceita |
+| 0090 | [Conversa única e contínua com o Piu](0090-conversa-unica-com-o-piu.md) | Aceita (revisada pelo ADR 0106) |
 | 0091 | [Sugestões de pedido aparecem só no início de um assunto](0091-sugestoes-de-pedido-so-no-inicio.md) | Aceita |
 | 0092 | [O histórico da conversa com o Piu é mantido](0092-historico-da-conversa-mantido.md) | Aceita (revisada pelo ADR 0094) |
 | 0093 | [Limite diário de mensagens mantido, com aviso só perto do fim](0093-limite-diario-com-aviso-no-fim.md) | Aceita |

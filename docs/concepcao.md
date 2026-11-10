@@ -33,7 +33,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    2. Setup do plano: confirmar o nível, informar a frequência de corrida e musculação, escolher plano genérico ou específico.
    3. Geração do plano: o app monta as semanas, e o usuário revisa e aceita.
    4. Dia a dia: ver o treino do dia; o Strava sincroniza; o usuário confirma ou ajusta.
-   5. Feedback: análise do treino na caixa de entrada.
+   5. Feedback: o usuário comenta o treino, e as propostas de ajuste chegam na caixa de entrada. A IA analisa só o texto do usuário, nunca os dados do Strava (ADR 0106).
    6. Replanejamento: o usuário pede uma mudança a qualquer momento, e o app ajusta o plano.
 4. [x] Escopo do MVP (validado):
    - Entram no MVP os dois tipos de plano: genérico e específico (ADR 0008).
@@ -45,11 +45,12 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 1, onboarding (validada):**
      1. Eu informo meu e-mail, recebo um link mágico e, ao tocar nele, entro no app sem senha ([ADR 0020](decisions/0020-autenticacao-email-link-magico.md)).
      2. Ao reabrir o app, continuo logado, sem precisar entrar de novo.
-     3. Conectar o Strava (OAuth) é obrigatório: sem essa conexão, não chego ao setup do plano ([ADR 0019](decisions/0019-conexao-strava-obrigatoria.md)).
-     4. Depois de conectar, o app mostra que o Strava está conectado e importa meu histórico recente.
+     3. Conectar o Strava (OAuth) é obrigatório: sem essa conexão, não chego ao setup do plano ([ADR 0019](decisions/0019-conexao-strava-obrigatoria.md)). A tela explica que o app vê também as atividades privadas e não guarda mapa nem GPS ([ADR 0110](decisions/0110-permissao-activity-read-all.md)).
+     4. Depois de conectar, o app mostra que o Strava está conectado e importa meu histórico das últimas 12 semanas, só com o resumo de cada atividade ([ADR 0108](decisions/0108-historico-de-12-semanas-com-resumo.md)).
      5. Se eu recusar ou cancelar a autorização, o app explica por que a conexão é necessária e permite tentar de novo.
      6. Se eu não tiver histórico no Strava, sigo para o setup e escolho meu nível manualmente.
      7. Só eu vejo meus dados. Outro usuário não acessa nada meu (RLS, ADR 0003).
+     8. Posso desconectar o Strava no Perfil, com confirmação. O app revoga o acesso e apaga os tokens, mas mantém o plano e as atividades já importadas. Até eu reconectar, o app funciona como numa falha de sincronização: treinos pendentes, marcação manual e aviso para conectar de novo ([ADR 0116](decisions/0116-desconectar-o-strava.md)).
    - **Jornada 2, setup do plano (validada):**
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
      2. Confirmo como quero ser chamado (sugerido pelo primeiro nome do Strava, ADR 0099), informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).
@@ -72,13 +73,13 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      9. Se a geração falhar (ex.: IA indisponível), o app avisa e permite tentar de novo, sem perder minhas respostas do setup.
    - **Jornada 4, dia a dia (validada):**
      1. Ao abrir o app, vejo o treino de hoje, com tipo e blocos, e os 3 dias anteriores e os 3 próximos ([ADR 0065](decisions/0065-faixa-de-7-dias-centrada-no-hoje.md)).
-     2. O app sincroniza o Strava periodicamente, e eu também posso pedir uma atualização manual. O limite é de 1 consulta ao Strava a cada 30 minutos; dentro desse intervalo, vejo os dados já sincronizados e quando poderei atualizar de novo (ADR 0006).
+     2. O app sincroniza o Strava a cada 2h, das 5h às 23h, e eu também posso pedir uma atualização manual. O limite é de 1 consulta ao Strava a cada 30 minutos; dentro desse intervalo, vejo os dados já sincronizados e quando poderei atualizar de novo (ADRs 0006 e [0109](decisions/0109-polling-a-cada-2h.md)).
      3. Quando sincroniza uma atividade compatível com o treino do dia, o treino é marcado como feito automaticamente, com o resumo da atividade (distância, duração, pace médio) (ADR 0025).
      4. Posso desmarcar um treino feito, ou marcar como feito sem atividade no Strava.
      5. Na musculação, o treino marcado assume a divisão prevista, e posso corrigir (ex.: "fiz superiores, não inferiores") (ADR 0014).
      6. Posso informar a qualquer momento que um treino não foi ou não será feito, pelo "Replanejar" com o Piu, e recebo na hora uma proposta para os próximos dias, que aceito, edito ou descarto (ADRs 0026 e 0078).
-     7. Às 22h, um treino sem atividade nem marcação conta como não feito, e o plano se ajusta automaticamente. Se a atividade chegar depois, o ajuste é revertido ou reavaliado.
-     8. Uma atividade fora do plano, ou um treino muito acima do previsto, conta como carga. Se afetar os próximos treinos, o plano se ajusta (ADR 0027).
+     7. Às 22h, um treino sem atividade nem marcação conta como não feito, e o plano se ajusta automaticamente pelas regras. Cada consulta confere as atividades dos últimos 7 dias: se a atividade chegar depois, mesmo com data antiga, ou se for editada ou apagada no Strava, o ajuste é revertido ou reavaliado. Minhas marcações manuais prevalecem sobre o Strava (ADRs [0107](decisions/0107-ajustes-do-strava-so-pelo-motor-de-regras.md) e [0111](decisions/0111-conciliacao-dos-ultimos-7-dias.md)).
+     8. Uma atividade fora do plano, ou um treino muito acima do previsto, conta como carga. Se afetar os próximos treinos, o plano se ajusta só pelo motor de regras, sem IA (ADRs 0027 e 0107).
      9. Todo ajuste automático chega à caixa de entrada com o antes e o depois, e o mais recente pode ser desfeito (ADR 0047).
      10. Depois de um treino, posso deixar um feedback em texto, se quiser (ex.: "senti a panturrilha").
    - **Jornada 5, feedback e caixa de entrada (validada):**
@@ -101,12 +102,13 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
 6. [x] Requisitos não funcionais (validados):
    - Idioma: português (pt-BR). Unidades: km e min/km. Fuso horário: o do usuário (usado na regra das 22h, ADR 0026).
    - Segredos (chaves da IA, do Strava e do Supabase) só no backend, via variáveis de ambiente; nunca no app nem no git.
-   - Tokens do Strava armazenados só no backend; o app nunca os vê.
+   - Tokens do Strava armazenados só no backend, numa tabela em schema privado, cifrados com o Supabase Vault se ele for gratuito; o app nunca os vê ([ADR 0112](decisions/0112-tokens-do-strava-no-vault.md)).
+   - Limite de atletas no Strava: 1 no protótipo e 10 ao abrir para amigos e família, enquanto o app depender do Strava ([ADR 0113](decisions/0113-limite-de-atletas-no-strava.md)).
    - Infraestrutura em planos gratuitos (Supabase Free). Projetos gratuitos são pausados depois de cerca de 1 semana sem uso.
    - Disponibilidade sem garantia formal (best-effort) no protótipo.
    - Desempenho: as telas principais abrem com os dados já salvos, sem esperar o Strava ou a IA; as ações com IA mostram estado de carregamento.
    - Isolamento de dados: RLS em todas as tabelas com dados de usuário (ADR 0003).
-   - Dados enviados à IA: todos, incluindo identificação; reavaliar antes de abrir para outras pessoas ([ADR 0029](decisions/0029-dados-enviados-ao-provedor-de-ia.md)).
+   - Dados enviados à IA: **dados do Strava nunca vão para a IA**, nem derivados. O Piu vê o plano atual, o texto do usuário e as marcações manuais ([ADR 0106](decisions/0106-dados-do-strava-nunca-vao-para-a-ia.md)). Para os demais dados, todos, incluindo identificação; reavaliar antes de abrir para outras pessoas ([ADR 0029](decisions/0029-dados-enviados-ao-provedor-de-ia.md)).
    - Exclusão de conta e dados: fora do MVP; reavaliar antes de abrir para outras pessoas ([ADR 0030](decisions/0030-exclusao-de-conta-adiada.md)).
    - Custos da IA: teto mensal no provedor e limite diário de 20 mensagens de conversa livre por usuário ([ADR 0031](decisions/0031-controle-de-custos-da-ia.md)).
 

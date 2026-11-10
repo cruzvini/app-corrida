@@ -14,6 +14,8 @@ Os ajustes disparados por dados do Strava são feitos **só pelo motor de regras
 
 A IA continua onde a entrada é do usuário: geração do plano a partir do setup, conversa com o Piu e feedback em texto (fluxo "IA propõe, regras validam").
 
+*Ajuste da reconciliação com o ADR 0078: quando o usuário diz que não vai fazer um treino, o pedido vai ao Piu, que propõe o ajuste com o plano como contexto, sem dados do Strava. O ajuste das 22h continua só pelas regras.*
+
 ## Consequências
 
 - O motor de regras ganha mais responsabilidade e mais testes no épico 5. Em troca, o comportamento fica previsível e testável.

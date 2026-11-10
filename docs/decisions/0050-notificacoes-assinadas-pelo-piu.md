@@ -1,6 +1,6 @@
 # ADR 0050: Mensagens em Notificações assinadas pelo Piu
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0117)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O ADR 0035 criou o Piu, assistente de conversa do app, e deixou em aberto se as mensagens automáticas em Notificações (ADRs 0007 e 0034) devem sair assinadas por ele. São ajustes automáticos, semanas novas detalhadas, sugestões e propostas geradas a partir do feedback.
 
 ## Decisão
+
+*Revisado pelo ADR 0117: nos ajustes disparados pelo Strava, o Piu recebe só o antes e o depois do plano, sem o texto da mensagem nem o motivo.*
 
 Todas as mensagens em Notificações saem assinadas pelo Piu, com o avatar dele e no tom de parceiro de treino (ADR 0033).
 

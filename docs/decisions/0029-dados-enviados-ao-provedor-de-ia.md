@@ -1,6 +1,6 @@
 # ADR 0029: Dados enviados ao provedor de IA
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0106)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 A IA monta e ajusta os planos (ADR 0022) e interpreta o feedback do usuário (ADR 0028). Para isso, ela precisa de dados do usuário. Pela LGPD, dados de saúde (peso, idade, treinos, relatos de dor) são dados pessoais sensíveis. As opções eram: enviar só o necessário sem identificação, enviar tudo incluindo identificação, ou enviar apenas dados agregados.
 
 ## Decisão
+
+*Revisado pelo ADR 0106: dados do Strava nunca vão para a IA, nem derivados; este ADR vale só para os demais dados.*
 
 O app envia ao provedor de IA todos os dados relevantes do usuário, **incluindo dados de identificação** (ex.: nome, e-mail, ID do Strava), além de perfil, histórico de treinos, plano e feedbacks.
 

@@ -1,6 +1,6 @@
 # ADR 0026: Treino não feito gera ajuste automático do plano, com aviso
 
-- **Status:** Aceita (revisada pelo ADR 0078)
+- **Status:** Aceita (revisada pelos ADRs 0078 e 0107)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 Um treino não feito afeta os treinos seguintes. Por exemplo: se um treino de inferiores não aconteceu, o descanso ou o treino leve planejado para o dia seguinte talvez não seja mais necessário, e outros treinos podem ser remanejados. Esperar o usuário replanejar manualmente pode deixar o plano incoerente por dias.
 
 ## Decisão
+
+*Revisado pelo ADR 0107: o ajuste do "não feito" das 22h é feito só pelo motor de regras, sem IA.*
 
 Quando um treino é considerado não feito, o app ajusta automaticamente os próximos dias do plano e informa o usuário pela caixa de entrada (ADR 0007), explicando o que mudou e por quê (ex.: "você não fez inferiores na segunda; o descanso de terça virou corrida leve").
 

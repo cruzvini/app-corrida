@@ -1,6 +1,6 @@
 # ADR 0038: Conteúdo da aba Perfil, com o histórico de replanejamentos
 
-- **Status:** Aceita (revisada pelo ADR 0094)
+- **Status:** Aceita (revisada pelos ADRs 0094 e 0116)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 A aba Perfil (ADR 0034) reúne o que muda pouco: dados do setup, conexão com o Strava e conta. O histórico de replanejamentos (critério 6.7) precisava de um lugar. Foram avaliados: aba Plano, Perfil e Notificações.
 
 ## Decisão
+
+*Revisado pelo ADR 0116: a seção Strava também tem "Desconectar o Strava", com confirmação.*
 
 *Revisado pelo ADR 0094: o Perfil fica só com Meus dados (nível, idade, peso, lesões), Strava e Conta. Objetivo e frequência vão para o detalhe do plano, e o histórico de replanejamentos sai.*
 

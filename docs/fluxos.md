@@ -21,11 +21,11 @@ flowchart TD
   I -- sim --> J[Sessão criada e mantida 1.2]
   J --> K{Strava conectado?}
   K -- sim --> C
-  K -- não --> L[Tela: por que conectar o Strava 1.3]
+  K -- não --> L[Tela: por que conectar o Strava, inclui atividades privadas 1.3, ADR 0110]
   L --> M[Autorização no Strava OAuth]
   M --> N{Autorizou com as permissões necessárias?}
   N -- não: recusou, cancelou ou desmarcou permissão --> N1[Explica por que é necessário 1.5] --> L
-  N -- sim --> O[Mostra Strava conectado e importa histórico 1.4]
+  N -- sim --> O[Mostra Strava conectado e importa 12 semanas, só o resumo 1.4, ADR 0108]
   O --> P{Importação ok?}
   P -- falhou --> P1[Avisa: tentar de novo ou seguir sem histórico, ADR 0040]
   P1 -- tentar de novo --> O
@@ -35,16 +35,16 @@ flowchart TD
   Q -- não --> S2([Setup: escolher nível manualmente 1.6])
 ```
 
-Regras de segurança da jornada: cada usuário só vê os próprios dados (RLS, 1.7), e os tokens do Strava ficam só no backend.
+Regras de segurança da jornada: cada usuário só vê os próprios dados (RLS, 1.7), e os tokens do Strava ficam só no backend, em schema privado (ADR 0112). O app não guarda mapa nem GPS (ADR 0110).
 
 ## Jornada 2: setup do plano
 
-Fluxo linear, uma pergunta por tela, com barra de progresso e botão de voltar (ADR 0037).
+Fluxo linear, uma pergunta por tela, com barra de progresso e botão de voltar (ADR 0037). As sugestões de nível, pace e prazo vêm do motor de regras, nunca da IA (ADR 0106). O plano é gerado só com as respostas do setup.
 
 ```mermaid
 flowchart TD
   A([Vem da jornada 1]) --> B{Tem histórico do Strava?}
-  B -- sim --> C[Nível sugerido com o motivo 2.1]
+  B -- sim --> C[Nível sugerido pelas regras, com o motivo 2.1]
   C --> C1{Confirma?}
   C1 -- trocar --> D
   C1 -- confirmar --> E
@@ -64,7 +64,7 @@ flowchart TD
   CD2 --> INI
   H -- melhorar o tempo --> I[Distância livre e data 2.5]
   I --> J{Histórico suficiente para pace?}
-  J -- sim --> J1[Pace alvo sugerido: aceitar ou ajustar 2.6]
+  J -- sim --> J1[Pace alvo sugerido pelas regras: aceitar ou ajustar 2.6]
   J -- não --> J2[Sem meta de pace, foco em completar a distância]
   J1 --> INI
   J2 --> INI
@@ -104,34 +104,39 @@ Depois de gerado, as semanas seguintes são detalhadas automaticamente na rotina
 
 ## Jornada 4: dia a dia
 
-Três fluxos: a sincronização com o Strava, as marcações feitas pelo usuário e a rotina das 22h. Todo ajuste automático segue o fluxo "IA propõe, regras validam" (ADR 0022), entra direto no plano e chega a Notificações com o antes e o depois. Só o ajuste mais recente pode ser desfeito (ADR 0047, 4.9).
+Três fluxos: a sincronização com o Strava, as marcações feitas pelo usuário e a rotina das 22h. Todo ajuste automático desta jornada é feito **só pelo motor de regras**, sem IA (ADRs 0106 e 0107), entra direto no plano e chega a Notificações com o antes e o depois. Só o ajuste mais recente pode ser desfeito (ADR 0047, 4.9).
 
 ### Sincronização e treino feito
 
 ```mermaid
 flowchart TD
   A([Aba Hoje: treino do dia em blocos e faixa de 7 dias 4.1, ADR 0065]) --> B{Origem da sincronização}
-  B -- polling agendado --> C[Consulta o Strava]
-  B -- pull-to-refresh --> B1{Passaram 30 min desde a última consulta?}
+  B -- polling a cada 2h, das 5h às 23h, ADR 0109 --> C
+  B -- atualização manual --> B1{Passaram 30 min desde a última consulta?}
   B1 -- não --> B2[Mostra dados já sincronizados e quando poderá atualizar 4.2] --> A
-  B1 -- sim --> C
+  B1 -- sim --> C[Lista as atividades dos últimos 7 dias, ADR 0111]
   C --> D{Sincronização ok?}
-  D -- falhou: acesso revogado, token inválido ou Strava fora --> D1[Aviso no Hoje: reconectar o Strava, ADR 0049] --> A
-  D -- sim --> E{Atividades novas?}
-  E -- não --> A
-  E -- sim --> F{Mesmo dia e modalidade de um treino previsto?}
+  D -- falhou ou sem conexão: revogado, desconectado no Perfil, token inválido ou Strava fora --> D1[Aviso no Hoje: conectar o Strava de novo, ADRs 0049 e 0116] --> A
+  D -- sim --> E{Compara com o que está salvo}
+  E -- nada mudou --> A
+  E -- editada --> ED[Atualiza o resumo; se a carga mudou, vai para as regras] --> K
+  E -- apagada --> AP[Treino ligado volta a pendente ou a carga extra sai] --> K
+  E -- nova, mesmo com data antiga --> MAN{Dia já tem marcação manual?}
+  MAN -- sim --> MAN1[Marcação manual prevalece; as regras tratam a carga, ADR 0111] --> K
+  MAN -- não --> F{Mesmo dia e modalidade de um treino previsto?}
   F -- sim --> G[Soma as atividades compatíveis do dia, ADR 0046]
   G --> H[Treino marcado como feito, com resumo 4.3]
   H --> H1[Musculação assume a divisão prevista 4.5]
   H1 --> I[Card mostra campo opcional: como foi? ADR 0048, 4.10]
   F -- não: dia sem treino, outro dia ou outra modalidade --> J[Conta como carga fora do plano, ADR 0045]
-  H --> K{Muito acima do previsto?}
-  J --> K
-  K -- não --> A
-  K -- sim, afeta os próximos treinos --> AJ[Ajuste automático com aviso 4.8]
-  AJ --> A
   H --> REV{Treino estava como não feito com ajuste?}
-  REV -- sim: atividade chegou depois das 22h --> RV[Ajuste revertido ou reavaliado 4.7]
+  REV -- sim: atividade chegou depois das 22h --> K
+  H --> K
+  J --> K
+  K{Motor de regras: a carga afeta os próximos treinos?}
+  K -- não --> A
+  K -- sim --> AJ[Ajuste ou reversão só pelas regras, com aviso 4.7, 4.8, ADR 0107]
+  AJ --> A
 ```
 
 ### Marcações do usuário
@@ -153,7 +158,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-  A([22h]) --> B[Última consulta ao Strava, respeitando os 30 min]
+  A([22h]) --> B[Última consulta ao Strava, últimos 7 dias, respeitando os 30 min]
   B --> C{Sincronização ok?}
   C -- não --> P[Treinos do dia ficam pendentes, ADR 0049]
   P --> P1{Mais de 3 dias sem sincronizar?}
@@ -161,7 +166,7 @@ flowchart TD
   P1 -- não --> FIM([Aguarda a sincronização voltar])
   C -- sim --> D[Processa dias pendentes, se houver]
   D --> E{Treino sem atividade nem marcação?}
-  E -- sim --> F[Conta como não feito e ajusta o plano 4.7]
+  E -- sim --> F[Conta como não feito e as regras ajustam o plano 4.7, ADR 0107]
   F --> N[Notificações: antes e depois]
   E -- não --> G
   N --> G{Último dia da semana do plano?}
@@ -171,7 +176,7 @@ flowchart TD
 
 ## Jornada 5: feedback e Notificações
 
-Todas as mensagens em Notificações saem assinadas pelo Piu (ADR 0050). Dor ou lesão segue o mesmo tratamento dos outros feedbacks (ADR 0051, 5.6).
+Todas as mensagens em Notificações saem assinadas pelo Piu (ADR 0050). Nos ajustes disparados pelo Strava, o texto é de template e o Piu recebe só o antes e o depois do plano, nunca o motivo (ADRs 0106 e 0117). Dor ou lesão segue o mesmo tratamento dos outros feedbacks (ADR 0051, 5.6).
 
 ### Feedback
 
@@ -179,7 +184,7 @@ Todas as mensagens em Notificações saem assinadas pelo Piu (ADR 0050). Dor ou 
 flowchart TD
   A([Campo como foi? no Hoje ou detalhe do treino, feito ou não feito 5.3]) --> B[Usuário envia o texto]
   B --> C[Salva no histórico do treino: feedback salvo 5.4, ADR 0055]
-  C --> D[IA analisa em segundo plano: pede mudança?]
+  C --> D[IA analisa só o texto, em segundo plano: pede mudança? ADR 0106]
   D --> E{Análise ok?}
   E -- falhou --> E1{Ainda há tentativas automáticas?}
   E1 -- sim --> D
@@ -204,7 +209,7 @@ flowchart TD
   M --> T{Tipo}
   T -- ajuste automático --> AJ{É o mais recente?}
   AJ -- sim --> AJ1[Desfazer, ADR 0047]
-  AJ -- não --> PIU[Conversar com o Piu sobre isso, ADR 0050]
+  AJ -- não --> PIU[Conversar com o Piu sobre isso, ADR 0050; se veio do Strava, só o antes e o depois, ADR 0117]
   T -- semana nova ou sugestão --> PIU
   T -- proposta --> P{Ainda válida?}
   P -- não: dias afetados mudaram --> V[Marcada como desatualizada, ADR 0052]
