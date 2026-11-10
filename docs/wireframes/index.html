@@ -667,15 +667,6 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="row"><span class="chip">Feito · Strava</span></div>
             </div>
             <div class="sec">
-              <h5>Executado</h5>
-              <div class="result">
-                <div><b>8,7 km</b><small>distância</small></div>
-                <div><b>50:31</b><small>duração</small></div>
-                <div><b>5:48</b><small>pace médio</small></div>
-              </div>
-              <span class="src">Atividade do Strava "Intervalado na pista", 18:20</span>
-            </div>
-            <div class="sec">
               <h5>Previsto × feito</h5>
               <div class="cmp">
                 <span></span><em>Previsto</em><em>Feito</em>
@@ -683,15 +674,7 @@ figcaption span { font-size: 13px; color: var(--note); }
                 <span>Duração</span><span>~50 min</span><b>50:31</b>
                 <span>Pace médio</span><span>5:47/km</span><b>5:48/km</b>
               </div>
-            </div>
-            <div class="sec">
-              <h5>Previsto por bloco</h5>
-              <div class="pace">
-                <div class="b"><span>Aquecimento · 2 km</span><em>6:20/km</em></div>
-                <div class="b"><span>5 × 800 m</span><em>4:50/km</em></div>
-                <div class="b"><span>Recuperação · 400 m entre as séries</span><em>7:00/km</em></div>
-                <div class="b"><span>Desaquecimento · 1 km</span><em>6:30/km</em></div>
-              </div>
+              <span class="src">Atividade do Strava "Intervalado na pista", 18:20</span>
             </div>
             <div class="sec">
               <h5>Feedback</h5>
@@ -714,8 +697,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Corrida feita</strong>
-          <span>Primeiro o executado, do resumo do Strava. Depois a comparação geral entre o previsto e o feito do dia, sem comparação bloco a bloco, e o previsto por bloco. Os feedbacks enviados ficam no fim do conteúdo, logo acima do campo, como numa conversa.</span>
-          <span class="refs">ADR 0024 · 0025 · 0046 · 0055 · 0056 · 0075 · 0076</span>
+          <span>Depois de feito, o previsto só aparece para comparar: distância, duração e pace médio, previstos e feitos, com a atividade do Strava de origem. Sem lista por bloco. Os feedbacks enviados ficam no fim do conteúdo, logo acima do campo, como numa conversa.</span>
+          <span class="refs">ADR 0024 · 0025 · 0046 · 0055 · 0056 · 0076 · 0079 · 0080</span>
         </figcaption>
       </figure>
 
@@ -867,7 +850,7 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-detalhe">
-    <div class="eyebrow">Todos decididos · ADRs 0075 a 0079</div>
+    <div class="eyebrow">Todos decididos · ADRs 0075 a 0080</div>
     <h2>Pontos do detalhe do treino</h2>
     <div class="questions">
       <div class="q done">
@@ -903,6 +886,13 @@ figcaption span { font-size: 13px; color: var(--note); }
         <div>
           <p class="tag">Decidido · ADR 0079</p>
           <p><b>Executado:</b> só o resumo do Strava (distância, duração e pace médio), sem pace por km ou volta.</p>
+        </div>
+      </div>
+      <div class="q done">
+        <i class="open">6</i>
+        <div>
+          <p class="tag">Decidido · ADR 0080 · comentário no artifact</p>
+          <p><b>Treino feito:</b> o previsto só aparece no previsto × feito. Saem a lista por bloco e o bloco separado do executado.</p>
         </div>
       </div>
     </div>
