@@ -82,6 +82,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0074 | [Dia atual na faixa se destaca pelo fundo preenchido](0074-destaque-do-dia-atual-na-faixa.md) | Aceita |
 | 0075 | [Detalhe do treino mostra os paces em lista e compara previsto e feito só no geral](0075-paces-sem-barras-e-comparacao-geral.md) | Aceita |
 | 0076 | [Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino](0076-acoes-e-feedback-no-rodape-do-detalhe.md) | Aceita |
+| 0077 | [Apagar um feedback pede confirmação](0077-apagar-feedback-pede-confirmacao.md) | Aceita |
 
 ## Como criar um novo ADR
 
