@@ -546,7 +546,7 @@ figcaption span { font-size: 13px; color: var(--note); }
           <strong>Corrida e musculação no mesmo dia</strong>
           <span>A corrida ocupa o card principal, com os blocos. A musculação aparece resumida em uma linha, com a divisão e o status. Os dois abrem o próprio detalhe. Na faixa, o dia mostra os dois ícones.</span>
           <span>Se a corrida for feita de manhã, o dia continua com o contorno padrão até a musculação ser resolvida ou até a rotina das 22h.</span>
-          <span class="refs">ADR 0014 · 0041 · 0067 · 0070 · 0072</span>
+          <span class="refs">ADR 0014 · 0067 · 0097 · 0070 · 0072</span>
         </figcaption>
       </figure>
 
@@ -1115,6 +1115,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div><b>3 jan</b><small>data</small></div>
               <div><b>5:20</b><small>pace alvo</small></div>
             </div>
+            <div class="src">4 corridas e 2 musculações por semana (1 superiores, 1 inferiores). O plano escolhe os dias.</div>
             <div class="dacts"><span class="dact">Adiar objetivo</span></div>
             <div class="sec">
               <h5>Volume semanal de corrida</h5>
@@ -1151,8 +1152,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Detalhe do plano</strong>
-          <span>Abre pelo card do objetivo. Reúne o objetivo completo, o atalho "Adiar objetivo" (só no plano específico), o volume semanal previsto e feito, com a semana atual em destaque, e as fases com as semanas e o volume de cada uma.</span>
-          <span class="refs">ADR 0023 · 0060 · 0083 · 0084</span>
+          <span>Abre pelo card do objetivo. Reúne o objetivo completo e a frequência semanal (mudar qualquer um é pelo Piu), o atalho "Adiar objetivo" (só no plano específico), o volume semanal previsto e feito, com a semana atual em destaque, e as fases com as semanas e o volume de cada uma.</span>
+          <span class="refs">ADR 0023 · 0060 · 0083 · 0084 · 0094 · 0097</span>
         </figcaption>
       </figure>
 
@@ -1611,21 +1612,21 @@ figcaption span { font-size: 13px; color: var(--note); }
         </figcaption>
       </figure>
 
-      <!-- Q3: mudança que parece definitiva -->
+      <!-- Q3: mudar a frequência -->
       <figure class="state">
-        <div class="phone tall" aria-label="Piu, mudança que parece definitiva">
+        <div class="phone tall" aria-label="Piu, mudar a frequência">
           <div class="status"><span>12:40</span><span>●●● ▮</span></div>
           <div class="content chat">
             <div class="daysep">Hoje</div>
-            <div class="msg me">A partir de agora o longão vai ser no sábado.</div>
-            <div class="msg">Combinado. Nesta semana fica assim:</div>
+            <div class="msg me">A partir de agora quero correr 3 vezes por semana.</div>
+            <div class="msg">Combinado. Nesta semana tirei o leve de sexta e mantive o longão. As próximas semanas já vêm com 3 corridas, e o volume cai um pouco.</div>
             <div class="prop">
               <h5>Proposta <span class="tagp">Aceita</span></h5>
-              <div class="ba"><b>Sáb 14</b><span><s>Descanso</s>Longão 12 km</span></div>
-              <div class="ba"><b>Dom 15</b><span><s>Longão 12 km</s>Descanso</span></div>
+              <div class="ba"><b>Freq.</b><span><s>4 corridas por semana</s>3 corridas por semana</span></div>
+              <div class="ba"><b>Sex 13</b><span><s>Leve 6 km + Superiores</s>Superiores</span></div>
+              <div class="ba"><b>Sem 4+</b><span><s>24 km previstos</s>21 km previstos<small>fases sem mudança</small></span></div>
             </div>
-            <div class="msg">Isso vale só para esta semana ou mudo os seus dias de corrida no Perfil? Mudando no Perfil, as próximas semanas já vêm com o longão no sábado.</div>
-            <div class="dacts"><span class="dact">Só esta semana</span><span class="dact">Mudar no Perfil</span></div>
+            <div class="toast">Plano atualizado. <u>Desfazer</u></div>
           </div>
           <div class="dock">
             <div class="send"><div class="field"><b>Mensagem para o Piu</b>Conte o que mudou ou o que quer mudar</div><span class="go">Enviar</span></div>
@@ -1639,9 +1640,9 @@ figcaption span { font-size: 13px; color: var(--note); }
           </nav>
         </div>
         <figcaption>
-          <strong>Mudança que parece definitiva</strong>
-          <span>Quando o pedido parece valer daqui para frente, o Piu aplica a semana atual e pergunta se deve mudar os dias no Perfil. A configuração só muda com a confirmação do usuário, que passa pela revisão do ADR 0061.</span>
-          <span class="refs">ADR 0041 · 0061 · 0062 · crit. 6.5</span>
+          <strong>Mudar a frequência</strong>
+          <span>Sem dias fixos, a frequência muda pela conversa: o Piu ajusta a semana atual e as seguintes, e o detalhe do plano passa a mostrar a nova frequência. Um pedido como "longão sempre no sábado" vira contexto para os próximos detalhamentos.</span>
+          <span class="refs">ADR 0062 · 0083 · 0088 · 0097 · crit. 3.3, 6.5</span>
         </figcaption>
       </figure>
 
@@ -1741,48 +1742,37 @@ figcaption span { font-size: 13px; color: var(--note); }
   <section class="screen-group" id="perfil">
     <div class="eyebrow">Aba Perfil · ícone de pessoa</div>
     <h2>Perfil</h2>
-    <p class="lead">Quatro seções: Meu treino, Histórico de replanejamentos, Strava e Conta (ADR 0038). Os dados de Meu treino são os do setup e abrem as mesmas telas dele; mudar algo passa por uma revisão do plano antes de valer (ADR 0061). Data de exemplo: quarta, 11 nov.</p>
+    <p class="lead">Só dados pessoais: Meus dados, Strava e Conta (ADR 0094). Objetivo e frequência ficam no detalhe do plano, e o que mudou no plano fica na conversa com o Piu e em Notificações. Editar o perfil salva na hora e leva ao Piu com o que mudou (ADR 0095). Data de exemplo: quarta, 11 nov.</p>
 
     <div class="phones">
       <!-- R1: Perfil -->
       <figure class="state">
-        <div class="phone tall" aria-label="Perfil">
+        <div class="phone" aria-label="Perfil">
           <div class="status"><span>13:00</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="top"><div><h3>Perfil</h3></div></div>
             <div class="who"><span class="av">A</span><span><b>ana@exemplo.com</b>No Live Run desde 26 out</span></div>
             <div class="sec">
-              <h5>Meu treino</h5>
+              <h5>Meus dados</h5>
               <div class="pgroup">
-                <div class="prow"><span>Nível</span><b>Intermediário</b><span class="go">›</span></div>
-                <div class="prow"><span>Idade e peso</span><b>34 anos · 72 kg</b><span class="go">›</span></div>
-                <div class="prow"><span>Lesões ou limitações</span><b>Nenhuma informada</b><span class="go">›</span></div>
-                <div class="prow"><span>Corrida</span><b>Seg · Ter · Sex · Dom</b><span class="go">›</span></div>
-                <div class="prow"><span>Musculação</span><b>Ter Sup · Qui Inf</b><span class="go">›</span></div>
-                <div class="prow"><span>Objetivo <i class="open">1</i></span><b>10 km em 3 jan · 5:20/km</b><span class="go">›</span></div>
+                <div class="prow"><span>Nível</span><b>Intermediário</b><span></span></div>
+                <div class="prow"><span>Idade e peso</span><b>34 anos · 72 kg</b><span></span></div>
+                <div class="prow"><span>Lesões ou limitações</span><b>Nenhuma informada</b><span></span></div>
               </div>
-            </div>
-            <div class="sec">
-              <h5>Histórico de replanejamentos <i class="open">3</i></h5>
-              <div class="pgroup">
-                <div class="hrow"><span class="when">ter 10<br>22:00</span><span class="what"><span class="kindl">Ajuste automático</span>Superiores de terça foi para sexta</span></div>
-                <div class="hrow"><span class="when">sex 6<br>22:00</span><span class="what"><span class="kindl">Ajuste automático</span>Leve de sexta não feito; longão mantido</span></div>
-                <div class="hrow"><span class="when">qua 28<br>out</span><span class="what"><span class="kindl">Piu</span>Longão de domingo encurtado para 9 km</span></div>
-              </div>
-              <div class="wrow ghost">Ver todo o histórico</div>
+              <span class="btn">Editar perfil</span>
             </div>
             <div class="sec">
               <h5>Strava</h5>
               <div class="pgroup">
                 <div class="prow"><span>Conexão</span><b>Conectado</b><span></span></div>
-                <div class="prow"><span>Última sincronização</span><b>há 12 min</b><span class="refresh">↻</span></div>
+                <div class="prow"><span>Última sincronização</span><b>há 12 min</b><span>↻</span></div>
               </div>
             </div>
             <div class="sec">
               <h5>Conta</h5>
               <div class="pgroup">
                 <div class="prow"><span>E-mail</span><b>ana@exemplo.com</b><span></span></div>
-                <div class="prow danger"><span>Sair</span><b></b><span class="go">› <i class="open">4</i></span></div>
+                <div class="prow danger"><span>Sair</span><b></b><span class="go">›</span></div>
               </div>
             </div>
           </div>
@@ -1796,29 +1786,25 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Perfil</strong>
-          <span>Meu treino resume os dados do setup; cada linha abre a tela do setup correspondente. O histórico mostra as últimas mudanças. Strava mostra a conexão e a última sincronização, com atualização manual. Sem nome no app: o login é por e-mail.</span>
-          <span class="refs">ADR 0015 · 0019 · 0020 · 0037 · 0038 · 0039 · 0041 · 0064 · crit. 6.5, 6.7</span>
+          <span>Três seções curtas. Meus dados só mostra; para mudar, "Editar perfil". Strava mostra a conexão e a última sincronização, com atualização manual. Sem nome no app: o login é por e-mail.</span>
+          <span class="refs">ADR 0019 · 0020 · 0064 · 0094 · 0095</span>
         </figcaption>
       </figure>
 
-      <!-- R2: editar dias -->
+      <!-- R2: editar perfil -->
       <figure class="state">
-        <div class="phone" aria-label="Perfil, editar dias de treino">
+        <div class="phone" aria-label="Perfil, editar perfil">
           <div class="status"><span>13:02</span><span>●●● ▮</span></div>
           <div class="content">
             <div class="navbar"><span>‹ Perfil</span></div>
-            <div class="dhead"><h3>Dias de treino</h3><div class="sub">Mesma tela do setup. Vale para as próximas semanas.</div></div>
-            <div class="wgrid">
-              <span></span><span class="h">Corrida</span><span class="h">Musculação</span>
-              <span class="dl">Seg</span><span class="tg on">✓ Corrida</span><span class="tg">—</span>
-              <span class="dl">Ter</span><span class="tg on">✓ Corrida</span><span class="tg on">Superiores</span>
-              <span class="dl">Qua</span><span class="tg">—</span><span class="tg">—</span>
-              <span class="dl">Qui</span><span class="tg">—</span><span class="tg on">Inferiores</span>
-              <span class="dl">Sex</span><span class="tg on">✓ Corrida</span><span class="tg">—</span>
-              <span class="dl">Sáb</span><span class="tg on chg">✓ Corrida</span><span class="tg">—</span>
-              <span class="dl">Dom</span><span class="tg chg">—</span><span class="tg">—</span>
+            <div class="dhead"><h3>Editar perfil</h3><div class="sub">Ao salvar, o Piu avalia se o plano precisa mudar.</div></div>
+            <div class="field"><b>Nível</b>Intermediário ›</div>
+            <div class="wgrid" style="grid-template-columns:1fr 1fr">
+              <span class="field"><b>Idade</b>34 anos</span>
+              <span class="field tg chg"><b>Peso</b>70 kg</span>
             </div>
-            <div class="cta-row"><div class="cta-main">Salvar e revisar o plano</div></div>
+            <div class="field tg chg"><b>Lesões ou limitações</b>Joelho sensível em descidas</div>
+            <div class="cta-row"><div class="cta-main">Salvar</div></div>
           </div>
           <nav class="tabbar">
             <div class="tab"><i class="ic"></i>Plano</div>
@@ -1829,71 +1815,57 @@ figcaption span { font-size: 13px; color: var(--note); }
           </nav>
         </div>
         <figcaption>
-          <strong>Editar dias de treino</strong>
-          <span>Reaproveita a tela do setup. No exemplo, a corrida de domingo vai para sábado (tracejado = mudou). Salvar não aplica direto: abre a revisão do plano.</span>
-          <span class="refs">ADR 0014 · 0037 · 0041 · 0061 · crit. 2.3, 6.5</span>
+          <strong>Editar perfil</strong>
+          <span>Nível, idade, peso e lesões ou limitações. No exemplo, mudam o peso e as lesões (tracejado = mudou). Salvar grava os dados na hora e abre o Piu.</span>
+          <span class="refs">ADR 0015 · 0039 · 0042 · 0095 · crit. 6.5</span>
         </figcaption>
       </figure>
 
-      <!-- R3: revisão da mudança -->
+      <!-- R3: Piu com a mensagem pronta -->
       <figure class="state">
-        <div class="phone tall" aria-label="Perfil, revisão do plano após mudança">
+        <div class="phone" aria-label="Piu aberto depois de salvar o perfil">
           <div class="status"><span>13:03</span><span>●●● ▮</span></div>
-          <div class="content">
-            <div class="navbar"><span>‹ Dias de treino</span></div>
-            <div class="dhead"><h3>Revisar o plano <i class="open">2</i></h3><div class="sub">Você mudou: corrida de domingo para sábado</div></div>
-            <p class="mtext">Ajustei o plano a partir de hoje. As semanas seguintes já vêm com o longão no sábado. Enquanto você não decide, o plano atual continua valendo.</p>
-            <div class="prop">
-              <h5>Antes e depois</h5>
-              <div class="ba"><b>Sáb 14</b><span><s>Descanso</s>Longão 12 km</span></div>
-              <div class="ba"><b>Dom 15</b><span><s>Longão 12 km</s>Descanso</span></div>
-              <div class="ba"><b>Sem 4+</b><span><s>Longão no domingo</s>Longão no sábado<small>fases e volume sem mudança</small></span></div>
-              <div class="btns"><span class="strong">Aceitar</span><span>Editar</span><span>Descartar</span></div>
-            </div>
-            <div class="note">Descartar desfaz a mudança nos dias, e o plano fica como está.</div>
+          <div class="content chat">
+            <div class="daysep">Hoje</div>
+            <div class="ctx"><span class="av">A</span><span><b>Perfil atualizado</b>peso e lesões</span></div>
+          </div>
+          <div class="dock">
+            <div class="send"><div class="field"><b>Atualizei meu perfil:</b><span style="color:var(--ink)">peso de 72 para 70 kg; lesões: joelho sensível em descidas.</span></div><span class="go">Enviar</span></div>
           </div>
           <nav class="tabbar">
             <div class="tab"><i class="ic"></i>Plano</div>
-            <div class="tab"><i class="ic"></i>Piu</div>
+            <div class="tab on"><i class="ic"></i>Piu</div>
             <div class="tab center"><i class="ic">11</i>Hoje</div>
             <div class="tab"><i class="ic"></i>Notificações<span class="badge">2</span></div>
-            <div class="tab on"><i class="ic"></i>Perfil</div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
           </nav>
         </div>
         <figcaption>
-          <strong>Revisão do plano</strong>
-          <span>Depois de "Ajustando seu plano", mostra o antes e o depois das semanas detalhadas e da estrutura, com avisos de risco. Os dados do Perfil só mudam se a proposta for aceita; Editar abre o Piu. Se a IA falhar, oferece tentar de novo sem perder a mudança.</span>
-          <span class="refs">ADR 0017 · 0022 · 0052 · 0053 · 0061 · 0088 · crit. 6.5, 6.6</span>
+          <strong>Piu com o que mudou</strong>
+          <span>A mensagem já vem escrita no campo. O usuário completa ou envia como está, e o Piu propõe um ajuste se for preciso. Se sair sem enviar, os dados continuam salvos e entram nos próximos detalhamentos.</span>
+          <span class="refs">ADR 0062 · 0085 · 0090 · 0095</span>
         </figcaption>
       </figure>
 
-      <!-- R4: histórico completo -->
+      <!-- R4: sair -->
       <figure class="state">
-        <div class="phone tall" aria-label="Perfil, histórico de replanejamentos">
+        <div class="phone" aria-label="Perfil, confirmação para sair">
           <div class="status"><span>13:05</span><span>●●● ▮</span></div>
           <div class="content">
-            <div class="navbar"><span>‹ Perfil</span></div>
-            <div class="dhead"><h3>Histórico de replanejamentos</h3><div class="sub">O que mudou, quando e por quê</div></div>
-            <div class="pgroup">
-              <div class="hrow"><span class="when">ter 10<br>22:00</span><span class="what"><span class="kindl">Ajuste automático</span>Superiores de terça foi para sexta<small>Motivo: superiores não feito às 22h</small><span class="btn">Desfazer</span></span></div>
-              <div class="hrow"><span class="when">sex 6<br>22:00</span><span class="what"><span class="kindl">Ajuste automático</span>Leve de sexta não feito; longão mantido<small>Motivo: sem atividade às 22h</small></span></div>
-              <div class="hrow"><span class="when">dom 1<br>22:00</span><span class="what"><span class="kindl">Semana nova</span>Semana 2 detalhada: 29 km<small>Rotina semanal</small></span></div>
-              <div class="hrow"><span class="when">qua 28<br>out</span><span class="what"><span class="kindl">Piu · proposta aceita</span>Longão de domingo encurtado para 9 km<small>Motivo: "joelho incomodando"</small></span></div>
-              <div class="hrow"><span class="when">seg 26<br>out</span><span class="what"><span class="kindl">Plano</span>Plano específico criado e aceito<small>10 km em 3 jan, 10 semanas</small></span></div>
-            </div>
+            <div class="top"><div><h3>Perfil</h3></div></div>
+            <div class="who"><span class="av">A</span><span><b>ana@exemplo.com</b>No Live Run desde 26 out</span></div>
           </div>
-          <nav class="tabbar">
-            <div class="tab"><i class="ic"></i>Plano</div>
-            <div class="tab"><i class="ic"></i>Piu</div>
-            <div class="tab center"><i class="ic">11</i>Hoje</div>
-            <div class="tab"><i class="ic"></i>Notificações<span class="badge">2</span></div>
-            <div class="tab on"><i class="ic"></i>Perfil</div>
-          </nav>
+          <div class="scrim"></div>
+          <div class="dialog">
+            <h4>Sair da conta?</h4>
+            <p>Para voltar, você vai receber um novo link no seu e-mail.</p>
+            <div class="btns"><span>Cancelar</span><span class="strong">Sair</span></div>
+          </div>
         </div>
         <figcaption>
-          <strong>Histórico de replanejamentos</strong>
-          <span>Todas as mudanças, de qualquer origem: ajustes automáticos, Piu, ação pronta, Perfil e semanas novas. Cada item diz o que mudou e por quê. Só o mais recente tem "Desfazer". Não é apagado com as notificações.</span>
-          <span class="refs">ADR 0018 · 0038 · 0047 · 0089 · crit. 6.7</span>
+          <strong>Sair</strong>
+          <span>Pede confirmação, porque voltar exige um novo link mágico. Sair não apaga dados, só encerra a sessão no aparelho.</span>
+          <span class="refs">ADR 0020 · 0096</span>
         </figcaption>
       </figure>
 
@@ -1912,10 +1884,10 @@ figcaption span { font-size: 13px; color: var(--note); }
               </div>
             </div>
             <div class="sec">
-              <h5>Meu treino</h5>
+              <h5>Meus dados</h5>
               <div class="pgroup">
-                <div class="prow"><span>Nível</span><b>Intermediário</b><span class="go">›</span></div>
-                <div class="prow"><span>Idade e peso</span><b>34 anos · 72 kg</b><span class="go">›</span></div>
+                <div class="prow"><span>Nível</span><b>Intermediário</b><span></span></div>
+                <div class="prow"><span>Idade e peso</span><b>34 anos · 72 kg</b><span></span></div>
               </div>
             </div>
           </div>
@@ -1937,38 +1909,42 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-perfil">
-    <div class="eyebrow">Para decidir, um por vez</div>
+    <div class="eyebrow">Todos decididos · ADRs 0094 a 0097</div>
     <h2>Pontos do Perfil</h2>
     <div class="questions">
-      <div class="q next">
+      <div class="q done">
         <i class="open">1</i>
         <div>
-          <p class="tag">Próxima pergunta</p>
-          <p><b>Objetivo:</b> mudar o objetivo (distância, data, pace alvo, tipo de plano) fica em Perfil &gt; Meu treino, como no rascunho, no detalhe do plano, ou nos dois?</p>
-          <p class="why">O ADR 0038 põe "meta e prazo" em Meu treino. O detalhe do plano já tem o atalho "Adiar objetivo" (ADR 0083), e o card do objetivo está no Plano.</p>
+          <p class="tag">Decidido · ADR 0094</p>
+          <p><b>Perfil só com dados pessoais:</b> objetivo e frequência ficam no detalhe do plano.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">2</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Revisão depois de uma mudança no Perfil:</b> em tela própria, como no rascunho, ou como proposta no chat do Piu, como as outras propostas?</p>
-          <p class="why">O ADR 0061 define o fluxo (antes e depois, aceitar, editar, descartar), mas não onde a revisão aparece.</p>
+          <p class="tag">Decidido · ADR 0095</p>
+          <p><b>Mudança no perfil:</b> "Editar perfil" salva na hora e abre o Piu com uma mensagem do que mudou, sem tela de revisão própria.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">3</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Histórico no Perfil:</b> as três últimas mudanças e "Ver todo o histórico", como no rascunho, ou só uma linha que abre a lista?</p>
+          <p class="tag">Decidido · ADR 0094</p>
+          <p><b>Histórico de replanejamentos:</b> sai do app. O que mudou fica na conversa com o Piu e em Notificações; a mensagem do ajuste mais recente não é excluída enquanto ele puder ser desfeito.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">4</i>
         <div>
-          <p class="tag">Em aberto</p>
-          <p><b>Sair:</b> pede confirmação antes?</p>
-          <p class="why">Para voltar, é preciso pedir um novo link mágico por e-mail (ADR 0020).</p>
+          <p class="tag">Decidido · ADR 0096</p>
+          <p><b>Sair:</b> pede confirmação.</p>
+        </div>
+      </div>
+      <div class="q done">
+        <i class="open">·</i>
+        <div>
+          <p class="tag">Decidido · ADR 0097 · pedido fora da lista</p>
+          <p><b>Frequência semanal no lugar de dias fixos:</b> o usuário informa quantos dias de corrida e de musculação, e o plano escolhe os dias. Mudar a frequência é pelo Piu.</p>
         </div>
       </div>
     </div>
