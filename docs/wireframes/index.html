@@ -118,6 +118,7 @@ figcaption span { font-size: 13px; color: var(--note); }
 .warn { position: absolute; top: -7px; right: -6px; width: 15px; height: 15px; border-radius: 50%; background: var(--done); color: var(--screen); font-style: normal; font-weight: 700; font-size: 10.5px; line-height: 15px; text-align: center; }
 .legend .warn-demo { position: relative; }
 .legend .warn-demo .warn { top: -6px; right: -7px; }
+.warn.no { background: var(--missed); }
 
 /* Folha de escolha do treino (ADR 0069) */
 .scrim { position: absolute; inset: 0; background: var(--scrim); }
@@ -177,10 +178,10 @@ figcaption span { font-size: 13px; color: var(--note); }
     <div class="legend">
       <span><svg class="sx lg"><use href="#i-run"/></svg> corrida</span>
       <span><svg class="sx lg"><use href="#i-gym"/></svg> musculação</span>
-      <span><i class="swatch done"></i> contorno verde: feito</span>
-      <span><i class="swatch missed"></i> contorno vermelho: não feito</span>
-      <span><i class="swatch done warn-demo"><i class="warn">!</i></i> verde com selo: um treino feito e outro não</span>
-      <span><i class="swatch"></i> contorno padrão: planejado ou pendente</span>
+      <span><i class="swatch done warn-demo"><i class="warn">✓</i></i> verde com ✓: feito</span>
+      <span><i class="swatch missed warn-demo"><i class="warn no">✕</i></i> vermelho com ✕: não feito</span>
+      <span><i class="swatch done warn-demo"><i class="warn">!</i></i> verde com !: um treino feito e outro não</span>
+      <span><i class="swatch"></i> contorno padrão, sem selo: planejado ou pendente</span>
       <span>tracejado = descanso</span>
     </div>
   </header>
@@ -213,9 +214,9 @@ figcaption span { font-size: 13px; color: var(--note); }
               <span class="more">Ver treino</span>
             </div>
             <div class="strip">
-              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal no" aria-label="Não feito">✕</i></div>
               <div class="day rest">Sáb<b>7</b><i>—</i><span class="ics"></span></div>
-              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
               <div class="day today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
@@ -259,10 +260,10 @@ figcaption span { font-size: 13px; color: var(--note); }
               <span class="more">Ver treino</span>
             </div>
             <div class="strip">
-              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal no" aria-label="Não feito">✕</i></div>
               <div class="day rest">Sáb<b>7</b><i>—</i><span class="ics"></span></div>
-              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
-              <div class="day done today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
+              <div class="day done today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
               <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
               <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
@@ -278,7 +279,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Treino feito</strong>
-          <span>O Strava sincronizou uma corrida do mesmo dia. O card troca os blocos pelo resumo da atividade e mostra o campo opcional "Como foi?", que some no dia seguinte. O dia de hoje fica com o contorno verde na faixa.</span>
+          <span>O Strava sincronizou uma corrida do mesmo dia. O card troca os blocos pelo resumo da atividade e mostra o campo opcional "Como foi?", que some no dia seguinte. O dia de hoje fica com o contorno verde e o selo ✓ na faixa.</span>
           <span class="refs">ADR 0025 · 0046 · 0048 · 0070 · crit. 4.3, 4.10</span>
         </figcaption>
       </figure>
@@ -309,9 +310,9 @@ figcaption span { font-size: 13px; color: var(--note); }
               <span class="more">Ver treino</span>
             </div>
             <div class="strip">
-              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day missed">Sex<b>6</b><i>Leve</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal no" aria-label="Não feito">✕</i></div>
               <div class="day rest">Sáb<b>7</b><i>—</i><span class="ics"></span></div>
-              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
               <div class="day today">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
               <div class="day">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
@@ -357,8 +358,8 @@ figcaption span { font-size: 13px; color: var(--note); }
             </div>
             <div class="strip">
               <div class="day rest">Sáb<b>7</b><i>—</i><span class="ics"></span></div>
-              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
-              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
+              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
               <div class="day today">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span></div>
               <div class="day rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
               <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
@@ -394,8 +395,8 @@ figcaption span { font-size: 13px; color: var(--note); }
               <b>Dia de descanso</b>
             </div>
             <div class="strip">
-              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
-              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
+              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
               <div class="day mixed">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="warn" aria-label="Um treino do dia não foi feito">!</i></div>
               <div class="day today rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
               <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
@@ -431,8 +432,8 @@ figcaption span { font-size: 13px; color: var(--note); }
               <b>Dia de descanso</b>
             </div>
             <div class="strip">
-              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
-              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span></div>
+              <div class="day done">Dom<b>8</b><i>Longo</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
+              <div class="day done">Seg<b>9</b><i>Int</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg></span><i class="warn seal" aria-label="Feito">✓</i></div>
               <div class="day mixed tapped">Ter<b>10</b><i>Leve Sup</i><span class="ics"><svg class="sx"><use href="#i-run"/></svg><svg class="sx"><use href="#i-gym"/></svg></span><i class="warn" aria-label="Um treino do dia não foi feito">!</i></div>
               <div class="day today rest">Qua<b>11</b><i>—</i><span class="ics"></span></div>
               <div class="day">Qui<b>12</b><i>Inf</i><span class="ics"><svg class="sx"><use href="#i-gym"/></svg></span></div>
@@ -532,19 +533,19 @@ figcaption span { font-size: 13px; color: var(--note); }
           <p><b>Dia atual com um treino feito e outro por fazer:</b> contorno padrão até todos os treinos do dia estarem resolvidos ou até a rotina das 22h.</p>
         </div>
       </div>
-      <div class="q next">
+      <div class="q done">
         <i class="open">9</i>
         <div>
-          <p class="tag">Próxima pergunta</p>
-          <p><b>Status só por cor:</b> reforçar feito e não feito também por uma forma, para quem não distingue verde de vermelho?</p>
-          <p class="why">Cerca de 8% dos homens têm alguma deficiência de visão de cores, e verde e vermelho são o par mais afetado. O selo "!" do dia misto já é uma forma; feito e não feito ainda dependem só da cor.</p>
+          <p class="tag">Decidido · ADR 0073</p>
+          <p><b>Status além da cor:</b> selo ✓ no dia feito e ✕ no não feito, no mesmo canto do selo "!".</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q next">
         <i class="open">10</i>
         <div>
-          <p class="tag">Em aberto</p>
+          <p class="tag">Próxima pergunta</p>
           <p><b>Destaque do dia atual:</b> manter o fundo preenchido e o contorno mais grosso, com o contorno na cor do status quando o dia estiver resolvido?</p>
+          <p class="why">Com a cor no contorno, a espessura sozinha já não separa o dia atual dos dias resolvidos, que também têm contorno de 2px. O fundo preenchido é o que continua marcando o dia atual.</p>
         </div>
       </div>
     </div>

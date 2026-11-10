@@ -13,4 +13,4 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 
 ## Próximos passos
 
-1. **Próxima pergunta:** reforçar feito e não feito na faixa de 7 dias também por forma, além da cor, por acessibilidade (ponto 9 do wireframe do Hoje). Depois, o destaque do dia atual com a cor no contorno (ponto 10). Os pontos 1 a 8 foram decididos nos ADRs 0064 a 0072.
+1. **Próxima pergunta:** destaque do dia atual na faixa de 7 dias agora que a cor de status está no contorno (ponto 10 do wireframe do Hoje). Os pontos 1 a 9 foram decididos nos ADRs 0064 a 0073.
