@@ -145,6 +145,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0137 | [Outras atividades declaradas no setup, só como registro de carga](0137-outras-atividades-como-registro-de-carga.md) | Aceita |
 | 0138 | [Identidade visual do Live Run](0138-identidade-visual.md) | Aceita |
 | 0139 | [Detalhamento semanal pela IA, sem dados do Strava](0139-detalhamento-semanal-sem-dados-do-strava.md) | Aceita |
+| 0140 | [Direção visual esportiva sobre a base da identidade](0140-direcao-visual-esportiva.md) | Aceita |
+| 0141 | [Skills de design copiadas para o repositório](0141-skills-de-design.md) | Aceita |
 
 ## Como criar um novo ADR
 
