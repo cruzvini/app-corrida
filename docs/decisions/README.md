@@ -80,6 +80,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0072 | [Dia atual com treino ainda por fazer fica com o contorno padrão](0072-dia-atual-parcial-fica-no-padrao.md) | Aceita |
 | 0073 | [Selos ✓ e ✕ reforçam a cor do contorno na faixa de 7 dias](0073-selos-de-status-na-faixa.md) | Aceita |
 | 0074 | [Dia atual na faixa se destaca pelo fundo preenchido](0074-destaque-do-dia-atual-na-faixa.md) | Aceita |
+| 0075 | [Detalhe do treino mostra os paces em lista e compara previsto e feito só no geral](0075-paces-sem-barras-e-comparacao-geral.md) | Aceita |
 
 ## Como criar um novo ADR
 
