@@ -1,6 +1,6 @@
 # ADR 0089: Mensagens lidas são excluídas 30 dias depois da leitura
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0094)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -17,6 +17,6 @@ Notificações servem para avisar de mudanças no plano. O registro do que mudou
 ## Consequências
 
 - A lista fica curta, e os dados guardados são só os necessários.
-- O histórico de replanejamentos do Perfil não é afetado: ele continua com o registro de cada mudança.
-- Se o ajuste mais recente tiver a mensagem excluída, ele ainda pode ser desfeito pelo histórico de replanejamentos (ADR 0018).
+- O histórico de replanejamentos do Perfil não é afetado: ele continua com o registro de cada mudança. *Revisado pelo ADR 0094: o histórico de replanejamentos saiu do Perfil.*
+- Se o ajuste mais recente tiver a mensagem excluída, ele ainda pode ser desfeito pelo histórico de replanejamentos (ADR 0018). *Revisado pelo ADR 0094: a mensagem do ajuste mais recente não é excluída enquanto ele puder ser desfeito.*
 - A exclusão roda numa rotina diária do backend, coberta por testes de integração.

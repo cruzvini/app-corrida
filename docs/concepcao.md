@@ -53,7 +53,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 2, setup do plano (validada):**
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
      2. Informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).
-     3. Marco em quais dias da semana quero correr e se faço musculação. Se faço, marco os dias e a divisão de cada um (ex.: terça superiores, quinta inferiores) (ADRs 0014 e [0041](decisions/0041-dias-da-semana-fixos-e-editaveis.md)).
+     3. Informo quantos dias por semana quero correr e se faço musculação. Se faço, informo quantos dias e a divisão em quantidade (ex.: 1 de superiores e 1 de inferiores), sem escolher os dias da semana; o plano escolhe os dias (ADRs 0014 e [0097](decisions/0097-frequencia-semanal-sem-dias-fixos.md)).
      4. Escolho entre plano genérico e plano específico.
      5. No plano específico, informo a distância (qualquer valor) e a data da prova ou o prazo da meta (ADR 0016).
      6. No plano específico, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
@@ -63,7 +63,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 3, geração do plano (validada):**
      1. Depois do setup, o app gera o plano e mostra a estrutura completa (fases e volume semanal) e as próximas 1 a 2 semanas detalhadas (ADR 0023).
      2. Cada treino de corrida detalhado mostra o tipo (ex.: leve, limiar, intervalado, progressivo, longão) e é dividido em blocos (ex.: aquecimento, repetições, recuperação, desaquecimento). Cada bloco tem distância ou duração e um pace alvo, ou uma faixa de intensidade quando não houver meta de pace (ADR 0024).
-     3. Os treinos respeitam os dias de corrida e musculação que informei, e a musculação aparece com a divisão do dia (ex.: inferiores).
+     3. Os treinos respeitam a frequência de corrida e de musculação que informei, e a musculação aparece com a divisão do dia (ex.: inferiores) (ADR 0097).
      4. O plano não coloca corrida intensa logo depois de um treino de inferiores.
      5. No plano específico, o plano termina na data da prova ou no prazo da meta.
      6. Se a validação das regras encontrar um risco, vejo o aviso e as alternativas antes de aceitar (ADR 0017).
@@ -94,9 +94,9 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      2. Uma ação pronta é aplicada na hora, mostra o que mudou e pode ser desfeita (a última ação).
      3. Posso descrever qualquer situação em texto livre (ex.: "vou viajar quinta e sexta") e recebo uma proposta com o antes e o depois, que aceito, edito ou descarto antes de aplicar.
      4. Se a mudança for arriscada, vejo o aviso e as alternativas, sem bloqueio (ADR 0017).
-     5. Posso mudar os dados do setup a qualquer momento (dias de corrida e musculação, meta, prazo, nível), e o plano é reajustado a partir de hoje.
+     5. Posso mudar meus dados pessoais (nível, idade, peso, lesões) a qualquer momento em "Editar perfil"; ao salvar, o Piu abre com uma mensagem do que mudou e propõe um ajuste, se for preciso. Frequência, objetivo e prazo eu mudo conversando com o Piu (ADRs 0094, 0095 e 0097).
      6. Treinos passados (feitos ou não feitos) nunca são alterados por um replanejamento.
-     7. Vejo o histórico de replanejamentos: o que mudou, quando e por quê.
+     7. Vejo o que mudou, quando e por quê na conversa com o Piu e em Notificações (ADR 0094).
      8. Se a IA estiver indisponível, o app avisa que a conversa livre e o "Replanejar" não estão disponíveis no momento, e o "Adiar objetivo" do detalhe do plano continua funcionando (ADRs 0078 e 0085).
 6. [x] Requisitos não funcionais (validados):
    - Idioma: português (pt-BR). Unidades: km e min/km. Fuso horário: o do usuário (usado na regra das 22h, ADR 0026).

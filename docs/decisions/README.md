@@ -23,7 +23,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0015 | [Nível de corrida sugerido pelo Strava e confirmado pelo usuário](0015-nivel-de-corrida-sugerido-e-confirmado.md) | Aceita |
 | 0016 | [Plano específico com distância livre](0016-plano-especifico-com-distancia-livre.md) | Aceita |
 | 0017 | [Avisar sobre riscos da meta sem bloquear a criação do plano](0017-avisar-riscos-sem-bloquear-plano.md) | Aceita |
-| 0018 | [Replanejamento por ações prontas e por conversa livre](0018-replanejamento-acoes-prontas-e-conversa.md) | Aceita (revisada pelos ADRs 0078 e 0085) |
+| 0018 | [Replanejamento por ações prontas e por conversa livre](0018-replanejamento-acoes-prontas-e-conversa.md) | Aceita (revisada pelos ADRs 0078, 0085 e 0094) |
 | 0019 | [Conexão com o Strava obrigatória](0019-conexao-strava-obrigatoria.md) | Aceita |
 | 0020 | [Autenticação por e-mail com link mágico](0020-autenticacao-email-link-magico.md) | Aceita |
 | 0021 | [Pace alvo sugerido a partir do Strava](0021-pace-alvo-sugerido-pelo-strava.md) | Aceita |
@@ -43,10 +43,10 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
 | 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita (revisada pelos ADRs 0078 e 0084) |
 | 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita |
-| 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita |
+| 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita (revisada pelo ADR 0094) |
 | 0039 | [Lesões e limitações como campo opcional no setup](0039-lesoes-e-limitacoes-no-setup.md) | Aceita |
 | 0040 | [Falha na importação do histórico do Strava não bloqueia o setup](0040-falha-na-importacao-do-strava.md) | Aceita |
-| 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Aceita (revisada pelo ADR 0078) |
+| 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Substituída pelo ADR 0097 |
 | 0042 | [Idade sem limite mínimo, só com validação de valor plausível](0042-idade-sem-limite-minimo.md) | Aceita |
 | 0043 | [Data de início do plano escolhida no setup](0043-data-de-inicio-escolhida-no-setup.md) | Aceita |
 | 0044 | [Detalhamento da próxima semana na rotina das 22h do último dia da semana](0044-detalhamento-semanal-na-rotina-das-22h.md) | Aceita |
@@ -66,7 +66,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0058 | ["Pular" e "não será feito" são a mesma ação](0058-pular-e-nao-sera-feito-sao-a-mesma-acao.md) | Substituída pelo ADR 0078 |
 | 0059 | [Ação pronta "semana mais leve" reduz só a corrida restante da semana](0059-acao-semana-mais-leve.md) | Substituída pelo ADR 0085 |
 | 0060 | [Ação pronta "adiar a prova" recalcula a estrutura pelas regras](0060-acao-adiar-a-prova.md) | Aceita (revisada pelo ADR 0084) |
-| 0061 | [Mudança nos dados do setup passa por revisão antes de valer](0061-mudanca-no-perfil-passa-por-revisao.md) | Aceita |
+| 0061 | [Mudança nos dados do setup passa por revisão antes de valer](0061-mudanca-no-perfil-passa-por-revisao.md) | Substituída pelo ADR 0095 |
 | 0062 | [Proposta da conversa com o Piu aparece na conversa e vai para Notificações se ficar pendente](0062-proposta-do-piu-na-conversa.md) | Aceita |
 | 0063 | [Wireframes em artifact HTML de baixa fidelidade](0063-wireframes-em-artifact-html.md) | Aceita |
 | 0064 | [Atualização manual do Strava por gesto de puxar e por botão](0064-atualizacao-manual-puxar-e-botao.md) | Aceita |
@@ -86,19 +86,23 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0078 | [Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"](0078-replanejar-treino-com-o-piu.md) | Aceita (revisada pelo ADR 0084) |
 | 0079 | [O executado no detalhe do treino usa só o resumo do Strava](0079-executado-so-com-o-resumo-do-strava.md) | Aceita |
 | 0080 | [Treino feito mostra só o previsto × feito](0080-treino-feito-mostra-so-previsto-x-feito.md) | Aceita |
-| 0081 | [Tela inicial do Plano com objetivo, fases e semanas](0081-tela-inicial-do-plano.md) | Aceita |
+| 0081 | [Tela inicial do Plano com objetivo, fases e semanas](0081-tela-inicial-do-plano.md) | Aceita (revisada pelo ADR 0094) |
 | 0082 | [Fases do plano em retângulos de mesma largura, com rolagem horizontal](0082-fases-em-faixa-com-rolagem.md) | Aceita |
-| 0083 | [Detalhe do plano com o volume semanal previsto × feito](0083-detalhe-do-plano.md) | Aceita |
+| 0083 | [Detalhe do plano com o volume semanal previsto × feito](0083-detalhe-do-plano.md) | Aceita (revisada pelo ADR 0094) |
 | 0084 | ["Semana mais leve" e "Adiar objetivo" viram sugestões de pedido ao Piu](0084-acoes-da-semana-viram-sugestoes-do-piu.md) | Aceita (revisada pelo ADR 0085) |
 | 0085 | [Sugestões de pedido no Piu geram uma proposta do Piu](0085-sugestoes-do-piu-geram-proposta.md) | Aceita |
 | 0086 | [Mensagem de Notificações abre em tela própria](0086-mensagem-abre-em-tela-propria.md) | Aceita |
 | 0087 | [Lista de Notificações em ordem cronológica, com dia e hora em cada mensagem](0087-lista-de-notificacoes-cronologica.md) | Aceita |
 | 0088 | [Antes e depois em uma linha por dia, com o antes riscado](0088-antes-e-depois-em-linhas.md) | Aceita |
-| 0089 | [Mensagens lidas são excluídas 30 dias depois da leitura](0089-notificacoes-lidas-excluidas-apos-30-dias.md) | Aceita |
+| 0089 | [Mensagens lidas são excluídas 30 dias depois da leitura](0089-notificacoes-lidas-excluidas-apos-30-dias.md) | Aceita (revisada pelo ADR 0094) |
 | 0090 | [Conversa única e contínua com o Piu](0090-conversa-unica-com-o-piu.md) | Aceita |
 | 0091 | [Sugestões de pedido aparecem só no início de um assunto](0091-sugestoes-de-pedido-so-no-inicio.md) | Aceita |
-| 0092 | [O histórico da conversa com o Piu é mantido](0092-historico-da-conversa-mantido.md) | Aceita |
+| 0092 | [O histórico da conversa com o Piu é mantido](0092-historico-da-conversa-mantido.md) | Aceita (revisada pelo ADR 0094) |
 | 0093 | [Limite diário de mensagens mantido, com aviso só perto do fim](0093-limite-diario-com-aviso-no-fim.md) | Aceita |
+| 0094 | [Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos](0094-perfil-so-com-dados-pessoais.md) | Aceita |
+| 0095 | [Editar o perfil salva os dados e leva ao Piu com o que mudou](0095-editar-perfil-leva-ao-piu.md) | Aceita |
+| 0096 | [Sair da conta pede confirmação](0096-sair-pede-confirmacao.md) | Aceita |
+| 0097 | [Frequência semanal no lugar de dias fixos](0097-frequencia-semanal-sem-dias-fixos.md) | Aceita |
 
 ## Como criar um novo ADR
 

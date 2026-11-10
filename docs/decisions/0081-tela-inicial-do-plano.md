@@ -1,6 +1,6 @@
 # ADR 0081: Tela inicial do Plano com objetivo, fases e semanas
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0094)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -22,5 +22,5 @@ A tela inicial não tem o gráfico de volume, que fica no detalhe do plano, nem 
 ## Consequências
 
 - A tela inicial fica com a visão do todo e da semana, e o Hoje continua com o dia a dia.
-- As semanas anteriores mostram o que foi feito sem um histórico à parte. O histórico de replanejamentos continua no Perfil (ADR 0038).
+- As semanas anteriores mostram o que foi feito sem um histórico à parte. O histórico de replanejamentos continua no Perfil (ADR 0038). *Revisado pelo ADR 0094: o histórico de replanejamentos saiu do Perfil.*
 - No plano genérico, que não tem fases, a tela começa pelo objetivo e segue para as semanas.

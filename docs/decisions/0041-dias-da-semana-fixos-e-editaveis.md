@@ -1,6 +1,6 @@
 # ADR 0041: Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil
 
-- **Status:** Aceita (revisada pelo ADR 0078)
+- **Status:** Substituída pelo ADR 0097
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O critério 3.3 diz que os treinos respeitam "os dias de corrida e musculação que informei", mas não estava definido se o usuário informa a quantidade de dias ou os dias da semana. A rotina de quem treina costuma ser fixa (trabalho, academia), mas pode mudar de forma pontual ou definitiva.
 
 ## Decisão
+
+*Substituída pelo ADR 0097: o usuário informa quantos dias por semana de corrida e de musculação, e o plano escolhe os dias.*
 
 - No setup, o usuário **marca os dias da semana de cada modalidade** e, na musculação, a divisão de cada dia (ex.: corrida seg/qua/sáb; musculação ter superiores e qui inferiores).
 - O plano usa exatamente esses dias. As regras usam a ordem dos dias para evitar corrida intensa depois de inferiores (critério 3.4).

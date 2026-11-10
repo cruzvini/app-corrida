@@ -50,12 +50,12 @@ flowchart TD
   C1 -- confirmar --> E
   B -- não --> D[Escolher nível vendo a descrição de cada um]
   D --> E["Idade de 10 a 100 (ADR 0042), peso e lesões ou limitações opcional 2.2"]
-  E --> F[Corrida: marcar os dias da semana 2.3]
+  E --> F[Corrida: quantos dias por semana 2.3]
   F --> G{Faz musculação?}
-  G -- sim --> G1[Musculação: marcar os dias e a divisão de cada um]
+  G -- sim --> G1[Musculação: quantos dias e a divisão em quantidade]
   G -- não --> DIAS
   G1 --> DIAS
-  DIAS((dias salvos, ADR 0041)) --> H{Tipo de plano 2.4}
+  DIAS((frequência salva; o plano escolhe os dias, ADR 0097)) --> H{Tipo de plano 2.4}
   H -- genérico --> INI
   H -- específico --> I[Distância livre e data da prova ou prazo 2.5]
   I --> J{Histórico suficiente para pace?}
@@ -253,18 +253,16 @@ flowchart TD
   J -- não --> E
 ```
 
-### Mudança nos dados do setup
+### Mudança nos dados pessoais
 
 ```mermaid
 flowchart TD
-  A([Perfil > Meu treino: dias, meta, prazo, nível ou lesões 6.5]) --> B[Salvar: ajustando seu plano, ADR 0061]
-  B --> C{Proposta ok?}
-  C -- falhou --> C1[Avisa e oferece tentar de novo, mudança preservada] --> B
-  C -- sim --> D[Revisão: antes e depois da estrutura e das semanas detalhadas]
-  D --> D1{Regras detectam risco?}
-  D1 -- sim --> D2[Aviso e alternativas 6.4] --> E
-  D1 -- não --> E{Decisão}
-  E -- aceitar --> F([Perfil atualizado; plano reajustado a partir de hoje])
-  E -- editar --> G[Piu com a proposta como contexto, ADR 0053] --> D
-  E -- descartar --> H([Perfil volta ao que era; plano não muda])
+  A([Perfil > Editar perfil: nível, idade, peso ou lesões 6.5]) --> B[Salvar: dados gravados na hora, ADR 0095]
+  B --> C[Piu abre com a mensagem do que mudou no campo]
+  C --> D{Usuário envia?}
+  D -- sai sem enviar --> E([Plano considera a mudança nos próximos detalhamentos e ajustes])
+  D -- envia, com ou sem texto a mais --> F[Piu analisa: IA propõe, regras validam]
+  F --> G{Precisa mudar o plano?}
+  G -- não --> H([Piu responde sem proposta])
+  G -- sim --> I([Proposta na conversa: segue a conversa livre da jornada 6])
 ```

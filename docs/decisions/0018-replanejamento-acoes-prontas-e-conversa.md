@@ -1,6 +1,6 @@
 # ADR 0018: Replanejamento por ações prontas e por conversa livre
 
-- **Status:** Aceita (revisada pelos ADRs 0078 e 0085)
+- **Status:** Aceita (revisada pelos ADRs 0078, 0085 e 0094)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -22,4 +22,4 @@ O app oferece dois caminhos para replanejar:
 - Mudanças que as regras considerem arriscadas seguem o ADR 0017: o app avisa e não bloqueia.
 - O histórico de replanejamentos fica registrado no app, e não espalhado em conversas.
 - **Aplicação depende do caminho:** as ações prontas aplicam a mudança direto, porque o efeito é previsível. Na conversa livre, o app mostra o antes e o depois, e o usuário aceita, edita ou descarta antes de aplicar.
-- **Desfazer:** a última ação pronta aplicada pode ser desfeita, logo após a ação e também pelo histórico de replanejamentos. Não há versionamento completo do plano no MVP.
+- **Desfazer:** a última ação pronta aplicada pode ser desfeita, logo após a ação e também pelo histórico de replanejamentos. Não há versionamento completo do plano no MVP. *Revisado pelo ADR 0094: não há mais histórico de replanejamentos na interface; o ajuste mais recente é desfeito pela mensagem dele em Notificações.*

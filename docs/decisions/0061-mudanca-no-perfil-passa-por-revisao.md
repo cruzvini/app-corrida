@@ -1,6 +1,6 @@
 # ADR 0061: Mudança nos dados do setup passa por revisão antes de valer
 
-- **Status:** Aceita
+- **Status:** Substituída pelo ADR 0095
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -8,6 +8,8 @@
 O critério 6.5 diz que o usuário pode mudar os dados do setup a qualquer momento (dias, meta, prazo, nível, lesões), em Perfil > Meu treino (ADRs 0038 e 0041), e que o plano é reajustado a partir de hoje. Faltava definir se o reajuste entra direto ou passa por revisão.
 
 ## Decisão
+
+*Substituída pelo ADR 0095: "Editar perfil" salva os dados na hora e leva ao Piu com uma mensagem do que mudou, sem tela de revisão própria.*
 
 O reajuste passa por revisão, como na geração do plano (jornada 3).
 
