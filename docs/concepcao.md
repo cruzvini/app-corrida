@@ -61,13 +61,13 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      8. Escolho quando quero começar: hoje, um dos próximos 5 dias ou outra data no calendário ([ADR 0043](decisions/0043-data-de-inicio-escolhida-no-setup.md)).
      9. Antes de gerar o plano, vejo um resumo das minhas respostas e posso editar qualquer uma.
    - **Jornada 3, geração do plano (validada):**
-     1. Depois do setup, o app gera o plano e mostra a estrutura completa (fases e volume semanal) e as próximas 1 a 2 semanas detalhadas (ADR 0023).
+     1. Depois do setup, o app gera o plano com a estrutura completa (fases e volume semanal) e as próximas 1 a 2 semanas detalhadas, que vejo na aba Plano (ADRs 0023 e 0102).
      2. Cada treino de corrida detalhado mostra o tipo (ex.: leve, limiar, intervalado, progressivo, longão) e é dividido em blocos (ex.: aquecimento, repetições, recuperação, desaquecimento). Cada bloco tem distância ou duração e um pace alvo, ou uma faixa de intensidade quando não houver meta de pace (ADR 0024).
      3. Os treinos respeitam a frequência de corrida e de musculação que informei, e a musculação aparece com a divisão do dia (ex.: inferiores) (ADR 0097).
      4. O plano não coloca corrida intensa logo depois de um treino de inferiores.
      5. No plano específico, o plano termina na data da prova ou no prazo da meta.
-     6. Se a validação das regras encontrar um risco, vejo o aviso e as alternativas antes de aceitar (ADR 0017).
-     7. Antes de aceitar, posso pedir ajustes. O plano só fica ativo depois que eu aceito.
+     6. Se a validação das regras encontrar um risco no plano gerado, recebo o aviso e as alternativas em Notificações (ADRs 0017 e 0102).
+     7. Depois de gerar, o plano fica ativo na hora e o app abre o Hoje. Para mudar o plano, converso com o Piu (ADR 0102).
      8. As semanas seguintes são detalhadas automaticamente, e recebo um resumo na caixa de entrada.
      9. Se a geração falhar (ex.: IA indisponível), o app avisa e permite tentar de novo, sem perder minhas respostas do setup.
    - **Jornada 4, dia a dia (validada):**

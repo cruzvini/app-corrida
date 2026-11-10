@@ -88,20 +88,14 @@ flowchart TD
   ERR -- tentar de novo --> B
   D -- sim --> E{Regras: erro de coerência?}
   E -- sim, ex.: frequência diferente da informada --> D1
-  E -- não --> F[Revisão do plano 3.1]
-  F --> F1["Estrutura completa: objetivo, fases e volume semanal"]
-  F --> F2["Próximas 1 a 2 semanas detalhadas, treinos em blocos 3.2"]
-  F --> G{Regras detectaram risco?}
-  G -- sim --> G1[Aviso e alternativas antes de aceitar 3.6]
-  G1 --> H
-  G -- não --> H{Decisão do usuário}
-  H -- pedir ajustes --> PIU[Piu com o plano como contexto 3.7]
-  PIU -- IA refaz a proposta, revisão mostra o antes e o depois --> C
-  H -- aceitar --> ATV[Plano ativo a partir da data escolhida, ADR 0043]
-  ATV --> HOJE([Barra de abas, aba Hoje])
+  E -- não --> ATV[Plano ativo na hora, a partir da data escolhida, sem revisão nem aceite 3.7, ADRs 0043 e 0102]
+  ATV --> G{Regras detectaram risco no plano gerado?}
+  G -- sim --> G1[Aviso e alternativas em Notificações, assinados pelo Piu 3.6]
+  G1 --> HOJE
+  G -- não --> HOJE([Barra de abas, aba Hoje; o plano completo fica na aba Plano 3.1])
 ```
 
-Depois do aceite, as semanas seguintes são detalhadas automaticamente na rotina das 22h do último dia de cada semana do plano (ADR 0044), e cada uma gera um resumo em Notificações (3.8).
+Depois de gerado, as semanas seguintes são detalhadas automaticamente na rotina das 22h do último dia de cada semana do plano (ADR 0044), e cada uma gera um resumo em Notificações (3.8).
 
 ## Jornada 4: dia a dia
 

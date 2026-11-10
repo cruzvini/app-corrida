@@ -1,6 +1,6 @@
 # ADR 0037: Onboarding e setup em fluxo linear, sem a barra de abas
 
-- **Status:** Aceita (revisada pelos ADRs 0095, 0097 e 0099)
+- **Status:** Aceita (revisada pelos ADRs 0095, 0097, 0099 e 0102)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -21,7 +21,7 @@ Onboarding, setup e geração formam um **fluxo linear em tela cheia, sem a barr
 8. Data de início do plano (ADR 0043).
 9. Resumo editável das respostas (critério 2.9).
 10. Geração do plano, com estado de carregamento e nova tentativa em caso de falha (critério 3.9).
-11. Revisão e aceite. "Pedir ajustes" abre o Piu (ADR 0035) com o plano como contexto.
+11. Revisão e aceite. "Pedir ajustes" abre o Piu (ADR 0035) com o plano como contexto. *Revisado pelo ADR 0102: não há revisão nem aceite; depois de gerar, o plano fica ativo e o app abre o Hoje.*
 
 Depois do aceite, o app passa para a barra de abas e abre no Hoje.
 

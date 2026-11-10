@@ -42,13 +42,13 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0034 | [Navegação por barra de abas inferior com Hoje no centro](0034-navegacao-por-abas-com-hoje-no-centro.md) | Aceita (revisada pelo ADR 0065) |
 | 0035 | [Assistente de conversa chamado Piu](0035-assistente-de-conversa-piu.md) | Aceita |
 | 0036 | [Tela de detalhe do treino como ponto central das ações](0036-tela-de-detalhe-do-treino.md) | Aceita (revisada pelos ADRs 0078 e 0084) |
-| 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita (revisada pelos ADRs 0095, 0097 e 0099) |
+| 0037 | [Onboarding e setup em fluxo linear, sem a barra de abas](0037-onboarding-e-setup-em-fluxo-linear.md) | Aceita (revisada pelos ADRs 0095, 0097, 0099 e 0102) |
 | 0038 | [Conteúdo da aba Perfil, com o histórico de replanejamentos](0038-conteudo-da-aba-perfil.md) | Aceita (revisada pelo ADR 0094) |
 | 0039 | [Lesões e limitações como campo opcional no setup](0039-lesoes-e-limitacoes-no-setup.md) | Aceita |
 | 0040 | [Falha na importação do histórico do Strava não bloqueia o setup](0040-falha-na-importacao-do-strava.md) | Aceita |
 | 0041 | [Dias da semana de cada modalidade escolhidos no setup e editáveis no Perfil](0041-dias-da-semana-fixos-e-editaveis.md) | Substituída pelo ADR 0097 |
 | 0042 | [Idade sem limite mínimo, só com validação de valor plausível](0042-idade-sem-limite-minimo.md) | Aceita |
-| 0043 | [Data de início do plano escolhida no setup](0043-data-de-inicio-escolhida-no-setup.md) | Aceita |
+| 0043 | [Data de início do plano escolhida no setup](0043-data-de-inicio-escolhida-no-setup.md) | Aceita (revisada pelo ADR 0102) |
 | 0044 | [Detalhamento da próxima semana na rotina das 22h do último dia da semana](0044-detalhamento-semanal-na-rotina-das-22h.md) | Aceita |
 | 0045 | [Atividade feita em outro dia não é ligada ao treino previsto](0045-atividade-em-outro-dia-nao-e-religada.md) | Aceita (revisada pelo ADR 0078) |
 | 0046 | [Atividades compatíveis do mesmo dia são somadas como um treino](0046-atividades-do-mesmo-dia-somadas.md) | Aceita |
@@ -105,6 +105,9 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0097 | [Frequência semanal no lugar de dias fixos](0097-frequencia-semanal-sem-dias-fixos.md) | Aceita (revisada pelo ADR 0098) |
 | 0098 | [Frequência semanal fica no Perfil, em Meus dados](0098-frequencia-semanal-no-perfil.md) | Aceita |
 | 0099 | [Nome no Perfil, sugerido pelo Strava](0099-nome-no-perfil.md) | Aceita |
+| 0100 | [Boas-vindas só com uma frase e o campo de e-mail](0100-boas-vindas-so-com-frase-e-email.md) | Aceita |
+| 0101 | [Progresso do setup com barra e contagem de passos](0101-progresso-do-setup-com-passos.md) | Aceita |
+| 0102 | [Plano fica ativo direto depois de gerar, sem tela de revisão e aceite](0102-plano-ativo-direto-apos-gerar.md) | Aceita |
 
 ## Como criar um novo ADR
 

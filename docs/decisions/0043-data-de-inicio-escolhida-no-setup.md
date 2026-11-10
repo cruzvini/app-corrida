@@ -1,6 +1,6 @@
 # ADR 0043: Data de início do plano escolhida no setup
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0102)
 - **Data:** 2026-10-20
 
 ## Contexto
@@ -22,5 +22,5 @@ A pergunta vem depois do tipo de plano e da meta, antes do resumo, e pode ser ed
 - A jornada 2 ganha um critério: "Escolho quando quero começar: hoje, um dos próximos dias ou outra data no calendário."
 - A primeira semana pode ser parcial; as regras ajustam o volume de forma proporcional.
 - Se o início for hoje e hoje for um dia marcado, o treino de hoje já aparece no Hoje depois do aceite.
-- Se o aceite acontecer depois da data de início escolhida (ex.: o usuário revisou no dia seguinte), o plano começa no dia do aceite, e o app avisa.
+- Se o aceite acontecer depois da data de início escolhida (ex.: o usuário revisou no dia seguinte), o plano começa no dia do aceite, e o app avisa. *Revisado pelo ADR 0102: não há aceite; se a geração terminar depois da data de início, o plano começa no dia da geração.*
 - Até a data de início, a aba Hoje mostra quando o plano começa e o primeiro treino.
