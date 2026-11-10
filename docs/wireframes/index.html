@@ -1787,6 +1787,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="pgroup">
                 <div class="prow"><span>Conexão</span><b>Conectado</b><span></span></div>
                 <div class="prow"><span>Última sincronização</span><b>há 12 min</b><span>↻</span></div>
+                <div class="prow danger"><span>Desconectar o Strava</span><b></b><span class="go">›</span></div>
               </div>
             </div>
             <div class="sec">
@@ -1808,7 +1809,7 @@ figcaption span { font-size: 13px; color: var(--note); }
         <figcaption>
           <strong>Perfil</strong>
           <span>Três seções curtas. Meus dados só mostra; para mudar, "Editar perfil". Strava mostra a conexão e a última sincronização, com atualização manual. O nome vem do primeiro nome do Strava no setup e pode ser trocado.</span>
-          <span class="refs">ADR 0019 · 0020 · 0064 · 0094 · 0095 · 0098 · 0099</span>
+          <span class="refs">ADR 0019 · 0020 · 0064 · 0094 · 0095 · 0098 · 0099 · 0116</span>
         </figcaption>
       </figure>
 
@@ -2033,16 +2034,17 @@ figcaption span { font-size: 13px; color: var(--note); }
           <div class="content">
             <div class="spacer"></div>
             <div class="dhead"><h3>Conecte o Strava</h3></div>
-            <p class="mtext">O Live Run usa as suas atividades do Strava para marcar os treinos como feitos e ajustar o plano. Sem a conexão, não dá para acompanhar o plano.</p>
-            <div class="note">O app só lê as suas atividades. Nada é publicado no Strava.</div>
+            <p class="mtext">O Live Run usa as suas atividades do Strava, inclusive as privadas, para marcar os treinos como feitos e ajustar o plano. Sem a conexão, não dá para acompanhar o plano.</p>
+            <div class="note">O app só lê o resumo das atividades das últimas 12 semanas, sem mapa nem GPS. Nada é publicado no Strava, e nada do Strava vai para a IA.</div>
             <div class="spacer"></div>
-            <div class="cta-main">Conectar o Strava</div>
+            <div class="cta-main">Connect with Strava</div>
+            <p class="hintc">Botão oficial do Strava, com a marca dele.</p>
           </div>
         </div>
         <figcaption>
           <strong>Conectar o Strava</strong>
           <span>Obrigatório. Explica por que antes de abrir a autorização. Se o usuário recusar ou cancelar, volta aqui com a explicação. Falha na importação do histórico oferece tentar de novo ou seguir sem histórico.</span>
-          <span class="refs">ADR 0019 · 0040 · crit. 1.3 a 1.6</span>
+          <span class="refs">ADR 0019 · 0040 · 0108 · 0110 · 0115 · crit. 1.3 a 1.6</span>
         </figcaption>
       </figure>
 

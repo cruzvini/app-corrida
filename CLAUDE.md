@@ -21,6 +21,7 @@ App Corrida: app para reunir dados de treinos de corrida e interagir com eles pa
 - Seguir a pirâmide de testes: unitários na base, integração no meio, E2E no topo. Respeitar os quality gates de CI antes de qualquer merge.
 - Nunca commitar segredos, chaves ou tokens. Usar variáveis de ambiente (`.env*` está no `.gitignore`; documentar as variáveis em `.env.example`).
 - Antes de qualquer ação irreversível ou que publique algo (push, criar recursos no GitHub/Supabase, etc.), mostrar o comando e pedir confirmação.
+- Ao fim de cada épico ou grande entrega, fazer um fechamento de tópico: resumir o que foi entregue (ADRs, PRs, board), listar o que ficou pendente e qual é o próximo épico, e indicar se é um bom momento para iniciar um novo contexto. O usuário decide quando trocar de contexto. Tudo o que for necessário para retomar deve estar no repositório, no board ou nos PRs, nunca só na conversa.
 
 ## Stack
 
@@ -28,7 +29,7 @@ App Corrida: app para reunir dados de treinos de corrida e interagir com eles pa
 - **Backend:** Supabase (Postgres, auth, RLS).
 - **Motor de regras:** pacote TypeScript isolado (`packages/rules-engine`).
 - **IA:** interface agnóstica de provedor (`packages/ai-provider`). Claude como primeira implementação, provedor fake para testes.
-- **Dados de treino:** Strava (polling agendado + pull-to-refresh).
+- **Dados de treino:** API do Strava (polling a cada 2h + atualização manual, conciliação dos últimos 7 dias). **Dados do Strava nunca vão para a IA**, nem derivados (ADR 0106): só o motor de regras os usa.
 - **Feedback:** caixa de entrada dentro do app, sem push.
 - **Design:** Claude (design mode), sem Figma.
 

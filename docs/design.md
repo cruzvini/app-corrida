@@ -13,4 +13,8 @@ Notas vivas do épico de design. As decisões fechadas viram ADR em `docs/decisi
 
 ## Próximos passos
 
-1. **Próximo card:** 5, identidade visual (paleta, tipografia e ícone) aplicada sobre os wireframes. Pendências herdadas: tons finais de feito, não feito e misto e dos selos (ADRs 0070 e 0073), contraste do dia atual na faixa (ADR 0074), riscado do antes e depois (ADR 0088) e ícone do Hoje com o número do dia (ADR 0034).
+1. **Reconciliação com o histórico remoto (2026-11-10):** o design desta sessão é o oficial. Do main remoto foram trazidos, como ADRs 0105 a 0136, o épico do Strava, a fronteira da IA (dados do Strava nunca vão para a IA), a marca do Strava e o planejamento de testes, CI e setup. Decisões em aberto, uma por vez:
+   1. **Modelo de carga:** declarar outras atividades no setup (natação, bike, funcional) e nota de esforço de 1 a 10 por treino, como no histórico remoto, ou manter só corrida e musculação.
+   2. **Identidade visual (card 5):** aproveitar a do histórico remoto (azul-ardósia, DM Sans, ícones Phosphor, ícone "Ritmo") ou refazer.
+   3. **Detalhamento semanal pela IA (ADRs 0023 e 0044):** hoje usa os treinos reais da semana, que vêm do Strava; com o ADR 0106, a IA só pode usar o plano, as marcações manuais e o texto do usuário, ou o detalhamento passa a ser feito pelas regras.
+2. **Próximo card:** 5, identidade visual (paleta, tipografia e ícone) aplicada sobre os wireframes. Pendências herdadas: tons finais de feito, não feito e misto e dos selos (ADRs 0070 e 0073), contraste do dia atual na faixa (ADR 0074), riscado do antes e depois (ADR 0088) e ícone do Hoje com o número do dia (ADR 0034).
