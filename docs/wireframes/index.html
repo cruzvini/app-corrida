@@ -150,7 +150,6 @@ figcaption span { font-size: 13px; color: var(--note); }
 .dacts { display: flex; gap: 5px; flex-wrap: wrap; }
 .dact { border: 1.5px solid var(--ink); border-radius: 99px; padding: 4px 9px; font-size: 11.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
 .dact.quiet { border-color: var(--line); font-weight: 500; }
-.dact.tbd { border-style: dashed; border-color: var(--muted); color: var(--muted); font-weight: 500; }
 .piu-link { font-size: 12.5px; font-weight: 600; display: flex; justify-content: space-between; color: var(--ink); }
 .piu-link span { color: var(--muted); }
 .dialog { position: absolute; left: 30px; right: 30px; top: 36%; background: var(--screen); border-radius: 14px; padding: 16px 14px 12px; display: grid; gap: 8px; text-align: center; }
@@ -159,14 +158,24 @@ figcaption span { font-size: 13px; color: var(--note); }
 .dialog .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
 .dialog .btns span { border: 1.5px solid var(--line); border-radius: 10px; padding: 7px; font-size: 13px; font-weight: 600; }
 .dialog .btns .strong { border-color: var(--ink); }
+.ctx { display: flex; gap: 8px; align-items: center; background: var(--fill); border-radius: 10px; padding: 7px 10px; font-size: 11.5px; color: var(--muted); }
+.ctx span { display: grid; }
+.ctx b { color: var(--ink); font-size: 12.5px; }
+.msg { max-width: 86%; justify-self: start; background: var(--fill); border-radius: 12px 12px 12px 4px; padding: 8px 10px; font-size: 12.5px; }
+.msg.me { justify-self: end; align-self: flex-end; background: none; border: 1.5px solid var(--ink); border-radius: 12px 12px 4px 12px; }
+.prop { border: 1.5px solid var(--ink); border-radius: 12px; padding: 10px; display: grid; gap: 6px; font-size: 12.5px; }
+.prop h5 { margin: 0; font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.prop .ba { display: grid; grid-template-columns: 46px 1fr; gap: 8px; }
+.prop .ba span { display: grid; }
+.prop s { color: var(--muted); }
+.prop small { color: var(--muted); font-size: 11px; }
+.prop .risk { margin: 0; font-size: 11.5px; color: var(--note); }
+.prop .btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; text-align: center; }
+.prop .btns span { border: 1.5px solid var(--line); border-radius: 9px; padding: 6px 0; font-size: 12px; font-weight: 600; }
+.prop .btns .strong { border-color: var(--ink); }
 .send { display: flex; gap: 6px; align-items: stretch; }
 .send .field { flex: 1; }
 .send .go { border: 1.5px solid var(--ink); border-radius: 10px; padding: 0 12px; display: grid; place-items: center; font-size: 12.5px; font-weight: 600; }
-.sheet .day-opt { display: grid; grid-template-columns: 52px 1fr; gap: 8px; align-items: center; border: 1px solid var(--line); border-radius: 10px; padding: 7px 10px; font-size: 12.5px; }
-.sheet .day-opt b { font-size: 12.5px; }
-.sheet .day-opt small { color: var(--muted); font-size: 11.5px; display: block; }
-.sheet .day-opt.cur { background: var(--fill); }
-.sheet .day-opt.risk small { color: var(--ink); }
 .sheet .hint { font-size: 11.5px; color: var(--muted); margin: 0; }
 .phone.tall .sheet { gap: 6px; }
 
@@ -628,9 +637,8 @@ figcaption span { font-size: 13px; color: var(--note); }
             </div>
           </div>
           <div class="dock">
-            <div class="dacts"><span class="dact">Marcar como feito</span><span class="dact tbd">Trocar dia</span><span class="dact tbd">Pular <i class="open">1</i></span></div>
+            <div class="dacts"><span class="dact">Replanejar com o Piu</span><span class="dact quiet">Marcar como feito</span></div>
             <div class="send"><div class="field"><b>Como foi?</b>Escreva quando quiser, antes ou depois</div><span class="go">Enviar</span></div>
-            <div class="piu-link">Falar com o Piu sobre este treino<span>›</span></div>
           </div>
           <nav class="tabbar">
             <div class="tab"><i class="ic"></i>Plano</div>
@@ -642,8 +650,8 @@ figcaption span { font-size: 13px; color: var(--note); }
         </div>
         <figcaption>
           <strong>Corrida prevista</strong>
-          <span>Cabeçalho com tipo, data, status e o total previsto; blocos em lista com o pace previsto de cada um. Embaixo, fixos: as ações do status, o campo de feedback e o Piu. "Trocar dia" e "Pular" estão tracejados porque estão em revisão (ponto 1).</span>
-          <span class="refs">ADR 0024 · 0025 · 0036 · 0066 · 0075 · 0076</span>
+          <span>Cabeçalho com tipo, data, status e o total previsto; blocos em lista com o pace previsto de cada um. Embaixo, fixos: as ações do status e o campo de feedback. Para mudar o treino, "Replanejar com o Piu", que nesse status ocupa o lugar do link do Piu.</span>
+          <span class="refs">ADR 0024 · 0025 · 0036 · 0066 · 0075 · 0076 · 0078</span>
         </figcaption>
       </figure>
 
@@ -659,7 +667,7 @@ figcaption span { font-size: 13px; color: var(--note); }
               <div class="row"><span class="chip">Feito · Strava</span></div>
             </div>
             <div class="sec">
-              <h5>Executado <i class="open">5</i></h5>
+              <h5>Executado</h5>
               <div class="result">
                 <div><b>8,7 km</b><small>distância</small></div>
                 <div><b>50:31</b><small>duração</small></div>
@@ -788,35 +796,41 @@ figcaption span { font-size: 13px; color: var(--note); }
         </figcaption>
       </figure>
 
-      <!-- D5: trocar dia -->
+      <!-- D5: replanejar com o Piu -->
       <figure class="state">
-        <div class="phone" aria-label="Detalhe, escolha do dia para trocar">
-          <div class="status"><span>7:44</span><span>●●● ▮</span></div>
+        <div class="phone tall" aria-label="Replanejar um treino com o Piu">
+          <div class="status"><span>7:46</span><span>●●● ▮</span></div>
           <div class="content">
-            <div class="navbar"><span>‹ Hoje</span></div>
-            <div class="dhead">
-              <h3><svg class="sx lg"><use href="#i-run"/></svg>Intervalado</h3>
-              <div class="sub">Segunda, 9 nov · Semana 3 de 10 · Base</div>
+            <div class="navbar"><span>‹ Intervalado</span><b>Piu</b><span></span></div>
+            <div class="ctx"><svg class="sx"><use href="#i-run"/></svg><span><b>Intervalado · Seg 9 nov</b>8,6 km · previsto</span></div>
+            <div class="msg">O que muda neste treino? Escolha um atalho ou me conte com as suas palavras.</div>
+            <div class="dacts"><span class="dact">Não vou fazer</span><span class="dact">Quero fazer em outro dia</span><span class="dact">Quero mudar o treino</span></div>
+            <div class="msg me">Quero fazer em outro dia. Hoje não consigo, amanhã sim.</div>
+            <div class="msg">Dá para fazer o intervalado amanhã no lugar do leve. Tiro o leve desta semana para manter o descanso de quarta antes das inferiores.</div>
+            <div class="prop">
+              <h5>Proposta</h5>
+              <div class="ba"><b>Seg 9</b><span><s>Intervalado 8,6 km</s>Livre</span></div>
+              <div class="ba"><b>Ter 10</b><span><s>Leve 5 km</s>Intervalado 8,6 km<small>a musculação de superiores continua</small></span></div>
+              <div class="ba"><b>Qua 11</b><span>Descanso, sem mudança</span></div>
+              <p class="risk">Semana com 5 km a menos de corrida.</p>
+              <div class="btns"><span class="strong">Aceitar</span><span>Editar</span><span>Descartar</span></div>
             </div>
           </div>
-          <div class="scrim"></div>
-          <div class="sheet">
-            <span class="grab"></span>
-            <h4>Trocar dia <i class="open">1</i></h4>
-            <p class="hint">Semana 3 do plano, 9 a 15 nov. Aplica na hora e pode ser desfeito.</p>
-            <div class="day-opt cur"><b>Seg 9</b><span>Dia atual do treino</span></div>
-            <div class="day-opt"><b>Ter 10</b><span>Troca com Leve 5 km<small>a musculação de terça fica onde está</small></span></div>
-            <div class="day-opt"><b>Qua 11</b><span>Muda para quarta<small>segunda fica livre</small></span></div>
-            <div class="day-opt"><b>Qui 12</b><span>Muda para quinta<small>dia de inferiores</small></span></div>
-            <div class="day-opt risk"><b>Sex 13</b><span>Troca com Leve 5 km<small>Atenção: intervalado logo depois de inferiores</small></span></div>
-            <div class="day-opt"><b>Sáb 14</b><span>Muda para sábado</span></div>
-            <div class="day-opt"><b>Dom 15</b><span>Troca com Longão 12 km</span></div>
+          <div class="dock">
+            <div class="send"><div class="field"><b>Mensagem para o Piu</b>Ex.: prefiro sexta</div><span class="go">Enviar</span></div>
           </div>
+          <nav class="tabbar">
+            <div class="tab"><i class="ic"></i>Plano</div>
+            <div class="tab"><i class="ic"></i>Piu</div>
+            <div class="tab center"><i class="ic">9</i>Hoje</div>
+            <div class="tab"><i class="ic"></i>Notificações<span class="badge">2</span></div>
+            <div class="tab"><i class="ic"></i>Perfil</div>
+          </nav>
         </div>
         <figcaption>
-          <strong>Trocar dia (em revisão)</strong>
-          <span>Rascunho da ação pronta do ADR 0057. Mexe só no dia escolhido e não reavalia o resto do plano, por isso está em revisão junto com o "Pular" (ponto 1).</span>
-          <span class="refs">ADR 0017 · 0045 · 0057 · crit. 6.1, 6.2, 6.4</span>
+          <strong>Replanejar com o Piu</strong>
+          <span>Aberto pelo "Replanejar" no treino previsto. O Piu já sabe de qual treino se trata e oferece atalhos, mas aceita qualquer texto. A proposta mostra o antes e o depois dos dias afetados, não só do treino, e só vale depois de aceita. Se ficar pendente, vai para Notificações.</span>
+          <span class="refs">ADR 0017 · 0022 · 0053 · 0062 · 0078 · crit. 4.6, 6.3, 6.4</span>
         </figcaption>
       </figure>
 
@@ -853,15 +867,14 @@ figcaption span { font-size: 13px; color: var(--note); }
   </section>
 
   <section class="screen-group" id="pontos-detalhe">
-    <div class="eyebrow">Para decidir, um por vez</div>
+    <div class="eyebrow">Todos decididos · ADRs 0075 a 0079</div>
     <h2>Pontos do detalhe do treino</h2>
     <div class="questions">
-      <div class="q next">
+      <div class="q done">
         <i class="open">1</i>
         <div>
-          <p class="tag">Próxima pergunta · reaberto</p>
-          <p><b>O que entra no lugar de "Pular" e "Trocar dia"?</b> As duas ações mexem só no treino escolhido. Um treino não feito, feito de outro jeito ou mudado de dia deve fazer o app reavaliar os próximos dias.</p>
-          <p class="why">Pelo Strava isso já é automático: treino não feito ajusta o plano (ADR 0026), e treino bem acima do previsto também (ADR 0027). Falta decidir o que o usuário toca no detalhe quando quer mudar o treino antes de ele acontecer.</p>
+          <p class="tag">Decidido · ADR 0078</p>
+          <p><b>Mudar um treino:</b> "Pular" e "Trocar dia" saem. No treino previsto, "Replanejar" abre o Piu com atalhos, e a proposta reavalia também os próximos dias.</p>
         </div>
       </div>
       <div class="q done">
@@ -885,12 +898,11 @@ figcaption span { font-size: 13px; color: var(--note); }
           <p><b>Apagar feedback:</b> pede confirmação.</p>
         </div>
       </div>
-      <div class="q">
+      <div class="q done">
         <i class="open">5</i>
         <div>
-          <p class="tag">Em aberto · novo</p>
-          <p><b>Executado:</b> só o resumo do Strava (distância, duração e pace médio) ou também o pace de cada km ou volta?</p>
-          <p class="why">O pace por km ou volta precisa dos dados detalhados da atividade no Strava, que o ADR 0024 deixou de fora. Por enquanto o wireframe mostra só o resumo.</p>
+          <p class="tag">Decidido · ADR 0079</p>
+          <p><b>Executado:</b> só o resumo do Strava (distância, duração e pace médio), sem pace por km ou volta.</p>
         </div>
       </div>
     </div>
