@@ -1,0 +1,429 @@
+<title>Telas do Live Run</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+/* Layout: página de documentação calma; cada estado em um par de celulares (claro e escuro) com a legenda ao lado. */
+:root {
+  --pg-fundo: #eef1f2;
+  --pg-texto: #161a1c;
+  --pg-suave: #545c60;
+  --pg-linha: #d9dee0;
+  --pg-acento: #3d5a80;
+  --pg-moldura: #20272a;
+  --pg-fonte: "DM Sans", -apple-system, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --pg-fundo: #0b0e0f; --pg-texto: #eceff0; --pg-suave: #a3acb0; --pg-linha: #2f3639; --pg-acento: #9fb6d6; --pg-moldura: #39434a; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --pg-fundo: #0b0e0f; --pg-texto: #eceff0; --pg-suave: #a3acb0; --pg-linha: #2f3639; --pg-acento: #9fb6d6; --pg-moldura: #39434a; color-scheme: dark; }
+
+/* Tokens do design system Live Run (cópia do tokens.json, ADR 0148). Atualizar junto com o design system. */
+.app-claro {
+  --fundo: #f6f8f8; --superficie: #ffffff; --neutro-suave: #eceff0; --borda: #d9dee0; --borda-forte: #939ca0;
+  --texto: #161a1c; --texto-secundario: #545c60;
+  --primaria: #3d5a80; --primaria-press: #2f4766; --sobre-primaria: #ffffff; --primaria-suave: #e6ecf4;
+  --status-feito: #23854a; --status-feito-fundo: rgba(35, 133, 74, 0.12);
+  --status-nao-feito: #a16207; --status-nao-feito-fundo: rgba(161, 98, 7, 0.12);
+  --sobre-status: #ffffff; --risco: #b3261e; --risco-suave: #fbe7e5;
+  --veu: rgba(15, 18, 19, 0.45);
+}
+.app-escuro {
+  --fundo: #0f1213; --superficie: #1b2022; --neutro-suave: #252b2d; --borda: #2f3639; --borda-forte: #6b7478;
+  --texto: #eceff0; --texto-secundario: #a3acb0;
+  --primaria: #9fb6d6; --primaria-press: #b8cae3; --sobre-primaria: #0f1213; --primaria-suave: #1f2d42;
+  --status-feito: #4fc27a; --status-feito-fundo: rgba(79, 194, 122, 0.18);
+  --status-nao-feito: #e8b339; --status-nao-feito-fundo: rgba(232, 179, 57, 0.18);
+  --sobre-status: #0f1213; --risco: #ff8a80; --risco-suave: #3d1c1a;
+  --veu: rgba(0, 0, 0, 0.6);
+}
+.app-claro, .app-escuro { --raio-campo: 12px; --raio-card: 16px; --raio-pilula: 999px; }
+
+* { box-sizing: border-box; }
+body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--pg-fonte); font-size: 15px; line-height: 22px; }
+.pagina { max-width: 1180px; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.cabeca { display: grid; gap: 12px; max-width: 680px; }
+.cabeca h1 { margin: 0; font-size: clamp(32px, 6vw, 48px); line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+.cabeca p { margin: 0; color: var(--pg-suave); }
+.cabeca a { color: var(--pg-acento); font-weight: 500; }
+.telas { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
+.telas li { font-size: 13px; line-height: 18px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--pg-linha); color: var(--pg-suave); }
+.telas li.feita { border-color: var(--pg-acento); color: var(--pg-acento); font-weight: 700; }
+.grupo { margin-top: 56px; display: grid; gap: 32px; }
+.grupo > header { display: grid; gap: 8px; max-width: 680px; }
+.grupo h2 { margin: 0; font-size: 32px; line-height: 38px; font-weight: 700; letter-spacing: -0.01em; }
+.grupo > header p { margin: 0; color: var(--pg-suave); }
+.estado { margin: 0; display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); gap: 24px 32px; align-items: start; padding-top: 32px; border-top: 1px solid var(--pg-linha); }
+.par { display: flex; flex-wrap: wrap; gap: 24px; }
+.estado figcaption { display: grid; gap: 8px; max-width: 420px; min-width: 0; }
+.estado figcaption strong { font-size: 20px; line-height: 26px; }
+.estado figcaption span { color: var(--pg-suave); }
+.estado figcaption .refs { font-size: 13px; line-height: 18px; }
+@media (max-width: 1100px) { .estado { grid-template-columns: minmax(0, 1fr); } }
+.propostas { display: grid; gap: 12px; padding-top: 32px; border-top: 1px solid var(--pg-linha); max-width: 760px; }
+.propostas h3 { margin: 0; font-size: 20px; line-height: 26px; }
+.propostas ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; color: var(--pg-suave); }
+.propostas b { color: var(--pg-texto); font-weight: 500; }
+
+/* Celular */
+.rotulo-tema { display: block; margin: 0 0 10px 6px; font-size: 13px; line-height: 18px; color: var(--pg-suave); }
+.celular { position: relative; width: min(375px, calc(100vw - 32px)); height: 800px; border-radius: 48px; overflow: hidden; background: var(--fundo); color: var(--texto); font-family: "DM Sans", -apple-system, system-ui, sans-serif; font-size: 15px; line-height: 22px; box-shadow: 0 0 0 8px var(--pg-moldura); margin: 8px; }
+.ico { width: 1em; height: 1em; fill: currentColor; flex: none; }
+.barra-status { display: flex; justify-content: space-between; align-items: center; padding: 16px 30px 8px; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.barra-status .sinais { display: flex; gap: 5px; font-size: 17px; }
+.tela { padding: 4px 16px 140px; display: flex; flex-direction: column; gap: 16px; }
+.topo { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.topo h3 { margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.01em; }
+.topo .sub { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.sync { display: flex; align-items: center; gap: 6px; font-size: 13px; line-height: 18px; color: var(--texto-secundario); white-space: nowrap; }
+.sync .btn-icone { width: 36px; height: 36px; border-radius: 50%; background: var(--neutro-suave); color: var(--texto); display: grid; place-items: center; font-size: 18px; }
+.recado { background: var(--neutro-suave); border-radius: var(--raio-campo); padding: 10px 12px; font-size: 13px; line-height: 18px; }
+
+.card { background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio-card); padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.card-topo { display: flex; align-items: center; gap: 12px; }
+.icone-caixa { width: 40px; height: 40px; border-radius: var(--raio-campo); background: var(--primaria-suave); color: var(--primaria); display: grid; place-items: center; font-size: 22px; flex: none; }
+.card-topo .nome { flex: 1; min-width: 0; font-size: 18px; line-height: 24px; font-weight: 700; }
+.chip { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; line-height: 16px; font-weight: 500; padding: 4px 10px; border-radius: var(--raio-pilula); border: 1px solid var(--borda-forte); color: var(--texto-secundario); white-space: nowrap; }
+.chip.feito { border-color: var(--status-feito); color: var(--texto); background: var(--status-feito-fundo); }
+.chip.feito .ico { color: var(--status-feito); font-size: 14px; }
+.chip .ico { font-size: 14px; }
+.medida { display: flex; align-items: baseline; gap: 8px; }
+.medida b { font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.medida span { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.blocos { display: grid; }
+.blocos div { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--borda); }
+.blocos div:first-child { border-top: 0; padding-top: 0; }
+.blocos em { font-style: normal; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ver { display: inline-flex; align-items: center; gap: 4px; color: var(--primaria); font-weight: 500; min-height: 24px; }
+.resultado { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.resultado b { display: block; font-size: 24px; line-height: 30px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.resultado small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.campo { display: grid; gap: 6px; }
+.campo label { font-size: 13px; line-height: 18px; font-weight: 500; }
+.campo .entrada { min-height: 44px; border: 1px solid var(--borda); border-radius: var(--raio-campo); background: var(--fundo); padding: 11px 12px; color: var(--texto-secundario); }
+
+.aviso { background: var(--neutro-suave); border-radius: var(--raio-card); padding: 16px; display: grid; gap: 8px; }
+.aviso .tit { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.aviso .tit .ico { font-size: 20px; }
+.aviso p { margin: 0; font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.botao { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: var(--raio-pilula); background: var(--primaria); color: var(--sobre-primaria); font-size: 16px; line-height: 20px; font-weight: 500; justify-self: start; margin-top: 4px; }
+
+.linha-treino { display: flex; align-items: center; gap: 12px; background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio-card); padding: 12px 14px; }
+.linha-treino .icone-caixa { width: 36px; height: 36px; font-size: 20px; }
+.linha-treino .txt { flex: 1; min-width: 0; display: grid; }
+.linha-treino .txt b { font-weight: 700; }
+.linha-treino .txt small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.linha-treino > .ico { color: var(--texto-secundario); font-size: 18px; }
+
+.descanso { background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio-card); padding: 28px 20px; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.01em; }
+
+/* Faixa de 7 dias: componente DiaDaFaixa (ADRs 0142 e 0144) */
+.faixa { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; padding-top: 8px; }
+.col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.dia { position: relative; width: 100%; min-height: 100px; border-radius: var(--raio-campo); border: 2px solid var(--borda); background: var(--superficie); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 6px 2px; text-align: center; }
+.dia::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--f, transparent); }
+.dia > * { position: relative; }
+.dia .sem { font-size: 11px; line-height: 14px; font-weight: 500; color: var(--texto-secundario); }
+.dia .num { font-size: 16px; line-height: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.dia .tipo { font-size: 11px; line-height: 13px; color: var(--texto-secundario); }
+.dia .ics { display: flex; gap: 1px; color: var(--primaria); font-size: 16px; min-height: 16px; margin-top: 2px; }
+.dia .ics.duplo { font-size: 14px; }
+.dia.feito, .dia.misto { border-color: var(--status-feito); --f: var(--status-feito-fundo); --s: var(--status-feito); }
+.dia.nao { border-color: var(--status-nao-feito); --f: var(--status-nao-feito-fundo); --s: var(--status-nao-feito); }
+.dia.desc { border-style: dashed; }
+.dia.tocado { box-shadow: 0 0 0 3px var(--primaria-suave); }
+.selo { position: absolute; top: -8px; right: -8px; width: 18px; height: 18px; border-radius: 50%; background: var(--s); color: var(--sobre-status); display: grid; place-items: center; font-size: 11px; line-height: 1; font-weight: 700; box-shadow: 0 0 0 2px var(--fundo); z-index: 1; }
+.marca { width: 20px; height: 4px; border-radius: 2px; }
+.marca.hoje { background: var(--primaria); }
+
+/* Barra de abas: componente BarraDeAbas (ADR 0147) */
+.abas { position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(5, 1fr); background: var(--superficie); border-top: 1px solid var(--borda); padding: 8px 0 30px; z-index: 2; }
+.aba { position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11px; line-height: 14px; font-weight: 500; color: var(--texto-secundario); }
+.aba .pilula { height: 28px; min-width: 48px; border-radius: var(--raio-pilula); display: grid; place-items: center; font-size: 22px; }
+.aba.on { color: var(--primaria); font-weight: 700; }
+.aba.on .pilula { background: var(--primaria-suave); }
+.aba .contagem { position: absolute; top: -2px; left: calc(50% + 6px); min-width: 16px; height: 16px; padding: 0 4px; border-radius: 999px; background: var(--primaria); color: var(--sobre-primaria); font-size: 10px; line-height: 16px; font-weight: 700; text-align: center; box-shadow: 0 0 0 2px var(--superficie); }
+.circulo-hoje { position: absolute; top: -30px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; background: var(--primaria-suave); color: var(--primaria); box-shadow: 0 0 0 4px var(--fundo); }
+.aba.on .circulo-hoje { background: var(--primaria); color: var(--sobre-primaria); }
+.vaga { height: 28px; }
+
+/* Folha da escolha do treino (ADR 0069) */
+.veu { position: absolute; inset: 0; background: var(--veu); z-index: 3; }
+.folha { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; background: var(--superficie); border-radius: 24px 24px 0 0; padding: 10px 16px 40px; display: grid; gap: 12px; }
+.folha .alca { justify-self: center; width: 36px; height: 5px; border-radius: 3px; background: var(--borda-forte); }
+.folha h4 { margin: 4px 0 0; font-size: 18px; line-height: 24px; font-weight: 700; }
+.folha .linha-treino { border-width: 2px; position: relative; overflow: hidden; }
+.folha .linha-treino::before { content: ""; position: absolute; inset: 0; background: var(--f, transparent); }
+.folha .linha-treino > * { position: relative; }
+.folha .linha-treino.feito { border-color: var(--status-feito); --f: var(--status-feito-fundo); }
+.folha .linha-treino.nao { border-color: var(--status-nao-feito); --f: var(--status-nao-feito-fundo); }
+</style>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol></svg>
+
+<div class="pagina">
+  <header class="cabeca">
+    <h1>Telas do Live Run</h1>
+    <p>Alta fidelidade sobre os wireframes, com a identidade do design system Live Run (ADRs 0138 e 0140 a 0148). Cada estado aparece no tema claro e no escuro. Os wireframes continuam como referência de estrutura e fluxo.</p>
+    <ul class="telas" aria-label="Telas">
+      <li class="feita">Hoje</li>
+      <li>Detalhe do treino</li>
+      <li>Plano</li>
+      <li>Notificações</li>
+      <li>Piu</li>
+      <li>Perfil</li>
+      <li>Onboarding e setup</li>
+    </ul>
+  </header>
+
+  <section class="grupo" id="hoje">
+    <header>
+      <h2>Hoje</h2>
+      <p>Aba central, aberta ao entrar no app. O treino do dia em cima e, embaixo, a faixa de 7 dias com o dia atual no centro. Seis estados, de segunda a quarta, 9 a 11 de novembro.</p>
+    </header>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>7:42</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="topo">
+            <div><h3>Segunda, 9 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
+            <div class="sync">há 12 min <span class="btn-icone" aria-label="Atualizar"><svg class="ico"><use href="#i-arrows-clockwise"/></svg></span></div>
+          </div>
+          <div class="recado">Já está atualizado. Você pode atualizar de novo às 8:00.</div>
+          <div class="card">
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><span class="nome">Intervalado</span><span class="chip">Previsto</span></div>
+            <div class="medida"><b>8,6 km</b><span>~50 min</span></div>
+            <div class="blocos">
+              <div><span>Aquecimento 2 km</span><em>6:20/km</em></div>
+              <div><span>5 × 800 m</span><em>4:50/km</em></div>
+              <div><span>Recuperação 400 m entre as séries</span><em>7:00/km</em></div>
+              <div><span>Desaquecimento 1 km</span><em>6:30/km</em></div>
+            </div>
+            <span class="ver">Ver treino <svg class="ico"><use href="#i-caret-right"/></svg></span>
+          </div>
+          <div class="faixa" data-dias='[["Sex",6,"Leve",["run"],"nao"],["Sáb",7,"—",[],"desc"],["Dom",8,"Longo",["run"],"feito"],["Seg",9,"Int",["run"],"",1],["Ter",10,"Leve Sup",["run","gym"],""],["Qua",11,"—",[],"desc"],["Qui",12,"Inf",["gym"],""]]'></div>
+        </div>
+        <nav class="abas" data-hoje="9" data-contagem="2" data-aberta="Hoje"></nav>
+      </template>
+      <figcaption>
+        <strong>Antes do treino</strong>
+        <span>O card mostra o tipo, a distância total em destaque e os blocos com o pace alvo, sem botões de ação. Tocar no card abre o detalhe. O recado aparece quando a atualização é pedida antes dos 30 minutos.</span>
+        <span class="refs">ADRs 0024, 0036, 0064, 0065, 0066, 0142, 0144 e 0147 · componentes DiaDaFaixa, IconeDeAtividade e BarraDeAbas</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>19:15</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="topo">
+            <div><h3>Segunda, 9 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
+            <div class="sync">agora <span class="btn-icone" aria-label="Atualizar"><svg class="ico"><use href="#i-arrows-clockwise"/></svg></span></div>
+          </div>
+          <div class="card">
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><span class="nome">Intervalado</span><span class="chip feito"><svg class="ico"><use href="#i-check-fill"/></svg>Feito · Strava</span></div>
+            <div class="resultado">
+              <div><b>8,7 km</b><small>distância</small></div>
+              <div><b>50:31</b><small>duração</small></div>
+              <div><b>5:48</b><small>pace médio</small></div>
+            </div>
+            <div class="campo"><label>Como foi?</label><div class="entrada">Ex.: senti a panturrilha no fim</div></div>
+            <span class="ver">Ver treino <svg class="ico"><use href="#i-caret-right"/></svg></span>
+          </div>
+          <div class="faixa" data-dias='[["Sex",6,"Leve",["run"],"nao"],["Sáb",7,"—",[],"desc"],["Dom",8,"Longo",["run"],"feito"],["Seg",9,"Int",["run"],"feito",1],["Ter",10,"Leve Sup",["run","gym"],""],["Qua",11,"—",[],"desc"],["Qui",12,"Inf",["gym"],""]]'></div>
+        </div>
+        <nav class="abas" data-hoje="9" data-contagem="2" data-aberta="Hoje"></nav>
+      </template>
+      <figcaption>
+        <strong>Treino feito</strong>
+        <span>O Strava sincronizou a corrida. O card troca os blocos pelo resumo, com os três números grandes, e mostra o campo opcional "Como foi?". Na faixa, o dia atual fica verde com o selo ✓ e mantém a barra embaixo.</span>
+        <span class="refs">ADRs 0025, 0046, 0048, 0142 e 0144</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>21:05</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="topo">
+            <div><h3>Segunda, 9 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
+            <div class="sync">falhou <span class="btn-icone" aria-label="Atualizar"><svg class="ico"><use href="#i-arrows-clockwise"/></svg></span></div>
+          </div>
+          <div class="aviso">
+            <span class="tit"><svg class="ico"><use href="#i-cloud-slash"/></svg>Não conseguimos falar com o Strava</span>
+            <p>Seus treinos ficam pendentes até a conexão voltar. Nada é marcado como não feito enquanto isso.</p>
+            <span class="botao">Reconectar o Strava</span>
+          </div>
+          <div class="card">
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><span class="nome">Intervalado</span><span class="chip"><svg class="ico"><use href="#i-arrows-clockwise"/></svg>Pendente</span></div>
+            <div class="medida"><b>8,6 km</b><span>~50 min</span></div>
+            <div class="blocos">
+              <div><span>Aquecimento 2 km</span><em>6:20/km</em></div>
+              <div><span>5 × 800 m</span><em>4:50/km</em></div>
+              <div><span>Recuperação 400 m entre as séries</span><em>7:00/km</em></div>
+              <div><span>Desaquecimento 1 km</span><em>6:30/km</em></div>
+            </div>
+            <span class="ver">Ver treino <svg class="ico"><use href="#i-caret-right"/></svg></span>
+          </div>
+          <div class="faixa" data-dias='[["Sex",6,"Leve",["run"],"nao"],["Sáb",7,"—",[],"desc"],["Dom",8,"Longo",["run"],"feito"],["Seg",9,"Int",["run"],"",1],["Ter",10,"Leve Sup",["run","gym"],""],["Qua",11,"—",[],"desc"],["Qui",12,"Inf",["gym"],""]]'></div>
+        </div>
+        <nav class="abas" data-hoje="9" data-contagem="2" data-aberta="Hoje"></nav>
+      </template>
+      <figcaption>
+        <strong>Falha no Strava</strong>
+        <span>O aviso fica no topo, em tom neutro, porque não é risco: o vermelho fica só para dor, lesão e carga. O treino aparece como pendente, com o contorno padrão na faixa, e ainda pode ser marcado no detalhe.</span>
+        <span class="refs">ADRs 0049, 0138 e 0142</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>7:10</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="topo">
+            <div><h3>Terça, 10 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
+            <div class="sync">há 40 min <span class="btn-icone" aria-label="Atualizar"><svg class="ico"><use href="#i-arrows-clockwise"/></svg></span></div>
+          </div>
+          <div class="card">
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><span class="nome">Leve</span><span class="chip">Previsto</span></div>
+            <div class="medida"><b>5 km</b><span>~33 min</span></div>
+            <div class="blocos">
+              <div><span>Corrida contínua 5 km</span><em>6:20 a 6:40/km</em></div>
+            </div>
+            <span class="ver">Ver treino <svg class="ico"><use href="#i-caret-right"/></svg></span>
+          </div>
+          <div class="linha-treino">
+            <span class="icone-caixa"><svg class="ico"><use href="#i-barbell"/></svg></span>
+            <span class="txt"><b>Musculação</b><small>Superiores</small></span>
+            <span class="chip">Previsto</span>
+            <svg class="ico"><use href="#i-caret-right"/></svg>
+          </div>
+          <div class="faixa" data-dias='[["Sáb",7,"—",[],"desc"],["Dom",8,"Longo",["run"],"feito"],["Seg",9,"Int",["run"],"feito"],["Ter",10,"Leve Sup",["run","gym"],"",1],["Qua",11,"—",[],"desc"],["Qui",12,"Inf",["gym"],""],["Sex",13,"Leve",["run"],""]]'></div>
+        </div>
+        <nav class="abas" data-hoje="10" data-contagem="1" data-aberta="Hoje"></nav>
+      </template>
+      <figcaption>
+        <strong>Corrida e musculação no mesmo dia</strong>
+        <span>A corrida ocupa o card principal. A musculação aparece numa linha, com a divisão e o status. Na faixa, o dia mostra os dois ícones menores. Se a corrida for feita de manhã, o dia segue com o contorno padrão até a musculação ser resolvida ou até as 22h.</span>
+        <span class="refs">ADRs 0014, 0067, 0072, 0146 e 0147</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>8:30</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="topo">
+            <div><h3>Quarta, 11 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
+            <div class="sync">há 5 min <span class="btn-icone" aria-label="Atualizar"><svg class="ico"><use href="#i-arrows-clockwise"/></svg></span></div>
+          </div>
+          <div class="descanso">Dia de descanso</div>
+          <div class="faixa" data-dias='[["Dom",8,"Longo",["run"],"feito"],["Seg",9,"Int",["run"],"feito"],["Ter",10,"Leve Sup",["run","gym"],"misto"],["Qua",11,"—",[],"desc",1],["Qui",12,"Inf",["gym"],""],["Sex",13,"Leve Sup",["run","gym"],""],["Sáb",14,"—",[],"desc"]]'></div>
+        </div>
+        <nav class="abas" data-hoje="11" data-aberta="Hoje"></nav>
+      </template>
+      <figcaption>
+        <strong>Dia de descanso</strong>
+        <span>O lugar do card mostra só "Dia de descanso", sem ações. Na faixa, a terça teve a corrida feita e a musculação não feita: o dia misto fica verde com o selo "!". O dia atual de descanso tem o contorno tracejado e a barra embaixo.</span>
+        <span class="refs">ADRs 0068, 0071, 0142 e 0144</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>8:31</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="topo">
+            <div><h3>Quarta, 11 nov</h3><div class="sub">Semana 3 de 10 · Base</div></div>
+            <div class="sync">há 6 min <span class="btn-icone" aria-label="Atualizar"><svg class="ico"><use href="#i-arrows-clockwise"/></svg></span></div>
+          </div>
+          <div class="descanso">Dia de descanso</div>
+          <div class="faixa" data-dias='[["Dom",8,"Longo",["run"],"feito"],["Seg",9,"Int",["run"],"feito"],["Ter",10,"Leve Sup",["run","gym"],"misto",0,1],["Qua",11,"—",[],"desc",1],["Qui",12,"Inf",["gym"],""],["Sex",13,"Leve Sup",["run","gym"],""],["Sáb",14,"—",[],"desc"]]'></div>
+        </div>
+        <nav class="abas" data-hoje="11" data-aberta="Hoje"></nav>
+        <div class="veu"></div>
+        <div class="folha">
+          <span class="alca"></span>
+          <h4>Terça, 10 nov</h4>
+          <div class="linha-treino feito">
+            <span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span>
+            <span class="txt"><b>Corrida · Leve</b><small>Feito · 5,1 km · 6:28/km</small></span>
+            <svg class="ico"><use href="#i-caret-right"/></svg>
+          </div>
+          <div class="linha-treino nao">
+            <span class="icone-caixa"><svg class="ico"><use href="#i-barbell"/></svg></span>
+            <span class="txt"><b>Musculação · Superiores</b><small>Não feito</small></span>
+            <svg class="ico"><use href="#i-caret-right"/></svg>
+          </div>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Escolha do treino</strong>
+        <span>Tocar na terça, que teve dois treinos, abre uma folha com os dois. Cada linha leva ao detalhe, com o contorno e o fundo do status daquele treino. Um dia com um treino só abre o detalhe direto.</span>
+        <span class="refs">ADRs 0036, 0069, 0070 e 0142</span>
+      </figcaption>
+    </figure>
+
+    <div class="propostas">
+      <h3>Propostas desta tela a confirmar</h3>
+      <ol>
+        <li><b>Chips de status no card:</b> "Previsto" e "Pendente" em contorno neutro; "Feito · Strava" com o fundo e o contorno do status feito e um ✓.</li>
+        <li><b>Aviso de falha do Strava:</b> bloco neutro com ícone de nuvem cortada e botão principal, sem vermelho.</li>
+        <li><b>Contagem de não lidas na aba Notificações:</b> pílula pequena em ardósia sobre o sino.</li>
+        <li><b>Folha da escolha do treino:</b> véu escuro sobre a tela e folha com cantos de 24 px, alça e as linhas com o status.</li>
+        <li><b>Distância em destaque:</b> o número grande do card (30 px) é a distância total; o tempo vai ao lado, menor.</li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var ICONES = { run: "person-simple-run", gym: "barbell" };
+  var SELOS = { feito: "✓", nao: "✕", misto: "!" };
+  function ico(nome) { return '<svg class="ico" aria-hidden="true"><use href="#i-' + nome + '"/></svg>'; }
+
+  function faixa(el) {
+    var dias = JSON.parse(el.dataset.dias);
+    el.innerHTML = dias.map(function (d) {
+      var sem = d[0], num = d[1], tipo = d[2], ics = d[3], st = d[4], hoje = d[5], tocado = d[6];
+      var selo = SELOS[st] ? '<span class="selo" aria-hidden="true">' + SELOS[st] + '</span>' : '';
+      return '<div class="col"><div class="dia ' + (st || '') + (tocado ? ' tocado' : '') + '">' + selo +
+        '<span class="sem">' + sem + '</span><span class="num">' + num + '</span><span class="tipo">' + tipo + '</span>' +
+        '<span class="ics' + (ics.length > 1 ? ' duplo' : '') + '">' + ics.map(function (i) { return ico(ICONES[i]); }).join("") + '</span></div>' +
+        '<span class="marca' + (hoje ? ' hoje' : '') + '"></span></div>';
+    }).join("");
+  }
+
+  var ABAS = [["Plano", "calendar-blank"], ["Piu", "chat-circle"], ["Hoje", null], ["Notificações", "bell"], ["Perfil", "user"]];
+  function abas(el) {
+    var aberta = el.dataset.aberta, n = el.dataset.contagem;
+    el.innerHTML = ABAS.map(function (a) {
+      var on = a[0] === aberta;
+      if (!a[1]) return '<div class="aba' + (on ? ' on' : '') + '"><span class="circulo-hoje">' + el.dataset.hoje + '</span><span class="vaga"></span><span>Hoje</span></div>';
+      var cont = a[0] === "Notificações" && n ? '<span class="contagem">' + n + '</span>' : '';
+      return '<div class="aba' + (on ? ' on' : '') + '"><span class="pilula">' + ico(a[1] + (on ? '-fill' : '')) + '</span>' + cont + '<span>' + a[0] + '</span></div>';
+    }).join("");
+  }
+
+  document.querySelectorAll("figure.estado").forEach(function (fig) {
+    var tpl = fig.querySelector("template");
+    var par = document.createElement("div");
+    par.className = "par";
+    [["app-claro", "Claro"], ["app-escuro", "Escuro"]].forEach(function (t) {
+      var wrap = document.createElement("div");
+      var cel = document.createElement("div");
+      cel.className = "celular " + t[0];
+      cel.appendChild(tpl.content.cloneNode(true));
+      cel.querySelectorAll(".faixa").forEach(faixa);
+      cel.querySelectorAll(".abas").forEach(abas);
+      wrap.innerHTML = '<span class="rotulo-tema">' + t[1] + '</span>';
+      wrap.appendChild(cel);
+      par.appendChild(wrap);
+    });
+    fig.insertBefore(par, fig.querySelector("figcaption"));
+  });
+})();
+</script>

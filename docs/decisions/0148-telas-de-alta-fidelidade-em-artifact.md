@@ -12,7 +12,7 @@ Foram avaliados: um artifact novo com o código no repositório; converter o pr�
 
 ## Decisão
 
-- As telas de alta fidelidade ficam num **artifact HTML próprio, "Live Run — Telas"**, no mesmo padrão dos wireframes (ADR 0063).
+- As telas de alta fidelidade ficam num **artifact HTML próprio, "Telas do Live Run"**, no mesmo padrão dos wireframes (ADR 0063).
 - O código-fonte fica versionado em **`docs/telas/index.html`**, e o artifact publicado é a forma de visualizar.
 - Cada tela mostra os mesmos estados dos wireframes, nos dois temas, e indica os ADRs e os componentes do design system que usa.
 - Os **wireframes de baixa fidelidade continuam** em `docs/wireframes/index.html` e no artifact deles, como referência de estrutura e fluxo.
