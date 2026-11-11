@@ -1,6 +1,6 @@
 # ADR 0034: Navegação por barra de abas inferior com Hoje no centro
 
-- **Status:** Aceita (revisada pelos ADRs 0065 e 0138)
+- **Status:** Aceita (revisada pelos ADRs 0065 e 0138; forma do Hoje no ADR 0147)
 - **Data:** 2026-10-20
 
 ## Contexto

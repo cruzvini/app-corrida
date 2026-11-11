@@ -152,6 +152,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0144 | [Dia atual na faixa se destaca por uma barra embaixo](0144-dia-atual-com-barra-embaixo.md) | Aceita |
 | 0145 | [Antes e depois com o antes riscado e uma seta no depois](0145-antes-e-depois-com-riscado-e-seta.md) | Aceita |
 | 0146 | [Ícones dos tipos de atividade em figuras](0146-icones-de-atividade-em-figuras.md) | Aceita |
+| 0147 | [Ícone da aba Hoje elevado, com o número do dia](0147-icone-do-hoje-elevado.md) | Aceita |
 
 ## Como criar um novo ADR
 
