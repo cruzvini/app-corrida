@@ -150,6 +150,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0142 | [Tons de status, fundo com transparência e selos](0142-tons-de-status-e-selos.md) | Aceita |
 | 0143 | [Definições de alta fidelidade registradas no design system Live Run](0143-alta-fidelidade-no-design-system.md) | Aceita |
 | 0144 | [Dia atual na faixa se destaca por uma barra embaixo](0144-dia-atual-com-barra-embaixo.md) | Aceita |
+| 0145 | [Antes e depois com o antes riscado e uma seta no depois](0145-antes-e-depois-com-riscado-e-seta.md) | Aceita |
 
 ## Como criar um novo ADR
 

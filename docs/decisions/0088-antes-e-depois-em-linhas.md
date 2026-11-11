@@ -1,6 +1,6 @@
 # ADR 0088: Antes e depois em uma linha por dia, com o antes riscado
 
-- **Status:** Aceita
+- **Status:** Aceita (forma final no ADR 0145)
 - **Data:** 2026-11-10
 
 ## Contexto
