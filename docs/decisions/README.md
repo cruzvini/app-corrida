@@ -151,6 +151,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0143 | [Definições de alta fidelidade registradas no design system Live Run](0143-alta-fidelidade-no-design-system.md) | Aceita |
 | 0144 | [Dia atual na faixa se destaca por uma barra embaixo](0144-dia-atual-com-barra-embaixo.md) | Aceita |
 | 0145 | [Antes e depois com o antes riscado e uma seta no depois](0145-antes-e-depois-com-riscado-e-seta.md) | Aceita |
+| 0146 | [Ícones dos tipos de atividade em figuras](0146-icones-de-atividade-em-figuras.md) | Aceita |
 
 ## Como criar um novo ADR
 
