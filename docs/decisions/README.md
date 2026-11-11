@@ -79,7 +79,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0071 | [Dia com um treino feito e outro não fica verde com selo "!" na faixa](0071-dia-misto-verde-com-selo.md) | Aceita |
 | 0072 | [Dia atual com treino ainda por fazer fica com o contorno padrão](0072-dia-atual-parcial-fica-no-padrao.md) | Aceita |
 | 0073 | [Selos ✓ e ✕ reforçam a cor do contorno na faixa de 7 dias](0073-selos-de-status-na-faixa.md) | Aceita |
-| 0074 | [Dia atual na faixa se destaca pelo fundo preenchido](0074-destaque-do-dia-atual-na-faixa.md) | Aceita |
+| 0074 | [Dia atual na faixa se destaca pelo fundo preenchido](0074-destaque-do-dia-atual-na-faixa.md) | Substituída pelo ADR 0144 |
 | 0075 | [Detalhe do treino mostra os paces em lista e compara previsto e feito só no geral](0075-paces-sem-barras-e-comparacao-geral.md) | Aceita (revisada pelo ADR 0080) |
 | 0076 | [Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino](0076-acoes-e-feedback-no-rodape-do-detalhe.md) | Aceita |
 | 0077 | [Apagar um feedback pede confirmação](0077-apagar-feedback-pede-confirmacao.md) | Aceita |
@@ -149,6 +149,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0141 | [Skills de design copiadas para o repositório](0141-skills-de-design.md) | Aceita |
 | 0142 | [Tons de status, fundo com transparência e selos](0142-tons-de-status-e-selos.md) | Aceita |
 | 0143 | [Definições de alta fidelidade registradas no design system Live Run](0143-alta-fidelidade-no-design-system.md) | Aceita |
+| 0144 | [Dia atual na faixa se destaca por uma barra embaixo](0144-dia-atual-com-barra-embaixo.md) | Aceita |
 
 ## Como criar um novo ADR
 

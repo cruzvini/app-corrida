@@ -1,6 +1,6 @@
 # ADR 0074: Dia atual na faixa se destaca pelo fundo preenchido
 
-- **Status:** Aceita
+- **Status:** Substituída pelo [ADR 0144](0144-dia-atual-com-barra-embaixo.md) (barra embaixo do dia)
 - **Data:** 2026-11-10
 
 ## Contexto
