@@ -154,6 +154,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0146 | [Ícones dos tipos de atividade em figuras](0146-icones-de-atividade-em-figuras.md) | Aceita |
 | 0147 | [Ícone da aba Hoje elevado, com o número do dia](0147-icone-do-hoje-elevado.md) | Aceita |
 | 0148 | [Telas de alta fidelidade em artifact próprio, com o código no repositório](0148-telas-de-alta-fidelidade-em-artifact.md) | Aceita |
+| 0149 | [Chips de status do treino](0149-chips-de-status-do-treino.md) | Aceita |
 
 ## Como criar um novo ADR
 
