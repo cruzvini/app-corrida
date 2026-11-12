@@ -156,6 +156,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0148 | [Telas de alta fidelidade em artifact próprio, com o código no repositório](0148-telas-de-alta-fidelidade-em-artifact.md) | Aceita |
 | 0149 | [Chips de status do treino](0149-chips-de-status-do-treino.md) | Aceita |
 | 0150 | [Aviso neutro de falha do Strava](0150-aviso-neutro-de-falha-do-strava.md) | Aceita |
+| 0151 | [Contagem de não lidas na aba Notificações](0151-contagem-de-nao-lidas.md) | Aceita |
 
 ## Como criar um novo ADR
 
