@@ -160,6 +160,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0152 | [Folha da escolha do treino](0152-folha-da-escolha-do-treino.md) | Aceita |
 | 0153 | [Número em destaque no card do treino](0153-numero-em-destaque-no-card-do-treino.md) | Aceita |
 | 0154 | [Cabeçalho e seções do detalhe do treino](0154-cabecalho-e-secoes-do-detalhe.md) | Aceita |
+| 0155 | [Chip de não feito](0155-chip-de-nao-feito.md) | Aceita |
 
 ## Como criar um novo ADR
 
