@@ -804,7 +804,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             <div><h3>Plano</h3><div class="sub">Plano específico, semana 3 de 10</div></div>
           </div>
           <div class="card objetivo">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-flag-checkered"/></svg></span><span class="txt"><span class="titulo-obj">10 km em 3 jan</span><small>Pace alvo de 5:20/km, faltam 53 dias</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
+            <div class="card-topo"><span class="txt"><span class="medida"><b>10 km</b><span>até 3 jan</span></span><small>Pace alvo de 5:20/km, faltam 53 dias</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
             <span class="botao"><svg class="ico"><use href="#i-chat-circle"/></svg>Editar plano com o Piu</span>
           </div>
           <div class="secao">
@@ -834,7 +834,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Tela inicial</strong>
         <span>O card do objetivo traz "Editar plano com o Piu" e, ao ser tocado, abre o detalhe do plano. As fases ficam em retângulos iguais, com rolagem para o lado, e a última aparece cortada. As semanas anteriores ficam recolhidas. A semana atual tem uma linha por dia, com o contorno, o fundo e o selo da faixa do Hoje, e o dia atual leva a mesma barra embaixo do número. As próximas semanas mostram só o volume e a fase.</span>
-        <span class="refs">ADRs 0023, 0034, 0044, 0070 a 0073, 0081, 0082, 0142, 0144, 0164, 0165 e 0166 · crit. 3.1 · componentes IconeDeAtividade e BarraDeAbas · propostas 1, 2, 3 e 4</span>
+        <span class="refs">ADRs 0023, 0034, 0044, 0070 a 0073, 0081, 0082, 0142, 0144 e 0164 a 0167 · crit. 3.1 · componentes CardDoObjetivo, IconeDeAtividade e BarraDeAbas · propostas 1, 2, 3 e 4</span>
       </figcaption>
     </figure>
 
@@ -996,7 +996,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             <div><h3>Plano</h3><div class="sub">Plano genérico, semana 3</div></div>
           </div>
           <div class="card objetivo">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-flag-checkered"/></svg></span><span class="txt"><span class="titulo-obj">Correr com constância</span><small>4 corridas e 2 musculações por semana, sem data final</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
+            <div class="card-topo"><span class="txt"><span class="titulo-obj">Correr com constância</span><small>4 corridas e 2 musculações por semana, sem data final</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
             <span class="botao"><svg class="ico"><use href="#i-chat-circle"/></svg>Editar plano com o Piu</span>
           </div>
           <div class="grupo-lista semanas">
@@ -1019,14 +1019,14 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Plano genérico</strong>
         <span>Sem data final: sem fases e sem "Adiar objetivo". O horizonte é contínuo, com as semanas anteriores, a atual e a próxima. O detalhe do plano mostra o objetivo e o volume semanal.</span>
-        <span class="refs">ADRs 0008, 0023, 0081, 0082 e 0083 · componentes IconeDeAtividade e BarraDeAbas · propostas 1, 3 e 4</span>
+        <span class="refs">ADRs 0008, 0023, 0081, 0082, 0083 e 0167 · componentes CardDoObjetivo, IconeDeAtividade e BarraDeAbas · propostas 1, 3 e 4</span>
       </figcaption>
     </figure>
 
     <div class="propostas">
       <h3>Propostas desta tela, em decisão</h3>
       <ol>
-        <li><b>Card do objetivo</b> (componente novo CardDoObjetivo): card com contorno, porque é tocável (ADR 0165), com a bandeira <code>flag-checkered</code> na caixa de 40 px, o objetivo em 18 px negrito, o pace e o prazo em legenda, a seta para o detalhe e o botão principal "Editar plano com o Piu" com o ícone de conversa.</li>
+        <li><b>Card do objetivo</b> (decidido no ADR 0167, componente CardDoObjetivo): card com contorno, porque é tocável (ADR 0165), com a distância em 30 px e a data ao lado, o pace e o prazo em legenda, a seta para o detalhe e o botão principal "Editar plano com o Piu" com o ícone de conversa. Sem caixa de ícone. No plano genérico, o objetivo em 18 px negrito.</li>
         <li><b>Faixa de fases</b> (componente novo FaixaDeFases): retângulos de 116 px em <code>superficie</code>, sem contorno, com o nome e as semanas; a fase atual em <code>primaria-suave</code> com contorno e nome em <code>primaria</code>. No detalhe do plano, a fase atual aparece como "Fase atual" em <code>primaria</code> na lista.</li>
         <li><b>Dias da semana em linhas com status</b> (componente novo LinhaDoDia): uma linha por dia, com o dia e o número à esquerda, os ícones e o treino, o resumo e a seta; contorno, fundo e selo do status como no DiaDaFaixa; descanso tracejado e sem seta; o dia atual com a barra de 20 × 4 px embaixo do número (ADR 0144).</li>
         <li><b>Semanas recolhidas e próximas semanas</b> (componente novo LinhaDeSemana): linhas num grupo sem contorno, com a semana em negrito, o volume em legenda e <code>caret-down</code>, <code>caret-up</code> ou <code>caret-right</code>; o cabeçalho de cada semana aberta mostra o feito em negrito e o previsto ("13,8 de 31,6 km").</li>
