@@ -167,6 +167,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0159 | [Balões de mensagem do feedback e do Piu](0159-baloes-de-mensagem.md) | Aceita |
 | 0160 | ["Feedback salvo" na própria mensagem](0160-feedback-salvo-na-propria-mensagem.md) | Aceita |
 | 0161 | [Aviso neutro com link](0161-aviso-neutro-com-link.md) | Aceita |
+| 0162 | [Proposta do Piu na conversa, com o treino como contexto](0162-proposta-do-piu-na-conversa.md) | Aceita |
 
 ## Como criar um novo ADR
 
