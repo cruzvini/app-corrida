@@ -1,6 +1,6 @@
 # ADR 0081: Tela inicial do Plano com objetivo, fases e semanas
 
-- **Status:** Aceita (revisada pelo ADR 0094)
+- **Status:** Aceita (revisada pelos ADRs 0094 e 0169)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -14,7 +14,7 @@ A tela inicial do Plano tem, de cima para baixo:
 1. **Card do objetivo**, com o botão **"Editar plano com o Piu"**. Tocar no card abre o detalhe do plano (ADR 0083).
 2. **Fases** do plano (ADR 0082).
 3. **Semanas anteriores**, recolhidas numa linha. Ao tocar, elas abrem no mesmo estilo da semana atual, com um card por dia.
-4. **Semana atual**, com um card por dia, no mesmo contorno e selos da faixa do Hoje (ADRs 0070 a 0073). Tocar num dia abre o detalhe do treino.
+4. **Semana atual**, com um card por dia, no mesmo contorno e selos da faixa do Hoje (ADRs 0070 a 0073). Tocar num dia abre o detalhe do treino. *Revisado pelo ADR 0169: os dias ficam num grupo sem contorno, com o dia em miniatura do DiaDaFaixa levando o status.*
 5. **Próximas semanas**, com fase e volume previsto, até serem detalhadas (ADR 0044).
 
 A tela inicial não tem o gráfico de volume, que fica no detalhe do plano, nem ações prontas (ADR 0084).
