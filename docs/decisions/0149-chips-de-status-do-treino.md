@@ -1,6 +1,6 @@
 # ADR 0149: Chips de status do treino
 
-- **Status:** Aceita
+- **Status:** Aceita (texto revisto pelo ADR 0166: "Feito via Strava")
 - **Data:** 2026-11-11
 - **Complementa:** [ADR 0138](0138-identidade-visual.md) e [ADR 0142](0142-tons-de-status-e-selos.md)
 

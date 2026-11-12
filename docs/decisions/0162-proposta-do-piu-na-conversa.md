@@ -1,6 +1,6 @@
 # ADR 0162: Proposta do Piu na conversa, com o treino como contexto
 
-- **Status:** Aceita
+- **Status:** Aceita (texto revisto pelo ADR 0166)
 - **Data:** 2026-11-12
 - **Complementa:** [ADR 0062](0062-proposta-do-piu-na-conversa.md), [ADR 0078](0078-replanejar-treino-com-o-piu.md), [ADR 0106](0106-dados-do-strava-nunca-vao-para-a-ia.md), [ADR 0145](0145-antes-e-depois-com-riscado-e-seta.md) e [ADR 0157](0157-acoes-diretas-no-detalhe.md)
 

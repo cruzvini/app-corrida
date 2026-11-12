@@ -1,6 +1,6 @@
 # ADR 0157: Ações diretas no detalhe do treino
 
-- **Status:** Aceita (revisada pelo ADR 0165)
+- **Status:** Aceita (revisada pelos ADRs 0165 e 0166)
 - **Data:** 2026-11-12
 - **Revisa:** [ADR 0076](0076-acoes-e-feedback-no-rodape-do-detalhe.md) (ações no rodapé) e [ADR 0154](0154-cabecalho-e-secoes-do-detalhe.md) (lugar do chip de status)
 - **Complementa:** [ADR 0140](0140-direcao-visual-esportiva.md) e [ADR 0142](0142-tons-de-status-e-selos.md)

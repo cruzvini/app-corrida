@@ -1,6 +1,6 @@
 # ADR 0155: Chip de não feito
 
-- **Status:** Aceita
+- **Status:** Aceita (texto revisto pelo ADR 0166)
 - **Data:** 2026-11-12
 - **Complementa:** [ADR 0142](0142-tons-de-status-e-selos.md) e [ADR 0149](0149-chips-de-status-do-treino.md)
 

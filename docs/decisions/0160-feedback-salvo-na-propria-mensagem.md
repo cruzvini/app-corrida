@@ -1,6 +1,6 @@
 # ADR 0160: "Feedback salvo" na própria mensagem
 
-- **Status:** Aceita
+- **Status:** Aceita (texto revisto pelo ADR 0166: "Salvo hoje às 19:41" e o link "Apagar", sem pontos médios)
 - **Data:** 2026-11-12
 - **Complementa:** [ADR 0055](0055-feedback-salvo-antes-da-analise.md) e [ADR 0159](0159-baloes-de-mensagem.md)
 
