@@ -474,7 +474,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
   <section class="grupo" id="detalhe">
     <header>
       <h2>Detalhe do treino</h2>
-      <p>Em andamento. Abre por cima da aba de origem (Hoje, Plano ou Notificações) ao tocar num treino. O conteúdo rola, e o rodapé com as ações, o campo de feedback e o Piu fica fixo acima da barra de abas. As telas aparecem como se já tivessem sido roladas até o fim. Seis estados.</p>
+      <p>Concluída. Abre por cima da aba de origem (Hoje, Plano ou Notificações) ao tocar num treino. O conteúdo rola, e o rodapé com as ações, o campo de feedback e o Piu fica fixo acima da barra de abas. As telas aparecem como se já tivessem sido roladas até o fim. Seis estados.</p>
     </header>
 
     <figure class="estado">
@@ -692,7 +692,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </figure>
 
     <div class="propostas">
-      <h3>Propostas desta tela: 9 de 10 decididas</h3>
+      <h3>Propostas desta tela, todas decididas (ADRs 0154 a 0163)</h3>
       <ol>
         <li><b>Cabeçalho e seções do detalhe</b> (decidido no ADR 0154, componente CabecalhoDoDetalhe): "‹ Hoje" em ardósia para voltar (44 px), título de 24 px com o ícone da atividade na caixa de 40 px e o chip de status à direita, data e semana em legenda e a distância em destaque no previsto. Cada seção num card, com o rótulo em caixa alta.</li>
         <li><b>Chip de não feito</b> (decidido no ADR 0155, componente ChipDeStatus): o mesmo padrão do "Feito · Strava", com o contorno e o fundo de não feito e o ícone <code>x</code> preenchido em amarelo.</li>
@@ -703,7 +703,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Confirmação de feedback salvo</b> (decidido no ADR 0160, componente BalaoDeMensagem; revista na primeira rodada): no lugar de um aviso flutuante, a linha embaixo do balão mostra "✓ Salvo · Hoje, 19:41 · Apagar", com "Enviando…" durante o envio e "Não foi enviado · Tentar de novo" se falhar.</li>
         <li><b>Aviso neutro com link</b> (decidido no ADR 0161, componente AvisoNeutro): o AvisoNeutro com um link em ardósia no lugar do botão, para levar a outra tela sem competir com a ação principal do rodapé.</li>
         <li><b>Proposta do Piu na conversa</b> (decidido no ADR 0162, componentes ContextoDoTreino e CardDaProposta): o treino como contexto no topo, num bloco em <code>neutro-suave</code>; o card da proposta com o AntesDepois, uma nota informativa com o ícone <code>info</code> e os botões de ícone Aceitar, Editar e Descartar.</li>
-        <li><b>Diálogo de confirmação</b>: caixa centralizada em <code>superficie</code>, cantos de 24 px, sobre o <code>veu</code>, com "Cancelar" secundário e a ação principal em ardósia, inclusive quando é apagar.</li>
+        <li><b>Diálogo de confirmação</b> (decidido no ADR 0163, componente DialogoDeConfirmacao): caixa centralizada em <code>superficie</code>, cantos de 24 px, sobre o <code>veu</code>, com "Cancelar" secundário e a ação principal em ardósia, inclusive quando é apagar.</li>
       </ol>
     </div>
   </section>
