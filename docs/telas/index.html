@@ -258,9 +258,83 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .dialogo h4 { margin: 0; font-size: 18px; line-height: 24px; font-weight: 700; }
 .dialogo p { margin: 0; color: var(--texto-secundario); }
 .dialogo .botoes { display: flex; gap: 8px; margin-top: 12px; }
+
+/* Plano */
+.botao .ico { font-size: 20px; margin-right: 8px; }
+.objetivo { gap: 12px; }
+.objetivo .card-topo .txt { flex: 1; min-width: 0; display: grid; }
+.objetivo .titulo-obj { font-size: 18px; line-height: 24px; font-weight: 700; }
+.objetivo .card-topo .txt small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.objetivo .card-topo > .ico { color: var(--texto-secundario); font-size: 18px; }
+.objetivo .botao { margin-top: 0; }
+.fases { display: flex; gap: 8px; overflow: hidden; margin-right: -16px; }
+.fase { flex: none; width: 116px; border-radius: var(--raio-campo); background: var(--superficie); padding: 10px 12px; display: grid; gap: 2px; }
+.fase b { font-size: 15px; line-height: 20px; }
+.fase small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.fase.atual { background: var(--primaria-suave); box-shadow: inset 0 0 0 1.5px var(--primaria); }
+.fase.atual b { color: var(--primaria); }
+.cab-secao { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.cab-secao .km { font-size: 13px; line-height: 18px; color: var(--texto-secundario); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cab-secao .km b { color: var(--texto); font-weight: 700; }
+.secao > .sub { font-size: 13px; line-height: 18px; color: var(--texto-secundario); margin-top: -6px; }
+.grupo-lista.semanas { padding: 0 8px 0 16px; }
+.linha-semana { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 8px 0; }
+.linha-semana + .linha-semana { border-top: 1px solid var(--borda); }
+.linha-semana .txt { flex: 1; min-width: 0; display: grid; }
+.linha-semana .txt b { font-weight: 500; }
+.linha-semana .txt small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.linha-semana > .ico { width: 36px; height: 20px; color: var(--texto-secundario); font-size: 18px; }
+.linha-semana.mais { min-height: 44px; color: var(--texto-secundario); font-size: 13px; line-height: 18px; }
+.dias { display: grid; gap: 8px; }
+.linha-dia { position: relative; display: flex; align-items: center; gap: 12px; min-height: 58px; background: var(--superficie); border: 2px solid var(--borda); border-radius: var(--raio-campo); padding: 7px 10px 7px 8px; }
+.linha-dia::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--f, transparent); }
+.linha-dia > :not(.selo) { position: relative; }
+.linha-dia.feito, .linha-dia.misto { border-color: var(--status-feito); --f: var(--status-feito-fundo); --s: var(--status-feito); }
+.linha-dia.nao { border-color: var(--status-nao-feito); --f: var(--status-nao-feito-fundo); --s: var(--status-nao-feito); }
+.linha-dia.desc { border-style: dashed; }
+.linha-dia .data { width: 36px; flex: none; display: grid; justify-items: center; }
+.linha-dia .data span { font-size: 11px; line-height: 14px; font-weight: 500; color: var(--texto-secundario); }
+.linha-dia .data b { font-size: 16px; line-height: 20px; font-variant-numeric: tabular-nums; }
+.linha-dia .data .marca { margin-top: 3px; }
+.linha-dia .txt { flex: 1; min-width: 0; display: grid; }
+.linha-dia .nome { display: flex; align-items: center; gap: 6px; font-weight: 500; }
+.linha-dia .ics { display: inline-flex; gap: 2px; color: var(--primaria); font-size: 16px; }
+.linha-dia .txt small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.linha-dia > .ico { color: var(--texto-secundario); font-size: 18px; }
+.grupo-lista.grafico { padding: 14px 16px 12px; display: grid; gap: 10px; }
+.legenda-graf { display: flex; gap: 16px; font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.legenda-graf span { display: inline-flex; align-items: center; gap: 6px; }
+.legenda-graf i { width: 12px; height: 12px; border-radius: 3px; }
+.legenda-graf .k-prev { box-shadow: inset 0 0 0 1.5px var(--borda-forte); }
+.legenda-graf .k-feito { background: var(--primaria); }
+.barras { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; height: 124px; align-items: end; border-bottom: 1px solid var(--borda); }
+.barra { position: relative; height: var(--p); border-radius: 4px 4px 0 0; box-shadow: inset 0 0 0 1.5px var(--borda-forte); }
+.barra i { position: absolute; left: 0; right: 0; bottom: 0; height: var(--f, 0); border-radius: 4px 4px 0 0; background: var(--primaria); }
+.eixo { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; margin-top: -4px; font-size: 11px; line-height: 14px; color: var(--texto-secundario); text-align: center; font-variant-numeric: tabular-nums; }
+.eixo .atual { color: var(--primaria); font-weight: 700; }
+.nota-graf { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.nota-graf b { color: var(--texto); font-weight: 500; }
+.linha-fase { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; }
+.linha-fase + .linha-fase { border-top: 1px solid var(--borda); }
+.linha-fase .txt { display: grid; }
+.linha-fase .txt b { font-weight: 500; }
+.linha-fase .txt small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.linha-fase .atual { font-size: 13px; line-height: 18px; font-weight: 500; color: var(--primaria); white-space: nowrap; }
+.cabecalho .botao.secundario { margin-top: 0; }
+.folha .dica { margin: -4px 0 0; font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.calendario { display: grid; gap: 4px; }
+.calendario .mes { font-weight: 700; }
+.cal-grade { display: grid; grid-template-columns: repeat(7, 1fr); justify-items: center; row-gap: 2px; }
+.cal-grade span { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-variant-numeric: tabular-nums; }
+.cal-grade .sem { height: 24px; font-size: 11px; font-weight: 500; color: var(--texto-secundario); }
+.cal-grade .fora { color: var(--texto-secundario); text-decoration: line-through; }
+.cal-grade .atual-obj { outline: 1.5px dashed var(--borda-forte); outline-offset: -3px; color: var(--texto-secundario); }
+.cal-grade .escolhido { background: var(--primaria); color: var(--sobre-primaria); font-weight: 700; }
+.folha .proposta { padding: 4px 16px 8px; background: var(--fundo); border: 0; }
+.folha .botao.cheio { min-height: 48px; }
 </style>
 
-<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-x-fill" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM181.66,170.34a8,8,0,0,1-11.32,11.32L128,139.31,85.66,181.66a8,8,0,0,1-11.32-11.32L116.69,128,74.34,85.66A8,8,0,0,1,85.66,74.34L128,116.69l42.34-42.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-paper-plane-right" viewBox="0 0 256 256"><path d="M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z"/></symbol><symbol id="i-arrow-elbow-down-right" viewBox="0 0 256 256"><path d="M221.66,181.66l-48,48a8,8,0,0,1-11.32-11.32L196.69,184H72a8,8,0,0,1-8-8V32a8,8,0,0,1,16,0V168H196.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,221.66,181.66Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-pencil-simple" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-x-fill" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM181.66,170.34a8,8,0,0,1-11.32,11.32L128,139.31,85.66,181.66a8,8,0,0,1-11.32-11.32L116.69,128,74.34,85.66A8,8,0,0,1,85.66,74.34L128,116.69l42.34-42.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-paper-plane-right" viewBox="0 0 256 256"><path d="M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z"/></symbol><symbol id="i-arrow-elbow-down-right" viewBox="0 0 256 256"><path d="M221.66,181.66l-48,48a8,8,0,0,1-11.32-11.32L196.69,184H72a8,8,0,0,1-8-8V32a8,8,0,0,1,16,0V168H196.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,221.66,181.66Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-pencil-simple" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-up" viewBox="0 0 256 256"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></symbol><symbol id="i-flag-checkered" viewBox="0 0 256 256"><path d="M227.32,48.75A8,8,0,0,0,218.76,50c-28,24.22-51.72,12.48-79.21-1.13C111.07,34.76,78.78,18.79,42.76,50A8,8,0,0,0,40,56V224a8,8,0,0,0,16,0V179.77c26.79-21.16,49.87-9.75,76.45,3.41,28.49,14.09,60.77,30.06,96.79-1.13a8,8,0,0,0,2.76-6V56A8,8,0,0,0,227.32,48.75ZM216,71.6v40.65c-14,11.06-27,13.22-40,10.88V79.34A60.05,60.05,0,0,0,216,71.6Zm-56,3.76v43c-6.66-2.67-13.43-6-20.45-9.48-8.82-4.37-18-8.91-27.55-12.18v-43c6.66,2.66,13.43,6,20.45,9.48C141.27,67.55,150.46,72.09,160,75.36ZM96,48.91V92.69a60.06,60.06,0,0,0-40,7.75V59.78C70,48.72,83,46.57,96,48.91ZM86.58,152A60.06,60.06,0,0,0,56,160.43V119.78c14-11.06,27-13.22,40-10.88v43.8A65.61,65.61,0,0,0,86.58,152ZM112,156.67v-43c6.66,2.66,13.43,6,20.45,9.48,8.82,4.37,18,8.9,27.55,12.17v43c-6.66-2.67-13.43-6-20.45-9.48C130.73,164.47,121.54,159.94,112,156.67Zm64,26.45v-43.8a65.61,65.61,0,0,0,9.42.72A60.11,60.11,0,0,0,216,131.57v40.68C202,183.31,189,185.46,176,183.12Z"/></symbol><symbol id="i-calendar-dots" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z"/></symbol></svg>
 
 <div class="pagina">
   <header class="cabeca">
@@ -269,7 +343,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     <ul class="telas" aria-label="Telas">
       <li class="feita">Hoje</li>
       <li class="feita">Detalhe do treino</li>
-      <li>Plano</li>
+      <li class="feita">Plano</li>
       <li>Notificações</li>
       <li>Piu</li>
       <li>Perfil</li>
@@ -715,6 +789,254 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </ol>
     </div>
   </section>
+
+  <section class="grupo" id="plano">
+    <header>
+      <h2>Plano</h2>
+      <p>Propostas em decisão. Aba de consulta: objetivo, fases e semanas, sem ações prontas (ADRs 0081 e 0084). Tocar no objetivo abre o detalhe do plano, com o volume semanal e o atalho "Adiar objetivo" (ADR 0083). Tocar num dia abre o detalhe do treino. Seis estados, na quarta, 11 nov. Já seguem os ADRs 0164 a 0166: títulos sem caixa alta, seções em grupo sem contorno e linhas de apoio em frases.</p>
+    </header>
+
+    <figure class="estado">
+      <template data-altura="1340">
+        <div class="barra-status"><span>12:10</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="topo">
+            <div><h3>Plano</h3><div class="sub">Plano específico, semana 3 de 10</div></div>
+          </div>
+          <div class="card objetivo">
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-flag-checkered"/></svg></span><span class="txt"><span class="titulo-obj">10 km em 3 jan</span><small>Pace alvo de 5:20/km, faltam 53 dias</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
+            <span class="botao"><svg class="ico"><use href="#i-chat-circle"/></svg>Editar plano com o Piu</span>
+          </div>
+          <div class="secao">
+            <span class="titulo-secao">Fases</span>
+            <div class="fases"><span class="fase atual"><b>Base</b><small>Semanas 1 a 4</small></span><span class="fase"><b>Construção</b><small>Semanas 5 a 7</small></span><span class="fase"><b>Específica</b><small>Semanas 8 e 9</small></span><span class="fase"><b>Polimento</b><small>Semana 10</small></span></div>
+          </div>
+          <div class="grupo-lista semanas">
+            <div class="linha-semana"><span class="txt"><b>Semanas anteriores</b><small>Semanas 1 e 2, 49,3 de 55 km</small></span><svg class="ico"><use href="#i-caret-down"/></svg></div>
+          </div>
+          <div class="secao">
+            <div class="cab-secao"><span class="titulo-secao">Esta semana</span><span class="km"><b>13,8</b> de 31,6 km</span></div>
+            <span class="sub">Semana 3, de 9 a 15 nov, na base</span>
+            <div class="dias" data-dias='[["Seg",9,"Intervalado",["run"],"8,7 de 8,6 km","feito"],["Ter",10,"Leve 5 km e superiores",["run","gym"],"Corrida feita, superiores não feito","misto"],["Qua",11,"Descanso",[],"Hoje","desc",1],["Qui",12,"Inferiores",["gym"],""],["Sex",13,"Leve 6 km e superiores",["run","gym"],"Superiores veio de terça"],["Sáb",14,"Descanso",[],"","desc"],["Dom",15,"Longo 12 km",["run"],""]]'></div>
+          </div>
+          <div class="secao">
+            <span class="titulo-secao">Próximas semanas</span>
+            <div class="grupo-lista semanas">
+              <div class="linha-semana"><span class="txt"><b>Semana 4, de 16 a 22 nov</b><small>24 km na base, detalhada no domingo às 22h</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
+              <div class="linha-semana"><span class="txt"><b>Semana 5, de 23 a 29 nov</b><small>34 km na construção</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
+              <div class="linha-semana"><span class="txt"><b>Semana 6, de 30 nov a 6 dez</b><small>36 km na construção</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
+              <div class="linha-semana mais">Mais 4 semanas até o objetivo</div>
+            </div>
+          </div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Plano"></nav>
+      </template>
+      <figcaption>
+        <strong>Tela inicial</strong>
+        <span>O card do objetivo traz "Editar plano com o Piu" e, ao ser tocado, abre o detalhe do plano. As fases ficam em retângulos iguais, com rolagem para o lado, e a última aparece cortada. As semanas anteriores ficam recolhidas. A semana atual tem uma linha por dia, com o contorno, o fundo e o selo da faixa do Hoje, e o dia atual leva a mesma barra embaixo do número. As próximas semanas mostram só o volume e a fase.</span>
+        <span class="refs">ADRs 0023, 0034, 0044, 0070 a 0073, 0081, 0082, 0142, 0144, 0164, 0165 e 0166 · crit. 3.1 · componentes IconeDeAtividade e BarraDeAbas · propostas 1, 2, 3 e 4</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template data-altura="900">
+        <div class="barra-status"><span>12:11</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="grupo-lista semanas">
+            <div class="linha-semana"><span class="txt"><b>Semanas anteriores</b><small>Semanas 1 e 2, 49,3 de 55 km</small></span><svg class="ico"><use href="#i-caret-up"/></svg></div>
+            <div class="linha-semana"><span class="txt"><b>Semana 1, de 26 out a 1 nov</b><small>25 de 26 km na base</small></span><svg class="ico"><use href="#i-caret-down"/></svg></div>
+          </div>
+          <div class="secao">
+            <div class="cab-secao"><span class="titulo-secao">Semana 2, de 2 a 8 nov</span><span class="km"><b>24,3</b> de 29 km</span></div>
+            <div class="dias" data-dias='[["Seg",2,"Intervalado",["run"],"8,1 de 8 km","feito"],["Ter",3,"Leve 5 km e superiores",["run","gym"],"","feito"],["Qua",4,"Descanso",[],"","desc"],["Qui",5,"Inferiores",["gym"],"","feito"],["Sex",6,"Leve 5 km",["run"],"Não feito, plano ajustado","nao"],["Sáb",7,"Descanso",[],"","desc"],["Dom",8,"Longo 11 km",["run"],"11,2 de 11 km","feito"]]'></div>
+          </div>
+          <div class="cab-secao"><span class="titulo-secao">Esta semana</span><span class="km"><b>13,8</b> de 31,6 km</span></div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Plano"></nav>
+      </template>
+      <figcaption>
+        <strong>Semanas anteriores abertas</strong>
+        <span>A tela aparece rolada até as semanas anteriores. Ao tocar na linha recolhida, as semanas passadas aparecem no mesmo estilo da semana atual, com uma linha por dia e o status. A última semana passada já vem aberta, e as outras ficam numa linha e abrem ao toque.</span>
+        <span class="refs">ADRs 0070 a 0073, 0081, 0142 e 0166 · crit. 6.6 · componentes IconeDeAtividade e BarraDeAbas · propostas 3 e 4</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template data-altura="1000">
+        <div class="barra-status"><span>12:13</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span></div>
+          <div class="cabecalho">
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-flag-checkered"/></svg></span><h3>10 km em 3 jan</h3></div>
+            <div class="sub">Plano específico desde 26 out, com 10 semanas</div>
+            <div class="resultado">
+              <div><b>10 km</b><small>distância</small></div>
+              <div><b>3 jan</b><small>data</small></div>
+              <div><b>5:20</b><small>pace alvo</small></div>
+            </div>
+            <span class="botao secundario"><svg class="ico"><use href="#i-calendar-dots"/></svg>Adiar objetivo</span>
+          </div>
+          <div class="secao">
+            <span class="titulo-secao">Volume semanal de corrida</span>
+            <div class="grupo-lista grafico" role="img" aria-label="Volume semanal de corrida, previsto e feito, nas 10 semanas do plano. Semana 3, a atual: 13,8 de 31,6 km.">
+              <div class="legenda-graf"><span><i class="k-prev"></i>Previsto</span><span><i class="k-feito"></i>Feito</span></div>
+              <div class="barras">
+                <span class="barra" style="--p:68%;--f:96%"><i></i></span>
+                <span class="barra" style="--p:76%;--f:84%"><i></i></span>
+                <span class="barra" style="--p:83%;--f:44%"><i></i></span>
+                <span class="barra" style="--p:63%"></span>
+                <span class="barra" style="--p:89%"></span>
+                <span class="barra" style="--p:95%"></span>
+                <span class="barra" style="--p:100%"></span>
+                <span class="barra" style="--p:95%"></span>
+                <span class="barra" style="--p:79%"></span>
+                <span class="barra" style="--p:47%"></span>
+              </div>
+              <div class="eixo"><span>1</span><span>2</span><span class="atual">3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+              <span class="nota-graf"><b>Semana 3, esta semana:</b> 13,8 de 31,6 km</span>
+            </div>
+          </div>
+          <div class="secao">
+            <span class="titulo-secao">Fases</span>
+            <div class="grupo-lista">
+              <div class="linha-fase"><span class="txt"><b>Base, semanas 1 a 4</b><small>24 a 32 km por semana</small></span><span class="atual">Fase atual</span></div>
+              <div class="linha-fase"><span class="txt"><b>Construção, semanas 5 a 7</b><small>34 a 38 km por semana</small></span></div>
+              <div class="linha-fase"><span class="txt"><b>Específica, semanas 8 e 9</b><small>30 a 36 km por semana</small></span></div>
+              <div class="linha-fase"><span class="txt"><b>Polimento, semana 10</b><small>18 km, com o objetivo no domingo</small></span></div>
+            </div>
+          </div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Plano"></nav>
+      </template>
+      <figcaption>
+        <strong>Detalhe do plano</strong>
+        <span>Abre pelo card do objetivo, por cima da aba. Reúne o objetivo completo (mudar é pelo Piu), o atalho "Adiar objetivo" em botão secundário (só no plano específico), o volume semanal previsto e feito, com a semana atual em destaque, e as fases com o volume de cada uma.</span>
+        <span class="refs">ADRs 0023, 0060, 0083, 0084, 0094, 0098, 0153, 0164 e 0165 · componentes CabecalhoDoDetalhe e BarraDeAbas · propostas 2, 5 e 7</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template data-altura="900">
+        <div class="barra-status"><span>12:14</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span></div>
+          <div class="cabecalho">
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-flag-checkered"/></svg></span><h3>10 km em 3 jan</h3></div>
+            <div class="sub">Plano específico desde 26 out, com 10 semanas</div>
+          </div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Plano"></nav>
+        <div class="veu"></div>
+        <div class="folha">
+          <span class="alca"></span>
+          <h4>Adiar objetivo</h4>
+          <p class="dica">Escolha uma data depois de 3 jan. Para antecipar ou trocar o objetivo, fale com o Piu.</p>
+          <div class="calendario">
+            <span class="mes">Janeiro de 2027</span>
+            <div class="cal-grade">
+              <span class="sem">S</span><span class="sem">T</span><span class="sem">Q</span><span class="sem">Q</span><span class="sem">S</span><span class="sem">S</span><span class="sem">D</span>
+              <span></span><span></span><span></span><span></span><span class="fora">1</span><span class="fora">2</span><span class="atual-obj">3</span>
+              <span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+              <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span class="escolhido">17</span>
+              <span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+            </div>
+          </div>
+          <div class="proposta">
+            <div class="ad-linha"><span class="ad-dia">Plano</span><span class="ad-muda"><span class="ad-antes">10 semanas</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>12 semanas, até 17 jan</span></span></div>
+            <div class="ad-linha"><span class="ad-dia">Fases</span><span class="ad-muda"><span class="ad-antes">Construção com 3 semanas e específica com 2</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Construção com 4 e específica com 3</span></span></div>
+            <div class="nota-proposta"><svg class="ico"><use href="#i-info"/></svg>As semanas já detalhadas não mudam.</div>
+          </div>
+          <span class="botao cheio">Adiar para 17 jan</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Adiar objetivo</strong>
+        <span>Atalho do detalhe do plano, numa folha. Datas até 3 jan ficam riscadas, e a data atual do objetivo tem um contorno tracejado. As regras esticam as fases e redistribuem o volume, sem IA. Ao confirmar, a mudança vale na hora e pode ser desfeita. Prazo arriscado gera aviso, sem bloquear.</span>
+        <span class="refs">ADRs 0017, 0047, 0060, 0084, 0085, 0145 e 0152 · crit. 6.1 e 6.4 · componentes FolhaDeEscolha, AntesDepois e BarraDeAbas · proposta 6</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template data-altura="1040">
+        <div class="barra-status"><span>12:15</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela" style="gap:12px">
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span><span class="titulo-nav">Piu</span><span></span></div>
+          <div class="contexto"><span class="icone-caixa"><svg class="ico"><use href="#i-calendar-blank"/></svg></span><span><b>Plano para 10 km em 3 jan</b>Semana 3 de 10 da base</span></div>
+          <div class="conversa">
+            <div class="balao">O que você quer mudar no plano? Escolha uma sugestão ou me conte com as suas palavras.</div>
+            <div class="balao meu">Semana mais leve</div>
+            <div class="balao">Reduzi a corrida que falta nesta semana e comecei a próxima um pouco mais leve, para a volta ao volume ser gradual. A musculação e os dias não mudam.</div>
+          </div>
+          <div class="proposta">
+            <span class="titulo-secao">Proposta</span>
+            <div class="ad-linha"><span class="ad-dia">Sex 13</span><span class="ad-muda"><span class="ad-antes">Leve 6 km</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Leve 5 km</span></span></div>
+            <div class="ad-linha"><span class="ad-dia">Dom 15</span><span class="ad-muda"><span class="ad-antes">Longo 12 km</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Longo 10 km</span></span></div>
+            <div class="ad-linha"><span class="ad-dia">Sem 4</span><span class="ad-muda"><span class="ad-antes">24 km previstos</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>22 km previstos</span><small>Detalhada no domingo, 15 nov, às 22h</small></span></div>
+            <div class="nota-proposta"><svg class="ico"><use href="#i-info"/></svg>Semana 3 com 3 km a menos de corrida.</div>
+            <div class="botoes-icone"><span class="acao-icone principal"><span class="circ"><svg class="ico"><use href="#i-check"/></svg></span>Aceitar</span><span class="acao-icone"><span class="circ"><svg class="ico"><use href="#i-pencil-simple"/></svg></span>Editar</span><span class="acao-icone"><span class="circ"><svg class="ico"><use href="#i-x"/></svg></span>Descartar</span></div>
+          </div>
+        </div>
+        <div class="rodape" style="padding-bottom:30px">
+          <div class="mensagem"><span class="entrada">Mensagem para o Piu</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Piu"></nav>
+      </template>
+      <figcaption>
+        <strong>Editar plano com o Piu</strong>
+        <span>Abre a conversa com o Piu, com o plano como contexto. As sugestões de pedido "Semana mais leve" e "Adiar objetivo" (esta só no plano específico) ficam acima do campo até o primeiro envio. Aqui o usuário já tocou em "Semana mais leve": o pedido vai como mensagem, e o Piu responde com uma proposta que pode ir além da semana atual. Só vale depois de aceita.</span>
+        <span class="refs">ADRs 0022, 0035, 0047, 0053, 0062, 0081, 0084, 0085, 0090, 0091, 0106 e 0162 · crit. 6.1 e 6.3 · componentes ContextoDoTreino, BalaoDeMensagem, CardDaProposta, AntesDepois, BotaoDeIcone, RodapeDoTreino e BarraDeAbas · proposta 8</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template data-altura="1180">
+        <div class="barra-status"><span>12:10</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="topo">
+            <div><h3>Plano</h3><div class="sub">Plano genérico, semana 3</div></div>
+          </div>
+          <div class="card objetivo">
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-flag-checkered"/></svg></span><span class="txt"><span class="titulo-obj">Correr com constância</span><small>4 corridas e 2 musculações por semana, sem data final</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
+            <span class="botao"><svg class="ico"><use href="#i-chat-circle"/></svg>Editar plano com o Piu</span>
+          </div>
+          <div class="grupo-lista semanas">
+            <div class="linha-semana"><span class="txt"><b>Semanas anteriores</b><small>Semanas 1 e 2, 49,3 de 55 km</small></span><svg class="ico"><use href="#i-caret-down"/></svg></div>
+          </div>
+          <div class="secao">
+            <div class="cab-secao"><span class="titulo-secao">Esta semana</span><span class="km"><b>13,8</b> de 31,6 km</span></div>
+            <span class="sub">Semana 3, de 9 a 15 nov</span>
+            <div class="dias" data-dias='[["Seg",9,"Intervalado",["run"],"8,7 de 8,6 km","feito"],["Ter",10,"Leve 5 km e superiores",["run","gym"],"Corrida feita, superiores não feito","misto"],["Qua",11,"Descanso",[],"Hoje","desc",1],["Qui",12,"Inferiores",["gym"],""],["Sex",13,"Leve 6 km e superiores",["run","gym"],"Superiores veio de terça"],["Sáb",14,"Descanso",[],"","desc"],["Dom",15,"Longo 12 km",["run"],""]]'></div>
+          </div>
+          <div class="secao">
+            <span class="titulo-secao">Próxima semana</span>
+            <div class="grupo-lista semanas">
+              <div class="linha-semana"><span class="txt"><b>Semana 4, de 16 a 22 nov</b><small>24 km, detalhada no domingo às 22h</small></span><svg class="ico"><use href="#i-caret-right"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Plano"></nav>
+      </template>
+      <figcaption>
+        <strong>Plano genérico</strong>
+        <span>Sem data final: sem fases e sem "Adiar objetivo". O horizonte é contínuo, com as semanas anteriores, a atual e a próxima. O detalhe do plano mostra o objetivo e o volume semanal.</span>
+        <span class="refs">ADRs 0008, 0023, 0081, 0082 e 0083 · componentes IconeDeAtividade e BarraDeAbas · propostas 1, 3 e 4</span>
+      </figcaption>
+    </figure>
+
+    <div class="propostas">
+      <h3>Propostas desta tela, em decisão</h3>
+      <ol>
+        <li><b>Card do objetivo</b> (componente novo CardDoObjetivo): card com contorno, porque é tocável (ADR 0165), com a bandeira <code>flag-checkered</code> na caixa de 40 px, o objetivo em 18 px negrito, o pace e o prazo em legenda, a seta para o detalhe e o botão principal "Editar plano com o Piu" com o ícone de conversa.</li>
+        <li><b>Faixa de fases</b> (componente novo FaixaDeFases): retângulos de 116 px em <code>superficie</code>, sem contorno, com o nome e as semanas; a fase atual em <code>primaria-suave</code> com contorno e nome em <code>primaria</code>. No detalhe do plano, a fase atual aparece como "Fase atual" em <code>primaria</code> na lista.</li>
+        <li><b>Dias da semana em linhas com status</b> (componente novo LinhaDoDia): uma linha por dia, com o dia e o número à esquerda, os ícones e o treino, o resumo e a seta; contorno, fundo e selo do status como no DiaDaFaixa; descanso tracejado e sem seta; o dia atual com a barra de 20 × 4 px embaixo do número (ADR 0144).</li>
+        <li><b>Semanas recolhidas e próximas semanas</b> (componente novo LinhaDeSemana): linhas num grupo sem contorno, com a semana em negrito, o volume em legenda e <code>caret-down</code>, <code>caret-up</code> ou <code>caret-right</code>; o cabeçalho de cada semana aberta mostra o feito em negrito e o previsto ("13,8 de 31,6 km").</li>
+        <li><b>Gráfico de volume semanal</b> (componente novo GraficoDeVolume): uma barra por semana, com o previsto em contorno <code>borda-forte</code> e o feito preenchido em <code>primaria</code> por dentro; a semana atual em negrito e ardósia no eixo, legenda acima e uma linha com o número da semana atual.</li>
+        <li><b>Folha de adiar objetivo</b> (componente novo SeletorDeData, na FolhaDeEscolha): calendário do mês com as datas até o objetivo riscadas, a data atual com contorno tracejado e a escolhida em círculo <code>primaria</code>; o antes e o depois do plano e das fases; o botão principal "Adiar para 17 jan".</li>
+        <li><b>Cabeçalho do detalhe do plano</b> (componente CabecalhoDoDetalhe): o mesmo cabeçalho do treino, com a bandeira, os três números de 24 px do objetivo e "Adiar objetivo" em botão secundário com o ícone <code>calendar-dots</code>.</li>
+        <li><b>Contexto do plano no Piu</b> (componente ContextoDoTreino): o mesmo bloco do treino, com o ícone de calendário e o plano no lugar do treino ("Plano para 10 km em 3 jan" e "Semana 3 de 10 da base").</li>
+      </ol>
+    </div>
+  </section>
 </div>
 
 <script>
@@ -732,6 +1054,17 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         '<span class="sem">' + sem + '</span><span class="num">' + num + '</span><span class="tipo">' + tipo + '</span>' +
         '<span class="ics' + (ics.length > 1 ? ' duplo' : '') + '">' + ics.map(function (i) { return ico(ICONES[i]); }).join("") + '</span></div>' +
         '<span class="marca' + (hoje ? ' hoje' : '') + '"></span></div>';
+    }).join("");
+  }
+
+  function dias(el) {
+    var lista = JSON.parse(el.dataset.dias);
+    el.innerHTML = lista.map(function (d) {
+      var sem = d[0], num = d[1], nome = d[2], ics = d[3], res = d[4], st = d[5] || "", hoje = d[6];
+      var selo = SELOS[st] ? '<span class="selo" aria-hidden="true">' + SELOS[st] + '</span>' : '';
+      var icones = ics.length ? '<span class="ics">' + ics.map(function (i) { return ico(ICONES[i]); }).join("") + '</span>' : '';
+      return '<div class="linha-dia ' + st + '">' + selo + '<span class="data"><span>' + sem + '</span><b>' + num + '</b>' + (hoje ? '<span class="marca hoje"></span>' : '') + '</span>' +
+        '<span class="txt"><span class="nome">' + icones + nome + '</span>' + (res ? '<small>' + res + '</small>' : '') + '</span>' + (st === "desc" ? "" : ico("caret-right")) + '</div>';
     }).join("");
   }
 
@@ -758,6 +1091,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       cel.appendChild(tpl.content.cloneNode(true));
       cel.querySelectorAll(".faixa").forEach(faixa);
       cel.querySelectorAll(".abas").forEach(abas);
+      cel.querySelectorAll(".dias").forEach(dias);
       wrap.innerHTML = '<span class="rotulo-tema">' + t[1] + '</span>';
       wrap.appendChild(cel);
       par.appendChild(wrap);
