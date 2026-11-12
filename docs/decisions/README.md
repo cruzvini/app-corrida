@@ -158,6 +158,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0150 | [Aviso neutro de falha do Strava](0150-aviso-neutro-de-falha-do-strava.md) | Aceita |
 | 0151 | [Contagem de não lidas na aba Notificações](0151-contagem-de-nao-lidas.md) | Aceita |
 | 0152 | [Folha da escolha do treino](0152-folha-da-escolha-do-treino.md) | Aceita |
+| 0153 | [Número em destaque no card do treino](0153-numero-em-destaque-no-card-do-treino.md) | Aceita |
 
 ## Como criar um novo ADR
 
