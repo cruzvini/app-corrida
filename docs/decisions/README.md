@@ -165,6 +165,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0157 | [Ações diretas no detalhe do treino](0157-acoes-diretas-no-detalhe.md) | Aceita |
 | 0158 | [Rodapé fixo do detalhe do treino](0158-rodape-fixo-do-detalhe.md) | Aceita |
 | 0159 | [Balões de mensagem do feedback e do Piu](0159-baloes-de-mensagem.md) | Aceita |
+| 0160 | ["Feedback salvo" na própria mensagem](0160-feedback-salvo-na-propria-mensagem.md) | Aceita |
 
 ## Como criar um novo ADR
 

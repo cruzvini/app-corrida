@@ -221,11 +221,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .balao { max-width: 82%; padding: 10px 14px; border-radius: 16px 16px 16px 4px; background: var(--primaria-suave); color: var(--texto); justify-self: start; }
 .balao.meu { justify-self: end; background: var(--neutro-suave); border-radius: 16px 16px 4px 16px; }
 .meta { justify-self: end; display: flex; align-items: center; gap: 4px; font-size: 13px; line-height: 18px; color: var(--texto-secundario); margin-top: -4px; }
+.meta > .ico { font-size: 14px; }
 .meta .acao-texto { color: var(--primaria); font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; padding: 0 4px; }
-
-/* Toast de confirmação */
-.toast { position: absolute; left: 50%; bottom: calc(100% + 12px); transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: var(--raio-pilula); background: var(--texto); color: var(--fundo); font-size: 15px; line-height: 20px; font-weight: 500; white-space: nowrap; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18); }
-.toast .ico { font-size: 18px; }
 
 /* Aviso neutro com link */
 .aviso .ver { justify-self: start; }
@@ -515,7 +512,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </figure>
 
     <figure class="estado">
-      <template data-altura="920">
+      <template data-altura="950">
         <div class="barra-status"><span>19:42</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Hoje</span></div>
@@ -541,11 +538,10 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           <div class="conversa">
             <span class="rotulo">Feedback</span>
             <div class="balao meu">Senti a panturrilha esquerda nas últimas duas séries.</div>
-            <div class="meta">Hoje, 19:41 · <span class="acao-texto">Apagar</span></div>
+            <div class="meta"><svg class="ico"><use href="#i-check"/></svg>Salvo · Hoje, 19:41 · <span class="acao-texto">Apagar</span></div>
           </div>
         </div>
         <div class="rodape">
-          <span class="toast"><svg class="ico"><use href="#i-check-circle-fill"/></svg>Feedback salvo</span>
           <div class="mensagem"><span class="entrada">Mais alguma coisa?</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
           <span class="link-piu"><svg class="ico"><use href="#i-chat-circle"/></svg>Falar com o Piu sobre este treino<svg class="ico"><use href="#i-caret-right"/></svg></span>
         </div>
@@ -553,7 +549,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Corrida feita</strong>
-        <span>Depois de feito, o previsto só aparece para comparar: distância, duração e pace médio, com o feito em número grande. Embaixo, a atividade do Strava de origem, com "View on Strava". O feedback enviado aparece como mensagem no fim do conteúdo, e um aviso curto confirma que foi salvo.</span>
+        <span>Depois de feito, o previsto só aparece para comparar: distância, duração e pace médio, com o feito em número grande. Embaixo, a atividade do Strava de origem, com "View on Strava". O feedback enviado aparece como mensagem no fim do conteúdo, e a linha embaixo dela confirma que foi salvo.</span>
         <span class="refs">ADRs 0046, 0055, 0056, 0076, 0079, 0080, 0115 e 0153 · componentes ChipDeStatus e BarraDeAbas · propostas 1, 3, 4, 5, 6 e 7</span>
       </figcaption>
     </figure>
@@ -673,7 +669,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           <div class="conversa">
             <span class="rotulo">Feedback</span>
             <div class="balao meu">Senti a panturrilha esquerda nas últimas duas séries.</div>
-            <div class="meta">Hoje, 19:41 · <span class="acao-texto">Apagar</span></div>
+            <div class="meta"><svg class="ico"><use href="#i-check"/></svg>Salvo · Hoje, 19:41 · <span class="acao-texto">Apagar</span></div>
           </div>
         </div>
         <div class="rodape">
@@ -696,7 +692,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </figure>
 
     <div class="propostas">
-      <h3>Propostas desta tela: 6 de 10 decididas</h3>
+      <h3>Propostas desta tela: 7 de 10 decididas</h3>
       <ol>
         <li><b>Cabeçalho e seções do detalhe</b> (decidido no ADR 0154, componente CabecalhoDoDetalhe): "‹ Hoje" em ardósia para voltar (44 px), título de 24 px com o ícone da atividade na caixa de 40 px e o chip de status à direita, data e semana em legenda e a distância em destaque no previsto. Cada seção num card, com o rótulo em caixa alta.</li>
         <li><b>Chip de não feito</b> (decidido no ADR 0155, componente ChipDeStatus): o mesmo padrão do "Feito · Strava", com o contorno e o fundo de não feito e o ícone <code>x</code> preenchido em amarelo.</li>
@@ -704,7 +700,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Ações diretas</b> (decidido no ADR 0157, componentes AlternarFeito e BotaoDeIcone; revista na primeira rodada): marcar e desmarcar como feito numa pílula de alternância no cabeçalho ("Marcar como feito" com contorno; "Feito · Strava" preenchida em verde, no lugar do chip); corrigir a divisão tocando no card dela, com um lápis; na proposta do Piu, botões de ícone com rótulo curto (Aceitar, Editar e Descartar). Botões com texto ficam só para "Replanejar com o Piu" e para o diálogo.</li>
         <li><b>Rodapé fixo do detalhe</b> (decidido no ADR 0158, componente RodapeDoTreino): área em <code>superficie</code> acima da barra de abas, com "Replanejar com o Piu" só no treino previsto, o campo de mensagem em pílula com contorno em <code>texto-secundario</code>, o botão redondo de enviar sempre ativo e o link "Falar com o Piu sobre este treino".</li>
         <li><b>Mensagens</b> (decidido no ADR 0159, componente BalaoDeMensagem): o feedback do usuário à direita, em <code>neutro-suave</code>, com hora e "Apagar" embaixo; a mensagem do Piu à esquerda, em <code>primaria-suave</code>. Cantos de 16 px com o canto do lado de quem fala em 4 px.</li>
-        <li><b>Aviso de confirmação</b>: pílula invertida (fundo em <code>texto</code>) acima do rodapé, com ✓ e texto curto ("Feedback salvo"), que some sozinha.</li>
+        <li><b>Confirmação de feedback salvo</b> (decidido no ADR 0160, componente BalaoDeMensagem; revista na primeira rodada): no lugar de um aviso flutuante, a linha embaixo do balão mostra "✓ Salvo · Hoje, 19:41 · Apagar", com "Enviando…" durante o envio e "Não foi enviado · Tentar de novo" se falhar.</li>
         <li><b>Aviso neutro com link</b>: o AvisoNeutro com um link em ardósia no lugar do botão, para levar a outra tela sem competir com a ação principal do rodapé.</li>
         <li><b>Proposta do Piu na conversa</b>: o treino como contexto no topo, num bloco em <code>neutro-suave</code>; o card da proposta com o AntesDepois, uma nota com o ícone <code>info</code> e os botões Aceitar, Editar e Descartar.</li>
         <li><b>Diálogo de confirmação</b>: caixa centralizada em <code>superficie</code>, cantos de 24 px, sobre o <code>veu</code>, com "Cancelar" secundário e a ação principal em ardósia, inclusive quando é apagar.</li>
