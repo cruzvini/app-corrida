@@ -696,14 +696,14 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </figure>
 
     <div class="propostas">
-      <h3>Propostas desta tela: 5 de 10 decididas</h3>
+      <h3>Propostas desta tela: 6 de 10 decididas</h3>
       <ol>
         <li><b>Cabeçalho e seções do detalhe</b> (decidido no ADR 0154, componente CabecalhoDoDetalhe): "‹ Hoje" em ardósia para voltar (44 px), título de 24 px com o ícone da atividade na caixa de 40 px e o chip de status à direita, data e semana em legenda e a distância em destaque no previsto. Cada seção num card, com o rótulo em caixa alta.</li>
         <li><b>Chip de não feito</b> (decidido no ADR 0155, componente ChipDeStatus): o mesmo padrão do "Feito · Strava", com o contorno e o fundo de não feito e o ícone <code>x</code> preenchido em amarelo.</li>
         <li><b>Previsto × feito e origem no Strava</b> (decidido no ADR 0156, componentes PrevistoFeito e OrigemDoStrava): tabela de três colunas, com o previsto em <code>texto-secundario</code> e o feito em número de 24 px; embaixo, a atividade de origem, "View on Strava" em ardósia, negrito e sublinhado, e "Powered by Strava" pequeno e monocromático.</li>
         <li><b>Ações diretas</b> (decidido no ADR 0157, componentes AlternarFeito e BotaoDeIcone; revista na primeira rodada): marcar e desmarcar como feito numa pílula de alternância no cabeçalho ("Marcar como feito" com contorno; "Feito · Strava" preenchida em verde, no lugar do chip); corrigir a divisão tocando no card dela, com um lápis; na proposta do Piu, botões de ícone com rótulo curto (Aceitar, Editar e Descartar). Botões com texto ficam só para "Replanejar com o Piu" e para o diálogo.</li>
         <li><b>Rodapé fixo do detalhe</b> (decidido no ADR 0158, componente RodapeDoTreino): área em <code>superficie</code> acima da barra de abas, com "Replanejar com o Piu" só no treino previsto, o campo de mensagem em pílula com contorno em <code>texto-secundario</code>, o botão redondo de enviar sempre ativo e o link "Falar com o Piu sobre este treino".</li>
-        <li><b>Mensagens</b>: o feedback do usuário à direita, em <code>neutro-suave</code>, com hora e "Apagar" embaixo; a mensagem do Piu à esquerda, em <code>primaria-suave</code>. Cantos de 16 px com o canto do lado de quem fala em 4 px.</li>
+        <li><b>Mensagens</b> (decidido no ADR 0159, componente BalaoDeMensagem): o feedback do usuário à direita, em <code>neutro-suave</code>, com hora e "Apagar" embaixo; a mensagem do Piu à esquerda, em <code>primaria-suave</code>. Cantos de 16 px com o canto do lado de quem fala em 4 px.</li>
         <li><b>Aviso de confirmação</b>: pílula invertida (fundo em <code>texto</code>) acima do rodapé, com ✓ e texto curto ("Feedback salvo"), que some sozinha.</li>
         <li><b>Aviso neutro com link</b>: o AvisoNeutro com um link em ardósia no lugar do botão, para levar a outra tela sem competir com a ação principal do rodapé.</li>
         <li><b>Proposta do Piu na conversa</b>: o treino como contexto no topo, num bloco em <code>neutro-suave</code>; o card da proposta com o AntesDepois, uma nota com o ícone <code>info</code> e os botões Aceitar, Editar e Descartar.</li>

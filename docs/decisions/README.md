@@ -164,6 +164,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0156 | [Previsto × feito e origem no Strava](0156-previsto-feito-e-origem-no-strava.md) | Aceita |
 | 0157 | [Ações diretas no detalhe do treino](0157-acoes-diretas-no-detalhe.md) | Aceita |
 | 0158 | [Rodapé fixo do detalhe do treino](0158-rodape-fixo-do-detalhe.md) | Aceita |
+| 0159 | [Balões de mensagem do feedback e do Piu](0159-baloes-de-mensagem.md) | Aceita |
 
 ## Como criar um novo ADR
 
