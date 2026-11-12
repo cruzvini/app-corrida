@@ -173,6 +173,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0165 | [Seções em grupo sem contorno](0165-secoes-em-grupo-sem-contorno.md) | Aceita |
 | 0166 | [Linhas de apoio em frases, sem pontos médios](0166-linhas-de-apoio-em-frases.md) | Aceita |
 | 0167 | [Card do objetivo com a distância em destaque](0167-card-do-objetivo.md) | Aceita |
+| 0168 | [Faixa de fases com contorno na fase atual](0168-faixa-de-fases.md) | Aceita |
 
 ## Como criar um novo ADR
 
