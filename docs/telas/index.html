@@ -187,6 +187,18 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .ver-strava { color: var(--primaria); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; display: inline-flex; align-items: center; min-height: 44px; }
 .powered { font-size: 11px; line-height: 14px; font-weight: 700; letter-spacing: 0.02em; color: var(--texto); }
 
+/* Ações diretas: círculo de feito, card editável e botões de ícone com rótulo */
+.alternar { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px 0 14px; border-radius: var(--raio-pilula); box-shadow: inset 0 0 0 1.5px var(--primaria); color: var(--primaria); font-size: 15px; line-height: 20px; font-weight: 500; justify-self: start; white-space: nowrap; }
+.alternar .ico { font-size: 20px; }
+.alternar.on { background: var(--status-feito); box-shadow: none; color: var(--sobre-status); }
+.linha-apoio { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.secao.editavel { position: relative; padding-right: 60px; }
+.secao.editavel .editar { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; display: grid; place-items: center; color: var(--primaria); font-size: 20px; }
+.botoes-icone { display: flex; justify-content: space-around; margin-top: 8px; }
+.acao-icone { display: grid; justify-items: center; gap: 4px; min-width: 64px; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--texto-secundario); }
+.acao-icone .circ { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 20px; color: var(--primaria); box-shadow: inset 0 0 0 1px var(--primaria); }
+.acao-icone.principal .circ { background: var(--primaria); color: var(--sobre-primaria); box-shadow: none; }
+
 /* Botões principal e secundário */
 .botao.secundario { background: transparent; color: var(--primaria); box-shadow: inset 0 0 0 1px var(--primaria); }
 .botao.cheio { justify-self: stretch; flex: 1; padding: 0 12px; margin-top: 0; }
@@ -245,7 +257,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .dialogo .botoes { display: flex; gap: 8px; margin-top: 12px; }
 </style>
 
-<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-x-fill" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM181.66,170.34a8,8,0,0,1-11.32,11.32L128,139.31,85.66,181.66a8,8,0,0,1-11.32-11.32L116.69,128,74.34,85.66A8,8,0,0,1,85.66,74.34L128,116.69l42.34-42.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-paper-plane-right" viewBox="0 0 256 256"><path d="M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z"/></symbol><symbol id="i-arrow-elbow-down-right" viewBox="0 0 256 256"><path d="M221.66,181.66l-48,48a8,8,0,0,1-11.32-11.32L196.69,184H72a8,8,0,0,1-8-8V32a8,8,0,0,1,16,0V168H196.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,221.66,181.66Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol></svg>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-x-fill" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM181.66,170.34a8,8,0,0,1-11.32,11.32L128,139.31,85.66,181.66a8,8,0,0,1-11.32-11.32L116.69,128,74.34,85.66A8,8,0,0,1,85.66,74.34L128,116.69l42.34-42.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-paper-plane-right" viewBox="0 0 256 256"><path d="M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z"/></symbol><symbol id="i-arrow-elbow-down-right" viewBox="0 0 256 256"><path d="M221.66,181.66l-48,48a8,8,0,0,1-11.32-11.32L196.69,184H72a8,8,0,0,1-8-8V32a8,8,0,0,1,16,0V168H196.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,221.66,181.66Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-pencil-simple" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg>
 
 <div class="pagina">
   <header class="cabeca">
@@ -475,9 +487,10 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Hoje</span></div>
           <div class="cabecalho">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><h3>Intervalado</h3><span class="chip">Previsto</span></div>
-            <div class="sub">Segunda, 9 nov · Semana 3 de 10 · Base</div>
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><h3>Intervalado</h3></div>
+            <div class="linha-apoio"><span class="chip">Previsto</span><span class="sub">Segunda, 9 nov · Semana 3 de 10 · Base</span></div>
             <div class="medida"><b>8,6 km</b><span>~50 min · 5:47/km médio</span></div>
+            <span class="alternar" role="switch" aria-checked="false"><svg class="ico"><use href="#i-circle"/></svg>Marcar como feito</span>
           </div>
           <div class="card secao">
             <span class="rotulo">Blocos e pace previsto</span>
@@ -490,14 +503,14 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           </div>
         </div>
         <div class="rodape">
-          <div class="acoes"><span class="botao">Replanejar com o Piu</span><span class="botao secundario">Marcar como feito</span></div>
+          <div class="acoes"><span class="botao">Replanejar com o Piu</span></div>
           <div class="mensagem"><span class="entrada">Como foi? Escreva antes ou depois</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
         </div>
         <nav class="abas" data-hoje="9" data-contagem="2" data-aberta="Hoje"></nav>
       </template>
       <figcaption>
         <strong>Corrida prevista</strong>
-        <span>Cabeçalho com o tipo, o status, a data e a distância em destaque; os blocos com o pace previsto numa seção em card. No rodapé fixo, as ações do status e o campo de feedback. "Replanejar com o Piu" ocupa o lugar do link do Piu nesse status.</span>
+        <span>Cabeçalho com o tipo, o status, a data e a distância em destaque. A pílula "Marcar como feito" marca o treino na hora. Os blocos com o pace previsto ficam numa seção em card. No rodapé fixo, "Replanejar com o Piu", que ocupa o lugar do link do Piu nesse status, e o campo de feedback.</span>
         <span class="refs">ADRs 0024, 0036, 0075, 0076, 0078 e 0153 · componentes ChipDeStatus, IconeDeAtividade e BarraDeAbas · propostas 1, 4 e 5</span>
       </figcaption>
     </figure>
@@ -508,8 +521,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Hoje</span></div>
           <div class="cabecalho">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><h3>Intervalado</h3><span class="chip feito"><svg class="ico"><use href="#i-check-fill"/></svg>Feito · Strava</span></div>
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><h3>Intervalado</h3></div>
             <div class="sub">Segunda, 9 nov · Semana 3 de 10 · Base</div>
+            <span class="alternar on" role="switch" aria-checked="true"><svg class="ico"><use href="#i-check"/></svg>Feito · Strava</span>
           </div>
           <div class="card secao">
             <span class="rotulo">Previsto × feito</span>
@@ -533,7 +547,6 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         </div>
         <div class="rodape">
           <span class="toast"><svg class="ico"><use href="#i-check-circle-fill"/></svg>Feedback salvo</span>
-          <div class="acoes"><span class="botao secundario">Desmarcar como feito</span></div>
           <div class="mensagem"><span class="entrada">Mais alguma coisa?</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
           <span class="link-piu"><svg class="ico"><use href="#i-chat-circle"/></svg>Falar com o Piu sobre este treino<svg class="ico"><use href="#i-caret-right"/></svg></span>
         </div>
@@ -552,12 +565,14 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span></div>
           <div class="cabecalho">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-barbell"/></svg></span><h3>Musculação</h3><span class="chip feito"><svg class="ico"><use href="#i-check-fill"/></svg>Feito · Strava</span></div>
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-barbell"/></svg></span><h3>Musculação</h3></div>
             <div class="sub">Quinta, 5 nov · Semana 2 de 10 · Base</div>
+            <span class="alternar on" role="switch" aria-checked="true"><svg class="ico"><use href="#i-check"/></svg>Feito · Strava</span>
           </div>
-          <div class="card secao">
+          <div class="card secao editavel" aria-label="Corrigir divisão">
             <span class="rotulo">Divisão</span>
             <span class="valor">Inferiores<small>Prevista no plano</small></span>
+            <span class="editar"><svg class="ico"><use href="#i-pencil-simple"/></svg></span>
           </div>
           <div class="card secao">
             <span class="rotulo">Executado</span>
@@ -569,7 +584,6 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           </div>
         </div>
         <div class="rodape">
-          <div class="acoes"><span class="botao">Corrigir divisão</span><span class="botao secundario">Desmarcar como feito</span></div>
           <div class="mensagem"><span class="entrada">Como foi? Ex.: agachamento pesado</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
           <span class="link-piu"><svg class="ico"><use href="#i-chat-circle"/></svg>Falar com o Piu sobre este treino<svg class="ico"><use href="#i-caret-right"/></svg></span>
         </div>
@@ -577,7 +591,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Musculação feita</strong>
-        <span>Aberto pelo Plano. Mostra a divisão prevista, que o treino feito assume, e a atividade do Strava de origem. Sem exercícios e sem comparação, porque a prescrição de musculação está fora do MVP. A ação principal é corrigir a divisão.</span>
+        <span>Aberto pelo Plano. Mostra a divisão prevista, que o treino feito assume, e a atividade do Strava de origem. Sem exercícios e sem comparação, porque a prescrição de musculação está fora do MVP. Para corrigir a divisão, basta tocar no card dela, com o lápis no canto. A pílula verde "Feito · Strava" mostra o status e, ao tocar, desmarca o treino.</span>
         <span class="refs">ADRs 0014, 0025, 0075, 0076 e 0115 · crit. 4.5 · componentes ChipDeStatus, IconeDeAtividade e BarraDeAbas · propostas 1, 3, 4 e 5</span>
       </figcaption>
     </figure>
@@ -588,8 +602,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Hoje</span></div>
           <div class="cabecalho">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-barbell"/></svg></span><h3>Musculação</h3><span class="chip nao"><svg class="ico"><use href="#i-x-fill"/></svg>Não feito</span></div>
-            <div class="sub">Terça, 10 nov · Semana 3 de 10 · Base</div>
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-barbell"/></svg></span><h3>Musculação</h3></div>
+            <div class="linha-apoio"><span class="chip nao"><svg class="ico"><use href="#i-x-fill"/></svg>Não feito</span><span class="sub">Terça, 10 nov · Semana 3 de 10 · Base</span></div>
+            <span class="alternar" role="switch" aria-checked="false"><svg class="ico"><use href="#i-circle"/></svg>Marcar como feito</span>
           </div>
           <div class="card secao">
             <span class="rotulo">Divisão</span>
@@ -597,12 +612,11 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           </div>
           <div class="aviso">
             <span class="tit"><svg class="ico"><use href="#i-clock"/></svg>Contou como não feito às 22h</span>
-            <p>Não havia atividade nem marcação até as 22h, então o plano foi ajustado.</p>
+            <p>Não havia atividade nem marcação até as 22h, então o plano foi ajustado. Se você treinou, marque como feito e o ajuste é revisto.</p>
             <span class="ver">Ver o ajuste em Notificações <svg class="ico"><use href="#i-caret-right"/></svg></span>
           </div>
         </div>
         <div class="rodape">
-          <div class="acoes"><span class="botao">Marcar como feito</span><span class="nota-acao">O ajuste das 22h é revisto.</span></div>
           <div class="mensagem"><span class="entrada">O que aconteceu?</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
           <span class="link-piu"><svg class="ico"><use href="#i-chat-circle"/></svg>Falar com o Piu sobre este treino<svg class="ico"><use href="#i-caret-right"/></svg></span>
         </div>
@@ -610,7 +624,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Treino não feito</strong>
-        <span>Aberto pela escolha do treino na faixa. O chip de não feito usa o amarelo, sem culpa. Um aviso neutro explica por que o treino contou como não feito e leva ao ajuste. Marcar como feito depois faz o ajuste ser revisto, e o feedback continua disponível.</span>
+        <span>Aberto pela escolha do treino na faixa. O chip de não feito usa o amarelo, sem culpa. Um aviso neutro explica por que o treino contou como não feito e leva ao ajuste. Marcar como feito pela pílula do cabeçalho faz o ajuste ser revisto, e o feedback continua disponível.</span>
         <span class="refs">ADRs 0026, 0047, 0069, 0076, 0142, 0149 e 0150 · crit. 4.7 e 5.3 · componentes ChipDeStatus, AvisoNeutro e BarraDeAbas · propostas 1, 2, 4, 5 e 8</span>
       </figcaption>
     </figure>
@@ -632,7 +646,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             <div class="ad-linha"><span class="ad-dia">Ter 10</span><span class="ad-muda"><span class="ad-antes">Leve 5 km</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Intervalado 8,6 km</span><small>A musculação de superiores continua</small></span></div>
             <div class="ad-linha"><span class="ad-dia">Qua 11</span><span class="ad-igual">Descanso, sem mudança</span></div>
             <div class="nota-proposta"><svg class="ico"><use href="#i-info"/></svg>Semana com 5 km a menos de corrida.</div>
-            <div class="botoes"><span class="botao cheio">Aceitar</span><span class="botao cheio secundario">Editar</span><span class="botao cheio secundario">Descartar</span></div>
+            <div class="botoes-icone"><span class="acao-icone principal"><span class="circ"><svg class="ico"><use href="#i-check"/></svg></span>Aceitar</span><span class="acao-icone"><span class="circ"><svg class="ico"><use href="#i-pencil-simple"/></svg></span>Editar</span><span class="acao-icone"><span class="circ"><svg class="ico"><use href="#i-x"/></svg></span>Descartar</span></div>
           </div>
         </div>
         <div class="rodape" style="padding-bottom:30px">
@@ -653,8 +667,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Hoje</span></div>
           <div class="cabecalho">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><h3>Intervalado</h3><span class="chip feito"><svg class="ico"><use href="#i-check-fill"/></svg>Feito · Strava</span></div>
+            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><h3>Intervalado</h3></div>
             <div class="sub">Segunda, 9 nov · Semana 3 de 10 · Base</div>
+            <span class="alternar on" role="switch" aria-checked="true"><svg class="ico"><use href="#i-check"/></svg>Feito · Strava</span>
           </div>
           <div class="conversa">
             <span class="rotulo">Feedback</span>
@@ -663,7 +678,6 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           </div>
         </div>
         <div class="rodape">
-          <div class="acoes"><span class="botao secundario">Desmarcar como feito</span></div>
           <div class="mensagem"><span class="entrada">Mais alguma coisa?</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
           <span class="link-piu"><svg class="ico"><use href="#i-chat-circle"/></svg>Falar com o Piu sobre este treino<svg class="ico"><use href="#i-caret-right"/></svg></span>
         </div>
@@ -683,13 +697,13 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </figure>
 
     <div class="propostas">
-      <h3>Propostas desta tela: 3 de 10 decididas</h3>
+      <h3>Propostas desta tela: 4 de 10 decididas</h3>
       <ol>
         <li><b>Cabeçalho e seções do detalhe</b> (decidido no ADR 0154, componente CabecalhoDoDetalhe): "‹ Hoje" em ardósia para voltar (44 px), título de 24 px com o ícone da atividade na caixa de 40 px e o chip de status à direita, data e semana em legenda e a distância em destaque no previsto. Cada seção num card, com o rótulo em caixa alta.</li>
         <li><b>Chip de não feito</b> (decidido no ADR 0155, componente ChipDeStatus): o mesmo padrão do "Feito · Strava", com o contorno e o fundo de não feito e o ícone <code>x</code> preenchido em amarelo.</li>
         <li><b>Previsto × feito e origem no Strava</b> (decidido no ADR 0156, componentes PrevistoFeito e OrigemDoStrava): tabela de três colunas, com o previsto em <code>texto-secundario</code> e o feito em número de 24 px; embaixo, a atividade de origem, "View on Strava" em ardósia, negrito e sublinhado, e "Powered by Strava" pequeno e monocromático.</li>
-        <li><b>Botões principal e secundário</b>: pílula de 44 px; o principal em <code>primaria</code> e o secundário com contorno de 1 px e texto em <code>primaria</code>, sem fundo.</li>
-        <li><b>Rodapé fixo do detalhe</b>: área em <code>superficie</code> acima da barra de abas, com as ações em linha, o campo de mensagem em pílula, com contorno em <code>borda-forte</code>, e o botão redondo de enviar (apagado enquanto o campo está vazio) e o link "Falar com o Piu sobre este treino".</li>
+        <li><b>Ações diretas</b> (decidido no ADR 0157, componentes AlternarFeito e BotaoDeIcone; revista na primeira rodada): marcar e desmarcar como feito numa pílula de alternância no cabeçalho ("Marcar como feito" com contorno; "Feito · Strava" preenchida em verde, no lugar do chip); corrigir a divisão tocando no card dela, com um lápis; na proposta do Piu, botões de ícone com rótulo curto (Aceitar, Editar e Descartar). Botões com texto ficam só para "Replanejar com o Piu" e para o diálogo.</li>
+        <li><b>Rodapé fixo do detalhe</b>: área em <code>superficie</code> acima da barra de abas, com "Replanejar com o Piu" só no treino previsto, o campo de mensagem em pílula, com contorno em <code>borda-forte</code>, e o botão redondo de enviar (apagado enquanto o campo está vazio) e o link "Falar com o Piu sobre este treino".</li>
         <li><b>Mensagens</b>: o feedback do usuário à direita, em <code>neutro-suave</code>, com hora e "Apagar" embaixo; a mensagem do Piu à esquerda, em <code>primaria-suave</code>. Cantos de 16 px com o canto do lado de quem fala em 4 px.</li>
         <li><b>Aviso de confirmação</b>: pílula invertida (fundo em <code>texto</code>) acima do rodapé, com ✓ e texto curto ("Feedback salvo"), que some sozinha.</li>
         <li><b>Aviso neutro com link</b>: o AvisoNeutro com um link em ardósia no lugar do botão, para levar a outra tela sem competir com a ação principal do rodapé.</li>

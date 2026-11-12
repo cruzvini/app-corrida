@@ -81,7 +81,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0073 | [Selos ✓ e ✕ reforçam a cor do contorno na faixa de 7 dias](0073-selos-de-status-na-faixa.md) | Aceita |
 | 0074 | [Dia atual na faixa se destaca pelo fundo preenchido](0074-destaque-do-dia-atual-na-faixa.md) | Substituída pelo ADR 0144 |
 | 0075 | [Detalhe do treino mostra os paces em lista e compara previsto e feito só no geral](0075-paces-sem-barras-e-comparacao-geral.md) | Aceita (revisada pelo ADR 0080) |
-| 0076 | [Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino](0076-acoes-e-feedback-no-rodape-do-detalhe.md) | Aceita |
+| 0076 | [Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino](0076-acoes-e-feedback-no-rodape-do-detalhe.md) | Aceita (revisada pelo ADR 0157) |
 | 0077 | [Apagar um feedback pede confirmação](0077-apagar-feedback-pede-confirmacao.md) | Aceita |
 | 0078 | [Mudar um treino é replanejar com o Piu, no lugar de "Pular" e "Trocar dia"](0078-replanejar-treino-com-o-piu.md) | Aceita (revisada pelos ADRs 0084 e 0106) |
 | 0079 | [O executado no detalhe do treino usa só o resumo do Strava](0079-executado-so-com-o-resumo-do-strava.md) | Aceita |
@@ -159,9 +159,10 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0151 | [Contagem de não lidas na aba Notificações](0151-contagem-de-nao-lidas.md) | Aceita |
 | 0152 | [Folha da escolha do treino](0152-folha-da-escolha-do-treino.md) | Aceita |
 | 0153 | [Número em destaque no card do treino](0153-numero-em-destaque-no-card-do-treino.md) | Aceita |
-| 0154 | [Cabeçalho e seções do detalhe do treino](0154-cabecalho-e-secoes-do-detalhe.md) | Aceita |
+| 0154 | [Cabeçalho e seções do detalhe do treino](0154-cabecalho-e-secoes-do-detalhe.md) | Aceita (revisada pelo ADR 0157) |
 | 0155 | [Chip de não feito](0155-chip-de-nao-feito.md) | Aceita |
 | 0156 | [Previsto × feito e origem no Strava](0156-previsto-feito-e-origem-no-strava.md) | Aceita |
+| 0157 | [Ações diretas no detalhe do treino](0157-acoes-diretas-no-detalhe.md) | Aceita |
 
 ## Como criar um novo ADR
 

@@ -1,6 +1,6 @@
 # ADR 0076: Ações, feedback e Piu ficam numa área fixa no rodapé do detalhe do treino
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0157)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -11,7 +11,7 @@ O detalhe do treino (ADR 0036) reúne o treino, o resultado, as ações, o feedb
 
 As ações do treino, o campo de feedback e o acesso ao Piu ficam juntos numa **área fixa no rodapé** da tela de detalhe, acima da barra de abas, sempre visível.
 
-- Em cima, as ações do status atual, em botões compactos numa linha.
+- Em cima, as ações do status atual, em botões compactos numa linha. *Revisado pelo ADR 0157: marcar e desmarcar como feito vão para uma pílula no cabeçalho, e corrigir a divisão, para o card da divisão. No rodapé fica só "Replanejar com o Piu", no treino previsto.*
 - Embaixo, o campo de feedback com "Enviar", no formato de uma caixa de mensagem.
 - Junto ao campo, o acesso "Falar com o Piu sobre este treino".
 - O conteúdo do treino (cabeçalho, blocos, resultado) rola acima, e os feedbacks enviados aparecem no fim do conteúdo, logo acima do campo, como mensagens de uma conversa.

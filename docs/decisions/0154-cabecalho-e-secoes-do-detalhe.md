@@ -1,6 +1,6 @@
 # ADR 0154: Cabeçalho e seções do detalhe do treino
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0157)
 - **Data:** 2026-11-12
 - **Complementa:** [ADR 0036](0036-tela-de-detalhe-do-treino.md), [ADR 0140](0140-direcao-visual-esportiva.md) e [ADR 0153](0153-numero-em-destaque-no-card-do-treino.md)
 
@@ -11,7 +11,7 @@ A tela de detalhe do treino em alta fidelidade (ADR 0148) abre por cima da aba d
 ## Decisão
 
 - **Voltar:** no topo, o ícone Phosphor `caret-left` e o nome da aba de origem ("Hoje", "Plano" ou "Notificações"), em `primaria`, 16 px, peso 500, com área de toque de 44 px.
-- **Título:** nome do treino em 24 px negrito (estilo `titulo`), com o ícone da atividade (IconeDeAtividade) numa caixa de 40 px em `primaria-suave` à esquerda e o ChipDeStatus à direita.
+- **Título:** nome do treino em 24 px negrito (estilo `titulo`), com o ícone da atividade (IconeDeAtividade) numa caixa de 40 px em `primaria-suave` à esquerda e o ChipDeStatus à direita. *Revisado pelo ADR 0157: o chip passa para a linha de apoio, antes da data, e no status feito a pílula "Feito · Strava" o substitui.*
 - **Linha de apoio:** data, semana e fase no estilo `legenda` (13 px), em `texto-secundario`. Ex.: "Segunda, 9 nov · Semana 3 de 10 · Base".
 - **Número em destaque:** só no treino previsto, a distância total no estilo `numero` (30 px), com a duração estimada e o pace médio previsto ao lado em `legenda` (ADR 0153). No treino feito, os números ficam no previsto × feito.
 - O cabeçalho fica direto sobre o `fundo`, sem card.
