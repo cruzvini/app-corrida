@@ -1,6 +1,6 @@
 # ADR 0157: Ações diretas no detalhe do treino
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0165)
 - **Data:** 2026-11-12
 - **Revisa:** [ADR 0076](0076-acoes-e-feedback-no-rodape-do-detalhe.md) (ações no rodapé) e [ADR 0154](0154-cabecalho-e-secoes-do-detalhe.md) (lugar do chip de status)
 - **Complementa:** [ADR 0140](0140-direcao-visual-esportiva.md) e [ADR 0142](0142-tons-de-status-e-selos.md)
@@ -19,7 +19,7 @@ Foram comparadas, para as ações diretas: só ícone, ícone com rótulo curto 
   - Pílula (`raio-pilula`) de 44 px de altura. É um controle de alternância, com o estado exposto (ligado ou desligado).
   - **No status feito, a pílula ocupa o lugar do chip de status**, para o status não aparecer duas vezes. Nos outros status (previsto, pendente e não feito), o ChipDeStatus fica na linha de apoio, antes da data, e não mais à direita do título.
   - No não feito, o aviso das 22h passa a dizer "Se você treinou, marque como feito e o ajuste é revisto".
-- **Corrigir divisão:** tocar no card da divisão, que ganha o ícone `pencil-simple` em `primaria` no canto direito, com área de toque de 44 px. Só na musculação feita.
+- **Corrigir divisão:** tocar no card da divisão, que ganha o ícone `pencil-simple` em `primaria` no canto direito, com área de toque de 44 px. Só na musculação feita. *Revisado pelo ADR 0165: o card vira uma linha tocável dentro do grupo da seção, com o lápis à direita.*
 - **Proposta do Piu:** "Aceitar", "Editar" e "Descartar" viram **botões de ícone com rótulo**: círculo de 44 px com o ícone (`check`, `pencil-simple` e `x`) e o rótulo de 12 px, peso 500, em `texto-secundario` embaixo. Aceitar é preenchido em `primaria` com o ícone em `sobre-primaria`; os outros têm contorno de 1 px e ícone em `primaria`.
 - **Botões com texto** ficam só para "Replanejar com o Piu" (treino previsto) e para o diálogo de confirmação.
 - **Rodapé:** perde a linha de ações nos status feito, não feito e pendente. Fica o campo de feedback e o acesso ao Piu, e, no treino previsto, "Replanejar com o Piu".

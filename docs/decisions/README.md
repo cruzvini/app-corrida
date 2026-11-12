@@ -170,6 +170,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0162 | [Proposta do Piu na conversa, com o treino como contexto](0162-proposta-do-piu-na-conversa.md) | Aceita |
 | 0163 | [Diálogo de confirmação próprio](0163-dialogo-de-confirmacao.md) | Aceita |
 | 0164 | [Título de seção sem caixa alta](0164-titulo-de-secao-sem-caixa-alta.md) | Aceita |
+| 0165 | [Seções em grupo sem contorno](0165-secoes-em-grupo-sem-contorno.md) | Aceita |
 
 ## Como criar um novo ADR
 

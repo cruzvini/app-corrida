@@ -172,7 +172,16 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .cabecalho .sub { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
 .cabecalho .medida { margin-top: 2px; }
 .titulo-secao { font-size: 16px; line-height: 22px; font-weight: 700; color: var(--texto); }
-.secao { gap: 10px; }
+/* Seções em grupo sem contorno (ADR 0165): título fora, conteúdo em superficie, raio 12, sem borda */
+.secao { display: grid; gap: 8px; }
+.grupo-lista { background: var(--superficie); border-radius: var(--raio-campo); padding: 0 16px; }
+.grupo-lista.blocos div, .grupo-lista .comparacao > div { padding: 10px 0; }
+.grupo-lista .comparacao > div:first-child { padding: 10px 0 2px; }
+.grupo-lista .origem { padding-bottom: 2px; }
+.grupo-lista.origem { border-top: 0; padding: 12px 16px 2px; }
+.linha-editavel, .linha-valor { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; }
+.linha-editavel { padding-right: 6px; }
+.linha-editavel .editar { width: 44px; height: 44px; display: grid; place-items: center; color: var(--primaria); font-size: 20px; flex: none; }
 .secao .valor { font-size: 18px; line-height: 24px; font-weight: 700; }
 .secao .valor small { display: block; font-size: 13px; line-height: 18px; font-weight: 400; color: var(--texto-secundario); }
 .comparacao { display: grid; }
@@ -192,8 +201,6 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .alternar .ico { font-size: 20px; }
 .alternar.on { background: var(--status-feito); box-shadow: none; color: var(--sobre-status); }
 .linha-apoio { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
-.secao.editavel { position: relative; padding-right: 60px; }
-.secao.editavel .editar { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; display: grid; place-items: center; color: var(--primaria); font-size: 20px; }
 .botoes-icone { display: flex; justify-content: space-around; margin-top: 8px; }
 .acao-icone { display: grid; justify-items: center; gap: 4px; min-width: 64px; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--texto-secundario); }
 .acao-icone .circ { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 20px; color: var(--primaria); box-shadow: inset 0 0 0 1px var(--primaria); }
@@ -488,9 +495,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             <div class="medida"><b>8,6 km</b><span>~50 min · 5:47/km médio</span></div>
             <span class="alternar" role="switch" aria-checked="false"><svg class="ico"><use href="#i-circle"/></svg>Marcar como feito</span>
           </div>
-          <div class="card secao">
+          <div class="secao">
             <span class="titulo-secao">Blocos e pace previsto</span>
-            <div class="blocos">
+            <div class="grupo-lista blocos">
               <div><span>Aquecimento 2 km</span><em>6:20/km</em></div>
               <div><span>5 × 800 m</span><em>4:50/km</em></div>
               <div><span>Recuperação 400 m entre as séries</span><em>7:00/km</em></div>
@@ -506,7 +513,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Corrida prevista</strong>
-        <span>Cabeçalho com o tipo, o status, a data e a distância em destaque. A pílula "Marcar como feito" marca o treino na hora. Os blocos com o pace previsto ficam numa seção em card. No rodapé fixo, "Replanejar com o Piu", que ocupa o lugar do link do Piu nesse status, e o campo de feedback.</span>
+        <span>Cabeçalho com o tipo, o status, a data e a distância em destaque. A pílula "Marcar como feito" marca o treino na hora. Os blocos com o pace previsto ficam num grupo sem contorno, com o título da seção acima. No rodapé fixo, "Replanejar com o Piu", que ocupa o lugar do link do Piu nesse status, e o campo de feedback.</span>
         <span class="refs">ADRs 0024, 0036, 0075, 0076, 0078 e 0153 · componentes ChipDeStatus, IconeDeAtividade e BarraDeAbas · propostas 1, 4 e 5</span>
       </figcaption>
     </figure>
@@ -521,8 +528,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             <div class="sub">Segunda, 9 nov · Semana 3 de 10 · Base</div>
             <span class="alternar on" role="switch" aria-checked="true"><svg class="ico"><use href="#i-check"/></svg>Feito · Strava</span>
           </div>
-          <div class="card secao">
+          <div class="secao">
             <span class="titulo-secao">Previsto × feito</span>
+            <div class="grupo-lista">
             <div class="comparacao">
               <div><span></span><span>Previsto</span><span>Feito</span></div>
               <div><span>Distância</span><span class="prev">8,6 km</span><b>8,7 km</b></div>
@@ -533,6 +541,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
               <span class="atividade">Intervalado na pista</span>
               <span>Atividade do Strava, hoje às 18:20</span>
               <div class="linha"><span class="ver-strava">View on Strava</span><span class="powered">Powered by Strava</span></div>
+            </div>
             </div>
           </div>
           <div class="conversa">
@@ -564,14 +573,13 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             <div class="sub">Quinta, 5 nov · Semana 2 de 10 · Base</div>
             <span class="alternar on" role="switch" aria-checked="true"><svg class="ico"><use href="#i-check"/></svg>Feito · Strava</span>
           </div>
-          <div class="card secao editavel" aria-label="Corrigir divisão">
+          <div class="secao">
             <span class="titulo-secao">Divisão</span>
-            <span class="valor">Inferiores<small>Prevista no plano</small></span>
-            <span class="editar"><svg class="ico"><use href="#i-pencil-simple"/></svg></span>
+            <div class="grupo-lista linha-editavel" aria-label="Corrigir divisão"><span class="valor">Inferiores<small>Prevista no plano</small></span><span class="editar"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
           </div>
-          <div class="card secao">
+          <div class="secao">
             <span class="titulo-secao">Executado</span>
-            <div class="origem" style="border-top:0;padding-top:0">
+            <div class="grupo-lista origem">
               <span class="atividade">Treino de força</span>
               <span>Atividade do Strava, 5 nov às 18:30 · 52 min</span>
               <div class="linha"><span class="ver-strava">View on Strava</span><span class="powered">Powered by Strava</span></div>
@@ -586,7 +594,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Musculação feita</strong>
-        <span>Aberto pelo Plano. Mostra a divisão prevista, que o treino feito assume, e a atividade do Strava de origem. Sem exercícios e sem comparação, porque a prescrição de musculação está fora do MVP. Para corrigir a divisão, basta tocar no card dela, com o lápis no canto. A pílula verde "Feito · Strava" mostra o status e, ao tocar, desmarca o treino.</span>
+        <span>Aberto pelo Plano. Mostra a divisão prevista, que o treino feito assume, e a atividade do Strava de origem. Sem exercícios e sem comparação, porque a prescrição de musculação está fora do MVP. Para corrigir a divisão, basta tocar na linha dela, com o lápis à direita. A pílula verde "Feito · Strava" mostra o status e, ao tocar, desmarca o treino.</span>
         <span class="refs">ADRs 0014, 0025, 0075, 0076 e 0115 · crit. 4.5 · componentes ChipDeStatus, IconeDeAtividade e BarraDeAbas · propostas 1, 3, 4 e 5</span>
       </figcaption>
     </figure>
@@ -601,9 +609,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             <div class="linha-apoio"><span class="chip nao"><svg class="ico"><use href="#i-x-fill"/></svg>Não feito</span><span class="sub">Terça, 10 nov · Semana 3 de 10 · Base</span></div>
             <span class="alternar" role="switch" aria-checked="false"><svg class="ico"><use href="#i-circle"/></svg>Marcar como feito</span>
           </div>
-          <div class="card secao">
+          <div class="secao">
             <span class="titulo-secao">Divisão</span>
-            <span class="valor">Superiores<small>Prevista no plano</small></span>
+            <div class="grupo-lista linha-valor"><span class="valor">Superiores<small>Prevista no plano</small></span></div>
           </div>
           <div class="aviso">
             <span class="tit"><svg class="ico"><use href="#i-clock"/></svg>Contou como não feito às 22h</span>
@@ -694,10 +702,10 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     <div class="propostas">
       <h3>Propostas desta tela, todas decididas (ADRs 0154 a 0163)</h3>
       <ol>
-        <li><b>Cabeçalho e seções do detalhe</b> (decidido no ADR 0154, componente CabecalhoDoDetalhe): "‹ Hoje" em ardósia para voltar (44 px), título de 24 px com o ícone da atividade na caixa de 40 px e o chip de status à direita, data e semana em legenda e a distância em destaque no previsto. Cada seção num card, com o título da seção em 16 px negrito, sem caixa alta (revisto no ADR 0164).</li>
+        <li><b>Cabeçalho e seções do detalhe</b> (decidido no ADR 0154, componente CabecalhoDoDetalhe): "‹ Hoje" em ardósia para voltar (44 px), título de 24 px com o ícone da atividade na caixa de 40 px e o chip de status à direita, data e semana em legenda e a distância em destaque no previsto. Cada seção com o título em 16 px negrito, sem caixa alta (revisto no ADR 0164), e o conteúdo num grupo sem contorno (revisto no ADR 0165).</li>
         <li><b>Chip de não feito</b> (decidido no ADR 0155, componente ChipDeStatus): o mesmo padrão do "Feito · Strava", com o contorno e o fundo de não feito e o ícone <code>x</code> preenchido em amarelo.</li>
         <li><b>Previsto × feito e origem no Strava</b> (decidido no ADR 0156, componentes PrevistoFeito e OrigemDoStrava): tabela de três colunas, com o previsto em <code>texto-secundario</code> e o feito em número de 24 px; embaixo, a atividade de origem, "View on Strava" em ardósia, negrito e sublinhado, e "Powered by Strava" pequeno e monocromático.</li>
-        <li><b>Ações diretas</b> (decidido no ADR 0157, componentes AlternarFeito e BotaoDeIcone; revista na primeira rodada): marcar e desmarcar como feito numa pílula de alternância no cabeçalho ("Marcar como feito" com contorno; "Feito · Strava" preenchida em verde, no lugar do chip); corrigir a divisão tocando no card dela, com um lápis; na proposta do Piu, botões de ícone com rótulo curto (Aceitar, Editar e Descartar). Botões com texto ficam só para "Replanejar com o Piu" e para o diálogo.</li>
+        <li><b>Ações diretas</b> (decidido no ADR 0157, componentes AlternarFeito e BotaoDeIcone; revista na primeira rodada): marcar e desmarcar como feito numa pílula de alternância no cabeçalho ("Marcar como feito" com contorno; "Feito · Strava" preenchida em verde, no lugar do chip); corrigir a divisão tocando na linha dela, com um lápis (linha tocável desde o ADR 0165); na proposta do Piu, botões de ícone com rótulo curto (Aceitar, Editar e Descartar). Botões com texto ficam só para "Replanejar com o Piu" e para o diálogo.</li>
         <li><b>Rodapé fixo do detalhe</b> (decidido no ADR 0158, componente RodapeDoTreino): área em <code>superficie</code> acima da barra de abas, com "Replanejar com o Piu" só no treino previsto, o campo de mensagem em pílula com contorno em <code>texto-secundario</code>, o botão redondo de enviar sempre ativo e o link "Falar com o Piu sobre este treino".</li>
         <li><b>Mensagens</b> (decidido no ADR 0159, componente BalaoDeMensagem): o feedback do usuário à direita, em <code>neutro-suave</code>, com hora e "Apagar" embaixo; a mensagem do Piu à esquerda, em <code>primaria-suave</code>. Cantos de 16 px com o canto do lado de quem fala em 4 px.</li>
         <li><b>Confirmação de feedback salvo</b> (decidido no ADR 0160, componente BalaoDeMensagem; revista na primeira rodada): no lugar de um aviso flutuante, a linha embaixo do balão mostra "✓ Salvo · Hoje, 19:41 · Apagar", com "Enviando…" durante o envio e "Não foi enviado · Tentar de novo" se falhar.</li>
