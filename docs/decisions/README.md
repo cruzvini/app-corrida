@@ -157,6 +157,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0149 | [Chips de status do treino](0149-chips-de-status-do-treino.md) | Aceita |
 | 0150 | [Aviso neutro de falha do Strava](0150-aviso-neutro-de-falha-do-strava.md) | Aceita |
 | 0151 | [Contagem de não lidas na aba Notificações](0151-contagem-de-nao-lidas.md) | Aceita |
+| 0152 | [Folha da escolha do treino](0152-folha-da-escolha-do-treino.md) | Aceita |
 
 ## Como criar um novo ADR
 
