@@ -209,6 +209,9 @@ flowchart TD
   M --> T{Tipo}
   T -- ajuste automático --> AJ{É o mais recente?}
   AJ -- sim --> AJ1[Desfazer, ADR 0047]
+  AJ1 --> AJ2{Confirma no diálogo? ADR 0182}
+  AJ2 -- cancelar --> M
+  AJ2 -- desfazer --> AJ3([Plano volta ao antes; mensagem fica como desfeita, sem refazer])
   AJ -- não --> PIU[Conversar com o Piu sobre isso, ADR 0050; se veio do Strava, só o antes e o depois, ADR 0117]
   T -- semana nova ou sugestão --> PIU
   T -- proposta --> P{Ainda válida?}
