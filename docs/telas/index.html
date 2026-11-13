@@ -415,7 +415,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .mensagem .entrada.texto { height: auto; line-height: 20px; padding: 11px 16px; border-radius: 22px; white-space: normal; color: var(--texto); }
 .botao-strava { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 6px; background: #fc5200; color: #ffffff; font-size: 15px; line-height: 20px; font-weight: 700; justify-self: start; margin-top: 4px; }
 /* Onboarding e setup */
-.rodape.solto { bottom: 0; padding-bottom: 34px; }
+.rodape.solto { bottom: 0; padding-bottom: 34px; background: transparent; border-top: 0; } /* botão flutuante, sem fundo (ADR 0203) */
+.rodape.solto .nota-acao { text-align: center; }
+.botao.off { background: var(--neutro-suave); color: var(--texto-secundario); }
 .rodape .botao-strava.cheio { justify-self: stretch; margin-top: 0; }
 .rodape .ver.centro { justify-self: center; margin: -4px 0 -8px; }
 .ritmo { width: 64px; height: 64px; flex: none; }
@@ -1786,8 +1788,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Boas-vindas e e-mail</strong>
-        <span>Só a marca, uma frase sobre o app e o campo de e-mail. O ícone Ritmo e o nome ficam no terço de cima, e o campo logo abaixo. O botão principal fica no rodapé fixo, que no onboarding encosta no fim da tela, porque não há barra de abas. E-mail inválido mostra o erro embaixo do campo, em legenda.</span>
-        <span class="refs">ADRs 0020, 0032, 0033, 0100, 0138, 0158, 0199 e 0202 · crit. 1.1 · componentes BoasVindas, CampoDoFormulario e RodapeDoTreino · propostas 1 e 2</span>
+        <span>Só a marca, uma frase sobre o app e o campo de e-mail. O ícone Ritmo e o nome ficam no terço de cima, e o campo logo abaixo. O botão principal flutua no fim da tela, sem fundo de rodapé, porque não há barra de abas. E-mail inválido mostra o erro embaixo do campo, em legenda.</span>
+        <span class="refs">ADRs 0020, 0032, 0033, 0100, 0138, 0158, 0199, 0202 e 0203 · crit. 1.1 · componentes BoasVindas, CampoDoFormulario e RodapeDoTreino · propostas 1 e 2</span>
       </figcaption>
     </figure>
 
@@ -1860,6 +1862,29 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <strong>Nível de corrida</strong>
         <span>Primeiro passo do setup, com o voltar e "1 de 7" na mesma linha e a barra de progresso embaixo. Com histórico, as regras sugerem o nível e explicam numa nota, e a opção sugerida já vem marcada, com o chip neutro "Sugerido". Sem histórico, nada vem marcado e o "Continuar" fica desativado até escolher. As opções são cards com contorno, porque são ações; a marcada ganha <code>primaria-suave</code> e contorno de 2 px em ardósia.</span>
         <span class="refs">ADRs 0015, 0101, 0158 e 0165 · crit. 2.1 · componentes RodapeDoTreino e ChipDeStatus · propostas 5, 6 e 7</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:05</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">1 de 7</span></div><span class="barra-progresso" style="--p:14%"><i></i></span></div>
+          <div class="etapa"><h3>Seu nível de corrida</h3><p>Ainda não há corridas no seu Strava. Escolha o nível que mais parece com a sua rotina hoje.</p></div>
+          <div class="opcoes">
+            <div class="opcao"><span class="txt"><b>Iniciante</b><small>Corre pouco ou está começando agora.</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Intermediário</b><small>Corre toda semana e já fez 10 km.</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Avançado</b><small>Treina com volume e intensidade há anos.</small></span><span class="radio"></span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio off" aria-disabled="true">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Nível sem histórico no Strava</strong>
+        <span>Conectou o Strava, mas não há corridas nas últimas 12 semanas. Sem sugestão, o texto diz o porquê e pede a escolha, cada nível com a sua descrição curta, e nada vem marcado. "Continuar" fica desativado até escolher. Os textos dos níveis são provisórios: o que define cada nível ainda não está decidido.</span>
+        <span class="refs">ADRs 0015, 0040, 0101, 0108 e 0203 · crit. 1.6 e 2.1 · componentes RodapeDoTreino · propostas 5 e 6</span>
       </figcaption>
     </figure>
 
@@ -2024,7 +2049,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <h3>Propostas desta tela, em decisão</h3>
       <ol>
         <li><b>Boas-vindas</b> (decidido no ADR 0202, componente BoasVindas): ícone Ritmo de 64 px e "Live Run" em 32 px negrito no terço de cima, a frase em 17 px em <code>texto-secundario</code> e o campo de e-mail logo abaixo.</li>
-        <li><b>Botão da etapa no rodapé fixo:</b> o RodapeDoTreino encostado no fim da tela, sem barra de abas, com o botão principal na largura toda ("Continuar", "Gerar meu plano") e uma nota opcional embaixo.</li>
+        <li><b>Botão da etapa</b> (decidido no ADR 0203, componente RodapeDoTreino): flutua no fim da tela, sem a área em <code>superficie</code> e sem o contorno, com o botão principal na largura toda ("Continuar", "Gerar meu plano") e uma nota opcional embaixo, sobre o <code>fundo</code>. O conteúdo tem um respiro embaixo para rolar até acima do botão. Nas abas, o rodapé fixo continua.</li>
         <li><b>Verifique o e-mail:</b> tela centralizada com o envelope num círculo de 64 px em <code>primaria-suave</code>, sem ação principal: "Reenviar link" secundário e "Trocar e-mail" em link.</li>
         <li><b>Explicação do Strava:</b> texto do porquê e um grupo sem contorno com três garantias, cada uma com <code>shield-check</code> em ardósia, e o botão oficial "Connect with Strava" na largura toda, no rodapé.</li>
         <li><b>Progresso do setup:</b> voltar à esquerda e "1 de 7" à direita na mesma linha, em legenda, e a barra de 4 px embaixo, em <code>neutro-suave</code> com o preenchimento em <code>primaria</code>.</li>

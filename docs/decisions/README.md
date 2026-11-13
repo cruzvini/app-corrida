@@ -208,6 +208,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0200 | [Mensagem pronta do perfil no campo do Piu, que cresce para mostrar o texto todo](0200-mensagem-pronta-no-piu.md) | Aceita |
 | 0201 | [Strava desconectado no Perfil sem aviso à parte, com a seção Strava no topo e o botão oficial](0201-strava-desconectado-no-perfil.md) | Aceita |
 | 0202 | [Boas-vindas com a marca à esquerda, no alto, e o campo de e-mail logo abaixo](0202-boas-vindas-com-a-marca-no-alto.md) | Aceita |
+| 0203 | [Botão da etapa flutuante no fim da tela, sem fundo de rodapé, no onboarding](0203-botao-da-etapa-flutuante.md) | Aceita |
 
 ## Como criar um novo ADR
 
