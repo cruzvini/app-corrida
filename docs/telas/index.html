@@ -353,9 +353,10 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .linha-msg.nao-lida .txt b { font-weight: 700; }
 .linha-msg .txt small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
 .linha-msg .quando { padding-left: 12px; font-size: 13px; line-height: 22px; color: var(--texto-secundario); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.cabecalho.msg .card-topo { align-items: flex-start; }
-.cabecalho.msg .card-topo h3 { text-wrap: balance; padding-top: 5px; }
-.avatar-piu { width: 40px; height: 40px; border-radius: 50%; background: var(--primaria-suave); color: var(--primaria); display: grid; place-items: center; font-size: 22px; flex: none; }
+.assinatura { display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.assinatura b { color: var(--texto); font-weight: 700; }
+.avatar-piu { width: 28px; height: 28px; border-radius: 50%; background: var(--primaria-suave); color: var(--primaria); display: grid; place-items: center; font-size: 16px; flex: none; }
+.cabecalho.msg h3 { margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
 .chip.aguarda { border-color: var(--primaria); color: var(--texto); background: var(--primaria-suave); }
 .chip.aguarda .ico { color: var(--primaria); }
 .texto-msg { margin: 0; }
@@ -1111,8 +1112,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Notificações</span></div>
           <div class="cabecalho msg">
-            <div class="card-topo"><span class="avatar-piu" aria-label="Piu"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span><h3>Superiores de terça foi para sexta</h3></div>
-            <div class="sub">Ajuste automático de terça, 10 nov, às 22:00</div>
+            <div class="assinatura"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span><span><b>Piu</b>, terça, 10 nov, às 22:00</span></div>
+            <h3>Superiores de terça foi para sexta</h3>
+            <div class="sub">Ajuste automático</div>
           </div>
           <p class="texto-msg">Às 22h não havia treino de superiores. Para a semana continuar com superiores e inferiores, levei superiores para sexta, junto com o leve. O descanso de quarta continua antes das inferiores.</p>
           <div class="proposta">
@@ -1128,7 +1130,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Ajuste automático, o mais recente</strong>
         <span>Explica o que mudou e por quê, com o antes e o depois dos dias afetados. Por ser o ajuste mais recente, pode ser desfeito. Abrir a mensagem marca como lida, e a contagem cai para 1. O link leva ao Piu só com o antes e o depois do plano.</span>
-        <span class="refs">ADRs 0026, 0047, 0050, 0054, 0086, 0107, 0117 e 0145 · crit. 4.7 e 4.9 · componentes CabecalhoDoDetalhe, AntesDepois e BarraDeAbas · propostas 3 e 5</span>
+        <span class="refs">ADRs 0026, 0047, 0050, 0054, 0086, 0107, 0117, 0145 e 0179 · crit. 4.7 e 4.9 · componentes CabecalhoDaMensagem, AntesDepois e BarraDeAbas · proposta 5</span>
       </figcaption>
     </figure>
 
@@ -1138,8 +1140,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Notificações</span></div>
           <div class="cabecalho msg">
-            <div class="card-topo"><span class="avatar-piu" aria-label="Piu"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span><h3>Aliviar a corrida por causa da panturrilha</h3></div>
-            <div class="linha-apoio"><span class="chip aguarda"><svg class="ico"><use href="#i-clock"/></svg>Aguardando você</span><span class="sub">Proposta de terça, 10 nov, às 22:01</span></div>
+            <div class="assinatura"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span><span><b>Piu</b>, terça, 10 nov, às 22:01</span></div>
+            <h3>Aliviar a corrida por causa da panturrilha</h3>
+            <div class="linha-apoio"><span class="chip aguarda"><svg class="ico"><use href="#i-clock"/></svg>Aguardando você</span><span class="sub">Proposta</span></div>
           </div>
           <p class="texto-msg">Você contou que sentiu a panturrilha esquerda nas últimas séries de segunda. Para dar tempo de recuperar, sugiro encurtar as corridas até domingo. Refiz esta proposta porque sexta mudou depois do ajuste de terça.</p>
           <div class="proposta">
@@ -1154,7 +1157,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Proposta aguardando você</strong>
         <span>Nasce de um feedback ou de uma conversa com o Piu que ficou sem decisão. O card é o mesmo da proposta na conversa. Aceitar aplica e pode ser desfeito. Editar abre o Piu com a proposta como contexto, e por isso não há outro link para o Piu. Descartar não muda nada.</span>
-        <span class="refs">ADRs 0028, 0051, 0052, 0053, 0054, 0062, 0145, 0157 e 0162 · crit. 5.5 · componentes CabecalhoDoDetalhe, ChipDeStatus, CardDaProposta, AntesDepois, BotaoDeIcone e BarraDeAbas · propostas 3 e 4</span>
+        <span class="refs">ADRs 0028, 0051, 0052, 0053, 0054, 0062, 0145, 0157, 0162 e 0179 · crit. 5.5 · componentes CabecalhoDaMensagem, ChipDeStatus, CardDaProposta, AntesDepois, BotaoDeIcone e BarraDeAbas · proposta 4</span>
       </figcaption>
     </figure>
 
@@ -1164,8 +1167,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Notificações</span></div>
           <div class="cabecalho msg">
-            <div class="card-topo"><span class="avatar-piu" aria-label="Piu"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span><h3>Leve de sexta não feito</h3></div>
-            <div class="sub">Ajuste automático de sexta, 6 nov, às 22:00</div>
+            <div class="assinatura"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span><span><b>Piu</b>, sexta, 6 nov, às 22:00</span></div>
+            <h3>Leve de sexta não feito</h3>
+            <div class="sub">Ajuste automático</div>
           </div>
           <p class="texto-msg">Às 22h não havia corrida. Como o longo de domingo é o treino mais importante da semana, mantive ele igual e não somei os 5 km que faltaram.</p>
           <div class="proposta">
@@ -1181,7 +1185,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Ajuste antigo</strong>
         <span>Continua com o antes e o depois, mas sem "Desfazer". A nota é neutra, com o ícone de informação, porque não é um risco. Para mudar, o caminho é falar com o Piu, que faz uma proposta nova.</span>
-        <span class="refs">ADRs 0047, 0050, 0142 e 0145 · componentes CabecalhoDoDetalhe, AntesDepois e BarraDeAbas · propostas 3 e 5</span>
+        <span class="refs">ADRs 0047, 0050, 0142, 0145 e 0179 · componentes CabecalhoDaMensagem, AntesDepois e BarraDeAbas · proposta 5</span>
       </figcaption>
     </figure>
 
@@ -1191,8 +1195,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Notificações</span></div>
           <div class="cabecalho msg">
-            <div class="card-topo"><span class="avatar-piu" aria-label="Piu"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span><h3>Aliviar a corrida, versão de segunda</h3></div>
-            <div class="linha-apoio"><span class="chip">Desatualizada</span><span class="sub">Proposta de segunda, 9 nov, às 19:45</span></div>
+            <div class="assinatura"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span><span><b>Piu</b>, segunda, 9 nov, às 19:45</span></div>
+            <h3>Aliviar a corrida, versão de segunda</h3>
+            <div class="linha-apoio"><span class="chip">Desatualizada</span><span class="sub">Proposta</span></div>
           </div>
           <p class="texto-msg">Sexta mudou depois que esta proposta foi feita, então ela não vale mais. Fiz uma nova sobre o plano atual.</p>
           <span class="ver">Ver a proposta nova <svg class="ico"><use href="#i-caret-right"/></svg></span>
@@ -1209,7 +1214,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Proposta desatualizada</strong>
         <span>Quando um dia afetado muda, a proposta perde os botões, sai do topo e leva à proposta nova. O antes e o depois ficam num grupo sem contorno e em tom secundário, só como registro. Se a nova análise concluir que não precisa mudar nada, a mensagem explica isso.</span>
-        <span class="refs">ADRs 0052, 0054, 0145 e 0165 · componentes CabecalhoDoDetalhe, ChipDeStatus, AntesDepois e BarraDeAbas · propostas 3, 4 e 6</span>
+        <span class="refs">ADRs 0052, 0054, 0145, 0165 e 0179 · componentes CabecalhoDaMensagem, ChipDeStatus, AntesDepois e BarraDeAbas · propostas 4 e 6</span>
       </figcaption>
     </figure>
 
@@ -1218,7 +1223,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <ol>
         <li><b>Linha de mensagem</b> (decidido no ADR 0177, componente LinhaDeMensagem): linhas num grupo sem contorno, sem o avatar do Piu em cada linha, porque todas as mensagens são dele. Título em 15 px, apoio em legenda e o dia e a hora à direita, sem seta. A não lida tem um ponto de 8 px em <code>primaria</code> à esquerda e o título em negrito; a lida, o título em peso 500.</li>
         <li><b>Propostas aguardando você</b> (decidido no ADR 0178, componente LinhaDeMensagem): seção própria no topo, com o mesmo grupo e a mesma linha das recentes. O destaque vem da posição e do título da seção, e a linha de apoio começa com "Proposta:". Sem cor nem contorno extra.</li>
-        <li><b>Avatar do Piu e cabeçalho da mensagem</b> (componentes novo AvatarDoPiu e CabecalhoDoDetalhe): o Piu assina a mensagem com um círculo de 40 px em <code>primaria-suave</code> e o balão da aba Piu preenchido, em <code>primaria</code>. Ao lado, o título da mensagem em 24 px, o mesmo da lista. Embaixo, o tipo e a data numa frase ("Ajuste automático de terça, 10 nov, às 22:00"). O texto do Piu vem solto, sem balão.</li>
+        <li><b>Avatar do Piu e cabeçalho da mensagem</b> (decidido no ADR 0179, componente CabecalhoDaMensagem): uma linha de assinatura com o avatar do Piu (círculo de 28 px em <code>primaria-suave</code>, com o balão da aba Piu preenchido, em <code>primaria</code>), "Piu" em negrito e a data. Embaixo, o título da mensagem em 24 px, na largura toda, o mesmo da lista, e o tipo em legenda ("Ajuste automático" ou "Proposta"). O texto do Piu vem solto, sem balão.</li>
         <li><b>Chips da proposta</b> (componente ChipDeStatus): "Aguardando você" em <code>primaria-suave</code>, com contorno em <code>primaria</code> e o ícone <code>clock</code>; "Desatualizada" no chip neutro, igual ao "Previsto".</li>
         <li><b>Ações do ajuste</b> (componente CardDaProposta): o antes e o depois num card com contorno. "Desfazer" em botão secundário com o ícone <code>arrow-u-up-left</code>, só no ajuste mais recente. No antigo, uma nota neutra com <code>info</code> no lugar do botão. Fora do card, o link "Falar com o Piu sobre este ajuste", igual ao do detalhe do treino.</li>
         <li><b>Proposta desatualizada</b> (componente AntesDepois): o antes e o depois num grupo sem contorno, com o dia, a seta e o depois em <code>texto-secundario</code>, sem botões. Acima, o link "Ver a proposta nova" em ardósia.</li>
