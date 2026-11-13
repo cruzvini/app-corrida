@@ -181,6 +181,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0173 | [Cabeçalho do detalhe do plano igual ao card do objetivo](0173-cabecalho-do-detalhe-do-plano.md) | Aceita |
 | 0174 | [Contexto do plano no Piu com o ícone da aba Plano](0174-contexto-do-plano-no-piu.md) | Aceita |
 | 0175 | [Acompanhamento do projeto no board do GitHub, com painel em artifact](0175-acompanhamento-no-board-com-painel.md) | Aceita |
+| 0176 | [Coluna Revisão para issue com PR aguardando merge](0176-coluna-revisao-para-pr-aberto.md) | Aceita |
 
 ## Como criar um novo ADR
 

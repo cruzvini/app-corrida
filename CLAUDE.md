@@ -18,7 +18,7 @@ App Corrida: app para reunir dados de treinos de corrida e interagir com eles pa
 - Não criar papéis rotulados (como product owner). O usuário atua em todo o projeto e é dono dos critérios de aceitação.
 - Fazer commits pequenos, no padrão Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`, `test:`, `refactor:`...), com mensagens claras para que o usuário consiga ler cada entrega.
 - Descrever nos PRs o que mudou e por quê.
-- Acompanhar o andamento no GitHub Project "App Corrida" (https://github.com/users/cruzvini/projects/1), que é a fonte da verdade (ADR 0175). Toda entrega tem issue e branch e entra por PR com `Closes #n`, inclusive lotes de ADRs. Nada de commit direto na `main`.
+- Acompanhar o andamento no GitHub Project "App Corrida" (https://github.com/users/cruzvini/projects/1), que é a fonte da verdade (ADR 0175). Toda entrega tem issue e branch e entra por PR com `Closes #n`, inclusive lotes de ADRs. Nada de commit direto na `main`. Ao abrir o PR que fecha a issue, movê-la para "Revisão" (ADR 0176).
 - O painel do projeto é um artifact no Claude, só para leitura e gerado a partir do board e do repositório. Atualizá-lo quando o usuário pedir e em todo fechamento de tópico.
 - Seguir a pirâmide de testes: unitários na base, integração no meio, E2E no topo. Respeitar os quality gates de CI antes de qualquer merge.
 - Nunca commitar segredos, chaves ou tokens. Usar variáveis de ambiente (`.env*` está no `.gitignore`; documentar as variáveis em `.env.example`).
