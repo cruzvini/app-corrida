@@ -178,6 +178,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0170 | [Linhas de semana e volume da semana em texto](0170-linhas-de-semana.md) | Aceita |
 | 0171 | [Gráfico de volume semanal com a semana atual em faixa](0171-grafico-de-volume-semanal.md) | Aceita |
 | 0172 | [Adiar objetivo com o seletor de data do sistema](0172-adiar-objetivo-com-seletor-nativo.md) | Aceita |
+| 0173 | [Cabeçalho do detalhe do plano igual ao card do objetivo](0173-cabecalho-do-detalhe-do-plano.md) | Aceita |
 
 ## Como criar um novo ADR
 

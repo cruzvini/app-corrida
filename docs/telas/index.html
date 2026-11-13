@@ -171,6 +171,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .cabecalho .card-topo h3 { flex: 1; min-width: 0; margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.01em; }
 .cabecalho .sub { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
 .cabecalho .medida { margin-top: 2px; }
+.cabecalho .medida span { font-weight: 400; }
 .titulo-secao { font-size: 16px; line-height: 22px; font-weight: 700; color: var(--texto); }
 /* Seções em grupo sem contorno (ADR 0165): título fora, conteúdo em superficie, raio 12, sem borda */
 .secao { display: grid; gap: 8px; }
@@ -873,13 +874,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span></div>
           <div class="cabecalho">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-flag-checkered"/></svg></span><h3>10 km em 3 jan</h3></div>
-            <div class="sub">Plano específico desde 26 out, com 10 semanas</div>
-            <div class="resultado">
-              <div><b>10 km</b><small>distância</small></div>
-              <div><b>3 jan</b><small>data</small></div>
-              <div><b>5:20</b><small>pace alvo</small></div>
-            </div>
+            <h3 class="medida" style="margin:0"><b>10 km</b><span>até 3 jan</span></h3>
+            <div class="sub">Pace alvo de 5:20/km, faltam 53 dias</div>
+            <div class="sub" style="margin-top:-6px">Plano específico desde 26 out, com 10 semanas</div>
             <span class="botao secundario"><svg class="ico"><use href="#i-calendar-dots"/></svg>Adiar objetivo</span>
           </div>
           <div class="secao">
@@ -917,7 +914,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Detalhe do plano</strong>
         <span>Abre pelo card do objetivo, por cima da aba. Reúne o objetivo completo (mudar é pelo Piu), o atalho "Adiar objetivo" em botão secundário (só no plano específico), o volume semanal previsto e feito, com a semana atual em destaque, e as fases com o volume de cada uma.</span>
-        <span class="refs">ADRs 0023, 0060, 0083, 0084, 0094, 0098, 0153, 0164, 0165, 0168 e 0171 · componentes CabecalhoDoDetalhe, GraficoDeVolume, FaixaDeFases e BarraDeAbas · propostas 2, 5 e 7</span>
+        <span class="refs">ADRs 0023, 0060, 0083, 0084, 0094, 0098, 0153, 0164, 0165, 0167, 0168, 0171 e 0173 · componentes CabecalhoDoDetalhe, GraficoDeVolume, FaixaDeFases e BarraDeAbas · propostas 2, 5 e 7</span>
       </figcaption>
     </figure>
 
@@ -927,8 +924,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span></div>
           <div class="cabecalho">
-            <div class="card-topo"><span class="icone-caixa"><svg class="ico"><use href="#i-flag-checkered"/></svg></span><h3>10 km em 3 jan</h3></div>
-            <div class="sub">Plano específico desde 26 out, com 10 semanas</div>
+            <h3 class="medida" style="margin:0"><b>10 km</b><span>até 3 jan</span></h3>
+            <div class="sub">Pace alvo de 5:20/km, faltam 53 dias</div>
+            <div class="sub" style="margin-top:-6px">Plano específico desde 26 out, com 10 semanas</div>
           </div>
         </div>
         <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Plano"></nav>
@@ -1038,7 +1036,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Semanas recolhidas e próximas semanas</b> (decidido no ADR 0170, componente LinhaDeSemana): linhas num grupo sem contorno, com a semana em negrito, o volume em legenda e <code>caret-down</code>, <code>caret-up</code> ou <code>caret-right</code>; o cabeçalho de cada semana aberta mostra o feito em negrito e o previsto ("13,8 de 31,6 km"), sem barra de progresso.</li>
         <li><b>Gráfico de volume semanal</b> (decidido no ADR 0171, componente GraficoDeVolume): uma barra por semana, com o previsto em contorno <code>borda-forte</code> e o feito preenchido em <code>primaria</code> por dentro; a semana atual com uma faixa em <code>primaria-suave</code> atrás e em negrito e ardósia no eixo; legenda acima e uma linha com o número da semana atual.</li>
         <li><b>Folha de adiar objetivo</b> (decidido no ADR 0172, componente SeletorDeData, na FolhaDeEscolha): o seletor de data nativo do iOS e do Android, na cor <code>primaria</code>, com as datas até o objetivo indisponíveis; o antes e o depois do plano e das fases; o botão principal "Adiar para 17 jan".</li>
-        <li><b>Cabeçalho do detalhe do plano</b> (componente CabecalhoDoDetalhe): o mesmo cabeçalho do treino, com a bandeira, os três números de 24 px do objetivo e "Adiar objetivo" em botão secundário com o ícone <code>calendar-dots</code>.</li>
+        <li><b>Cabeçalho do detalhe do plano</b> (decidido no ADR 0173, componente CabecalhoDoDetalhe): o objetivo como no card da aba, com "10 km" em 30 px e a data ao lado, o pace, o prazo e o início em frases, sem números repetidos, e "Adiar objetivo" em botão secundário com o ícone <code>calendar-dots</code>.</li>
         <li><b>Contexto do plano no Piu</b> (componente ContextoDoTreino): o mesmo bloco do treino, com o ícone de calendário e o plano no lugar do treino ("Plano para 10 km em 3 jan" e "Semana 3 de 10 da base").</li>
       </ol>
     </div>
