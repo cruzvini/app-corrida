@@ -24,7 +24,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0016 | [Plano específico com distância livre](0016-plano-especifico-com-distancia-livre.md) | Aceita (revisada pelo ADR 0103) |
 | 0017 | [Avisar sobre riscos da meta sem bloquear a criação do plano](0017-avisar-riscos-sem-bloquear-plano.md) | Aceita |
 | 0018 | [Replanejamento por ações prontas e por conversa livre](0018-replanejamento-acoes-prontas-e-conversa.md) | Aceita (revisada pelos ADRs 0078, 0085 e 0094) |
-| 0019 | [Conexão com o Strava obrigatória](0019-conexao-strava-obrigatoria.md) | Aceita |
+| 0019 | [Conexão com o Strava obrigatória](0019-conexao-strava-obrigatoria.md) | Aceita (revisada pelo ADR 0213) |
 | 0020 | [Autenticação por e-mail com link mágico](0020-autenticacao-email-link-magico.md) | Aceita |
 | 0021 | [Pace alvo sugerido a partir do Strava](0021-pace-alvo-sugerido-pelo-strava.md) | Aceita (revisada pelo ADR 0103) |
 | 0022 | [IA propõe o plano, motor de regras valida](0022-ia-propoe-regras-validam-plano.md) | Aceita (revisada pelos ADRs 0106 e 0107) |
@@ -108,7 +108,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0100 | [Boas-vindas só com uma frase e o campo de e-mail](0100-boas-vindas-so-com-frase-e-email.md) | Aceita |
 | 0101 | [Progresso do setup com barra e contagem de passos](0101-progresso-do-setup-com-passos.md) | Aceita |
 | 0102 | [Plano fica ativo direto depois de gerar, sem tela de revisão e aceite](0102-plano-ativo-direto-apos-gerar.md) | Aceita |
-| 0103 | [Objetivo em três opções: completar uma distância, melhorar o tempo ou sem objetivo definido](0103-objetivo-em-tres-opcoes.md) | Aceita |
+| 0103 | [Objetivo em três opções: completar uma distância, melhorar o tempo ou sem objetivo definido](0103-objetivo-em-tres-opcoes.md) | Aceita (revisada pelo ADR 0214) |
 | 0104 | [Prazo sugerido em "Completar uma distância" é calculado pelas regras](0104-prazo-sugerido-pelas-regras.md) | Aceita |
 | 0105 | [Integração com a API do Strava no backend, sem o Strava MCP](0105-api-do-strava-no-backend.md) | Aceita |
 | 0106 | [Dados do Strava nunca vão para a IA](0106-dados-do-strava-nunca-vao-para-a-ia.md) | Aceita |
@@ -207,6 +207,19 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0199 | [No "Editar perfil", o campo que mudou ganha contorno em ardósia e a legenda com o valor de antes](0199-campo-que-mudou.md) | Aceita |
 | 0200 | [Mensagem pronta do perfil no campo do Piu, que cresce para mostrar o texto todo](0200-mensagem-pronta-no-piu.md) | Aceita |
 | 0201 | [Strava desconectado no Perfil sem aviso à parte, com a seção Strava no topo e o botão oficial](0201-strava-desconectado-no-perfil.md) | Aceita |
+| 0202 | [Boas-vindas com a marca à esquerda, no alto, e o campo de e-mail logo abaixo](0202-boas-vindas-com-a-marca-no-alto.md) | Aceita |
+| 0203 | [Botão da etapa flutuante no fim da tela, sem fundo de rodapé, no onboarding](0203-botao-da-etapa-flutuante.md) | Aceita |
+| 0204 | [Cada nível de corrida descrito com duas referências concretas, frequência e maior distância](0204-descricao-dos-niveis-com-referencias.md) | Aceita |
+| 0205 | ["Verifique seu e-mail" alinhada à esquerda, com o envelope em círculo e sem ação principal](0205-verifique-o-email-a-esquerda.md) | Aceita |
+| 0206 | [Explicação do Strava no onboarding com as garantias em lista, num grupo sem contorno](0206-explicacao-do-strava-com-garantias.md) | Aceita |
+| 0207 | [Progresso do setup com o voltar e a contagem na mesma linha e uma barra fina embaixo](0207-progresso-do-setup.md) | Aceita |
+| 0208 | [Opções de escolha do setup em cards com contorno e botão de rádio, com a marcada em primaria-suave](0208-opcoes-de-escolha.md) | Aceita |
+| 0209 | [Sugestão das regras no setup numa nota com info, sem caixa, com o porquê e o link "Ajustar"](0209-sugestao-das-regras-em-nota.md) | Aceita |
+| 0210 | [Risco no setup com o AvisoDeRisco abaixo dos campos e as alternativas em botões secundários](0210-risco-no-setup.md) | Aceita |
+| 0211 | [Resumo do setup com a LinhaDeDado e um botão de lápis em cada linha](0211-resumo-do-setup.md) | Aceita |
+| 0212 | [Montando o plano com o ícone Ritmo, o objetivo numa frase e a barra de progresso; falha no AvisoNeutro](0212-montando-o-plano.md) | Aceita |
+| 0213 | ["Agora não" na conexão com o Strava, com o app em modo manual até conectar](0213-strava-opcional-com-agora-nao.md) | Aceita |
+| 0214 | ["Outro" em "Qual é o seu objetivo?", com o texto levado ao Piu para virar proposta](0214-outro-objetivo-combinado-com-o-piu.md) | Aceita |
 
 ## Como criar um novo ADR
 

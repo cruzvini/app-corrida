@@ -1,6 +1,6 @@
 # ADR 0019: Conexão com o Strava obrigatória
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0213)
 - **Data:** 2026-10-20
 
 ## Contexto
