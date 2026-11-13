@@ -414,9 +414,57 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .mensagem.pronta { align-items: flex-end; }
 .mensagem .entrada.texto { height: auto; line-height: 20px; padding: 11px 16px; border-radius: 22px; white-space: normal; color: var(--texto); }
 .botao-strava { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 6px; background: #fc5200; color: #ffffff; font-size: 15px; line-height: 20px; font-weight: 700; justify-self: start; margin-top: 4px; }
+/* Onboarding e setup */
+.rodape.solto { bottom: 0; padding-bottom: 34px; }
+.rodape .botao-strava.cheio { justify-self: stretch; margin-top: 0; }
+.rodape .ver.centro { justify-self: center; margin: -4px 0 -8px; }
+.ritmo { width: 64px; height: 64px; flex: none; }
+.ritmo rect { fill: var(--primaria); }
+.ritmo path { fill: none; stroke: var(--sobre-primaria); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.tela.boas-vindas { padding-top: 72px; gap: 40px; }
+.marca-app { display: grid; gap: 12px; justify-items: start; }
+.marca-app h3 { margin: 8px 0 0; font-size: 32px; line-height: 38px; font-weight: 700; letter-spacing: -0.02em; }
+.marca-app p { margin: 0; font-size: 17px; line-height: 24px; color: var(--texto-secundario); text-wrap: pretty; }
+.etapa { display: grid; gap: 8px; }
+.etapa h3 { margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+.etapa p { margin: 0; color: var(--texto-secundario); }
+.etapa p b { color: var(--texto); font-weight: 500; }
+.etapa .sub { font-size: 13px; line-height: 18px; color: var(--texto-secundario); margin-top: -4px; }
+.etapa.centro { justify-items: center; text-align: center; margin-top: 96px; gap: 12px; }
+.icone-grande { width: 64px; height: 64px; border-radius: 50%; background: var(--primaria-suave); color: var(--primaria); display: grid; place-items: center; font-size: 32px; }
+.linha-garantia { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; }
+.linha-garantia .ico { color: var(--primaria); font-size: 20px; margin-top: 1px; }
+.progresso { display: grid; gap: 4px; }
+.passo-de { justify-self: end; padding-right: 8px; font-size: 13px; line-height: 18px; color: var(--texto-secundario); font-variant-numeric: tabular-nums; }
+.barra-progresso { display: block; height: 4px; border-radius: 2px; background: var(--neutro-suave); overflow: hidden; }
+.barra-progresso i { display: block; width: var(--p); height: 100%; border-radius: 2px; background: var(--primaria); }
+.nota-regra { margin: 0; display: flex; align-items: flex-start; gap: 6px; font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.nota-regra .ico { font-size: 16px; margin-top: 1px; }
+.nota-regra b { color: var(--texto); font-weight: 500; }
+.nota-regra .link { color: var(--primaria); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+.secao > .nota-regra { margin-top: 2px; }
+.opcoes { display: grid; gap: 8px; }
+.opcao { background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio-card); padding: 14px 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; }
+.opcao .txt { display: grid; gap: 2px; }
+.opcao .txt b { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 16px; line-height: 22px; font-weight: 700; }
+.opcao .txt small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.opcao .radio { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--borda-forte); }
+.opcao.sel { background: var(--primaria-suave); border-color: var(--primaria); box-shadow: inset 0 0 0 1px var(--primaria); }
+.opcao.sel .radio { background: var(--primaria); box-shadow: inset 0 0 0 7px var(--primaria), inset 0 0 0 11px var(--sobre-primaria); }
+.opcao.aberta { align-items: start; }
+.opcao .dentro { grid-column: 1 / -1; display: grid; gap: 12px; padding-top: 4px; }
+.alternativas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: -4px; }
+.alternativas .botao { margin-top: 0; font-size: 15px; padding: 0 16px; }
+.grupo-lista.resumo { padding-right: 6px; }
+.linha-dado .editar { width: 44px; height: 44px; display: grid; place-items: center; color: var(--primaria); font-size: 20px; flex: none; }
+.tela.montando { min-height: 100%; }
+.tela.montando .etapa.centro { margin-top: 168px; }
+.tela.montando .barra-progresso { width: 200px; margin-top: 12px; }
+.tela.montando .etapa .sub { margin-top: 0; }
+.tela.montando > .aviso { margin-top: 168px; }
 </style>
 
-<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-x-fill" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM181.66,170.34a8,8,0,0,1-11.32,11.32L128,139.31,85.66,181.66a8,8,0,0,1-11.32-11.32L116.69,128,74.34,85.66A8,8,0,0,1,85.66,74.34L128,116.69l42.34-42.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-paper-plane-right" viewBox="0 0 256 256"><path d="M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z"/></symbol><symbol id="i-arrow-elbow-down-right" viewBox="0 0 256 256"><path d="M221.66,181.66l-48,48a8,8,0,0,1-11.32-11.32L196.69,184H72a8,8,0,0,1-8-8V32a8,8,0,0,1,16,0V168H196.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,221.66,181.66Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-pencil-simple" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-up" viewBox="0 0 256 256"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></symbol><symbol id="i-calendar-dots" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z"/></symbol><symbol id="i-arrow-u-up-left" viewBox="0 0 256 256"><path d="M232,144a64.07,64.07,0,0,1-64,64H80a8,8,0,0,1,0-16h88a48,48,0,0,0,0-96H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48A8,8,0,0,1,85.66,45.66L51.31,80H168A64.07,64.07,0,0,1,232,144Z"/></symbol><symbol id="i-warning" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-sign-out" viewBox="0 0 256 256"><path d="M120,216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H56V208h56A8,8,0,0,1,120,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L204.69,120H112a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,229.66,122.34Z"/></symbol><symbol id="i-link-break" viewBox="0 0 256 256"><path d="M198.63,57.37a32,32,0,0,0-45.19-.06L141.79,69.52a8,8,0,0,1-11.58-11l11.72-12.29a1.59,1.59,0,0,1,.13-.13,48,48,0,0,1,67.88,67.88,1.59,1.59,0,0,1-.13.13l-12.29,11.72a8,8,0,0,1-11-11.58l12.21-11.65A32,32,0,0,0,198.63,57.37ZM114.21,186.48l-11.65,12.21a32,32,0,0,1-45.25-45.25l12.21-11.65a8,8,0,0,0-11-11.58L46.19,141.93a1.59,1.59,0,0,0-.13.13,48,48,0,0,0,67.88,67.88,1.59,1.59,0,0,0,.13-.13l11.72-12.29a8,8,0,1,0-11.58-11ZM216,152H192a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16ZM40,104H64a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm120,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V192A8,8,0,0,0,160,184ZM96,72a8,8,0,0,0,8-8V40a8,8,0,0,0-16,0V64A8,8,0,0,0,96,72Z"/></symbol></svg>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-x-fill" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM181.66,170.34a8,8,0,0,1-11.32,11.32L128,139.31,85.66,181.66a8,8,0,0,1-11.32-11.32L116.69,128,74.34,85.66A8,8,0,0,1,85.66,74.34L128,116.69l42.34-42.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-paper-plane-right" viewBox="0 0 256 256"><path d="M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z"/></symbol><symbol id="i-arrow-elbow-down-right" viewBox="0 0 256 256"><path d="M221.66,181.66l-48,48a8,8,0,0,1-11.32-11.32L196.69,184H72a8,8,0,0,1-8-8V32a8,8,0,0,1,16,0V168H196.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,221.66,181.66Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-pencil-simple" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-up" viewBox="0 0 256 256"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></symbol><symbol id="i-calendar-dots" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z"/></symbol><symbol id="i-arrow-u-up-left" viewBox="0 0 256 256"><path d="M232,144a64.07,64.07,0,0,1-64,64H80a8,8,0,0,1,0-16h88a48,48,0,0,0,0-96H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48A8,8,0,0,1,85.66,45.66L51.31,80H168A64.07,64.07,0,0,1,232,144Z"/></symbol><symbol id="i-warning" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-sign-out" viewBox="0 0 256 256"><path d="M120,216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H56V208h56A8,8,0,0,1,120,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L204.69,120H112a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,229.66,122.34Z"/></symbol><symbol id="i-link-break" viewBox="0 0 256 256"><path d="M198.63,57.37a32,32,0,0,0-45.19-.06L141.79,69.52a8,8,0,0,1-11.58-11l11.72-12.29a1.59,1.59,0,0,1,.13-.13,48,48,0,0,1,67.88,67.88,1.59,1.59,0,0,1-.13.13l-12.29,11.72a8,8,0,0,1-11-11.58l12.21-11.65A32,32,0,0,0,198.63,57.37ZM114.21,186.48l-11.65,12.21a32,32,0,0,1-45.25-45.25l12.21-11.65a8,8,0,0,0-11-11.58L46.19,141.93a1.59,1.59,0,0,0-.13.13,48,48,0,0,0,67.88,67.88,1.59,1.59,0,0,0,.13-.13l11.72-12.29a8,8,0,1,0-11.58-11ZM216,152H192a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16ZM40,104H64a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm120,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V192A8,8,0,0,0,160,184ZM96,72a8,8,0,0,0,8-8V40a8,8,0,0,0-16,0V64A8,8,0,0,0,96,72Z"/></symbol><symbol id="i-envelope-simple" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol></svg>
 
 <div class="pagina">
   <header class="cabeca">
@@ -429,7 +477,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <li class="feita"><a href="#notificacoes">Notificações</a></li>
       <li class="feita"><a href="#piu">Piu</a></li>
       <li class="feita"><a href="#perfil">Perfil</a></li>
-      <li>Onboarding e setup</li>
+      <li class="andamento"><a href="#onboarding">Onboarding e setup, em decisão</a></li>
     </ul>
   </header>
 
@@ -1710,6 +1758,281 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Campo que mudou</b> (decidido no ADR 0199, componente CampoDoFormulario): contorno de 2 px em <code>primaria</code> e a legenda "Era 72 kg" embaixo, no lugar do tracejado do wireframe. Some se o valor volta ao de antes.</li>
         <li><b>Mensagem pronta no Piu</b> (decidido no ADR 0200, componentes RodapeDoTreino e ContextoDoTreino): o campo em pílula cresce até 6 linhas para mostrar o texto todo, com raio de 22 px, e o contexto "Perfil atualizado" com o ícone da aba Perfil, como o do plano (ADR 0174). Sair sem enviar guarda o rascunho.</li>
         <li><b>Strava desconectado</b> (decidido no ADR 0201, componentes ChipDeStatus e LinhaDeDado): sem aviso à parte. A seção Strava sobe para o topo, com o chip "Desconectado", uma linha em legenda no grupo com o motivo e o efeito, e o botão oficial "Connect with Strava" (ADR 0115) logo abaixo do grupo, antes do "Powered by Strava".</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="grupo" id="onboarding">
+    <header>
+      <h2>Onboarding e setup</h2>
+      <p>Em decisão. Fluxo linear em tela cheia, sem a barra de abas: login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app fechar no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano criado na segunda, 26 out. Passos do setup não desenhados aqui: sobre você (nome, idade, peso e lesões), pace alvo e data de início, que usam os mesmos componentes. Já seguem os ADRs 0164 a 0166.</p>
+    </header>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:00</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela boas-vindas">
+          <div class="marca-app">
+            <svg class="ritmo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16"/><path d="M10 34h12l5-10 6 22 6-32 6 26 4-6h5"/></svg>
+            <h3>Live Run</h3>
+            <p>Seu plano de corrida, do seu jeito. O Piu ajusta o plano sempre que a vida mudar.</p>
+          </div>
+          <div class="campo"><label>Seu e-mail</label><div class="entrada cheia">vini@exemplo.com</div></div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Receber link de acesso</span>
+          <span class="nota-acao">Sem senha: você entra pelo link que chega no e-mail.</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Boas-vindas e e-mail</strong>
+        <span>Só a marca, uma frase sobre o app e o campo de e-mail. O ícone Ritmo e o nome ficam no terço de cima, e o campo logo abaixo. O botão principal fica no rodapé fixo, que no onboarding encosta no fim da tela, porque não há barra de abas. E-mail inválido mostra o erro embaixo do campo, em legenda.</span>
+        <span class="refs">ADRs 0020, 0032, 0033, 0100, 0138, 0158 e 0199 · crit. 1.1 · componentes CampoDoFormulario e RodapeDoTreino · propostas 1 e 2</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:01</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span></span></div>
+          <div class="etapa centro">
+            <span class="icone-grande" aria-hidden="true"><svg class="ico"><use href="#i-envelope-simple"/></svg></span>
+            <h3>Verifique seu e-mail</h3>
+            <p>Mandamos um link para <b>vini@exemplo.com</b>. Toque nele neste celular para entrar.</p>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio secundario">Reenviar link</span>
+          <span class="ver centro">Trocar e-mail</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Verifique o e-mail</strong>
+        <span>Uma tela de espera, centralizada, com o ícone do envelope num círculo em <code>primaria-suave</code>. Não há ação principal, porque o próximo passo é no e-mail: "Reenviar link" é secundário e "Trocar e-mail" é um link. Link expirado ou já usado volta para cá com o motivo e oferece um novo. Depois de entrar, a sessão fica salva.</span>
+        <span class="refs">ADRs 0020 e 0158 · crit. 1.1 e 1.2 · componente RodapeDoTreino · proposta 3</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:03</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="etapa">
+            <h3>Conecte o Strava</h3>
+            <p>O Live Run usa as suas atividades do Strava, inclusive as privadas, para marcar os treinos como feitos e ajustar o plano. Sem a conexão, não dá para acompanhar o plano.</p>
+          </div>
+          <div class="grupo-lista dados">
+            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Só o resumo das atividades das últimas 12 semanas, sem mapa nem GPS.</span></div>
+            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Nada é publicado no Strava.</span></div>
+            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Nada do Strava vai para a IA.</span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao-strava cheio">Connect with Strava</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Conectar o Strava</strong>
+        <span>Obrigatório. Explica o porquê antes de abrir a autorização: o texto diz para que serve, e um grupo sem contorno lista o que o app lê e o que nunca faz, cada linha com um escudo em ardósia. O botão oficial do Strava fica no rodapé, na largura toda, como única ação. Se o usuário recusar ou cancelar, volta aqui com o motivo em AvisoNeutro. Falha na importação do histórico oferece tentar de novo ou seguir sem histórico.</span>
+        <span class="refs">ADRs 0019, 0040, 0106, 0108, 0110, 0115, 0150, 0165 e 0201 · crit. 1.3 a 1.6 · componentes LinhaDeDado e RodapeDoTreino · proposta 4</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:05</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">1 de 7</span></div><span class="barra-progresso" style="--p:14%"><i></i></span></div>
+          <div class="etapa"><h3>Seu nível de corrida</h3></div>
+          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos <b>Intermediário</b>: você correu 3 vezes por semana nas últimas 8 semanas, com treinos de até 12 km.</span></p>
+          <div class="opcoes">
+            <div class="opcao"><span class="txt"><b>Iniciante</b><small>Corre pouco ou está começando agora.</small></span><span class="radio"></span></div>
+            <div class="opcao sel"><span class="txt"><b>Intermediário <span class="chip">Sugerido</span></b><small>Corre toda semana e já fez 10 km.</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Avançado</b><small>Treina com volume e intensidade há anos.</small></span><span class="radio"></span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Nível de corrida</strong>
+        <span>Primeiro passo do setup, com o voltar e "1 de 7" na mesma linha e a barra de progresso embaixo. Com histórico, as regras sugerem o nível e explicam numa nota, e a opção sugerida já vem marcada, com o chip neutro "Sugerido". Sem histórico, nada vem marcado e o "Continuar" fica desativado até escolher. As opções são cards com contorno, porque são ações; a marcada ganha <code>primaria-suave</code> e contorno de 2 px em ardósia.</span>
+        <span class="refs">ADRs 0015, 0101, 0158 e 0165 · crit. 2.1 · componentes RodapeDoTreino e ChipDeStatus · propostas 5, 6 e 7</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:07</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">3 de 7</span></div><span class="barra-progresso" style="--p:43%"><i></i></span></div>
+          <div class="etapa"><h3>Quantas vezes por semana?</h3></div>
+          <div class="secao">
+            <div class="grupo-lista contadores">
+              <div class="contador-linha">Corrida<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>4</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha">Musculação<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>2</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha sub">Superiores<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo off" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha sub">Inferiores<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo off" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha">Natação<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha">Ciclismo<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="linha-acao"><svg class="ico"><use href="#i-plus"/></svg>Adicionar outra atividade</div>
+            </div>
+            <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>São 8 atividades por semana, então alguns dias vão ter duas. O plano escolhe quais.</span></p>
+            <span class="sub">Você muda a frequência depois, no Perfil.</span>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Frequência semanal</strong>
+        <span>O mesmo Contador do Editar perfil: só quantidades, de 0 a 7, com a divisão da musculação recuada embaixo dela. As outras atividades são só registro de carga, sem prescrição, e a lista pode ficar vazia. No exemplo, a semana soma 8 atividades, e a nota com <code>info</code> avisa que alguns dias vão ter duas, sem bloquear o "Continuar".</span>
+        <span class="refs">ADRs 0014, 0097, 0098, 0137, 0158, 0195 e 0198 · crit. 2.3 · componentes Contador, LinhaDeAcao e RodapeDoTreino · proposta 5</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:08</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">4 de 7</span></div><span class="barra-progresso" style="--p:57%"><i></i></span></div>
+          <div class="etapa"><h3>Qual é o seu objetivo?</h3></div>
+          <div class="opcoes">
+            <div class="opcao sel aberta">
+              <span class="txt"><b>Completar uma distância</b><small>Por exemplo, 3 km sem parar ou os primeiros 10 km.</small></span><span class="radio"></span>
+              <div class="dentro">
+                <div class="campos-2">
+                  <div class="campo"><label>Distância</label><div class="entrada cheia">3 km</div></div>
+                  <div class="campo"><label>Data, se tiver</label><div class="entrada escolha">Sem data<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
+                </div>
+                <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos 6 semanas, até 7 dez, pelo seu nível e pelas corridas recentes. <span class="link">Ajustar</span></span></p>
+              </div>
+            </div>
+            <div class="opcao"><span class="txt"><b>Melhorar o tempo numa distância</b><small>Prova ou recorde, com data e pace alvo.</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Sem objetivo definido</b><small>Só correr com regularidade.</small></span><span class="radio"></span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Qual é o objetivo</strong>
+        <span>Três opções. A marcada abre os campos dentro do próprio card. Em "Completar uma distância", a data é opcional e, sem ela, as regras sugerem um prazo na mesma nota com <code>info</code> do nível; "Ajustar" abre o seletor de data nativo. Não há pace alvo, e os treinos podem alternar corrida e caminhada. "Melhorar o tempo" pede distância e data na tela seguinte. "Sem objetivo definido" é o plano genérico.</span>
+        <span class="refs">ADRs 0008, 0016, 0021, 0024, 0103, 0104, 0172 e 0199 · crit. 2.4 a 2.6 · componentes CampoDoFormulario, SeletorDeData e RodapeDoTreino · propostas 6 e 7</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:09</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela" style="padding-bottom:180px">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">5 de 7</span></div><span class="barra-progresso" style="--p:71%"><i></i></span></div>
+          <div class="etapa"><h3>Distância e data</h3><span class="sub">Melhorar o tempo numa distância</span></div>
+          <div class="campos-2">
+            <div class="campo"><label>Distância</label><div class="entrada cheia">21 km</div></div>
+            <div class="campo"><label>Data</label><div class="entrada cheia escolha">29 nov<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
+          </div>
+          <div class="aviso-risco"><svg class="ico"><use href="#i-warning"/></svg><span>Prazo curto para 21 km: em 5 semanas, o volume teria que subir rápido para o seu nível. Que tal uma destas?</span></div>
+          <div class="alternativas">
+            <span class="botao secundario">10 km em 29 nov</span>
+            <span class="botao secundario">21 km em 21 fev</span>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+          <span class="nota-acao">Continuar com 21 km em 29 nov fica registrado no plano.</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Distância, data e aviso de risco</strong>
+        <span>No "Melhorar o tempo": distância livre e data, com o seletor nativo. Se as regras acharem o objetivo arriscado, o AvisoDeRisco aparece logo abaixo dos campos, sem bloquear, e as alternativas viram botões secundários que preenchem os campos com um toque. Continuar com o objetivo arriscado fica registrado, e a nota do rodapé diz isso. O pace alvo sugerido vem na tela seguinte.</span>
+        <span class="refs">ADRs 0016, 0017, 0021, 0103, 0142, 0172 e 0190 · crit. 2.5 a 2.7 · componentes CampoDoFormulario, AvisoDeRisco e RodapeDoTreino · proposta 8</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:12</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">7 de 7</span></div><span class="barra-progresso" style="--p:100%"><i></i></span></div>
+          <div class="etapa"><h3>Confira antes de gerar</h3></div>
+          <div class="grupo-lista dados resumo">
+            <div class="linha-dado"><span class="txt"><small>Nível</small><span>Intermediário</span></span><span class="editar" aria-label="Editar nível"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+            <div class="linha-dado"><span class="txt"><small>Sobre você</small><span>Vini, 34 anos e 72 kg, sem lesões</span></span><span class="editar" aria-label="Editar sobre você"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+            <div class="linha-dado"><span class="txt"><small>Frequência por semana</small><span>4 corridas, 2 musculações, 1 natação e 1 ciclismo</span></span><span class="editar" aria-label="Editar frequência"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+            <div class="linha-dado"><span class="txt"><small>Objetivo</small><span>Melhorar o tempo em 10 km, até 29 nov, a 5:20/km</span></span><span class="editar" aria-label="Editar objetivo"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+            <div class="linha-dado"><span class="txt"><small>Início</small><span>Hoje, segunda, 26 out</span></span><span class="editar" aria-label="Editar início"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Gerar meu plano</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Resumo</strong>
+        <span>Todas as respostas num grupo sem contorno, com a LinhaDeDado do Perfil (rótulo em legenda e valor em frase) e um botão de lápis à direita, que volta à tela do item e retorna ao resumo. "Gerar meu plano" é o último passo do onboarding.</span>
+        <span class="refs">ADRs 0037, 0043, 0158, 0165, 0166 e 0194 · crit. 2.8, 2.9 e 3.9 · componentes LinhaDeDado e RodapeDoTreino · proposta 9</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:13</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela montando">
+          <div class="etapa centro">
+            <svg class="ritmo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16"/><path d="M10 34h12l5-10 6 22 6-32 6 26 4-6h5"/></svg>
+            <h3>Montando seu plano</h3>
+            <p>10 km em 29 nov, com 4 corridas e 2 musculações por semana.</p>
+            <span class="barra-progresso" style="--p:60%"><i></i></span>
+            <span class="sub">Em seguida, você vai para o treino de hoje.</span>
+          </div>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Montando o plano</strong>
+        <span>Depois de "Gerar meu plano", sem tela de revisão nem aceite: o ícone Ritmo, o objetivo numa frase e a barra de progresso, sem voltar. Ao terminar, o plano fica ativo e o app abre o Hoje, com a barra de abas. Ver o plano é na aba Plano, e mudar é com o Piu. Risco no plano gerado chega como aviso em Notificações.</span>
+        <span class="refs">ADRs 0022, 0023, 0043, 0102 e 0138 · crit. 3.1, 3.6, 3.7 e 3.9 · proposta 10</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:14</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela montando">
+          <div class="aviso">
+            <span class="tit"><svg class="ico"><use href="#i-cloud-slash"/></svg>Não consegui montar seu plano agora</span>
+            <p>Suas respostas estão salvas. Tente de novo em alguns minutos.</p>
+            <span class="botao secundario">Tentar de novo</span>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="ver centro">Voltar ao resumo</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Não deu para montar</strong>
+        <span>Se a geração falhar, a tela troca a barra pelo AvisoNeutro, como a IA indisponível no Piu: o motivo, a garantia de que as respostas estão salvas e "Tentar de novo" em botão secundário. Sem vermelho, porque é falha, e não risco. "Voltar ao resumo" deixa revisar antes de tentar.</span>
+        <span class="refs">ADRs 0102, 0142, 0150 e 0192 · componentes AvisoNeutro e RodapeDoTreino · proposta 10</span>
+      </figcaption>
+    </figure>
+
+    <div class="propostas">
+      <h3>Propostas desta tela, em decisão</h3>
+      <ol>
+        <li><b>Boas-vindas:</b> ícone Ritmo de 64 px e "Live Run" em 32 px negrito no terço de cima, a frase em 17 px em <code>texto-secundario</code> e o campo de e-mail logo abaixo.</li>
+        <li><b>Botão da etapa no rodapé fixo:</b> o RodapeDoTreino encostado no fim da tela, sem barra de abas, com o botão principal na largura toda ("Continuar", "Gerar meu plano") e uma nota opcional embaixo.</li>
+        <li><b>Verifique o e-mail:</b> tela centralizada com o envelope num círculo de 64 px em <code>primaria-suave</code>, sem ação principal: "Reenviar link" secundário e "Trocar e-mail" em link.</li>
+        <li><b>Explicação do Strava:</b> texto do porquê e um grupo sem contorno com três garantias, cada uma com <code>shield-check</code> em ardósia, e o botão oficial "Connect with Strava" na largura toda, no rodapé.</li>
+        <li><b>Progresso do setup:</b> voltar à esquerda e "1 de 7" à direita na mesma linha, em legenda, e a barra de 4 px embaixo, em <code>neutro-suave</code> com o preenchimento em <code>primaria</code>.</li>
+        <li><b>Opções de escolha:</b> cards com contorno e um botão de rádio à direita; o marcado em <code>primaria-suave</code> com contorno de 2 px em ardósia, que abre os campos dentro dele; o sugerido ganha o chip neutro "Sugerido".</li>
+        <li><b>Sugestão das regras:</b> nota em legenda com <code>info</code>, sem caixa, com o porquê da sugestão (nível e prazo) e o link "Ajustar".</li>
+        <li><b>Risco no setup:</b> AvisoDeRisco abaixo dos campos, sem bloquear, com as alternativas em botões secundários que preenchem os campos, e a nota no rodapé de que continuar fica registrado.</li>
+        <li><b>Resumo:</b> LinhaDeDado do Perfil com um botão de lápis de 44 px à direita, no lugar do link "Editar" em texto.</li>
+        <li><b>Montando o plano:</b> ícone Ritmo, o objetivo numa frase e a barra de progresso; a falha troca a barra pelo AvisoNeutro com "Tentar de novo".</li>
       </ol>
     </div>
   </section>
