@@ -398,7 +398,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .campo .entrada.escolha { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .campo .entrada.escolha .ico { color: var(--texto-secundario); font-size: 18px; }
 .campo .entrada.multi { min-height: 72px; }
-.campo.mudou .entrada { border-color: var(--primaria); box-shadow: inset 0 0 0 1px var(--primaria); }
+.campo.mudou .entrada { border-color: var(--primaria); box-shadow: inset 0 0 0 1px var(--primaria); } /* 2 px em primaria (ADR 0199) */
 .campo .era { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
 .campos-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
 .grupo-lista.contadores { padding: 0 12px 0 16px; }
@@ -1605,7 +1605,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Editar perfil</strong>
         <span>Nome, nível, idade, peso, frequência semanal e lesões ou limitações. A frequência é só quantidade, com contadores de 0 a 7: corrida, outras atividades e a divisão da musculação, que soma o total. Se a soma passar de 7, a nota embaixo avisa que alguns dias vão ter duas atividades. No exemplo, mudaram o peso e as lesões: o campo que mudou ganha o contorno em ardósia e uma legenda com o valor de antes. "Salvar" fica no rodapé fixo, grava na hora e abre o Piu. Mudar só o nome não abre o Piu.</span>
-        <span class="refs">ADRs 0015, 0039, 0042, 0095, 0097, 0098, 0099, 0137, 0158, 0195, 0197 e 0198 · crit. 6.5 · componentes Contador, LinhaDeAcao, RodapeDoTreino e BarraDeAbas · propostas 5, 6 e 7</span>
+        <span class="refs">ADRs 0015, 0039, 0042, 0095, 0097, 0098, 0099, 0137, 0158 e 0195 a 0199 · crit. 6.5 · componentes CampoDoFormulario, Contador, LinhaDeAcao, RodapeDoTreino e BarraDeAbas · propostas 5, 6 e 7</span>
       </figcaption>
     </figure>
 
@@ -1708,7 +1708,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Status do Strava</b> (decidido no ADR 0196, componentes ChipDeStatus e LinhaDeDado): linha "Conexão" com o chip neutro "Conectado" ou "Desconectado" à direita, "Atualizar" em botão de ícone na linha da última sincronização e o "Powered by Strava" monocromático logo abaixo do grupo.</li>
         <li><b>Editar perfil</b> (decidido no ADR 0197, componente RodapeDoTreino): botão secundário com lápis, abaixo de Meus dados, e o formulário em tela própria, com o voltar "‹ Perfil", um recado neutro e "Salvar" em botão principal no rodapé fixo. Voltar sem salvar descarta as mudanças.</li>
         <li><b>Contador da frequência</b> (decidido no ADR 0198, componente Contador): botões redondos de 40 px com <code>minus</code> e <code>plus</code> em contorno ardósia e o número em 18 px negrito, de 0 a 7; a divisão da musculação recuada, embaixo dela. Com mais de 7 atividades na semana, a nota abaixo do grupo avisa que alguns dias vão ter duas, sem bloquear o "Salvar".</li>
-        <li><b>Campo que mudou:</b> contorno em <code>primaria</code> e uma legenda "Era 72 kg" embaixo, no lugar do tracejado do wireframe.</li>
+        <li><b>Campo que mudou</b> (decidido no ADR 0199, componente CampoDoFormulario): contorno de 2 px em <code>primaria</code> e a legenda "Era 72 kg" embaixo, no lugar do tracejado do wireframe. Some se o valor volta ao de antes.</li>
         <li><b>Mensagem pronta no Piu:</b> o campo em pílula cresce até mostrar o texto todo, com raio de 22 px, e o contexto "Perfil atualizado" com o ícone da aba Perfil, como o do plano (ADR 0174).</li>
         <li><b>Strava desconectado:</b> AvisoNeutro no topo, com o ícone <code>link-break</code> e o botão oficial "Connect with Strava" (ADR 0115), e a seção Strava logo abaixo.</li>
       </ol>
