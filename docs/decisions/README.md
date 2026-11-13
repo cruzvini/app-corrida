@@ -195,6 +195,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0187 | [Proposta aceita na conversa fica no card, com chip, nota e "Desfazer"](0187-proposta-aceita-na-conversa.md) | Aceita |
 | 0188 | [Na conversa, a proposta com status final continua no card, sem botões](0188-status-final-no-card-da-conversa.md) | Aceita |
 | 0189 | [Proposta editada continua no card, com o chip neutro "Editada"](0189-proposta-editada.md) | Aceita |
+| 0190 | [Aviso de risco dentro do card da proposta, em `risco-suave` com contorno](0190-aviso-de-risco-na-proposta.md) | Aceita |
 
 ## Como criar um novo ADR
 
