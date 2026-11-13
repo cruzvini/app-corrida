@@ -1315,7 +1315,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </header>
 
     <figure class="estado">
-      <template>
+      <template data-altura="840">
         <div class="barra-status"><span>12:30</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela" style="gap:12px">
           <div class="navegacao"><span></span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
@@ -1348,14 +1348,24 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </figure>
 
     <figure class="estado">
-      <template data-altura="940">
+      <template data-altura="1420">
         <div class="barra-status"><span>12:34</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela" style="gap:12px">
           <div class="navegacao"><span></span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
           <span class="separador-dia">Hoje</span>
           <div class="conversa">
             <div class="balao meu">Vou viajar sexta e sábado e não vou conseguir treinar.</div>
-            <div class="balao">Boa viagem! Puxei o leve para quinta, depois das inferiores, e levei superiores para domingo, depois do longo.</div>
+            <div class="balao">Boa viagem! Puxei o leve para quinta, depois das inferiores, e levei superiores para segunda, junto com o intervalado.</div>
+          </div>
+          <div class="proposta">
+            <span class="cab-proposta"><span class="titulo-secao">Proposta</span><span class="chip">Editada</span></span>
+            <div class="ad-linha"><span class="ad-dia">Qui 12</span><span class="ad-muda"><span class="ad-antes">Inferiores</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Inferiores e leve 4 km</span></span></div>
+            <div class="ad-linha"><span class="ad-dia">Sex 13</span><span class="ad-muda"><span class="ad-antes">Leve 6 km e superiores</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Livre</span><small>Viagem</small></span></div>
+            <div class="ad-linha"><span class="ad-dia">Seg 16</span><span class="ad-muda"><span class="ad-antes">Intervalado</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Intervalado e superiores</span></span></div>
+          </div>
+          <div class="conversa">
+            <div class="balao meu">Prefiro não juntar superiores com o intervalado.</div>
+            <div class="balao">Faz sentido. Levei superiores para domingo, depois do longo. O resto continua igual.</div>
           </div>
           <div class="proposta">
             <span class="cab-proposta"><span class="titulo-secao">Proposta</span><span class="chip"><svg class="ico"><use href="#i-check"/></svg>Aceita</span></span>
@@ -1373,9 +1383,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Piu"></nav>
       </template>
       <figcaption>
-        <strong>Proposta aceita</strong>
-        <span>O pedido vira proposta com o antes e o depois e o aviso de risco, que não bloqueia. Ao aceitar, os botões dão lugar ao chip "Aceita" e a uma linha que confirma a mudança, e o plano muda na hora. Enquanto for o ajuste mais recente, o card mantém o contorno e o "Desfazer", que pede confirmação.</span>
-        <span class="refs">ADRs 0017, 0022, 0047, 0062, 0088, 0145, 0150, 0162, 0180, 0181, 0182, 0184, 0185 e 0187 · crit. 6.2, 6.3 e 6.4 · componentes CabecalhoDaConversa, BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 4 e 7</span>
+        <strong>Proposta editada e aceita</strong>
+        <span>O pedido vira proposta com o antes e o depois. O usuário tocou em "Editar" e disse o que queria diferente: a primeira proposta fica no card, com o chip neutro "Editada" e sem botões, e o Piu responde com a revisada, que traz o aviso de risco, sem bloquear. Ao aceitar, os botões dão lugar ao chip "Aceita" e a uma linha que confirma a mudança, e o plano muda na hora. Enquanto for o ajuste mais recente, o card mantém o contorno e o "Desfazer", que pede confirmação.</span>
+        <span class="refs">ADRs 0017, 0022, 0047, 0053, 0062, 0088, 0145, 0150, 0162, 0180, 0181, 0182, 0184, 0185, 0187, 0188 e 0189 · crit. 6.2, 6.3 e 6.4 · componentes CabecalhoDaConversa, BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 4, 5, 6 e 7</span>
       </figcaption>
     </figure>
 
@@ -1472,7 +1482,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Sugestões de pedido</b> (decidido no ADR 0186, componente RodapeDoTreino): botões secundários de 44 px, com contorno e texto em ardósia, no rodapé, acima do campo, no mesmo lugar do "Replanejar com o Piu" do detalhe do treino. Tocar envia o texto como mensagem, e as sugestões somem.</li>
         <li><b>Proposta aceita na conversa</b> (decidido no ADR 0187, componente CardDaProposta): o card mantém o contorno enquanto for o ajuste mais recente. Os botões dão lugar ao chip neutro "Aceita" (ADR 0180), no cabeçalho do card, a uma linha "Plano atualizado hoje às 12:34" e ao "Desfazer" em botão secundário (ADRs 0181 e 0182), no lugar do aviso flutuante do wireframe. Se a proposta mudou também o Perfil, a nota diz "Plano e Perfil atualizados".</li>
         <li><b>Propostas com status final</b> (decidido no ADR 0188, componente CardDaProposta): na conversa, a proposta descartada, a aceita que já não pode ser desfeita, a desfeita e a desatualizada continuam no card com contorno, com o chip neutro ao lado do título, o antes e o depois no tom normal e sem botões. Em Notificações continua o registro do ADR 0183.</li>
-        <li><b>Proposta editada</b> (em decisão): o fluxo diz que a proposta original "fica como editada" (ADRs 0053 e 0062), mas o ADR 0180 não definiu esse chip. Ainda não aparece em nenhum estado.</li>
+        <li><b>Proposta editada</b> (decidido no ADR 0189, componentes ChipDeStatus e CardDaProposta): a original continua no card, com o chip neutro "Editada" e sem botões, e a revisada vem depois da mensagem do usuário, com os botões. Em Notificações, a original fica com o mesmo chip e sai de "Aguardando você".</li>
         <li><b>Aviso de risco na proposta</b> (em decisão): bloco em <code>risco-suave</code> com contorno em <code>risco</code> (ADRs 0150 e 0162), dentro do card, depois do antes e depois, com o ícone <code>warning</code> em <code>risco</code> e o texto em <code>texto</code>. É a primeira vez que o vermelho aparece nas telas.</li>
         <li><b>Limite diário</b> (em decisão): AvisoNeutro no fim da conversa, com o ícone <code>clock</code>, o motivo e o que continua funcionando. O campo fica desativado, em <code>neutro-suave</code> e sem contorno, com "Volta amanhã, à 0h", e o botão de enviar apagado. Perto do fim, uma linha em legenda acima do campo: "Restam 3 mensagens hoje".</li>
         <li><b>IA indisponível</b> (em decisão): AvisoNeutro no lugar da resposta, com o ícone <code>cloud-slash</code> e "Tentar de novo" em botão secundário. Não usa balão, porque não é o Piu respondendo, nem vermelho, porque falha não é risco.</li>
