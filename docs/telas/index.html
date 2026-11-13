@@ -432,6 +432,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .etapa p { margin: 0; color: var(--texto-secundario); }
 .etapa p b { color: var(--texto); font-weight: 500; }
 .etapa .sub { font-size: 13px; line-height: 18px; color: var(--texto-secundario); margin-top: -4px; }
+.etapa.espera { margin-top: 48px; gap: 12px; justify-items: start; }
 .etapa.centro { justify-items: center; text-align: center; margin-top: 96px; gap: 12px; }
 .icone-grande { width: 64px; height: 64px; border-radius: 50%; background: var(--primaria-suave); color: var(--primaria); display: grid; place-items: center; font-size: 32px; }
 .linha-garantia { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; }
@@ -1798,7 +1799,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="barra-status"><span>9:01</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela">
           <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span></span></div>
-          <div class="etapa centro">
+          <div class="etapa espera">
             <span class="icone-grande" aria-hidden="true"><svg class="ico"><use href="#i-envelope-simple"/></svg></span>
             <h3>Verifique seu e-mail</h3>
             <p>Mandamos um link para <b>vini@exemplo.com</b>. Toque nele neste celular para entrar.</p>
@@ -1811,8 +1812,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Verifique o e-mail</strong>
-        <span>Uma tela de espera, centralizada, com o ícone do envelope num círculo em <code>primaria-suave</code>. Não há ação principal, porque o próximo passo é no e-mail: "Reenviar link" é secundário e "Trocar e-mail" é um link. Link expirado ou já usado volta para cá com o motivo e oferece um novo. Depois de entrar, a sessão fica salva.</span>
-        <span class="refs">ADRs 0020 e 0158 · crit. 1.1 e 1.2 · componente RodapeDoTreino · proposta 3</span>
+        <span>Uma tela de espera, alinhada à esquerda como as boas-vindas, com o ícone do envelope num círculo em <code>primaria-suave</code>. Não há ação principal, porque o próximo passo é no e-mail: "Reenviar link" é secundário e "Trocar e-mail" é um link. Link expirado ou já usado volta para cá com o motivo e oferece um novo. Depois de entrar, a sessão fica salva.</span>
+        <span class="refs">ADRs 0020, 0158, 0203 e 0205 · crit. 1.1 e 1.2 · componentes VerifiqueOEmail e RodapeDoTreino · proposta 3</span>
       </figcaption>
     </figure>
 
@@ -2050,7 +2051,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <ol>
         <li><b>Boas-vindas</b> (decidido no ADR 0202, componente BoasVindas): ícone Ritmo de 64 px e "Live Run" em 32 px negrito no terço de cima, a frase em 17 px em <code>texto-secundario</code> e o campo de e-mail logo abaixo.</li>
         <li><b>Botão da etapa</b> (decidido no ADR 0203, componente RodapeDoTreino): flutua no fim da tela, sem a área em <code>superficie</code> e sem o contorno, com o botão principal na largura toda ("Continuar", "Gerar meu plano") e uma nota opcional embaixo, sobre o <code>fundo</code>. O conteúdo tem um respiro embaixo para rolar até acima do botão. Nas abas, o rodapé fixo continua.</li>
-        <li><b>Verifique o e-mail:</b> tela centralizada com o envelope num círculo de 64 px em <code>primaria-suave</code>, sem ação principal: "Reenviar link" secundário e "Trocar e-mail" em link.</li>
+        <li><b>Verifique o e-mail</b> (decidido no ADR 0205, componente VerifiqueOEmail): alinhada à esquerda, como as boas-vindas, com o envelope num círculo de 64 px em <code>primaria-suave</code>, sem ação principal: "Reenviar link" secundário e "Trocar e-mail" em link, no fim da tela. Sem "Abrir o app de e-mail".</li>
         <li><b>Explicação do Strava:</b> texto do porquê e um grupo sem contorno com três garantias, cada uma com <code>shield-check</code> em ardósia, e o botão oficial "Connect with Strava" na largura toda, no rodapé.</li>
         <li><b>Progresso do setup:</b> voltar à esquerda e "1 de 7" à direita na mesma linha, em legenda, e a barra de 4 px embaixo, em <code>neutro-suave</code> com o preenchimento em <code>primaria</code>.</li>
         <li><b>Opções de escolha:</b> cards com contorno e um botão de rádio à direita; o marcado em <code>primaria-suave</code> com contorno de 2 px em ardósia, que abre os campos dentro dele; o sugerido ganha o chip neutro "Sugerido".</li>
