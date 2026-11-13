@@ -1,6 +1,6 @@
 # ADR 0183: Antes e depois que não vale mais vira registro, em grupo sem contorno
 
-- **Status:** Aceita
+- **Status:** Aceita (complementada pelo ADR 0188)
 - **Data:** 2026-11-13
 - **Complementa:** [ADR 0052](0052-proposta-desatualizada-e-refeita.md), [ADR 0145](0145-antes-e-depois-com-riscado-e-seta.md), [ADR 0165](0165-secoes-em-grupo-sem-contorno.md) e [ADR 0182](0182-desfazer-pede-confirmacao.md)
 
@@ -24,6 +24,6 @@ Foram comparadas três opções: o antes e o depois num grupo sem contorno, em t
 
 - O card com contorno fica só para o que ainda pode ser decidido ou desfeito. Sem contorno, o bloco é leitura.
 - O usuário não perde o registro do que tinha sido proposto ou ajustado.
-- O mesmo padrão serve para os outros status finais da proposta ("Aceita" e "Descartada") na tela do Piu, onde isso será confirmado.
+- O mesmo padrão serve para os outros status finais da proposta ("Aceita" e "Descartada") na tela do Piu, onde isso será confirmado. *Complementado pelo ADR 0188: na conversa com o Piu, a proposta com status final continua no card, sem botões.*
 - O AntesDepois do design system Live Run ganha a variante de registro (ADR 0143).
 - Com esta decisão, a tela Notificações em alta fidelidade fica concluída (ADRs 0177 a 0183).

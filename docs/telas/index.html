@@ -366,9 +366,22 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .grupo-lista.antiga .ad-dia, .grupo-lista.antiga .ad-depois, .grupo-lista.antiga .ad-depois .ico { color: var(--texto-secundario); }
 .grupo-lista.antiga .ad-depois { font-weight: 400; }
 .grupo-lista .nota-proposta { padding-bottom: 12px; }
+
+/* Piu */
+.titulo-nav.piu { display: inline-flex; align-items: center; gap: 8px; }
+.separador-dia { align-self: center; font-size: 13px; line-height: 18px; font-weight: 500; color: var(--texto-secundario); }
+.cab-proposta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.aviso-risco { display: flex; align-items: flex-start; gap: 8px; margin-top: 4px; padding: 10px 12px; border-radius: var(--raio-campo); background: var(--risco-suave); box-shadow: inset 0 0 0 1px var(--risco); font-size: 13px; line-height: 18px; color: var(--texto); }
+.aviso-risco .ico { color: var(--risco); font-size: 18px; }
+.proposta .aviso-risco + .nota-proposta { border-top: 0; }
+.limite { display: grid; gap: 4px; padding-bottom: 2px; }
+.limite .tit { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.limite .tit .ico { font-size: 20px; }
+.limite p { margin: 0; font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.aviso .botao.secundario { margin-top: 4px; }
 </style>
 
-<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-x-fill" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM181.66,170.34a8,8,0,0,1-11.32,11.32L128,139.31,85.66,181.66a8,8,0,0,1-11.32-11.32L116.69,128,74.34,85.66A8,8,0,0,1,85.66,74.34L128,116.69l42.34-42.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-paper-plane-right" viewBox="0 0 256 256"><path d="M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z"/></symbol><symbol id="i-arrow-elbow-down-right" viewBox="0 0 256 256"><path d="M221.66,181.66l-48,48a8,8,0,0,1-11.32-11.32L196.69,184H72a8,8,0,0,1-8-8V32a8,8,0,0,1,16,0V168H196.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,221.66,181.66Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-pencil-simple" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-up" viewBox="0 0 256 256"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></symbol><symbol id="i-calendar-dots" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z"/></symbol><symbol id="i-arrow-u-up-left" viewBox="0 0 256 256"><path d="M232,144a64.07,64.07,0,0,1-64,64H80a8,8,0,0,1,0-16h88a48,48,0,0,0,0-96H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48A8,8,0,0,1,85.66,45.66L51.31,80H168A64.07,64.07,0,0,1,232,144Z"/></symbol></svg>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-cell-signal-full" viewBox="0 0 256 256"><path d="M168,72V200a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-48a8,8,0,0,0-8,8V200a8,8,0,0,0,16,0V32A8,8,0,0,0,200,24Zm-80,80a8,8,0,0,0-8,8v88a8,8,0,0,0,16,0V112A8,8,0,0,0,120,104ZM80,144a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V152A8,8,0,0,0,80,144ZM40,184a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-8A8,8,0,0,0,40,184Z"/></symbol><symbol id="i-wifi-high" viewBox="0 0 256 256"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></symbol><symbol id="i-battery-full" viewBox="0 0 256 256"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM184,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol><symbol id="i-person-simple-run" viewBox="0 0 256 256"><path d="M152,88a32,32,0,1,0-32-32A32,32,0,0,0,152,88Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,40Zm67.31,100.68c-.61.28-7.49,3.28-19.67,3.28-13.85,0-34.55-3.88-60.69-20a169.31,169.31,0,0,1-15.41,32.34,104.29,104.29,0,0,1,31.31,15.81C173.92,186.65,184,207.35,184,232a8,8,0,0,1-16,0c0-41.7-34.69-56.71-54.14-61.85-.55.7-1.12,1.41-1.69,2.1-19.64,23.8-44.25,36.18-71.63,36.18A92.29,92.29,0,0,1,31.2,208,8,8,0,0,1,32.8,192c25.92,2.58,48.47-7.49,67-30,12.49-15.14,21-33.61,25.25-47C86.13,92.35,61.27,111.63,61,111.84A8,8,0,1,1,51,99.36c1.5-1.2,37.22-29,89.51,6.57,45.47,30.91,71.93,20.31,72.18,20.19a8,8,0,1,1,6.63,14.56Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check-fill" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM205.66,85.66l-96,96a8,8,0,0,1-11.32,0l-40-40a8,8,0,0,1,11.32-11.32L104,164.69l90.34-90.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-cloud-slash" viewBox="0 0 256 256"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></symbol><symbol id="i-barbell" viewBox="0 0 256 256"><path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-blank-fill" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/></symbol><symbol id="i-chat-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-chat-circle-fill" viewBox="0 0 256 256"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></symbol><symbol id="i-bell" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/></symbol><symbol id="i-bell-fill" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"/></symbol><symbol id="i-user" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></symbol><symbol id="i-user-fill" viewBox="0 0 256 256"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-x-fill" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM181.66,170.34a8,8,0,0,1-11.32,11.32L128,139.31,85.66,181.66a8,8,0,0,1-11.32-11.32L116.69,128,74.34,85.66A8,8,0,0,1,85.66,74.34L128,116.69l42.34-42.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-paper-plane-right" viewBox="0 0 256 256"><path d="M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z"/></symbol><symbol id="i-arrow-elbow-down-right" viewBox="0 0 256 256"><path d="M221.66,181.66l-48,48a8,8,0,0,1-11.32-11.32L196.69,184H72a8,8,0,0,1-8-8V32a8,8,0,0,1,16,0V168H196.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,221.66,181.66Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-pencil-simple" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-up" viewBox="0 0 256 256"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"/></symbol><symbol id="i-calendar-dots" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z"/></symbol><symbol id="i-arrow-u-up-left" viewBox="0 0 256 256"><path d="M232,144a64.07,64.07,0,0,1-64,64H80a8,8,0,0,1,0-16h88a48,48,0,0,0,0-96H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48A8,8,0,0,1,85.66,45.66L51.31,80H168A64.07,64.07,0,0,1,232,144Z"/></symbol><symbol id="i-warning" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></symbol></svg>
 
 <div class="pagina">
   <header class="cabeca">
@@ -379,7 +392,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <li class="feita"><a href="#detalhe">Detalhe do treino</a></li>
       <li class="feita"><a href="#plano">Plano</a></li>
       <li class="feita"><a href="#notificacoes">Notificações</a></li>
-      <li>Piu</li>
+      <li class="feita"><a href="#piu">Piu</a></li>
       <li>Perfil</li>
       <li>Onboarding e setup</li>
     </ul>
@@ -744,7 +757,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <template data-altura="1000">
         <div class="barra-status"><span>7:46</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela" style="gap:12px">
-          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Intervalado</span><span class="titulo-nav">Piu</span><span></span></div>
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Intervalado</span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
           <div class="contexto"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><span><b>Intervalado de segunda, 9 nov</b>8,6 km previstos</span></div>
           <div class="conversa">
             <div class="balao">O que muda neste treino? Escolha um atalho ou me conte com as suas palavras.</div>
@@ -768,7 +781,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Replanejar com o Piu</strong>
         <span>Aberto pelo "Replanejar com o Piu". O treino aparece como contexto no topo. Os atalhos somem depois do primeiro envio. A proposta mostra o antes e o depois dos dias afetados, com uma nota sobre a semana, e só vale depois de aceita. Se ficar pendente, vai para Notificações.</span>
-        <span class="refs">ADRs 0022, 0053, 0062, 0078, 0106 e 0145 · crit. 4.6, 6.3 e 6.4 · componentes AntesDepois, IconeDeAtividade e BarraDeAbas · propostas 4, 6 e 9</span>
+        <span class="refs">ADRs 0022, 0053, 0062, 0078, 0106, 0145 e 0184 · crit. 4.6, 6.3 e 6.4 · componentes CabecalhoDaConversa, AntesDepois, IconeDeAtividade e BarraDeAbas · propostas 4, 6 e 9</span>
       </figcaption>
     </figure>
 
@@ -991,7 +1004,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <template data-altura="1040">
         <div class="barra-status"><span>12:15</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela" style="gap:12px">
-          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span><span class="titulo-nav">Piu</span><span></span></div>
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
           <div class="contexto"><span class="icone-caixa"><svg class="ico"><use href="#i-calendar-blank"/></svg></span><span><b>Plano para 10 km em 3 jan</b>Semana 3 de 10 da base</span></div>
           <div class="conversa">
             <div class="balao">O que você quer mudar no plano? Escolha uma sugestão ou me conte com as suas palavras.</div>
@@ -1015,7 +1028,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Editar plano com o Piu</strong>
         <span>Abre a conversa com o Piu, com o plano como contexto. As sugestões de pedido "Semana mais leve" e "Adiar objetivo" (esta só no plano específico) ficam acima do campo até o primeiro envio. Aqui o usuário já tocou em "Semana mais leve": o pedido vai como mensagem, e o Piu responde com uma proposta que pode ir além da semana atual. Só vale depois de aceita.</span>
-        <span class="refs">ADRs 0022, 0035, 0047, 0053, 0062, 0081, 0084, 0085, 0090, 0091, 0106, 0162 e 0174 · crit. 6.1 e 6.3 · componentes ContextoDoTreino, BalaoDeMensagem, CardDaProposta, AntesDepois, BotaoDeIcone, RodapeDoTreino e BarraDeAbas · proposta 8</span>
+        <span class="refs">ADRs 0022, 0035, 0047, 0053, 0062, 0081, 0084, 0085, 0090, 0091, 0106, 0162, 0174 e 0184 · crit. 6.1 e 6.3 · componentes CabecalhoDaConversa, ContextoDoTreino, BalaoDeMensagem, CardDaProposta, AntesDepois, BotaoDeIcone, RodapeDoTreino e BarraDeAbas · proposta 8</span>
       </figcaption>
     </figure>
 
@@ -1293,6 +1306,187 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Ações do ajuste</b> (decidido no ADR 0181, componente CardDaProposta): o antes e o depois num card com contorno. "Desfazer" em botão secundário com o ícone <code>arrow-u-up-left</code>, só no ajuste mais recente. No antigo, uma nota neutra com <code>info</code> no lugar do botão. Fora do card, o link "Falar com o Piu sobre este ajuste", igual ao do detalhe do treino.</li>
         <li><b>Proposta desatualizada</b> (decidido no ADR 0183, componente AntesDepois): o antes e o depois num grupo sem contorno, com o dia, a seta e o depois em <code>texto-secundario</code>, sem botões. Acima, o link "Ver a proposta nova" em ardósia.</li>
         <li><b>Confirmação do desfazer</b> (decidido no ADR 0182, componentes DialogoDeConfirmacao e ChipDeStatus): tocar em "Desfazer" abre o diálogo "Desfazer este ajuste?", com "Cancelar" e "Desfazer". Depois de desfeito, a mensagem fica com o chip neutro "Desfeito", sem botão e sem "Refazer", com uma nota que diz quando foi desfeito.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="grupo" id="piu">
+    <header>
+      <h2>Piu</h2>
+      <p>Concluída. A conversa livre com o assistente, no estilo de apps de mensagem: o usuário à direita e o Piu à esquerda (ADRs 0034, 0035 e 0159). A conversa é única e contínua, separada por dia (ADR 0090). Um pedido de mudança vira proposta com o antes e o depois, que o usuário aceita, edita ou descarta (ADRs 0062 e 0085). O Piu recebe só o plano e o texto do usuário, nunca dados do Strava (ADR 0106). Cinco estados, na quarta, 11 nov, cada um como exemplo independente. Já seguem os ADRs 0164 a 0166.</p>
+    </header>
+
+    <figure class="estado">
+      <template data-altura="840">
+        <div class="barra-status"><span>12:30</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela" style="gap:12px">
+          <div class="navegacao"><span></span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
+          <span class="separador-dia">Ontem</span>
+          <div class="conversa">
+            <div class="balao meu">Posso trocar o longo de domingo para sábado nesta semana?</div>
+            <div class="balao">Pode. Sábado está livre, e domingo vira descanso. O resto da semana não muda.</div>
+          </div>
+          <div class="proposta">
+            <span class="cab-proposta"><span class="titulo-secao">Proposta</span><span class="chip">Descartada</span></span>
+              <div class="ad-linha"><span class="ad-dia">Sáb 14</span><span class="ad-muda"><span class="ad-antes">Descanso</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Longo 12 km</span></span></div>
+              <div class="ad-linha"><span class="ad-dia">Dom 15</span><span class="ad-muda"><span class="ad-antes">Longo 12 km</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Descanso</span></span></div>
+          </div>
+          <div class="conversa">
+            <div class="balao meu">Deixa como está, obrigado.</div>
+          </div>
+          <span class="separador-dia">Hoje</span>
+        </div>
+        <div class="rodape">
+          <div class="acoes"><span class="botao secundario">Semana mais leve</span><span class="botao secundario">Adiar objetivo</span></div>
+          <div class="mensagem"><span class="entrada">Mensagem para o Piu</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Piu"></nav>
+      </template>
+      <figcaption>
+        <strong>Aba aberta direto</strong>
+        <span>A conversa é uma só, separada por dia, com todo o histórico. A proposta de ontem foi descartada: continua no card, com o chip neutro e sem os botões. Sem assunto em andamento, as sugestões de pedido aparecem acima do campo e somem no primeiro envio. "Adiar objetivo" aparece só no plano específico.</span>
+        <span class="refs">ADRs 0031, 0034, 0035, 0062, 0084, 0085, 0090, 0091, 0092, 0145, 0159, 0180, 0184, 0185, 0186 e 0188 · crit. 6.3 · componentes CabecalhoDaConversa, BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 3 e 5</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template data-altura="1420">
+        <div class="barra-status"><span>12:34</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela" style="gap:12px">
+          <div class="navegacao"><span></span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
+          <span class="separador-dia">Hoje</span>
+          <div class="conversa">
+            <div class="balao meu">Vou viajar sexta e sábado e não vou conseguir treinar.</div>
+            <div class="balao">Boa viagem! Puxei o leve para quinta, depois das inferiores, e levei superiores para segunda, junto com o intervalado.</div>
+          </div>
+          <div class="proposta">
+            <span class="cab-proposta"><span class="titulo-secao">Proposta</span><span class="chip">Editada</span></span>
+            <div class="ad-linha"><span class="ad-dia">Qui 12</span><span class="ad-muda"><span class="ad-antes">Inferiores</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Inferiores e leve 4 km</span></span></div>
+            <div class="ad-linha"><span class="ad-dia">Sex 13</span><span class="ad-muda"><span class="ad-antes">Leve 6 km e superiores</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Livre</span><small>Viagem</small></span></div>
+            <div class="ad-linha"><span class="ad-dia">Seg 16</span><span class="ad-muda"><span class="ad-antes">Intervalado</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Intervalado e superiores</span></span></div>
+          </div>
+          <div class="conversa">
+            <div class="balao meu">Prefiro não juntar superiores com o intervalado.</div>
+            <div class="balao">Faz sentido. Levei superiores para domingo, depois do longo. O resto continua igual.</div>
+          </div>
+          <div class="proposta">
+            <span class="cab-proposta"><span class="titulo-secao">Proposta</span><span class="chip"><svg class="ico"><use href="#i-check"/></svg>Aceita</span></span>
+            <div class="ad-linha"><span class="ad-dia">Qui 12</span><span class="ad-muda"><span class="ad-antes">Inferiores</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Inferiores e leve 4 km</span></span></div>
+            <div class="ad-linha"><span class="ad-dia">Sex 13</span><span class="ad-muda"><span class="ad-antes">Leve 6 km e superiores</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Livre</span><small>Viagem</small></span></div>
+            <div class="ad-linha"><span class="ad-dia">Dom 15</span><span class="ad-muda"><span class="ad-antes">Longo 12 km</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Longo 12 km e superiores</span></span></div>
+            <div class="aviso-risco"><svg class="ico"><use href="#i-warning"/></svg><span>Corrida no mesmo dia das inferiores. Se der, corra antes do treino de força.</span></div>
+            <div class="nota-proposta"><svg class="ico"><use href="#i-check"/></svg>Plano atualizado hoje às 12:34.</div>
+            <div class="botoes"><span class="botao secundario"><svg class="ico"><use href="#i-arrow-u-up-left"/></svg>Desfazer</span></div>
+          </div>
+        </div>
+        <div class="rodape">
+          <div class="mensagem"><span class="entrada">Mensagem para o Piu</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Piu"></nav>
+      </template>
+      <figcaption>
+        <strong>Proposta editada e aceita</strong>
+        <span>O pedido vira proposta com o antes e o depois. O usuário tocou em "Editar" e disse o que queria diferente: a primeira proposta fica no card, com o chip neutro "Editada" e sem botões, e o Piu responde com a revisada, que traz o aviso de risco, sem bloquear. Ao aceitar, os botões dão lugar ao chip "Aceita" e a uma linha que confirma a mudança, e o plano muda na hora. Enquanto for o ajuste mais recente, o card mantém o contorno e o "Desfazer", que pede confirmação.</span>
+        <span class="refs">ADRs 0017, 0022, 0047, 0053, 0062, 0088, 0145, 0150, 0162, 0180, 0181, 0182, 0184, 0185, 0187, 0188, 0189 e 0190 · crit. 6.2, 6.3 e 6.4 · componentes CabecalhoDaConversa, BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, AvisoDeRisco, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 4, 5, 6 e 7</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template data-altura="940">
+        <div class="barra-status"><span>12:40</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela" style="gap:12px">
+          <div class="navegacao"><span></span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
+          <span class="separador-dia">Hoje</span>
+          <div class="conversa">
+            <div class="balao meu">A partir de agora quero correr 3 vezes por semana.</div>
+            <div class="balao">Combinado. Nesta semana tirei o leve de sexta e mantive o longo. As próximas semanas já vêm com 3 corridas, e o volume cai um pouco.</div>
+          </div>
+          <div class="proposta">
+            <span class="cab-proposta"><span class="titulo-secao">Proposta</span><span class="chip"><svg class="ico"><use href="#i-check"/></svg>Aceita</span></span>
+            <div class="ad-linha"><span class="ad-dia">Perfil</span><span class="ad-muda"><span class="ad-antes">4 corridas por semana</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>3 corridas por semana</span></span></div>
+            <div class="ad-linha"><span class="ad-dia">Sex 13</span><span class="ad-muda"><span class="ad-antes">Leve 6 km e superiores</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Superiores</span></span></div>
+            <div class="ad-linha"><span class="ad-dia">Sem 4</span><span class="ad-muda"><span class="ad-antes">24 km previstos</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>21 km previstos</span><small>Vale também para as semanas seguintes, sem mudar as fases</small></span></div>
+            <div class="nota-proposta"><svg class="ico"><use href="#i-check"/></svg>Plano e Perfil atualizados hoje às 12:40.</div>
+            <div class="botoes"><span class="botao secundario"><svg class="ico"><use href="#i-arrow-u-up-left"/></svg>Desfazer</span></div>
+          </div>
+        </div>
+        <div class="rodape">
+          <div class="mensagem"><span class="entrada">Mensagem para o Piu</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Piu"></nav>
+      </template>
+      <figcaption>
+        <strong>Mudar a frequência</strong>
+        <span>Uma mudança que parece definitiva também passa pela conversa. Sem dias fixos, o Piu ajusta a semana atual e as seguintes, e aceitar atualiza a frequência no Perfil: a primeira linha do antes e depois mostra isso. Um pedido como "longo sempre no sábado" vira contexto para os próximos detalhamentos.</span>
+        <span class="refs">ADRs 0062, 0088, 0097, 0098, 0145, 0162, 0180, 0181, 0182, 0184, 0185 e 0187 · crit. 3.3 e 6.5 · componentes CabecalhoDaConversa, BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 4</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>21:15</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela" style="gap:12px">
+          <div class="navegacao"><span></span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
+          <span class="separador-dia">Hoje</span>
+          <div class="conversa">
+            <div class="balao meu">E se eu trocar o intervalado de segunda por um limiar?</div>
+            <div class="balao">Dá, mas na fase de base eu prefiro manter o intervalado curto. Quer que eu mostre como ficaria?</div>
+          </div>
+        </div>
+        <div class="rodape">
+          <div class="limite" role="status">
+            <span class="tit"><svg class="ico"><use href="#i-clock"/></svg>Limite de hoje atingido</span>
+            <p>Você usou as 20 mensagens de hoje. O Piu volta amanhã, à 0h. Os ajustes automáticos e o "Adiar objetivo", no detalhe do plano, continuam funcionando.</p>
+          </div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Piu"></nav>
+      </template>
+      <figcaption>
+        <strong>Limite diário atingido</strong>
+        <span>Não há contador no dia a dia. Com 5 mensagens ou menos, uma linha acima do campo diz "Restam 3 mensagens hoje". Depois de 20, a conversa não muda: o rodapé troca o campo por um aviso com o motivo e o que continua funcionando, até a meia-noite. O limite não é risco, por isso não usa vermelho. Chamadas automáticas não contam no limite.</span>
+        <span class="refs">ADRs 0031, 0085, 0093, 0142, 0184, 0185 e 0191 · crit. 6.8 · componentes CabecalhoDaConversa, BalaoDeMensagem, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 8</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>12:50</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela" style="gap:12px">
+          <div class="navegacao"><span></span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
+          <span class="separador-dia">Hoje</span>
+          <div class="conversa">
+            <div class="balao meu">Quero uma semana mais leve.</div>
+          </div>
+          <div class="aviso">
+            <span class="tit"><svg class="ico"><use href="#i-cloud-slash"/></svg>O Piu não conseguiu responder</span>
+            <p>A sua mensagem ficou salva. Tente de novo daqui a pouco.</p>
+            <span class="botao secundario"><svg class="ico"><use href="#i-arrows-clockwise"/></svg>Tentar de novo</span>
+          </div>
+        </div>
+        <div class="rodape">
+          <div class="mensagem"><span class="entrada">Mensagem para o Piu</span><span class="enviar" aria-label="Enviar"><svg class="ico"><use href="#i-paper-plane-right"/></svg></span></div>
+        </div>
+        <nav class="abas" data-hoje="11" data-contagem="2" data-aberta="Piu"></nav>
+      </template>
+      <figcaption>
+        <strong>IA indisponível</strong>
+        <span>A mensagem do usuário fica na conversa, e no lugar da resposta entra um aviso neutro com "Tentar de novo". É uma falha, e não um risco, por isso segue o aviso da falha do Strava. Se o teto mensal for atingido, o rodapé troca o campo por um aviso, como no limite diário, dizendo que o Piu volta no mês seguinte.</span>
+        <span class="refs">ADRs 0031, 0142, 0150, 0159, 0184, 0185, 0191 e 0192 · crit. 6.8 · componentes CabecalhoDaConversa, BalaoDeMensagem, AvisoNeutro, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 9</span>
+      </figcaption>
+    </figure>
+
+    <div class="propostas">
+      <h3>Propostas desta tela, todas decididas (ADRs 0184 a 0192)</h3>
+      <ol>
+        <li><b>Cabeçalho da conversa e avatar do Piu</b> (decidido no ADR 0184, componente CabecalhoDaConversa): cabeçalho compacto, com o avatar de 28 px e "Piu" em 16 px negrito, centralizados na linha de navegação. É o mesmo nas duas entradas: quando o Piu abre de um treino ou do plano, só entra o voltar à esquerda. Sem avatar ao lado dos balões, porque o lado e a cor já dizem quem fala. O avatar fica com um tamanho só, o do ADR 0179.</li>
+        <li><b>Separador de dia</b> (decidido no ADR 0185, componente BalaoDeMensagem): "Hoje", "Ontem" e, antes disso, o dia por extenso, centralizados, em legenda de 13 px com peso 500, em <code>texto-secundario</code>, sem linha nem pílula. As mensagens da conversa não mostram a hora.</li>
+        <li><b>Sugestões de pedido</b> (decidido no ADR 0186, componente RodapeDoTreino): botões secundários de 44 px, com contorno e texto em ardósia, no rodapé, acima do campo, no mesmo lugar do "Replanejar com o Piu" do detalhe do treino. Tocar envia o texto como mensagem, e as sugestões somem.</li>
+        <li><b>Proposta aceita na conversa</b> (decidido no ADR 0187, componente CardDaProposta): o card mantém o contorno enquanto for o ajuste mais recente. Os botões dão lugar ao chip neutro "Aceita" (ADR 0180), no cabeçalho do card, a uma linha "Plano atualizado hoje às 12:34" e ao "Desfazer" em botão secundário (ADRs 0181 e 0182), no lugar do aviso flutuante do wireframe. Se a proposta mudou também o Perfil, a nota diz "Plano e Perfil atualizados".</li>
+        <li><b>Propostas com status final</b> (decidido no ADR 0188, componente CardDaProposta): na conversa, a proposta descartada, a aceita que já não pode ser desfeita, a desfeita e a desatualizada continuam no card com contorno, com o chip neutro ao lado do título, o antes e o depois no tom normal e sem botões. Em Notificações continua o registro do ADR 0183.</li>
+        <li><b>Proposta editada</b> (decidido no ADR 0189, componentes ChipDeStatus e CardDaProposta): a original continua no card, com o chip neutro "Editada" e sem botões, e a revisada vem depois da mensagem do usuário, com os botões. Em Notificações, a original fica com o mesmo chip e sai de "Aguardando você".</li>
+        <li><b>Aviso de risco na proposta</b> (decidido no ADR 0190, componente AvisoDeRisco): bloco em <code>risco-suave</code> com contorno em <code>risco</code>, dentro do card, depois do antes e depois, com o ícone <code>warning</code> em <code>risco</code> e o texto em <code>texto</code>, sem título. Não bloqueia a decisão. É a primeira vez que o vermelho aparece nas telas, e ele fica só para dor, lesão e carga.</li>
+        <li><b>Limite diário</b> (decidido no ADR 0191, componente RodapeDoTreino): a conversa não muda. No limite, o rodapé troca o campo e o botão de enviar por um aviso, com o ícone <code>clock</code>, "Limite de hoje atingido" e o que continua funcionando. Perto do fim, uma linha em legenda no rodapé, acima do campo: "Restam 3 mensagens hoje". O teto mensal usa o mesmo aviso.</li>
+        <li><b>IA indisponível</b> (decidido no ADR 0192, componente AvisoNeutro): AvisoNeutro no lugar da resposta, com o ícone <code>cloud-slash</code>, "O Piu não conseguiu responder" e "Tentar de novo" em botão secundário. Não usa balão, porque não é o Piu respondendo, nem vermelho, porque falha não é risco. O teto mensal vai para o rodapé, como o limite diário.</li>
       </ol>
     </div>
   </section>

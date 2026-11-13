@@ -189,6 +189,15 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0181 | [Ações do ajuste com "Desfazer" no card e o link do Piu fora](0181-acoes-do-ajuste.md) | Aceita |
 | 0182 | [Desfazer um ajuste pede confirmação e não tem refazer](0182-desfazer-pede-confirmacao.md) | Aceita |
 | 0183 | [Antes e depois que não vale mais vira registro, em grupo sem contorno](0183-registro-do-antes-e-depois.md) | Aceita |
+| 0184 | [Cabeçalho da conversa compacto, com o avatar do Piu, sem avatar nos balões](0184-cabecalho-da-conversa.md) | Aceita |
+| 0185 | [Separador de dia da conversa só com texto, sem hora nas mensagens](0185-separador-de-dia.md) | Aceita |
+| 0186 | [Sugestões de pedido em botões secundários, acima do campo](0186-sugestoes-de-pedido-em-botoes.md) | Aceita |
+| 0187 | [Proposta aceita na conversa fica no card, com chip, nota e "Desfazer"](0187-proposta-aceita-na-conversa.md) | Aceita |
+| 0188 | [Na conversa, a proposta com status final continua no card, sem botões](0188-status-final-no-card-da-conversa.md) | Aceita |
+| 0189 | [Proposta editada continua no card, com o chip neutro "Editada"](0189-proposta-editada.md) | Aceita |
+| 0190 | [Aviso de risco dentro do card da proposta, em `risco-suave` com contorno](0190-aviso-de-risco-na-proposta.md) | Aceita |
+| 0191 | [Limite diário atingido troca o campo de mensagem por um aviso no rodapé](0191-limite-diario-no-rodape.md) | Aceita |
+| 0192 | [IA indisponível vira um aviso neutro no lugar da resposta do Piu](0192-ia-indisponivel-na-conversa.md) | Aceita |
 
 ## Como criar um novo ADR
 
