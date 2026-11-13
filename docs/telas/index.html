@@ -1833,12 +1833,13 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         </div>
         <div class="rodape solto">
           <span class="botao-strava cheio">Connect with Strava</span>
+          <span class="ver centro">Agora não</span>
         </div>
       </template>
       <figcaption>
         <strong>Conectar o Strava</strong>
-        <span>Obrigatório. Explica o porquê antes de abrir a autorização: o texto diz para que serve, e um grupo sem contorno lista o que o app lê e o que nunca faz, cada linha com um escudo em ardósia. O botão oficial do Strava fica no rodapé, na largura toda, como única ação. Se o usuário recusar ou cancelar, volta aqui com o motivo em AvisoNeutro. Falha na importação do histórico oferece tentar de novo ou seguir sem histórico.</span>
-        <span class="refs">ADRs 0019, 0040, 0106, 0108, 0110, 0115, 0150, 0165 e 0201 · crit. 1.3 a 1.6 · componentes LinhaDeDado e RodapeDoTreino · proposta 4</span>
+        <span>Obrigatório. Explica o porquê antes de abrir a autorização: o texto diz para que serve, e um grupo sem contorno lista o que o app lê e o que nunca faz, cada linha com um escudo em ardósia. O botão oficial do Strava fica no fim da tela, na largura toda, como ação principal, e o link "Agora não" logo abaixo deixa seguir sem conectar, sem esconder nem reduzir as explicações. Sem o Strava, o app fica em modo manual até conectar: nível escolhido à mão, treinos marcados à mão e o "não feito" das 22h suspenso. Se o usuário recusar ou cancelar, volta aqui com o motivo em AvisoNeutro. Falha na importação do histórico oferece tentar de novo ou seguir sem histórico.</span>
+        <span class="refs">ADRs 0019, 0040, 0049, 0106, 0108, 0110, 0115, 0150, 0165, 0201, 0206 e 0213 · crit. 1.3 a 1.6 · componentes LinhaDeDado e RodapeDoTreino · proposta 4</span>
       </figcaption>
     </figure>
 
@@ -2060,6 +2061,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Resumo</b> (decidido no ADR 0211, componente LinhaDeDado): LinhaDeDado do Perfil com um botão de lápis de 44 px à direita, no lugar do link "Editar" em texto.</li>
         <li><b>Montando o plano</b> (decidido no ADR 0212, componentes MontandoOPlano e AvisoNeutro): ícone Ritmo, o objetivo numa frase e a barra de progresso; a falha troca a barra pelo AvisoNeutro com "Tentar de novo".</li>
         <li><b>Descrição dos níveis</b> (decidido no ADR 0204, pergunta do usuário fora da lista): cada nível com duas referências concretas em legenda, vezes por semana e maior distância, as mesmas que as regras usam para sugerir. Os números são provisórios e são decididos no épico do motor de regras.</li>
+        <li><b>"Agora não" no Strava</b> (decidido no ADR 0213, pedido do usuário; revisa o ADR 0019, componente ExplicacaoDoStrava): link "Agora não" abaixo do botão oficial, com as explicações e as garantias inteiras na tela. Sem o Strava, o app fica em modo manual até conectar.</li>
       </ol>
     </div>
   </section>

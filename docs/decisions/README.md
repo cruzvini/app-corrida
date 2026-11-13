@@ -24,7 +24,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0016 | [Plano específico com distância livre](0016-plano-especifico-com-distancia-livre.md) | Aceita (revisada pelo ADR 0103) |
 | 0017 | [Avisar sobre riscos da meta sem bloquear a criação do plano](0017-avisar-riscos-sem-bloquear-plano.md) | Aceita |
 | 0018 | [Replanejamento por ações prontas e por conversa livre](0018-replanejamento-acoes-prontas-e-conversa.md) | Aceita (revisada pelos ADRs 0078, 0085 e 0094) |
-| 0019 | [Conexão com o Strava obrigatória](0019-conexao-strava-obrigatoria.md) | Aceita |
+| 0019 | [Conexão com o Strava obrigatória](0019-conexao-strava-obrigatoria.md) | Aceita (revisada pelo ADR 0213) |
 | 0020 | [Autenticação por e-mail com link mágico](0020-autenticacao-email-link-magico.md) | Aceita |
 | 0021 | [Pace alvo sugerido a partir do Strava](0021-pace-alvo-sugerido-pelo-strava.md) | Aceita (revisada pelo ADR 0103) |
 | 0022 | [IA propõe o plano, motor de regras valida](0022-ia-propoe-regras-validam-plano.md) | Aceita (revisada pelos ADRs 0106 e 0107) |
@@ -218,6 +218,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0210 | [Risco no setup com o AvisoDeRisco abaixo dos campos e as alternativas em botões secundários](0210-risco-no-setup.md) | Aceita |
 | 0211 | [Resumo do setup com a LinhaDeDado e um botão de lápis em cada linha](0211-resumo-do-setup.md) | Aceita |
 | 0212 | [Montando o plano com o ícone Ritmo, o objetivo numa frase e a barra de progresso; falha no AvisoNeutro](0212-montando-o-plano.md) | Aceita |
+| 0213 | ["Agora não" na conexão com o Strava, com o app em modo manual até conectar](0213-strava-opcional-com-agora-nao.md) | Aceita |
 
 ## Como criar um novo ADR
 
