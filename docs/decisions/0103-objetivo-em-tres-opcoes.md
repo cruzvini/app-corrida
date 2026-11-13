@@ -1,6 +1,6 @@
 # ADR 0103: Objetivo em três opções: completar uma distância, melhorar o tempo ou sem objetivo definido
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0214)
 - **Data:** 2026-11-10
 
 ## Contexto

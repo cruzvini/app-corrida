@@ -1940,6 +1940,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             </div>
             <div class="opcao"><span class="txt"><b>Melhorar o tempo numa distância</b><small>Prova ou recorde, com data e pace alvo.</small></span><span class="radio"></span></div>
             <div class="opcao"><span class="txt"><b>Sem objetivo definido</b><small>Só correr com regularidade.</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Outro</b><small>Escreva o seu objetivo, e o Piu combina o plano com você.</small></span><span class="radio"></span></div>
           </div>
         </div>
         <div class="rodape solto">
@@ -1948,8 +1949,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Qual é o objetivo</strong>
-        <span>Três opções. A marcada abre os campos dentro do próprio card. Em "Completar uma distância", a data é opcional e, sem ela, as regras sugerem um prazo na mesma nota com <code>info</code> do nível; "Ajustar" abre o seletor de data nativo. Não há pace alvo, e os treinos podem alternar corrida e caminhada. "Melhorar o tempo" pede distância e data na tela seguinte. "Sem objetivo definido" é o plano genérico.</span>
-        <span class="refs">ADRs 0008, 0016, 0021, 0024, 0103, 0104, 0172 e 0199 · crit. 2.4 a 2.6 · componentes CampoDoFormulario, SeletorDeData e RodapeDoTreino · propostas 6 e 7</span>
+        <span>Três opções. A marcada abre os campos dentro do próprio card. Em "Completar uma distância", a data é opcional e, sem ela, as regras sugerem um prazo na mesma nota com <code>info</code> do nível; "Ajustar" abre o seletor de data nativo. Não há pace alvo, e os treinos podem alternar corrida e caminhada. "Melhorar o tempo" pede distância e data na tela seguinte. "Sem objetivo definido" é o plano genérico. "Outro" abre um campo de texto dentro do card: o app gera o plano genérico, e a primeira conversa com o Piu já vem com o objetivo escrito, para virar uma proposta.</span>
+        <span class="refs">ADRs 0008, 0016, 0021, 0024, 0103, 0104, 0172, 0199, 0208, 0209 e 0214 · crit. 2.4 a 2.6 · componentes CampoDoFormulario, SeletorDeData e RodapeDoTreino · propostas 6 e 7</span>
       </figcaption>
     </figure>
 
@@ -2062,6 +2063,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Montando o plano</b> (decidido no ADR 0212, componentes MontandoOPlano e AvisoNeutro): ícone Ritmo, o objetivo numa frase e a barra de progresso; a falha troca a barra pelo AvisoNeutro com "Tentar de novo".</li>
         <li><b>Descrição dos níveis</b> (decidido no ADR 0204, pergunta do usuário fora da lista): cada nível com duas referências concretas em legenda, vezes por semana e maior distância, as mesmas que as regras usam para sugerir. Os números são provisórios e são decididos no épico do motor de regras.</li>
         <li><b>"Agora não" no Strava</b> (decidido no ADR 0213, pedido do usuário; revisa o ADR 0019, componente ExplicacaoDoStrava): link "Agora não" abaixo do botão oficial, com as explicações e as garantias inteiras na tela. Sem o Strava, o app fica em modo manual até conectar.</li>
+        <li><b>"Outro" no objetivo</b> (decidido no ADR 0214, pedido do usuário; revisa o ADR 0103, componente OpcaoDeEscolha): quarta opção com campo de texto dentro do card; gera o plano genérico, e o Piu transforma o objetivo em proposta na primeira conversa.</li>
       </ol>
     </div>
   </section>

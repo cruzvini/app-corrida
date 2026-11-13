@@ -108,7 +108,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0100 | [Boas-vindas só com uma frase e o campo de e-mail](0100-boas-vindas-so-com-frase-e-email.md) | Aceita |
 | 0101 | [Progresso do setup com barra e contagem de passos](0101-progresso-do-setup-com-passos.md) | Aceita |
 | 0102 | [Plano fica ativo direto depois de gerar, sem tela de revisão e aceite](0102-plano-ativo-direto-apos-gerar.md) | Aceita |
-| 0103 | [Objetivo em três opções: completar uma distância, melhorar o tempo ou sem objetivo definido](0103-objetivo-em-tres-opcoes.md) | Aceita |
+| 0103 | [Objetivo em três opções: completar uma distância, melhorar o tempo ou sem objetivo definido](0103-objetivo-em-tres-opcoes.md) | Aceita (revisada pelo ADR 0214) |
 | 0104 | [Prazo sugerido em "Completar uma distância" é calculado pelas regras](0104-prazo-sugerido-pelas-regras.md) | Aceita |
 | 0105 | [Integração com a API do Strava no backend, sem o Strava MCP](0105-api-do-strava-no-backend.md) | Aceita |
 | 0106 | [Dados do Strava nunca vão para a IA](0106-dados-do-strava-nunca-vao-para-a-ia.md) | Aceita |
@@ -219,6 +219,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0211 | [Resumo do setup com a LinhaDeDado e um botão de lápis em cada linha](0211-resumo-do-setup.md) | Aceita |
 | 0212 | [Montando o plano com o ícone Ritmo, o objetivo numa frase e a barra de progresso; falha no AvisoNeutro](0212-montando-o-plano.md) | Aceita |
 | 0213 | ["Agora não" na conexão com o Strava, com o app em modo manual até conectar](0213-strava-opcional-com-agora-nao.md) | Aceita |
+| 0214 | ["Outro" em "Qual é o seu objetivo?", com o texto levado ao Piu para virar proposta](0214-outro-objetivo-combinado-com-o-piu.md) | Aceita |
 
 ## Como criar um novo ADR
 
