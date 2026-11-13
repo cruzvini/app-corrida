@@ -312,6 +312,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .legenda-graf .k-feito { background: var(--primaria); }
 .barras { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; height: 124px; align-items: end; border-bottom: 1px solid var(--borda); }
 .barra { position: relative; height: var(--p); border-radius: 4px 4px 0 0; box-shadow: inset 0 0 0 1.5px var(--borda-forte); }
+.coluna { height: 100%; display: flex; align-items: flex-end; }
+.coluna .barra { flex: 1; }
+.coluna.atual { background: var(--primaria-suave); border-radius: 6px 6px 0 0; margin: 0 -3px; padding: 0 3px; }
 .barra i { position: absolute; left: 0; right: 0; bottom: 0; height: var(--f, 0); border-radius: 4px 4px 0 0; background: var(--primaria); }
 .eixo { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; margin-top: -4px; font-size: 11px; line-height: 14px; color: var(--texto-secundario); text-align: center; font-variant-numeric: tabular-nums; }
 .eixo .atual { color: var(--primaria); font-weight: 700; }
@@ -886,7 +889,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
               <div class="barras">
                 <span class="barra" style="--p:68%;--f:96%"><i></i></span>
                 <span class="barra" style="--p:76%;--f:84%"><i></i></span>
-                <span class="barra" style="--p:83%;--f:44%"><i></i></span>
+                <span class="coluna atual"><span class="barra" style="--p:83%;--f:44%"><i></i></span></span>
                 <span class="barra" style="--p:63%"></span>
                 <span class="barra" style="--p:89%"></span>
                 <span class="barra" style="--p:95%"></span>
@@ -914,7 +917,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Detalhe do plano</strong>
         <span>Abre pelo card do objetivo, por cima da aba. Reúne o objetivo completo (mudar é pelo Piu), o atalho "Adiar objetivo" em botão secundário (só no plano específico), o volume semanal previsto e feito, com a semana atual em destaque, e as fases com o volume de cada uma.</span>
-        <span class="refs">ADRs 0023, 0060, 0083, 0084, 0094, 0098, 0153, 0164, 0165 e 0168 · componentes CabecalhoDoDetalhe, FaixaDeFases e BarraDeAbas · propostas 2, 5 e 7</span>
+        <span class="refs">ADRs 0023, 0060, 0083, 0084, 0094, 0098, 0153, 0164, 0165, 0168 e 0171 · componentes CabecalhoDoDetalhe, GraficoDeVolume, FaixaDeFases e BarraDeAbas · propostas 2, 5 e 7</span>
       </figcaption>
     </figure>
 
@@ -1033,7 +1036,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Faixa de fases</b> (decidido no ADR 0168, componente FaixaDeFases): retângulos de 116 px em <code>superficie</code>, sem contorno, com o nome e as semanas; a fase atual em <code>primaria-suave</code> com contorno e nome em <code>primaria</code>. No detalhe do plano, a fase atual aparece como "Fase atual" em <code>primaria</code> na lista.</li>
         <li><b>Dias da semana com status</b> (decidido no ADR 0169, componente LinhaDoDia; revisa o "card por dia" do ADR 0081): os dias num grupo sem contorno, um por linha; à esquerda, o dia em miniatura do DiaDaFaixa (46 × 48 px), com o contorno, o fundo e o selo do status, e a barra de 20 × 4 px embaixo no dia atual (ADR 0144); depois, os ícones, o treino, o resumo e a seta. Descanso tracejado e sem seta.</li>
         <li><b>Semanas recolhidas e próximas semanas</b> (decidido no ADR 0170, componente LinhaDeSemana): linhas num grupo sem contorno, com a semana em negrito, o volume em legenda e <code>caret-down</code>, <code>caret-up</code> ou <code>caret-right</code>; o cabeçalho de cada semana aberta mostra o feito em negrito e o previsto ("13,8 de 31,6 km"), sem barra de progresso.</li>
-        <li><b>Gráfico de volume semanal</b> (componente novo GraficoDeVolume): uma barra por semana, com o previsto em contorno <code>borda-forte</code> e o feito preenchido em <code>primaria</code> por dentro; a semana atual em negrito e ardósia no eixo, legenda acima e uma linha com o número da semana atual.</li>
+        <li><b>Gráfico de volume semanal</b> (decidido no ADR 0171, componente GraficoDeVolume): uma barra por semana, com o previsto em contorno <code>borda-forte</code> e o feito preenchido em <code>primaria</code> por dentro; a semana atual com uma faixa em <code>primaria-suave</code> atrás e em negrito e ardósia no eixo; legenda acima e uma linha com o número da semana atual.</li>
         <li><b>Folha de adiar objetivo</b> (componente novo SeletorDeData, na FolhaDeEscolha): calendário do mês com as datas até o objetivo riscadas, a data atual com contorno tracejado e a escolhida em círculo <code>primaria</code>; o antes e o depois do plano e das fases; o botão principal "Adiar para 17 jan".</li>
         <li><b>Cabeçalho do detalhe do plano</b> (componente CabecalhoDoDetalhe): o mesmo cabeçalho do treino, com a bandeira, os três números de 24 px do objetivo e "Adiar objetivo" em botão secundário com o ícone <code>calendar-dots</code>.</li>
         <li><b>Contexto do plano no Piu</b> (componente ContextoDoTreino): o mesmo bloco do treino, com o ícone de calendário e o plano no lugar do treino ("Plano para 10 km em 3 jan" e "Semana 3 de 10 da base").</li>
