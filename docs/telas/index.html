@@ -1099,7 +1099,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Lista</strong>
         <span>No topo, as propostas que esperam decisão, mesmo depois de lidas. Abaixo, "Recentes", da mais nova para a mais antiga, com o dia e a hora. A não lida tem um ponto em ardósia e o título em negrito, e a contagem do sino mostra só as não lidas. Tocar abre a mensagem em tela própria. As lidas somem 30 dias depois da leitura.</span>
-        <span class="refs">ADRs 0007, 0050, 0054, 0086, 0087, 0089, 0151, 0165 e 0166 · crit. 5.1 e 5.2 · componente BarraDeAbas · propostas 1 e 2</span>
+        <span class="refs">ADRs 0007, 0050, 0054, 0086, 0087, 0089, 0151, 0165, 0166 e 0177 · crit. 5.1 e 5.2 · componentes LinhaDeMensagem e BarraDeAbas · proposta 2</span>
       </figcaption>
     </figure>
 
@@ -1214,7 +1214,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     <div class="propostas">
       <h3>Propostas desta tela, em decisão</h3>
       <ol>
-        <li><b>Linha de mensagem</b> (componente novo LinhaDeMensagem): linhas num grupo sem contorno, sem o avatar do Piu em cada linha, porque todas as mensagens são dele. Título em 15 px, apoio em legenda e o dia e a hora à direita, sem seta. A não lida tem um ponto de 8 px em <code>primaria</code> à esquerda e o título em negrito; a lida, o título em peso 500.</li>
+        <li><b>Linha de mensagem</b> (decidido no ADR 0177, componente LinhaDeMensagem): linhas num grupo sem contorno, sem o avatar do Piu em cada linha, porque todas as mensagens são dele. Título em 15 px, apoio em legenda e o dia e a hora à direita, sem seta. A não lida tem um ponto de 8 px em <code>primaria</code> à esquerda e o título em negrito; a lida, o título em peso 500.</li>
         <li><b>Propostas aguardando você</b> (componente LinhaDeMensagem): seção própria no topo, com o mesmo grupo e a mesma linha das recentes. O destaque vem da posição e do título da seção, e a linha de apoio começa com "Proposta:". Sem cor nem contorno extra.</li>
         <li><b>Avatar do Piu e cabeçalho da mensagem</b> (componentes novo AvatarDoPiu e CabecalhoDoDetalhe): o Piu assina a mensagem com um círculo de 40 px em <code>primaria-suave</code> e o balão da aba Piu preenchido, em <code>primaria</code>. Ao lado, o título da mensagem em 24 px, o mesmo da lista. Embaixo, o tipo e a data numa frase ("Ajuste automático de terça, 10 nov, às 22:00"). O texto do Piu vem solto, sem balão.</li>
         <li><b>Chips da proposta</b> (componente ChipDeStatus): "Aguardando você" em <code>primaria-suave</code>, com contorno em <code>primaria</code> e o ícone <code>clock</code>; "Desatualizada" no chip neutro, igual ao "Previsto".</li>
