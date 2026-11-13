@@ -215,6 +215,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0207 | [Progresso do setup com o voltar e a contagem na mesma linha e uma barra fina embaixo](0207-progresso-do-setup.md) | Aceita |
 | 0208 | [Opções de escolha do setup em cards com contorno e botão de rádio, com a marcada em primaria-suave](0208-opcoes-de-escolha.md) | Aceita |
 | 0209 | [Sugestão das regras no setup numa nota com info, sem caixa, com o porquê e o link "Ajustar"](0209-sugestao-das-regras-em-nota.md) | Aceita |
+| 0210 | [Risco no setup com o AvisoDeRisco abaixo dos campos e as alternativas em botões secundários](0210-risco-no-setup.md) | Aceita |
 
 ## Como criar um novo ADR
 
