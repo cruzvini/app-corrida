@@ -191,6 +191,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0183 | [Antes e depois que não vale mais vira registro, em grupo sem contorno](0183-registro-do-antes-e-depois.md) | Aceita |
 | 0184 | [Cabeçalho da conversa compacto, com o avatar do Piu, sem avatar nos balões](0184-cabecalho-da-conversa.md) | Aceita |
 | 0185 | [Separador de dia da conversa só com texto, sem hora nas mensagens](0185-separador-de-dia.md) | Aceita |
+| 0186 | [Sugestões de pedido em botões secundários, acima do campo](0186-sugestoes-de-pedido-em-botoes.md) | Aceita |
 
 ## Como criar um novo ADR
 

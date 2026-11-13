@@ -1345,7 +1345,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Aba aberta direto</strong>
         <span>A conversa é uma só, separada por dia, com todo o histórico. A proposta de ontem foi descartada: fica com o chip neutro e o antes e o depois em tom secundário, só como registro. Sem assunto em andamento, as sugestões de pedido aparecem acima do campo e somem no primeiro envio. "Adiar objetivo" aparece só no plano específico.</span>
-        <span class="refs">ADRs 0031, 0034, 0035, 0062, 0084, 0085, 0090, 0091, 0092, 0145, 0159, 0165, 0180, 0183, 0184 e 0185 · crit. 6.3 · componentes CabecalhoDaConversa, BalaoDeMensagem, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 3 e 5</span>
+        <span class="refs">ADRs 0031, 0034, 0035, 0062, 0084, 0085, 0090, 0091, 0092, 0145, 0159, 0165, 0180, 0183, 0184, 0185 e 0186 · crit. 6.3 · componentes CabecalhoDaConversa, BalaoDeMensagem, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 3 e 5</span>
       </figcaption>
     </figure>
 
@@ -1471,7 +1471,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <ol>
         <li><b>Cabeçalho da conversa e avatar do Piu</b> (decidido no ADR 0184, componente CabecalhoDaConversa): cabeçalho compacto, com o avatar de 28 px e "Piu" em 16 px negrito, centralizados na linha de navegação. É o mesmo nas duas entradas: quando o Piu abre de um treino ou do plano, só entra o voltar à esquerda. Sem avatar ao lado dos balões, porque o lado e a cor já dizem quem fala. O avatar fica com um tamanho só, o do ADR 0179.</li>
         <li><b>Separador de dia</b> (decidido no ADR 0185, componente BalaoDeMensagem): "Hoje", "Ontem" e, antes disso, o dia por extenso, centralizados, em legenda de 13 px com peso 500, em <code>texto-secundario</code>, sem linha nem pílula. As mensagens da conversa não mostram a hora.</li>
-        <li><b>Sugestões de pedido</b> (em decisão): botões secundários no rodapé, acima do campo, no mesmo lugar do "Replanejar com o Piu" do detalhe do treino.</li>
+        <li><b>Sugestões de pedido</b> (decidido no ADR 0186, componente RodapeDoTreino): botões secundários de 44 px, com contorno e texto em ardósia, no rodapé, acima do campo, no mesmo lugar do "Replanejar com o Piu" do detalhe do treino. Tocar envia o texto como mensagem, e as sugestões somem.</li>
         <li><b>Proposta aceita na conversa</b> (em decisão): o card mantém o contorno enquanto for o ajuste mais recente. Os botões dão lugar ao chip neutro "Aceita" (ADR 0180), no cabeçalho do card, a uma linha "Plano atualizado hoje às 12:34" e ao "Desfazer" em botão secundário (ADRs 0181 e 0182), no lugar do aviso flutuante do wireframe.</li>
         <li><b>Propostas com status final</b> (em decisão): a proposta descartada e a aceita que já não pode ser desfeita viram registro, num grupo sem contorno e em tom secundário, com o chip neutro ao lado do título. Confirma o ADR 0183 na conversa.</li>
         <li><b>Proposta editada</b> (em decisão): o fluxo diz que a proposta original "fica como editada" (ADRs 0053 e 0062), mas o ADR 0180 não definiu esse chip. Ainda não aparece em nenhum estado.</li>
