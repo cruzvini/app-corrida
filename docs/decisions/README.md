@@ -192,6 +192,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0184 | [Cabeçalho da conversa compacto, com o avatar do Piu, sem avatar nos balões](0184-cabecalho-da-conversa.md) | Aceita |
 | 0185 | [Separador de dia da conversa só com texto, sem hora nas mensagens](0185-separador-de-dia.md) | Aceita |
 | 0186 | [Sugestões de pedido em botões secundários, acima do campo](0186-sugestoes-de-pedido-em-botoes.md) | Aceita |
+| 0187 | [Proposta aceita na conversa fica no card, com chip, nota e "Desfazer"](0187-proposta-aceita-na-conversa.md) | Aceita |
 
 ## Como criar um novo ADR
 
