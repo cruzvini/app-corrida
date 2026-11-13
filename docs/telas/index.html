@@ -329,12 +329,12 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .cabecalho .botao.secundario { margin-top: 0; }
 .folha .dica { margin: -4px 0 0; font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
 .calendario { display: grid; gap: 4px; }
-.calendario .mes { font-weight: 700; }
+.calendario .mes { display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+.calendario .setas { display: flex; gap: 20px; color: var(--primaria); font-size: 20px; }
 .cal-grade { display: grid; grid-template-columns: repeat(7, 1fr); justify-items: center; row-gap: 2px; }
 .cal-grade span { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-variant-numeric: tabular-nums; }
 .cal-grade .sem { height: 24px; font-size: 11px; font-weight: 500; color: var(--texto-secundario); }
-.cal-grade .fora { color: var(--texto-secundario); text-decoration: line-through; }
-.cal-grade .atual-obj { outline: 1.5px dashed var(--borda-forte); outline-offset: -3px; color: var(--texto-secundario); }
+.cal-grade .fora { color: var(--borda-forte); }
 .cal-grade .escolhido { background: var(--primaria); color: var(--sobre-primaria); font-weight: 700; }
 .folha .proposta { padding: 4px 16px 8px; background: var(--fundo); border: 0; }
 .folha .botao.cheio { min-height: 48px; }
@@ -938,10 +938,10 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           <h4>Adiar objetivo</h4>
           <p class="dica">Escolha uma data depois de 3 jan. Para antecipar ou trocar o objetivo, fale com o Piu.</p>
           <div class="calendario">
-            <span class="mes">Janeiro de 2027</span>
+            <span class="mes">Janeiro de 2027<span class="setas"><svg class="ico"><use href="#i-caret-left"/></svg><svg class="ico"><use href="#i-caret-right"/></svg></span></span>
             <div class="cal-grade">
               <span class="sem">S</span><span class="sem">T</span><span class="sem">Q</span><span class="sem">Q</span><span class="sem">S</span><span class="sem">S</span><span class="sem">D</span>
-              <span></span><span></span><span></span><span></span><span class="fora">1</span><span class="fora">2</span><span class="atual-obj">3</span>
+              <span></span><span></span><span></span><span></span><span class="fora">1</span><span class="fora">2</span><span class="fora">3</span>
               <span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
               <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span class="escolhido">17</span>
               <span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
@@ -957,8 +957,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Adiar objetivo</strong>
-        <span>Atalho do detalhe do plano, numa folha. Datas até 3 jan ficam riscadas, e a data atual do objetivo tem um contorno tracejado. As regras esticam as fases e redistribuem o volume, sem IA. Ao confirmar, a mudança vale na hora e pode ser desfeita. Prazo arriscado gera aviso, sem bloquear.</span>
-        <span class="refs">ADRs 0017, 0047, 0060, 0084, 0085, 0145 e 0152 · crit. 6.1 e 6.4 · componentes FolhaDeEscolha, AntesDepois e BarraDeAbas · proposta 6</span>
+        <span>Atalho do detalhe do plano, numa folha. A data vem do seletor nativo do sistema, na cor da marca, com as datas até 3 jan indisponíveis. As regras esticam as fases e redistribuem o volume, sem IA. Ao confirmar, a mudança vale na hora e pode ser desfeita. Prazo arriscado gera aviso, sem bloquear.</span>
+        <span class="refs">ADRs 0017, 0047, 0060, 0084, 0085, 0145, 0152 e 0172 · crit. 6.1 e 6.4 · componentes SeletorDeData, FolhaDeEscolha, AntesDepois e BarraDeAbas · proposta 6</span>
       </figcaption>
     </figure>
 
@@ -1037,7 +1037,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Dias da semana com status</b> (decidido no ADR 0169, componente LinhaDoDia; revisa o "card por dia" do ADR 0081): os dias num grupo sem contorno, um por linha; à esquerda, o dia em miniatura do DiaDaFaixa (46 × 48 px), com o contorno, o fundo e o selo do status, e a barra de 20 × 4 px embaixo no dia atual (ADR 0144); depois, os ícones, o treino, o resumo e a seta. Descanso tracejado e sem seta.</li>
         <li><b>Semanas recolhidas e próximas semanas</b> (decidido no ADR 0170, componente LinhaDeSemana): linhas num grupo sem contorno, com a semana em negrito, o volume em legenda e <code>caret-down</code>, <code>caret-up</code> ou <code>caret-right</code>; o cabeçalho de cada semana aberta mostra o feito em negrito e o previsto ("13,8 de 31,6 km"), sem barra de progresso.</li>
         <li><b>Gráfico de volume semanal</b> (decidido no ADR 0171, componente GraficoDeVolume): uma barra por semana, com o previsto em contorno <code>borda-forte</code> e o feito preenchido em <code>primaria</code> por dentro; a semana atual com uma faixa em <code>primaria-suave</code> atrás e em negrito e ardósia no eixo; legenda acima e uma linha com o número da semana atual.</li>
-        <li><b>Folha de adiar objetivo</b> (componente novo SeletorDeData, na FolhaDeEscolha): calendário do mês com as datas até o objetivo riscadas, a data atual com contorno tracejado e a escolhida em círculo <code>primaria</code>; o antes e o depois do plano e das fases; o botão principal "Adiar para 17 jan".</li>
+        <li><b>Folha de adiar objetivo</b> (decidido no ADR 0172, componente SeletorDeData, na FolhaDeEscolha): o seletor de data nativo do iOS e do Android, na cor <code>primaria</code>, com as datas até o objetivo indisponíveis; o antes e o depois do plano e das fases; o botão principal "Adiar para 17 jan".</li>
         <li><b>Cabeçalho do detalhe do plano</b> (componente CabecalhoDoDetalhe): o mesmo cabeçalho do treino, com a bandeira, os três números de 24 px do objetivo e "Adiar objetivo" em botão secundário com o ícone <code>calendar-dots</code>.</li>
         <li><b>Contexto do plano no Piu</b> (componente ContextoDoTreino): o mesmo bloco do treino, com o ícone de calendário e o plano no lugar do treino ("Plano para 10 km em 3 jan" e "Semana 3 de 10 da base").</li>
       </ol>

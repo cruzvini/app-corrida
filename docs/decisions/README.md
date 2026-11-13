@@ -177,6 +177,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0169 | [Dias da semana num grupo, com o dia em miniatura](0169-dias-da-semana-em-grupo.md) | Aceita |
 | 0170 | [Linhas de semana e volume da semana em texto](0170-linhas-de-semana.md) | Aceita |
 | 0171 | [Gráfico de volume semanal com a semana atual em faixa](0171-grafico-de-volume-semanal.md) | Aceita |
+| 0172 | [Adiar objetivo com o seletor de data do sistema](0172-adiar-objetivo-com-seletor-nativo.md) | Aceita |
 
 ## Como criar um novo ADR
 
