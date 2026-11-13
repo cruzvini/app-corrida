@@ -189,6 +189,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0181 | [Ações do ajuste com "Desfazer" no card e o link do Piu fora](0181-acoes-do-ajuste.md) | Aceita |
 | 0182 | [Desfazer um ajuste pede confirmação e não tem refazer](0182-desfazer-pede-confirmacao.md) | Aceita |
 | 0183 | [Antes e depois que não vale mais vira registro, em grupo sem contorno](0183-registro-do-antes-e-depois.md) | Aceita |
+| 0184 | [Cabeçalho da conversa compacto, com o avatar do Piu, sem avatar nos balões](0184-cabecalho-da-conversa.md) | Aceita |
 
 ## Como criar um novo ADR
 

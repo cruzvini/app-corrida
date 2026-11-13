@@ -755,7 +755,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <template data-altura="1000">
         <div class="barra-status"><span>7:46</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela" style="gap:12px">
-          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Intervalado</span><span class="titulo-nav">Piu</span><span></span></div>
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Intervalado</span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
           <div class="contexto"><span class="icone-caixa"><svg class="ico"><use href="#i-person-simple-run"/></svg></span><span><b>Intervalado de segunda, 9 nov</b>8,6 km previstos</span></div>
           <div class="conversa">
             <div class="balao">O que muda neste treino? Escolha um atalho ou me conte com as suas palavras.</div>
@@ -779,7 +779,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Replanejar com o Piu</strong>
         <span>Aberto pelo "Replanejar com o Piu". O treino aparece como contexto no topo. Os atalhos somem depois do primeiro envio. A proposta mostra o antes e o depois dos dias afetados, com uma nota sobre a semana, e só vale depois de aceita. Se ficar pendente, vai para Notificações.</span>
-        <span class="refs">ADRs 0022, 0053, 0062, 0078, 0106 e 0145 · crit. 4.6, 6.3 e 6.4 · componentes AntesDepois, IconeDeAtividade e BarraDeAbas · propostas 4, 6 e 9</span>
+        <span class="refs">ADRs 0022, 0053, 0062, 0078, 0106, 0145 e 0184 · crit. 4.6, 6.3 e 6.4 · componentes CabecalhoDaConversa, AntesDepois, IconeDeAtividade e BarraDeAbas · propostas 4, 6 e 9</span>
       </figcaption>
     </figure>
 
@@ -1002,7 +1002,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <template data-altura="1040">
         <div class="barra-status"><span>12:15</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela" style="gap:12px">
-          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span><span class="titulo-nav">Piu</span><span></span></div>
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Plano</span><span class="titulo-nav piu"><span class="avatar-piu" aria-hidden="true"><svg class="ico"><use href="#i-chat-circle-fill"/></svg></span>Piu</span><span></span></div>
           <div class="contexto"><span class="icone-caixa"><svg class="ico"><use href="#i-calendar-blank"/></svg></span><span><b>Plano para 10 km em 3 jan</b>Semana 3 de 10 da base</span></div>
           <div class="conversa">
             <div class="balao">O que você quer mudar no plano? Escolha uma sugestão ou me conte com as suas palavras.</div>
@@ -1026,7 +1026,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Editar plano com o Piu</strong>
         <span>Abre a conversa com o Piu, com o plano como contexto. As sugestões de pedido "Semana mais leve" e "Adiar objetivo" (esta só no plano específico) ficam acima do campo até o primeiro envio. Aqui o usuário já tocou em "Semana mais leve": o pedido vai como mensagem, e o Piu responde com uma proposta que pode ir além da semana atual. Só vale depois de aceita.</span>
-        <span class="refs">ADRs 0022, 0035, 0047, 0053, 0062, 0081, 0084, 0085, 0090, 0091, 0106, 0162 e 0174 · crit. 6.1 e 6.3 · componentes ContextoDoTreino, BalaoDeMensagem, CardDaProposta, AntesDepois, BotaoDeIcone, RodapeDoTreino e BarraDeAbas · proposta 8</span>
+        <span class="refs">ADRs 0022, 0035, 0047, 0053, 0062, 0081, 0084, 0085, 0090, 0091, 0106, 0162, 0174 e 0184 · crit. 6.1 e 6.3 · componentes CabecalhoDaConversa, ContextoDoTreino, BalaoDeMensagem, CardDaProposta, AntesDepois, BotaoDeIcone, RodapeDoTreino e BarraDeAbas · proposta 8</span>
       </figcaption>
     </figure>
 
@@ -1345,7 +1345,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Aba aberta direto</strong>
         <span>A conversa é uma só, separada por dia, com todo o histórico. A proposta de ontem foi descartada: fica com o chip neutro e o antes e o depois em tom secundário, só como registro. Sem assunto em andamento, as sugestões de pedido aparecem acima do campo e somem no primeiro envio. "Adiar objetivo" aparece só no plano específico.</span>
-        <span class="refs">ADRs 0031, 0034, 0035, 0062, 0084, 0085, 0090, 0091, 0092, 0145, 0159, 0165, 0180 e 0183 · crit. 6.3 · componentes BalaoDeMensagem, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 3 e 5</span>
+        <span class="refs">ADRs 0031, 0034, 0035, 0062, 0084, 0085, 0090, 0091, 0092, 0145, 0159, 0165, 0180, 0183 e 0184 · crit. 6.3 · componentes CabecalhoDaConversa, BalaoDeMensagem, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 3 e 5</span>
       </figcaption>
     </figure>
 
@@ -1377,7 +1377,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Proposta aceita</strong>
         <span>O pedido vira proposta com o antes e o depois e o aviso de risco, que não bloqueia. Ao aceitar, os botões dão lugar ao chip "Aceita" e a uma linha que confirma a mudança, e o plano muda na hora. Enquanto for o ajuste mais recente, o card mantém o contorno e o "Desfazer", que pede confirmação.</span>
-        <span class="refs">ADRs 0017, 0022, 0047, 0062, 0088, 0145, 0150, 0162, 0180, 0181 e 0182 · crit. 6.2, 6.3 e 6.4 · componentes BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 4 e 7</span>
+        <span class="refs">ADRs 0017, 0022, 0047, 0062, 0088, 0145, 0150, 0162, 0180, 0181, 0182 e 0184 · crit. 6.2, 6.3 e 6.4 · componentes CabecalhoDaConversa, BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 4 e 7</span>
       </figcaption>
     </figure>
 
@@ -1408,7 +1408,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Mudar a frequência</strong>
         <span>Uma mudança que parece definitiva também passa pela conversa. Sem dias fixos, o Piu ajusta a semana atual e as seguintes, e aceitar atualiza a frequência no Perfil: a primeira linha do antes e depois mostra isso. Um pedido como "longo sempre no sábado" vira contexto para os próximos detalhamentos.</span>
-        <span class="refs">ADRs 0062, 0088, 0097, 0098, 0145, 0162, 0180, 0181 e 0182 · crit. 3.3 e 6.5 · componentes BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 4</span>
+        <span class="refs">ADRs 0062, 0088, 0097, 0098, 0145, 0162, 0180, 0181, 0182 e 0184 · crit. 3.3 e 6.5 · componentes CabecalhoDaConversa, BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 4</span>
       </figcaption>
     </figure>
 
@@ -1435,7 +1435,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Limite diário atingido</strong>
         <span>Não há contador no dia a dia. Com 5 mensagens ou menos, uma linha acima do campo diz "Restam 3 mensagens hoje". Depois de 20, um aviso neutro no fim da conversa diz o motivo e o que continua funcionando, e o campo fica desativado até a meia-noite. O limite não é risco, por isso não usa vermelho. Chamadas automáticas não contam no limite.</span>
-        <span class="refs">ADRs 0031, 0085, 0093, 0142 e 0150 · crit. 6.8 · componentes BalaoDeMensagem, AvisoNeutro, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 8</span>
+        <span class="refs">ADRs 0031, 0085, 0093, 0142, 0150 e 0184 · crit. 6.8 · componentes CabecalhoDaConversa, BalaoDeMensagem, AvisoNeutro, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 8</span>
       </figcaption>
     </figure>
 
@@ -1462,14 +1462,14 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>IA indisponível</strong>
         <span>A mensagem do usuário fica na conversa, e no lugar da resposta entra um aviso neutro com "Tentar de novo". É uma falha, e não um risco, por isso segue o aviso da falha do Strava. Se o teto mensal for atingido, o aviso diz que o Piu volta no mês seguinte, e o campo fica desativado como no limite diário.</span>
-        <span class="refs">ADRs 0031, 0142, 0150 e 0159 · crit. 6.8 · componentes BalaoDeMensagem, AvisoNeutro, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 9</span>
+        <span class="refs">ADRs 0031, 0142, 0150, 0159 e 0184 · crit. 6.8 · componentes CabecalhoDaConversa, BalaoDeMensagem, AvisoNeutro, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 9</span>
       </figcaption>
     </figure>
 
     <div class="propostas">
       <h3>Propostas desta tela, em decisão</h3>
       <ol>
-        <li><b>Cabeçalho da conversa e avatar do Piu</b> (em decisão): cabeçalho compacto, com o avatar de 28 px e "Piu" em 16 px negrito, centralizados na linha de navegação. Sem avatar ao lado dos balões, porque o lado e a cor já dizem quem fala. Revê o tamanho do avatar deixado em aberto no ADR 0179.</li>
+        <li><b>Cabeçalho da conversa e avatar do Piu</b> (decidido no ADR 0184, componente CabecalhoDaConversa): cabeçalho compacto, com o avatar de 28 px e "Piu" em 16 px negrito, centralizados na linha de navegação. É o mesmo nas duas entradas: quando o Piu abre de um treino ou do plano, só entra o voltar à esquerda. Sem avatar ao lado dos balões, porque o lado e a cor já dizem quem fala. O avatar fica com um tamanho só, o do ADR 0179.</li>
         <li><b>Separador de dia</b> (em decisão): "Ontem" e "Hoje" centralizados, em legenda de 13 px com peso 500, em <code>texto-secundario</code>, sem linha nem pílula. As mensagens não mostram a hora.</li>
         <li><b>Sugestões de pedido</b> (em decisão): botões secundários no rodapé, acima do campo, no mesmo lugar do "Replanejar com o Piu" do detalhe do treino.</li>
         <li><b>Proposta aceita na conversa</b> (em decisão): o card mantém o contorno enquanto for o ajuste mais recente. Os botões dão lugar ao chip neutro "Aceita" (ADR 0180), no cabeçalho do card, a uma linha "Plano atualizado hoje às 12:34" e ao "Desfazer" em botão secundário (ADRs 0181 e 0182), no lugar do aviso flutuante do wireframe.</li>
