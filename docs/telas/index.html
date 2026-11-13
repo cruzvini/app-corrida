@@ -1324,12 +1324,10 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
             <div class="balao meu">Posso trocar o longo de domingo para sábado nesta semana?</div>
             <div class="balao">Pode. Sábado está livre, e domingo vira descanso. O resto da semana não muda.</div>
           </div>
-          <div class="secao">
+          <div class="proposta">
             <span class="cab-proposta"><span class="titulo-secao">Proposta</span><span class="chip">Descartada</span></span>
-            <div class="grupo-lista antiga">
               <div class="ad-linha"><span class="ad-dia">Sáb 14</span><span class="ad-muda"><span class="ad-antes">Descanso</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Longo 12 km</span></span></div>
               <div class="ad-linha"><span class="ad-dia">Dom 15</span><span class="ad-muda"><span class="ad-antes">Longo 12 km</span><span class="ad-depois"><svg class="ico"><use href="#i-arrow-elbow-down-right"/></svg>Descanso</span></span></div>
-            </div>
           </div>
           <div class="conversa">
             <div class="balao meu">Deixa como está, obrigado.</div>
@@ -1344,8 +1342,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Aba aberta direto</strong>
-        <span>A conversa é uma só, separada por dia, com todo o histórico. A proposta de ontem foi descartada: fica com o chip neutro e o antes e o depois em tom secundário, só como registro. Sem assunto em andamento, as sugestões de pedido aparecem acima do campo e somem no primeiro envio. "Adiar objetivo" aparece só no plano específico.</span>
-        <span class="refs">ADRs 0031, 0034, 0035, 0062, 0084, 0085, 0090, 0091, 0092, 0145, 0159, 0165, 0180, 0183, 0184, 0185 e 0186 · crit. 6.3 · componentes CabecalhoDaConversa, BalaoDeMensagem, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 3 e 5</span>
+        <span>A conversa é uma só, separada por dia, com todo o histórico. A proposta de ontem foi descartada: continua no card, com o chip neutro e sem os botões. Sem assunto em andamento, as sugestões de pedido aparecem acima do campo e somem no primeiro envio. "Adiar objetivo" aparece só no plano específico.</span>
+        <span class="refs">ADRs 0031, 0034, 0035, 0062, 0084, 0085, 0090, 0091, 0092, 0145, 0159, 0180, 0184, 0185, 0186 e 0188 · crit. 6.3 · componentes CabecalhoDaConversa, BalaoDeMensagem, CardDaProposta, ChipDeStatus, AntesDepois, RodapeDoTreino e BarraDeAbas · propostas 1, 2, 3 e 5</span>
       </figcaption>
     </figure>
 
@@ -1473,7 +1471,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Separador de dia</b> (decidido no ADR 0185, componente BalaoDeMensagem): "Hoje", "Ontem" e, antes disso, o dia por extenso, centralizados, em legenda de 13 px com peso 500, em <code>texto-secundario</code>, sem linha nem pílula. As mensagens da conversa não mostram a hora.</li>
         <li><b>Sugestões de pedido</b> (decidido no ADR 0186, componente RodapeDoTreino): botões secundários de 44 px, com contorno e texto em ardósia, no rodapé, acima do campo, no mesmo lugar do "Replanejar com o Piu" do detalhe do treino. Tocar envia o texto como mensagem, e as sugestões somem.</li>
         <li><b>Proposta aceita na conversa</b> (decidido no ADR 0187, componente CardDaProposta): o card mantém o contorno enquanto for o ajuste mais recente. Os botões dão lugar ao chip neutro "Aceita" (ADR 0180), no cabeçalho do card, a uma linha "Plano atualizado hoje às 12:34" e ao "Desfazer" em botão secundário (ADRs 0181 e 0182), no lugar do aviso flutuante do wireframe. Se a proposta mudou também o Perfil, a nota diz "Plano e Perfil atualizados".</li>
-        <li><b>Propostas com status final</b> (em decisão): a proposta descartada e a aceita que já não pode ser desfeita viram registro, num grupo sem contorno e em tom secundário, com o chip neutro ao lado do título. Confirma o ADR 0183 na conversa.</li>
+        <li><b>Propostas com status final</b> (decidido no ADR 0188, componente CardDaProposta): na conversa, a proposta descartada, a aceita que já não pode ser desfeita, a desfeita e a desatualizada continuam no card com contorno, com o chip neutro ao lado do título, o antes e o depois no tom normal e sem botões. Em Notificações continua o registro do ADR 0183.</li>
         <li><b>Proposta editada</b> (em decisão): o fluxo diz que a proposta original "fica como editada" (ADRs 0053 e 0062), mas o ADR 0180 não definiu esse chip. Ainda não aparece em nenhum estado.</li>
         <li><b>Aviso de risco na proposta</b> (em decisão): bloco em <code>risco-suave</code> com contorno em <code>risco</code> (ADRs 0150 e 0162), dentro do card, depois do antes e depois, com o ícone <code>warning</code> em <code>risco</code> e o texto em <code>texto</code>. É a primeira vez que o vermelho aparece nas telas.</li>
         <li><b>Limite diário</b> (em decisão): AvisoNeutro no fim da conversa, com o ícone <code>clock</code>, o motivo e o que continua funcionando. O campo fica desativado, em <code>neutro-suave</code> e sem contorno, com "Volta amanhã, à 0h", e o botão de enviar apagado. Perto do fim, uma linha em legenda acima do campo: "Restam 3 mensagens hoje".</li>

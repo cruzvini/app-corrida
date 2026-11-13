@@ -1,6 +1,6 @@
 # ADR 0187: Proposta aceita na conversa fica no card, com chip, nota e "Desfazer"
 
-- **Status:** Aceita
+- **Status:** Aceita (complementada pelo ADR 0188)
 - **Data:** 2026-11-13
 - **Complementa:** [ADR 0047](0047-so-o-ajuste-mais-recente-pode-ser-desfeito.md), [ADR 0160](0160-feedback-salvo-na-propria-mensagem.md), [ADR 0162](0162-proposta-do-piu-na-conversa.md), [ADR 0180](0180-chips-de-status-da-proposta.md), [ADR 0181](0181-acoes-do-ajuste.md) e [ADR 0182](0182-desfazer-pede-confirmacao.md)
 
@@ -28,5 +28,5 @@ Depois de "Aceitar", enquanto o ajuste for o mais recente:
 
 - O card da proposta aceita e o do ajuste em Notificações têm a mesma forma, e o usuário desfaz onde acabou de aceitar.
 - O app não tem aviso flutuante em nenhuma tela.
-- Depois de desfeita na conversa, a proposta fica com o chip "Desfeita" e vira registro, como o ajuste desfeito (ADR 0182).
+- Depois de desfeita na conversa, a proposta fica com o chip "Desfeita" e vira registro, como o ajuste desfeito (ADR 0182). *Revisado pelo ADR 0188: na conversa, a proposta desfeita continua no card, sem botões.*
 - O CardDaProposta do design system Live Run ganha a variante da proposta aceita (ADR 0143).
