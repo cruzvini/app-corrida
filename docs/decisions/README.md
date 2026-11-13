@@ -205,6 +205,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0197 | ["Editar perfil" em botão secundário, com o formulário em tela própria e "Salvar" no rodapé fixo](0197-editar-perfil.md) | Aceita |
 | 0198 | [Contador com − e + para a frequência semanal, com aviso quando passa de 7 atividades](0198-contador-da-frequencia.md) | Aceita |
 | 0199 | [No "Editar perfil", o campo que mudou ganha contorno em ardósia e a legenda com o valor de antes](0199-campo-que-mudou.md) | Aceita |
+| 0200 | [Mensagem pronta do perfil no campo do Piu, que cresce para mostrar o texto todo](0200-mensagem-pronta-no-piu.md) | Aceita |
 
 ## Como criar um novo ADR
 

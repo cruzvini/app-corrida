@@ -1629,7 +1629,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Piu com o que mudou</strong>
         <span>Salvar abre a aba Piu, com o contexto do Perfil no fim da conversa e a mensagem já escrita no campo, que cresce para mostrar o texto todo. O usuário completa ou envia como está, e o Piu propõe um ajuste se for preciso. Se sair sem enviar, os dados continuam salvos e entram nos próximos detalhamentos. O Piu recebe o que o usuário escreveu, nunca dados do Strava.</span>
-        <span class="refs">ADRs 0062, 0085, 0090, 0095, 0106, 0174, 0184 e 0185 · componentes CabecalhoDaConversa, BalaoDeMensagem, RodapeDoTreino e BarraDeAbas · proposta 8</span>
+        <span class="refs">ADRs 0062, 0085, 0090, 0095, 0106, 0174, 0184, 0185, 0199 e 0200 · componentes CabecalhoDaConversa, BalaoDeMensagem, ContextoDoTreino, RodapeDoTreino e BarraDeAbas · proposta 8</span>
       </figcaption>
     </figure>
 
@@ -1709,7 +1709,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Editar perfil</b> (decidido no ADR 0197, componente RodapeDoTreino): botão secundário com lápis, abaixo de Meus dados, e o formulário em tela própria, com o voltar "‹ Perfil", um recado neutro e "Salvar" em botão principal no rodapé fixo. Voltar sem salvar descarta as mudanças.</li>
         <li><b>Contador da frequência</b> (decidido no ADR 0198, componente Contador): botões redondos de 40 px com <code>minus</code> e <code>plus</code> em contorno ardósia e o número em 18 px negrito, de 0 a 7; a divisão da musculação recuada, embaixo dela. Com mais de 7 atividades na semana, a nota abaixo do grupo avisa que alguns dias vão ter duas, sem bloquear o "Salvar".</li>
         <li><b>Campo que mudou</b> (decidido no ADR 0199, componente CampoDoFormulario): contorno de 2 px em <code>primaria</code> e a legenda "Era 72 kg" embaixo, no lugar do tracejado do wireframe. Some se o valor volta ao de antes.</li>
-        <li><b>Mensagem pronta no Piu:</b> o campo em pílula cresce até mostrar o texto todo, com raio de 22 px, e o contexto "Perfil atualizado" com o ícone da aba Perfil, como o do plano (ADR 0174).</li>
+        <li><b>Mensagem pronta no Piu</b> (decidido no ADR 0200, componentes RodapeDoTreino e ContextoDoTreino): o campo em pílula cresce até 6 linhas para mostrar o texto todo, com raio de 22 px, e o contexto "Perfil atualizado" com o ícone da aba Perfil, como o do plano (ADR 0174). Sair sem enviar guarda o rascunho.</li>
         <li><b>Strava desconectado:</b> AvisoNeutro no topo, com o ícone <code>link-break</code> e o botão oficial "Connect with Strava" (ADR 0115), e a seção Strava logo abaixo.</li>
       </ol>
     </div>
