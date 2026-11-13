@@ -217,6 +217,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0209 | [Sugestão das regras no setup numa nota com info, sem caixa, com o porquê e o link "Ajustar"](0209-sugestao-das-regras-em-nota.md) | Aceita |
 | 0210 | [Risco no setup com o AvisoDeRisco abaixo dos campos e as alternativas em botões secundários](0210-risco-no-setup.md) | Aceita |
 | 0211 | [Resumo do setup com a LinhaDeDado e um botão de lápis em cada linha](0211-resumo-do-setup.md) | Aceita |
+| 0212 | [Montando o plano com o ícone Ritmo, o objetivo numa frase e a barra de progresso; falha no AvisoNeutro](0212-montando-o-plano.md) | Aceita |
 
 ## Como criar um novo ADR
 
