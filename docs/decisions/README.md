@@ -183,6 +183,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0175 | [Acompanhamento do projeto no board do GitHub, com painel em artifact](0175-acompanhamento-no-board-com-painel.md) | Aceita |
 | 0176 | [Coluna Revisão para issue com PR aguardando merge](0176-coluna-revisao-para-pr-aberto.md) | Aceita |
 | 0177 | [Linha de mensagem com ponto de não lida, sem avatar](0177-linha-de-mensagem.md) | Aceita |
+| 0178 | [Propostas aguardando você com a mesma linha, numa seção no topo](0178-propostas-aguardando-na-mesma-linha.md) | Aceita |
 
 ## Como criar um novo ADR
 

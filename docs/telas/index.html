@@ -50,6 +50,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .telas { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
 .telas li { font-size: 13px; line-height: 18px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--pg-linha); color: var(--pg-suave); }
 .telas li.feita { border-color: var(--pg-acento); color: var(--pg-acento); font-weight: 700; }
+.telas li.andamento { border-color: var(--pg-acento); border-style: dashed; color: var(--pg-acento); font-weight: 700; }
+.telas a { color: inherit; text-decoration: none; }
 .grupo { margin-top: 56px; display: grid; gap: 32px; }
 .grupo > header { display: grid; gap: 8px; max-width: 680px; }
 .grupo h2 { margin: 0; font-size: 32px; line-height: 38px; font-weight: 700; letter-spacing: -0.01em; }
@@ -371,10 +373,10 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     <h1>Telas do Live Run</h1>
     <p>Alta fidelidade sobre os wireframes, com a identidade do design system Live Run (ADRs 0138 e 0140 a 0148). Cada estado aparece no tema claro e no escuro. Os wireframes continuam como referência de estrutura e fluxo.</p>
     <ul class="telas" aria-label="Telas">
-      <li class="feita">Hoje</li>
-      <li class="feita">Detalhe do treino</li>
-      <li class="feita">Plano</li>
-      <li>Notificações</li>
+      <li class="feita"><a href="#hoje">Hoje</a></li>
+      <li class="feita"><a href="#detalhe">Detalhe do treino</a></li>
+      <li class="feita"><a href="#plano">Plano</a></li>
+      <li class="andamento"><a href="#notificacoes">Notificações, em decisão</a></li>
       <li>Piu</li>
       <li>Perfil</li>
       <li>Onboarding e setup</li>
@@ -1099,7 +1101,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Lista</strong>
         <span>No topo, as propostas que esperam decisão, mesmo depois de lidas. Abaixo, "Recentes", da mais nova para a mais antiga, com o dia e a hora. A não lida tem um ponto em ardósia e o título em negrito, e a contagem do sino mostra só as não lidas. Tocar abre a mensagem em tela própria. As lidas somem 30 dias depois da leitura.</span>
-        <span class="refs">ADRs 0007, 0050, 0054, 0086, 0087, 0089, 0151, 0165, 0166 e 0177 · crit. 5.1 e 5.2 · componentes LinhaDeMensagem e BarraDeAbas · proposta 2</span>
+        <span class="refs">ADRs 0007, 0050, 0054, 0086, 0087, 0089, 0151, 0165, 0166, 0177 e 0178 · crit. 5.1 e 5.2 · componentes LinhaDeMensagem e BarraDeAbas</span>
       </figcaption>
     </figure>
 
@@ -1215,7 +1217,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <h3>Propostas desta tela, em decisão</h3>
       <ol>
         <li><b>Linha de mensagem</b> (decidido no ADR 0177, componente LinhaDeMensagem): linhas num grupo sem contorno, sem o avatar do Piu em cada linha, porque todas as mensagens são dele. Título em 15 px, apoio em legenda e o dia e a hora à direita, sem seta. A não lida tem um ponto de 8 px em <code>primaria</code> à esquerda e o título em negrito; a lida, o título em peso 500.</li>
-        <li><b>Propostas aguardando você</b> (componente LinhaDeMensagem): seção própria no topo, com o mesmo grupo e a mesma linha das recentes. O destaque vem da posição e do título da seção, e a linha de apoio começa com "Proposta:". Sem cor nem contorno extra.</li>
+        <li><b>Propostas aguardando você</b> (decidido no ADR 0178, componente LinhaDeMensagem): seção própria no topo, com o mesmo grupo e a mesma linha das recentes. O destaque vem da posição e do título da seção, e a linha de apoio começa com "Proposta:". Sem cor nem contorno extra.</li>
         <li><b>Avatar do Piu e cabeçalho da mensagem</b> (componentes novo AvatarDoPiu e CabecalhoDoDetalhe): o Piu assina a mensagem com um círculo de 40 px em <code>primaria-suave</code> e o balão da aba Piu preenchido, em <code>primaria</code>. Ao lado, o título da mensagem em 24 px, o mesmo da lista. Embaixo, o tipo e a data numa frase ("Ajuste automático de terça, 10 nov, às 22:00"). O texto do Piu vem solto, sem balão.</li>
         <li><b>Chips da proposta</b> (componente ChipDeStatus): "Aguardando você" em <code>primaria-suave</code>, com contorno em <code>primaria</code> e o ícone <code>clock</code>; "Desatualizada" no chip neutro, igual ao "Previsto".</li>
         <li><b>Ações do ajuste</b> (componente CardDaProposta): o antes e o depois num card com contorno. "Desfazer" em botão secundário com o ícone <code>arrow-u-up-left</code>, só no ajuste mais recente. No antigo, uma nota neutra com <code>info</code> no lugar do botão. Fora do card, o link "Falar com o Piu sobre este ajuste", igual ao do detalhe do treino.</li>
@@ -1283,6 +1285,15 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       par.appendChild(wrap);
     });
     fig.insertBefore(par, fig.querySelector("figcaption"));
+  });
+
+  document.querySelectorAll(".telas a").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var alvo = document.getElementById(a.getAttribute("href").slice(1));
+      if (!alvo) return;
+      e.preventDefault();
+      alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   });
 })();
 </script>
