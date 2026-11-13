@@ -394,6 +394,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .linha-acao .ico { font-size: 20px; }
 .secao > .botao { margin-top: 0; }
 .secao > .powered { justify-self: start; padding: 2px 0 0 4px; }
+.grupo-lista .efeito { margin: 0; padding: 10px 0 12px; font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
+.secao > .botao-strava { margin-top: 4px; }
 .campo .entrada.cheia { color: var(--texto); }
 .campo .entrada.escolha { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .campo .entrada.escolha .ico { color: var(--texto-secundario); font-size: 18px; }
@@ -426,7 +428,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <li class="feita"><a href="#plano">Plano</a></li>
       <li class="feita"><a href="#notificacoes">Notificações</a></li>
       <li class="feita"><a href="#piu">Piu</a></li>
-      <li class="andamento"><a href="#perfil">Perfil, em decisão</a></li>
+      <li class="feita"><a href="#perfil">Perfil</a></li>
       <li>Onboarding e setup</li>
     </ul>
   </header>
@@ -1527,7 +1529,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
   <section class="grupo" id="perfil">
     <header>
       <h2>Perfil</h2>
-      <p>Em decisão. Só dados pessoais, em três seções: Meus dados, Strava e Conta (ADRs 0094, 0098 e 0099). O objetivo fica no detalhe do plano, e o que mudou no plano fica na conversa com o Piu e em Notificações. "Editar perfil" salva na hora e leva ao Piu com o que mudou (ADR 0095). Cinco estados, na quarta, 11 nov, cada um como exemplo independente. Já seguem os ADRs 0164 a 0166.</p>
+      <p>Concluída. Só dados pessoais, em três seções: Meus dados, Strava e Conta (ADRs 0094, 0098 e 0099). O objetivo fica no detalhe do plano, e o que mudou no plano fica na conversa com o Piu e em Notificações. "Editar perfil" salva na hora e leva ao Piu com o que mudou (ADR 0095). Cinco estados, na quarta, 11 nov, cada um como exemplo independente. Já seguem os ADRs 0164 a 0166.</p>
     </header>
 
     <figure class="estado">
@@ -1669,17 +1671,14 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="barra-status"><span>13:10</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela">
           <div class="topo"><div><h3>Perfil</h3></div></div>
-          <div class="aviso">
-            <span class="tit"><svg class="ico"><use href="#i-link-break"/></svg>O Strava foi desconectado</span>
-            <p>O acesso foi revogado no Strava. Sem a conexão, os treinos não são marcados sozinhos, e o "não feito" das 22h fica suspenso.</p>
-            <span class="botao-strava">Connect with Strava</span>
-          </div>
           <div class="secao">
             <span class="titulo-secao">Strava</span>
             <div class="grupo-lista dados">
               <div class="linha-dado"><span>Conexão</span><span class="chip">Desconectado</span></div>
               <div class="linha-dado"><span class="txt"><small>Última sincronização</small><span>Segunda, 9 nov, às 18:40</span></span></div>
+              <p class="efeito">O acesso foi revogado no Strava. Sem a conexão, os treinos não são marcados sozinhos, e o "não feito" das 22h fica suspenso.</p>
             </div>
+            <span class="botao-strava">Connect with Strava</span>
             <span class="powered">Powered by Strava</span>
           </div>
           <div class="secao">
@@ -1694,13 +1693,13 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Strava desconectado</strong>
-        <span>Se o acesso for revogado, o app detecta, sobe o Strava para o topo do Perfil e pede a reconexão. O aviso é o neutro, de falha, sem vermelho. A reconexão usa o botão oficial "Connect with Strava", obrigatório aqui e no onboarding. O Hoje mostra o mesmo aviso, e os treinos ficam pendentes até a sincronização voltar.</span>
-        <span class="refs">ADRs 0019, 0049, 0115, 0142, 0150, 0194 e 0196 · crit. 1.3 · componentes AvisoNeutro, LinhaDeDado, ChipDeStatus e BarraDeAbas · proposta 9</span>
+        <span>Se o acesso for revogado, o app detecta e sobe a seção Strava para o topo do Perfil, sem aviso à parte: o chip passa a "Desconectado", uma linha no grupo explica o efeito, e o botão oficial "Connect with Strava", obrigatório aqui e no onboarding, vem logo abaixo. Sem vermelho, porque é falha, e não risco. O Hoje continua com o aviso neutro, e os treinos ficam pendentes até a sincronização voltar.</span>
+        <span class="refs">ADRs 0019, 0049, 0115, 0142, 0150, 0194, 0196 e 0201 · crit. 1.3 · componentes LinhaDeDado, ChipDeStatus e BarraDeAbas · proposta 9</span>
       </figcaption>
     </figure>
 
     <div class="propostas">
-      <h3>Propostas desta tela, em decisão</h3>
+      <h3>Propostas desta tela, todas decididas (ADRs 0193 a 0201)</h3>
       <ol>
         <li><b>Cabeçalho do Perfil</b> (decidido no ADR 0193, componente CabecalhoDoPerfil): avatar de 56 px com a inicial do nome, em <code>primaria</code> sobre <code>primaria-suave</code>, ao lado do nome em 20 px negrito e do e-mail em legenda. Sem a linha "desde". O e-mail não se repete: a seção Conta fica só com "Sair".</li>
         <li><b>Linhas de dados</b> (decidido no ADR 0194, componente LinhaDeDado): grupos sem contorno (ADR 0165), com o rótulo em legenda de 13 px em <code>texto-secundario</code> em cima e o valor em 15 px em <code>texto</code> embaixo, sem seta, porque a linha não abre nada. Valores em frase, sem ponto médio (ADR 0166), que quebram sem cortar.</li>
@@ -1710,7 +1709,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Contador da frequência</b> (decidido no ADR 0198, componente Contador): botões redondos de 40 px com <code>minus</code> e <code>plus</code> em contorno ardósia e o número em 18 px negrito, de 0 a 7; a divisão da musculação recuada, embaixo dela. Com mais de 7 atividades na semana, a nota abaixo do grupo avisa que alguns dias vão ter duas, sem bloquear o "Salvar".</li>
         <li><b>Campo que mudou</b> (decidido no ADR 0199, componente CampoDoFormulario): contorno de 2 px em <code>primaria</code> e a legenda "Era 72 kg" embaixo, no lugar do tracejado do wireframe. Some se o valor volta ao de antes.</li>
         <li><b>Mensagem pronta no Piu</b> (decidido no ADR 0200, componentes RodapeDoTreino e ContextoDoTreino): o campo em pílula cresce até 6 linhas para mostrar o texto todo, com raio de 22 px, e o contexto "Perfil atualizado" com o ícone da aba Perfil, como o do plano (ADR 0174). Sair sem enviar guarda o rascunho.</li>
-        <li><b>Strava desconectado:</b> AvisoNeutro no topo, com o ícone <code>link-break</code> e o botão oficial "Connect with Strava" (ADR 0115), e a seção Strava logo abaixo.</li>
+        <li><b>Strava desconectado</b> (decidido no ADR 0201, componentes ChipDeStatus e LinhaDeDado): sem aviso à parte. A seção Strava sobe para o topo, com o chip "Desconectado", uma linha em legenda no grupo com o motivo e o efeito, e o botão oficial "Connect with Strava" (ADR 0115) logo abaixo do grupo, antes do "Powered by Strava".</li>
       </ol>
     </div>
   </section>
