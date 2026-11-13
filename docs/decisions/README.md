@@ -203,6 +203,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0195 | ["Desconectar o Strava" e "Sair" como linhas de ação em ardósia, sem vermelho](0195-linhas-de-acao-do-perfil.md) | Aceita |
 | 0196 | [Status do Strava no Perfil em chip neutro, com a marca abaixo do grupo](0196-status-do-strava-em-chip.md) | Aceita |
 | 0197 | ["Editar perfil" em botão secundário, com o formulário em tela própria e "Salvar" no rodapé fixo](0197-editar-perfil.md) | Aceita |
+| 0198 | [Contador com − e + para a frequência semanal, com aviso quando passa de 7 atividades](0198-contador-da-frequencia.md) | Aceita |
 
 ## Como criar um novo ADR
 
