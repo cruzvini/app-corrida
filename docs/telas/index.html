@@ -451,7 +451,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .opcao .txt { display: grid; gap: 2px; }
 .opcao .txt b { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 16px; line-height: 22px; font-weight: 700; }
 .opcao .txt small { font-size: 13px; line-height: 18px; color: var(--texto-secundario); }
-.opcao .radio { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--borda-forte); }
+.opcao .radio { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--texto-secundario); }
 .opcao.sel { background: var(--primaria-suave); border-color: var(--primaria); box-shadow: inset 0 0 0 1px var(--primaria); }
 .opcao.sel .radio { background: var(--primaria); box-shadow: inset 0 0 0 7px var(--primaria), inset 0 0 0 11px var(--sobre-primaria); }
 .opcao.aberta { align-items: start; }
@@ -2052,7 +2052,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Boas-vindas</b> (decidido no ADR 0202, componente BoasVindas): ícone Ritmo de 64 px e "Live Run" em 32 px negrito no terço de cima, a frase em 17 px em <code>texto-secundario</code> e o campo de e-mail logo abaixo.</li>
         <li><b>Botão da etapa</b> (decidido no ADR 0203, componente RodapeDoTreino): flutua no fim da tela, sem a área em <code>superficie</code> e sem o contorno, com o botão principal na largura toda ("Continuar", "Gerar meu plano") e uma nota opcional embaixo, sobre o <code>fundo</code>. O conteúdo tem um respiro embaixo para rolar até acima do botão. Nas abas, o rodapé fixo continua.</li>
         <li><b>Verifique o e-mail</b> (decidido no ADR 0205, componente VerifiqueOEmail): alinhada à esquerda, como as boas-vindas, com o envelope num círculo de 64 px em <code>primaria-suave</code>, sem ação principal: "Reenviar link" secundário e "Trocar e-mail" em link, no fim da tela. Sem "Abrir o app de e-mail".</li>
-        <li><b>Explicação do Strava:</b> texto do porquê e um grupo sem contorno com três garantias, cada uma com <code>shield-check</code> em ardósia, e o botão oficial "Connect with Strava" na largura toda, no rodapé.</li>
+        <li><b>Explicação do Strava</b> (decidido no ADR 0206, componente ExplicacaoDoStrava): texto do porquê e um grupo sem contorno com três garantias, cada uma com <code>shield-check</code> em ardósia, e o botão oficial "Connect with Strava" na largura toda, no rodapé.</li>
         <li><b>Progresso do setup:</b> voltar à esquerda e "1 de 7" à direita na mesma linha, em legenda, e a barra de 4 px embaixo, em <code>neutro-suave</code> com o preenchimento em <code>primaria</code>.</li>
         <li><b>Opções de escolha:</b> cards com contorno e um botão de rádio à direita; o marcado em <code>primaria-suave</code> com contorno de 2 px em ardósia, que abre os campos dentro dele; o sugerido ganha o chip neutro "Sugerido".</li>
         <li><b>Sugestão das regras:</b> nota em legenda com <code>info</code>, sem caixa, com o porquê da sugestão (nível e prazo) e o link "Ajustar".</li>
