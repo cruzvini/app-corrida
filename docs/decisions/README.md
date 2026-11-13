@@ -197,6 +197,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0189 | [Proposta editada continua no card, com o chip neutro "Editada"](0189-proposta-editada.md) | Aceita |
 | 0190 | [Aviso de risco dentro do card da proposta, em `risco-suave` com contorno](0190-aviso-de-risco-na-proposta.md) | Aceita |
 | 0191 | [Limite diário atingido troca o campo de mensagem por um aviso no rodapé](0191-limite-diario-no-rodape.md) | Aceita |
+| 0192 | [IA indisponível vira um aviso neutro no lugar da resposta do Piu](0192-ia-indisponivel-na-conversa.md) | Aceita |
 
 ## Como criar um novo ADR
 

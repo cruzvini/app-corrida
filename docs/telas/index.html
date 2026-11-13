@@ -392,7 +392,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <li class="feita"><a href="#detalhe">Detalhe do treino</a></li>
       <li class="feita"><a href="#plano">Plano</a></li>
       <li class="feita"><a href="#notificacoes">Notificações</a></li>
-      <li class="andamento"><a href="#piu">Piu, em decisão</a></li>
+      <li class="feita"><a href="#piu">Piu</a></li>
       <li>Perfil</li>
       <li>Onboarding e setup</li>
     </ul>
@@ -1313,7 +1313,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
   <section class="grupo" id="piu">
     <header>
       <h2>Piu</h2>
-      <p>Em decisão. A conversa livre com o assistente, no estilo de apps de mensagem: o usuário à direita e o Piu à esquerda (ADRs 0034, 0035 e 0159). A conversa é única e contínua, separada por dia (ADR 0090). Um pedido de mudança vira proposta com o antes e o depois, que o usuário aceita, edita ou descarta (ADRs 0062 e 0085). O Piu recebe só o plano e o texto do usuário, nunca dados do Strava (ADR 0106). Cinco estados, na quarta, 11 nov, cada um como exemplo independente. Já seguem os ADRs 0164 a 0166.</p>
+      <p>Concluída. A conversa livre com o assistente, no estilo de apps de mensagem: o usuário à direita e o Piu à esquerda (ADRs 0034, 0035 e 0159). A conversa é única e contínua, separada por dia (ADR 0090). Um pedido de mudança vira proposta com o antes e o depois, que o usuário aceita, edita ou descarta (ADRs 0062 e 0085). O Piu recebe só o plano e o texto do usuário, nunca dados do Strava (ADR 0106). Cinco estados, na quarta, 11 nov, cada um como exemplo independente. Já seguem os ADRs 0164 a 0166.</p>
     </header>
 
     <figure class="estado">
@@ -1471,12 +1471,12 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>IA indisponível</strong>
         <span>A mensagem do usuário fica na conversa, e no lugar da resposta entra um aviso neutro com "Tentar de novo". É uma falha, e não um risco, por isso segue o aviso da falha do Strava. Se o teto mensal for atingido, o rodapé troca o campo por um aviso, como no limite diário, dizendo que o Piu volta no mês seguinte.</span>
-        <span class="refs">ADRs 0031, 0142, 0150, 0159, 0184 e 0185 · crit. 6.8 · componentes CabecalhoDaConversa, BalaoDeMensagem, AvisoNeutro, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 9</span>
+        <span class="refs">ADRs 0031, 0142, 0150, 0159, 0184, 0185, 0191 e 0192 · crit. 6.8 · componentes CabecalhoDaConversa, BalaoDeMensagem, AvisoNeutro, RodapeDoTreino e BarraDeAbas · propostas 1, 2 e 9</span>
       </figcaption>
     </figure>
 
     <div class="propostas">
-      <h3>Propostas desta tela, em decisão</h3>
+      <h3>Propostas desta tela, todas decididas (ADRs 0184 a 0192)</h3>
       <ol>
         <li><b>Cabeçalho da conversa e avatar do Piu</b> (decidido no ADR 0184, componente CabecalhoDaConversa): cabeçalho compacto, com o avatar de 28 px e "Piu" em 16 px negrito, centralizados na linha de navegação. É o mesmo nas duas entradas: quando o Piu abre de um treino ou do plano, só entra o voltar à esquerda. Sem avatar ao lado dos balões, porque o lado e a cor já dizem quem fala. O avatar fica com um tamanho só, o do ADR 0179.</li>
         <li><b>Separador de dia</b> (decidido no ADR 0185, componente BalaoDeMensagem): "Hoje", "Ontem" e, antes disso, o dia por extenso, centralizados, em legenda de 13 px com peso 500, em <code>texto-secundario</code>, sem linha nem pílula. As mensagens da conversa não mostram a hora.</li>
@@ -1486,7 +1486,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Proposta editada</b> (decidido no ADR 0189, componentes ChipDeStatus e CardDaProposta): a original continua no card, com o chip neutro "Editada" e sem botões, e a revisada vem depois da mensagem do usuário, com os botões. Em Notificações, a original fica com o mesmo chip e sai de "Aguardando você".</li>
         <li><b>Aviso de risco na proposta</b> (decidido no ADR 0190, componente AvisoDeRisco): bloco em <code>risco-suave</code> com contorno em <code>risco</code>, dentro do card, depois do antes e depois, com o ícone <code>warning</code> em <code>risco</code> e o texto em <code>texto</code>, sem título. Não bloqueia a decisão. É a primeira vez que o vermelho aparece nas telas, e ele fica só para dor, lesão e carga.</li>
         <li><b>Limite diário</b> (decidido no ADR 0191, componente RodapeDoTreino): a conversa não muda. No limite, o rodapé troca o campo e o botão de enviar por um aviso, com o ícone <code>clock</code>, "Limite de hoje atingido" e o que continua funcionando. Perto do fim, uma linha em legenda no rodapé, acima do campo: "Restam 3 mensagens hoje". O teto mensal usa o mesmo aviso.</li>
-        <li><b>IA indisponível</b> (em decisão): AvisoNeutro no lugar da resposta, com o ícone <code>cloud-slash</code> e "Tentar de novo" em botão secundário. Não usa balão, porque não é o Piu respondendo, nem vermelho, porque falha não é risco.</li>
+        <li><b>IA indisponível</b> (decidido no ADR 0192, componente AvisoNeutro): AvisoNeutro no lugar da resposta, com o ícone <code>cloud-slash</code>, "O Piu não conseguiu responder" e "Tentar de novo" em botão secundário. Não usa balão, porque não é o Piu respondendo, nem vermelho, porque falha não é risco. O teto mensal vai para o rodapé, como o limite diário.</li>
       </ol>
     </div>
   </section>
