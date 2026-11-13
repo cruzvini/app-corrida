@@ -187,6 +187,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0179 | [Cabeçalho da mensagem com a assinatura do Piu acima do título](0179-cabecalho-da-mensagem.md) | Aceita |
 | 0180 | [Chips de status da proposta, com o pendente em ardósia](0180-chips-de-status-da-proposta.md) | Aceita |
 | 0181 | [Ações do ajuste com "Desfazer" no card e o link do Piu fora](0181-acoes-do-ajuste.md) | Aceita |
+| 0182 | [Desfazer um ajuste pede confirmação e não tem refazer](0182-desfazer-pede-confirmacao.md) | Aceita |
 
 ## Como criar um novo ADR
 
