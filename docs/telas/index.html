@@ -378,7 +378,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <li class="feita"><a href="#hoje">Hoje</a></li>
       <li class="feita"><a href="#detalhe">Detalhe do treino</a></li>
       <li class="feita"><a href="#plano">Plano</a></li>
-      <li class="andamento"><a href="#notificacoes">Notificações, em decisão</a></li>
+      <li class="feita"><a href="#notificacoes">Notificações</a></li>
       <li>Piu</li>
       <li>Perfil</li>
       <li>Onboarding e setup</li>
@@ -1072,7 +1072,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
   <section class="grupo" id="notificacoes">
     <header>
       <h2>Notificações</h2>
-      <p>Propostas em decisão. A caixa de entrada do app, sem push: ajustes automáticos, semanas novas e propostas, todas assinadas pelo Piu (ADRs 0007 e 0050). As propostas que esperam decisão ficam no topo, e o resto segue em ordem cronológica (ADRs 0054 e 0087). Tocar numa mensagem abre uma tela própria (ADR 0086). Sete estados, na quarta, 11 nov: os cinco dos wireframes e dois do desfazer (ADR 0182). Já seguem os ADRs 0164 a 0166.</p>
+      <p>Concluída. A caixa de entrada do app, sem push: ajustes automáticos, semanas novas e propostas, todas assinadas pelo Piu (ADRs 0007 e 0050). As propostas que esperam decisão ficam no topo, e o resto segue em ordem cronológica (ADRs 0054 e 0087). Tocar numa mensagem abre uma tela própria (ADR 0086). Sete estados, na quarta, 11 nov: os cinco dos wireframes e dois do desfazer (ADR 0182). Já seguem os ADRs 0164 a 0166.</p>
     </header>
 
     <figure class="estado">
@@ -1195,7 +1195,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Ajuste desfeito</strong>
         <span>Depois de confirmar, a mensagem continua na lista, com o chip neutro "Desfeito". O antes e o depois ficam em tom secundário, só como registro, com uma nota que diz quando foi desfeito. Não há "Refazer": para mudar de novo, o caminho é falar com o Piu. Este estado também nasceu do ADR 0182.</span>
-        <span class="refs">ADRs 0047, 0145, 0165, 0180 e 0182 · componentes CabecalhoDaMensagem, ChipDeStatus, AntesDepois e BarraDeAbas · proposta 6</span>
+        <span class="refs">ADRs 0047, 0145, 0165, 0180, 0182 e 0183 · componentes CabecalhoDaMensagem, ChipDeStatus, AntesDepois e BarraDeAbas</span>
       </figcaption>
     </figure>
 
@@ -1279,19 +1279,19 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Proposta desatualizada</strong>
         <span>Quando um dia afetado muda, a proposta perde os botões, sai do topo e leva à proposta nova. O antes e o depois ficam num grupo sem contorno e em tom secundário, só como registro. Se a nova análise concluir que não precisa mudar nada, a mensagem explica isso.</span>
-        <span class="refs">ADRs 0052, 0054, 0145, 0165, 0179 e 0180 · componentes CabecalhoDaMensagem, ChipDeStatus, AntesDepois e BarraDeAbas · proposta 6</span>
+        <span class="refs">ADRs 0052, 0054, 0145, 0165, 0179, 0180 e 0183 · componentes CabecalhoDaMensagem, ChipDeStatus, AntesDepois e BarraDeAbas</span>
       </figcaption>
     </figure>
 
     <div class="propostas">
-      <h3>Propostas desta tela, em decisão</h3>
+      <h3>Propostas desta tela, todas decididas (ADRs 0177 a 0183)</h3>
       <ol>
         <li><b>Linha de mensagem</b> (decidido no ADR 0177, componente LinhaDeMensagem): linhas num grupo sem contorno, sem o avatar do Piu em cada linha, porque todas as mensagens são dele. Título em 15 px, apoio em legenda e o dia e a hora à direita, sem seta. A não lida tem um ponto de 8 px em <code>primaria</code> à esquerda e o título em negrito; a lida, o título em peso 500.</li>
         <li><b>Propostas aguardando você</b> (decidido no ADR 0178, componente LinhaDeMensagem): seção própria no topo, com o mesmo grupo e a mesma linha das recentes. O destaque vem da posição e do título da seção, e a linha de apoio começa com "Proposta:". Sem cor nem contorno extra.</li>
         <li><b>Avatar do Piu e cabeçalho da mensagem</b> (decidido no ADR 0179, componente CabecalhoDaMensagem): uma linha de assinatura com o avatar do Piu (círculo de 28 px em <code>primaria-suave</code>, com o balão da aba Piu preenchido, em <code>primaria</code>), "Piu" em negrito e a data. Embaixo, o título da mensagem em 24 px, na largura toda, o mesmo da lista, e o tipo em legenda ("Ajuste automático" ou "Proposta"). O texto do Piu vem solto, sem balão.</li>
         <li><b>Chips da proposta</b> (decidido no ADR 0180, componente ChipDeStatus): "Aguardando você" em <code>primaria-suave</code>, com contorno em <code>primaria</code> e o ícone <code>clock</code>; "Desatualizada" no chip neutro, igual ao "Previsto". "Aceita" e "Descartada", que aparecem na conversa com o Piu, também ficam neutras.</li>
         <li><b>Ações do ajuste</b> (decidido no ADR 0181, componente CardDaProposta): o antes e o depois num card com contorno. "Desfazer" em botão secundário com o ícone <code>arrow-u-up-left</code>, só no ajuste mais recente. No antigo, uma nota neutra com <code>info</code> no lugar do botão. Fora do card, o link "Falar com o Piu sobre este ajuste", igual ao do detalhe do treino.</li>
-        <li><b>Proposta desatualizada</b> (componente AntesDepois): o antes e o depois num grupo sem contorno, com o dia, a seta e o depois em <code>texto-secundario</code>, sem botões. Acima, o link "Ver a proposta nova" em ardósia.</li>
+        <li><b>Proposta desatualizada</b> (decidido no ADR 0183, componente AntesDepois): o antes e o depois num grupo sem contorno, com o dia, a seta e o depois em <code>texto-secundario</code>, sem botões. Acima, o link "Ver a proposta nova" em ardósia.</li>
         <li><b>Confirmação do desfazer</b> (decidido no ADR 0182, componentes DialogoDeConfirmacao e ChipDeStatus): tocar em "Desfazer" abre o diálogo "Desfazer este ajuste?", com "Cancelar" e "Desfazer". Depois de desfeito, a mensagem fica com o chip neutro "Desfeito", sem botão e sem "Refazer", com uma nota que diz quando foi desfeito.</li>
       </ol>
     </div>
