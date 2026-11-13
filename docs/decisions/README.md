@@ -186,6 +186,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0178 | [Propostas aguardando você com a mesma linha, numa seção no topo](0178-propostas-aguardando-na-mesma-linha.md) | Aceita |
 | 0179 | [Cabeçalho da mensagem com a assinatura do Piu acima do título](0179-cabecalho-da-mensagem.md) | Aceita |
 | 0180 | [Chips de status da proposta, com o pendente em ardósia](0180-chips-de-status-da-proposta.md) | Aceita |
+| 0181 | [Ações do ajuste com "Desfazer" no card e o link do Piu fora](0181-acoes-do-ajuste.md) | Aceita |
 
 ## Como criar um novo ADR
 

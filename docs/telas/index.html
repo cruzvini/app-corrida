@@ -1130,7 +1130,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Ajuste automático, o mais recente</strong>
         <span>Explica o que mudou e por quê, com o antes e o depois dos dias afetados. Por ser o ajuste mais recente, pode ser desfeito. Abrir a mensagem marca como lida, e a contagem cai para 1. O link leva ao Piu só com o antes e o depois do plano.</span>
-        <span class="refs">ADRs 0026, 0047, 0050, 0054, 0086, 0107, 0117, 0145 e 0179 · crit. 4.7 e 4.9 · componentes CabecalhoDaMensagem, AntesDepois e BarraDeAbas · proposta 5</span>
+        <span class="refs">ADRs 0026, 0047, 0050, 0054, 0086, 0107, 0117, 0145, 0179 e 0181 · crit. 4.7 e 4.9 · componentes CabecalhoDaMensagem, CardDaProposta, AntesDepois e BarraDeAbas</span>
       </figcaption>
     </figure>
 
@@ -1185,7 +1185,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Ajuste antigo</strong>
         <span>Continua com o antes e o depois, mas sem "Desfazer". A nota é neutra, com o ícone de informação, porque não é um risco. Para mudar, o caminho é falar com o Piu, que faz uma proposta nova.</span>
-        <span class="refs">ADRs 0047, 0050, 0142, 0145 e 0179 · componentes CabecalhoDaMensagem, AntesDepois e BarraDeAbas · proposta 5</span>
+        <span class="refs">ADRs 0047, 0050, 0142, 0145, 0179 e 0181 · componentes CabecalhoDaMensagem, CardDaProposta, AntesDepois e BarraDeAbas</span>
       </figcaption>
     </figure>
 
@@ -1225,7 +1225,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Propostas aguardando você</b> (decidido no ADR 0178, componente LinhaDeMensagem): seção própria no topo, com o mesmo grupo e a mesma linha das recentes. O destaque vem da posição e do título da seção, e a linha de apoio começa com "Proposta:". Sem cor nem contorno extra.</li>
         <li><b>Avatar do Piu e cabeçalho da mensagem</b> (decidido no ADR 0179, componente CabecalhoDaMensagem): uma linha de assinatura com o avatar do Piu (círculo de 28 px em <code>primaria-suave</code>, com o balão da aba Piu preenchido, em <code>primaria</code>), "Piu" em negrito e a data. Embaixo, o título da mensagem em 24 px, na largura toda, o mesmo da lista, e o tipo em legenda ("Ajuste automático" ou "Proposta"). O texto do Piu vem solto, sem balão.</li>
         <li><b>Chips da proposta</b> (decidido no ADR 0180, componente ChipDeStatus): "Aguardando você" em <code>primaria-suave</code>, com contorno em <code>primaria</code> e o ícone <code>clock</code>; "Desatualizada" no chip neutro, igual ao "Previsto". "Aceita" e "Descartada", que aparecem na conversa com o Piu, também ficam neutras.</li>
-        <li><b>Ações do ajuste</b> (componente CardDaProposta): o antes e o depois num card com contorno. "Desfazer" em botão secundário com o ícone <code>arrow-u-up-left</code>, só no ajuste mais recente. No antigo, uma nota neutra com <code>info</code> no lugar do botão. Fora do card, o link "Falar com o Piu sobre este ajuste", igual ao do detalhe do treino.</li>
+        <li><b>Ações do ajuste</b> (decidido no ADR 0181, componente CardDaProposta): o antes e o depois num card com contorno. "Desfazer" em botão secundário com o ícone <code>arrow-u-up-left</code>, só no ajuste mais recente. No antigo, uma nota neutra com <code>info</code> no lugar do botão. Fora do card, o link "Falar com o Piu sobre este ajuste", igual ao do detalhe do treino.</li>
         <li><b>Proposta desatualizada</b> (componente AntesDepois): o antes e o depois num grupo sem contorno, com o dia, a seta e o depois em <code>texto-secundario</code>, sem botões. Acima, o link "Ver a proposta nova" em ardósia.</li>
       </ol>
     </div>
