@@ -196,6 +196,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0188 | [Na conversa, a proposta com status final continua no card, sem botões](0188-status-final-no-card-da-conversa.md) | Aceita |
 | 0189 | [Proposta editada continua no card, com o chip neutro "Editada"](0189-proposta-editada.md) | Aceita |
 | 0190 | [Aviso de risco dentro do card da proposta, em `risco-suave` com contorno](0190-aviso-de-risco-na-proposta.md) | Aceita |
+| 0191 | [Limite diário atingido troca o campo de mensagem por um aviso no rodapé](0191-limite-diario-no-rodape.md) | Aceita |
 
 ## Como criar um novo ADR
 
