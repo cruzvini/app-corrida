@@ -393,6 +393,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .linha-acao { display: flex; align-items: center; gap: 10px; min-height: 52px; color: var(--primaria); font-weight: 500; }
 .linha-acao .ico { font-size: 20px; }
 .secao > .botao { margin-top: 0; }
+.secao > .powered { justify-self: start; padding: 2px 0 0 4px; }
 .campo .entrada.cheia { color: var(--texto); }
 .campo .entrada.escolha { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .campo .entrada.escolha .ico { color: var(--texto-secundario); font-size: 18px; }
@@ -1548,10 +1549,11 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           <div class="secao">
             <span class="titulo-secao">Strava</span>
             <div class="grupo-lista dados">
-              <div class="linha-dado"><span class="txt"><small>Conexão</small><span>Conectado</span></span><span class="powered">Powered by Strava</span></div>
+              <div class="linha-dado"><span>Conexão</span><span class="chip">Conectado</span></div>
               <div class="linha-dado"><span class="txt"><small>Última sincronização</small><span>Há 12 min</span></span><span class="atualizar" aria-label="Atualizar"><svg class="ico"><use href="#i-arrows-clockwise"/></svg></span></div>
               <div class="linha-acao"><svg class="ico"><use href="#i-link-break"/></svg>Desconectar o Strava</div>
             </div>
+            <span class="powered">Powered by Strava</span>
           </div>
           <div class="secao">
             <span class="titulo-secao">Conta</span>
@@ -1564,8 +1566,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Perfil</strong>
-        <span>Três seções curtas, em grupos sem contorno, porque são leitura. Meus dados só mostra: para mudar, "Editar perfil". O topo tem o avatar com a inicial, o nome e o e-mail, que não se repete em Conta. Strava mostra a conexão, com a marca do Strava, e a última sincronização, com a atualização manual. "Desconectar o Strava" e "Sair" são linhas de ação em ardósia, sem vermelho, que fica só para risco.</span>
-        <span class="refs">ADRs 0019, 0020, 0064, 0094, 0095, 0098, 0099, 0115, 0116, 0142, 0163, 0165, 0193, 0194 e 0195 · componentes CabecalhoDoPerfil, LinhaDeDado, LinhaDeAcao e BarraDeAbas · propostas 1, 2, 3 e 4</span>
+        <span>Três seções curtas, em grupos sem contorno, porque são leitura. Meus dados só mostra: para mudar, "Editar perfil". O topo tem o avatar com a inicial, o nome e o e-mail, que não se repete em Conta. Strava mostra a conexão num chip neutro, a última sincronização, com a atualização manual, e a marca "Powered by Strava" logo abaixo do grupo. "Desconectar o Strava" e "Sair" são linhas de ação em ardósia, sem vermelho, que fica só para risco.</span>
+        <span class="refs">ADRs 0019, 0020, 0064, 0094, 0095, 0098, 0099, 0115, 0116, 0142, 0163, 0165, 0180 e 0193 a 0196 · componentes CabecalhoDoPerfil, LinhaDeDado, LinhaDeAcao, ChipDeStatus e BarraDeAbas · propostas 1, 2, 3 e 4</span>
       </figcaption>
     </figure>
 
@@ -1675,9 +1677,10 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           <div class="secao">
             <span class="titulo-secao">Strava</span>
             <div class="grupo-lista dados">
-              <div class="linha-dado"><span class="txt"><small>Conexão</small><span>Desconectado</span></span><span class="powered">Powered by Strava</span></div>
+              <div class="linha-dado"><span>Conexão</span><span class="chip">Desconectado</span></div>
               <div class="linha-dado"><span class="txt"><small>Última sincronização</small><span>Segunda, 9 nov, às 18:40</span></span></div>
             </div>
+            <span class="powered">Powered by Strava</span>
           </div>
           <div class="secao">
             <span class="titulo-secao">Meus dados</span>
@@ -1692,7 +1695,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Strava desconectado</strong>
         <span>Se o acesso for revogado, o app detecta, sobe o Strava para o topo do Perfil e pede a reconexão. O aviso é o neutro, de falha, sem vermelho. A reconexão usa o botão oficial "Connect with Strava", obrigatório aqui e no onboarding. O Hoje mostra o mesmo aviso, e os treinos ficam pendentes até a sincronização voltar.</span>
-        <span class="refs">ADRs 0019, 0049, 0115, 0142, 0150 e 0194 · crit. 1.3 · componentes AvisoNeutro, LinhaDeDado e BarraDeAbas · proposta 9</span>
+        <span class="refs">ADRs 0019, 0049, 0115, 0142, 0150, 0194 e 0196 · crit. 1.3 · componentes AvisoNeutro, LinhaDeDado, ChipDeStatus e BarraDeAbas · proposta 9</span>
       </figcaption>
     </figure>
 
@@ -1702,7 +1705,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <li><b>Cabeçalho do Perfil</b> (decidido no ADR 0193, componente CabecalhoDoPerfil): avatar de 56 px com a inicial do nome, em <code>primaria</code> sobre <code>primaria-suave</code>, ao lado do nome em 20 px negrito e do e-mail em legenda. Sem a linha "desde". O e-mail não se repete: a seção Conta fica só com "Sair".</li>
         <li><b>Linhas de dados</b> (decidido no ADR 0194, componente LinhaDeDado): grupos sem contorno (ADR 0165), com o rótulo em legenda de 13 px em <code>texto-secundario</code> em cima e o valor em 15 px em <code>texto</code> embaixo, sem seta, porque a linha não abre nada. Valores em frase, sem ponto médio (ADR 0166), que quebram sem cortar.</li>
         <li><b>Ações de conta</b> (decidido no ADR 0195, componente LinhaDeAcao): "Desconectar o Strava" e "Sair" como linhas de ação em ardósia, com ícone (<code>link-break</code> e <code>sign-out</code>), no fim do grupo, sem vermelho e sem seta. Tocar abre o diálogo de confirmação.</li>
-        <li><b>Status do Strava:</b> "Conectado" em texto, sem chip, com o "Powered by Strava" monocromático na linha, e "Atualizar" em botão de ícone na linha da última sincronização.</li>
+        <li><b>Status do Strava</b> (decidido no ADR 0196, componentes ChipDeStatus e LinhaDeDado): linha "Conexão" com o chip neutro "Conectado" ou "Desconectado" à direita, "Atualizar" em botão de ícone na linha da última sincronização e o "Powered by Strava" monocromático logo abaixo do grupo.</li>
         <li><b>Editar perfil:</b> botão secundário com lápis, abaixo de Meus dados, e o formulário em tela própria, com "Salvar" no rodapé fixo.</li>
         <li><b>Contador da frequência:</b> botões redondos de 40 px com <code>minus</code> e <code>plus</code> em contorno ardósia, número em 18 px negrito; a divisão da musculação recuada, embaixo dela.</li>
         <li><b>Campo que mudou:</b> contorno em <code>primaria</code> e uma legenda "Era 72 kg" embaixo, no lugar do tracejado do wireframe.</li>

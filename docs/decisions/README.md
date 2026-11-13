@@ -201,6 +201,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0193 | [Cabeçalho do Perfil com avatar, nome e e-mail, e Conta só com "Sair"](0193-cabecalho-do-perfil.md) | Aceita |
 | 0194 | [Linhas de dados do Perfil com o rótulo em cima e o valor embaixo](0194-linhas-de-dados-do-perfil.md) | Aceita |
 | 0195 | ["Desconectar o Strava" e "Sair" como linhas de ação em ardósia, sem vermelho](0195-linhas-de-acao-do-perfil.md) | Aceita |
+| 0196 | [Status do Strava no Perfil em chip neutro, com a marca abaixo do grupo](0196-status-do-strava-em-chip.md) | Aceita |
 
 ## Como criar um novo ADR
 
