@@ -99,7 +99,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0091 | [Sugestões de pedido aparecem só no início de um assunto](0091-sugestoes-de-pedido-so-no-inicio.md) | Aceita |
 | 0092 | [O histórico da conversa com o Piu é mantido](0092-historico-da-conversa-mantido.md) | Aceita (revisada pelo ADR 0094) |
 | 0093 | [Limite diário de mensagens mantido, com aviso só perto do fim](0093-limite-diario-com-aviso-no-fim.md) | Aceita |
-| 0094 | [Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos](0094-perfil-so-com-dados-pessoais.md) | Aceita (revisada pelos ADRs 0098 e 0099) |
+| 0094 | [Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos](0094-perfil-so-com-dados-pessoais.md) | Aceita (revisada pelos ADRs 0098, 0099 e 0193) |
 | 0095 | [Editar o perfil salva os dados e leva ao Piu com o que mudou](0095-editar-perfil-leva-ao-piu.md) | Aceita (revisada pelos ADRs 0098 e 0099) |
 | 0096 | [Sair da conta pede confirmação](0096-sair-pede-confirmacao.md) | Aceita |
 | 0097 | [Frequência semanal no lugar de dias fixos](0097-frequencia-semanal-sem-dias-fixos.md) | Aceita (revisada pelos ADRs 0098 e 0137) |
@@ -198,6 +198,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0190 | [Aviso de risco dentro do card da proposta, em `risco-suave` com contorno](0190-aviso-de-risco-na-proposta.md) | Aceita |
 | 0191 | [Limite diário atingido troca o campo de mensagem por um aviso no rodapé](0191-limite-diario-no-rodape.md) | Aceita |
 | 0192 | [IA indisponível vira um aviso neutro no lugar da resposta do Piu](0192-ia-indisponivel-na-conversa.md) | Aceita |
+| 0193 | [Cabeçalho do Perfil com avatar, nome e e-mail, e Conta só com "Sair"](0193-cabecalho-do-perfil.md) | Aceita |
 
 ## Como criar um novo ADR
 

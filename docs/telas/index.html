@@ -1534,7 +1534,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="barra-status"><span>13:00</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela">
           <div class="topo"><div><h3>Perfil</h3></div></div>
-          <div class="quem"><span class="avatar-usuario" aria-hidden="true">V</span><span class="txt"><b>Vini</b><small>vini@exemplo.com</small><small>No Live Run desde 26 out</small></span></div>
+          <div class="quem"><span class="avatar-usuario" aria-hidden="true">V</span><span class="txt"><b>Vini</b><small>vini@exemplo.com</small></span></div>
           <div class="secao">
             <span class="titulo-secao">Meus dados</span>
             <div class="grupo-lista dados">
@@ -1556,7 +1556,6 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
           <div class="secao">
             <span class="titulo-secao">Conta</span>
             <div class="grupo-lista dados">
-              <div class="linha-dado"><span class="txt"><small>E-mail</small><span>vini@exemplo.com</span></span></div>
               <div class="linha-acao"><svg class="ico"><use href="#i-sign-out"/></svg>Sair</div>
             </div>
           </div>
@@ -1565,8 +1564,8 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Perfil</strong>
-        <span>Três seções curtas, em grupos sem contorno, porque são leitura. Meus dados só mostra: para mudar, "Editar perfil". O nome fica no topo, com o e-mail. Strava mostra a conexão, com a marca do Strava, e a última sincronização, com a atualização manual. "Desconectar o Strava" e "Sair" são linhas de ação em ardósia, sem vermelho, que fica só para risco.</span>
-        <span class="refs">ADRs 0019, 0020, 0064, 0094, 0095, 0098, 0099, 0115, 0116, 0142, 0163 e 0165 · componentes BarraDeAbas · propostas 1, 2, 3 e 4</span>
+        <span>Três seções curtas, em grupos sem contorno, porque são leitura. Meus dados só mostra: para mudar, "Editar perfil". O topo tem o avatar com a inicial, o nome e o e-mail, que não se repete em Conta. Strava mostra a conexão, com a marca do Strava, e a última sincronização, com a atualização manual. "Desconectar o Strava" e "Sair" são linhas de ação em ardósia, sem vermelho, que fica só para risco.</span>
+        <span class="refs">ADRs 0019, 0020, 0064, 0094, 0095, 0098, 0099, 0115, 0116, 0142, 0163, 0165 e 0193 · componentes CabecalhoDoPerfil e BarraDeAbas · propostas 1, 2, 3 e 4</span>
       </figcaption>
     </figure>
 
@@ -1637,7 +1636,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
         <div class="barra-status"><span>13:05</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela">
           <div class="topo"><div><h3>Perfil</h3></div></div>
-          <div class="quem"><span class="avatar-usuario" aria-hidden="true">V</span><span class="txt"><b>Vini</b><small>vini@exemplo.com</small><small>No Live Run desde 26 out</small></span></div>
+          <div class="quem"><span class="avatar-usuario" aria-hidden="true">V</span><span class="txt"><b>Vini</b><small>vini@exemplo.com</small></span></div>
           <div class="secao">
             <span class="titulo-secao">Meus dados</span>
             <div class="grupo-lista dados">
@@ -1659,7 +1658,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <figcaption>
         <strong>Sair</strong>
         <span>Pede confirmação, porque voltar exige um novo link mágico. Usa o diálogo próprio do detalhe do treino: "Sair" em ardósia, e não em vermelho. Sair não apaga dados, só encerra a sessão no aparelho.</span>
-        <span class="refs">ADRs 0020, 0096, 0142 e 0163 · componentes BarraDeAbas</span>
+        <span class="refs">ADRs 0020, 0096, 0142, 0163 e 0193 · componentes CabecalhoDoPerfil e BarraDeAbas</span>
       </figcaption>
     </figure>
 
@@ -1700,7 +1699,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     <div class="propostas">
       <h3>Propostas desta tela, em decisão</h3>
       <ol>
-        <li><b>Cabeçalho do Perfil:</b> avatar de 56 px com a inicial do nome, em <code>primaria-suave</code> e <code>primaria</code>, ao lado do nome em 20 px negrito, com o e-mail e "No Live Run desde 26 out" em legenda.</li>
+        <li><b>Cabeçalho do Perfil</b> (decidido no ADR 0193, componente CabecalhoDoPerfil): avatar de 56 px com a inicial do nome, em <code>primaria</code> sobre <code>primaria-suave</code>, ao lado do nome em 20 px negrito e do e-mail em legenda. Sem a linha "desde". O e-mail não se repete: a seção Conta fica só com "Sair".</li>
         <li><b>Linhas de dados:</b> grupos sem contorno (ADR 0165), com o rótulo em legenda em cima e o valor embaixo, em <code>texto</code>, sem seta, porque a linha não abre nada. Valores em frase, sem ponto médio (ADR 0166).</li>
         <li><b>Ações de conta:</b> "Desconectar o Strava" e "Sair" como linhas de ação em ardósia, com ícone (<code>link-break</code> e <code>sign-out</code>), no fim do grupo, sem vermelho.</li>
         <li><b>Status do Strava:</b> "Conectado" em texto, sem chip, com o "Powered by Strava" monocromático na linha, e "Atualizar" em botão de ícone na linha da última sincronização.</li>
