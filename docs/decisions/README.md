@@ -212,6 +212,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0204 | [Cada nível de corrida descrito com duas referências concretas, frequência e maior distância](0204-descricao-dos-niveis-com-referencias.md) | Aceita |
 | 0205 | ["Verifique seu e-mail" alinhada à esquerda, com o envelope em círculo e sem ação principal](0205-verifique-o-email-a-esquerda.md) | Aceita |
 | 0206 | [Explicação do Strava no onboarding com as garantias em lista, num grupo sem contorno](0206-explicacao-do-strava-com-garantias.md) | Aceita |
+| 0207 | [Progresso do setup com o voltar e a contagem na mesma linha e uma barra fina embaixo](0207-progresso-do-setup.md) | Aceita |
 
 ## Como criar um novo ADR
 
