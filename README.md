@@ -23,3 +23,4 @@ A partir da etapa 5, cada épico entrega também as próprias telas do app e o f
 
 - Regras de trabalho: [`CLAUDE.md`](CLAUDE.md)
 - Decisões de arquitetura (ADRs): [`docs/decisions/`](docs/decisions/README.md)
+- Andamento: [board no GitHub](https://github.com/users/cruzvini/projects/1) e [painel do projeto](docs/painel.md)
