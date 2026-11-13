@@ -175,6 +175,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0167 | [Card do objetivo com a distância em destaque](0167-card-do-objetivo.md) | Aceita |
 | 0168 | [Faixa de fases com contorno na fase atual](0168-faixa-de-fases.md) | Aceita |
 | 0169 | [Dias da semana num grupo, com o dia em miniatura](0169-dias-da-semana-em-grupo.md) | Aceita |
+| 0170 | [Linhas de semana e volume da semana em texto](0170-linhas-de-semana.md) | Aceita |
 
 ## Como criar um novo ADR
 
