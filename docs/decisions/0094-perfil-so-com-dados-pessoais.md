@@ -1,6 +1,6 @@
 # ADR 0094: Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos
 
-- **Status:** Aceita (revisada pelos ADRs 0098 e 0099)
+- **Status:** Aceita (revisada pelos ADRs 0098, 0099 e 0193)
 - **Data:** 2026-11-10
 
 ## Contexto
@@ -13,7 +13,7 @@ O Perfil tem três seções:
 
 - **Meus dados:** nível, idade, peso e lesões ou limitações, com o botão "Editar perfil" (ADR 0095). *Revisado pelos ADRs 0098 e 0099: Meus dados também tem o nome e a frequência semanal.*
 - **Strava:** status da conexão, última sincronização e reconectar.
-- **Conta:** e-mail e sair (ADR 0096).
+- **Conta:** e-mail e sair (ADR 0096). *Revisado pelo ADR 0193: o e-mail fica no cabeçalho, abaixo do nome, e Conta só tem "Sair".*
 
 Saem do Perfil:
 

@@ -99,7 +99,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0091 | [Sugestões de pedido aparecem só no início de um assunto](0091-sugestoes-de-pedido-so-no-inicio.md) | Aceita |
 | 0092 | [O histórico da conversa com o Piu é mantido](0092-historico-da-conversa-mantido.md) | Aceita (revisada pelo ADR 0094) |
 | 0093 | [Limite diário de mensagens mantido, com aviso só perto do fim](0093-limite-diario-com-aviso-no-fim.md) | Aceita |
-| 0094 | [Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos](0094-perfil-so-com-dados-pessoais.md) | Aceita (revisada pelos ADRs 0098 e 0099) |
+| 0094 | [Perfil só com dados pessoais, sem itens do plano nem histórico de replanejamentos](0094-perfil-so-com-dados-pessoais.md) | Aceita (revisada pelos ADRs 0098, 0099 e 0193) |
 | 0095 | [Editar o perfil salva os dados e leva ao Piu com o que mudou](0095-editar-perfil-leva-ao-piu.md) | Aceita (revisada pelos ADRs 0098 e 0099) |
 | 0096 | [Sair da conta pede confirmação](0096-sair-pede-confirmacao.md) | Aceita |
 | 0097 | [Frequência semanal no lugar de dias fixos](0097-frequencia-semanal-sem-dias-fixos.md) | Aceita (revisada pelos ADRs 0098 e 0137) |
@@ -198,6 +198,15 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0190 | [Aviso de risco dentro do card da proposta, em `risco-suave` com contorno](0190-aviso-de-risco-na-proposta.md) | Aceita |
 | 0191 | [Limite diário atingido troca o campo de mensagem por um aviso no rodapé](0191-limite-diario-no-rodape.md) | Aceita |
 | 0192 | [IA indisponível vira um aviso neutro no lugar da resposta do Piu](0192-ia-indisponivel-na-conversa.md) | Aceita |
+| 0193 | [Cabeçalho do Perfil com avatar, nome e e-mail, e Conta só com "Sair"](0193-cabecalho-do-perfil.md) | Aceita |
+| 0194 | [Linhas de dados do Perfil com o rótulo em cima e o valor embaixo](0194-linhas-de-dados-do-perfil.md) | Aceita |
+| 0195 | ["Desconectar o Strava" e "Sair" como linhas de ação em ardósia, sem vermelho](0195-linhas-de-acao-do-perfil.md) | Aceita |
+| 0196 | [Status do Strava no Perfil em chip neutro, com a marca abaixo do grupo](0196-status-do-strava-em-chip.md) | Aceita |
+| 0197 | ["Editar perfil" em botão secundário, com o formulário em tela própria e "Salvar" no rodapé fixo](0197-editar-perfil.md) | Aceita |
+| 0198 | [Contador com − e + para a frequência semanal, com aviso quando passa de 7 atividades](0198-contador-da-frequencia.md) | Aceita |
+| 0199 | [No "Editar perfil", o campo que mudou ganha contorno em ardósia e a legenda com o valor de antes](0199-campo-que-mudou.md) | Aceita |
+| 0200 | [Mensagem pronta do perfil no campo do Piu, que cresce para mostrar o texto todo](0200-mensagem-pronta-no-piu.md) | Aceita |
+| 0201 | [Strava desconectado no Perfil sem aviso à parte, com a seção Strava no topo e o botão oficial](0201-strava-desconectado-no-perfil.md) | Aceita |
 
 ## Como criar um novo ADR
 
