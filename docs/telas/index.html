@@ -480,7 +480,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       <li class="feita"><a href="#notificacoes">Notificações</a></li>
       <li class="feita"><a href="#piu">Piu</a></li>
       <li class="feita"><a href="#perfil">Perfil</a></li>
-      <li class="andamento"><a href="#onboarding">Onboarding e setup, em decisão</a></li>
+      <li class="feita"><a href="#onboarding">Onboarding e setup</a></li>
     </ul>
   </header>
 
@@ -1768,7 +1768,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
   <section class="grupo" id="onboarding">
     <header>
       <h2>Onboarding e setup</h2>
-      <p>Em decisão. Fluxo linear em tela cheia, sem a barra de abas: login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app fechar no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano criado na segunda, 26 out. Passos do setup não desenhados aqui: sobre você (nome, idade, peso e lesões), pace alvo e data de início, que usam os mesmos componentes. Já seguem os ADRs 0164 a 0166.</p>
+      <p>Concluída. Fluxo linear em tela cheia, sem a barra de abas: login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app fechar no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano criado na segunda, 26 out. Passos do setup não desenhados aqui: sobre você (nome, idade, peso e lesões), pace alvo e data de início, que usam os mesmos componentes. Já seguem os ADRs 0164 a 0166.</p>
     </header>
 
     <figure class="estado">
@@ -2049,7 +2049,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </figure>
 
     <div class="propostas">
-      <h3>Propostas desta tela, em decisão</h3>
+      <h3>Propostas desta tela, todas decididas (ADRs 0202 a 0214)</h3>
       <ol>
         <li><b>Boas-vindas</b> (decidido no ADR 0202, componente BoasVindas): ícone Ritmo de 64 px e "Live Run" em 32 px negrito no terço de cima, a frase em 17 px em <code>texto-secundario</code> e o campo de e-mail logo abaixo.</li>
         <li><b>Botão da etapa</b> (decidido no ADR 0203, componente RodapeDoTreino): flutua no fim da tela, sem a área em <code>superficie</code> e sem o contorno, com o botão principal na largura toda ("Continuar", "Gerar meu plano") e uma nota opcional embaixo, sobre o <code>fundo</code>. O conteúdo tem um respiro embaixo para rolar até acima do botão. Nas abas, o rodapé fixo continua.</li>
