@@ -455,6 +455,9 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 .opcao.sel { background: var(--primaria-suave); border-color: var(--primaria); box-shadow: inset 0 0 0 1px var(--primaria); }
 .opcao.sel .radio { background: var(--primaria); box-shadow: inset 0 0 0 7px var(--primaria), inset 0 0 0 11px var(--sobre-primaria); }
 .opcao.aberta { align-items: start; }
+.opcoes.dias-inicio { grid-template-columns: repeat(3, 1fr); } /* data de início (ADR 0215) */
+.opcoes.dias-inicio .opcao { grid-template-columns: 1fr; padding: 12px; text-align: center; }
+.opcoes.dias-inicio .opcao .txt b { justify-content: center; }
 .opcao .dentro { grid-column: 1 / -1; display: grid; gap: 12px; padding-top: 4px; }
 .alternativas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: -4px; }
 .alternativas .botao { margin-top: 0; font-size: 15px; padding: 0 16px; }
@@ -1768,7 +1771,7 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
   <section class="grupo" id="onboarding">
     <header>
       <h2>Onboarding e setup</h2>
-      <p>Concluída. Fluxo linear em tela cheia, sem a barra de abas: login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app fechar no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano criado na segunda, 26 out. Passos do setup não desenhados aqui: sobre você (nome, idade, peso e lesões), pace alvo e data de início, que usam os mesmos componentes. Já seguem os ADRs 0164 a 0166.</p>
+      <p>Concluída. Fluxo linear em tela cheia, sem a barra de abas: login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app fechar no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano criado na segunda, 26 out. Todos os passos do setup estão desenhados: "Sobre você", o pace alvo e a data de início entraram na validação do design (ADR 0215). Já seguem os ADRs 0164 a 0166.</p>
     </header>
 
     <figure class="estado">
@@ -1892,6 +1895,32 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
 
     <figure class="estado">
       <template>
+        <div class="barra-status"><span>9:06</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">2 de 7</span></div><span class="barra-progresso" style="--p:29%"><i></i></span></div>
+          <div class="etapa"><h3>Sobre você</h3></div>
+          <div class="campo"><label>Como você quer ser chamado</label><div class="entrada cheia">Vini</div></div>
+          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerido pelo seu primeiro nome no Strava.</span></p>
+          <div class="campos-2">
+            <div class="campo"><label>Idade</label><div class="entrada cheia">34 anos</div></div>
+            <div class="campo"><label>Peso</label><div class="entrada cheia">72 kg</div></div>
+          </div>
+          <div class="campo"><label>Lesões ou limitações, se tiver</label><div class="entrada multi">Por exemplo, joelho sensível em descidas</div></div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Sobre você</strong>
+        <span>Os mesmos campos do Editar perfil, numa tela só, porque são dados curtos. O nome vem sugerido pelo primeiro nome do Strava, com a nota em legenda; sem o Strava, o campo vem vazio. Idade de 10 a 100 anos e peso são obrigatórios; lesões ou limitações são opcionais, em texto livre, e o exemplo fica como texto de apoio no campo vazio. "Continuar" só fica ativo com nome, idade e peso.</span>
+        <span class="refs">ADRs 0039, 0042, 0099, 0158, 0197, 0203, 0209 e 0215 · crit. 2.2 · componentes CampoDoFormulario e RodapeDoTreino</span>
+      </figcaption>
+    </figure>
+
+
+    <figure class="estado">
+      <template>
         <div class="barra-status"><span>9:07</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
         <div class="tela">
           <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">3 de 7</span></div><span class="barra-progresso" style="--p:43%"><i></i></span></div>
@@ -1977,10 +2006,63 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
       </template>
       <figcaption>
         <strong>Distância, data e aviso de risco</strong>
-        <span>No "Melhorar o tempo": distância livre e data, com o seletor nativo. Se as regras acharem o objetivo arriscado, o AvisoDeRisco aparece logo abaixo dos campos, sem bloquear, e as alternativas viram botões secundários que preenchem os campos com um toque. Continuar com o objetivo arriscado fica registrado, e a nota do rodapé diz isso. O pace alvo sugerido vem na tela seguinte.</span>
-        <span class="refs">ADRs 0016, 0017, 0021, 0103, 0142, 0172 e 0190 · crit. 2.5 a 2.7 · componentes CampoDoFormulario, AvisoDeRisco e RodapeDoTreino · proposta 8</span>
+        <span>No "Melhorar o tempo": distância livre e data, com o seletor nativo. Se as regras acharem o objetivo arriscado, o AvisoDeRisco aparece logo abaixo dos campos, sem bloquear, e as alternativas viram botões secundários que preenchem os campos com um toque. Continuar com o objetivo arriscado fica registrado, e a nota do rodapé diz isso. Com o aviso, o campo do pace alvo, abaixo das alternativas, só aparece no estado seguinte.</span>
+        <span class="refs">ADRs 0016, 0017, 0021, 0103, 0142, 0172, 0190 e 0215 · crit. 2.5 a 2.7 · componentes CampoDoFormulario, AvisoDeRisco e RodapeDoTreino · proposta 8</span>
       </figcaption>
     </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:10</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">5 de 7</span></div><span class="barra-progresso" style="--p:71%"><i></i></span></div>
+          <div class="etapa"><h3>Distância e data</h3><span class="sub">Melhorar o tempo numa distância</span></div>
+          <div class="campos-2">
+            <div class="campo"><label>Distância</label><div class="entrada cheia">10 km</div></div>
+            <div class="campo"><label>Data</label><div class="entrada cheia escolha">29 nov<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
+          </div>
+          <div class="campo"><label>Pace alvo</label><div class="entrada cheia escolha">5:20/km<svg class="ico"><use href="#i-caret-down"/></svg></div></div>
+          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos <b>5:20/km</b>, pelas suas corridas recentes e pelo prazo até 29 nov. <span class="link">Ajustar</span></span></p>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Distância, data e pace alvo</strong>
+        <span>O pace alvo fica na mesma tela da distância e da data, logo abaixo delas, sugerido pelas regras na nota com <code>info</code>, como o nível e o prazo. "Ajustar" ou tocar no campo abre a escolha do pace. Ele é recalculado quando a distância ou a data mudam, também depois de uma alternativa do aviso de risco. Sem histórico suficiente, ou sem o Strava, o campo some e a nota diz que o plano começa sem meta de pace, com foco em completar a distância. Com isso, o "Melhorar o tempo" tem 7 passos, e os outros objetivos têm 6: a contagem passa a valer depois da escolha do objetivo.</span>
+        <span class="refs">ADRs 0021, 0103, 0172, 0207, 0209 e 0215 · crit. 2.5 e 2.6 · componentes CampoDoFormulario, SeletorDeData e RodapeDoTreino</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:11</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">6 de 7</span></div><span class="barra-progresso" style="--p:86%"><i></i></span></div>
+          <div class="etapa"><h3>Quando você quer começar?</h3></div>
+          <div class="opcoes dias-inicio">
+            <div class="opcao sel"><span class="txt"><b>Hoje</b><small>seg, 26 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Amanhã</b><small>ter, 27 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Qua</b><small>28 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Qui</b><small>29 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Sex</b><small>30 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Sáb</b><small>31 out</small></span></div>
+          </div>
+          <div class="campo"><label>Outro dia</label><div class="entrada escolha">Escolher no calendário<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
+          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>O plano vai até 29 nov, a data do seu objetivo.</span></p>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Data de início</strong>
+        <span>Hoje e os próximos 5 dias como opções rápidas, em cards da OpcaoDeEscolha numa grade de 3 colunas, sem rádio, com "Hoje" já marcado. "Outro dia" abre o seletor de data nativo, com as datas a partir da data do objetivo indisponíveis. A nota lembra até quando vai o plano. Se o início deixar o prazo curto para a meta, entra o AvisoDeRisco, como na tela anterior, sem bloquear.</span>
+        <span class="refs">ADRs 0017, 0043, 0172, 0208, 0210 e 0215 · crit. 2.7 e 2.8 · componentes OpcaoDeEscolha, SeletorDeData e RodapeDoTreino</span>
+      </figcaption>
+    </figure>
+
 
     <figure class="estado">
       <template>

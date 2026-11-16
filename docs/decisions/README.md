@@ -220,6 +220,7 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0212 | [Montando o plano com o ícone Ritmo, o objetivo numa frase e a barra de progresso; falha no AvisoNeutro](0212-montando-o-plano.md) | Aceita |
 | 0213 | ["Agora não" na conexão com o Strava, com o app em modo manual até conectar](0213-strava-opcional-com-agora-nao.md) | Aceita |
 | 0214 | ["Outro" em "Qual é o seu objetivo?", com o texto levado ao Piu para virar proposta](0214-outro-objetivo-combinado-com-o-piu.md) | Aceita |
+| 0215 | [Passos do setup completos, com o pace alvo na tela da distância e da data](0215-passos-do-setup-com-pace-na-tela-da-distancia.md) | Aceita |
 
 ## Como criar um novo ADR
 
