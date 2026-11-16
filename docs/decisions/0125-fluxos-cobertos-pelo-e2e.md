@@ -1,6 +1,6 @@
 # ADR 0125: Fluxos cobertos pelo E2E do MVP
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0219)
 - **Data:** 2026-10-29
 - **Complementa:** [ADR 0120](0120-e2e-com-maestro.md), [ADR 0123](0123-gates-obrigatorios-em-todo-pr.md)
 

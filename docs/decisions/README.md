@@ -130,9 +130,9 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0122 | [Repositório público para os quality gates bloquearem o merge](0122-repositorio-publico.md) | Aceita |
 | 0123 | [Todos os quality gates rodam e bloqueiam o merge em todo PR](0123-gates-obrigatorios-em-todo-pr.md) | Aceita |
 | 0124 | [Cobertura mínima de testes por pacote](0124-cobertura-minima-por-pacote.md) | Aceita |
-| 0125 | [Fluxos cobertos pelo E2E do MVP](0125-fluxos-cobertos-pelo-e2e.md) | Aceita |
+| 0125 | [Fluxos cobertos pelo E2E do MVP](0125-fluxos-cobertos-pelo-e2e.md) | Aceita (revisada pelo ADR 0219) |
 | 0126 | [Gitleaks na CI e push protection do GitHub](0126-scanner-de-segredos.md) | Aceita |
-| 0127 | [App mobile entregue em fatias verticais](0127-app-mobile-em-fatias-verticais.md) | Aceita |
+| 0127 | [App mobile entregue em fatias verticais](0127-app-mobile-em-fatias-verticais.md) | Aceita (revisada pelo ADR 0220) |
 | 0128 | [Provedor de IA construído no épico do motor de regras](0128-ai-provider-no-epico-do-motor-de-regras.md) | Aceita |
 | 0129 | [npm workspaces como gerenciador do monorepo](0129-npm-workspaces.md) | Aceita |
 | 0130 | [Node 24 LTS fixado no projeto](0130-node-24-lts.md) | Aceita |
@@ -224,6 +224,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0216 | [Treino sem meta de pace com faixa de intensidade em palavras](0216-treino-sem-meta-de-pace.md) | Aceita |
 | 0217 | [Atividade fora do plano numa linha do Hoje e como ícone secundário na faixa](0217-atividade-fora-do-plano.md) | Aceita |
 | 0218 | [Confirmação de desconectar o Strava com o diálogo do "Sair"](0218-confirmacao-de-desconectar-o-strava.md) | Aceita |
+| 0219 | [E2E cobre o modo manual no fluxo 1 e a conexão com o Strava no fluxo 2](0219-e2e-cobre-o-modo-manual.md) | Aceita |
+| 0220 | [Tela "Conecte o Strava" só entra no app no épico de Integração Strava](0220-tela-do-strava-so-no-epico-do-strava.md) | Aceita |
 
 ## Como criar um novo ADR
 
