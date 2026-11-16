@@ -481,15 +481,397 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     <h1>Telas do Live Run</h1>
     <p>Alta fidelidade sobre os wireframes, com a identidade do design system Live Run (ADRs 0138 e 0140 a 0148). Cada estado aparece no tema claro e no escuro. Os wireframes continuam como referência de estrutura e fluxo.</p>
     <ul class="telas" aria-label="Telas">
+      <li class="feita"><a href="#onboarding">Onboarding e setup</a></li>
       <li class="feita"><a href="#hoje">Hoje</a></li>
       <li class="feita"><a href="#detalhe">Detalhe do treino</a></li>
       <li class="feita"><a href="#plano">Plano</a></li>
       <li class="feita"><a href="#notificacoes">Notificações</a></li>
       <li class="feita"><a href="#piu">Piu</a></li>
       <li class="feita"><a href="#perfil">Perfil</a></li>
-      <li class="feita"><a href="#onboarding">Onboarding e setup</a></li>
     </ul>
   </header>
+
+  <section class="grupo" id="onboarding">
+    <header>
+      <h2>Onboarding e setup</h2>
+      <p>Concluída. Fluxo linear em tela cheia, sem a barra de abas: login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app fechar no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano criado na segunda, 26 out. Todos os passos do setup estão desenhados: "Sobre você", o pace alvo e a data de início entraram na validação do design (ADR 0215). Já seguem os ADRs 0164 a 0166.</p>
+    </header>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:00</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela boas-vindas">
+          <div class="marca-app">
+            <svg class="ritmo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16"/><path d="M10 34h12l5-10 6 22 6-32 6 26 4-6h5"/></svg>
+            <h3>Live Run</h3>
+            <p>Seu plano de corrida, do seu jeito. O Piu ajusta o plano sempre que a vida mudar.</p>
+          </div>
+          <div class="campo"><label>Seu e-mail</label><div class="entrada cheia">vini@exemplo.com</div></div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Receber link de acesso</span>
+          <span class="nota-acao">Sem senha: você entra pelo link que chega no e-mail.</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Boas-vindas e e-mail</strong>
+        <span>Só a marca, uma frase sobre o app e o campo de e-mail. O ícone Ritmo e o nome ficam no terço de cima, e o campo logo abaixo. O botão principal flutua no fim da tela, sem fundo de rodapé, porque não há barra de abas. E-mail inválido mostra o erro embaixo do campo, em legenda.</span>
+        <span class="refs">ADRs 0020, 0032, 0033, 0100, 0138, 0158, 0199, 0202 e 0203 · crit. 1.1 · componentes BoasVindas, CampoDoFormulario e RodapeDoTreino · propostas 1 e 2</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:01</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span></span></div>
+          <div class="etapa espera">
+            <span class="icone-grande" aria-hidden="true"><svg class="ico"><use href="#i-envelope-simple"/></svg></span>
+            <h3>Verifique seu e-mail</h3>
+            <p>Mandamos um link para <b>vini@exemplo.com</b>. Toque nele neste celular para entrar.</p>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio secundario">Reenviar link</span>
+          <span class="ver centro">Trocar e-mail</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Verifique o e-mail</strong>
+        <span>Uma tela de espera, alinhada à esquerda como as boas-vindas, com o ícone do envelope num círculo em <code>primaria-suave</code>. Não há ação principal, porque o próximo passo é no e-mail: "Reenviar link" é secundário e "Trocar e-mail" é um link. Link expirado ou já usado volta para cá com o motivo e oferece um novo. Depois de entrar, a sessão fica salva.</span>
+        <span class="refs">ADRs 0020, 0158, 0203 e 0205 · crit. 1.1 e 1.2 · componentes VerifiqueOEmail e RodapeDoTreino · proposta 3</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:03</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="etapa">
+            <h3>Conecte o Strava</h3>
+            <p>O Live Run usa as suas atividades do Strava, inclusive as privadas, para marcar os treinos como feitos e ajustar o plano. Sem a conexão, não dá para acompanhar o plano.</p>
+          </div>
+          <div class="grupo-lista dados">
+            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Só o resumo das atividades das últimas 12 semanas, sem mapa nem GPS.</span></div>
+            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Nada é publicado no Strava.</span></div>
+            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Nada do Strava vai para a IA.</span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao-strava cheio">Connect with Strava</span>
+          <span class="ver centro">Agora não</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Conectar o Strava</strong>
+        <span>Obrigatório. Explica o porquê antes de abrir a autorização: o texto diz para que serve, e um grupo sem contorno lista o que o app lê e o que nunca faz, cada linha com um escudo em ardósia. O botão oficial do Strava fica no fim da tela, na largura toda, como ação principal, e o link "Agora não" logo abaixo deixa seguir sem conectar, sem esconder nem reduzir as explicações. Sem o Strava, o app fica em modo manual até conectar: nível escolhido à mão, treinos marcados à mão e o "não feito" das 22h suspenso. Se o usuário recusar ou cancelar, volta aqui com o motivo em AvisoNeutro. Falha na importação do histórico oferece tentar de novo ou seguir sem histórico.</span>
+        <span class="refs">ADRs 0019, 0040, 0049, 0106, 0108, 0110, 0115, 0150, 0165, 0201, 0206 e 0213 · crit. 1.3 a 1.6 · componentes LinhaDeDado e RodapeDoTreino · proposta 4</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:05</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">1 de 7</span></div><span class="barra-progresso" style="--p:14%"><i></i></span></div>
+          <div class="etapa"><h3>Seu nível de corrida</h3></div>
+          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos <b>Intermediário</b>: você correu 3 vezes por semana nas últimas 8 semanas, com treinos de até 12 km.</span></p>
+          <div class="opcoes">
+            <div class="opcao"><span class="txt"><b>Iniciante</b><small>Até 2 corridas por semana</small><small>Ainda não correu 5 km sem parar</small></span><span class="radio"></span></div>
+            <div class="opcao sel"><span class="txt"><b>Intermediário <span class="chip">Sugerido</span></b><small>3 ou mais corridas por semana</small><small>Já correu 10 km</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Avançado</b><small>4 ou mais corridas e mais de 40 km por semana</small><small>Já fez meia maratona ou treina intervalado</small></span><span class="radio"></span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Nível de corrida</strong>
+        <span>Primeiro passo do setup, com o voltar e "1 de 7" na mesma linha e a barra de progresso embaixo. Com histórico, as regras sugerem o nível e explicam numa nota, e a opção sugerida já vem marcada, com o chip neutro "Sugerido". Sem histórico, nada vem marcado e o "Continuar" fica desativado até escolher. Cada nível tem duas referências concretas, frequência e maior distância, as mesmas que as regras usam para sugerir. As opções são cards com contorno, porque são ações; a marcada ganha <code>primaria-suave</code> e contorno de 2 px em ardósia.</span>
+        <span class="refs">ADRs 0015, 0101, 0158, 0165 e 0204 · crit. 2.1 · componentes RodapeDoTreino e ChipDeStatus · propostas 5, 6 e 7</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:05</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">1 de 7</span></div><span class="barra-progresso" style="--p:14%"><i></i></span></div>
+          <div class="etapa"><h3>Seu nível de corrida</h3><p>Ainda não há corridas no seu Strava. Escolha o nível que mais parece com a sua rotina hoje, mesmo que você se encaixe só em parte dele.</p></div>
+          <div class="opcoes">
+            <div class="opcao"><span class="txt"><b>Iniciante</b><small>Até 2 corridas por semana</small><small>Ainda não correu 5 km sem parar</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Intermediário</b><small>3 ou mais corridas por semana</small><small>Já correu 10 km</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Avançado</b><small>4 ou mais corridas e mais de 40 km por semana</small><small>Já fez meia maratona ou treina intervalado</small></span><span class="radio"></span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio off" aria-disabled="true">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Nível sem histórico no Strava</strong>
+        <span>Conectou o Strava, mas não há corridas nas últimas 12 semanas. Sem sugestão, o texto diz o porquê e pede a escolha, cada nível com a sua descrição curta, e nada vem marcado. "Continuar" fica desativado até escolher. As referências seguem o ADR 0204; os números exatos são decididos no épico do motor de regras.</span>
+        <span class="refs">ADRs 0015, 0040, 0101, 0108, 0203 e 0204 · crit. 1.6 e 2.1 · componentes RodapeDoTreino · propostas 5 e 6</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:06</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">2 de 7</span></div><span class="barra-progresso" style="--p:29%"><i></i></span></div>
+          <div class="etapa"><h3>Sobre você</h3></div>
+          <div class="campo"><label>Como você quer ser chamado</label><div class="entrada cheia">Vini</div></div>
+          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerido pelo seu primeiro nome no Strava.</span></p>
+          <div class="campos-2">
+            <div class="campo"><label>Idade</label><div class="entrada cheia">34 anos</div></div>
+            <div class="campo"><label>Peso</label><div class="entrada cheia">72 kg</div></div>
+          </div>
+          <div class="campo"><label>Lesões ou limitações, se tiver</label><div class="entrada multi">Por exemplo, joelho sensível em descidas</div></div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Sobre você</strong>
+        <span>Os mesmos campos do Editar perfil, numa tela só, porque são dados curtos. O nome vem sugerido pelo primeiro nome do Strava, com a nota em legenda; sem o Strava, o campo vem vazio. Idade de 10 a 100 anos e peso são obrigatórios; lesões ou limitações são opcionais, em texto livre, e o exemplo fica como texto de apoio no campo vazio. "Continuar" só fica ativo com nome, idade e peso.</span>
+        <span class="refs">ADRs 0039, 0042, 0099, 0158, 0197, 0203, 0209 e 0215 · crit. 2.2 · componentes CampoDoFormulario e RodapeDoTreino</span>
+      </figcaption>
+    </figure>
+
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:07</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">3 de 7</span></div><span class="barra-progresso" style="--p:43%"><i></i></span></div>
+          <div class="etapa"><h3>Quantas vezes por semana?</h3></div>
+          <div class="secao">
+            <div class="grupo-lista contadores">
+              <div class="contador-linha">Corrida<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>4</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha">Musculação<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>2</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha sub">Superiores<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo off" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha sub">Inferiores<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo off" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha">Natação<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="contador-linha">Ciclismo<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
+              <div class="linha-acao"><svg class="ico"><use href="#i-plus"/></svg>Adicionar outra atividade</div>
+            </div>
+            <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>São 8 atividades por semana, então alguns dias vão ter duas. O plano escolhe quais.</span></p>
+            <span class="sub">Você muda a frequência depois, no Perfil.</span>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Frequência semanal</strong>
+        <span>O mesmo Contador do Editar perfil: só quantidades, de 0 a 7, com a divisão da musculação recuada embaixo dela. As outras atividades são só registro de carga, sem prescrição, e a lista pode ficar vazia. No exemplo, a semana soma 8 atividades, e a nota com <code>info</code> avisa que alguns dias vão ter duas, sem bloquear o "Continuar".</span>
+        <span class="refs">ADRs 0014, 0097, 0098, 0137, 0158, 0195 e 0198 · crit. 2.3 · componentes Contador, LinhaDeAcao e RodapeDoTreino · proposta 5</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:08</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">4 de 7</span></div><span class="barra-progresso" style="--p:57%"><i></i></span></div>
+          <div class="etapa"><h3>Qual é o seu objetivo?</h3></div>
+          <div class="opcoes">
+            <div class="opcao sel aberta">
+              <span class="txt"><b>Completar uma distância</b><small>Por exemplo, 3 km sem parar ou os primeiros 10 km.</small></span><span class="radio"></span>
+              <div class="dentro">
+                <div class="campos-2">
+                  <div class="campo"><label>Distância</label><div class="entrada cheia">3 km</div></div>
+                  <div class="campo"><label>Data, se tiver</label><div class="entrada escolha">Sem data<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
+                </div>
+                <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos 6 semanas, até 7 dez, pelo seu nível e pelas corridas recentes. <span class="link">Ajustar</span></span></p>
+              </div>
+            </div>
+            <div class="opcao"><span class="txt"><b>Melhorar o tempo numa distância</b><small>Prova ou recorde, com data e pace alvo.</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Sem objetivo definido</b><small>Só correr com regularidade.</small></span><span class="radio"></span></div>
+            <div class="opcao"><span class="txt"><b>Outro</b><small>Escreva o seu objetivo, e o Piu combina o plano com você.</small></span><span class="radio"></span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Qual é o objetivo</strong>
+        <span>Três opções. A marcada abre os campos dentro do próprio card. Em "Completar uma distância", a data é opcional e, sem ela, as regras sugerem um prazo na mesma nota com <code>info</code> do nível; "Ajustar" abre o seletor de data nativo. Não há pace alvo, e os treinos podem alternar corrida e caminhada. "Melhorar o tempo" pede distância e data na tela seguinte. "Sem objetivo definido" é o plano genérico. "Outro" abre um campo de texto dentro do card: o app gera o plano genérico, e a primeira conversa com o Piu já vem com o objetivo escrito, para virar uma proposta.</span>
+        <span class="refs">ADRs 0008, 0016, 0021, 0024, 0103, 0104, 0172, 0199, 0208, 0209 e 0214 · crit. 2.4 a 2.6 · componentes CampoDoFormulario, SeletorDeData e RodapeDoTreino · propostas 6 e 7</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:09</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela" style="padding-bottom:180px">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">5 de 7</span></div><span class="barra-progresso" style="--p:71%"><i></i></span></div>
+          <div class="etapa"><h3>Distância e data</h3><span class="sub">Melhorar o tempo numa distância</span></div>
+          <div class="campos-2">
+            <div class="campo"><label>Distância</label><div class="entrada cheia">21 km</div></div>
+            <div class="campo"><label>Data</label><div class="entrada cheia escolha">29 nov<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
+          </div>
+          <div class="aviso-risco"><svg class="ico"><use href="#i-warning"/></svg><span>Prazo curto para 21 km: em 5 semanas, o volume teria que subir rápido para o seu nível. Que tal uma destas?</span></div>
+          <div class="alternativas">
+            <span class="botao secundario">10 km em 29 nov</span>
+            <span class="botao secundario">21 km em 21 fev</span>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+          <span class="nota-acao">Continuar com 21 km em 29 nov fica registrado no plano.</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Distância, data e aviso de risco</strong>
+        <span>No "Melhorar o tempo": distância livre e data, com o seletor nativo. Se as regras acharem o objetivo arriscado, o AvisoDeRisco aparece logo abaixo dos campos, sem bloquear, e as alternativas viram botões secundários que preenchem os campos com um toque. Continuar com o objetivo arriscado fica registrado, e a nota do rodapé diz isso. Com o aviso, o campo do pace alvo, abaixo das alternativas, só aparece no estado seguinte.</span>
+        <span class="refs">ADRs 0016, 0017, 0021, 0103, 0142, 0172, 0190 e 0215 · crit. 2.5 a 2.7 · componentes CampoDoFormulario, AvisoDeRisco e RodapeDoTreino · proposta 8</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:10</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">5 de 7</span></div><span class="barra-progresso" style="--p:71%"><i></i></span></div>
+          <div class="etapa"><h3>Distância e data</h3><span class="sub">Melhorar o tempo numa distância</span></div>
+          <div class="campos-2">
+            <div class="campo"><label>Distância</label><div class="entrada cheia">10 km</div></div>
+            <div class="campo"><label>Data</label><div class="entrada cheia escolha">29 nov<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
+          </div>
+          <div class="campo"><label>Pace alvo</label><div class="entrada cheia escolha">5:20/km<svg class="ico"><use href="#i-caret-down"/></svg></div></div>
+          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos <b>5:20/km</b>, pelas suas corridas recentes e pelo prazo até 29 nov. <span class="link">Ajustar</span></span></p>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Distância, data e pace alvo</strong>
+        <span>O pace alvo fica na mesma tela da distância e da data, logo abaixo delas, sugerido pelas regras na nota com <code>info</code>, como o nível e o prazo. "Ajustar" ou tocar no campo abre a escolha do pace. Ele é recalculado quando a distância ou a data mudam, também depois de uma alternativa do aviso de risco. Sem histórico suficiente, ou sem o Strava, o campo some e a nota diz que o plano começa sem meta de pace, com foco em completar a distância. Com isso, o "Melhorar o tempo" tem 7 passos, e os outros objetivos têm 6: a contagem passa a valer depois da escolha do objetivo.</span>
+        <span class="refs">ADRs 0021, 0103, 0172, 0207, 0209 e 0215 · crit. 2.5 e 2.6 · componentes CampoDoFormulario, SeletorDeData e RodapeDoTreino</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:11</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">6 de 7</span></div><span class="barra-progresso" style="--p:86%"><i></i></span></div>
+          <div class="etapa"><h3>Quando você quer começar?</h3></div>
+          <div class="opcoes dias-inicio">
+            <div class="opcao sel"><span class="txt"><b>Hoje</b><small>seg, 26 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Amanhã</b><small>ter, 27 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Qua</b><small>28 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Qui</b><small>29 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Sex</b><small>30 out</small></span></div>
+            <div class="opcao"><span class="txt"><b>Sáb</b><small>31 out</small></span></div>
+          </div>
+          <div class="campo"><label>Outro dia</label><div class="entrada escolha">Escolher no calendário<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
+          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>O plano vai até 29 nov, a data do seu objetivo.</span></p>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Continuar</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Data de início</strong>
+        <span>Hoje e os próximos 5 dias como opções rápidas, em cards da OpcaoDeEscolha numa grade de 3 colunas, sem rádio, com "Hoje" já marcado. "Outro dia" abre o seletor de data nativo, com as datas a partir da data do objetivo indisponíveis. A nota lembra até quando vai o plano. Se o início deixar o prazo curto para a meta, entra o AvisoDeRisco, como na tela anterior, sem bloquear.</span>
+        <span class="refs">ADRs 0017, 0043, 0172, 0208, 0210 e 0215 · crit. 2.7 e 2.8 · componentes OpcaoDeEscolha, SeletorDeData e RodapeDoTreino</span>
+      </figcaption>
+    </figure>
+
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:12</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela">
+          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">7 de 7</span></div><span class="barra-progresso" style="--p:100%"><i></i></span></div>
+          <div class="etapa"><h3>Confira antes de gerar</h3></div>
+          <div class="grupo-lista dados resumo">
+            <div class="linha-dado"><span class="txt"><small>Nível</small><span>Intermediário</span></span><span class="editar" aria-label="Editar nível"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+            <div class="linha-dado"><span class="txt"><small>Sobre você</small><span>Vini, 34 anos e 72 kg, sem lesões</span></span><span class="editar" aria-label="Editar sobre você"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+            <div class="linha-dado"><span class="txt"><small>Frequência por semana</small><span>4 corridas, 2 musculações, 1 natação e 1 ciclismo</span></span><span class="editar" aria-label="Editar frequência"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+            <div class="linha-dado"><span class="txt"><small>Objetivo</small><span>Melhorar o tempo em 10 km, até 29 nov, a 5:20/km</span></span><span class="editar" aria-label="Editar objetivo"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+            <div class="linha-dado"><span class="txt"><small>Início</small><span>Hoje, segunda, 26 out</span></span><span class="editar" aria-label="Editar início"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="botao cheio">Gerar meu plano</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Resumo</strong>
+        <span>Todas as respostas num grupo sem contorno, com a LinhaDeDado do Perfil (rótulo em legenda e valor em frase) e um botão de lápis à direita, que volta à tela do item e retorna ao resumo. "Gerar meu plano" é o último passo do onboarding.</span>
+        <span class="refs">ADRs 0037, 0043, 0158, 0165, 0166 e 0194 · crit. 2.8, 2.9 e 3.9 · componentes LinhaDeDado e RodapeDoTreino · proposta 9</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:13</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela montando">
+          <div class="etapa centro">
+            <svg class="ritmo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16"/><path d="M10 34h12l5-10 6 22 6-32 6 26 4-6h5"/></svg>
+            <h3>Montando seu plano</h3>
+            <p>10 km em 29 nov, com 4 corridas e 2 musculações por semana.</p>
+            <span class="barra-progresso" style="--p:60%"><i></i></span>
+            <span class="sub">Em seguida, você vai para o treino de hoje.</span>
+          </div>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Montando o plano</strong>
+        <span>Depois de "Gerar meu plano", sem tela de revisão nem aceite: o ícone Ritmo, o objetivo numa frase e a barra de progresso, sem voltar. Ao terminar, o plano fica ativo e o app abre o Hoje, com a barra de abas. Ver o plano é na aba Plano, e mudar é com o Piu. Risco no plano gerado chega como aviso em Notificações.</span>
+        <span class="refs">ADRs 0022, 0023, 0043, 0102 e 0138 · crit. 3.1, 3.6, 3.7 e 3.9 · proposta 10</span>
+      </figcaption>
+    </figure>
+
+    <figure class="estado">
+      <template>
+        <div class="barra-status"><span>9:14</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
+        <div class="tela montando">
+          <div class="aviso">
+            <span class="tit"><svg class="ico"><use href="#i-cloud-slash"/></svg>Não consegui montar seu plano agora</span>
+            <p>Suas respostas estão salvas. Tente de novo em alguns minutos.</p>
+            <span class="botao secundario">Tentar de novo</span>
+          </div>
+        </div>
+        <div class="rodape solto">
+          <span class="ver centro">Voltar ao resumo</span>
+        </div>
+      </template>
+      <figcaption>
+        <strong>Não deu para montar</strong>
+        <span>Se a geração falhar, a tela troca a barra pelo AvisoNeutro, como a IA indisponível no Piu: o motivo, a garantia de que as respostas estão salvas e "Tentar de novo" em botão secundário. Sem vermelho, porque é falha, e não risco. "Voltar ao resumo" deixa revisar antes de tentar.</span>
+        <span class="refs">ADRs 0102, 0142, 0150 e 0192 · componentes AvisoNeutro e RodapeDoTreino · proposta 10</span>
+      </figcaption>
+    </figure>
+
+    <div class="propostas">
+      <h3>Propostas desta tela, todas decididas (ADRs 0202 a 0214)</h3>
+      <ol>
+        <li><b>Boas-vindas</b> (decidido no ADR 0202, componente BoasVindas): ícone Ritmo de 64 px e "Live Run" em 32 px negrito no terço de cima, a frase em 17 px em <code>texto-secundario</code> e o campo de e-mail logo abaixo.</li>
+        <li><b>Botão da etapa</b> (decidido no ADR 0203, componente RodapeDoTreino): flutua no fim da tela, sem a área em <code>superficie</code> e sem o contorno, com o botão principal na largura toda ("Continuar", "Gerar meu plano") e uma nota opcional embaixo, sobre o <code>fundo</code>. O conteúdo tem um respiro embaixo para rolar até acima do botão. Nas abas, o rodapé fixo continua.</li>
+        <li><b>Verifique o e-mail</b> (decidido no ADR 0205, componente VerifiqueOEmail): alinhada à esquerda, como as boas-vindas, com o envelope num círculo de 64 px em <code>primaria-suave</code>, sem ação principal: "Reenviar link" secundário e "Trocar e-mail" em link, no fim da tela. Sem "Abrir o app de e-mail".</li>
+        <li><b>Explicação do Strava</b> (decidido no ADR 0206, componente ExplicacaoDoStrava): texto do porquê e um grupo sem contorno com três garantias, cada uma com <code>shield-check</code> em ardósia, e o botão oficial "Connect with Strava" na largura toda, no rodapé.</li>
+        <li><b>Progresso do setup</b> (decidido no ADR 0207, componente ProgressoDoSetup): voltar à esquerda e "1 de 7" à direita na mesma linha, em legenda, e a barra de 4 px embaixo, em <code>neutro-suave</code> com o preenchimento em <code>primaria</code>.</li>
+        <li><b>Opções de escolha</b> (decidido no ADR 0208, componente OpcaoDeEscolha): cards com contorno e um botão de rádio à direita; o marcado em <code>primaria-suave</code> com contorno de 2 px em ardósia, que abre os campos dentro dele; o sugerido ganha o chip neutro "Sugerido".</li>
+        <li><b>Sugestão das regras</b> (decidido no ADR 0209, componente NotaDaRegra): nota em legenda com <code>info</code>, sem caixa, com o porquê da sugestão (nível e prazo) e o link "Ajustar".</li>
+        <li><b>Risco no setup</b> (decidido no ADR 0210, componente AvisoDeRisco): AvisoDeRisco abaixo dos campos, sem bloquear, com as alternativas em botões secundários que preenchem os campos, e a nota no rodapé de que continuar fica registrado.</li>
+        <li><b>Resumo</b> (decidido no ADR 0211, componente LinhaDeDado): LinhaDeDado do Perfil com um botão de lápis de 44 px à direita, no lugar do link "Editar" em texto.</li>
+        <li><b>Montando o plano</b> (decidido no ADR 0212, componentes MontandoOPlano e AvisoNeutro): ícone Ritmo, o objetivo numa frase e a barra de progresso; a falha troca a barra pelo AvisoNeutro com "Tentar de novo".</li>
+        <li><b>Descrição dos níveis</b> (decidido no ADR 0204, pergunta do usuário fora da lista): cada nível com duas referências concretas em legenda, vezes por semana e maior distância, as mesmas que as regras usam para sugerir. Os números são provisórios e são decididos no épico do motor de regras.</li>
+        <li><b>"Agora não" no Strava</b> (decidido no ADR 0213, pedido do usuário; revisa o ADR 0019, componente ExplicacaoDoStrava): link "Agora não" abaixo do botão oficial, com as explicações e as garantias inteiras na tela. Sem o Strava, o app fica em modo manual até conectar.</li>
+        <li><b>"Outro" no objetivo</b> (decidido no ADR 0214, pedido do usuário; revisa o ADR 0103, componente OpcaoDeEscolha): quarta opção com campo de texto dentro do card; gera o plano genérico, e o Piu transforma o objetivo em proposta na primeira conversa.</li>
+      </ol>
+    </div>
+  </section>
 
   <section class="grupo" id="hoje">
     <header>
@@ -1908,387 +2290,6 @@ body { background: var(--pg-fundo); color: var(--pg-texto); font-family: var(--p
     </div>
   </section>
 
-  <section class="grupo" id="onboarding">
-    <header>
-      <h2>Onboarding e setup</h2>
-      <p>Concluída. Fluxo linear em tela cheia, sem a barra de abas: login, Strava, setup e geração, uma pergunta por tela, com barra de progresso e voltar (ADRs 0037, 0100 e 0101). Se o app fechar no meio, volta ao passo em que parou. Depois de gerar, o plano fica ativo e o app abre o Hoje, sem revisão nem aceite (ADR 0102). Exemplo: Vini, plano criado na segunda, 26 out. Todos os passos do setup estão desenhados: "Sobre você", o pace alvo e a data de início entraram na validação do design (ADR 0215). Já seguem os ADRs 0164 a 0166.</p>
-    </header>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:00</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela boas-vindas">
-          <div class="marca-app">
-            <svg class="ritmo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16"/><path d="M10 34h12l5-10 6 22 6-32 6 26 4-6h5"/></svg>
-            <h3>Live Run</h3>
-            <p>Seu plano de corrida, do seu jeito. O Piu ajusta o plano sempre que a vida mudar.</p>
-          </div>
-          <div class="campo"><label>Seu e-mail</label><div class="entrada cheia">vini@exemplo.com</div></div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Receber link de acesso</span>
-          <span class="nota-acao">Sem senha: você entra pelo link que chega no e-mail.</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Boas-vindas e e-mail</strong>
-        <span>Só a marca, uma frase sobre o app e o campo de e-mail. O ícone Ritmo e o nome ficam no terço de cima, e o campo logo abaixo. O botão principal flutua no fim da tela, sem fundo de rodapé, porque não há barra de abas. E-mail inválido mostra o erro embaixo do campo, em legenda.</span>
-        <span class="refs">ADRs 0020, 0032, 0033, 0100, 0138, 0158, 0199, 0202 e 0203 · crit. 1.1 · componentes BoasVindas, CampoDoFormulario e RodapeDoTreino · propostas 1 e 2</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:01</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span></span></div>
-          <div class="etapa espera">
-            <span class="icone-grande" aria-hidden="true"><svg class="ico"><use href="#i-envelope-simple"/></svg></span>
-            <h3>Verifique seu e-mail</h3>
-            <p>Mandamos um link para <b>vini@exemplo.com</b>. Toque nele neste celular para entrar.</p>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio secundario">Reenviar link</span>
-          <span class="ver centro">Trocar e-mail</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Verifique o e-mail</strong>
-        <span>Uma tela de espera, alinhada à esquerda como as boas-vindas, com o ícone do envelope num círculo em <code>primaria-suave</code>. Não há ação principal, porque o próximo passo é no e-mail: "Reenviar link" é secundário e "Trocar e-mail" é um link. Link expirado ou já usado volta para cá com o motivo e oferece um novo. Depois de entrar, a sessão fica salva.</span>
-        <span class="refs">ADRs 0020, 0158, 0203 e 0205 · crit. 1.1 e 1.2 · componentes VerifiqueOEmail e RodapeDoTreino · proposta 3</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:03</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="etapa">
-            <h3>Conecte o Strava</h3>
-            <p>O Live Run usa as suas atividades do Strava, inclusive as privadas, para marcar os treinos como feitos e ajustar o plano. Sem a conexão, não dá para acompanhar o plano.</p>
-          </div>
-          <div class="grupo-lista dados">
-            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Só o resumo das atividades das últimas 12 semanas, sem mapa nem GPS.</span></div>
-            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Nada é publicado no Strava.</span></div>
-            <div class="linha-garantia"><svg class="ico"><use href="#i-shield-check"/></svg><span>Nada do Strava vai para a IA.</span></div>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao-strava cheio">Connect with Strava</span>
-          <span class="ver centro">Agora não</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Conectar o Strava</strong>
-        <span>Obrigatório. Explica o porquê antes de abrir a autorização: o texto diz para que serve, e um grupo sem contorno lista o que o app lê e o que nunca faz, cada linha com um escudo em ardósia. O botão oficial do Strava fica no fim da tela, na largura toda, como ação principal, e o link "Agora não" logo abaixo deixa seguir sem conectar, sem esconder nem reduzir as explicações. Sem o Strava, o app fica em modo manual até conectar: nível escolhido à mão, treinos marcados à mão e o "não feito" das 22h suspenso. Se o usuário recusar ou cancelar, volta aqui com o motivo em AvisoNeutro. Falha na importação do histórico oferece tentar de novo ou seguir sem histórico.</span>
-        <span class="refs">ADRs 0019, 0040, 0049, 0106, 0108, 0110, 0115, 0150, 0165, 0201, 0206 e 0213 · crit. 1.3 a 1.6 · componentes LinhaDeDado e RodapeDoTreino · proposta 4</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:05</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">1 de 7</span></div><span class="barra-progresso" style="--p:14%"><i></i></span></div>
-          <div class="etapa"><h3>Seu nível de corrida</h3></div>
-          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos <b>Intermediário</b>: você correu 3 vezes por semana nas últimas 8 semanas, com treinos de até 12 km.</span></p>
-          <div class="opcoes">
-            <div class="opcao"><span class="txt"><b>Iniciante</b><small>Até 2 corridas por semana</small><small>Ainda não correu 5 km sem parar</small></span><span class="radio"></span></div>
-            <div class="opcao sel"><span class="txt"><b>Intermediário <span class="chip">Sugerido</span></b><small>3 ou mais corridas por semana</small><small>Já correu 10 km</small></span><span class="radio"></span></div>
-            <div class="opcao"><span class="txt"><b>Avançado</b><small>4 ou mais corridas e mais de 40 km por semana</small><small>Já fez meia maratona ou treina intervalado</small></span><span class="radio"></span></div>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Continuar</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Nível de corrida</strong>
-        <span>Primeiro passo do setup, com o voltar e "1 de 7" na mesma linha e a barra de progresso embaixo. Com histórico, as regras sugerem o nível e explicam numa nota, e a opção sugerida já vem marcada, com o chip neutro "Sugerido". Sem histórico, nada vem marcado e o "Continuar" fica desativado até escolher. Cada nível tem duas referências concretas, frequência e maior distância, as mesmas que as regras usam para sugerir. As opções são cards com contorno, porque são ações; a marcada ganha <code>primaria-suave</code> e contorno de 2 px em ardósia.</span>
-        <span class="refs">ADRs 0015, 0101, 0158, 0165 e 0204 · crit. 2.1 · componentes RodapeDoTreino e ChipDeStatus · propostas 5, 6 e 7</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:05</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">1 de 7</span></div><span class="barra-progresso" style="--p:14%"><i></i></span></div>
-          <div class="etapa"><h3>Seu nível de corrida</h3><p>Ainda não há corridas no seu Strava. Escolha o nível que mais parece com a sua rotina hoje, mesmo que você se encaixe só em parte dele.</p></div>
-          <div class="opcoes">
-            <div class="opcao"><span class="txt"><b>Iniciante</b><small>Até 2 corridas por semana</small><small>Ainda não correu 5 km sem parar</small></span><span class="radio"></span></div>
-            <div class="opcao"><span class="txt"><b>Intermediário</b><small>3 ou mais corridas por semana</small><small>Já correu 10 km</small></span><span class="radio"></span></div>
-            <div class="opcao"><span class="txt"><b>Avançado</b><small>4 ou mais corridas e mais de 40 km por semana</small><small>Já fez meia maratona ou treina intervalado</small></span><span class="radio"></span></div>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio off" aria-disabled="true">Continuar</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Nível sem histórico no Strava</strong>
-        <span>Conectou o Strava, mas não há corridas nas últimas 12 semanas. Sem sugestão, o texto diz o porquê e pede a escolha, cada nível com a sua descrição curta, e nada vem marcado. "Continuar" fica desativado até escolher. As referências seguem o ADR 0204; os números exatos são decididos no épico do motor de regras.</span>
-        <span class="refs">ADRs 0015, 0040, 0101, 0108, 0203 e 0204 · crit. 1.6 e 2.1 · componentes RodapeDoTreino · propostas 5 e 6</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:06</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">2 de 7</span></div><span class="barra-progresso" style="--p:29%"><i></i></span></div>
-          <div class="etapa"><h3>Sobre você</h3></div>
-          <div class="campo"><label>Como você quer ser chamado</label><div class="entrada cheia">Vini</div></div>
-          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerido pelo seu primeiro nome no Strava.</span></p>
-          <div class="campos-2">
-            <div class="campo"><label>Idade</label><div class="entrada cheia">34 anos</div></div>
-            <div class="campo"><label>Peso</label><div class="entrada cheia">72 kg</div></div>
-          </div>
-          <div class="campo"><label>Lesões ou limitações, se tiver</label><div class="entrada multi">Por exemplo, joelho sensível em descidas</div></div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Continuar</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Sobre você</strong>
-        <span>Os mesmos campos do Editar perfil, numa tela só, porque são dados curtos. O nome vem sugerido pelo primeiro nome do Strava, com a nota em legenda; sem o Strava, o campo vem vazio. Idade de 10 a 100 anos e peso são obrigatórios; lesões ou limitações são opcionais, em texto livre, e o exemplo fica como texto de apoio no campo vazio. "Continuar" só fica ativo com nome, idade e peso.</span>
-        <span class="refs">ADRs 0039, 0042, 0099, 0158, 0197, 0203, 0209 e 0215 · crit. 2.2 · componentes CampoDoFormulario e RodapeDoTreino</span>
-      </figcaption>
-    </figure>
-
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:07</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">3 de 7</span></div><span class="barra-progresso" style="--p:43%"><i></i></span></div>
-          <div class="etapa"><h3>Quantas vezes por semana?</h3></div>
-          <div class="secao">
-            <div class="grupo-lista contadores">
-              <div class="contador-linha">Corrida<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>4</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
-              <div class="contador-linha">Musculação<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>2</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
-              <div class="contador-linha sub">Superiores<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo off" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
-              <div class="contador-linha sub">Inferiores<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo off" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
-              <div class="contador-linha">Natação<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
-              <div class="contador-linha">Ciclismo<span class="contador"><span class="passo" aria-label="Menos"><svg class="ico"><use href="#i-minus"/></svg></span><b>1</b><span class="passo" aria-label="Mais"><svg class="ico"><use href="#i-plus"/></svg></span></span></div>
-              <div class="linha-acao"><svg class="ico"><use href="#i-plus"/></svg>Adicionar outra atividade</div>
-            </div>
-            <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>São 8 atividades por semana, então alguns dias vão ter duas. O plano escolhe quais.</span></p>
-            <span class="sub">Você muda a frequência depois, no Perfil.</span>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Continuar</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Frequência semanal</strong>
-        <span>O mesmo Contador do Editar perfil: só quantidades, de 0 a 7, com a divisão da musculação recuada embaixo dela. As outras atividades são só registro de carga, sem prescrição, e a lista pode ficar vazia. No exemplo, a semana soma 8 atividades, e a nota com <code>info</code> avisa que alguns dias vão ter duas, sem bloquear o "Continuar".</span>
-        <span class="refs">ADRs 0014, 0097, 0098, 0137, 0158, 0195 e 0198 · crit. 2.3 · componentes Contador, LinhaDeAcao e RodapeDoTreino · proposta 5</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:08</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">4 de 7</span></div><span class="barra-progresso" style="--p:57%"><i></i></span></div>
-          <div class="etapa"><h3>Qual é o seu objetivo?</h3></div>
-          <div class="opcoes">
-            <div class="opcao sel aberta">
-              <span class="txt"><b>Completar uma distância</b><small>Por exemplo, 3 km sem parar ou os primeiros 10 km.</small></span><span class="radio"></span>
-              <div class="dentro">
-                <div class="campos-2">
-                  <div class="campo"><label>Distância</label><div class="entrada cheia">3 km</div></div>
-                  <div class="campo"><label>Data, se tiver</label><div class="entrada escolha">Sem data<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
-                </div>
-                <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos 6 semanas, até 7 dez, pelo seu nível e pelas corridas recentes. <span class="link">Ajustar</span></span></p>
-              </div>
-            </div>
-            <div class="opcao"><span class="txt"><b>Melhorar o tempo numa distância</b><small>Prova ou recorde, com data e pace alvo.</small></span><span class="radio"></span></div>
-            <div class="opcao"><span class="txt"><b>Sem objetivo definido</b><small>Só correr com regularidade.</small></span><span class="radio"></span></div>
-            <div class="opcao"><span class="txt"><b>Outro</b><small>Escreva o seu objetivo, e o Piu combina o plano com você.</small></span><span class="radio"></span></div>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Continuar</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Qual é o objetivo</strong>
-        <span>Três opções. A marcada abre os campos dentro do próprio card. Em "Completar uma distância", a data é opcional e, sem ela, as regras sugerem um prazo na mesma nota com <code>info</code> do nível; "Ajustar" abre o seletor de data nativo. Não há pace alvo, e os treinos podem alternar corrida e caminhada. "Melhorar o tempo" pede distância e data na tela seguinte. "Sem objetivo definido" é o plano genérico. "Outro" abre um campo de texto dentro do card: o app gera o plano genérico, e a primeira conversa com o Piu já vem com o objetivo escrito, para virar uma proposta.</span>
-        <span class="refs">ADRs 0008, 0016, 0021, 0024, 0103, 0104, 0172, 0199, 0208, 0209 e 0214 · crit. 2.4 a 2.6 · componentes CampoDoFormulario, SeletorDeData e RodapeDoTreino · propostas 6 e 7</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:09</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela" style="padding-bottom:180px">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">5 de 7</span></div><span class="barra-progresso" style="--p:71%"><i></i></span></div>
-          <div class="etapa"><h3>Distância e data</h3><span class="sub">Melhorar o tempo numa distância</span></div>
-          <div class="campos-2">
-            <div class="campo"><label>Distância</label><div class="entrada cheia">21 km</div></div>
-            <div class="campo"><label>Data</label><div class="entrada cheia escolha">29 nov<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
-          </div>
-          <div class="aviso-risco"><svg class="ico"><use href="#i-warning"/></svg><span>Prazo curto para 21 km: em 5 semanas, o volume teria que subir rápido para o seu nível. Que tal uma destas?</span></div>
-          <div class="alternativas">
-            <span class="botao secundario">10 km em 29 nov</span>
-            <span class="botao secundario">21 km em 21 fev</span>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Continuar</span>
-          <span class="nota-acao">Continuar com 21 km em 29 nov fica registrado no plano.</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Distância, data e aviso de risco</strong>
-        <span>No "Melhorar o tempo": distância livre e data, com o seletor nativo. Se as regras acharem o objetivo arriscado, o AvisoDeRisco aparece logo abaixo dos campos, sem bloquear, e as alternativas viram botões secundários que preenchem os campos com um toque. Continuar com o objetivo arriscado fica registrado, e a nota do rodapé diz isso. Com o aviso, o campo do pace alvo, abaixo das alternativas, só aparece no estado seguinte.</span>
-        <span class="refs">ADRs 0016, 0017, 0021, 0103, 0142, 0172, 0190 e 0215 · crit. 2.5 a 2.7 · componentes CampoDoFormulario, AvisoDeRisco e RodapeDoTreino · proposta 8</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:10</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">5 de 7</span></div><span class="barra-progresso" style="--p:71%"><i></i></span></div>
-          <div class="etapa"><h3>Distância e data</h3><span class="sub">Melhorar o tempo numa distância</span></div>
-          <div class="campos-2">
-            <div class="campo"><label>Distância</label><div class="entrada cheia">10 km</div></div>
-            <div class="campo"><label>Data</label><div class="entrada cheia escolha">29 nov<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
-          </div>
-          <div class="campo"><label>Pace alvo</label><div class="entrada cheia escolha">5:20/km<svg class="ico"><use href="#i-caret-down"/></svg></div></div>
-          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>Sugerimos <b>5:20/km</b>, pelas suas corridas recentes e pelo prazo até 29 nov. <span class="link">Ajustar</span></span></p>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Continuar</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Distância, data e pace alvo</strong>
-        <span>O pace alvo fica na mesma tela da distância e da data, logo abaixo delas, sugerido pelas regras na nota com <code>info</code>, como o nível e o prazo. "Ajustar" ou tocar no campo abre a escolha do pace. Ele é recalculado quando a distância ou a data mudam, também depois de uma alternativa do aviso de risco. Sem histórico suficiente, ou sem o Strava, o campo some e a nota diz que o plano começa sem meta de pace, com foco em completar a distância. Com isso, o "Melhorar o tempo" tem 7 passos, e os outros objetivos têm 6: a contagem passa a valer depois da escolha do objetivo.</span>
-        <span class="refs">ADRs 0021, 0103, 0172, 0207, 0209 e 0215 · crit. 2.5 e 2.6 · componentes CampoDoFormulario, SeletorDeData e RodapeDoTreino</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:11</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">6 de 7</span></div><span class="barra-progresso" style="--p:86%"><i></i></span></div>
-          <div class="etapa"><h3>Quando você quer começar?</h3></div>
-          <div class="opcoes dias-inicio">
-            <div class="opcao sel"><span class="txt"><b>Hoje</b><small>seg, 26 out</small></span></div>
-            <div class="opcao"><span class="txt"><b>Amanhã</b><small>ter, 27 out</small></span></div>
-            <div class="opcao"><span class="txt"><b>Qua</b><small>28 out</small></span></div>
-            <div class="opcao"><span class="txt"><b>Qui</b><small>29 out</small></span></div>
-            <div class="opcao"><span class="txt"><b>Sex</b><small>30 out</small></span></div>
-            <div class="opcao"><span class="txt"><b>Sáb</b><small>31 out</small></span></div>
-          </div>
-          <div class="campo"><label>Outro dia</label><div class="entrada escolha">Escolher no calendário<svg class="ico"><use href="#i-calendar-blank"/></svg></div></div>
-          <p class="nota-regra"><svg class="ico"><use href="#i-info"/></svg><span>O plano vai até 29 nov, a data do seu objetivo.</span></p>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Continuar</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Data de início</strong>
-        <span>Hoje e os próximos 5 dias como opções rápidas, em cards da OpcaoDeEscolha numa grade de 3 colunas, sem rádio, com "Hoje" já marcado. "Outro dia" abre o seletor de data nativo, com as datas a partir da data do objetivo indisponíveis. A nota lembra até quando vai o plano. Se o início deixar o prazo curto para a meta, entra o AvisoDeRisco, como na tela anterior, sem bloquear.</span>
-        <span class="refs">ADRs 0017, 0043, 0172, 0208, 0210 e 0215 · crit. 2.7 e 2.8 · componentes OpcaoDeEscolha, SeletorDeData e RodapeDoTreino</span>
-      </figcaption>
-    </figure>
-
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:12</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela">
-          <div class="progresso"><div class="navegacao"><span class="voltar"><svg class="ico"><use href="#i-caret-left"/></svg>Voltar</span><span></span><span class="passo-de">7 de 7</span></div><span class="barra-progresso" style="--p:100%"><i></i></span></div>
-          <div class="etapa"><h3>Confira antes de gerar</h3></div>
-          <div class="grupo-lista dados resumo">
-            <div class="linha-dado"><span class="txt"><small>Nível</small><span>Intermediário</span></span><span class="editar" aria-label="Editar nível"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
-            <div class="linha-dado"><span class="txt"><small>Sobre você</small><span>Vini, 34 anos e 72 kg, sem lesões</span></span><span class="editar" aria-label="Editar sobre você"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
-            <div class="linha-dado"><span class="txt"><small>Frequência por semana</small><span>4 corridas, 2 musculações, 1 natação e 1 ciclismo</span></span><span class="editar" aria-label="Editar frequência"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
-            <div class="linha-dado"><span class="txt"><small>Objetivo</small><span>Melhorar o tempo em 10 km, até 29 nov, a 5:20/km</span></span><span class="editar" aria-label="Editar objetivo"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
-            <div class="linha-dado"><span class="txt"><small>Início</small><span>Hoje, segunda, 26 out</span></span><span class="editar" aria-label="Editar início"><svg class="ico"><use href="#i-pencil-simple"/></svg></span></div>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="botao cheio">Gerar meu plano</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Resumo</strong>
-        <span>Todas as respostas num grupo sem contorno, com a LinhaDeDado do Perfil (rótulo em legenda e valor em frase) e um botão de lápis à direita, que volta à tela do item e retorna ao resumo. "Gerar meu plano" é o último passo do onboarding.</span>
-        <span class="refs">ADRs 0037, 0043, 0158, 0165, 0166 e 0194 · crit. 2.8, 2.9 e 3.9 · componentes LinhaDeDado e RodapeDoTreino · proposta 9</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:13</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela montando">
-          <div class="etapa centro">
-            <svg class="ritmo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16"/><path d="M10 34h12l5-10 6 22 6-32 6 26 4-6h5"/></svg>
-            <h3>Montando seu plano</h3>
-            <p>10 km em 29 nov, com 4 corridas e 2 musculações por semana.</p>
-            <span class="barra-progresso" style="--p:60%"><i></i></span>
-            <span class="sub">Em seguida, você vai para o treino de hoje.</span>
-          </div>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Montando o plano</strong>
-        <span>Depois de "Gerar meu plano", sem tela de revisão nem aceite: o ícone Ritmo, o objetivo numa frase e a barra de progresso, sem voltar. Ao terminar, o plano fica ativo e o app abre o Hoje, com a barra de abas. Ver o plano é na aba Plano, e mudar é com o Piu. Risco no plano gerado chega como aviso em Notificações.</span>
-        <span class="refs">ADRs 0022, 0023, 0043, 0102 e 0138 · crit. 3.1, 3.6, 3.7 e 3.9 · proposta 10</span>
-      </figcaption>
-    </figure>
-
-    <figure class="estado">
-      <template>
-        <div class="barra-status"><span>9:14</span><span class="sinais"><svg class="ico"><use href="#i-cell-signal-full"/></svg><svg class="ico"><use href="#i-wifi-high"/></svg><svg class="ico"><use href="#i-battery-full"/></svg></span></div>
-        <div class="tela montando">
-          <div class="aviso">
-            <span class="tit"><svg class="ico"><use href="#i-cloud-slash"/></svg>Não consegui montar seu plano agora</span>
-            <p>Suas respostas estão salvas. Tente de novo em alguns minutos.</p>
-            <span class="botao secundario">Tentar de novo</span>
-          </div>
-        </div>
-        <div class="rodape solto">
-          <span class="ver centro">Voltar ao resumo</span>
-        </div>
-      </template>
-      <figcaption>
-        <strong>Não deu para montar</strong>
-        <span>Se a geração falhar, a tela troca a barra pelo AvisoNeutro, como a IA indisponível no Piu: o motivo, a garantia de que as respostas estão salvas e "Tentar de novo" em botão secundário. Sem vermelho, porque é falha, e não risco. "Voltar ao resumo" deixa revisar antes de tentar.</span>
-        <span class="refs">ADRs 0102, 0142, 0150 e 0192 · componentes AvisoNeutro e RodapeDoTreino · proposta 10</span>
-      </figcaption>
-    </figure>
-
-    <div class="propostas">
-      <h3>Propostas desta tela, todas decididas (ADRs 0202 a 0214)</h3>
-      <ol>
-        <li><b>Boas-vindas</b> (decidido no ADR 0202, componente BoasVindas): ícone Ritmo de 64 px e "Live Run" em 32 px negrito no terço de cima, a frase em 17 px em <code>texto-secundario</code> e o campo de e-mail logo abaixo.</li>
-        <li><b>Botão da etapa</b> (decidido no ADR 0203, componente RodapeDoTreino): flutua no fim da tela, sem a área em <code>superficie</code> e sem o contorno, com o botão principal na largura toda ("Continuar", "Gerar meu plano") e uma nota opcional embaixo, sobre o <code>fundo</code>. O conteúdo tem um respiro embaixo para rolar até acima do botão. Nas abas, o rodapé fixo continua.</li>
-        <li><b>Verifique o e-mail</b> (decidido no ADR 0205, componente VerifiqueOEmail): alinhada à esquerda, como as boas-vindas, com o envelope num círculo de 64 px em <code>primaria-suave</code>, sem ação principal: "Reenviar link" secundário e "Trocar e-mail" em link, no fim da tela. Sem "Abrir o app de e-mail".</li>
-        <li><b>Explicação do Strava</b> (decidido no ADR 0206, componente ExplicacaoDoStrava): texto do porquê e um grupo sem contorno com três garantias, cada uma com <code>shield-check</code> em ardósia, e o botão oficial "Connect with Strava" na largura toda, no rodapé.</li>
-        <li><b>Progresso do setup</b> (decidido no ADR 0207, componente ProgressoDoSetup): voltar à esquerda e "1 de 7" à direita na mesma linha, em legenda, e a barra de 4 px embaixo, em <code>neutro-suave</code> com o preenchimento em <code>primaria</code>.</li>
-        <li><b>Opções de escolha</b> (decidido no ADR 0208, componente OpcaoDeEscolha): cards com contorno e um botão de rádio à direita; o marcado em <code>primaria-suave</code> com contorno de 2 px em ardósia, que abre os campos dentro dele; o sugerido ganha o chip neutro "Sugerido".</li>
-        <li><b>Sugestão das regras</b> (decidido no ADR 0209, componente NotaDaRegra): nota em legenda com <code>info</code>, sem caixa, com o porquê da sugestão (nível e prazo) e o link "Ajustar".</li>
-        <li><b>Risco no setup</b> (decidido no ADR 0210, componente AvisoDeRisco): AvisoDeRisco abaixo dos campos, sem bloquear, com as alternativas em botões secundários que preenchem os campos, e a nota no rodapé de que continuar fica registrado.</li>
-        <li><b>Resumo</b> (decidido no ADR 0211, componente LinhaDeDado): LinhaDeDado do Perfil com um botão de lápis de 44 px à direita, no lugar do link "Editar" em texto.</li>
-        <li><b>Montando o plano</b> (decidido no ADR 0212, componentes MontandoOPlano e AvisoNeutro): ícone Ritmo, o objetivo numa frase e a barra de progresso; a falha troca a barra pelo AvisoNeutro com "Tentar de novo".</li>
-        <li><b>Descrição dos níveis</b> (decidido no ADR 0204, pergunta do usuário fora da lista): cada nível com duas referências concretas em legenda, vezes por semana e maior distância, as mesmas que as regras usam para sugerir. Os números são provisórios e são decididos no épico do motor de regras.</li>
-        <li><b>"Agora não" no Strava</b> (decidido no ADR 0213, pedido do usuário; revisa o ADR 0019, componente ExplicacaoDoStrava): link "Agora não" abaixo do botão oficial, com as explicações e as garantias inteiras na tela. Sem o Strava, o app fica em modo manual até conectar.</li>
-        <li><b>"Outro" no objetivo</b> (decidido no ADR 0214, pedido do usuário; revisa o ADR 0103, componente OpcaoDeEscolha): quarta opção com campo de texto dentro do card; gera o plano genérico, e o Piu transforma o objetivo em proposta na primeira conversa.</li>
-      </ol>
-    </div>
-  </section>
 </div>
 
 <script>
