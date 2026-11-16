@@ -221,6 +221,9 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0213 | ["Agora não" na conexão com o Strava, com o app em modo manual até conectar](0213-strava-opcional-com-agora-nao.md) | Aceita |
 | 0214 | ["Outro" em "Qual é o seu objetivo?", com o texto levado ao Piu para virar proposta](0214-outro-objetivo-combinado-com-o-piu.md) | Aceita |
 | 0215 | [Passos do setup completos, com o pace alvo na tela da distância e da data](0215-passos-do-setup-com-pace-na-tela-da-distancia.md) | Aceita |
+| 0216 | [Treino sem meta de pace com faixa de intensidade em palavras](0216-treino-sem-meta-de-pace.md) | Aceita |
+| 0217 | [Atividade fora do plano numa linha do Hoje e como ícone secundário na faixa](0217-atividade-fora-do-plano.md) | Aceita |
+| 0218 | [Confirmação de desconectar o Strava com o diálogo do "Sair"](0218-confirmacao-de-desconectar-o-strava.md) | Aceita |
 
 ## Como criar um novo ADR
 

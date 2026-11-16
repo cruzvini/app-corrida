@@ -2,7 +2,7 @@
 
 - **Status:** Aceita
 - **Data:** 2026-11-16
-- **Complementa:** [ADR 0021](0021-pace-alvo-sugerido-pelo-historico.md), [ADR 0039](0039-lesoes-e-limitacoes-no-setup.md), [ADR 0043](0043-data-de-inicio-escolhida-no-setup.md), [ADR 0099](0099-nome-no-perfil.md), [ADR 0207](0207-progresso-do-setup.md) e [ADR 0208](0208-opcoes-de-escolha.md)
+- **Complementa:** [ADR 0021](0021-pace-alvo-sugerido-pelo-strava.md), [ADR 0039](0039-lesoes-e-limitacoes-no-setup.md), [ADR 0043](0043-data-de-inicio-escolhida-no-setup.md), [ADR 0099](0099-nome-no-perfil.md), [ADR 0207](0207-progresso-do-setup.md) e [ADR 0208](0208-opcoes-de-escolha.md)
 
 ## Contexto
 
