@@ -1,6 +1,6 @@
 # ADR 0127: App mobile entregue em fatias verticais
 
-- **Status:** Aceita
+- **Status:** Aceita (revisada pelo ADR 0220)
 - **Data:** 2026-10-29
 - **Complementa:** [ADR 0118](0118-planejamento-de-testes-e-ci-antes-do-setup.md), [ADR 0125](0125-fluxos-cobertos-pelo-e2e.md)
 
