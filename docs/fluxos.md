@@ -22,9 +22,11 @@ flowchart TD
   J --> K{Strava conectado?}
   K -- sim --> C
   K -- não --> L[Tela: por que conectar o Strava, inclui atividades privadas 1.3, ADR 0110]
-  L --> M[Autorização no Strava OAuth]
+  L -- Connect with Strava --> M[Autorização no Strava OAuth]
+  L -- Agora não --> MAN[Modo manual até conectar: marcação à mão, não feito das 22h suspenso, ADR 0213]
+  MAN --> S2
   M --> N{Autorizou com as permissões necessárias?}
-  N -- não: recusou, cancelou ou desmarcou permissão --> N1[Explica por que é necessário 1.5] --> L
+  N -- não: recusou, cancelou ou desmarcou permissão --> N1[Explica o motivo: tentar de novo ou seguir sem o Strava 1.5] --> L
   N -- sim --> O[Mostra Strava conectado e importa 12 semanas, só o resumo 1.4, ADR 0108]
   O --> P{Importação ok?}
   P -- falhou --> P1[Avisa: tentar de novo ou seguir sem histórico, ADR 0040]
@@ -55,8 +57,10 @@ flowchart TD
   G -- sim --> G1["Lista de outras atividades: tipo e vezes por semana; musculação com a divisão em quantidade (ADR 0137)"]
   G -- não --> DIAS
   G1 --> DIAS
-  DIAS((frequência salva; o plano escolhe os dias, ADR 0097)) --> H{Qual é o objetivo? 2.4, ADR 0103}
+  DIAS((frequência salva; o plano escolhe os dias, ADR 0097)) --> H{Qual é o objetivo? 2.4, ADRs 0103 e 0214}
   H -- sem objetivo definido: plano genérico --> INI
+  H -- outro: texto livre --> OUT[Plano genérico; a primeira conversa com o Piu já vem com o objetivo escrito, ADR 0214]
+  OUT --> INI
   H -- completar uma distância --> CD[Distância livre; data opcional 2.5]
   CD --> CD1{Informou a data?}
   CD1 -- não --> CD2[Regras sugerem um prazo realista: aceitar ou ajustar, ADR 0104]

@@ -45,9 +45,9 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
    - **Jornada 1, onboarding (validada):**
      1. Eu informo meu e-mail, recebo um link mágico e, ao tocar nele, entro no app sem senha ([ADR 0020](decisions/0020-autenticacao-email-link-magico.md)).
      2. Ao reabrir o app, continuo logado, sem precisar entrar de novo.
-     3. Conectar o Strava (OAuth) é obrigatório: sem essa conexão, não chego ao setup do plano ([ADR 0019](decisions/0019-conexao-strava-obrigatoria.md)). A tela explica que o app vê também as atividades privadas e não guarda mapa nem GPS ([ADR 0110](decisions/0110-permissao-activity-read-all.md)).
+     3. O app pede para conectar o Strava (OAuth), e eu posso seguir sem ele com "Agora não". Nesse caso, o app fica em modo manual até eu conectar: escolho o nível à mão, marco os treinos à mão e o "não feito" das 22h fica suspenso ([ADR 0213](decisions/0213-strava-opcional-com-agora-nao.md), que revisa o ADR 0019). A tela explica que o app vê também as atividades privadas e não guarda mapa nem GPS ([ADR 0110](decisions/0110-permissao-activity-read-all.md)).
      4. Depois de conectar, o app mostra que o Strava está conectado e importa meu histórico das últimas 12 semanas, só com o resumo de cada atividade ([ADR 0108](decisions/0108-historico-de-12-semanas-com-resumo.md)).
-     5. Se eu recusar ou cancelar a autorização, o app explica por que a conexão é necessária e permite tentar de novo.
+     5. Se eu recusar ou cancelar a autorização, o app explica o motivo e permite tentar de novo ou seguir sem o Strava, em modo manual (ADR 0213).
      6. Se eu não tiver histórico no Strava, sigo para o setup e escolho meu nível manualmente.
      7. Só eu vejo meus dados. Outro usuário não acessa nada meu (RLS, ADR 0003).
      8. Posso desconectar o Strava no Perfil, com confirmação. O app revoga o acesso e apaga os tokens, mas mantém o plano e as atividades já importadas. Até eu reconectar, o app funciona como numa falha de sincronização: treinos pendentes, marcação manual e aviso para conectar de novo ([ADR 0116](decisions/0116-desconectar-o-strava.md)).
@@ -55,7 +55,7 @@ Ser o lugar dedicado ao plano de treinos. O plano fica estruturado e visível, e
      1. Se eu tiver histórico no Strava, o app sugere meu nível e explica o motivo. Posso confirmar ou trocar, vendo a descrição de cada nível (ADR 0015).
      2. Confirmo como quero ser chamado (sugerido pelo primeiro nome do Strava, ADR 0099), informo idade e peso e, se quiser, lesões ou limitações atuais em texto livre ([ADR 0039](decisions/0039-lesoes-e-limitacoes-no-setup.md)).
      3. Informo quantos dias por semana quero correr e declaro as outras atividades que faço (ex.: musculação, natação, bike), com o tipo e quantas vezes por semana. Na musculação, informo também a divisão em quantidade (ex.: 1 de superiores e 1 de inferiores). Não escolho os dias da semana: o plano escolhe (ADRs 0097 e [0137](decisions/0137-outras-atividades-como-registro-de-carga.md)).
-     4. Escolho o objetivo: completar uma distância, melhorar o tempo numa distância ou sem objetivo definido (só correr com regularidade) (ADR 0103).
+     4. Escolho o objetivo: completar uma distância, melhorar o tempo numa distância, sem objetivo definido (só correr com regularidade) ou "Outro", em texto livre. Com "Outro", o app gera o plano genérico, e a primeira conversa com o Piu já vem com o objetivo escrito, para virar uma proposta (ADRs 0103 e [0214](decisions/0214-outro-objetivo-combinado-com-o-piu.md)).
      5. Para completar uma distância, informo a distância (qualquer valor) e, se quiser, a data; sem data, o app sugere um prazo, que aceito ou ajusto. Para melhorar o tempo, informo a distância e a data (ADRs 0016 e 0103).
      6. Para melhorar o tempo, o app sugere um pace alvo com base no meu histórico, e eu aceito ou ajusto. Sem histórico suficiente, o plano começa sem meta de pace, com foco em completar a distância (ADR 0021).
      7. Se a meta for muito fora do comum para o meu nível ou o prazo, o app explica os riscos e sugere alternativas. Posso seguir mesmo assim, e minha escolha fica registrada (ADR 0017).
