@@ -14,13 +14,17 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json && npm run typecheck --workspaces --if-present"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
+    "@app-corrida/ai-provider": "^0.0.0",
+    "@app-corrida/rules-engine": "^0.0.0",
+    "@eslint/js": "^9.39.5",
+    "@jest/globals": "^30.5.2",
     "@types/node": "^24.19.2",
-    "eslint": "^10.15.0",
+    "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
     "globals": "^17.14.0",
     "prettier": "^3.10.1",
     "typescript": "^6.0.3",
