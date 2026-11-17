@@ -56,7 +56,7 @@ Todos rodam na raiz, com o Node 24 (ADR 0130). O `.npmrc` tem `engine-strict`, e
 - Instalar dependências: `npm install`
 - Lint: `npm run lint`
 - Formatação: `npm run format:check` (checa) e `npm run format` (corrige). `docs/` e os `.md` ficam de fora (ADR 0222).
-- Typecheck: `npm run typecheck`
+- Typecheck: `npm run typecheck` (raiz e cada workspace)
 - Rodar o app: TBD (card #17)
 - Testes unitários e de integração: TBD (cards #18 e #19)
 - Testes E2E: TBD (card #20)
