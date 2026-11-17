@@ -1,0 +1,10 @@
+# Documentação em Markdown fica fora do Prettier (ADR 0222)
+docs/
+*.md
+
+# Gerados
+package-lock.json
+coverage/
+dist/
+build/
+.expo/

@@ -50,10 +50,14 @@ docs/decisions/         ADRs
 
 ## Comandos
 
-TBD: serão definidos na etapa "Setup do monorepo".
+Todos rodam na raiz, com o Node 24 (ADR 0130). O `.npmrc` tem `engine-strict`, então o `npm install` falha com outra versão (ADR 0221).
 
-- Instalar dependências: TBD
-- Rodar o app: TBD
-- Testes (unitários / integração / E2E): TBD
-- Lint / typecheck: TBD
-- Supabase local e migrations: TBD
+- Ativar o Node 24: `fnm use` (lê o `.nvmrc`)
+- Instalar dependências: `npm install`
+- Lint: `npm run lint`
+- Formatação: `npm run format:check` (checa) e `npm run format` (corrige). `docs/` e os `.md` ficam de fora (ADR 0222).
+- Typecheck: `npm run typecheck`
+- Rodar o app: TBD (card #17)
+- Testes unitários e de integração: TBD (cards #18 e #19)
+- Testes E2E: TBD (card #20)
+- Supabase local e migrations: TBD (card #19)

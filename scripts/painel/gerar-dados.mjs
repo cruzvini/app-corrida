@@ -17,28 +17,53 @@ if (!saida) {
 }
 mkdirSync(saida, { recursive: true });
 
-const gh = (...args) => JSON.parse(execFileSync('gh', args, { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 }));
+const gh = (...args) =>
+  JSON.parse(execFileSync('gh', args, { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 }));
 const geradoEm = new Date().toISOString();
 const comando = 'node scripts/painel/gerar-dados.mjs';
 const escrever = (nome, rows, extras = []) => {
-  const meta = [{ label: 'Gerado em', value: geradoEm }, { label: 'Comando', value: comando }, ...extras];
+  const meta = [
+    { label: 'Gerado em', value: geradoEm },
+    { label: 'Comando', value: comando },
+    ...extras,
+  ];
   writeFileSync(join(saida, nome), JSON.stringify({ rows, meta }, null, 2));
   console.log(`${nome}: ${rows.length} linhas`);
 };
 
 // Ordem das etapas, lida do README ("1. Concepção e escopo", ...).
 const readme = readFileSync('README.md', 'utf8');
-const etapas = [...readme.matchAll(/^(\d+)\. (.+)$/gm)].map(([, n, t]) => ({ n: Number(n), titulo: t.split(' (')[0].trim() }));
+const etapas = [...readme.matchAll(/^(\d+)\. (.+)$/gm)].map(([, n, t]) => ({
+  n: Number(n),
+  titulo: t.split(' (')[0].trim(),
+}));
 const etapaDe = (titulo) => etapas.find((e) => titulo.startsWith(e.titulo))?.n ?? null;
 
 // Issues com pai, sub-issues e rótulos.
-const issues = gh('api', 'graphql', '-f', `query={repository(owner:"${OWNER}",name:"${REPO}"){issues(first:100){nodes{
+const issues = gh(
+  'api',
+  'graphql',
+  '-f',
+  `query={repository(owner:"${OWNER}",name:"${REPO}"){issues(first:100){nodes{
   number title state body url updatedAt closedAt parent{number}
-  subIssuesSummary{total completed} labels(first:10){nodes{name}}}}}}`).data.repository.issues.nodes;
+  subIssuesSummary{total completed} labels(first:10){nodes{name}}}}}}`,
+).data.repository.issues.nodes;
 
 // Status no board.
-const board = gh('project', 'item-list', String(PROJECT), '--owner', OWNER, '--format', 'json', '--limit', '200').items;
-const statusDe = new Map(board.filter((i) => i.content?.number).map((i) => [i.content.number, i.status ?? 'Sem status']));
+const board = gh(
+  'project',
+  'item-list',
+  String(PROJECT),
+  '--owner',
+  OWNER,
+  '--format',
+  'json',
+  '--limit',
+  '200',
+).items;
+const statusDe = new Map(
+  board.filter((i) => i.content?.number).map((i) => [i.content.number, i.status ?? 'Sem status']),
+);
 
 const itens = issues
   .filter((i) => statusDe.has(i.number))
@@ -61,10 +86,23 @@ const itens = issues
     };
   })
   .sort((a, b) => a.numero - b.numero);
-escrever('itens.json', itens, [{ label: 'Board', value: `https://github.com/users/${OWNER}/projects/${PROJECT}` }]);
+escrever('itens.json', itens, [
+  { label: 'Board', value: `https://github.com/users/${OWNER}/projects/${PROJECT}` },
+]);
 
 // Pull requests.
-const prs = gh('pr', 'list', '--repo', `${OWNER}/${REPO}`, '--state', 'all', '--limit', '200', '--json', 'number,title,state,createdAt,mergedAt,url')
+const prs = gh(
+  'pr',
+  'list',
+  '--repo',
+  `${OWNER}/${REPO}`,
+  '--state',
+  'all',
+  '--limit',
+  '200',
+  '--json',
+  'number,title,state,createdAt,mergedAt,url',
+)
   .map((p) => ({
     numero: p.number,
     titulo: p.title,
@@ -94,14 +132,22 @@ const adrs = readdirSync(pasta)
 escrever('adrs.json', adrs);
 
 // Execuções de CI (vazio enquanto não houver workflows).
-const runs = gh('run', 'list', '--repo', `${OWNER}/${REPO}`, '--limit', '20', '--json', 'databaseId,workflowName,headBranch,status,conclusion,createdAt,url')
-  .map((r) => ({
-    id: r.databaseId,
-    workflow: r.workflowName,
-    branch: r.headBranch,
-    status: r.status,
-    conclusao: r.conclusion || null,
-    criado: r.createdAt,
-    url: r.url,
-  }));
+const runs = gh(
+  'run',
+  'list',
+  '--repo',
+  `${OWNER}/${REPO}`,
+  '--limit',
+  '20',
+  '--json',
+  'databaseId,workflowName,headBranch,status,conclusion,createdAt,url',
+).map((r) => ({
+  id: r.databaseId,
+  workflow: r.workflowName,
+  branch: r.headBranch,
+  status: r.status,
+  conclusao: r.conclusion || null,
+  criado: r.createdAt,
+  url: r.url,
+}));
 escrever('ci.json', runs);
