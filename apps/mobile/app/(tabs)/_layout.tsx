@@ -6,7 +6,7 @@ import { BarraDeAbas, ROTA_DO_HOJE } from '../../src/componentes';
 import { useTheme } from '../../src/tema';
 
 export const unstable_settings = {
-  initialRouteName: ROTA_DO_HOJE,
+  anchor: ROTA_DO_HOJE,
 };
 
 export default function LayoutDasAbas() {
