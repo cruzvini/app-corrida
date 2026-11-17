@@ -226,6 +226,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0218 | [Confirmação de desconectar o Strava com o diálogo do "Sair"](0218-confirmacao-de-desconectar-o-strava.md) | Aceita |
 | 0219 | [E2E cobre o modo manual no fluxo 1 e a conexão com o Strava no fluxo 2](0219-e2e-cobre-o-modo-manual.md) | Aceita |
 | 0220 | [Tela "Conecte o Strava" só entra no app no épico de Integração Strava](0220-tela-do-strava-so-no-epico-do-strava.md) | Aceita |
+| 0221 | [`engine-strict` no npm para barrar outra versão do Node](0221-engine-strict-no-npm.md) | Aceita |
+| 0222 | [Prettier não formata a documentação em Markdown](0222-prettier-fora-de-docs.md) | Aceita |
 
 ## Como criar um novo ADR
 
