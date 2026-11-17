@@ -57,7 +57,7 @@ Todos rodam na raiz, com o Node 24 (ADR 0130). O `.npmrc` tem `engine-strict`, e
 - Lint: `npm run lint`
 - Formatação: `npm run format:check` (checa) e `npm run format` (corrige). `docs/` e os `.md` ficam de fora (ADR 0222).
 - Typecheck: `npm run typecheck` (raiz e cada workspace)
-- Rodar o app: TBD (card #17)
+- Rodar o app: `npm run start -w @app-corrida/mobile` e ler o QR code com o Expo Go no iPhone. No emulador Android: `npm run android -w @app-corrida/mobile`.
 - Testes unitários e de integração: TBD (cards #18 e #19)
 - Testes E2E: TBD (card #20)
 - Supabase local e migrations: TBD (card #19)

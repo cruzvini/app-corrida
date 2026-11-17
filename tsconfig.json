@@ -5,5 +5,5 @@
     "checkJs": true,
     "types": ["node"]
   },
-  "include": ["*.js", "*.mjs", "*.ts", "tests/**/*.ts"]
+  "include": ["*.js", "*.mjs", "*.ts", "types/**/*.d.ts", "tests/**/*.ts"]
 }

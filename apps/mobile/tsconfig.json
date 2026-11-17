@@ -1,0 +1,10 @@
+{
+  "extends": ["expo/tsconfig.base", "../../tsconfig.base.json"],
+  "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
+    "module": "preserve",
+    "target": "ESNext",
+    "jsx": "react-jsx"
+  },
+  "include": ["**/*.ts", "**/*.tsx"]
+}
