@@ -228,6 +228,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0220 | [Tela "Conecte o Strava" só entra no app no épico de Integração Strava](0220-tela-do-strava-so-no-epico-do-strava.md) | Aceita |
 | 0221 | [`engine-strict` no npm para barrar outra versão do Node](0221-engine-strict-no-npm.md) | Aceita |
 | 0222 | [Prettier não formata a documentação em Markdown](0222-prettier-fora-de-docs.md) | Aceita |
+| 0223 | [Pacotes internos com o escopo `@app-corrida`](0223-pacotes-internos-com-escopo.md) | Aceita |
+| 0224 | [ESLint 9 por compatibilidade com o Expo](0224-eslint-9-por-compatibilidade-com-o-expo.md) | Aceita |
 
 ## Como criar um novo ADR
 
