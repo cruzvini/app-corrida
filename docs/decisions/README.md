@@ -230,6 +230,8 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0222 | [Prettier não formata a documentação em Markdown](0222-prettier-fora-de-docs.md) | Aceita |
 | 0223 | [Pacotes internos com o escopo `@app-corrida`](0223-pacotes-internos-com-escopo.md) | Aceita |
 | 0224 | [ESLint 9 por compatibilidade com o Expo](0224-eslint-9-por-compatibilidade-com-o-expo.md) | Aceita |
+| 0225 | [Babel compila o TypeScript no Jest, também nos pacotes](0225-babel-no-jest-em-todo-o-monorepo.md) | Aceita |
+| 0226 | [Projeto de integração do Jest passa sem testes até o Supabase local](0226-integracao-sem-testes-ate-o-supabase-local.md) | Aceita |
 
 ## Como criar um novo ADR
 
