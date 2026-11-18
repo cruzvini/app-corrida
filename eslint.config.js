@@ -37,6 +37,13 @@ export default defineConfig([
     },
   },
   {
+    // Os testes do app também importam as dependências do app (react-native, etc.).
+    files: ['tests/unit/mobile/**/*.{ts,tsx}'],
+    rules: {
+      'import/no-extraneous-dependencies': ['error', { packageDir: ['.', 'apps/mobile'] }],
+    },
+  },
+  {
     files: ['*.{js,mjs,ts}', 'scripts/**/*.{js,mjs}'],
     languageOptions: { globals: globals.node },
   },
