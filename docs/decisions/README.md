@@ -232,6 +232,9 @@ Cada decisão relevante é registrada aqui antes de ser implementada, no formato
 | 0224 | [ESLint 9 por compatibilidade com o Expo](0224-eslint-9-por-compatibilidade-com-o-expo.md) | Aceita |
 | 0225 | [Babel compila o TypeScript no Jest, também nos pacotes](0225-babel-no-jest-em-todo-o-monorepo.md) | Aceita |
 | 0226 | [Projeto de integração do Jest passa sem testes até o Supabase local](0226-integracao-sem-testes-ate-o-supabase-local.md) | Aceita |
+| 0227 | [Supabase CLI como devDependency fixada na raiz](0227-supabase-cli-como-devdependency.md) | Aceita |
+| 0228 | [Teste de fumaça da integração passa pela API com o supabase-js](0228-fumaca-da-integracao-pelo-supabase-js.md) | Aceita |
+| 0229 | [Variáveis do Supabase nos testes, com fallback no `supabase status`](0229-variaveis-do-supabase-com-fallback-no-status.md) | Aceita |
 
 ## Como criar um novo ADR
 

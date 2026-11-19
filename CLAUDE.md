@@ -59,6 +59,6 @@ Todos rodam na raiz, com o Node 24 (ADR 0130). O `.npmrc` tem `engine-strict`, e
 - Typecheck: `npm run typecheck` (raiz e cada workspace)
 - Rodar o app: `npm run start -w @app-corrida/mobile` e ler o QR code com o Expo Go no iPhone. No emulador Android: `npm run android -w @app-corrida/mobile`.
 - Testes unitários: `npm run test:unit` (Jest, com cobertura mínima por pacote; ADRs 0119, 0124 e 0225). Os testes ficam em `tests/unit/<pacote>/`; os do app, em `tests/unit/mobile/`, usam o React Native Testing Library, em que `render` e `fireEvent` são assíncronos (`await`).
-- Testes de integração: `npm run test:integration`. Passa sem testes até o card #19 (ADR 0226).
+- Supabase local: com o Docker Desktop no ar, `npx supabase start` sobe o ambiente, `npx supabase status` mostra as URLs e as chaves locais, e `npx supabase stop` derruba tudo. O CLI é uma devDependency fixada (ADR 0227). Migrations: TBD (épico #4).
+- Testes de integração: `npm run test:integration`, com o Supabase local no ar. Os testes ficam em `tests/integration/` e usam o `criarClienteAdmin()` de `tests/integration/supabase.ts` (ADR 0228). A URL e a chave vêm de `SUPABASE_URL` e `SUPABASE_SECRET_KEY` ou, sem elas, do `supabase status` (ADR 0229).
 - Testes E2E: TBD (card #20)
-- Supabase local e migrations: TBD (card #19)
