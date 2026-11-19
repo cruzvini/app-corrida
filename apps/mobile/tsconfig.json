@@ -6,5 +6,5 @@
     "target": "ESNext",
     "jsx": "react-jsx"
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "../../tests/unit/mobile/**/*.tsx"]
 }
