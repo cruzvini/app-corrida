@@ -16,7 +16,7 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc -p tsconfig.json && npm run typecheck --workspaces --if-present",
     "test:unit": "jest --selectProjects unit:pacotes unit:app --coverage",
-    "test:integration": "jest --selectProjects integration --passWithNoTests"
+    "test:integration": "jest --selectProjects integration"
   },
   "devDependencies": {
     "@app-corrida/ai-provider": "^0.0.0",

@@ -3,7 +3,7 @@
 // Projetos:
 // - unit:pacotes  testes de tests/unit/<pacote>, no Node.
 // - unit:app      testes de tests/unit/mobile, com o preset jest-expo e o React Native Testing Library.
-// - integration   testes de tests/integration, no Node (o Supabase local entra no card #19).
+// - integration   testes de tests/integration, no Node, contra o Supabase local (ADRs 0228 e 0229).
 //
 // Tudo é compilado pelo Babel com o babel-preset-expo, o mesmo do Metro (ADR 0225).
 
@@ -45,6 +45,10 @@ const config = {
       ...noNode,
       displayName: 'integration',
       testMatch: ['<rootDir>/tests/integration/**/*.test.ts'],
+      // Preenche a URL e a chave do Supabase local quando não vêm do ambiente (ADR 0229).
+      globalSetup: '<rootDir>/tests/integration/globalSetup.ts',
+      // Rede e Docker: 5 s, o padrão do Jest, é pouco na primeira chamada.
+      testTimeout: 30_000,
     },
   ],
 
