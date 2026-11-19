@@ -28,7 +28,12 @@ const config = {
     {
       ...noNode,
       displayName: 'unit:pacotes',
-      testMatch: ['<rootDir>/tests/unit/{rules-engine,ai-provider}/**/*.test.ts'],
+      // Um padrão por pacote, sem chaves na pasta: no Windows o Jest troca a barra antes de `{`
+      // por `\`, o que escapa a chave, e o padrão não acha nenhum teste.
+      testMatch: [
+        '<rootDir>/tests/unit/rules-engine/**/*.test.ts',
+        '<rootDir>/tests/unit/ai-provider/**/*.test.ts',
+      ],
     },
     {
       displayName: 'unit:app',
